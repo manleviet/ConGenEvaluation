@@ -1,0 +1,2501 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    0.9,
+    0.9,
+    1.0
+  ],
+  "mean_accuracy": 0.9333333333333332,
+  "std_accuracy": 0.05773502691896257,
+  "total_runtime_ms": 1714.258832973428,
+  "intersected_kb": {
+    "kb_constraints": [],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 0,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 0.9,
+      "metrics": {
+        "accuracy": 0.9,
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1_score": 0.9473684210526316,
+        "specificity": 0.0,
+        "true_positives": 9,
+        "true_negatives": 0,
+        "false_positives": 1,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 567.81099998625,
+        "consistency_checks": 19,
+        "memory_peak_mb": 0.39534854888916016,
+        "n_mss": null,
+        "n_kb": 0,
+        "congen_runtime_ms": 0.0,
+        "acqmss_runtime_ms": 0.0,
+        "acqmss_calls": 0,
+        "reduce_runtime_ms": 0.016167003195732832,
+        "solver_time_ms": 55.97499999999145,
+        "is_consistent_calls": 2815,
+        "is_consistent_test_cases_calls": 0,
+        "redundancy_consistency_checks": 0,
+        "quacq_runtime_ms": 564.5312080159783,
+        "query_generation_runtime_ms": 178.3338329696562,
+        "findscope_runtime_ms": 52.8736679116264,
+        "findc_runtime_ms": 0.12620800407603383,
+        "dis_gen_runtime_ms": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 15,
+        "query_generation_consistency_checks": 882,
+        "prune_calls": 14,
+        "prune_is_consistent_calls": 1933,
+        "findscope_calls": 9,
+        "findc_calls": 1,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "profiler": {
+          "query_generation_consistency_checks": 882,
+          "solver_time": {
+            "count": 2815,
+            "total": 0.05597499999999145,
+            "mean": 1.988454706926872e-05,
+            "min": 8.999999999925734e-06,
+            "max": 4.2000000000097515e-05,
+            "median": 1.999999999990898e-05,
+            "stddev": 3.7325989446859735e-06
+          },
+          "solver_time_accum": 0.05597499999999145,
+          "is_consistent_calls": 2815,
+          "query_generation_runtime": {
+            "count": 15,
+            "total": 0.17833383296965621,
+            "mean": 0.01188892219797708,
+            "min": 2.500019036233425e-06,
+            "max": 0.04572337502031587,
+            "median": 0.004847249976592138,
+            "stddev": 0.014206420653965246
+          },
+          "query_generation_calls": 15,
+          "paper_consistency_checks": 19,
+          "prune_is_consistent_calls": 1933,
+          "prune_calls": 14,
+          "findscope_calls": 9,
+          "findscope_runtime": {
+            "count": 9,
+            "total": 0.0528736679116264,
+            "mean": 0.005874851990180711,
+            "min": 2.541986759752035e-06,
+            "max": 0.017615041986573488,
+            "median": 5.029098247177899e-05,
+            "stddev": 0.008756511918354824
+          },
+          "findc_calls": 1,
+          "findc_runtime": {
+            "count": 1,
+            "total": 0.00012620800407603383,
+            "mean": 0.00012620800407603383,
+            "min": 0.00012620800407603383,
+            "max": 0.00012620800407603383
+          },
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 1.6167003195732832e-05,
+            "mean": 1.6167003195732832e-05,
+            "min": 1.6167003195732832e-05,
+            "max": 1.6167003195732832e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 0.5645312080159783,
+            "mean": 0.5645312080159783,
+            "min": 0.5645312080159783,
+            "max": 0.5645312080159783
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 0.56781099998625,
+            "mean": 0.56781099998625,
+            "min": 0.56781099998625,
+            "max": 0.56781099998625
+          }
+        }
+      },
+      "kb_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 0
+      },
+      "train_size": {
+        "positive": 17,
+        "negative": 1
+      },
+      "test_size": {
+        "positive": 9,
+        "negative": 1
+      },
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "specificity": 0.0,
+            "true_positives": 0,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 102
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "Security --or--> ['Encryption', 'Authentication', 'Hashing', 'Confidentiality', 'Privacy', 'Integrity', 'Non_Repudiation']"
+            },
+            {
+              "id": null,
+              "description": "CachingImplementations --alternative--> ['JavaCachingSystem', 'Caffeine']"
+            },
+            {
+              "id": null,
+              "description": "Asymmetric --alternative--> ['RSA', 'DSA', 'ECDSA']"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> ErrorLog"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionAlgorithms"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileStorageImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --optional--> KeySize"
+            },
+            {
+              "id": null,
+              "description": "LoggingImplementations --alternative--> ['Log4J', 'LogBack', 'JavaUtilLogging', 'SimpleImplementationSLF4J']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> PasswordType"
+            },
+            {
+              "id": null,
+              "description": "SimpleImplementationSLF4J excludes XML"
+            },
+            {
+              "id": null,
+              "description": "Symmetric --alternative--> ['AES', 'DESede', 'Blowfish', 'DES']"
+            },
+            {
+              "id": null,
+              "description": "Mode --alternative--> ['CBC', 'ECB', 'CFB', 'CTR', 'CTS']"
+            },
+            {
+              "id": null,
+              "description": "Feedback --or--> ['InteractionFeedback', 'ProgressFeedback', 'SystemStatusDisplay', 'Alerts']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationImplementations"
+            },
+            {
+              "id": null,
+              "description": "ErrorLog --optional--> TraceFile"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CacheType"
+            },
+            {
+              "id": null,
+              "description": "Padding --alternative--> ['PKCS5', 'PKCS1', 'OAEP']"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CachingOperations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorageImplementations --alternative--> ['MySQL', 'MongoDB', 'OracleDB']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseStorageOperations"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 5) OR[Encryption][NOT[CypheredMessages][]]"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingAlgorithms"
+            },
+            {
+              "id": null,
+              "description": "DeviceAware --or--> ['BatteryStatus', 'IRSensor']"
+            },
+            {
+              "id": null,
+              "description": "Usability --or--> ['Logging', 'ContextualHelp', 'ExecutionControl', 'Internationalization', 'Feedback']"
+            },
+            {
+              "id": null,
+              "description": "FQAs --or--> ['Security', 'Usability', 'Persistence', 'ContextAwareness', 'Performance']"
+            },
+            {
+              "id": null,
+              "description": "Format --alternative--> ['TXT', 'XML', 'HTML', 'JSON']"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl --mandatory--> ExecutionControl_1"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> ContextualHelpOperations"
+            },
+            {
+              "id": null,
+              "description": "Caching --optional--> MaxLifeSeconds"
+            },
+            {
+              "id": null,
+              "description": "HashingAlgorithms --alternative--> ['MD5', 'SHA1', 'SHA256', 'SHA512']"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> Padding"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationOperations --optional--> Authenticate"
+            },
+            {
+              "id": null,
+              "description": "EncryptionAlgorithms --alternative--> ['Asymmetric', 'Symmetric']"
+            },
+            {
+              "id": null,
+              "description": "LoggingOperations --optional--> Log"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --optional--> TemporalFile"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseType"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl --optional--> Shortcuts"
+            },
+            {
+              "id": null,
+              "description": "Caching --optional--> EternalObjects"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 3) OR[Authentication][NOT[AuthenticatedUser][]]"
+            },
+            {
+              "id": null,
+              "description": "Level --or--> ['Trace', 'Debug', 'Info', 'Warning', 'Error']"
+            },
+            {
+              "id": null,
+              "description": "FileStorageImplementations --optional--> JavaIO"
+            },
+            {
+              "id": null,
+              "description": "CacheType --alternative--> ['LocalCache', 'RemoteCache']"
+            },
+            {
+              "id": null,
+              "description": "LocationAware --or--> ['GPS', 'WiFiLocation']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationOperations"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Format"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> UserType"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> MaxSizeCache"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl_1 --or--> ['Undo', 'Redo', 'Cancel', 'GoBack']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 1) OR[Authentication][NOT[SecureDatabase][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelpImplementations --optional--> JavaWizardAPI"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> HelpType"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> LoggingImplementations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorageOperations --alternative--> ['Store', 'Query']"
+            },
+            {
+              "id": null,
+              "description": "DataType --or--> ['Integers', 'Strings', 'Floats', 'Objects']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 2) OR[Alerts][NOT[BatteryStatus][]]"
+            },
+            {
+              "id": null,
+              "description": "Persistence --or--> ['FileStorage', 'DatabaseStorage']"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileType"
+            },
+            {
+              "id": null,
+              "description": "PasswordType --alternative--> ['Numeric', 'Alphanumeric', 'SpecialChars']"
+            },
+            {
+              "id": null,
+              "description": "Handler --alternative--> ['ConsoleLog', 'FileLog', 'DatabaseLog']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseStorageImplementations"
+            },
+            {
+              "id": null,
+              "description": "FileType --alternative--> ['Binary', 'TXTFile', 'XMLFile', 'JSONFile']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 7) OR[Authentication][NOT[Privacy][]]"
+            },
+            {
+              "id": null,
+              "description": "CachingOperations --alternative--> ['CacheStore', 'CacheQuery', 'CacheUpdate']"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Handler"
+            },
+            {
+              "id": null,
+              "description": "DatabaseType --alternative--> ['Relational', 'NoSQL']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 4) OR[FileStorage][NOT[TraceFile][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelpOperations --optional--> ShowHelp"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> Mode"
+            },
+            {
+              "id": null,
+              "description": "EncryptionOperations --alternative--> ['Encrypt', 'Decrypt']"
+            },
+            {
+              "id": null,
+              "description": "Performance --optional--> Caching"
+            },
+            {
+              "id": null,
+              "description": "Internationalization --mandatory--> Locale"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingOperations"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> CypheredMessages"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationMechanism --alternative--> ['UserPassword', 'DigitalCertificate', 'Biometric', 'SocialID', 'Pin', 'MatrixCode']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> AnonymousUser"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> PasswordLength"
+            },
+            {
+              "id": null,
+              "description": "HashingOperations --optional--> Hash"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileStorageOperations"
+            },
+            {
+              "id": null,
+              "description": "FileStorageOperations --alternative--> ['CreateFile', 'ModifyFile', 'DeleteFile']"
+            },
+            {
+              "id": null,
+              "description": "EncryptionImplementations --alternative--> ['JavaxCrypto', 'BouncyCastle']"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Level"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> ContextualHelpImplementations"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CachingImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionImplementations"
+            },
+            {
+              "id": null,
+              "description": "UserType --or--> ['Beginner', 'Intermediate', 'Advanced', 'Expert']"
+            },
+            {
+              "id": null,
+              "description": "DigitalCertificate --optional--> PseudonymousCertificate"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> LimitedSession"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationMechanism"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 8) OR[Encryption][NOT[Confidentiality][]]"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> HistoryLog"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationImplementations --alternative--> ['JAAS', 'SpringSecurity']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DataType"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 0) OR[TimeAware][NOT[BatteryStatus][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --optional--> AuthenticatedUser"
+            },
+            {
+              "id": null,
+              "description": "HashingImplementations --alternative--> ['JavaSecurityMessageDigest', 'Guava']"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionOperations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --optional--> SecureDatabase"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> LoggingOperations"
+            },
+            {
+              "id": null,
+              "description": "ContextAwareness --or--> ['LocationAware', 'TimeAware', 'DeviceAware', 'UserAware', 'EnvironmentAware']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> AuthenticationLogging"
+            },
+            {
+              "id": null,
+              "description": "HelpType --or--> ['Tutorial', 'Wizard']"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.5217391304347826,
+            "precision": 1.0,
+            "recall": 0.0029239766081871343,
+            "f1_score": 0.005830903790087463,
+            "specificity": 1.0,
+            "true_positives": 1,
+            "true_negatives": 371,
+            "false_positives": 0,
+            "false_negatives": 341
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-11, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-102, 101]"
+            },
+            {
+              "id": null,
+              "description": "[-82, 79]"
+            },
+            {
+              "id": null,
+              "description": "[-47, 46]"
+            },
+            {
+              "id": null,
+              "description": "[-113, 110]"
+            },
+            {
+              "id": null,
+              "description": "[-164, 126]"
+            },
+            {
+              "id": null,
+              "description": "[-58, 55]"
+            },
+            {
+              "id": null,
+              "description": "[-52, -51]"
+            },
+            {
+              "id": null,
+              "description": "[-116, 74]"
+            },
+            {
+              "id": null,
+              "description": "[-46, 8]"
+            },
+            {
+              "id": null,
+              "description": "[-109, 107]"
+            },
+            {
+              "id": null,
+              "description": "[-51, -50]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -18]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-170, -169]"
+            },
+            {
+              "id": null,
+              "description": "[-173, 171]"
+            },
+            {
+              "id": null,
+              "description": "[-76, 3]"
+            },
+            {
+              "id": null,
+              "description": "[-168, 167]"
+            },
+            {
+              "id": null,
+              "description": "[-118, 116]"
+            },
+            {
+              "id": null,
+              "description": "[-52, -49]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.017543859649122806,
+            "precision": 1.0,
+            "recall": 0.017543859649122806,
+            "f1_score": 0.034482758620689655,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 336
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2, 3, 4, 5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7, 8, 9, 10, 11, 12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 15, 16]"
+            },
+            {
+              "id": null,
+              "description": "[-16, -15]"
+            },
+            {
+              "id": null,
+              "description": "[-15, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-16, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-15, 17, 18, 19]"
+            },
+            {
+              "id": null,
+              "description": "[-18, -17]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -17]"
+            },
+            {
+              "id": null,
+              "description": "[-17, 15]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -18]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 0.9,
+      "metrics": {
+        "accuracy": 0.9,
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1_score": 0.9473684210526316,
+        "specificity": 0.0,
+        "true_positives": 9,
+        "true_negatives": 0,
+        "false_positives": 1,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 520.4515410005115,
+        "consistency_checks": 20,
+        "memory_peak_mb": 0.3842945098876953,
+        "n_mss": null,
+        "n_kb": 0,
+        "congen_runtime_ms": 0.0,
+        "acqmss_runtime_ms": 0.0,
+        "acqmss_calls": 0,
+        "reduce_runtime_ms": 0.012625008821487427,
+        "solver_time_ms": 50.79300000000231,
+        "is_consistent_calls": 2599,
+        "is_consistent_test_cases_calls": 0,
+        "redundancy_consistency_checks": 0,
+        "quacq_runtime_ms": 517.2922920028213,
+        "query_generation_runtime_ms": 154.83983396552503,
+        "findscope_runtime_ms": 60.0287510023918,
+        "findc_runtime_ms": 0.13879200560040772,
+        "dis_gen_runtime_ms": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 16,
+        "query_generation_consistency_checks": 764,
+        "prune_calls": 15,
+        "prune_is_consistent_calls": 1835,
+        "findscope_calls": 9,
+        "findc_calls": 1,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "profiler": {
+          "query_generation_consistency_checks": 764,
+          "solver_time": {
+            "count": 2599,
+            "total": 0.05079300000000231,
+            "mean": 1.954328587918519e-05,
+            "min": 8.000000000230045e-06,
+            "max": 4.399999999993298e-05,
+            "median": 2.0000000000131024e-05,
+            "stddev": 3.639493422233032e-06
+          },
+          "solver_time_accum": 0.05079300000000231,
+          "is_consistent_calls": 2599,
+          "query_generation_runtime": {
+            "count": 16,
+            "total": 0.15483983396552503,
+            "mean": 0.009677489622845314,
+            "min": 3.4580007195472717e-06,
+            "max": 0.0417428340006154,
+            "median": 0.009401103990967385,
+            "stddev": 0.01133045918513518
+          },
+          "query_generation_calls": 16,
+          "paper_consistency_checks": 20,
+          "prune_is_consistent_calls": 1835,
+          "prune_calls": 15,
+          "findscope_calls": 9,
+          "findscope_runtime": {
+            "count": 9,
+            "total": 0.0600287510023918,
+            "mean": 0.006669861222487978,
+            "min": 2.416985807940364e-06,
+            "max": 0.020001124998088926,
+            "median": 3.825000021606684e-05,
+            "stddev": 0.009956004226731653
+          },
+          "findc_calls": 1,
+          "findc_runtime": {
+            "count": 1,
+            "total": 0.00013879200560040772,
+            "mean": 0.00013879200560040772,
+            "min": 0.00013879200560040772,
+            "max": 0.00013879200560040772
+          },
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 1.2625008821487427e-05,
+            "mean": 1.2625008821487427e-05,
+            "min": 1.2625008821487427e-05,
+            "max": 1.2625008821487427e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 0.5172922920028213,
+            "mean": 0.5172922920028213,
+            "min": 0.5172922920028213,
+            "max": 0.5172922920028213
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 0.5204515410005115,
+            "mean": 0.5204515410005115,
+            "min": 0.5204515410005115,
+            "max": 0.5204515410005115
+          }
+        }
+      },
+      "kb_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 0
+      },
+      "train_size": {
+        "positive": 17,
+        "negative": 1
+      },
+      "test_size": {
+        "positive": 9,
+        "negative": 1
+      },
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "specificity": 0.0,
+            "true_positives": 0,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 102
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "Security --or--> ['Encryption', 'Authentication', 'Hashing', 'Confidentiality', 'Privacy', 'Integrity', 'Non_Repudiation']"
+            },
+            {
+              "id": null,
+              "description": "CachingImplementations --alternative--> ['JavaCachingSystem', 'Caffeine']"
+            },
+            {
+              "id": null,
+              "description": "Asymmetric --alternative--> ['RSA', 'DSA', 'ECDSA']"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> ErrorLog"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionAlgorithms"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileStorageImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --optional--> KeySize"
+            },
+            {
+              "id": null,
+              "description": "LoggingImplementations --alternative--> ['Log4J', 'LogBack', 'JavaUtilLogging', 'SimpleImplementationSLF4J']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> PasswordType"
+            },
+            {
+              "id": null,
+              "description": "SimpleImplementationSLF4J excludes XML"
+            },
+            {
+              "id": null,
+              "description": "Symmetric --alternative--> ['AES', 'DESede', 'Blowfish', 'DES']"
+            },
+            {
+              "id": null,
+              "description": "Mode --alternative--> ['CBC', 'ECB', 'CFB', 'CTR', 'CTS']"
+            },
+            {
+              "id": null,
+              "description": "Feedback --or--> ['InteractionFeedback', 'ProgressFeedback', 'SystemStatusDisplay', 'Alerts']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationImplementations"
+            },
+            {
+              "id": null,
+              "description": "ErrorLog --optional--> TraceFile"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CacheType"
+            },
+            {
+              "id": null,
+              "description": "Padding --alternative--> ['PKCS5', 'PKCS1', 'OAEP']"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CachingOperations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorageImplementations --alternative--> ['MySQL', 'MongoDB', 'OracleDB']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseStorageOperations"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 5) OR[Encryption][NOT[CypheredMessages][]]"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingAlgorithms"
+            },
+            {
+              "id": null,
+              "description": "DeviceAware --or--> ['BatteryStatus', 'IRSensor']"
+            },
+            {
+              "id": null,
+              "description": "Usability --or--> ['Logging', 'ContextualHelp', 'ExecutionControl', 'Internationalization', 'Feedback']"
+            },
+            {
+              "id": null,
+              "description": "FQAs --or--> ['Security', 'Usability', 'Persistence', 'ContextAwareness', 'Performance']"
+            },
+            {
+              "id": null,
+              "description": "Format --alternative--> ['TXT', 'XML', 'HTML', 'JSON']"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl --mandatory--> ExecutionControl_1"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> ContextualHelpOperations"
+            },
+            {
+              "id": null,
+              "description": "Caching --optional--> MaxLifeSeconds"
+            },
+            {
+              "id": null,
+              "description": "HashingAlgorithms --alternative--> ['MD5', 'SHA1', 'SHA256', 'SHA512']"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> Padding"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationOperations --optional--> Authenticate"
+            },
+            {
+              "id": null,
+              "description": "EncryptionAlgorithms --alternative--> ['Asymmetric', 'Symmetric']"
+            },
+            {
+              "id": null,
+              "description": "LoggingOperations --optional--> Log"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --optional--> TemporalFile"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseType"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl --optional--> Shortcuts"
+            },
+            {
+              "id": null,
+              "description": "Caching --optional--> EternalObjects"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 3) OR[Authentication][NOT[AuthenticatedUser][]]"
+            },
+            {
+              "id": null,
+              "description": "Level --or--> ['Trace', 'Debug', 'Info', 'Warning', 'Error']"
+            },
+            {
+              "id": null,
+              "description": "FileStorageImplementations --optional--> JavaIO"
+            },
+            {
+              "id": null,
+              "description": "CacheType --alternative--> ['LocalCache', 'RemoteCache']"
+            },
+            {
+              "id": null,
+              "description": "LocationAware --or--> ['GPS', 'WiFiLocation']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationOperations"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Format"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> UserType"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> MaxSizeCache"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl_1 --or--> ['Undo', 'Redo', 'Cancel', 'GoBack']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 1) OR[Authentication][NOT[SecureDatabase][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelpImplementations --optional--> JavaWizardAPI"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> HelpType"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> LoggingImplementations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorageOperations --alternative--> ['Store', 'Query']"
+            },
+            {
+              "id": null,
+              "description": "DataType --or--> ['Integers', 'Strings', 'Floats', 'Objects']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 2) OR[Alerts][NOT[BatteryStatus][]]"
+            },
+            {
+              "id": null,
+              "description": "Persistence --or--> ['FileStorage', 'DatabaseStorage']"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileType"
+            },
+            {
+              "id": null,
+              "description": "PasswordType --alternative--> ['Numeric', 'Alphanumeric', 'SpecialChars']"
+            },
+            {
+              "id": null,
+              "description": "Handler --alternative--> ['ConsoleLog', 'FileLog', 'DatabaseLog']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseStorageImplementations"
+            },
+            {
+              "id": null,
+              "description": "FileType --alternative--> ['Binary', 'TXTFile', 'XMLFile', 'JSONFile']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 7) OR[Authentication][NOT[Privacy][]]"
+            },
+            {
+              "id": null,
+              "description": "CachingOperations --alternative--> ['CacheStore', 'CacheQuery', 'CacheUpdate']"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Handler"
+            },
+            {
+              "id": null,
+              "description": "DatabaseType --alternative--> ['Relational', 'NoSQL']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 4) OR[FileStorage][NOT[TraceFile][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelpOperations --optional--> ShowHelp"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> Mode"
+            },
+            {
+              "id": null,
+              "description": "EncryptionOperations --alternative--> ['Encrypt', 'Decrypt']"
+            },
+            {
+              "id": null,
+              "description": "Performance --optional--> Caching"
+            },
+            {
+              "id": null,
+              "description": "Internationalization --mandatory--> Locale"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingOperations"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> CypheredMessages"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationMechanism --alternative--> ['UserPassword', 'DigitalCertificate', 'Biometric', 'SocialID', 'Pin', 'MatrixCode']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> AnonymousUser"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> PasswordLength"
+            },
+            {
+              "id": null,
+              "description": "HashingOperations --optional--> Hash"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileStorageOperations"
+            },
+            {
+              "id": null,
+              "description": "FileStorageOperations --alternative--> ['CreateFile', 'ModifyFile', 'DeleteFile']"
+            },
+            {
+              "id": null,
+              "description": "EncryptionImplementations --alternative--> ['JavaxCrypto', 'BouncyCastle']"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Level"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> ContextualHelpImplementations"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CachingImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionImplementations"
+            },
+            {
+              "id": null,
+              "description": "UserType --or--> ['Beginner', 'Intermediate', 'Advanced', 'Expert']"
+            },
+            {
+              "id": null,
+              "description": "DigitalCertificate --optional--> PseudonymousCertificate"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> LimitedSession"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationMechanism"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 8) OR[Encryption][NOT[Confidentiality][]]"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> HistoryLog"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationImplementations --alternative--> ['JAAS', 'SpringSecurity']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DataType"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 0) OR[TimeAware][NOT[BatteryStatus][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --optional--> AuthenticatedUser"
+            },
+            {
+              "id": null,
+              "description": "HashingImplementations --alternative--> ['JavaSecurityMessageDigest', 'Guava']"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionOperations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --optional--> SecureDatabase"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> LoggingOperations"
+            },
+            {
+              "id": null,
+              "description": "ContextAwareness --or--> ['LocationAware', 'TimeAware', 'DeviceAware', 'UserAware', 'EnvironmentAware']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> AuthenticationLogging"
+            },
+            {
+              "id": null,
+              "description": "HelpType --or--> ['Tutorial', 'Wizard']"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.5217391304347826,
+            "precision": 1.0,
+            "recall": 0.0029239766081871343,
+            "f1_score": 0.005830903790087463,
+            "specificity": 1.0,
+            "true_positives": 1,
+            "true_negatives": 371,
+            "false_positives": 0,
+            "false_negatives": 341
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-11, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-102, 101]"
+            },
+            {
+              "id": null,
+              "description": "[-82, 79]"
+            },
+            {
+              "id": null,
+              "description": "[-47, 46]"
+            },
+            {
+              "id": null,
+              "description": "[-113, 110]"
+            },
+            {
+              "id": null,
+              "description": "[-164, 126]"
+            },
+            {
+              "id": null,
+              "description": "[-58, 55]"
+            },
+            {
+              "id": null,
+              "description": "[-52, -51]"
+            },
+            {
+              "id": null,
+              "description": "[-116, 74]"
+            },
+            {
+              "id": null,
+              "description": "[-46, 8]"
+            },
+            {
+              "id": null,
+              "description": "[-109, 107]"
+            },
+            {
+              "id": null,
+              "description": "[-51, -50]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -18]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-170, -169]"
+            },
+            {
+              "id": null,
+              "description": "[-173, 171]"
+            },
+            {
+              "id": null,
+              "description": "[-76, 3]"
+            },
+            {
+              "id": null,
+              "description": "[-168, 167]"
+            },
+            {
+              "id": null,
+              "description": "[-118, 116]"
+            },
+            {
+              "id": null,
+              "description": "[-52, -49]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.017543859649122806,
+            "precision": 1.0,
+            "recall": 0.017543859649122806,
+            "f1_score": 0.034482758620689655,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 336
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2, 3, 4, 5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7, 8, 9, 10, 11, 12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 15, 16]"
+            },
+            {
+              "id": null,
+              "description": "[-16, -15]"
+            },
+            {
+              "id": null,
+              "description": "[-15, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-16, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-15, 17, 18, 19]"
+            },
+            {
+              "id": null,
+              "description": "[-18, -17]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -17]"
+            },
+            {
+              "id": null,
+              "description": "[-17, 15]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -18]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 0.0,
+        "true_positives": 8,
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 605.8801250183024,
+        "consistency_checks": 26,
+        "memory_peak_mb": 0.39718055725097656,
+        "n_mss": null,
+        "n_kb": 0,
+        "congen_runtime_ms": 0.0,
+        "acqmss_runtime_ms": 0.0,
+        "acqmss_calls": 0,
+        "reduce_runtime_ms": 0.01662501017563045,
+        "solver_time_ms": 59.11899999999859,
+        "is_consistent_calls": 3012,
+        "is_consistent_test_cases_calls": 0,
+        "redundancy_consistency_checks": 0,
+        "quacq_runtime_ms": 602.7504160010722,
+        "query_generation_runtime_ms": 175.8403320563957,
+        "findscope_runtime_ms": 246.3477919518482,
+        "findc_runtime_ms": 0.524833012605086,
+        "dis_gen_runtime_ms": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 17,
+        "query_generation_consistency_checks": 880,
+        "prune_calls": 16,
+        "prune_is_consistent_calls": 2132,
+        "findscope_calls": 18,
+        "findc_calls": 2,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "profiler": {
+          "query_generation_consistency_checks": 880,
+          "solver_time": {
+            "count": 3012,
+            "total": 0.05911899999999859,
+            "mean": 1.9627822045152256e-05,
+            "min": 7.999999999785956e-06,
+            "max": 9.499999999995623e-05,
+            "median": 2.0000000000131024e-05,
+            "stddev": 3.8652918484352506e-06
+          },
+          "solver_time_accum": 0.05911899999999859,
+          "is_consistent_calls": 3012,
+          "query_generation_runtime": {
+            "count": 17,
+            "total": 0.1758403320563957,
+            "mean": 0.010343548944493866,
+            "min": 0.0003980830078944564,
+            "max": 0.03817966699716635,
+            "median": 0.01115424997988157,
+            "stddev": 0.010163152255057626
+          },
+          "query_generation_calls": 17,
+          "paper_consistency_checks": 26,
+          "findscope_calls": 18,
+          "findscope_runtime": {
+            "count": 18,
+            "total": 0.2463477919518482,
+            "mean": 0.013685988441769345,
+            "min": 2.416985807940364e-06,
+            "max": 0.06415683301747777,
+            "median": 4.702099249698222e-05,
+            "stddev": 0.02414899208692534
+          },
+          "prune_is_consistent_calls": 2132,
+          "prune_calls": 16,
+          "findc_calls": 2,
+          "findc_runtime": {
+            "count": 2,
+            "total": 0.000524833012605086,
+            "mean": 0.000262416506302543,
+            "min": 0.00014945800649002194,
+            "max": 0.000375375006115064,
+            "median": 0.000262416506302543,
+            "stddev": 0.00015974744242018598
+          },
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 1.662501017563045e-05,
+            "mean": 1.662501017563045e-05,
+            "min": 1.662501017563045e-05,
+            "max": 1.662501017563045e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 0.6027504160010722,
+            "mean": 0.6027504160010722,
+            "min": 0.6027504160010722,
+            "max": 0.6027504160010722
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 0.6058801250183024,
+            "mean": 0.6058801250183024,
+            "min": 0.6058801250183024,
+            "max": 0.6058801250183024
+          }
+        }
+      },
+      "kb_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 0
+      },
+      "train_size": {
+        "positive": 18,
+        "negative": 2
+      },
+      "test_size": {
+        "positive": 8,
+        "negative": 0
+      },
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "specificity": 0.0,
+            "true_positives": 0,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 102
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "Security --or--> ['Encryption', 'Authentication', 'Hashing', 'Confidentiality', 'Privacy', 'Integrity', 'Non_Repudiation']"
+            },
+            {
+              "id": null,
+              "description": "CachingImplementations --alternative--> ['JavaCachingSystem', 'Caffeine']"
+            },
+            {
+              "id": null,
+              "description": "Asymmetric --alternative--> ['RSA', 'DSA', 'ECDSA']"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> ErrorLog"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionAlgorithms"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileStorageImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --optional--> KeySize"
+            },
+            {
+              "id": null,
+              "description": "LoggingImplementations --alternative--> ['Log4J', 'LogBack', 'JavaUtilLogging', 'SimpleImplementationSLF4J']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> PasswordType"
+            },
+            {
+              "id": null,
+              "description": "SimpleImplementationSLF4J excludes XML"
+            },
+            {
+              "id": null,
+              "description": "Symmetric --alternative--> ['AES', 'DESede', 'Blowfish', 'DES']"
+            },
+            {
+              "id": null,
+              "description": "Mode --alternative--> ['CBC', 'ECB', 'CFB', 'CTR', 'CTS']"
+            },
+            {
+              "id": null,
+              "description": "Feedback --or--> ['InteractionFeedback', 'ProgressFeedback', 'SystemStatusDisplay', 'Alerts']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationImplementations"
+            },
+            {
+              "id": null,
+              "description": "ErrorLog --optional--> TraceFile"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CacheType"
+            },
+            {
+              "id": null,
+              "description": "Padding --alternative--> ['PKCS5', 'PKCS1', 'OAEP']"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CachingOperations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorageImplementations --alternative--> ['MySQL', 'MongoDB', 'OracleDB']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseStorageOperations"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 5) OR[Encryption][NOT[CypheredMessages][]]"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingAlgorithms"
+            },
+            {
+              "id": null,
+              "description": "DeviceAware --or--> ['BatteryStatus', 'IRSensor']"
+            },
+            {
+              "id": null,
+              "description": "Usability --or--> ['Logging', 'ContextualHelp', 'ExecutionControl', 'Internationalization', 'Feedback']"
+            },
+            {
+              "id": null,
+              "description": "FQAs --or--> ['Security', 'Usability', 'Persistence', 'ContextAwareness', 'Performance']"
+            },
+            {
+              "id": null,
+              "description": "Format --alternative--> ['TXT', 'XML', 'HTML', 'JSON']"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl --mandatory--> ExecutionControl_1"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> ContextualHelpOperations"
+            },
+            {
+              "id": null,
+              "description": "Caching --optional--> MaxLifeSeconds"
+            },
+            {
+              "id": null,
+              "description": "HashingAlgorithms --alternative--> ['MD5', 'SHA1', 'SHA256', 'SHA512']"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> Padding"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationOperations --optional--> Authenticate"
+            },
+            {
+              "id": null,
+              "description": "EncryptionAlgorithms --alternative--> ['Asymmetric', 'Symmetric']"
+            },
+            {
+              "id": null,
+              "description": "LoggingOperations --optional--> Log"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --optional--> TemporalFile"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseType"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl --optional--> Shortcuts"
+            },
+            {
+              "id": null,
+              "description": "Caching --optional--> EternalObjects"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 3) OR[Authentication][NOT[AuthenticatedUser][]]"
+            },
+            {
+              "id": null,
+              "description": "Level --or--> ['Trace', 'Debug', 'Info', 'Warning', 'Error']"
+            },
+            {
+              "id": null,
+              "description": "FileStorageImplementations --optional--> JavaIO"
+            },
+            {
+              "id": null,
+              "description": "CacheType --alternative--> ['LocalCache', 'RemoteCache']"
+            },
+            {
+              "id": null,
+              "description": "LocationAware --or--> ['GPS', 'WiFiLocation']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationOperations"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Format"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> UserType"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> MaxSizeCache"
+            },
+            {
+              "id": null,
+              "description": "ExecutionControl_1 --or--> ['Undo', 'Redo', 'Cancel', 'GoBack']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 1) OR[Authentication][NOT[SecureDatabase][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelpImplementations --optional--> JavaWizardAPI"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> HelpType"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> LoggingImplementations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorageOperations --alternative--> ['Store', 'Query']"
+            },
+            {
+              "id": null,
+              "description": "DataType --or--> ['Integers', 'Strings', 'Floats', 'Objects']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 2) OR[Alerts][NOT[BatteryStatus][]]"
+            },
+            {
+              "id": null,
+              "description": "Persistence --or--> ['FileStorage', 'DatabaseStorage']"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileType"
+            },
+            {
+              "id": null,
+              "description": "PasswordType --alternative--> ['Numeric', 'Alphanumeric', 'SpecialChars']"
+            },
+            {
+              "id": null,
+              "description": "Handler --alternative--> ['ConsoleLog', 'FileLog', 'DatabaseLog']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DatabaseStorageImplementations"
+            },
+            {
+              "id": null,
+              "description": "FileType --alternative--> ['Binary', 'TXTFile', 'XMLFile', 'JSONFile']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 7) OR[Authentication][NOT[Privacy][]]"
+            },
+            {
+              "id": null,
+              "description": "CachingOperations --alternative--> ['CacheStore', 'CacheQuery', 'CacheUpdate']"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Handler"
+            },
+            {
+              "id": null,
+              "description": "DatabaseType --alternative--> ['Relational', 'NoSQL']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 4) OR[FileStorage][NOT[TraceFile][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelpOperations --optional--> ShowHelp"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> Mode"
+            },
+            {
+              "id": null,
+              "description": "EncryptionOperations --alternative--> ['Encrypt', 'Decrypt']"
+            },
+            {
+              "id": null,
+              "description": "Performance --optional--> Caching"
+            },
+            {
+              "id": null,
+              "description": "Internationalization --mandatory--> Locale"
+            },
+            {
+              "id": null,
+              "description": "Hashing --mandatory--> HashingOperations"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> CypheredMessages"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationMechanism --alternative--> ['UserPassword', 'DigitalCertificate', 'Biometric', 'SocialID', 'Pin', 'MatrixCode']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> AnonymousUser"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> PasswordLength"
+            },
+            {
+              "id": null,
+              "description": "HashingOperations --optional--> Hash"
+            },
+            {
+              "id": null,
+              "description": "FileStorage --mandatory--> FileStorageOperations"
+            },
+            {
+              "id": null,
+              "description": "FileStorageOperations --alternative--> ['CreateFile', 'ModifyFile', 'DeleteFile']"
+            },
+            {
+              "id": null,
+              "description": "EncryptionImplementations --alternative--> ['JavaxCrypto', 'BouncyCastle']"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> Level"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --mandatory--> ContextualHelpImplementations"
+            },
+            {
+              "id": null,
+              "description": "Caching --mandatory--> CachingImplementations"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionImplementations"
+            },
+            {
+              "id": null,
+              "description": "UserType --or--> ['Beginner', 'Intermediate', 'Advanced', 'Expert']"
+            },
+            {
+              "id": null,
+              "description": "DigitalCertificate --optional--> PseudonymousCertificate"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> LimitedSession"
+            },
+            {
+              "id": null,
+              "description": "Authentication --mandatory--> AuthenticationMechanism"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 8) OR[Encryption][NOT[Confidentiality][]]"
+            },
+            {
+              "id": null,
+              "description": "Logging --optional--> HistoryLog"
+            },
+            {
+              "id": null,
+              "description": "AuthenticationImplementations --alternative--> ['JAAS', 'SpringSecurity']"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --mandatory--> DataType"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 0) OR[TimeAware][NOT[BatteryStatus][]]"
+            },
+            {
+              "id": null,
+              "description": "ContextualHelp --optional--> AuthenticatedUser"
+            },
+            {
+              "id": null,
+              "description": "HashingImplementations --alternative--> ['JavaSecurityMessageDigest', 'Guava']"
+            },
+            {
+              "id": null,
+              "description": "Encryption --mandatory--> EncryptionOperations"
+            },
+            {
+              "id": null,
+              "description": "DatabaseStorage --optional--> SecureDatabase"
+            },
+            {
+              "id": null,
+              "description": "Logging --mandatory--> LoggingOperations"
+            },
+            {
+              "id": null,
+              "description": "ContextAwareness --or--> ['LocationAware', 'TimeAware', 'DeviceAware', 'UserAware', 'EnvironmentAware']"
+            },
+            {
+              "id": null,
+              "description": "Authentication --optional--> AuthenticationLogging"
+            },
+            {
+              "id": null,
+              "description": "HelpType --or--> ['Tutorial', 'Wizard']"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.5217391304347826,
+            "precision": 1.0,
+            "recall": 0.0029239766081871343,
+            "f1_score": 0.005830903790087463,
+            "specificity": 1.0,
+            "true_positives": 1,
+            "true_negatives": 371,
+            "false_positives": 0,
+            "false_negatives": 341
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-11, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-102, 101]"
+            },
+            {
+              "id": null,
+              "description": "[-82, 79]"
+            },
+            {
+              "id": null,
+              "description": "[-47, 46]"
+            },
+            {
+              "id": null,
+              "description": "[-113, 110]"
+            },
+            {
+              "id": null,
+              "description": "[-164, 126]"
+            },
+            {
+              "id": null,
+              "description": "[-58, 55]"
+            },
+            {
+              "id": null,
+              "description": "[-52, -51]"
+            },
+            {
+              "id": null,
+              "description": "[-116, 74]"
+            },
+            {
+              "id": null,
+              "description": "[-46, 8]"
+            },
+            {
+              "id": null,
+              "description": "[-109, 107]"
+            },
+            {
+              "id": null,
+              "description": "[-51, -50]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -18]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-170, -169]"
+            },
+            {
+              "id": null,
+              "description": "[-173, 171]"
+            },
+            {
+              "id": null,
+              "description": "[-76, 3]"
+            },
+            {
+              "id": null,
+              "description": "[-168, 167]"
+            },
+            {
+              "id": null,
+              "description": "[-118, 116]"
+            },
+            {
+              "id": null,
+              "description": "[-52, -49]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.017543859649122806,
+            "precision": 1.0,
+            "recall": 0.017543859649122806,
+            "f1_score": 0.034482758620689655,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 336
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2, 3, 4, 5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7, 8, 9, 10, 11, 12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 15, 16]"
+            },
+            {
+              "id": null,
+              "description": "[-16, -15]"
+            },
+            {
+              "id": null,
+              "description": "[-15, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-16, 14]"
+            },
+            {
+              "id": null,
+              "description": "[-15, 17, 18, 19]"
+            },
+            {
+              "id": null,
+              "description": "[-18, -17]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -17]"
+            },
+            {
+              "id": null,
+              "description": "[-17, 15]"
+            },
+            {
+              "id": null,
+              "description": "[-19, -18]"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 564.714222001688,
+      "std_ms": 42.79840262481111,
+      "min_ms": 520.4515410005115,
+      "max_ms": 605.8801250183024
+    },
+    "consistency_checks": {
+      "mean": 21.666666666666668,
+      "std": 3.7859388972001824,
+      "min": 19,
+      "max": 26
+    },
+    "memory": {
+      "mean_mb": 0.39227453867594403,
+      "max_mb": 0.39718055725097656
+    },
+    "kb_size": {
+      "n_mss_mean": null,
+      "n_kb_mean": 0
+    },
+    "congen_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "acqmss_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "acqmss_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "reduce_runtime": {
+      "mean_ms": 0.015139007397616902,
+      "std_ms": 0.002189197165399798,
+      "min_ms": 0.012625008821487427,
+      "max_ms": 0.01662501017563045
+    },
+    "solver_time": {
+      "mean_ms": 55.29566666666412,
+      "std_ms": 4.204365509005104,
+      "min_ms": 50.79300000000231,
+      "max_ms": 59.11899999999859
+    },
+    "is_consistent_calls": {
+      "mean": 2808.6666666666665,
+      "std": 206.5728281583358,
+      "min": 2599,
+      "max": 3012
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "redundancy_consistency_checks": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_runtime": {
+      "mean_ms": 561.5246386732906,
+      "std_ms": 42.8083208469381,
+      "min_ms": 517.2922920028213,
+      "max_ms": 602.7504160010722
+    },
+    "query_gen_runtime": {
+      "mean_ms": 169.6713329971923,
+      "std_ms": 12.904821166752699,
+      "min_ms": 154.83983396552503,
+      "max_ms": 178.3338329696562
+    },
+    "findscope_runtime": {
+      "mean_ms": 119.75007028862213,
+      "std_ms": 109.69519657327153,
+      "min_ms": 52.8736679116264,
+      "max_ms": 246.3477919518482
+    },
+    "findc_runtime": {
+      "mean_ms": 0.2632776740938425,
+      "std_ms": 0.22660093910085574,
+      "min_ms": 0.12620800407603383,
+      "max_ms": 0.524833012605086
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 0,
+      "std_ms": 0.0,
+      "min_ms": 0,
+      "max_ms": 0
+    },
+    "quacq_calls": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 16.0,
+      "std": 1.0,
+      "min": 15,
+      "max": 17
+    },
+    "query_gen_checks": {
+      "mean": 842.0,
+      "std": 67.55738301621814,
+      "min": 764,
+      "max": 882
+    },
+    "prune_calls": {
+      "mean": 15.0,
+      "std": 1.0,
+      "min": 14,
+      "max": 16
+    },
+    "prune_ic_calls": {
+      "mean": 1966.6666666666667,
+      "std": 151.3351688581783,
+      "min": 1835,
+      "max": 2132
+    },
+    "findscope_calls": {
+      "mean": 12.0,
+      "std": 5.196152422706632,
+      "min": 9,
+      "max": 18
+    },
+    "findc_calls": {
+      "mean": 1.3333333333333333,
+      "std": 0.5773502691896257,
+      "min": 1,
+      "max": 2
+    },
+    "findc_checks": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "dis_gen_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "dis_gen_checks": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "reduce_calls": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    }
+  },
+  "summary": {
+    "description": {
+      "precision": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "clause": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.002924,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.005831,
+        "std": 0.0
+      }
+    },
+    "semantic": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.017544,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.034483,
+        "std": 0.0
+      }
+    }
+  }
+}

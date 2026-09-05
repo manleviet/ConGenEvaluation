@@ -1,0 +1,633 @@
+c Constraint Bias B
+c Generated for constraint acquisition
+c Number of features: 14
+c Number of constraints: 295
+c
+c Feature mapping:
+c   1: jplug
+c   2: interface
+c   3: sdi
+c   4: mdi
+c   5: gui_builder
+c   6: java
+c   7: qt
+c   8: model_code_synch
+c   9: compiler
+c   10: javac
+c   11: mvc
+c   12: diagram_builder
+c   13: uml
+c   14: petri_net
+c
+c Constraint descriptions:
+c   c1: jplug --mandatory--> interface
+c   c2: jplug --optional--> interface
+c   c3: interface --alternative--> ['sdi', 'mdi']
+c   c4: interface --or--> ['sdi', 'mdi']
+c   c5: jplug --mandatory--> gui_builder
+c   c6: jplug --optional--> gui_builder
+c   c7: gui_builder --mandatory--> java
+c   c8: gui_builder --optional--> java
+c   c9: gui_builder --mandatory--> qt
+c   c10: gui_builder --optional--> qt
+c   c11: jplug --mandatory--> model_code_synch
+c   c12: jplug --optional--> model_code_synch
+c   c13: jplug --mandatory--> compiler
+c   c14: jplug --optional--> compiler
+c   c15: compiler --alternative--> ['javac', 'mvc']
+c   c16: compiler --or--> ['javac', 'mvc']
+c   c17: jplug --mandatory--> diagram_builder
+c   c18: jplug --optional--> diagram_builder
+c   c19: diagram_builder --mandatory--> uml
+c   c20: diagram_builder --optional--> uml
+c   c21: diagram_builder --mandatory--> petri_net
+c   c22: diagram_builder --optional--> petri_net
+c   c23: jplug requires interface
+c   c24: interface requires jplug
+c   c25: interface excludes jplug
+c   c26: jplug requires sdi
+c   c27: sdi requires jplug
+c   c28: jplug excludes sdi
+c   c29: jplug requires mdi
+c   c30: mdi requires jplug
+c   c31: jplug excludes mdi
+c   c32: jplug requires gui_builder
+c   c33: gui_builder requires jplug
+c   c34: gui_builder excludes jplug
+c   c35: jplug requires java
+c   c36: java requires jplug
+c   c37: java excludes jplug
+c   c38: jplug requires qt
+c   c39: qt requires jplug
+c   c40: jplug excludes qt
+c   c41: jplug requires model_code_synch
+c   c42: model_code_synch requires jplug
+c   c43: jplug excludes model_code_synch
+c   c44: jplug requires compiler
+c   c45: compiler requires jplug
+c   c46: compiler excludes jplug
+c   c47: jplug requires javac
+c   c48: javac requires jplug
+c   c49: javac excludes jplug
+c   c50: jplug requires mvc
+c   c51: mvc requires jplug
+c   c52: jplug excludes mvc
+c   c53: jplug requires diagram_builder
+c   c54: diagram_builder requires jplug
+c   c55: diagram_builder excludes jplug
+c   c56: jplug requires uml
+c   c57: uml requires jplug
+c   c58: jplug excludes uml
+c   c59: jplug requires petri_net
+c   c60: petri_net requires jplug
+c   c61: jplug excludes petri_net
+c   c62: interface requires sdi
+c   c63: sdi requires interface
+c   c64: interface excludes sdi
+c   c65: interface requires mdi
+c   c66: mdi requires interface
+c   c67: interface excludes mdi
+c   c68: interface requires gui_builder
+c   c69: gui_builder requires interface
+c   c70: gui_builder excludes interface
+c   c71: interface requires java
+c   c72: java requires interface
+c   c73: interface excludes java
+c   c74: interface requires qt
+c   c75: qt requires interface
+c   c76: interface excludes qt
+c   c77: interface requires model_code_synch
+c   c78: model_code_synch requires interface
+c   c79: interface excludes model_code_synch
+c   c80: interface requires compiler
+c   c81: compiler requires interface
+c   c82: compiler excludes interface
+c   c83: interface requires javac
+c   c84: javac requires interface
+c   c85: interface excludes javac
+c   c86: interface requires mvc
+c   c87: mvc requires interface
+c   c88: interface excludes mvc
+c   c89: interface requires diagram_builder
+c   c90: diagram_builder requires interface
+c   c91: diagram_builder excludes interface
+c   c92: interface requires uml
+c   c93: uml requires interface
+c   c94: interface excludes uml
+c   c95: interface requires petri_net
+c   c96: petri_net requires interface
+c   c97: interface excludes petri_net
+c   c98: sdi requires mdi
+c   c99: mdi requires sdi
+c   c100: mdi excludes sdi
+c   c101: sdi requires gui_builder
+c   c102: gui_builder requires sdi
+c   c103: gui_builder excludes sdi
+c   c104: sdi requires java
+c   c105: java requires sdi
+c   c106: java excludes sdi
+c   c107: sdi requires qt
+c   c108: qt requires sdi
+c   c109: qt excludes sdi
+c   c110: sdi requires model_code_synch
+c   c111: model_code_synch requires sdi
+c   c112: model_code_synch excludes sdi
+c   c113: sdi requires compiler
+c   c114: compiler requires sdi
+c   c115: compiler excludes sdi
+c   c116: sdi requires javac
+c   c117: javac requires sdi
+c   c118: javac excludes sdi
+c   c119: sdi requires mvc
+c   c120: mvc requires sdi
+c   c121: mvc excludes sdi
+c   c122: sdi requires diagram_builder
+c   c123: diagram_builder requires sdi
+c   c124: diagram_builder excludes sdi
+c   c125: sdi requires uml
+c   c126: uml requires sdi
+c   c127: sdi excludes uml
+c   c128: sdi requires petri_net
+c   c129: petri_net requires sdi
+c   c130: petri_net excludes sdi
+c   c131: mdi requires gui_builder
+c   c132: gui_builder requires mdi
+c   c133: gui_builder excludes mdi
+c   c134: mdi requires java
+c   c135: java requires mdi
+c   c136: java excludes mdi
+c   c137: mdi requires qt
+c   c138: qt requires mdi
+c   c139: mdi excludes qt
+c   c140: mdi requires model_code_synch
+c   c141: model_code_synch requires mdi
+c   c142: mdi excludes model_code_synch
+c   c143: mdi requires compiler
+c   c144: compiler requires mdi
+c   c145: compiler excludes mdi
+c   c146: mdi requires javac
+c   c147: javac requires mdi
+c   c148: javac excludes mdi
+c   c149: mdi requires mvc
+c   c150: mvc requires mdi
+c   c151: mdi excludes mvc
+c   c152: mdi requires diagram_builder
+c   c153: diagram_builder requires mdi
+c   c154: diagram_builder excludes mdi
+c   c155: mdi requires uml
+c   c156: uml requires mdi
+c   c157: mdi excludes uml
+c   c158: mdi requires petri_net
+c   c159: petri_net requires mdi
+c   c160: mdi excludes petri_net
+c   c161: gui_builder requires java
+c   c162: java requires gui_builder
+c   c163: gui_builder excludes java
+c   c164: gui_builder requires qt
+c   c165: qt requires gui_builder
+c   c166: gui_builder excludes qt
+c   c167: gui_builder requires model_code_synch
+c   c168: model_code_synch requires gui_builder
+c   c169: gui_builder excludes model_code_synch
+c   c170: gui_builder requires compiler
+c   c171: compiler requires gui_builder
+c   c172: compiler excludes gui_builder
+c   c173: gui_builder requires javac
+c   c174: javac requires gui_builder
+c   c175: gui_builder excludes javac
+c   c176: gui_builder requires mvc
+c   c177: mvc requires gui_builder
+c   c178: gui_builder excludes mvc
+c   c179: gui_builder requires diagram_builder
+c   c180: diagram_builder requires gui_builder
+c   c181: diagram_builder excludes gui_builder
+c   c182: gui_builder requires uml
+c   c183: uml requires gui_builder
+c   c184: gui_builder excludes uml
+c   c185: gui_builder requires petri_net
+c   c186: petri_net requires gui_builder
+c   c187: gui_builder excludes petri_net
+c   c188: java requires qt
+c   c189: qt requires java
+c   c190: java excludes qt
+c   c191: java requires model_code_synch
+c   c192: model_code_synch requires java
+c   c193: java excludes model_code_synch
+c   c194: java requires compiler
+c   c195: compiler requires java
+c   c196: compiler excludes java
+c   c197: java requires javac
+c   c198: javac requires java
+c   c199: java excludes javac
+c   c200: java requires mvc
+c   c201: mvc requires java
+c   c202: java excludes mvc
+c   c203: java requires diagram_builder
+c   c204: diagram_builder requires java
+c   c205: diagram_builder excludes java
+c   c206: java requires uml
+c   c207: uml requires java
+c   c208: java excludes uml
+c   c209: java requires petri_net
+c   c210: petri_net requires java
+c   c211: java excludes petri_net
+c   c212: qt requires model_code_synch
+c   c213: model_code_synch requires qt
+c   c214: model_code_synch excludes qt
+c   c215: qt requires compiler
+c   c216: compiler requires qt
+c   c217: compiler excludes qt
+c   c218: qt requires javac
+c   c219: javac requires qt
+c   c220: javac excludes qt
+c   c221: qt requires mvc
+c   c222: mvc requires qt
+c   c223: mvc excludes qt
+c   c224: qt requires diagram_builder
+c   c225: diagram_builder requires qt
+c   c226: diagram_builder excludes qt
+c   c227: qt requires uml
+c   c228: uml requires qt
+c   c229: qt excludes uml
+c   c230: qt requires petri_net
+c   c231: petri_net requires qt
+c   c232: petri_net excludes qt
+c   c233: model_code_synch requires compiler
+c   c234: compiler requires model_code_synch
+c   c235: compiler excludes model_code_synch
+c   c236: model_code_synch requires javac
+c   c237: javac requires model_code_synch
+c   c238: javac excludes model_code_synch
+c   c239: model_code_synch requires mvc
+c   c240: mvc requires model_code_synch
+c   c241: model_code_synch excludes mvc
+c   c242: model_code_synch requires diagram_builder
+c   c243: diagram_builder requires model_code_synch
+c   c244: diagram_builder excludes model_code_synch
+c   c245: model_code_synch requires uml
+c   c246: uml requires model_code_synch
+c   c247: model_code_synch excludes uml
+c   c248: model_code_synch requires petri_net
+c   c249: petri_net requires model_code_synch
+c   c250: model_code_synch excludes petri_net
+c   c251: compiler requires javac
+c   c252: javac requires compiler
+c   c253: compiler excludes javac
+c   c254: compiler requires mvc
+c   c255: mvc requires compiler
+c   c256: compiler excludes mvc
+c   c257: compiler requires diagram_builder
+c   c258: diagram_builder requires compiler
+c   c259: compiler excludes diagram_builder
+c   c260: compiler requires uml
+c   c261: uml requires compiler
+c   c262: compiler excludes uml
+c   c263: compiler requires petri_net
+c   c264: petri_net requires compiler
+c   c265: compiler excludes petri_net
+c   c266: javac requires mvc
+c   c267: mvc requires javac
+c   c268: javac excludes mvc
+c   c269: javac requires diagram_builder
+c   c270: diagram_builder requires javac
+c   c271: diagram_builder excludes javac
+c   c272: javac requires uml
+c   c273: uml requires javac
+c   c274: javac excludes uml
+c   c275: javac requires petri_net
+c   c276: petri_net requires javac
+c   c277: javac excludes petri_net
+c   c278: mvc requires diagram_builder
+c   c279: diagram_builder requires mvc
+c   c280: diagram_builder excludes mvc
+c   c281: mvc requires uml
+c   c282: uml requires mvc
+c   c283: mvc excludes uml
+c   c284: mvc requires petri_net
+c   c285: petri_net requires mvc
+c   c286: mvc excludes petri_net
+c   c287: diagram_builder requires uml
+c   c288: uml requires diagram_builder
+c   c289: diagram_builder excludes uml
+c   c290: diagram_builder requires petri_net
+c   c291: petri_net requires diagram_builder
+c   c292: diagram_builder excludes petri_net
+c   c293: uml requires petri_net
+c   c294: petri_net requires uml
+c   c295: petri_net excludes uml
+c
+p cnf 14 314
+-1 2 0
+-2 1 0
+-2 1 0
+-2 3 4 0
+-3 -4 0
+-3 2 0
+-4 2 0
+-2 3 4 0
+-3 2 0
+-4 2 0
+-1 5 0
+-5 1 0
+-5 1 0
+-5 6 0
+-6 5 0
+-6 5 0
+-5 7 0
+-7 5 0
+-7 5 0
+-1 8 0
+-8 1 0
+-8 1 0
+-1 9 0
+-9 1 0
+-9 1 0
+-9 10 11 0
+-10 -11 0
+-10 9 0
+-11 9 0
+-9 10 11 0
+-10 9 0
+-11 9 0
+-1 12 0
+-12 1 0
+-12 1 0
+-12 13 0
+-13 12 0
+-13 12 0
+-12 14 0
+-14 12 0
+-14 12 0
+-1 2 0
+-2 1 0
+-1 -2 0
+-1 3 0
+-3 1 0
+-1 -3 0
+-1 4 0
+-4 1 0
+-1 -4 0
+-1 5 0
+-5 1 0
+-1 -5 0
+-1 6 0
+-6 1 0
+-1 -6 0
+-1 7 0
+-7 1 0
+-1 -7 0
+-1 8 0
+-8 1 0
+-1 -8 0
+-1 9 0
+-9 1 0
+-1 -9 0
+-1 10 0
+-10 1 0
+-1 -10 0
+-1 11 0
+-11 1 0
+-1 -11 0
+-1 12 0
+-12 1 0
+-1 -12 0
+-1 13 0
+-13 1 0
+-1 -13 0
+-1 14 0
+-14 1 0
+-1 -14 0
+-2 3 0
+-3 2 0
+-2 -3 0
+-2 4 0
+-4 2 0
+-2 -4 0
+-2 5 0
+-5 2 0
+-2 -5 0
+-2 6 0
+-6 2 0
+-2 -6 0
+-2 7 0
+-7 2 0
+-2 -7 0
+-2 8 0
+-8 2 0
+-2 -8 0
+-2 9 0
+-9 2 0
+-2 -9 0
+-2 10 0
+-10 2 0
+-2 -10 0
+-2 11 0
+-11 2 0
+-2 -11 0
+-2 12 0
+-12 2 0
+-2 -12 0
+-2 13 0
+-13 2 0
+-2 -13 0
+-2 14 0
+-14 2 0
+-2 -14 0
+-3 4 0
+-4 3 0
+-3 -4 0
+-3 5 0
+-5 3 0
+-3 -5 0
+-3 6 0
+-6 3 0
+-3 -6 0
+-3 7 0
+-7 3 0
+-3 -7 0
+-3 8 0
+-8 3 0
+-3 -8 0
+-3 9 0
+-9 3 0
+-3 -9 0
+-3 10 0
+-10 3 0
+-3 -10 0
+-3 11 0
+-11 3 0
+-3 -11 0
+-3 12 0
+-12 3 0
+-3 -12 0
+-3 13 0
+-13 3 0
+-3 -13 0
+-3 14 0
+-14 3 0
+-3 -14 0
+-4 5 0
+-5 4 0
+-4 -5 0
+-4 6 0
+-6 4 0
+-4 -6 0
+-4 7 0
+-7 4 0
+-4 -7 0
+-4 8 0
+-8 4 0
+-4 -8 0
+-4 9 0
+-9 4 0
+-4 -9 0
+-4 10 0
+-10 4 0
+-4 -10 0
+-4 11 0
+-11 4 0
+-4 -11 0
+-4 12 0
+-12 4 0
+-4 -12 0
+-4 13 0
+-13 4 0
+-4 -13 0
+-4 14 0
+-14 4 0
+-4 -14 0
+-5 6 0
+-6 5 0
+-5 -6 0
+-5 7 0
+-7 5 0
+-5 -7 0
+-5 8 0
+-8 5 0
+-5 -8 0
+-5 9 0
+-9 5 0
+-5 -9 0
+-5 10 0
+-10 5 0
+-5 -10 0
+-5 11 0
+-11 5 0
+-5 -11 0
+-5 12 0
+-12 5 0
+-5 -12 0
+-5 13 0
+-13 5 0
+-5 -13 0
+-5 14 0
+-14 5 0
+-5 -14 0
+-6 7 0
+-7 6 0
+-6 -7 0
+-6 8 0
+-8 6 0
+-6 -8 0
+-6 9 0
+-9 6 0
+-6 -9 0
+-6 10 0
+-10 6 0
+-6 -10 0
+-6 11 0
+-11 6 0
+-6 -11 0
+-6 12 0
+-12 6 0
+-6 -12 0
+-6 13 0
+-13 6 0
+-6 -13 0
+-6 14 0
+-14 6 0
+-6 -14 0
+-7 8 0
+-8 7 0
+-7 -8 0
+-7 9 0
+-9 7 0
+-7 -9 0
+-7 10 0
+-10 7 0
+-7 -10 0
+-7 11 0
+-11 7 0
+-7 -11 0
+-7 12 0
+-12 7 0
+-7 -12 0
+-7 13 0
+-13 7 0
+-7 -13 0
+-7 14 0
+-14 7 0
+-7 -14 0
+-8 9 0
+-9 8 0
+-8 -9 0
+-8 10 0
+-10 8 0
+-8 -10 0
+-8 11 0
+-11 8 0
+-8 -11 0
+-8 12 0
+-12 8 0
+-8 -12 0
+-8 13 0
+-13 8 0
+-8 -13 0
+-8 14 0
+-14 8 0
+-8 -14 0
+-9 10 0
+-10 9 0
+-9 -10 0
+-9 11 0
+-11 9 0
+-9 -11 0
+-9 12 0
+-12 9 0
+-9 -12 0
+-9 13 0
+-13 9 0
+-9 -13 0
+-9 14 0
+-14 9 0
+-9 -14 0
+-10 11 0
+-11 10 0
+-10 -11 0
+-10 12 0
+-12 10 0
+-10 -12 0
+-10 13 0
+-13 10 0
+-10 -13 0
+-10 14 0
+-14 10 0
+-10 -14 0
+-11 12 0
+-12 11 0
+-11 -12 0
+-11 13 0
+-13 11 0
+-11 -13 0
+-11 14 0
+-14 11 0
+-11 -14 0
+-12 13 0
+-13 12 0
+-12 -13 0
+-12 14 0
+-14 12 0
+-12 -14 0
+-13 14 0
+-14 13 0
+-13 -14 0

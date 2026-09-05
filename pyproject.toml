@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "congen-evaluation"
+# 1.0.0, matching CITATION.cff and the release tag. The development version is
+# independent: this is the first published form of the artifact.
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "flamapy-fw==2.6.0.dev4",
+    "flamapy-fm==2.6.0.dev4",
+    "flamapy-sat==2.6.0.dev4",
+    "python-sat==0.1.8.dev17",
+    "toml~=0.10.2",
+    "allpairspy~=2.5.1",
+    # Required by conacq/bias/config_loader.py, which reads the YAML bias configurations in
+    # data/bias-config/. It was missing from this list: the module hard-imports `yaml`, but a clean
+    # environment never installed it, so an evaluation app failed at import on any machine that
+    # did not already happen to have PyYAML. Found 2026-08-01 when a supplementary bundle was
+    # installed into a fresh venv — the first time this repo was ever built from nothing.
+    "PyYAML~=6.0",
+    # Required by apps/sosym_r1/significance_tests.py, whose Wilcoxon results are
+    # asserted by check_paper_numbers.py -- 18 of its checks do not run without it.
+    # It was present only as a transitive dependency of flamapy-sat, so a fresh
+    # clone of the reproducibility package would have failed that part of the
+    # evidence chain. Same failure as PyYAML above: available by accident, never
+    # declared. A package that fails loudly at install is still not reproducible.
+    "scipy>=1.11",
+    # The SAT infrastructure ConGen is built on, pinned to a public tag so no sibling
+    # checkout is needed. v0.1.0 dereferences to commit
+    # dca7c1121fac3b5f6d2b333ac674cc08d9cab260; it is an ANNOTATED tag, so a plain
+    # remote tag listing shows the tag object 6a51e5e rather than the commit.
+    "explanation @ git+https://github.com/manleviet/explanation.git@v0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "parameterized~=0.9.0",
+]
+# Rule-learner baselines (C4). NOT runtime deps: the acquisition pipeline and the
+# sweep must keep installing from a clean environment without a scientific stack —
+# the adapters import these lazily, so their tests skip when the extra is absent.
+#
+# Split in two because the weight is wildly asymmetric: scikit-learn + wittgenstein
+# resolve to 9 packages, while Orange3 (for CN2 alone) pulls 87 — matplotlib,
+# xgboost, jupyter, qtconsole, pyqtgraph and the Orange canvas/widget GUI stack.
+# Keeping CN2 separate means RIPPER and the decision tree cost a headless machine
+# almost nothing.
+baselines = [
+    "scikit-learn~=1.9",
+    "wittgenstein~=0.3.5",
+]
+baselines-cn2 = [
+    "Orange3~=3.40",
+]
+
+[tool.setuptools.packages.find]
+# explanation and profiling come from the pinned dependency above, not bundled here.
+include = ["conacq*", "apps*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]

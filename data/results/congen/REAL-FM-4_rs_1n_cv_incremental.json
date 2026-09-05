@@ -1,0 +1,5657 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    0.8775510204081632,
+    0.8556701030927835,
+    0.7395833333333334
+  ],
+  "mean_accuracy": 0.8242681522780934,
+  "std_accuracy": 0.07415074210970991,
+  "total_runtime_ms": 2205162.0402080007,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c102",
+        "description": "Catalog1 --optional--> Categories1"
+      },
+      {
+        "id": "c104",
+        "description": "Categories1 --optional--> Multi_level"
+      },
+      {
+        "id": "c1056",
+        "description": "Eletronicgoodsfulfillment excludes Quickcheckoutprofile"
+      },
+      {
+        "id": "c106",
+        "description": "Categories1 --optional--> Multipleclassification"
+      },
+      {
+        "id": "c1081",
+        "description": "Eletronicgoodsfulfillment requires Size"
+      },
+      {
+        "id": "c11",
+        "description": "Dynamiccontent --mandatory--> Variationsource"
+      },
+      {
+        "id": "c1107",
+        "description": "Externalreferringpages excludes Inventorytracking"
+      },
+      {
+        "id": "c111",
+        "description": "Searching --alternative--> ['Basicsearch', 'Advancedsearch']"
+      },
+      {
+        "id": "c115",
+        "description": "Browsing --mandatory--> Productpage"
+      },
+      {
+        "id": "c118",
+        "description": "Browsing --optional--> Categorypage"
+      },
+      {
+        "id": "c120",
+        "description": "Browsing --optional--> Indexpage"
+      },
+      {
+        "id": "c1203",
+        "description": "Inventorytracking excludes Quickcheckoutprofile"
+      },
+      {
+        "id": "c122",
+        "description": "Indexpage --optional--> Sortingfilters"
+      },
+      {
+        "id": "c1227",
+        "description": "Inventorytracking excludes Shippingoptions"
+      },
+      {
+        "id": "c123",
+        "description": "Sortingfilters --alternative--> ['Price', 'Quality', 'Price_Qualityratio', 'Manufacturername', 'Customfilter']"
+      },
+      {
+        "id": "c1248",
+        "description": "Inventorytracking excludes Wishlistcontent"
+      },
+      {
+        "id": "c128",
+        "description": "Customviews --optional--> Seasonalproductviews"
+      },
+      {
+        "id": "c13",
+        "description": "Variationsource --alternative--> ['Timedependent', 'Personalized']"
+      },
+      {
+        "id": "c130",
+        "description": "Customviews --optional--> Personalizedviews"
+      },
+      {
+        "id": "c1338",
+        "description": "Permissions excludes Quickcheckoutprofile"
+      },
+      {
+        "id": "c1371",
+        "description": "Permissions excludes Userbehaviourtracking"
+      },
+      {
+        "id": "c138",
+        "description": "Wishlist --optional--> Multiplewishlists"
+      },
+      {
+        "id": "c1383",
+        "description": "Permissions excludes Wishlistcontent"
+      },
+      {
+        "id": "c1419",
+        "description": "Physicalgoods excludes Servicesfulfillment"
+      },
+      {
+        "id": "c1420",
+        "description": "Physicalgoods requires Shipping1"
+      },
+      {
+        "id": "c1426",
+        "description": "Physicalgoods requires Size"
+      },
+      {
+        "id": "c1438",
+        "description": "Physicalgoods requires Weight"
+      },
+      {
+        "id": "c145",
+        "description": "Buypaths --mandatory--> Shoppingcart"
+      },
+      {
+        "id": "c147",
+        "description": "Shoppingcart --mandatory--> Inventorymanagementpolicy"
+      },
+      {
+        "id": "c1480",
+        "description": "Physicalgoodsfulfillment requires Shipping1"
+      },
+      {
+        "id": "c1481",
+        "description": "Shipping1 requires Physicalgoodsfulfillment"
+      },
+      {
+        "id": "c1484",
+        "description": "Shippingoptions requires Physicalgoodsfulfillment"
+      },
+      {
+        "id": "c149",
+        "description": "Shoppingcart --mandatory--> Cartcontentpage"
+      },
+      {
+        "id": "c1563",
+        "description": "Preferences excludes Wishlistcontent"
+      },
+      {
+        "id": "c157",
+        "description": "Checkout --mandatory--> Checkouttype"
+      },
+      {
+        "id": "c159",
+        "description": "Checkouttype --alternative--> ['Registeredcheckout', 'Guestcheckout']"
+      },
+      {
+        "id": "c1621",
+        "description": "Quickcheckout requires Quickcheckoutprofile"
+      },
+      {
+        "id": "c164",
+        "description": "Quickcheckout --optional--> Enableprofileupdateoncheckout"
+      },
+      {
+        "id": "c168",
+        "description": "Shippingoptions --optional--> Qualityofserviceselection"
+      },
+      {
+        "id": "c170",
+        "description": "Shippingoptions --optional--> Carrierselection"
+      },
+      {
+        "id": "c1716",
+        "description": "Quickcheckoutprofile excludes Wishlistcontent"
+      },
+      {
+        "id": "c172",
+        "description": "Shippingoptions --optional--> Giftoptions"
+      },
+      {
+        "id": "c1720",
+        "description": "Registeredcheckout requires Registertobuy"
+      },
+      {
+        "id": "c174",
+        "description": "Shippingoptions --optional--> Multipleshipments"
+      },
+      {
+        "id": "c175",
+        "description": "Shippingoptions --mandatory--> Shippingcostcalculation"
+      },
+      {
+        "id": "c1807",
+        "description": "Registration requires Registrationenforcement"
+      },
+      {
+        "id": "c1808",
+        "description": "Registrationenforcement requires Registration"
+      },
+      {
+        "id": "c181",
+        "description": "Customtaxation --mandatory--> FType"
+      },
+      {
+        "id": "c184",
+        "description": "FType --or--> ['Fixed_ratetaxation', 'Rule_basedtaxation']"
+      },
+      {
+        "id": "c185",
+        "description": "Rule_basedtaxation --mandatory--> Taxcodes"
+      },
+      {
+        "id": "c187",
+        "description": "Rule_basedtaxation --mandatory--> Address"
+      },
+      {
+        "id": "c1879",
+        "description": "Registrationenforcement requires Wishlistsaveaftersession"
+      },
+      {
+        "id": "c1882",
+        "description": "Services requires Servicesfulfillment"
+      },
+      {
+        "id": "c189",
+        "description": "Address --mandatory--> Shipping"
+      },
+      {
+        "id": "c192",
+        "description": "Address --optional--> Billing"
+      },
+      {
+        "id": "c194",
+        "description": "Rule_basedtaxation --optional--> Resolution"
+      },
+      {
+        "id": "c195",
+        "description": "Resolution --alternative--> ['Country', 'Region', 'City']"
+      },
+      {
+        "id": "c197",
+        "description": "Customtaxation --mandatory--> Ammountspecification"
+      },
+      {
+        "id": "c199",
+        "description": "Ammountspecification --alternative--> ['Surcharge', 'Percentage']"
+      },
+      {
+        "id": "c20",
+        "description": "Registrationenforcement --or--> ['Registertobrowse', 'Registertobuy', 'None']"
+      },
+      {
+        "id": "c201",
+        "description": "Taxgateways --alternative--> ['CertiTAX', 'CyberSource', 'Customtaxgateway']"
+      },
+      {
+        "id": "c203",
+        "description": "Checkout --mandatory--> Paymentoptions"
+      },
+      {
+        "id": "c2046",
+        "description": "Userbehaviourtracking excludes Wishlistcontent"
+      },
+      {
+        "id": "c205",
+        "description": "Paymentoptions --mandatory--> Paymenttypes"
+      },
+      {
+        "id": "c208",
+        "description": "Paymenttypes --or--> ['COD', 'Creditcard', 'Debitcard', 'Eletroniccheque', 'Faxmailorder', 'Purchaseorder', 'Giftcertificate', 'Phoneorder', 'Custompaymenttype']"
+      },
+      {
+        "id": "c21",
+        "description": "Registration --mandatory--> Registrationinformation"
+      },
+      {
+        "id": "c214",
+        "description": "Paymentgateways --or--> ['Authorize_Net', 'CyberSource1', 'LinkPoint', 'Paradata', 'SkipJack', 'VerisignPayflowPro', 'Custompaymentgateway']"
+      },
+      {
+        "id": "c215",
+        "description": "Buypaths --mandatory--> Orderconfirmation"
+      },
+      {
+        "id": "c217",
+        "description": "Orderconfirmation --alternative--> ['Eletronicpage', 'E_mail', 'Phone', 'Mail']"
+      },
+      {
+        "id": "c219",
+        "description": "Buypaths --mandatory--> Buypaths_4"
+      },
+      {
+        "id": "c221",
+        "description": "Buypaths_4 --mandatory--> PhoneOrdering"
+      },
+      {
+        "id": "c223",
+        "description": "PhoneOrdering --mandatory--> DigitalDialing"
+      },
+      {
+        "id": "c23",
+        "description": "Registrationinformation --mandatory--> Logincredentials"
+      },
+      {
+        "id": "c232",
+        "description": "Questionandfeedbackforms --optional--> Questionandfeedbacktracking"
+      },
+      {
+        "id": "c233",
+        "description": "Orderstatusreview --mandatory--> Filteringcriteria"
+      },
+      {
+        "id": "c235",
+        "description": "Filteringcriteria --alternative--> ['Ordernumber', 'Orderdate', 'Orderstatus']"
+      },
+      {
+        "id": "c238",
+        "description": "Orderstatusreview --optional--> Requestorderhardcopy"
+      },
+      {
+        "id": "c239",
+        "description": "Shipmentstatustracking --alternative--> ['Internaltracking', 'Partnertracking']"
+      },
+      {
+        "id": "c243",
+        "description": "Userbehaviourtracking --mandatory--> Behaviourtracked"
+      },
+      {
+        "id": "c250",
+        "description": "Businessmanagement --optional--> Ordermanagement"
+      },
+      {
+        "id": "c252",
+        "description": "Ordermanagement --optional--> Fulfillment"
+      },
+      {
+        "id": "c254",
+        "description": "Fulfillment --or--> ['Physicalgoodsfulfillment', 'Eletronicgoodsfulfillment', 'Servicesfulfillment']"
+      },
+      {
+        "id": "c255",
+        "description": "Physicalgoodsfulfillment --mandatory--> Warehousemanagement"
+      },
+      {
+        "id": "c26",
+        "description": "Registrationinformation --optional--> Shippingaddress"
+      },
+      {
+        "id": "c260",
+        "description": "Shipping1 --or--> ['Customshippingmethod', 'Shippinggateways']"
+      },
+      {
+        "id": "c261",
+        "description": "Customshippingmethod --mandatory--> Pricing"
+      },
+      {
+        "id": "c263",
+        "description": "Pricing --mandatory--> Flatrate"
+      },
+      {
+        "id": "c266",
+        "description": "Pricing --optional--> Ratefactors"
+      },
+      {
+        "id": "c267",
+        "description": "Ratefactors --alternative--> ['Quantitypurchased', 'Ordertotal', 'Weight1', 'Productclassification']"
+      },
+      {
+        "id": "c271",
+        "description": "Eletronicgoodsfulfillment --mandatory--> Filerepository"
+      },
+      {
+        "id": "c273",
+        "description": "Eletronicgoodsfulfillment --mandatory--> Licensemanagement"
+      },
+      {
+        "id": "c276",
+        "description": "Servicesfulfillment --optional--> Appointmentscheduling"
+      },
+      {
+        "id": "c278",
+        "description": "Servicesfulfillment --optional--> Resourceplanning"
+      },
+      {
+        "id": "c28",
+        "description": "Shippingaddress --optional--> Multipleshippingaddresses"
+      },
+      {
+        "id": "c281",
+        "description": "Targeting --mandatory--> Targetingcriteria"
+      },
+      {
+        "id": "c283",
+        "description": "Targetingcriteria --alternative--> ['Customerpreferences', 'Personalinformation', 'Demographics1', 'Previouspurchases', 'Shoppingcartcontent', 'Wishlistcontent', 'Previouslyvisitedpages', 'Dateandtime', 'Customtargetcriteria']"
+      },
+      {
+        "id": "c285",
+        "description": "Targeting --mandatory--> Targetingmechanisms"
+      },
+      {
+        "id": "c287",
+        "description": "Targetingmechanisms --alternative--> ['Advertisements', 'Discounts', 'Sellstrategies']"
+      },
+      {
+        "id": "c289",
+        "description": "Advertisements --mandatory--> Advertisementtypes"
+      },
+      {
+        "id": "c291",
+        "description": "Advertisementtypes --alternative--> ['Bannerads', 'Pop_upads']"
+      },
+      {
+        "id": "c293",
+        "description": "Advertisements --mandatory--> Advertisementsources"
+      },
+      {
+        "id": "c295",
+        "description": "Advertisementsources --alternative--> ['Houseadvertisements', 'Paidadvertisements']"
+      },
+      {
+        "id": "c297",
+        "description": "Paidadvertisements --mandatory--> Advertisementmanagementinterface"
+      },
+      {
+        "id": "c30",
+        "description": "Registrationinformation --optional--> Billingaddress"
+      },
+      {
+        "id": "c300",
+        "description": "Advertisements --optional--> Advertisementresponsetracking"
+      },
+      {
+        "id": "c302",
+        "description": "Advertisements --optional--> Contextsensitiveads"
+      },
+      {
+        "id": "c303",
+        "description": "Discounts --mandatory--> Discountconditions"
+      },
+      {
+        "id": "c305",
+        "description": "Discountconditions --mandatory--> Productandquantityscope"
+      },
+      {
+        "id": "c307",
+        "description": "Discountconditions --mandatory--> Timescope"
+      },
+      {
+        "id": "c310",
+        "description": "Discountconditions --optional--> Purchasevaluescope"
+      },
+      {
+        "id": "c311",
+        "description": "Discounts --mandatory--> Award"
+      },
+      {
+        "id": "c315",
+        "description": "Discounts --mandatory--> Eligibilityrequirements"
+      },
+      {
+        "id": "c318",
+        "description": "Eligibilityrequirements --optional--> Customersegments"
+      },
+      {
+        "id": "c32",
+        "description": "Billingaddress --optional--> Multiplebillingaddresses"
+      },
+      {
+        "id": "c320",
+        "description": "Eligibilityrequirements --optional--> Shippingaddress1"
+      },
+      {
+        "id": "c321",
+        "description": "Discounts --mandatory--> Graduationby"
+      },
+      {
+        "id": "c323",
+        "description": "Graduationby --alternative--> ['Purchasevalue', 'Quantity']"
+      },
+      {
+        "id": "c326",
+        "description": "Discounts --optional--> Coupons"
+      },
+      {
+        "id": "c327",
+        "description": "Discounts --mandatory--> Handlingmultiplediscounts"
+      },
+      {
+        "id": "c329",
+        "description": "Sellstrategies --alternative--> ['Productkitting', 'Up_selling', 'Cross_selling']"
+      },
+      {
+        "id": "c331",
+        "description": "Up_selling --mandatory--> Substituteproducts"
+      },
+      {
+        "id": "c333",
+        "description": "Cross_selling --mandatory--> Pastcustomersalsobought"
+      },
+      {
+        "id": "c335",
+        "description": "Targeting --mandatory--> Displayandnotification"
+      },
+      {
+        "id": "c337",
+        "description": "Displayandnotification --alternative--> ['Assignmenttopagetypesfordisplay', 'Productflagging', 'E_mails']"
+      },
+      {
+        "id": "c34",
+        "description": "Registrationinformation --optional--> Creditcardinformation"
+      },
+      {
+        "id": "c340",
+        "description": "E_mails --optional--> Personalized1"
+      },
+      {
+        "id": "c342",
+        "description": "E_mails --optional--> Responsetracking"
+      },
+      {
+        "id": "c344",
+        "description": "Targeting --optional--> Campaigns"
+      },
+      {
+        "id": "c347",
+        "description": "Affiliates --mandatory--> Affiliateregistration"
+      },
+      {
+        "id": "c349",
+        "description": "Affiliates --mandatory--> Commissiontracking"
+      },
+      {
+        "id": "c35",
+        "description": "Creditcardinformation --mandatory--> Cardholdername"
+      },
+      {
+        "id": "c354",
+        "description": "Inventorytracking --optional--> Allowbackorders"
+      },
+      {
+        "id": "c357",
+        "description": "Procurement --mandatory--> Stockreplenishment"
+      },
+      {
+        "id": "c359",
+        "description": "Stockreplenishment --mandatory--> Manual"
+      },
+      {
+        "id": "c362",
+        "description": "Stockreplenishment --optional--> Automatic"
+      },
+      {
+        "id": "c363",
+        "description": "Automatic --mandatory--> Non_repudiationservice"
+      },
+      {
+        "id": "c367",
+        "description": "Reportingandanalysis --mandatory--> Reporttypes"
+      },
+      {
+        "id": "c369",
+        "description": "Reportingandanalysis --mandatory--> Reportformats"
+      },
+      {
+        "id": "c37",
+        "description": "Creditcardinformation --mandatory--> Cardnumber"
+      },
+      {
+        "id": "c371",
+        "description": "Reportingandanalysis --mandatory--> Levelofdetail"
+      },
+      {
+        "id": "c375",
+        "description": "Externalsystemsintegration --alternative--> ['Fulfillmentsystem', 'Inventorymanagementsystem', 'Procurementsystem', 'Externaldistributorsystem']"
+      },
+      {
+        "id": "c377",
+        "description": "Businessmanagement --mandatory--> Administration"
+      },
+      {
+        "id": "c379",
+        "description": "Administration --mandatory--> Contentmanagement"
+      },
+      {
+        "id": "c381",
+        "description": "Contentmanagement --mandatory--> Productdatabasemanagement"
+      },
+      {
+        "id": "c383",
+        "description": "Contentmanagement --mandatory--> Presentationoptions"
+      },
+      {
+        "id": "c385",
+        "description": "Contentmanagement --mandatory--> Generallayoutmanagement"
+      },
+      {
+        "id": "c389",
+        "description": "Administration --mandatory--> Storeadministration"
+      },
+      {
+        "id": "c39",
+        "description": "Creditcardinformation --mandatory--> Expirydate"
+      },
+      {
+        "id": "c391",
+        "description": "Storeadministration --mandatory--> Sitesearch"
+      },
+      {
+        "id": "c393",
+        "description": "Storeadministration --mandatory--> Searchengineregistration"
+      },
+      {
+        "id": "c395",
+        "description": "Storeadministration --mandatory--> Domainnamesetup"
+      },
+      {
+        "id": "c42",
+        "description": "Creditcardinformation --optional--> Securityinformation"
+      },
+      {
+        "id": "c44",
+        "description": "Registrationinformation --optional--> Demographics"
+      },
+      {
+        "id": "c45",
+        "description": "Demographics --alternative--> ['Age', 'Income', 'Education', 'CustomDemographicfield']"
+      },
+      {
+        "id": "c48",
+        "description": "Registrationinformation --optional--> PersonalInformation"
+      },
+      {
+        "id": "c497",
+        "description": "Categorypage requires Categories"
+      },
+      {
+        "id": "c52",
+        "description": "Preferences --or--> ['Sitelayout', 'Listsize', 'Language']"
+      },
+      {
+        "id": "c54",
+        "description": "Registrationinformation --optional--> Reminders"
+      },
+      {
+        "id": "c567",
+        "description": "Categories excludes Shippingoptions"
+      },
+      {
+        "id": "c58",
+        "description": "Registrationinformation --optional--> Customfields"
+      },
+      {
+        "id": "c588",
+        "description": "Categories excludes Wishlistcontent"
+      },
+      {
+        "id": "c61",
+        "description": "Storefront --mandatory--> Catalog"
+      },
+      {
+        "id": "c63",
+        "description": "Catalog --mandatory--> ProductInformation"
+      },
+      {
+        "id": "c65",
+        "description": "ProductInformation --mandatory--> Producttype"
+      },
+      {
+        "id": "c68",
+        "description": "Producttype --or--> ['Eletronicgoods', 'Physicalgoods', 'Services']"
+      },
+      {
+        "id": "c69",
+        "description": "ProductInformation --mandatory--> Basicinformation"
+      },
+      {
+        "id": "c7",
+        "description": "Dynamiccontent --mandatory--> Contenttype"
+      },
+      {
+        "id": "c715",
+        "description": "Customerpreferences requires Preferences"
+      },
+      {
+        "id": "c719",
+        "description": "Previouslyvisitedpages requires Customerpreferences"
+      },
+      {
+        "id": "c777",
+        "description": "Discounts excludes E_mailwishlist"
+      },
+      {
+        "id": "c813",
+        "description": "Discounts excludes Quickcheckoutprofile"
+      },
+      {
+        "id": "c82",
+        "description": "Mediafiles --or--> ['Image', 'Video', 'Sound']"
+      },
+      {
+        "id": "c84",
+        "description": "Image --or--> ['Thumbnail', 'a2Dimage', 'a3Dimage', 'a360degreesimage', 'Differentperspectives', 'Gallery']"
+      },
+      {
+        "id": "c846",
+        "description": "Discounts excludes Userbehaviourtracking"
+      },
+      {
+        "id": "c858",
+        "description": "Discounts excludes Wishlistcontent"
+      },
+      {
+        "id": "c88",
+        "description": "Productvariants --optional--> Complexproductconfiguration"
+      },
+      {
+        "id": "c946",
+        "description": "Eletronicgoods requires Eletronicgoodsfulfillment"
+      },
+      {
+        "id": "c99",
+        "description": "Categories --mandatory--> Catalog1"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 178,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 0.8775510204081632,
+      "metrics": {
+        "accuracy": 0.8775510204081632,
+        "precision": 1.0,
+        "recall": 0.8636363636363636,
+        "f1_score": 0.9268292682926829,
+        "specificity": 1.0,
+        "true_positives": 76,
+        "true_negatives": 10,
+        "false_positives": 0,
+        "false_negatives": 12
+      },
+      "performance": {
+        "runtime_ms": 728337.0443329914,
+        "consistency_checks": 3672,
+        "memory_peak_mb": 30.82399082183838,
+        "n_mss": 648,
+        "n_kb": 251,
+        "congen_runtime_ms": 718308.1847499998,
+        "acqmss_runtime_ms": 7469992.403522221,
+        "acqmss_calls": 3959,
+        "reduce_runtime_ms": 1368.0556659819558,
+        "solver_time_ms": 56966.77799999104,
+        "is_consistent_calls": 328945,
+        "is_consistent_test_cases_calls": 3672,
+        "redundancy_consistency_checks": 649,
+        "quacq_runtime_ms": 0.0,
+        "query_generation_runtime_ms": 0.0,
+        "findscope_runtime_ms": 0.0,
+        "findc_runtime_ms": 0.0,
+        "dis_gen_runtime_ms": 0.0,
+        "quacq_calls": 0,
+        "query_generation_calls": 0,
+        "query_generation_consistency_checks": 0,
+        "prune_calls": 0,
+        "prune_is_consistent_calls": 0,
+        "findscope_calls": 0,
+        "findc_calls": 0,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 0,
+        "profiler": {
+          "solver_time": {
+            "count": 328945,
+            "total": 56.966777999991045,
+            "mean": 0.0001731802520177873,
+            "min": 3.2999999998395424e-05,
+            "max": 0.0009719999999902029,
+            "median": 6.700000000137152e-05,
+            "stddev": 0.00015816160732673608
+          },
+          "is_consistent_calls": 328945,
+          "qx_runtime": {
+            "count": 401,
+            "total": 55.59834974404657,
+            "mean": 0.13864925123203634,
+            "min": 4.5000051613897085e-06,
+            "max": 0.5890089999884367,
+            "median": 0.038952582981437445,
+            "stddev": 0.1544737036149791
+          },
+          "qx_calls": 401,
+          "quickxplain_calls": 19,
+          "quickxplain_runtime": {
+            "count": 19,
+            "total": 8.877973833063152,
+            "mean": 0.4672617806875343,
+            "min": 0.34403629100415856,
+            "max": 0.6187008330016397,
+            "median": 0.5438134169962723,
+            "stddev": 0.11111327022027592
+          },
+          "solver_time_accum": 56.881604999991055,
+          "is_consistent_test_cases_calls": 3672,
+          "paper_consistency_checks": 3672,
+          "acqmss_calls": 3959,
+          "acqmss_runtime": {
+            "count": 3959,
+            "total": 7469.992403522221,
+            "mean": 1.8868381923521649,
+            "min": 6.000016583129764e-06,
+            "max": 716.6735142910038,
+            "median": 0.23903379100374877,
+            "stddev": 16.018491640714526
+          },
+          "redundancy_consistency_checks": 649,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 1.3680556659819558,
+            "mean": 1.3680556659819558,
+            "min": 1.3680556659819558,
+            "max": 1.3680556659819558
+          },
+          "congen_calls": 1,
+          "congen_runtime": {
+            "count": 1,
+            "total": 718.3081847499998,
+            "mean": 718.3081847499998,
+            "min": 718.3081847499998,
+            "max": 718.3081847499998
+          },
+          "congen_total_time": {
+            "count": 1,
+            "total": 728.3370443329914,
+            "mean": 728.3370443329914,
+            "min": 728.3370443329914,
+            "max": 728.3370443329914
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c813",
+          "description": "Discounts excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c837",
+          "description": "Discounts excludes Shippingoptions"
+        },
+        {
+          "id": "c842",
+          "description": "Specialoffers requires Discounts"
+        },
+        {
+          "id": "c846",
+          "description": "Discounts excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1879",
+          "description": "Registrationenforcement requires Wishlistsaveaftersession"
+        },
+        {
+          "id": "c1882",
+          "description": "Services requires Servicesfulfillment"
+        },
+        {
+          "id": "c858",
+          "description": "Discounts excludes Wishlistcontent"
+        },
+        {
+          "id": "c873",
+          "description": "E_mailwishlist excludes Inventorytracking"
+        },
+        {
+          "id": "c879",
+          "description": "E_mailwishlist excludes Permissions"
+        },
+        {
+          "id": "c888",
+          "description": "E_mailwishlist excludes Preferences"
+        },
+        {
+          "id": "c897",
+          "description": "E_mailwishlist excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c907",
+          "description": "E_mailwishlist requires Registrationenforcement"
+        },
+        {
+          "id": "c918",
+          "description": "E_mailwishlist excludes Shipping1"
+        },
+        {
+          "id": "c924",
+          "description": "E_mailwishlist excludes Size"
+        },
+        {
+          "id": "c930",
+          "description": "E_mailwishlist excludes Userbehaviourtracking"
+        },
+        {
+          "id": "(NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Warehousemanagement = false & Weight1 = true) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(Taxationoptions = false) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false))",
+          "description": "(NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Warehousemanagement = false & Weight1 = true) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(Taxationoptions = false) AND NOT(eShop = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false))"
+        },
+        {
+          "id": "c936",
+          "description": "E_mailwishlist excludes Weight"
+        },
+        {
+          "id": "c946",
+          "description": "Eletronicgoods requires Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c1992",
+          "description": "Shippingoptions excludes Wishlistcontent"
+        },
+        {
+          "id": "c2004",
+          "description": "Size excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c996",
+          "description": "Eletronicgoods excludes Servicesfulfillment"
+        },
+        {
+          "id": "c2034",
+          "description": "Specialoffers excludes Wishlistsaveaftersession"
+        },
+        {
+          "id": "c2036",
+          "description": "Userbehaviourtrackinginformation requires Userbehaviourtracking"
+        },
+        {
+          "id": "c2046",
+          "description": "Userbehaviourtracking excludes Wishlistcontent"
+        },
+        {
+          "id": "c2052",
+          "description": "Userbehaviourtrackinginformation excludes Weight"
+        },
+        {
+          "id": "c5",
+          "description": "Homepage --alternative--> ['Staticcontent', 'Dynamiccontent']"
+        },
+        {
+          "id": "c1029",
+          "description": "Eletronicgoodsfulfillment excludes Externalreferringpages"
+        },
+        {
+          "id": "c7",
+          "description": "Dynamiccontent --mandatory--> Contenttype"
+        },
+        {
+          "id": "c9",
+          "description": "Contenttype --alternative--> ['Welcomemessage', 'Specialoffers']"
+        },
+        {
+          "id": "c11",
+          "description": "Dynamiccontent --mandatory--> Variationsource"
+        },
+        {
+          "id": "c13",
+          "description": "Variationsource --alternative--> ['Timedependent', 'Personalized']"
+        },
+        {
+          "id": "c1041",
+          "description": "Eletronicgoodsfulfillment excludes Physicalgoods"
+        },
+        {
+          "id": "c20",
+          "description": "Registrationenforcement --or--> ['Registertobrowse', 'Registertobuy', 'None']"
+        },
+        {
+          "id": "c21",
+          "description": "Registration --mandatory--> Registrationinformation"
+        },
+        {
+          "id": "c23",
+          "description": "Registrationinformation --mandatory--> Logincredentials"
+        },
+        {
+          "id": "c26",
+          "description": "Registrationinformation --optional--> Shippingaddress"
+        },
+        {
+          "id": "c28",
+          "description": "Shippingaddress --optional--> Multipleshippingaddresses"
+        },
+        {
+          "id": "c30",
+          "description": "Registrationinformation --optional--> Billingaddress"
+        },
+        {
+          "id": "c32",
+          "description": "Billingaddress --optional--> Multiplebillingaddresses"
+        },
+        {
+          "id": "c1056",
+          "description": "Eletronicgoodsfulfillment excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c34",
+          "description": "Registrationinformation --optional--> Creditcardinformation"
+        },
+        {
+          "id": "c35",
+          "description": "Creditcardinformation --mandatory--> Cardholdername"
+        },
+        {
+          "id": "c37",
+          "description": "Creditcardinformation --mandatory--> Cardnumber"
+        },
+        {
+          "id": "c39",
+          "description": "Creditcardinformation --mandatory--> Expirydate"
+        },
+        {
+          "id": "c1066",
+          "description": "Eletronicgoodsfulfillment requires Registrationenforcement"
+        },
+        {
+          "id": "c42",
+          "description": "Creditcardinformation --optional--> Securityinformation"
+        },
+        {
+          "id": "c44",
+          "description": "Registrationinformation --optional--> Demographics"
+        },
+        {
+          "id": "c45",
+          "description": "Demographics --alternative--> ['Age', 'Income', 'Education', 'CustomDemographicfield']"
+        },
+        {
+          "id": "c48",
+          "description": "Registrationinformation --optional--> PersonalInformation"
+        },
+        {
+          "id": "c52",
+          "description": "Preferences --or--> ['Sitelayout', 'Listsize', 'Language']"
+        },
+        {
+          "id": "c54",
+          "description": "Registrationinformation --optional--> Reminders"
+        },
+        {
+          "id": "c1080",
+          "description": "Eletronicgoodsfulfillment excludes Shippingoptions"
+        },
+        {
+          "id": "c1081",
+          "description": "Eletronicgoodsfulfillment requires Size"
+        },
+        {
+          "id": "c58",
+          "description": "Registrationinformation --optional--> Customfields"
+        },
+        {
+          "id": "c61",
+          "description": "Storefront --mandatory--> Catalog"
+        },
+        {
+          "id": "c63",
+          "description": "Catalog --mandatory--> ProductInformation"
+        },
+        {
+          "id": "c65",
+          "description": "ProductInformation --mandatory--> Producttype"
+        },
+        {
+          "id": "c68",
+          "description": "Producttype --or--> ['Eletronicgoods', 'Physicalgoods', 'Services']"
+        },
+        {
+          "id": "c69",
+          "description": "ProductInformation --mandatory--> Basicinformation"
+        },
+        {
+          "id": "c80",
+          "description": "Associatedassets --or--> ['Documents', 'Mediafiles']"
+        },
+        {
+          "id": "c82",
+          "description": "Mediafiles --or--> ['Image', 'Video', 'Sound']"
+        },
+        {
+          "id": "c1107",
+          "description": "Externalreferringpages excludes Inventorytracking"
+        },
+        {
+          "id": "c84",
+          "description": "Image --or--> ['Thumbnail', 'a2Dimage', 'a3Dimage', 'a360degreesimage', 'Differentperspectives', 'Gallery']"
+        },
+        {
+          "id": "c88",
+          "description": "Productvariants --optional--> Complexproductconfiguration"
+        },
+        {
+          "id": "c1122",
+          "description": "Externalreferringpages excludes Preferences"
+        },
+        {
+          "id": "c99",
+          "description": "Categories --mandatory--> Catalog1"
+        },
+        {
+          "id": "c102",
+          "description": "Catalog1 --optional--> Categories1"
+        },
+        {
+          "id": "c104",
+          "description": "Categories1 --optional--> Multi_level"
+        },
+        {
+          "id": "c106",
+          "description": "Categories1 --optional--> Multipleclassification"
+        },
+        {
+          "id": "c1131",
+          "description": "Externalreferringpages excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c111",
+          "description": "Searching --alternative--> ['Basicsearch', 'Advancedsearch']"
+        },
+        {
+          "id": "c115",
+          "description": "Browsing --mandatory--> Productpage"
+        },
+        {
+          "id": "c118",
+          "description": "Browsing --optional--> Categorypage"
+        },
+        {
+          "id": "c120",
+          "description": "Browsing --optional--> Indexpage"
+        },
+        {
+          "id": "c122",
+          "description": "Indexpage --optional--> Sortingfilters"
+        },
+        {
+          "id": "c123",
+          "description": "Sortingfilters --alternative--> ['Price', 'Quality', 'Price_Qualityratio', 'Manufacturername', 'Customfilter']"
+        },
+        {
+          "id": "c128",
+          "description": "Customviews --optional--> Seasonalproductviews"
+        },
+        {
+          "id": "c130",
+          "description": "Customviews --optional--> Personalizedviews"
+        },
+        {
+          "id": "c1155",
+          "description": "Externalreferringpages excludes Shippingoptions"
+        },
+        {
+          "id": "c138",
+          "description": "Wishlist --optional--> Multiplewishlists"
+        },
+        {
+          "id": "c142",
+          "description": "Permissions --or--> ['Publicaccess', 'Restrictedaccess', 'Privateaccess']"
+        },
+        {
+          "id": "c144",
+          "description": "Storefront --optional--> Buypaths"
+        },
+        {
+          "id": "c145",
+          "description": "Buypaths --mandatory--> Shoppingcart"
+        },
+        {
+          "id": "c147",
+          "description": "Shoppingcart --mandatory--> Inventorymanagementpolicy"
+        },
+        {
+          "id": "c149",
+          "description": "Shoppingcart --mandatory--> Cartcontentpage"
+        },
+        {
+          "id": "c156",
+          "description": "Buypaths --optional--> Checkout"
+        },
+        {
+          "id": "c157",
+          "description": "Checkout --mandatory--> Checkouttype"
+        },
+        {
+          "id": "c159",
+          "description": "Checkouttype --alternative--> ['Registeredcheckout', 'Guestcheckout']"
+        },
+        {
+          "id": "c164",
+          "description": "Quickcheckout --optional--> Enableprofileupdateoncheckout"
+        },
+        {
+          "id": "c168",
+          "description": "Shippingoptions --optional--> Qualityofserviceselection"
+        },
+        {
+          "id": "c170",
+          "description": "Shippingoptions --optional--> Carrierselection"
+        },
+        {
+          "id": "c172",
+          "description": "Shippingoptions --optional--> Giftoptions"
+        },
+        {
+          "id": "c174",
+          "description": "Shippingoptions --optional--> Multipleshipments"
+        },
+        {
+          "id": "c175",
+          "description": "Shippingoptions --mandatory--> Shippingcostcalculation"
+        },
+        {
+          "id": "c178",
+          "description": "Checkout --optional--> Taxationoptions"
+        },
+        {
+          "id": "c1203",
+          "description": "Inventorytracking excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c180",
+          "description": "Taxationoptions --or--> ['Customtaxation', 'Taxgateways']"
+        },
+        {
+          "id": "c181",
+          "description": "Customtaxation --mandatory--> FType"
+        },
+        {
+          "id": "c184",
+          "description": "FType --or--> ['Fixed_ratetaxation', 'Rule_basedtaxation']"
+        },
+        {
+          "id": "c185",
+          "description": "Rule_basedtaxation --mandatory--> Taxcodes"
+        },
+        {
+          "id": "c187",
+          "description": "Rule_basedtaxation --mandatory--> Address"
+        },
+        {
+          "id": "c189",
+          "description": "Address --mandatory--> Shipping"
+        },
+        {
+          "id": "c192",
+          "description": "Address --optional--> Billing"
+        },
+        {
+          "id": "c194",
+          "description": "Rule_basedtaxation --optional--> Resolution"
+        },
+        {
+          "id": "c195",
+          "description": "Resolution --alternative--> ['Country', 'Region', 'City']"
+        },
+        {
+          "id": "c197",
+          "description": "Customtaxation --mandatory--> Ammountspecification"
+        },
+        {
+          "id": "c199",
+          "description": "Ammountspecification --alternative--> ['Surcharge', 'Percentage']"
+        },
+        {
+          "id": "c201",
+          "description": "Taxgateways --alternative--> ['CertiTAX', 'CyberSource', 'Customtaxgateway']"
+        },
+        {
+          "id": "c1227",
+          "description": "Inventorytracking excludes Shippingoptions"
+        },
+        {
+          "id": "c203",
+          "description": "Checkout --mandatory--> Paymentoptions"
+        },
+        {
+          "id": "c205",
+          "description": "Paymentoptions --mandatory--> Paymenttypes"
+        },
+        {
+          "id": "c208",
+          "description": "Paymenttypes --or--> ['COD', 'Creditcard', 'Debitcard', 'Eletroniccheque', 'Faxmailorder', 'Purchaseorder', 'Giftcertificate', 'Phoneorder', 'Custompaymenttype']"
+        },
+        {
+          "id": "c1233",
+          "description": "Inventorytracking excludes Specialoffers"
+        },
+        {
+          "id": "c214",
+          "description": "Paymentgateways --or--> ['Authorize_Net', 'CyberSource1', 'LinkPoint', 'Paradata', 'SkipJack', 'VerisignPayflowPro', 'Custompaymentgateway']"
+        },
+        {
+          "id": "c1239",
+          "description": "Inventorytracking excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c215",
+          "description": "Buypaths --mandatory--> Orderconfirmation"
+        },
+        {
+          "id": "c217",
+          "description": "Orderconfirmation --alternative--> ['Eletronicpage', 'E_mail', 'Phone', 'Mail']"
+        },
+        {
+          "id": "c219",
+          "description": "Buypaths --mandatory--> Buypaths_4"
+        },
+        {
+          "id": "c221",
+          "description": "Buypaths_4 --mandatory--> PhoneOrdering"
+        },
+        {
+          "id": "c223",
+          "description": "PhoneOrdering --mandatory--> DigitalDialing"
+        },
+        {
+          "id": "c1248",
+          "description": "Inventorytracking excludes Wishlistcontent"
+        },
+        {
+          "id": "c230",
+          "description": "Customerservice --or--> ['Questionandfeedbackforms', 'Productreturns', 'Orderstatusreview', 'Shipmentstatustracking']"
+        },
+        {
+          "id": "c232",
+          "description": "Questionandfeedbackforms --optional--> Questionandfeedbacktracking"
+        },
+        {
+          "id": "c233",
+          "description": "Orderstatusreview --mandatory--> Filteringcriteria"
+        },
+        {
+          "id": "c235",
+          "description": "Filteringcriteria --alternative--> ['Ordernumber', 'Orderdate', 'Orderstatus']"
+        },
+        {
+          "id": "c238",
+          "description": "Orderstatusreview --optional--> Requestorderhardcopy"
+        },
+        {
+          "id": "c239",
+          "description": "Shipmentstatustracking --alternative--> ['Internaltracking', 'Partnertracking']"
+        },
+        {
+          "id": "c1263",
+          "description": "Locallyvisitedpages excludes Preferences"
+        },
+        {
+          "id": "c243",
+          "description": "Userbehaviourtracking --mandatory--> Behaviourtracked"
+        },
+        {
+          "id": "c246",
+          "description": "Behaviourtracked --or--> ['Locallyvisitedpages', 'Externalreferringpages', 'Previouspurchases1']"
+        },
+        {
+          "id": "c250",
+          "description": "Businessmanagement --optional--> Ordermanagement"
+        },
+        {
+          "id": "c252",
+          "description": "Ordermanagement --optional--> Fulfillment"
+        },
+        {
+          "id": "c254",
+          "description": "Fulfillment --or--> ['Physicalgoodsfulfillment', 'Eletronicgoodsfulfillment', 'Servicesfulfillment']"
+        },
+        {
+          "id": "c255",
+          "description": "Physicalgoodsfulfillment --mandatory--> Warehousemanagement"
+        },
+        {
+          "id": "c260",
+          "description": "Shipping1 --or--> ['Customshippingmethod', 'Shippinggateways']"
+        },
+        {
+          "id": "c261",
+          "description": "Customshippingmethod --mandatory--> Pricing"
+        },
+        {
+          "id": "c263",
+          "description": "Pricing --mandatory--> Flatrate"
+        },
+        {
+          "id": "c266",
+          "description": "Pricing --optional--> Ratefactors"
+        },
+        {
+          "id": "c267",
+          "description": "Ratefactors --alternative--> ['Quantitypurchased', 'Ordertotal', 'Weight1', 'Productclassification']"
+        },
+        {
+          "id": "c269",
+          "description": "Shippinggateways --alternative--> ['FedEX', 'UPS', 'USPS', 'CanadaPost', 'Customshippinggateway']"
+        },
+        {
+          "id": "c271",
+          "description": "Eletronicgoodsfulfillment --mandatory--> Filerepository"
+        },
+        {
+          "id": "c273",
+          "description": "Eletronicgoodsfulfillment --mandatory--> Licensemanagement"
+        },
+        {
+          "id": "c276",
+          "description": "Servicesfulfillment --optional--> Appointmentscheduling"
+        },
+        {
+          "id": "c278",
+          "description": "Servicesfulfillment --optional--> Resourceplanning"
+        },
+        {
+          "id": "c281",
+          "description": "Targeting --mandatory--> Targetingcriteria"
+        },
+        {
+          "id": "c283",
+          "description": "Targetingcriteria --alternative--> ['Customerpreferences', 'Personalinformation', 'Demographics1', 'Previouspurchases', 'Shoppingcartcontent', 'Wishlistcontent', 'Previouslyvisitedpages', 'Dateandtime', 'Customtargetcriteria']"
+        },
+        {
+          "id": "c285",
+          "description": "Targeting --mandatory--> Targetingmechanisms"
+        },
+        {
+          "id": "c287",
+          "description": "Targetingmechanisms --alternative--> ['Advertisements', 'Discounts', 'Sellstrategies']"
+        },
+        {
+          "id": "c289",
+          "description": "Advertisements --mandatory--> Advertisementtypes"
+        },
+        {
+          "id": "c291",
+          "description": "Advertisementtypes --alternative--> ['Bannerads', 'Pop_upads']"
+        },
+        {
+          "id": "c293",
+          "description": "Advertisements --mandatory--> Advertisementsources"
+        },
+        {
+          "id": "c295",
+          "description": "Advertisementsources --alternative--> ['Houseadvertisements', 'Paidadvertisements']"
+        },
+        {
+          "id": "c297",
+          "description": "Paidadvertisements --mandatory--> Advertisementmanagementinterface"
+        },
+        {
+          "id": "c300",
+          "description": "Advertisements --optional--> Advertisementresponsetracking"
+        },
+        {
+          "id": "c302",
+          "description": "Advertisements --optional--> Contextsensitiveads"
+        },
+        {
+          "id": "c303",
+          "description": "Discounts --mandatory--> Discountconditions"
+        },
+        {
+          "id": "c305",
+          "description": "Discountconditions --mandatory--> Productandquantityscope"
+        },
+        {
+          "id": "c307",
+          "description": "Discountconditions --mandatory--> Timescope"
+        },
+        {
+          "id": "c310",
+          "description": "Discountconditions --optional--> Purchasevaluescope"
+        },
+        {
+          "id": "c311",
+          "description": "Discounts --mandatory--> Award"
+        },
+        {
+          "id": "c1338",
+          "description": "Permissions excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c314",
+          "description": "Award --or--> ['Percentagediscount', 'Fixeddiscount', 'Freeitem']"
+        },
+        {
+          "id": "c315",
+          "description": "Discounts --mandatory--> Eligibilityrequirements"
+        },
+        {
+          "id": "c1339",
+          "description": "Permissions requires Registeredcheckout"
+        },
+        {
+          "id": "c318",
+          "description": "Eligibilityrequirements --optional--> Customersegments"
+        },
+        {
+          "id": "c320",
+          "description": "Eligibilityrequirements --optional--> Shippingaddress1"
+        },
+        {
+          "id": "c321",
+          "description": "Discounts --mandatory--> Graduationby"
+        },
+        {
+          "id": "c323",
+          "description": "Graduationby --alternative--> ['Purchasevalue', 'Quantity']"
+        },
+        {
+          "id": "c326",
+          "description": "Discounts --optional--> Coupons"
+        },
+        {
+          "id": "c327",
+          "description": "Discounts --mandatory--> Handlingmultiplediscounts"
+        },
+        {
+          "id": "c329",
+          "description": "Sellstrategies --alternative--> ['Productkitting', 'Up_selling', 'Cross_selling']"
+        },
+        {
+          "id": "c331",
+          "description": "Up_selling --mandatory--> Substituteproducts"
+        },
+        {
+          "id": "c333",
+          "description": "Cross_selling --mandatory--> Pastcustomersalsobought"
+        },
+        {
+          "id": "c335",
+          "description": "Targeting --mandatory--> Displayandnotification"
+        },
+        {
+          "id": "c337",
+          "description": "Displayandnotification --alternative--> ['Assignmenttopagetypesfordisplay', 'Productflagging', 'E_mails']"
+        },
+        {
+          "id": "c1362",
+          "description": "Permissions excludes Shippingoptions"
+        },
+        {
+          "id": "c340",
+          "description": "E_mails --optional--> Personalized1"
+        },
+        {
+          "id": "c342",
+          "description": "E_mails --optional--> Responsetracking"
+        },
+        {
+          "id": "c344",
+          "description": "Targeting --optional--> Campaigns"
+        },
+        {
+          "id": "c1371",
+          "description": "Permissions excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c347",
+          "description": "Affiliates --mandatory--> Affiliateregistration"
+        },
+        {
+          "id": "c349",
+          "description": "Affiliates --mandatory--> Commissiontracking"
+        },
+        {
+          "id": "c354",
+          "description": "Inventorytracking --optional--> Allowbackorders"
+        },
+        {
+          "id": "c357",
+          "description": "Procurement --mandatory--> Stockreplenishment"
+        },
+        {
+          "id": "c359",
+          "description": "Stockreplenishment --mandatory--> Manual"
+        },
+        {
+          "id": "c1383",
+          "description": "Permissions excludes Wishlistcontent"
+        },
+        {
+          "id": "c362",
+          "description": "Stockreplenishment --optional--> Automatic"
+        },
+        {
+          "id": "c363",
+          "description": "Automatic --mandatory--> Non_repudiationservice"
+        },
+        {
+          "id": "c367",
+          "description": "Reportingandanalysis --mandatory--> Reporttypes"
+        },
+        {
+          "id": "c369",
+          "description": "Reportingandanalysis --mandatory--> Reportformats"
+        },
+        {
+          "id": "c371",
+          "description": "Reportingandanalysis --mandatory--> Levelofdetail"
+        },
+        {
+          "id": "c375",
+          "description": "Externalsystemsintegration --alternative--> ['Fulfillmentsystem', 'Inventorymanagementsystem', 'Procurementsystem', 'Externaldistributorsystem']"
+        },
+        {
+          "id": "c377",
+          "description": "Businessmanagement --mandatory--> Administration"
+        },
+        {
+          "id": "c379",
+          "description": "Administration --mandatory--> Contentmanagement"
+        },
+        {
+          "id": "c381",
+          "description": "Contentmanagement --mandatory--> Productdatabasemanagement"
+        },
+        {
+          "id": "c383",
+          "description": "Contentmanagement --mandatory--> Presentationoptions"
+        },
+        {
+          "id": "c385",
+          "description": "Contentmanagement --mandatory--> Generallayoutmanagement"
+        },
+        {
+          "id": "c389",
+          "description": "Administration --mandatory--> Storeadministration"
+        },
+        {
+          "id": "c391",
+          "description": "Storeadministration --mandatory--> Sitesearch"
+        },
+        {
+          "id": "c393",
+          "description": "Storeadministration --mandatory--> Searchengineregistration"
+        },
+        {
+          "id": "c1419",
+          "description": "Physicalgoods excludes Servicesfulfillment"
+        },
+        {
+          "id": "c395",
+          "description": "Storeadministration --mandatory--> Domainnamesetup"
+        },
+        {
+          "id": "c1420",
+          "description": "Physicalgoods requires Shipping1"
+        },
+        {
+          "id": "c399",
+          "description": "Availability excludes Categories"
+        },
+        {
+          "id": "c1426",
+          "description": "Physicalgoods requires Size"
+        },
+        {
+          "id": "c1430",
+          "description": "Specialoffers requires Physicalgoods"
+        },
+        {
+          "id": "c1438",
+          "description": "Physicalgoods requires Weight"
+        },
+        {
+          "id": "c421",
+          "description": "Availability requires Inventorytracking"
+        },
+        {
+          "id": "c1445",
+          "description": "Wishlistcontent requires Physicalgoods"
+        },
+        {
+          "id": "c429",
+          "description": "Availability excludes Permissions"
+        },
+        {
+          "id": "c1480",
+          "description": "Physicalgoodsfulfillment requires Shipping1"
+        },
+        {
+          "id": "c1481",
+          "description": "Shipping1 requires Physicalgoodsfulfillment"
+        },
+        {
+          "id": "c1484",
+          "description": "Shippingoptions requires Physicalgoodsfulfillment"
+        },
+        {
+          "id": "c1497",
+          "description": "Physicalgoodsfulfillment excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c480",
+          "description": "Availability excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c497",
+          "description": "Categorypage requires Categories"
+        },
+        {
+          "id": "c1528",
+          "description": "Preferences requires Registrationenforcement"
+        },
+        {
+          "id": "c507",
+          "description": "Categories excludes E_mailwishlist"
+        },
+        {
+          "id": "c1542",
+          "description": "Preferences excludes Shippingoptions"
+        },
+        {
+          "id": "c522",
+          "description": "Categories excludes Locallyvisitedpages"
+        },
+        {
+          "id": "c1563",
+          "description": "Preferences excludes Wishlistcontent"
+        },
+        {
+          "id": "c543",
+          "description": "Categories excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c544",
+          "description": "Categories requires Registeredcheckout"
+        },
+        {
+          "id": "c567",
+          "description": "Categories excludes Shippingoptions"
+        },
+        {
+          "id": "c579",
+          "description": "Categories excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c588",
+          "description": "Categories excludes Wishlistcontent"
+        },
+        {
+          "id": "c597",
+          "description": "Categorypage excludes Discounts"
+        },
+        {
+          "id": "c1621",
+          "description": "Quickcheckout requires Quickcheckoutprofile"
+        },
+        {
+          "id": "c606",
+          "description": "Categorypage excludes Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c612",
+          "description": "Categorypage excludes Inventorytracking"
+        },
+        {
+          "id": "c618",
+          "description": "Categorypage excludes Permissions"
+        },
+        {
+          "id": "c1642",
+          "description": "Quickcheckout requires Shipping1"
+        },
+        {
+          "id": "c627",
+          "description": "Categorypage excludes Preferences"
+        },
+        {
+          "id": "c1656",
+          "description": "Quickcheckout excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1660",
+          "description": "Quickcheckout requires Weight"
+        },
+        {
+          "id": "c1672",
+          "description": "Quickcheckoutprofile requires Registeredcheckout"
+        },
+        {
+          "id": "c669",
+          "description": "Categorypage excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1695",
+          "description": "Quickcheckoutprofile excludes Shippingoptions"
+        },
+        {
+          "id": "c1707",
+          "description": "Quickcheckoutprofile excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c1716",
+          "description": "Quickcheckoutprofile excludes Wishlistcontent"
+        },
+        {
+          "id": "c1720",
+          "description": "Registeredcheckout requires Registertobuy"
+        },
+        {
+          "id": "c1739",
+          "description": "Shippingoptions requires Registeredcheckout"
+        },
+        {
+          "id": "c715",
+          "description": "Customerpreferences requires Preferences"
+        },
+        {
+          "id": "c719",
+          "description": "Previouslyvisitedpages requires Customerpreferences"
+        },
+        {
+          "id": "c1751",
+          "description": "Userbehaviourtrackinginformation requires Registeredcheckout"
+        },
+        {
+          "id": "c1760",
+          "description": "Wishlistcontent requires Registeredcheckout"
+        },
+        {
+          "id": "c761",
+          "description": "Userbehaviourtrackinginformation requires Customerpreferences"
+        },
+        {
+          "id": "c777",
+          "description": "Discounts excludes E_mailwishlist"
+        },
+        {
+          "id": "c783",
+          "description": "Discounts excludes Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c1807",
+          "description": "Registration requires Registrationenforcement"
+        },
+        {
+          "id": "c1808",
+          "description": "Registrationenforcement requires Registration"
+        }
+      ],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [
+        "c1820",
+        "c1827",
+        "c806",
+        "c807",
+        "c1832",
+        "c810",
+        "c1837",
+        "c1841",
+        "c1843",
+        "c1856",
+        "c1863",
+        "c1868",
+        "c1873",
+        "c849",
+        "c1877",
+        "c1883",
+        "c864",
+        "c867",
+        "c870",
+        "c1896",
+        "c876",
+        "c1901",
+        "c882",
+        "c885",
+        "c1911",
+        "c890",
+        "c891",
+        "c894",
+        "c1926",
+        "c904",
+        "c1931",
+        "c910",
+        "c913",
+        "c1941",
+        "c921",
+        "c1946",
+        "c927",
+        "c1952",
+        "c933",
+        "c1959",
+        "c937",
+        "c942",
+        "c1967",
+        "c943",
+        "c951",
+        "c1977",
+        "c1983",
+        "c963",
+        "c1987",
+        "c1993",
+        "c971",
+        "c972",
+        "c1997",
+        "c975",
+        "c978",
+        "c985",
+        "c988",
+        "c2012",
+        "c993",
+        "c2019",
+        "c2022",
+        "c2023",
+        "c1002",
+        "c1003",
+        "c2028",
+        "c2031",
+        "c1008",
+        "c1014",
+        "c1018",
+        "c1023",
+        "c1024",
+        "c1",
+        "c2",
+        "c4",
+        "c6",
+        "c2053",
+        "c8",
+        "c2058",
+        "c10",
+        "c2059",
+        "c12",
+        "c14",
+        "c16",
+        "c17",
+        "c2066",
+        "c18",
+        "c22",
+        "c2072",
+        "c24",
+        "c1049",
+        "c2074",
+        "c2075",
+        "c1050",
+        "c2077",
+        "c1053",
+        "c36",
+        "c38",
+        "c1063",
+        "c40",
+        "c46",
+        "c50",
+        "c56",
+        "c60",
+        "c1086",
+        "c62",
+        "c64",
+        "c66",
+        "c67",
+        "c1092",
+        "c70",
+        "c1096",
+        "c72",
+        "c74",
+        "c76",
+        "c1101",
+        "c78",
+        "c1102",
+        "c86",
+        "c1113",
+        "c90",
+        "c92",
+        "c94",
+        "c96",
+        "c98",
+        "c1124",
+        "c100",
+        "c1125",
+        "c1128",
+        "c108",
+        "c110",
+        "c112",
+        "c114",
+        "c116",
+        "c124",
+        "c126",
+        "c132",
+        "c133",
+        "c134",
+        "c136",
+        "c1161",
+        "c1162",
+        "c140",
+        "c1167",
+        "c143",
+        "c146",
+        "c148",
+        "c150",
+        "c1176",
+        "c152",
+        "c154",
+        "c155",
+        "c158",
+        "c160",
+        "c162",
+        "c166",
+        "c1196",
+        "c1197",
+        "c1200",
+        "c176",
+        "c177",
+        "c182",
+        "c186",
+        "c188",
+        "c190",
+        "c196",
+        "c198",
+        "c200",
+        "c202",
+        "c204",
+        "c206",
+        "c210",
+        "c212",
+        "c216",
+        "c218",
+        "c220",
+        "c222",
+        "c224",
+        "c226",
+        "c228",
+        "c1254",
+        "c234",
+        "c236",
+        "c240",
+        "c1265",
+        "c1266",
+        "c242",
+        "c244",
+        "c1269",
+        "c247",
+        "c248",
+        "c249",
+        "c251",
+        "c256",
+        "c257",
+        "c258",
+        "c262",
+        "c264",
+        "c268",
+        "c270",
+        "c272",
+        "c274",
+        "c1302",
+        "c1303",
+        "c280",
+        "c282",
+        "c284",
+        "c1308",
+        "c286",
+        "c288",
+        "c290",
+        "c292",
+        "c1317",
+        "c294",
+        "c296",
+        "c298",
+        "c304",
+        "c306",
+        "c1331",
+        "c308",
+        "c1332",
+        "c1335",
+        "c312",
+        "c316",
+        "c1342",
+        "c1345",
+        "c322",
+        "c1348",
+        "c324",
+        "c328",
+        "c330",
+        "c332",
+        "c334",
+        "c336",
+        "c338",
+        "c1368",
+        "c346",
+        "c348",
+        "c1374",
+        "c350",
+        "c352",
+        "c1378",
+        "c356",
+        "c358",
+        "c1384",
+        "c360",
+        "c1387",
+        "c364",
+        "c366",
+        "c368",
+        "c1394",
+        "c370",
+        "c1395",
+        "c372",
+        "c374",
+        "c376",
+        "c378",
+        "c380",
+        "c382",
+        "c384",
+        "c386",
+        "c388",
+        "c390",
+        "c392",
+        "c1416",
+        "c394",
+        "c396",
+        "c402",
+        "c411",
+        "c1437",
+        "c420",
+        "c426",
+        "c1454",
+        "c1455",
+        "c1457",
+        "c440",
+        "c441",
+        "c444",
+        "c447",
+        "c1490",
+        "c471",
+        "c477",
+        "c1505",
+        "c483",
+        "c1511",
+        "c1512",
+        "c492",
+        "c1525",
+        "c1548",
+        "c1553",
+        "c1558",
+        "c536",
+        "c537",
+        "c1564",
+        "c540",
+        "c1567",
+        "c1569",
+        "c1570",
+        "c547",
+        "c1572",
+        "c1573",
+        "c550",
+        "c1575",
+        "c1576",
+        "c553",
+        "c1578",
+        "c1579",
+        "c1581",
+        "c1582",
+        "c1584",
+        "c1585",
+        "c1587",
+        "c1588",
+        "c1590",
+        "c1591",
+        "c1593",
+        "c1594",
+        "c1596",
+        "c1597",
+        "c573",
+        "c1599",
+        "c1600",
+        "c1602",
+        "c1603",
+        "c1605",
+        "c1606",
+        "c583",
+        "c1608",
+        "c1609",
+        "c1611",
+        "c1612",
+        "c589",
+        "c1614",
+        "c1615",
+        "c1617",
+        "c1618",
+        "c594",
+        "c1620",
+        "c600",
+        "c1624",
+        "c603",
+        "c1627",
+        "c1630",
+        "c1633",
+        "c609",
+        "c615",
+        "c1647",
+        "c1653",
+        "c629",
+        "c630",
+        "c633",
+        "c1659",
+        "c636",
+        "c637",
+        "c1663",
+        "c640",
+        "c643",
+        "c1668",
+        "c1669",
+        "c646",
+        "c1675",
+        "c1678",
+        "c1681",
+        "c660",
+        "c666",
+        "c672",
+        "c676",
+        "c1701",
+        "c681",
+        "c682",
+        "c1711",
+        "c690",
+        "c1717",
+        "c1723",
+        "c699",
+        "c1726",
+        "c705",
+        "c720",
+        "c1746",
+        "c1756",
+        "c733",
+        "c736",
+        "c1762",
+        "c1765",
+        "c1768",
+        "c750",
+        "c756",
+        "c1781",
+        "c1788",
+        "c766",
+        "c1793",
+        "c771",
+        "c772",
+        "c1798",
+        "c1802",
+        "c780",
+        "c1804",
+        "c786",
+        "c792"
+      ],
+      "statistics": {
+        "n_bias": 2079,
+        "n_mss": 648,
+        "n_kb": 251
+      },
+      "train_size": {
+        "positive": 174,
+        "negative": 19
+      },
+      "test_size": {
+        "positive": 88,
+        "negative": 10
+      },
+      "evaluation": null
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 0.8556701030927835,
+      "metrics": {
+        "accuracy": 0.8556701030927835,
+        "precision": 1.0,
+        "recall": 0.8390804597701149,
+        "f1_score": 0.9125,
+        "specificity": 1.0,
+        "true_positives": 73,
+        "true_negatives": 10,
+        "false_positives": 0,
+        "false_negatives": 14
+      },
+      "performance": {
+        "runtime_ms": 724082.2001670022,
+        "consistency_checks": 3623,
+        "memory_peak_mb": 29.813512802124023,
+        "n_mss": 687,
+        "n_kb": 237,
+        "congen_runtime_ms": 712327.6796250138,
+        "acqmss_runtime_ms": 7409053.3901666645,
+        "acqmss_calls": 3915,
+        "reduce_runtime_ms": 1719.899042014731,
+        "solver_time_ms": 56134.473000059756,
+        "is_consistent_calls": 325018,
+        "is_consistent_test_cases_calls": 3623,
+        "redundancy_consistency_checks": 688,
+        "quacq_runtime_ms": 0.0,
+        "query_generation_runtime_ms": 0.0,
+        "findscope_runtime_ms": 0.0,
+        "findc_runtime_ms": 0.0,
+        "dis_gen_runtime_ms": 0.0,
+        "quacq_calls": 0,
+        "query_generation_calls": 0,
+        "query_generation_consistency_checks": 0,
+        "prune_calls": 0,
+        "prune_is_consistent_calls": 0,
+        "findscope_calls": 0,
+        "findc_calls": 0,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 0,
+        "profiler": {
+          "solver_time": {
+            "count": 325018,
+            "total": 56.13447300005976,
+            "mean": 0.00017271188980321015,
+            "min": 3.299999991668301e-05,
+            "max": 0.001778000000058455,
+            "median": 7.100000016180275e-05,
+            "stddev": 0.00015807621914799654
+          },
+          "is_consistent_calls": 325018,
+          "qx_runtime": {
+            "count": 427,
+            "total": 73.64617458486464,
+            "mean": 0.17247347677954247,
+            "min": 5.083013093098998e-06,
+            "max": 0.9787100419925991,
+            "median": 0.04629699999350123,
+            "stddev": 0.20089817100239796
+          },
+          "qx_calls": 427,
+          "quickxplain_calls": 19,
+          "quickxplain_runtime": {
+            "count": 19,
+            "total": 11.472100628016051,
+            "mean": 0.6037947698955817,
+            "min": 0.3965955839958042,
+            "max": 1.0130936249915976,
+            "median": 0.6326944169995841,
+            "stddev": 0.17444531765402455
+          },
+          "solver_time_accum": 56.04759100006049,
+          "is_consistent_test_cases_calls": 3623,
+          "paper_consistency_checks": 3623,
+          "acqmss_calls": 3915,
+          "acqmss_runtime": {
+            "count": 3915,
+            "total": 7409.053390166664,
+            "mean": 1.8924785160068107,
+            "min": 7.374997949227691e-06,
+            "max": 710.3550639589957,
+            "median": 0.2484204999927897,
+            "stddev": 16.005211779536435
+          },
+          "redundancy_consistency_checks": 688,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 1.719899042014731,
+            "mean": 1.719899042014731,
+            "min": 1.719899042014731,
+            "max": 1.719899042014731
+          },
+          "congen_calls": 1,
+          "congen_runtime": {
+            "count": 1,
+            "total": 712.3276796250138,
+            "mean": 712.3276796250138,
+            "min": 712.3276796250138,
+            "max": 712.3276796250138
+          },
+          "congen_total_time": {
+            "count": 1,
+            "total": 724.0822001670022,
+            "mean": 724.0822001670022,
+            "min": 724.0822001670022,
+            "max": 724.0822001670022
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c795",
+          "description": "Discounts excludes Permissions"
+        },
+        {
+          "id": "c813",
+          "description": "Discounts excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c846",
+          "description": "Discounts excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1879",
+          "description": "Registrationenforcement requires Wishlistsaveaftersession"
+        },
+        {
+          "id": "c1880",
+          "description": "Wishlistsaveaftersession requires Registrationenforcement"
+        },
+        {
+          "id": "c1882",
+          "description": "Services requires Servicesfulfillment"
+        },
+        {
+          "id": "c858",
+          "description": "Discounts excludes Wishlistcontent"
+        },
+        {
+          "id": "(NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(Timedependent = true & Variationsource = false) AND NOT(Timescope = false & Variationsource = true & Welcomemessage = false) AND NOT(Warehousemanagement = false & Weight1 = true) AND NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Timedependent = true & Variationsource = false) AND NOT(Targetingcriteria = false & Wishlistcontent = true) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Taxationoptions = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false))",
+          "description": "(NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(Timedependent = true & Variationsource = false) AND NOT(Timescope = false & Variationsource = true & Welcomemessage = false) AND NOT(Warehousemanagement = false & Weight1 = true) AND NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Timedependent = true & Variationsource = false) AND NOT(Targetingcriteria = false & Wishlistcontent = true) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Taxationoptions = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false))"
+        },
+        {
+          "id": "c946",
+          "description": "Eletronicgoods requires Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c2004",
+          "description": "Size excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c2013",
+          "description": "Size excludes Wishlistcontent"
+        },
+        {
+          "id": "c996",
+          "description": "Eletronicgoods excludes Servicesfulfillment"
+        },
+        {
+          "id": "c2034",
+          "description": "Specialoffers excludes Wishlistsaveaftersession"
+        },
+        {
+          "id": "c2036",
+          "description": "Userbehaviourtrackinginformation requires Userbehaviourtracking"
+        },
+        {
+          "id": "c2046",
+          "description": "Userbehaviourtracking excludes Wishlistcontent"
+        },
+        {
+          "id": "c2052",
+          "description": "Userbehaviourtrackinginformation excludes Weight"
+        },
+        {
+          "id": "c6",
+          "description": "Homepage --or--> ['Staticcontent', 'Dynamiccontent']"
+        },
+        {
+          "id": "c7",
+          "description": "Dynamiccontent --mandatory--> Contenttype"
+        },
+        {
+          "id": "c9",
+          "description": "Contenttype --alternative--> ['Welcomemessage', 'Specialoffers']"
+        },
+        {
+          "id": "c11",
+          "description": "Dynamiccontent --mandatory--> Variationsource"
+        },
+        {
+          "id": "c13",
+          "description": "Variationsource --alternative--> ['Timedependent', 'Personalized']"
+        },
+        {
+          "id": "c2067",
+          "description": "Weight excludes Wishlistcontent"
+        },
+        {
+          "id": "c20",
+          "description": "Registrationenforcement --or--> ['Registertobrowse', 'Registertobuy', 'None']"
+        },
+        {
+          "id": "c21",
+          "description": "Registration --mandatory--> Registrationinformation"
+        },
+        {
+          "id": "c23",
+          "description": "Registrationinformation --mandatory--> Logincredentials"
+        },
+        {
+          "id": "c26",
+          "description": "Registrationinformation --optional--> Shippingaddress"
+        },
+        {
+          "id": "c28",
+          "description": "Shippingaddress --optional--> Multipleshippingaddresses"
+        },
+        {
+          "id": "c30",
+          "description": "Registrationinformation --optional--> Billingaddress"
+        },
+        {
+          "id": "c32",
+          "description": "Billingaddress --optional--> Multiplebillingaddresses"
+        },
+        {
+          "id": "c1056",
+          "description": "Eletronicgoodsfulfillment excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c1057",
+          "description": "Eletronicgoodsfulfillment requires Registeredcheckout"
+        },
+        {
+          "id": "c34",
+          "description": "Registrationinformation --optional--> Creditcardinformation"
+        },
+        {
+          "id": "c35",
+          "description": "Creditcardinformation --mandatory--> Cardholdername"
+        },
+        {
+          "id": "c37",
+          "description": "Creditcardinformation --mandatory--> Cardnumber"
+        },
+        {
+          "id": "c39",
+          "description": "Creditcardinformation --mandatory--> Expirydate"
+        },
+        {
+          "id": "c42",
+          "description": "Creditcardinformation --optional--> Securityinformation"
+        },
+        {
+          "id": "c44",
+          "description": "Registrationinformation --optional--> Demographics"
+        },
+        {
+          "id": "c45",
+          "description": "Demographics --alternative--> ['Age', 'Income', 'Education', 'CustomDemographicfield']"
+        },
+        {
+          "id": "c48",
+          "description": "Registrationinformation --optional--> PersonalInformation"
+        },
+        {
+          "id": "c52",
+          "description": "Preferences --or--> ['Sitelayout', 'Listsize', 'Language']"
+        },
+        {
+          "id": "c54",
+          "description": "Registrationinformation --optional--> Reminders"
+        },
+        {
+          "id": "c1081",
+          "description": "Eletronicgoodsfulfillment requires Size"
+        },
+        {
+          "id": "c58",
+          "description": "Registrationinformation --optional--> Customfields"
+        },
+        {
+          "id": "c61",
+          "description": "Storefront --mandatory--> Catalog"
+        },
+        {
+          "id": "c63",
+          "description": "Catalog --mandatory--> ProductInformation"
+        },
+        {
+          "id": "c65",
+          "description": "ProductInformation --mandatory--> Producttype"
+        },
+        {
+          "id": "c68",
+          "description": "Producttype --or--> ['Eletronicgoods', 'Physicalgoods', 'Services']"
+        },
+        {
+          "id": "c69",
+          "description": "ProductInformation --mandatory--> Basicinformation"
+        },
+        {
+          "id": "c1095",
+          "description": "Eletronicgoodsfulfillment excludes Weight"
+        },
+        {
+          "id": "c80",
+          "description": "Associatedassets --or--> ['Documents', 'Mediafiles']"
+        },
+        {
+          "id": "c82",
+          "description": "Mediafiles --or--> ['Image', 'Video', 'Sound']"
+        },
+        {
+          "id": "c1107",
+          "description": "Externalreferringpages excludes Inventorytracking"
+        },
+        {
+          "id": "c84",
+          "description": "Image --or--> ['Thumbnail', 'a2Dimage', 'a3Dimage', 'a360degreesimage', 'Differentperspectives', 'Gallery']"
+        },
+        {
+          "id": "c88",
+          "description": "Productvariants --optional--> Complexproductconfiguration"
+        },
+        {
+          "id": "c1122",
+          "description": "Externalreferringpages excludes Preferences"
+        },
+        {
+          "id": "c99",
+          "description": "Categories --mandatory--> Catalog1"
+        },
+        {
+          "id": "c102",
+          "description": "Catalog1 --optional--> Categories1"
+        },
+        {
+          "id": "c104",
+          "description": "Categories1 --optional--> Multi_level"
+        },
+        {
+          "id": "c106",
+          "description": "Categories1 --optional--> Multipleclassification"
+        },
+        {
+          "id": "c1131",
+          "description": "Externalreferringpages excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c111",
+          "description": "Searching --alternative--> ['Basicsearch', 'Advancedsearch']"
+        },
+        {
+          "id": "c115",
+          "description": "Browsing --mandatory--> Productpage"
+        },
+        {
+          "id": "c118",
+          "description": "Browsing --optional--> Categorypage"
+        },
+        {
+          "id": "c120",
+          "description": "Browsing --optional--> Indexpage"
+        },
+        {
+          "id": "c122",
+          "description": "Indexpage --optional--> Sortingfilters"
+        },
+        {
+          "id": "c123",
+          "description": "Sortingfilters --alternative--> ['Price', 'Quality', 'Price_Qualityratio', 'Manufacturername', 'Customfilter']"
+        },
+        {
+          "id": "c128",
+          "description": "Customviews --optional--> Seasonalproductviews"
+        },
+        {
+          "id": "c1152",
+          "description": "Externalreferringpages excludes Shipping1"
+        },
+        {
+          "id": "c130",
+          "description": "Customviews --optional--> Personalizedviews"
+        },
+        {
+          "id": "c1158",
+          "description": "Externalreferringpages excludes Size"
+        },
+        {
+          "id": "c138",
+          "description": "Wishlist --optional--> Multiplewishlists"
+        },
+        {
+          "id": "c142",
+          "description": "Permissions --or--> ['Publicaccess', 'Restrictedaccess', 'Privateaccess']"
+        },
+        {
+          "id": "c144",
+          "description": "Storefront --optional--> Buypaths"
+        },
+        {
+          "id": "c145",
+          "description": "Buypaths --mandatory--> Shoppingcart"
+        },
+        {
+          "id": "c1170",
+          "description": "Externalreferringpages excludes Weight"
+        },
+        {
+          "id": "c147",
+          "description": "Shoppingcart --mandatory--> Inventorymanagementpolicy"
+        },
+        {
+          "id": "c149",
+          "description": "Shoppingcart --mandatory--> Cartcontentpage"
+        },
+        {
+          "id": "c156",
+          "description": "Buypaths --optional--> Checkout"
+        },
+        {
+          "id": "c157",
+          "description": "Checkout --mandatory--> Checkouttype"
+        },
+        {
+          "id": "c159",
+          "description": "Checkouttype --alternative--> ['Registeredcheckout', 'Guestcheckout']"
+        },
+        {
+          "id": "c164",
+          "description": "Quickcheckout --optional--> Enableprofileupdateoncheckout"
+        },
+        {
+          "id": "c168",
+          "description": "Shippingoptions --optional--> Qualityofserviceselection"
+        },
+        {
+          "id": "c170",
+          "description": "Shippingoptions --optional--> Carrierselection"
+        },
+        {
+          "id": "c172",
+          "description": "Shippingoptions --optional--> Giftoptions"
+        },
+        {
+          "id": "c174",
+          "description": "Shippingoptions --optional--> Multipleshipments"
+        },
+        {
+          "id": "c175",
+          "description": "Shippingoptions --mandatory--> Shippingcostcalculation"
+        },
+        {
+          "id": "c178",
+          "description": "Checkout --optional--> Taxationoptions"
+        },
+        {
+          "id": "c179",
+          "description": "Taxationoptions --alternative--> ['Customtaxation', 'Taxgateways']"
+        },
+        {
+          "id": "c1203",
+          "description": "Inventorytracking excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c181",
+          "description": "Customtaxation --mandatory--> FType"
+        },
+        {
+          "id": "c184",
+          "description": "FType --or--> ['Fixed_ratetaxation', 'Rule_basedtaxation']"
+        },
+        {
+          "id": "c185",
+          "description": "Rule_basedtaxation --mandatory--> Taxcodes"
+        },
+        {
+          "id": "c187",
+          "description": "Rule_basedtaxation --mandatory--> Address"
+        },
+        {
+          "id": "c189",
+          "description": "Address --mandatory--> Shipping"
+        },
+        {
+          "id": "c192",
+          "description": "Address --optional--> Billing"
+        },
+        {
+          "id": "c194",
+          "description": "Rule_basedtaxation --optional--> Resolution"
+        },
+        {
+          "id": "c195",
+          "description": "Resolution --alternative--> ['Country', 'Region', 'City']"
+        },
+        {
+          "id": "c197",
+          "description": "Customtaxation --mandatory--> Ammountspecification"
+        },
+        {
+          "id": "c199",
+          "description": "Ammountspecification --alternative--> ['Surcharge', 'Percentage']"
+        },
+        {
+          "id": "c201",
+          "description": "Taxgateways --alternative--> ['CertiTAX', 'CyberSource', 'Customtaxgateway']"
+        },
+        {
+          "id": "c1227",
+          "description": "Inventorytracking excludes Shippingoptions"
+        },
+        {
+          "id": "c203",
+          "description": "Checkout --mandatory--> Paymentoptions"
+        },
+        {
+          "id": "c205",
+          "description": "Paymentoptions --mandatory--> Paymenttypes"
+        },
+        {
+          "id": "c208",
+          "description": "Paymenttypes --or--> ['COD', 'Creditcard', 'Debitcard', 'Eletroniccheque', 'Faxmailorder', 'Purchaseorder', 'Giftcertificate', 'Phoneorder', 'Custompaymenttype']"
+        },
+        {
+          "id": "c1233",
+          "description": "Inventorytracking excludes Specialoffers"
+        },
+        {
+          "id": "c214",
+          "description": "Paymentgateways --or--> ['Authorize_Net', 'CyberSource1', 'LinkPoint', 'Paradata', 'SkipJack', 'VerisignPayflowPro', 'Custompaymentgateway']"
+        },
+        {
+          "id": "c1239",
+          "description": "Inventorytracking excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c215",
+          "description": "Buypaths --mandatory--> Orderconfirmation"
+        },
+        {
+          "id": "c217",
+          "description": "Orderconfirmation --alternative--> ['Eletronicpage', 'E_mail', 'Phone', 'Mail']"
+        },
+        {
+          "id": "c219",
+          "description": "Buypaths --mandatory--> Buypaths_4"
+        },
+        {
+          "id": "c221",
+          "description": "Buypaths_4 --mandatory--> PhoneOrdering"
+        },
+        {
+          "id": "c223",
+          "description": "PhoneOrdering --mandatory--> DigitalDialing"
+        },
+        {
+          "id": "c1248",
+          "description": "Inventorytracking excludes Wishlistcontent"
+        },
+        {
+          "id": "c230",
+          "description": "Customerservice --or--> ['Questionandfeedbackforms', 'Productreturns', 'Orderstatusreview', 'Shipmentstatustracking']"
+        },
+        {
+          "id": "c232",
+          "description": "Questionandfeedbackforms --optional--> Questionandfeedbacktracking"
+        },
+        {
+          "id": "c233",
+          "description": "Orderstatusreview --mandatory--> Filteringcriteria"
+        },
+        {
+          "id": "c235",
+          "description": "Filteringcriteria --alternative--> ['Ordernumber', 'Orderdate', 'Orderstatus']"
+        },
+        {
+          "id": "c238",
+          "description": "Orderstatusreview --optional--> Requestorderhardcopy"
+        },
+        {
+          "id": "c239",
+          "description": "Shipmentstatustracking --alternative--> ['Internaltracking', 'Partnertracking']"
+        },
+        {
+          "id": "c1263",
+          "description": "Locallyvisitedpages excludes Preferences"
+        },
+        {
+          "id": "c243",
+          "description": "Userbehaviourtracking --mandatory--> Behaviourtracked"
+        },
+        {
+          "id": "c246",
+          "description": "Behaviourtracked --or--> ['Locallyvisitedpages', 'Externalreferringpages', 'Previouspurchases1']"
+        },
+        {
+          "id": "c250",
+          "description": "Businessmanagement --optional--> Ordermanagement"
+        },
+        {
+          "id": "c252",
+          "description": "Ordermanagement --optional--> Fulfillment"
+        },
+        {
+          "id": "c254",
+          "description": "Fulfillment --or--> ['Physicalgoodsfulfillment', 'Eletronicgoodsfulfillment', 'Servicesfulfillment']"
+        },
+        {
+          "id": "c255",
+          "description": "Physicalgoodsfulfillment --mandatory--> Warehousemanagement"
+        },
+        {
+          "id": "c260",
+          "description": "Shipping1 --or--> ['Customshippingmethod', 'Shippinggateways']"
+        },
+        {
+          "id": "c261",
+          "description": "Customshippingmethod --mandatory--> Pricing"
+        },
+        {
+          "id": "c263",
+          "description": "Pricing --mandatory--> Flatrate"
+        },
+        {
+          "id": "c266",
+          "description": "Pricing --optional--> Ratefactors"
+        },
+        {
+          "id": "c267",
+          "description": "Ratefactors --alternative--> ['Quantitypurchased', 'Ordertotal', 'Weight1', 'Productclassification']"
+        },
+        {
+          "id": "c270",
+          "description": "Shippinggateways --or--> ['FedEX', 'UPS', 'USPS', 'CanadaPost', 'Customshippinggateway']"
+        },
+        {
+          "id": "c271",
+          "description": "Eletronicgoodsfulfillment --mandatory--> Filerepository"
+        },
+        {
+          "id": "c273",
+          "description": "Eletronicgoodsfulfillment --mandatory--> Licensemanagement"
+        },
+        {
+          "id": "c276",
+          "description": "Servicesfulfillment --optional--> Appointmentscheduling"
+        },
+        {
+          "id": "c278",
+          "description": "Servicesfulfillment --optional--> Resourceplanning"
+        },
+        {
+          "id": "c281",
+          "description": "Targeting --mandatory--> Targetingcriteria"
+        },
+        {
+          "id": "c283",
+          "description": "Targetingcriteria --alternative--> ['Customerpreferences', 'Personalinformation', 'Demographics1', 'Previouspurchases', 'Shoppingcartcontent', 'Wishlistcontent', 'Previouslyvisitedpages', 'Dateandtime', 'Customtargetcriteria']"
+        },
+        {
+          "id": "c285",
+          "description": "Targeting --mandatory--> Targetingmechanisms"
+        },
+        {
+          "id": "c287",
+          "description": "Targetingmechanisms --alternative--> ['Advertisements', 'Discounts', 'Sellstrategies']"
+        },
+        {
+          "id": "c289",
+          "description": "Advertisements --mandatory--> Advertisementtypes"
+        },
+        {
+          "id": "c291",
+          "description": "Advertisementtypes --alternative--> ['Bannerads', 'Pop_upads']"
+        },
+        {
+          "id": "c293",
+          "description": "Advertisements --mandatory--> Advertisementsources"
+        },
+        {
+          "id": "c295",
+          "description": "Advertisementsources --alternative--> ['Houseadvertisements', 'Paidadvertisements']"
+        },
+        {
+          "id": "c297",
+          "description": "Paidadvertisements --mandatory--> Advertisementmanagementinterface"
+        },
+        {
+          "id": "c300",
+          "description": "Advertisements --optional--> Advertisementresponsetracking"
+        },
+        {
+          "id": "c302",
+          "description": "Advertisements --optional--> Contextsensitiveads"
+        },
+        {
+          "id": "c303",
+          "description": "Discounts --mandatory--> Discountconditions"
+        },
+        {
+          "id": "c305",
+          "description": "Discountconditions --mandatory--> Productandquantityscope"
+        },
+        {
+          "id": "c307",
+          "description": "Discountconditions --mandatory--> Timescope"
+        },
+        {
+          "id": "c310",
+          "description": "Discountconditions --optional--> Purchasevaluescope"
+        },
+        {
+          "id": "c311",
+          "description": "Discounts --mandatory--> Award"
+        },
+        {
+          "id": "c1338",
+          "description": "Permissions excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c314",
+          "description": "Award --or--> ['Percentagediscount', 'Fixeddiscount', 'Freeitem']"
+        },
+        {
+          "id": "c315",
+          "description": "Discounts --mandatory--> Eligibilityrequirements"
+        },
+        {
+          "id": "c318",
+          "description": "Eligibilityrequirements --optional--> Customersegments"
+        },
+        {
+          "id": "c320",
+          "description": "Eligibilityrequirements --optional--> Shippingaddress1"
+        },
+        {
+          "id": "c321",
+          "description": "Discounts --mandatory--> Graduationby"
+        },
+        {
+          "id": "c323",
+          "description": "Graduationby --alternative--> ['Purchasevalue', 'Quantity']"
+        },
+        {
+          "id": "c326",
+          "description": "Discounts --optional--> Coupons"
+        },
+        {
+          "id": "c327",
+          "description": "Discounts --mandatory--> Handlingmultiplediscounts"
+        },
+        {
+          "id": "c329",
+          "description": "Sellstrategies --alternative--> ['Productkitting', 'Up_selling', 'Cross_selling']"
+        },
+        {
+          "id": "c331",
+          "description": "Up_selling --mandatory--> Substituteproducts"
+        },
+        {
+          "id": "c333",
+          "description": "Cross_selling --mandatory--> Pastcustomersalsobought"
+        },
+        {
+          "id": "c335",
+          "description": "Targeting --mandatory--> Displayandnotification"
+        },
+        {
+          "id": "c337",
+          "description": "Displayandnotification --alternative--> ['Assignmenttopagetypesfordisplay', 'Productflagging', 'E_mails']"
+        },
+        {
+          "id": "c340",
+          "description": "E_mails --optional--> Personalized1"
+        },
+        {
+          "id": "c342",
+          "description": "E_mails --optional--> Responsetracking"
+        },
+        {
+          "id": "c344",
+          "description": "Targeting --optional--> Campaigns"
+        },
+        {
+          "id": "c1371",
+          "description": "Permissions excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c347",
+          "description": "Affiliates --mandatory--> Affiliateregistration"
+        },
+        {
+          "id": "c349",
+          "description": "Affiliates --mandatory--> Commissiontracking"
+        },
+        {
+          "id": "c354",
+          "description": "Inventorytracking --optional--> Allowbackorders"
+        },
+        {
+          "id": "c357",
+          "description": "Procurement --mandatory--> Stockreplenishment"
+        },
+        {
+          "id": "c1383",
+          "description": "Permissions excludes Wishlistcontent"
+        },
+        {
+          "id": "c359",
+          "description": "Stockreplenishment --mandatory--> Manual"
+        },
+        {
+          "id": "c1384",
+          "description": "Permissions requires Wishlistsaveaftersession"
+        },
+        {
+          "id": "c362",
+          "description": "Stockreplenishment --optional--> Automatic"
+        },
+        {
+          "id": "c363",
+          "description": "Automatic --mandatory--> Non_repudiationservice"
+        },
+        {
+          "id": "c367",
+          "description": "Reportingandanalysis --mandatory--> Reporttypes"
+        },
+        {
+          "id": "c369",
+          "description": "Reportingandanalysis --mandatory--> Reportformats"
+        },
+        {
+          "id": "c371",
+          "description": "Reportingandanalysis --mandatory--> Levelofdetail"
+        },
+        {
+          "id": "c375",
+          "description": "Externalsystemsintegration --alternative--> ['Fulfillmentsystem', 'Inventorymanagementsystem', 'Procurementsystem', 'Externaldistributorsystem']"
+        },
+        {
+          "id": "c377",
+          "description": "Businessmanagement --mandatory--> Administration"
+        },
+        {
+          "id": "c379",
+          "description": "Administration --mandatory--> Contentmanagement"
+        },
+        {
+          "id": "c381",
+          "description": "Contentmanagement --mandatory--> Productdatabasemanagement"
+        },
+        {
+          "id": "c383",
+          "description": "Contentmanagement --mandatory--> Presentationoptions"
+        },
+        {
+          "id": "c385",
+          "description": "Contentmanagement --mandatory--> Generallayoutmanagement"
+        },
+        {
+          "id": "c389",
+          "description": "Administration --mandatory--> Storeadministration"
+        },
+        {
+          "id": "c391",
+          "description": "Storeadministration --mandatory--> Sitesearch"
+        },
+        {
+          "id": "c393",
+          "description": "Storeadministration --mandatory--> Searchengineregistration"
+        },
+        {
+          "id": "c1419",
+          "description": "Physicalgoods excludes Servicesfulfillment"
+        },
+        {
+          "id": "c395",
+          "description": "Storeadministration --mandatory--> Domainnamesetup"
+        },
+        {
+          "id": "c1420",
+          "description": "Physicalgoods requires Shipping1"
+        },
+        {
+          "id": "c1426",
+          "description": "Physicalgoods requires Size"
+        },
+        {
+          "id": "c1430",
+          "description": "Specialoffers requires Physicalgoods"
+        },
+        {
+          "id": "c1438",
+          "description": "Physicalgoods requires Weight"
+        },
+        {
+          "id": "c421",
+          "description": "Availability requires Inventorytracking"
+        },
+        {
+          "id": "c429",
+          "description": "Availability excludes Permissions"
+        },
+        {
+          "id": "c1480",
+          "description": "Physicalgoodsfulfillment requires Shipping1"
+        },
+        {
+          "id": "c1481",
+          "description": "Shipping1 requires Physicalgoodsfulfillment"
+        },
+        {
+          "id": "c1484",
+          "description": "Shippingoptions requires Physicalgoodsfulfillment"
+        },
+        {
+          "id": "c1497",
+          "description": "Physicalgoodsfulfillment excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c480",
+          "description": "Availability excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1506",
+          "description": "Physicalgoodsfulfillment excludes Wishlistcontent"
+        },
+        {
+          "id": "c1515",
+          "description": "Preferences excludes Quickcheckout"
+        },
+        {
+          "id": "c497",
+          "description": "Categorypage requires Categories"
+        },
+        {
+          "id": "c519",
+          "description": "Categories excludes Inventorytracking"
+        },
+        {
+          "id": "c522",
+          "description": "Categories excludes Locallyvisitedpages"
+        },
+        {
+          "id": "c525",
+          "description": "Categories excludes Permissions"
+        },
+        {
+          "id": "c1563",
+          "description": "Preferences excludes Wishlistcontent"
+        },
+        {
+          "id": "c1564",
+          "description": "Preferences requires Wishlistsaveaftersession"
+        },
+        {
+          "id": "c544",
+          "description": "Categories requires Registeredcheckout"
+        },
+        {
+          "id": "c567",
+          "description": "Categories excludes Shippingoptions"
+        },
+        {
+          "id": "c579",
+          "description": "Categories excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c588",
+          "description": "Categories excludes Wishlistcontent"
+        },
+        {
+          "id": "c1621",
+          "description": "Quickcheckout requires Quickcheckoutprofile"
+        },
+        {
+          "id": "c597",
+          "description": "Categorypage excludes Discounts"
+        },
+        {
+          "id": "c606",
+          "description": "Categorypage excludes Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c1647",
+          "description": "Quickcheckout excludes Shippingoptions"
+        },
+        {
+          "id": "c627",
+          "description": "Categorypage excludes Preferences"
+        },
+        {
+          "id": "c1656",
+          "description": "Quickcheckout excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1672",
+          "description": "Quickcheckoutprofile requires Registeredcheckout"
+        },
+        {
+          "id": "c669",
+          "description": "Categorypage excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1716",
+          "description": "Quickcheckoutprofile excludes Wishlistcontent"
+        },
+        {
+          "id": "c1720",
+          "description": "Registeredcheckout requires Registertobuy"
+        },
+        {
+          "id": "c715",
+          "description": "Customerpreferences requires Preferences"
+        },
+        {
+          "id": "c1739",
+          "description": "Shippingoptions requires Registeredcheckout"
+        },
+        {
+          "id": "c719",
+          "description": "Previouslyvisitedpages requires Customerpreferences"
+        },
+        {
+          "id": "c726",
+          "description": "Customerpreferences excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c1751",
+          "description": "Userbehaviourtrackinginformation requires Registeredcheckout"
+        },
+        {
+          "id": "c1760",
+          "description": "Wishlistcontent requires Registeredcheckout"
+        },
+        {
+          "id": "c761",
+          "description": "Userbehaviourtrackinginformation requires Customerpreferences"
+        },
+        {
+          "id": "c776",
+          "description": "E_mailwishlist requires Discounts"
+        },
+        {
+          "id": "c777",
+          "description": "Discounts excludes E_mailwishlist"
+        },
+        {
+          "id": "c1807",
+          "description": "Registration requires Registrationenforcement"
+        },
+        {
+          "id": "c1808",
+          "description": "Registrationenforcement requires Registration"
+        }
+      ],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [
+        "c1820",
+        "c1827",
+        "c806",
+        "c807",
+        "c1832",
+        "c810",
+        "c1837",
+        "c1838",
+        "c1841",
+        "c1843",
+        "c1844",
+        "c1856",
+        "c1863",
+        "c842",
+        "c1868",
+        "c1873",
+        "c849",
+        "c1874",
+        "c1877",
+        "c1883",
+        "c862",
+        "c864",
+        "c865",
+        "c867",
+        "c868",
+        "c870",
+        "c871",
+        "c1896",
+        "c873",
+        "c874",
+        "c876",
+        "c877",
+        "c1901",
+        "c879",
+        "c880",
+        "c882",
+        "c883",
+        "c885",
+        "c1910",
+        "c886",
+        "c888",
+        "c889",
+        "c890",
+        "c891",
+        "c892",
+        "c894",
+        "c895",
+        "c897",
+        "c898",
+        "c900",
+        "c901",
+        "c1926",
+        "c903",
+        "c904",
+        "c906",
+        "c1931",
+        "c907",
+        "c909",
+        "c910",
+        "c912",
+        "c913",
+        "c915",
+        "c916",
+        "c1940",
+        "c918",
+        "c919",
+        "c921",
+        "c922",
+        "c1946",
+        "c924",
+        "c925",
+        "c927",
+        "c928",
+        "c1952",
+        "c930",
+        "c931",
+        "c933",
+        "c934",
+        "c1959",
+        "c936",
+        "c937",
+        "c939",
+        "c940",
+        "c942",
+        "c943",
+        "c1968",
+        "c945",
+        "c951",
+        "c1977",
+        "c1983",
+        "c1987",
+        "c963",
+        "c1992",
+        "c1993",
+        "c971",
+        "c972",
+        "c1997",
+        "c975",
+        "c978",
+        "c979",
+        "c982",
+        "c985",
+        "c988",
+        "c993",
+        "c2019",
+        "c2022",
+        "c2023",
+        "c1003",
+        "c2028",
+        "c2031",
+        "c1008",
+        "c1014",
+        "c1017",
+        "c1018",
+        "c1023",
+        "c1024",
+        "c1",
+        "c2",
+        "c4",
+        "c2053",
+        "c1029",
+        "c8",
+        "c2058",
+        "c10",
+        "c2059",
+        "c12",
+        "c14",
+        "c16",
+        "c17",
+        "c1041",
+        "c18",
+        "c22",
+        "c24",
+        "c2072",
+        "c1049",
+        "c2074",
+        "c1050",
+        "c2075",
+        "c2077",
+        "c1053",
+        "c1060",
+        "c36",
+        "c38",
+        "c1063",
+        "c40",
+        "c1066",
+        "c46",
+        "c50",
+        "c56",
+        "c60",
+        "c62",
+        "c1086",
+        "c64",
+        "c66",
+        "c67",
+        "c1092",
+        "c70",
+        "c72",
+        "c1096",
+        "c74",
+        "c76",
+        "c1101",
+        "c78",
+        "c1102",
+        "c86",
+        "c1113",
+        "c90",
+        "c1116",
+        "c92",
+        "c94",
+        "c1119",
+        "c96",
+        "c98",
+        "c1124",
+        "c100",
+        "c1125",
+        "c1128",
+        "c108",
+        "c110",
+        "c112",
+        "c114",
+        "c116",
+        "c1144",
+        "c1147",
+        "c124",
+        "c126",
+        "c1155",
+        "c132",
+        "c133",
+        "c134",
+        "c136",
+        "c1161",
+        "c1162",
+        "c140",
+        "c143",
+        "c1167",
+        "c146",
+        "c148",
+        "c150",
+        "c152",
+        "c1176",
+        "c154",
+        "c155",
+        "c158",
+        "c160",
+        "c162",
+        "c166",
+        "c1196",
+        "c1197",
+        "c176",
+        "c1200",
+        "c177",
+        "c180",
+        "c182",
+        "c186",
+        "c188",
+        "c190",
+        "c196",
+        "c198",
+        "c200",
+        "c202",
+        "c204",
+        "c206",
+        "c210",
+        "c212",
+        "c216",
+        "c218",
+        "c220",
+        "c222",
+        "c224",
+        "c226",
+        "c228",
+        "c1254",
+        "c234",
+        "c236",
+        "c240",
+        "c1265",
+        "c1266",
+        "c242",
+        "c244",
+        "c1269",
+        "c247",
+        "c248",
+        "c249",
+        "c251",
+        "c256",
+        "c257",
+        "c258",
+        "c262",
+        "c264",
+        "c268",
+        "c272",
+        "c274",
+        "c1302",
+        "c1303",
+        "c280",
+        "c282",
+        "c1308",
+        "c284",
+        "c286",
+        "c288",
+        "c290",
+        "c292",
+        "c1317",
+        "c294",
+        "c296",
+        "c298",
+        "c304",
+        "c306",
+        "c1331",
+        "c308",
+        "c1332",
+        "c1335",
+        "c312",
+        "c316",
+        "c1345",
+        "c322",
+        "c324",
+        "c1348",
+        "c328",
+        "c330",
+        "c332",
+        "c334",
+        "c336",
+        "c338",
+        "c1368",
+        "c346",
+        "c348",
+        "c350",
+        "c1374",
+        "c352",
+        "c1378",
+        "c356",
+        "c358",
+        "c360",
+        "c1387",
+        "c364",
+        "c366",
+        "c368",
+        "c1394",
+        "c370",
+        "c1395",
+        "c372",
+        "c374",
+        "c376",
+        "c378",
+        "c380",
+        "c382",
+        "c384",
+        "c386",
+        "c388",
+        "c390",
+        "c1416",
+        "c392",
+        "c394",
+        "c396",
+        "c399",
+        "c402",
+        "c410",
+        "c411",
+        "c1437",
+        "c420",
+        "c1446",
+        "c426",
+        "c1454",
+        "c1455",
+        "c440",
+        "c441",
+        "c444",
+        "c447",
+        "c1490",
+        "c471",
+        "c477",
+        "c483",
+        "c1511",
+        "c1512",
+        "c492",
+        "c1525",
+        "c1528",
+        "c506",
+        "c507",
+        "c1548",
+        "c1553",
+        "c1558",
+        "c536",
+        "c537",
+        "c1567",
+        "c1569",
+        "c1570",
+        "c547",
+        "c1572",
+        "c1573",
+        "c550",
+        "c1575",
+        "c1576",
+        "c553",
+        "c1578",
+        "c1579",
+        "c1581",
+        "c1582",
+        "c1584",
+        "c1585",
+        "c1587",
+        "c1588",
+        "c1590",
+        "c1591",
+        "c1593",
+        "c1594",
+        "c1596",
+        "c573",
+        "c1597",
+        "c1599",
+        "c1600",
+        "c1602",
+        "c1603",
+        "c1605",
+        "c1606",
+        "c583",
+        "c1608",
+        "c1609",
+        "c1611",
+        "c1612",
+        "c589",
+        "c1614",
+        "c1615",
+        "c1617",
+        "c594",
+        "c1618",
+        "c1620",
+        "c599",
+        "c600",
+        "c1624",
+        "c603",
+        "c1627",
+        "c1630",
+        "c1633",
+        "c609",
+        "c612",
+        "c615",
+        "c618",
+        "c629",
+        "c1653",
+        "c630",
+        "c1659",
+        "c637",
+        "c1663",
+        "c640",
+        "c643",
+        "c1668",
+        "c1669",
+        "c646",
+        "c1675",
+        "c1678",
+        "c1681",
+        "c660",
+        "c666",
+        "c672",
+        "c676",
+        "c1701",
+        "c681",
+        "c682",
+        "c1707",
+        "c1711",
+        "c689",
+        "c690",
+        "c1717",
+        "c699",
+        "c1723",
+        "c1726",
+        "c705",
+        "c720",
+        "c1746",
+        "c723",
+        "c1756",
+        "c733",
+        "c736",
+        "c1762",
+        "c1765",
+        "c1768",
+        "c756",
+        "c1781",
+        "c1788",
+        "c766",
+        "c1793",
+        "c771",
+        "c772",
+        "c1798",
+        "c1802",
+        "c1804",
+        "c786",
+        "c792"
+      ],
+      "statistics": {
+        "n_bias": 2079,
+        "n_mss": 687,
+        "n_kb": 237
+      },
+      "train_size": {
+        "positive": 175,
+        "negative": 19
+      },
+      "test_size": {
+        "positive": 87,
+        "negative": 10
+      },
+      "evaluation": null
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 0.7395833333333334,
+      "metrics": {
+        "accuracy": 0.7395833333333334,
+        "precision": 1.0,
+        "recall": 0.7126436781609196,
+        "f1_score": 0.8322147651006712,
+        "specificity": 1.0,
+        "true_positives": 62,
+        "true_negatives": 9,
+        "false_positives": 0,
+        "false_negatives": 25
+      },
+      "performance": {
+        "runtime_ms": 752265.624459018,
+        "consistency_checks": 3477,
+        "memory_peak_mb": 29.888463973999023,
+        "n_mss": 811,
+        "n_kb": 242,
+        "congen_runtime_ms": 741559.6072500048,
+        "acqmss_runtime_ms": 7705802.46207866,
+        "acqmss_calls": 3795,
+        "reduce_runtime_ms": 1877.11770797614,
+        "solver_time_ms": 61496.42899996684,
+        "is_consistent_calls": 326591,
+        "is_consistent_test_cases_calls": 3477,
+        "redundancy_consistency_checks": 812,
+        "quacq_runtime_ms": 0.0,
+        "query_generation_runtime_ms": 0.0,
+        "findscope_runtime_ms": 0.0,
+        "findc_runtime_ms": 0.0,
+        "dis_gen_runtime_ms": 0.0,
+        "quacq_calls": 0,
+        "query_generation_calls": 0,
+        "query_generation_consistency_checks": 0,
+        "prune_calls": 0,
+        "prune_is_consistent_calls": 0,
+        "findscope_calls": 0,
+        "findc_calls": 0,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 0,
+        "profiler": {
+          "solver_time": {
+            "count": 326591,
+            "total": 61.49642899996684,
+            "mean": 0.00018829799045278907,
+            "min": 3.300000003036985e-05,
+            "max": 0.0017760000000635046,
+            "median": 7.80000000304426e-05,
+            "stddev": 0.0001683430925528867
+          },
+          "is_consistent_calls": 326591,
+          "qx_runtime": {
+            "count": 446,
+            "total": 66.16547216376057,
+            "mean": 0.14835307660036,
+            "min": 5.417008651420474e-06,
+            "max": 0.8664479159924667,
+            "median": 0.04037337450427003,
+            "stddev": 0.17376942692533048
+          },
+          "qx_calls": 446,
+          "quickxplain_calls": 20,
+          "quickxplain_runtime": {
+            "count": 20,
+            "total": 10.420841706130886,
+            "mean": 0.5210420853065443,
+            "min": 0.33770850001019426,
+            "max": 0.8971714579965919,
+            "median": 0.5657840830099303,
+            "stddev": 0.15788410635188768
+          },
+          "solver_time_accum": 61.3945439999693,
+          "is_consistent_test_cases_calls": 3477,
+          "paper_consistency_checks": 3477,
+          "acqmss_calls": 3795,
+          "acqmss_runtime": {
+            "count": 3795,
+            "total": 7705.80246207866,
+            "mean": 2.030514482761175,
+            "min": 4.8330111894756556e-06,
+            "max": 739.4243357919913,
+            "median": 0.2881034999736585,
+            "stddev": 16.889724690261534
+          },
+          "redundancy_consistency_checks": 812,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 1.87711770797614,
+            "mean": 1.87711770797614,
+            "min": 1.87711770797614,
+            "max": 1.87711770797614
+          },
+          "congen_calls": 1,
+          "congen_runtime": {
+            "count": 1,
+            "total": 741.5596072500048,
+            "mean": 741.5596072500048,
+            "min": 741.5596072500048,
+            "max": 741.5596072500048
+          },
+          "congen_total_time": {
+            "count": 1,
+            "total": 752.265624459018,
+            "mean": 752.265624459018,
+            "min": 752.265624459018,
+            "max": 752.265624459018
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c813",
+          "description": "Discounts excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c846",
+          "description": "Discounts excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1879",
+          "description": "Registrationenforcement requires Wishlistsaveaftersession"
+        },
+        {
+          "id": "c858",
+          "description": "Discounts excludes Wishlistcontent"
+        },
+        {
+          "id": "c1882",
+          "description": "Services requires Servicesfulfillment"
+        },
+        {
+          "id": "c873",
+          "description": "E_mailwishlist excludes Inventorytracking"
+        },
+        {
+          "id": "c879",
+          "description": "E_mailwishlist excludes Permissions"
+        },
+        {
+          "id": "c888",
+          "description": "E_mailwishlist excludes Preferences"
+        },
+        {
+          "id": "c897",
+          "description": "E_mailwishlist excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c907",
+          "description": "E_mailwishlist requires Registrationenforcement"
+        },
+        {
+          "id": "c918",
+          "description": "E_mailwishlist excludes Shipping1"
+        },
+        {
+          "id": "c924",
+          "description": "E_mailwishlist excludes Size"
+        },
+        {
+          "id": "c930",
+          "description": "E_mailwishlist excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c936",
+          "description": "E_mailwishlist excludes Weight"
+        },
+        {
+          "id": "c942",
+          "description": "E_mailwishlist excludes Wishlistcontent"
+        },
+        {
+          "id": "c946",
+          "description": "Eletronicgoods requires Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c1980",
+          "description": "Shippingoptions excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1992",
+          "description": "Shippingoptions excludes Wishlistcontent"
+        },
+        {
+          "id": "c2046",
+          "description": "Userbehaviourtracking excludes Wishlistcontent"
+        },
+        {
+          "id": "c1",
+          "description": "eShop --mandatory--> Storefront"
+        },
+        {
+          "id": "c6",
+          "description": "Homepage --or--> ['Staticcontent', 'Dynamiccontent']"
+        },
+        {
+          "id": "c7",
+          "description": "Dynamiccontent --mandatory--> Contenttype"
+        },
+        {
+          "id": "c1032",
+          "description": "Eletronicgoodsfulfillment excludes Inventorytracking"
+        },
+        {
+          "id": "c10",
+          "description": "Contenttype --or--> ['Welcomemessage', 'Specialoffers']"
+        },
+        {
+          "id": "c11",
+          "description": "Dynamiccontent --mandatory--> Variationsource"
+        },
+        {
+          "id": "c13",
+          "description": "Variationsource --alternative--> ['Timedependent', 'Personalized']"
+        },
+        {
+          "id": "c1041",
+          "description": "Eletronicgoodsfulfillment excludes Physicalgoods"
+        },
+        {
+          "id": "c20",
+          "description": "Registrationenforcement --or--> ['Registertobrowse', 'Registertobuy', 'None']"
+        },
+        {
+          "id": "c21",
+          "description": "Registration --mandatory--> Registrationinformation"
+        },
+        {
+          "id": "c23",
+          "description": "Registrationinformation --mandatory--> Logincredentials"
+        },
+        {
+          "id": "c26",
+          "description": "Registrationinformation --optional--> Shippingaddress"
+        },
+        {
+          "id": "c28",
+          "description": "Shippingaddress --optional--> Multipleshippingaddresses"
+        },
+        {
+          "id": "c30",
+          "description": "Registrationinformation --optional--> Billingaddress"
+        },
+        {
+          "id": "c32",
+          "description": "Billingaddress --optional--> Multiplebillingaddresses"
+        },
+        {
+          "id": "c1056",
+          "description": "Eletronicgoodsfulfillment excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c34",
+          "description": "Registrationinformation --optional--> Creditcardinformation"
+        },
+        {
+          "id": "c35",
+          "description": "Creditcardinformation --mandatory--> Cardholdername"
+        },
+        {
+          "id": "c37",
+          "description": "Creditcardinformation --mandatory--> Cardnumber"
+        },
+        {
+          "id": "c39",
+          "description": "Creditcardinformation --mandatory--> Expirydate"
+        },
+        {
+          "id": "c42",
+          "description": "Creditcardinformation --optional--> Securityinformation"
+        },
+        {
+          "id": "c1066",
+          "description": "Eletronicgoodsfulfillment requires Registrationenforcement"
+        },
+        {
+          "id": "c44",
+          "description": "Registrationinformation --optional--> Demographics"
+        },
+        {
+          "id": "c45",
+          "description": "Demographics --alternative--> ['Age', 'Income', 'Education', 'CustomDemographicfield']"
+        },
+        {
+          "id": "c48",
+          "description": "Registrationinformation --optional--> PersonalInformation"
+        },
+        {
+          "id": "c1074",
+          "description": "Eletronicgoodsfulfillment excludes Servicesfulfillment"
+        },
+        {
+          "id": "c52",
+          "description": "Preferences --or--> ['Sitelayout', 'Listsize', 'Language']"
+        },
+        {
+          "id": "c54",
+          "description": "Registrationinformation --optional--> Reminders"
+        },
+        {
+          "id": "(NOT(Timedependent = true & Variationsource = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Timedependent = true & Variationsource = false) AND NOT(Timescope = false & Variationsource = true & Welcomemessage = false) AND NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(Targetingcriteria = false & Wishlistcontent = true) AND NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(eShop = false))",
+          "description": "(NOT(Timedependent = true & Variationsource = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Timedependent = true & Variationsource = false) AND NOT(Timescope = false & Variationsource = true & Welcomemessage = false) AND NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(Targetingcriteria = false & Wishlistcontent = true) AND NOT(eShop = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(Wishlist = false & Wishlistsaveaftersession = true) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(Wishlistcontent = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(Wishlist = true & Wishlistsaveaftersession = false) AND NOT(eShop = false) AND NOT(eShop = false))"
+        },
+        {
+          "id": "c1081",
+          "description": "Eletronicgoodsfulfillment requires Size"
+        },
+        {
+          "id": "c58",
+          "description": "Registrationinformation --optional--> Customfields"
+        },
+        {
+          "id": "c61",
+          "description": "Storefront --mandatory--> Catalog"
+        },
+        {
+          "id": "c63",
+          "description": "Catalog --mandatory--> ProductInformation"
+        },
+        {
+          "id": "c65",
+          "description": "ProductInformation --mandatory--> Producttype"
+        },
+        {
+          "id": "c1089",
+          "description": "Eletronicgoodsfulfillment excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c68",
+          "description": "Producttype --or--> ['Eletronicgoods', 'Physicalgoods', 'Services']"
+        },
+        {
+          "id": "c69",
+          "description": "ProductInformation --mandatory--> Basicinformation"
+        },
+        {
+          "id": "c1101",
+          "description": "Eletronicgoodsfulfillment excludes Wishlistcontent"
+        },
+        {
+          "id": "c79",
+          "description": "Associatedassets --alternative--> ['Documents', 'Mediafiles']"
+        },
+        {
+          "id": "c82",
+          "description": "Mediafiles --or--> ['Image', 'Video', 'Sound']"
+        },
+        {
+          "id": "c1107",
+          "description": "Externalreferringpages excludes Inventorytracking"
+        },
+        {
+          "id": "c84",
+          "description": "Image --or--> ['Thumbnail', 'a2Dimage', 'a3Dimage', 'a360degreesimage', 'Differentperspectives', 'Gallery']"
+        },
+        {
+          "id": "c88",
+          "description": "Productvariants --optional--> Complexproductconfiguration"
+        },
+        {
+          "id": "c99",
+          "description": "Categories --mandatory--> Catalog1"
+        },
+        {
+          "id": "c102",
+          "description": "Catalog1 --optional--> Categories1"
+        },
+        {
+          "id": "c104",
+          "description": "Categories1 --optional--> Multi_level"
+        },
+        {
+          "id": "c106",
+          "description": "Categories1 --optional--> Multipleclassification"
+        },
+        {
+          "id": "c111",
+          "description": "Searching --alternative--> ['Basicsearch', 'Advancedsearch']"
+        },
+        {
+          "id": "c115",
+          "description": "Browsing --mandatory--> Productpage"
+        },
+        {
+          "id": "c118",
+          "description": "Browsing --optional--> Categorypage"
+        },
+        {
+          "id": "c120",
+          "description": "Browsing --optional--> Indexpage"
+        },
+        {
+          "id": "c122",
+          "description": "Indexpage --optional--> Sortingfilters"
+        },
+        {
+          "id": "c123",
+          "description": "Sortingfilters --alternative--> ['Price', 'Quality', 'Price_Qualityratio', 'Manufacturername', 'Customfilter']"
+        },
+        {
+          "id": "c128",
+          "description": "Customviews --optional--> Seasonalproductviews"
+        },
+        {
+          "id": "c130",
+          "description": "Customviews --optional--> Personalizedviews"
+        },
+        {
+          "id": "c138",
+          "description": "Wishlist --optional--> Multiplewishlists"
+        },
+        {
+          "id": "c141",
+          "description": "Permissions --alternative--> ['Publicaccess', 'Restrictedaccess', 'Privateaccess']"
+        },
+        {
+          "id": "c143",
+          "description": "Storefront --mandatory--> Buypaths"
+        },
+        {
+          "id": "c145",
+          "description": "Buypaths --mandatory--> Shoppingcart"
+        },
+        {
+          "id": "c147",
+          "description": "Shoppingcart --mandatory--> Inventorymanagementpolicy"
+        },
+        {
+          "id": "c149",
+          "description": "Shoppingcart --mandatory--> Cartcontentpage"
+        },
+        {
+          "id": "c155",
+          "description": "Buypaths --mandatory--> Checkout"
+        },
+        {
+          "id": "c157",
+          "description": "Checkout --mandatory--> Checkouttype"
+        },
+        {
+          "id": "c159",
+          "description": "Checkouttype --alternative--> ['Registeredcheckout', 'Guestcheckout']"
+        },
+        {
+          "id": "c1185",
+          "description": "Inventorytracking excludes Permissions"
+        },
+        {
+          "id": "c164",
+          "description": "Quickcheckout --optional--> Enableprofileupdateoncheckout"
+        },
+        {
+          "id": "c168",
+          "description": "Shippingoptions --optional--> Qualityofserviceselection"
+        },
+        {
+          "id": "c1194",
+          "description": "Inventorytracking excludes Preferences"
+        },
+        {
+          "id": "c170",
+          "description": "Shippingoptions --optional--> Carrierselection"
+        },
+        {
+          "id": "c172",
+          "description": "Shippingoptions --optional--> Giftoptions"
+        },
+        {
+          "id": "c174",
+          "description": "Shippingoptions --optional--> Multipleshipments"
+        },
+        {
+          "id": "c175",
+          "description": "Shippingoptions --mandatory--> Shippingcostcalculation"
+        },
+        {
+          "id": "c177",
+          "description": "Checkout --mandatory--> Taxationoptions"
+        },
+        {
+          "id": "c1203",
+          "description": "Inventorytracking excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c180",
+          "description": "Taxationoptions --or--> ['Customtaxation', 'Taxgateways']"
+        },
+        {
+          "id": "c181",
+          "description": "Customtaxation --mandatory--> FType"
+        },
+        {
+          "id": "c184",
+          "description": "FType --or--> ['Fixed_ratetaxation', 'Rule_basedtaxation']"
+        },
+        {
+          "id": "c185",
+          "description": "Rule_basedtaxation --mandatory--> Taxcodes"
+        },
+        {
+          "id": "c187",
+          "description": "Rule_basedtaxation --mandatory--> Address"
+        },
+        {
+          "id": "c189",
+          "description": "Address --mandatory--> Shipping"
+        },
+        {
+          "id": "c1213",
+          "description": "Inventorytracking requires Registrationenforcement"
+        },
+        {
+          "id": "c192",
+          "description": "Address --optional--> Billing"
+        },
+        {
+          "id": "c194",
+          "description": "Rule_basedtaxation --optional--> Resolution"
+        },
+        {
+          "id": "c195",
+          "description": "Resolution --alternative--> ['Country', 'Region', 'City']"
+        },
+        {
+          "id": "c197",
+          "description": "Customtaxation --mandatory--> Ammountspecification"
+        },
+        {
+          "id": "c199",
+          "description": "Ammountspecification --alternative--> ['Surcharge', 'Percentage']"
+        },
+        {
+          "id": "c201",
+          "description": "Taxgateways --alternative--> ['CertiTAX', 'CyberSource', 'Customtaxgateway']"
+        },
+        {
+          "id": "c1227",
+          "description": "Inventorytracking excludes Shippingoptions"
+        },
+        {
+          "id": "c203",
+          "description": "Checkout --mandatory--> Paymentoptions"
+        },
+        {
+          "id": "c205",
+          "description": "Paymentoptions --mandatory--> Paymenttypes"
+        },
+        {
+          "id": "c208",
+          "description": "Paymenttypes --or--> ['COD', 'Creditcard', 'Debitcard', 'Eletroniccheque', 'Faxmailorder', 'Purchaseorder', 'Giftcertificate', 'Phoneorder', 'Custompaymenttype']"
+        },
+        {
+          "id": "c214",
+          "description": "Paymentgateways --or--> ['Authorize_Net', 'CyberSource1', 'LinkPoint', 'Paradata', 'SkipJack', 'VerisignPayflowPro', 'Custompaymentgateway']"
+        },
+        {
+          "id": "c215",
+          "description": "Buypaths --mandatory--> Orderconfirmation"
+        },
+        {
+          "id": "c217",
+          "description": "Orderconfirmation --alternative--> ['Eletronicpage', 'E_mail', 'Phone', 'Mail']"
+        },
+        {
+          "id": "c219",
+          "description": "Buypaths --mandatory--> Buypaths_4"
+        },
+        {
+          "id": "c221",
+          "description": "Buypaths_4 --mandatory--> PhoneOrdering"
+        },
+        {
+          "id": "c223",
+          "description": "PhoneOrdering --mandatory--> DigitalDialing"
+        },
+        {
+          "id": "c1248",
+          "description": "Inventorytracking excludes Wishlistcontent"
+        },
+        {
+          "id": "c229",
+          "description": "Customerservice --alternative--> ['Questionandfeedbackforms', 'Productreturns', 'Orderstatusreview', 'Shipmentstatustracking']"
+        },
+        {
+          "id": "c232",
+          "description": "Questionandfeedbackforms --optional--> Questionandfeedbacktracking"
+        },
+        {
+          "id": "c233",
+          "description": "Orderstatusreview --mandatory--> Filteringcriteria"
+        },
+        {
+          "id": "c235",
+          "description": "Filteringcriteria --alternative--> ['Ordernumber', 'Orderdate', 'Orderstatus']"
+        },
+        {
+          "id": "c238",
+          "description": "Orderstatusreview --optional--> Requestorderhardcopy"
+        },
+        {
+          "id": "c239",
+          "description": "Shipmentstatustracking --alternative--> ['Internaltracking', 'Partnertracking']"
+        },
+        {
+          "id": "c243",
+          "description": "Userbehaviourtracking --mandatory--> Behaviourtracked"
+        },
+        {
+          "id": "c245",
+          "description": "Behaviourtracked --alternative--> ['Locallyvisitedpages', 'Externalreferringpages', 'Previouspurchases1']"
+        },
+        {
+          "id": "c250",
+          "description": "Businessmanagement --optional--> Ordermanagement"
+        },
+        {
+          "id": "c252",
+          "description": "Ordermanagement --optional--> Fulfillment"
+        },
+        {
+          "id": "c254",
+          "description": "Fulfillment --or--> ['Physicalgoodsfulfillment', 'Eletronicgoodsfulfillment', 'Servicesfulfillment']"
+        },
+        {
+          "id": "c255",
+          "description": "Physicalgoodsfulfillment --mandatory--> Warehousemanagement"
+        },
+        {
+          "id": "c260",
+          "description": "Shipping1 --or--> ['Customshippingmethod', 'Shippinggateways']"
+        },
+        {
+          "id": "c261",
+          "description": "Customshippingmethod --mandatory--> Pricing"
+        },
+        {
+          "id": "c263",
+          "description": "Pricing --mandatory--> Flatrate"
+        },
+        {
+          "id": "c266",
+          "description": "Pricing --optional--> Ratefactors"
+        },
+        {
+          "id": "c267",
+          "description": "Ratefactors --alternative--> ['Quantitypurchased', 'Ordertotal', 'Weight1', 'Productclassification']"
+        },
+        {
+          "id": "c1293",
+          "description": "Locallyvisitedpages excludes Shipping1"
+        },
+        {
+          "id": "c270",
+          "description": "Shippinggateways --or--> ['FedEX', 'UPS', 'USPS', 'CanadaPost', 'Customshippinggateway']"
+        },
+        {
+          "id": "c271",
+          "description": "Eletronicgoodsfulfillment --mandatory--> Filerepository"
+        },
+        {
+          "id": "c273",
+          "description": "Eletronicgoodsfulfillment --mandatory--> Licensemanagement"
+        },
+        {
+          "id": "c1299",
+          "description": "Locallyvisitedpages excludes Size"
+        },
+        {
+          "id": "c276",
+          "description": "Servicesfulfillment --optional--> Appointmentscheduling"
+        },
+        {
+          "id": "c278",
+          "description": "Servicesfulfillment --optional--> Resourceplanning"
+        },
+        {
+          "id": "c281",
+          "description": "Targeting --mandatory--> Targetingcriteria"
+        },
+        {
+          "id": "c283",
+          "description": "Targetingcriteria --alternative--> ['Customerpreferences', 'Personalinformation', 'Demographics1', 'Previouspurchases', 'Shoppingcartcontent', 'Wishlistcontent', 'Previouslyvisitedpages', 'Dateandtime', 'Customtargetcriteria']"
+        },
+        {
+          "id": "c285",
+          "description": "Targeting --mandatory--> Targetingmechanisms"
+        },
+        {
+          "id": "c287",
+          "description": "Targetingmechanisms --alternative--> ['Advertisements', 'Discounts', 'Sellstrategies']"
+        },
+        {
+          "id": "c1311",
+          "description": "Locallyvisitedpages excludes Weight"
+        },
+        {
+          "id": "c289",
+          "description": "Advertisements --mandatory--> Advertisementtypes"
+        },
+        {
+          "id": "c291",
+          "description": "Advertisementtypes --alternative--> ['Bannerads', 'Pop_upads']"
+        },
+        {
+          "id": "c293",
+          "description": "Advertisements --mandatory--> Advertisementsources"
+        },
+        {
+          "id": "c295",
+          "description": "Advertisementsources --alternative--> ['Houseadvertisements', 'Paidadvertisements']"
+        },
+        {
+          "id": "c297",
+          "description": "Paidadvertisements --mandatory--> Advertisementmanagementinterface"
+        },
+        {
+          "id": "c300",
+          "description": "Advertisements --optional--> Advertisementresponsetracking"
+        },
+        {
+          "id": "c302",
+          "description": "Advertisements --optional--> Contextsensitiveads"
+        },
+        {
+          "id": "c303",
+          "description": "Discounts --mandatory--> Discountconditions"
+        },
+        {
+          "id": "c305",
+          "description": "Discountconditions --mandatory--> Productandquantityscope"
+        },
+        {
+          "id": "c307",
+          "description": "Discountconditions --mandatory--> Timescope"
+        },
+        {
+          "id": "c310",
+          "description": "Discountconditions --optional--> Purchasevaluescope"
+        },
+        {
+          "id": "c311",
+          "description": "Discounts --mandatory--> Award"
+        },
+        {
+          "id": "c313",
+          "description": "Award --alternative--> ['Percentagediscount', 'Fixeddiscount', 'Freeitem']"
+        },
+        {
+          "id": "c1338",
+          "description": "Permissions excludes Quickcheckoutprofile"
+        },
+        {
+          "id": "c315",
+          "description": "Discounts --mandatory--> Eligibilityrequirements"
+        },
+        {
+          "id": "c318",
+          "description": "Eligibilityrequirements --optional--> Customersegments"
+        },
+        {
+          "id": "c320",
+          "description": "Eligibilityrequirements --optional--> Shippingaddress1"
+        },
+        {
+          "id": "c321",
+          "description": "Discounts --mandatory--> Graduationby"
+        },
+        {
+          "id": "c323",
+          "description": "Graduationby --alternative--> ['Purchasevalue', 'Quantity']"
+        },
+        {
+          "id": "c1348",
+          "description": "Permissions requires Registrationenforcement"
+        },
+        {
+          "id": "c326",
+          "description": "Discounts --optional--> Coupons"
+        },
+        {
+          "id": "c327",
+          "description": "Discounts --mandatory--> Handlingmultiplediscounts"
+        },
+        {
+          "id": "c329",
+          "description": "Sellstrategies --alternative--> ['Productkitting', 'Up_selling', 'Cross_selling']"
+        },
+        {
+          "id": "c331",
+          "description": "Up_selling --mandatory--> Substituteproducts"
+        },
+        {
+          "id": "c333",
+          "description": "Cross_selling --mandatory--> Pastcustomersalsobought"
+        },
+        {
+          "id": "c335",
+          "description": "Targeting --mandatory--> Displayandnotification"
+        },
+        {
+          "id": "c337",
+          "description": "Displayandnotification --alternative--> ['Assignmenttopagetypesfordisplay', 'Productflagging', 'E_mails']"
+        },
+        {
+          "id": "c340",
+          "description": "E_mails --optional--> Personalized1"
+        },
+        {
+          "id": "c342",
+          "description": "E_mails --optional--> Responsetracking"
+        },
+        {
+          "id": "c344",
+          "description": "Targeting --optional--> Campaigns"
+        },
+        {
+          "id": "c347",
+          "description": "Affiliates --mandatory--> Affiliateregistration"
+        },
+        {
+          "id": "c1371",
+          "description": "Permissions excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c349",
+          "description": "Affiliates --mandatory--> Commissiontracking"
+        },
+        {
+          "id": "c354",
+          "description": "Inventorytracking --optional--> Allowbackorders"
+        },
+        {
+          "id": "c357",
+          "description": "Procurement --mandatory--> Stockreplenishment"
+        },
+        {
+          "id": "c1383",
+          "description": "Permissions excludes Wishlistcontent"
+        },
+        {
+          "id": "c359",
+          "description": "Stockreplenishment --mandatory--> Manual"
+        },
+        {
+          "id": "c362",
+          "description": "Stockreplenishment --optional--> Automatic"
+        },
+        {
+          "id": "c363",
+          "description": "Automatic --mandatory--> Non_repudiationservice"
+        },
+        {
+          "id": "c367",
+          "description": "Reportingandanalysis --mandatory--> Reporttypes"
+        },
+        {
+          "id": "c369",
+          "description": "Reportingandanalysis --mandatory--> Reportformats"
+        },
+        {
+          "id": "c371",
+          "description": "Reportingandanalysis --mandatory--> Levelofdetail"
+        },
+        {
+          "id": "c375",
+          "description": "Externalsystemsintegration --alternative--> ['Fulfillmentsystem', 'Inventorymanagementsystem', 'Procurementsystem', 'Externaldistributorsystem']"
+        },
+        {
+          "id": "c377",
+          "description": "Businessmanagement --mandatory--> Administration"
+        },
+        {
+          "id": "c379",
+          "description": "Administration --mandatory--> Contentmanagement"
+        },
+        {
+          "id": "c381",
+          "description": "Contentmanagement --mandatory--> Productdatabasemanagement"
+        },
+        {
+          "id": "c383",
+          "description": "Contentmanagement --mandatory--> Presentationoptions"
+        },
+        {
+          "id": "c385",
+          "description": "Contentmanagement --mandatory--> Generallayoutmanagement"
+        },
+        {
+          "id": "c389",
+          "description": "Administration --mandatory--> Storeadministration"
+        },
+        {
+          "id": "c391",
+          "description": "Storeadministration --mandatory--> Sitesearch"
+        },
+        {
+          "id": "c393",
+          "description": "Storeadministration --mandatory--> Searchengineregistration"
+        },
+        {
+          "id": "c1419",
+          "description": "Physicalgoods excludes Servicesfulfillment"
+        },
+        {
+          "id": "c395",
+          "description": "Storeadministration --mandatory--> Domainnamesetup"
+        },
+        {
+          "id": "c1420",
+          "description": "Physicalgoods requires Shipping1"
+        },
+        {
+          "id": "c1426",
+          "description": "Physicalgoods requires Size"
+        },
+        {
+          "id": "c1438",
+          "description": "Physicalgoods requires Weight"
+        },
+        {
+          "id": "c1480",
+          "description": "Physicalgoodsfulfillment requires Shipping1"
+        },
+        {
+          "id": "c1481",
+          "description": "Shipping1 requires Physicalgoodsfulfillment"
+        },
+        {
+          "id": "c1484",
+          "description": "Shippingoptions requires Physicalgoodsfulfillment"
+        },
+        {
+          "id": "c493",
+          "description": "Availability requires Wishlistsaveaftersession"
+        },
+        {
+          "id": "c495",
+          "description": "Availability excludes Wishlistsaveaftersession"
+        },
+        {
+          "id": "c497",
+          "description": "Categorypage requires Categories"
+        },
+        {
+          "id": "c1528",
+          "description": "Preferences requires Registrationenforcement"
+        },
+        {
+          "id": "c504",
+          "description": "Categories excludes Discounts"
+        },
+        {
+          "id": "c507",
+          "description": "Categories excludes E_mailwishlist"
+        },
+        {
+          "id": "c513",
+          "description": "Categories excludes Eletronicgoodsfulfillment"
+        },
+        {
+          "id": "c1551",
+          "description": "Preferences excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c534",
+          "description": "Categories excludes Preferences"
+        },
+        {
+          "id": "c1563",
+          "description": "Preferences excludes Wishlistcontent"
+        },
+        {
+          "id": "c547",
+          "description": "Categories requires Registertobuy"
+        },
+        {
+          "id": "c567",
+          "description": "Categories excludes Shippingoptions"
+        },
+        {
+          "id": "c576",
+          "description": "Categories excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c588",
+          "description": "Categories excludes Wishlistcontent"
+        },
+        {
+          "id": "c1621",
+          "description": "Quickcheckout requires Quickcheckoutprofile"
+        },
+        {
+          "id": "c1647",
+          "description": "Quickcheckout excludes Shippingoptions"
+        },
+        {
+          "id": "c631",
+          "description": "Categorypage requires Quickcheckout"
+        },
+        {
+          "id": "c1675",
+          "description": "Quickcheckoutprofile requires Registertobuy"
+        },
+        {
+          "id": "c654",
+          "description": "Categorypage excludes Servicesfulfillment"
+        },
+        {
+          "id": "c1704",
+          "description": "Quickcheckoutprofile excludes Userbehaviourtracking"
+        },
+        {
+          "id": "c1716",
+          "description": "Quickcheckoutprofile excludes Wishlistcontent"
+        },
+        {
+          "id": "c1720",
+          "description": "Registeredcheckout requires Registertobuy"
+        },
+        {
+          "id": "c1721",
+          "description": "Registertobuy requires Registeredcheckout"
+        },
+        {
+          "id": "c715",
+          "description": "Customerpreferences requires Preferences"
+        },
+        {
+          "id": "c719",
+          "description": "Previouslyvisitedpages requires Customerpreferences"
+        },
+        {
+          "id": "c730",
+          "description": "Customerpreferences requires Registertobuy"
+        },
+        {
+          "id": "c1781",
+          "description": "Shippingoptions requires Registertobuy"
+        },
+        {
+          "id": "c1787",
+          "description": "Specialoffers requires Registertobuy"
+        },
+        {
+          "id": "c1788",
+          "description": "Registertobuy excludes Specialoffers"
+        },
+        {
+          "id": "c1790",
+          "description": "Userbehaviourtracking requires Registertobuy"
+        },
+        {
+          "id": "c1793",
+          "description": "Userbehaviourtrackinginformation requires Registertobuy"
+        },
+        {
+          "id": "c1794",
+          "description": "Registertobuy excludes Userbehaviourtrackinginformation"
+        },
+        {
+          "id": "c777",
+          "description": "Discounts excludes E_mailwishlist"
+        },
+        {
+          "id": "c1802",
+          "description": "Wishlistcontent requires Registertobuy"
+        },
+        {
+          "id": "c1807",
+          "description": "Registration requires Registrationenforcement"
+        },
+        {
+          "id": "c1808",
+          "description": "Registrationenforcement requires Registration"
+        },
+        {
+          "id": "c789",
+          "description": "Discounts excludes Inventorytracking"
+        }
+      ],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [
+        "c1820",
+        "c1826",
+        "c1827",
+        "c1829",
+        "c806",
+        "c807",
+        "c1832",
+        "c1833",
+        "c810",
+        "c1837",
+        "c1841",
+        "c1843",
+        "c1856",
+        "c1862",
+        "c1863",
+        "c1865",
+        "c842",
+        "c843",
+        "c1868",
+        "c1869",
+        "c848",
+        "c1873",
+        "c849",
+        "c1877",
+        "c1883",
+        "c864",
+        "c867",
+        "c870",
+        "c1895",
+        "c1896",
+        "c876",
+        "c1901",
+        "c1902",
+        "c882",
+        "c885",
+        "c890",
+        "c891",
+        "c894",
+        "c1925",
+        "c1926",
+        "c904",
+        "c1931",
+        "c1932",
+        "c910",
+        "c913",
+        "c921",
+        "c1946",
+        "c926",
+        "c927",
+        "c1952",
+        "c1953",
+        "c932",
+        "c933",
+        "c1958",
+        "c1959",
+        "c937",
+        "c943",
+        "c947",
+        "c951",
+        "c1976",
+        "c1977",
+        "c954",
+        "c957",
+        "c1982",
+        "c1983",
+        "c1987",
+        "c963",
+        "c1993",
+        "c971",
+        "c972",
+        "c1997",
+        "c1998",
+        "c975",
+        "c978",
+        "c2003",
+        "c2004",
+        "c985",
+        "c988",
+        "c993",
+        "c2017",
+        "c2019",
+        "c996",
+        "c2020",
+        "c2021",
+        "c2022",
+        "c2023",
+        "c2025",
+        "c2026",
+        "c1003",
+        "c2028",
+        "c2029",
+        "c2031",
+        "c1007",
+        "c2032",
+        "c1008",
+        "c2034",
+        "c1011",
+        "c2036",
+        "c2037",
+        "c1013",
+        "c1014",
+        "c2041",
+        "c1018",
+        "c1023",
+        "c2047",
+        "c1024",
+        "c2050",
+        "c2",
+        "c4",
+        "c2052",
+        "c1029",
+        "c2053",
+        "c2055",
+        "c2056",
+        "c9",
+        "c8",
+        "c2058",
+        "c1035",
+        "c12",
+        "c2059",
+        "c2061",
+        "c14",
+        "c16",
+        "c17",
+        "c18",
+        "c22",
+        "c24",
+        "c2072",
+        "c1049",
+        "c1050",
+        "c2075",
+        "c2074",
+        "c1053",
+        "c2077",
+        "c36",
+        "c38",
+        "c1063",
+        "c40",
+        "c46",
+        "c1071",
+        "c50",
+        "c56",
+        "c60",
+        "c1085",
+        "c1086",
+        "c62",
+        "c64",
+        "c66",
+        "c1091",
+        "c67",
+        "c1092",
+        "c70",
+        "c72",
+        "c1096",
+        "c74",
+        "c76",
+        "c78",
+        "c1102",
+        "c80",
+        "c1110",
+        "c86",
+        "c1113",
+        "c90",
+        "c92",
+        "c94",
+        "c96",
+        "c98",
+        "c1122",
+        "c100",
+        "c1124",
+        "c1125",
+        "c1128",
+        "c1131",
+        "c108",
+        "c1132",
+        "c110",
+        "c1135",
+        "c112",
+        "c114",
+        "c1138",
+        "c116",
+        "c1141",
+        "c124",
+        "c126",
+        "c1155",
+        "c132",
+        "c133",
+        "c134",
+        "c1160",
+        "c136",
+        "c1161",
+        "c1162",
+        "c140",
+        "c142",
+        "c1166",
+        "c1167",
+        "c144",
+        "c146",
+        "c1171",
+        "c148",
+        "c150",
+        "c152",
+        "c1176",
+        "c1177",
+        "c154",
+        "c156",
+        "c158",
+        "c160",
+        "c162",
+        "c166",
+        "c1196",
+        "c1197",
+        "c1200",
+        "c176",
+        "c178",
+        "c182",
+        "c186",
+        "c1210",
+        "c188",
+        "c190",
+        "c196",
+        "c198",
+        "c200",
+        "c202",
+        "c204",
+        "c206",
+        "c1232",
+        "c1233",
+        "c210",
+        "c212",
+        "c1238",
+        "c1239",
+        "c216",
+        "c218",
+        "c1243",
+        "c220",
+        "c222",
+        "c224",
+        "c1249",
+        "c226",
+        "c228",
+        "c1254",
+        "c230",
+        "c1257",
+        "c234",
+        "c1260",
+        "c236",
+        "c1263",
+        "c240",
+        "c1265",
+        "c242",
+        "c1266",
+        "c244",
+        "c1269",
+        "c246",
+        "c247",
+        "c1272",
+        "c248",
+        "c249",
+        "c1273",
+        "c251",
+        "c1276",
+        "c1279",
+        "c256",
+        "c257",
+        "c258",
+        "c1282",
+        "c1285",
+        "c262",
+        "c264",
+        "c1288",
+        "c268",
+        "c272",
+        "c1296",
+        "c274",
+        "c1301",
+        "c1302",
+        "c1303",
+        "c280",
+        "c282",
+        "c1307",
+        "c1308",
+        "c284",
+        "c286",
+        "c1312",
+        "c288",
+        "c290",
+        "c292",
+        "c1317",
+        "c1318",
+        "c294",
+        "c296",
+        "c298",
+        "c304",
+        "c306",
+        "c1331",
+        "c1332",
+        "c308",
+        "c1335",
+        "c312",
+        "c314",
+        "c316",
+        "c1345",
+        "c322",
+        "c324",
+        "c328",
+        "c330",
+        "c332",
+        "c334",
+        "c336",
+        "c338",
+        "c1367",
+        "c1368",
+        "c346",
+        "c348",
+        "c1373",
+        "c350",
+        "c1374",
+        "c352",
+        "c1378",
+        "c356",
+        "c358",
+        "c1384",
+        "c360",
+        "c1387",
+        "c364",
+        "c366",
+        "c368",
+        "c1394",
+        "c370",
+        "c1395",
+        "c372",
+        "c374",
+        "c376",
+        "c378",
+        "c380",
+        "c382",
+        "c384",
+        "c386",
+        "c388",
+        "c390",
+        "c392",
+        "c1416",
+        "c394",
+        "c396",
+        "c397",
+        "c399",
+        "c400",
+        "c402",
+        "c403",
+        "c405",
+        "c1430",
+        "c406",
+        "c1431",
+        "c408",
+        "c409",
+        "c411",
+        "c1436",
+        "c412",
+        "c1437",
+        "c414",
+        "c415",
+        "c417",
+        "c418",
+        "c420",
+        "c421",
+        "c423",
+        "c424",
+        "c426",
+        "c427",
+        "c429",
+        "c430",
+        "c1454",
+        "c1455",
+        "c432",
+        "c433",
+        "c435",
+        "c436",
+        "c438",
+        "c439",
+        "c440",
+        "c441",
+        "c442",
+        "c444",
+        "c445",
+        "c447",
+        "c448",
+        "c450",
+        "c451",
+        "c453",
+        "c454",
+        "c456",
+        "c457",
+        "c459",
+        "c460",
+        "c462",
+        "c463",
+        "c465",
+        "c1490",
+        "c466",
+        "c1491",
+        "c468",
+        "c469",
+        "c471",
+        "c1496",
+        "c472",
+        "c1497",
+        "c474",
+        "c475",
+        "c476",
+        "c477",
+        "c478",
+        "c480",
+        "c481",
+        "c482",
+        "c483",
+        "c484",
+        "c486",
+        "c487",
+        "c1511",
+        "c1512",
+        "c489",
+        "c490",
+        "c492",
+        "c1525",
+        "c501",
+        "c510",
+        "c516",
+        "c522",
+        "c1547",
+        "c1548",
+        "c1553",
+        "c1554",
+        "c1558",
+        "c536",
+        "c537",
+        "c1564",
+        "c1567",
+        "c544",
+        "c1569",
+        "c1570",
+        "c1572",
+        "c1573",
+        "c550",
+        "c1575",
+        "c1576",
+        "c553",
+        "c1578",
+        "c1579",
+        "c1581",
+        "c1582",
+        "c1584",
+        "c1585",
+        "c1587",
+        "c1588",
+        "c1590",
+        "c1591",
+        "c1593",
+        "c1594",
+        "c1596",
+        "c572",
+        "c573",
+        "c1597",
+        "c1599",
+        "c1600",
+        "c1601",
+        "c1602",
+        "c578",
+        "c1603",
+        "c579",
+        "c1605",
+        "c1606",
+        "c1607",
+        "c583",
+        "c1608",
+        "c1609",
+        "c1611",
+        "c1612",
+        "c589",
+        "c1614",
+        "c1615",
+        "c1617",
+        "c1618",
+        "c594",
+        "c1620",
+        "c597",
+        "c1624",
+        "c600",
+        "c603",
+        "c1627",
+        "c606",
+        "c1630",
+        "c609",
+        "c1633",
+        "c612",
+        "c615",
+        "c618",
+        "c619",
+        "c622",
+        "c627",
+        "c1652",
+        "c629",
+        "c1653",
+        "c630",
+        "c1656",
+        "c1658",
+        "c634",
+        "c1659",
+        "c637",
+        "c1663",
+        "c640",
+        "c643",
+        "c1668",
+        "c1669",
+        "c646",
+        "c1672",
+        "c651",
+        "c1678",
+        "c655",
+        "c1681",
+        "c660",
+        "c661",
+        "c665",
+        "c666",
+        "c669",
+        "c671",
+        "c672",
+        "c673",
+        "c676",
+        "c1700",
+        "c1701",
+        "c681",
+        "c682",
+        "c1706",
+        "c1707",
+        "c1711",
+        "c690",
+        "c1717",
+        "c1723",
+        "c699",
+        "c1726",
+        "c702",
+        "c705",
+        "c1739",
+        "c720",
+        "c1745",
+        "c1746",
+        "c1748",
+        "c727",
+        "c1751",
+        "c1752",
+        "c1756",
+        "c733",
+        "c1760",
+        "c736",
+        "c1762",
+        "c1765",
+        "c1768",
+        "c755",
+        "c756",
+        "c759",
+        "c761",
+        "c762",
+        "c766",
+        "c771",
+        "c772",
+        "c1798",
+        "c1804",
+        "c786",
+        "c792"
+      ],
+      "statistics": {
+        "n_bias": 2079,
+        "n_mss": 811,
+        "n_kb": 242
+      },
+      "train_size": {
+        "positive": 175,
+        "negative": 20
+      },
+      "test_size": {
+        "positive": 87,
+        "negative": 9
+      },
+      "evaluation": null
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 734894.9563196705,
+      "std_ms": 15193.123721760438,
+      "min_ms": 724082.2001670022,
+      "max_ms": 752265.624459018
+    },
+    "consistency_checks": {
+      "mean": 3590.6666666666665,
+      "std": 101.44128022325691,
+      "min": 3477,
+      "max": 3672
+    },
+    "memory": {
+      "mean_mb": 30.17532253265381,
+      "max_mb": 30.82399082183838
+    },
+    "kb_size": {
+      "n_mss_mean": 715.3333333333334,
+      "n_kb_mean": 243.33333333333334
+    },
+    "congen_runtime": {
+      "mean_ms": 724065.1572083394,
+      "std_ms": 15442.909281697483,
+      "min_ms": 712327.6796250138,
+      "max_ms": 741559.6072500048
+    },
+    "acqmss_runtime": {
+      "mean_ms": 7528282.751922515,
+      "std_ms": 156726.91682550375,
+      "min_ms": 7409053.3901666645,
+      "max_ms": 7705802.46207866
+    },
+    "acqmss_calls": {
+      "mean": 3889.6666666666665,
+      "std": 84.88423489278402,
+      "min": 3795,
+      "max": 3959
+    },
+    "reduce_runtime": {
+      "mean_ms": 1655.024138657609,
+      "std_ms": 260.6580239778149,
+      "min_ms": 1368.0556659819558,
+      "max_ms": 1877.11770797614
+    },
+    "solver_time": {
+      "mean_ms": 58199.22666667255,
+      "std_ms": 2885.6265044594143,
+      "min_ms": 56134.473000059756,
+      "max_ms": 61496.42899996684
+    },
+    "is_consistent_calls": {
+      "mean": 326851.3333333333,
+      "std": 1976.4013593734785,
+      "min": 325018,
+      "max": 328945
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 3590.6666666666665,
+      "std": 101.44128022325691,
+      "min": 3477,
+      "max": 3672
+    },
+    "redundancy_consistency_checks": {
+      "mean": 716.3333333333334,
+      "std": 85.11364951248028,
+      "min": 649,
+      "max": 812
+    },
+    "quacq_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "query_gen_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "findscope_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "findc_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "quacq_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "query_gen_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "query_gen_checks": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "prune_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "prune_ic_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "findscope_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "findc_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "findc_checks": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "dis_gen_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "dis_gen_checks": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "reduce_calls": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    }
+  },
+  "summary": null
+}

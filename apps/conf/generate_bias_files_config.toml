@@ -1,0 +1,41 @@
+# Batch Bias Generation Configuration
+# Usage: python apps/generate_bias_files.py apps/conf/generate_bias_files_config.toml
+
+[settings]
+# Output directory for generated bias files
+output_dir = "data/bias"
+
+# Output format: "json", "cnf", or "both"
+output_format = "both"
+
+# Save statistics file (.txt) for each model
+save_statistics = true
+
+# Verbose output
+verbose = true
+
+# List of models to process
+# Each model requires a 'config' path to a YAML file
+# Optional 'name' field overrides the output filename
+
+[[models]]
+config = "data/bias-config/REAL-FM-7.yaml"
+#
+#[[models]]
+#config = "data/bias-config/arcade-game.yaml"
+#
+#[[models]]
+#config = "data/bias-config/fqa.yaml"
+#
+#[[models]]
+#config = "data/bias-config/REAL-FM-4.yaml"
+
+#[[models]]
+#config = "data/bias-config/ea2468.yaml"
+
+# Large models - uncomment if needed (will generate many constraints)
+#[[models]]
+#config = "data/bias-config/busybox-1.18.0.yaml"
+
+#[[models]]
+#config = "data/bias-config/linux-2.6.33.3.yaml"

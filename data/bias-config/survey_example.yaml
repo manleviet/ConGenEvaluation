@@ -1,0 +1,50 @@
+# Simplified Bias Config for Survey Feature Model
+# Example configuration for testing bias generation
+
+name: Survey
+
+# List of all features in the model
+features:
+  - survey
+  - payment
+  - license
+  - nolicense
+  - abtesting
+  - statistics
+  - qa
+  - multiple
+  - multimedia
+
+# Hierarchical relationship candidates
+# The generator will create constraints with allowed operators based on relationship_type
+hierarchical_candidates:
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: survey
+    children: [payment]
+    relationship_type: binary
+
+  - parent: survey
+    children: [abtesting]
+    relationship_type: binary
+
+  - parent: survey
+    children: [statistics]
+    relationship_type: binary
+
+  - parent: survey
+    children: [qa]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: payment
+    children: [license, nolicense]
+    relationship_type: group
+
+  - parent: qa
+    children: [multiple, multimedia]
+    relationship_type: group
+
+# Cross-tree constraint candidates
+# auto_generate: true will create all possible requires and excludes for all feature pairs
+cross_tree_candidates:
+  cross_tree_mode: all

@@ -1,0 +1,102 @@
+# Bias Config for REAL-FM-7 Feature Model
+# Auto-generated from feature model
+
+name: REAL-FM-7
+
+# List of all features in the model
+features:
+  - jplug
+  - interface
+  - sdi
+  - mdi
+  - gui_builder
+  - java
+  - qt
+  - model_code_synch
+  - compiler
+  - javac
+  - mvc
+  - diagram_builder
+  - uml
+  - petri_net
+
+# Leaf features (features with no children)
+leaf_features:
+  - sdi
+  - mdi
+  - java
+  - qt
+  - model_code_synch
+  - javac
+  - mvc
+  - uml
+  - petri_net
+
+# Hierarchical relationship candidates
+# The generator will create constraints with allowed operators based on relationship_type
+hierarchical_candidates:
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: jplug
+    children: [interface]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: interface
+    children: [sdi, mdi]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: jplug
+    children: [gui_builder]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: gui_builder
+    children: [java]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: gui_builder
+    children: [qt]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: jplug
+    children: [model_code_synch]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: jplug
+    children: [compiler]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: compiler
+    children: [javac, mvc]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: jplug
+    children: [diagram_builder]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: diagram_builder
+    children: [uml]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: diagram_builder
+    children: [petri_net]
+    relationship_type: binary
+
+# Cross-tree constraint candidates
+# Original cross-tree constraints from feature model:
+#   (Constraint 0) OR[NOT[gui_builder][]][NOT[sdi][]]
+#   (Constraint 1) OR[NOT[model_code_synch][]][diagram_builder]
+#
+# cross_tree_mode: 'all' generates requires/excludes for all feature pairs
+#                  'leaf' generates only between leaf features
+#                  'extracted' generates only between features from CTCs
+cross_tree_candidates:
+  cross_tree_mode: all

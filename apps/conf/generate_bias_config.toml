@@ -1,0 +1,44 @@
+# Bias Config Generator Configuration
+# Usage: python apps/generate_bias_config.py --config apps/conf/generate_bias_config.toml
+
+# Global settings (apply to all models unless overridden)
+output_dir = "data/bias-config"
+cross_tree_mode = "all"  # "all" for all features, "leaf" for leaf features only
+verbose = true
+
+# List of feature models to process
+# Each model requires 'fm_path'
+# Optional per-model: 'output' (overrides output_dir), 'cross_tree_mode'
+
+#[[models]]
+#fm_path = "data/fms/REAL-FM-7.uvl"
+
+#[[models]]
+#fm_path = "data/fms/REAL-FM-4.uvl"
+#cross_tree_mode = "extracted"
+
+#[[models]]
+#fm_path = "data/fms/fqa.uvl"
+#cross_tree_mode = "extracted"
+#
+[[models]]
+fm_path = "data/fms/arcade-game.uvl"
+cross_tree_mode = "extracted"
+#
+#[[models]]
+#fm_path = "data/fms/busybox-1.18.0.uvl"
+#cross_tree_mode = "extracted"
+#
+#[[models]]
+#fm_path = "data/fms/ea2468.uvl"
+#cross_tree_mode = "extracted"
+#
+#[[models]]
+#fm_path = "data/fms/linux-2.6.33.3.uvl"
+#cross_tree_mode = "extracted"
+
+# Example with custom settings:
+# [[models]]
+# fm_path = "data/fms/custom-model.uvl"
+# output = "data/custom/custom-output.yaml"
+# cross_tree_mode = "all"

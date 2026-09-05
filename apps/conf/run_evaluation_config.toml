@@ -1,0 +1,25 @@
+# QuAcq -> ConGen Evaluation Pipeline Configuration
+# Run with: python -m apps.run_evaluation apps/conf/run_evaluation_config.toml -v
+
+[general]
+output_dir = "data/results/evaluation"
+verbose = true
+
+[evaluation]
+# Query budget checkpoints (percentages of total QuAcq queries)
+checkpoints = [10, 25, 50, 75, 100]
+
+[quacq]
+mode = "automated"
+max_queries = 1000
+shuffle_seed = 42
+solver_name = "glucose4"
+
+[congen]
+solver_name = "glucose4"
+
+# Models to evaluate
+[[models]]
+name = "REAL-FM-7"
+oracle = "data/fms/REAL-FM-7.uvl"
+bias = "data/bias/REAL-FM-7-bias.json"

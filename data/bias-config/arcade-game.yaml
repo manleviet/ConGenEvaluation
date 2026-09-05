@@ -1,0 +1,384 @@
+# Bias Config for arcade-game Feature Model
+# Auto-generated from feature model
+
+name: arcade-game
+
+# List of all features in the model
+features:
+  - ArcadeGame
+  - UseCases
+  - CheckPreviousBestScore
+  - SaveScore
+  - SaveGame
+  - ExitGame
+  - InstallGame
+  - UninstallGame
+  - ListGame
+  - PlayGame
+  - PlayGame_1
+  - PlayBrickles
+  - PlayPong
+  - PlayBowling
+  - Initialization
+  - AnimationLoop
+  - ClassDiagram
+  - GameSprite
+  - SpritePair
+  - Rectangle
+  - Size
+  - Point
+  - GameSprite_3
+  - MovableSprite
+  - StationarySprite
+  - Velocity
+  - MovableSprite_2
+  - Paddle
+  - Puck
+  - BowlingBall
+  - BowlingPin
+  - TopPaddle
+  - BottomPaddle
+  - Wall
+  - Leftpong
+  - Rightpont
+  - Leftbrickles
+  - Rightbrickles
+  - StationarySprite_2
+  - Brick
+  - BrickPile
+  - Ceilingbrickles
+  - Floorbrickles
+  - Lane
+  - Gutter
+  - Edge
+  - EndofAlley
+  - RackofPins
+  - ScoreBoard
+  - Floorpong
+  - Ceilingpong
+  - DividingLine
+  - Pucksupply
+  - Board
+  - PongBoard
+  - BricklesBoard
+  - BowlingBoard
+  - Menu
+  - Pong
+  - Brickles
+  - Bowling
+  - GameMenu
+  - PongGameMenu
+  - BricklesGameMenu
+  - BowlingGameMenu
+
+# Leaf features (features with no children)
+leaf_features:
+  - CheckPreviousBestScore
+  - SaveScore
+  - SaveGame
+  - ExitGame
+  - InstallGame
+  - UninstallGame
+  - ListGame
+  - PlayBrickles
+  - PlayPong
+  - PlayBowling
+  - Initialization
+  - AnimationLoop
+  - SpritePair
+  - Size
+  - Point
+  - Velocity
+  - Puck
+  - BowlingBall
+  - BowlingPin
+  - TopPaddle
+  - BottomPaddle
+  - Leftpong
+  - Rightpont
+  - Leftbrickles
+  - Rightbrickles
+  - Brick
+  - BrickPile
+  - Ceilingbrickles
+  - Floorbrickles
+  - Lane
+  - Gutter
+  - Edge
+  - EndofAlley
+  - RackofPins
+  - ScoreBoard
+  - Floorpong
+  - Ceilingpong
+  - DividingLine
+  - Pucksupply
+  - PongBoard
+  - BricklesBoard
+  - BowlingBoard
+  - Pong
+  - Brickles
+  - Bowling
+  - PongGameMenu
+  - BricklesGameMenu
+  - BowlingGameMenu
+
+# Hierarchical relationship candidates
+# The generator will create constraints with allowed operators based on relationship_type
+hierarchical_candidates:
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ArcadeGame
+    children: [UseCases]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [CheckPreviousBestScore]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [SaveScore]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [SaveGame]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [ExitGame]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [InstallGame]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [UninstallGame]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [ListGame]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: UseCases
+    children: [PlayGame]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: PlayGame
+    children: [PlayGame_1]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: PlayGame_1
+    children: [PlayBrickles, PlayPong, PlayBowling]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: PlayGame
+    children: [Initialization]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: PlayGame
+    children: [AnimationLoop]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ArcadeGame
+    children: [ClassDiagram]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ClassDiagram
+    children: [GameSprite]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: GameSprite
+    children: [SpritePair]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: GameSprite
+    children: [Rectangle]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: Rectangle
+    children: [Size]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: Rectangle
+    children: [Point]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: GameSprite
+    children: [GameSprite_3]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: GameSprite_3
+    children: [MovableSprite, StationarySprite]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: MovableSprite
+    children: [Velocity]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: MovableSprite
+    children: [MovableSprite_2]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: MovableSprite_2
+    children: [Paddle, Puck, BowlingBall, BowlingPin]
+    relationship_type: group
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: Paddle
+    children: [TopPaddle, BottomPaddle]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: StationarySprite
+    children: [Wall]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: Wall
+    children: [Leftpong, Rightpont, Leftbrickles, Rightbrickles]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: StationarySprite
+    children: [StationarySprite_2]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: StationarySprite_2
+    children: [Brick, BrickPile, Ceilingbrickles, Floorbrickles, Lane, Gutter, Edge, EndofAlley, RackofPins, ScoreBoard, Floorpong, Ceilingpong, DividingLine]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ClassDiagram
+    children: [Pucksupply]
+    relationship_type: binary
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ClassDiagram
+    children: [Board]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: Board
+    children: [PongBoard, BricklesBoard, BowlingBoard]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ClassDiagram
+    children: [Menu]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: Menu
+    children: [Pong, Brickles, Bowling]
+    relationship_type: group
+
+  # Binary relationships: will generate with mandatory and optional operators
+  - parent: ClassDiagram
+    children: [GameMenu]
+    relationship_type: binary
+
+  # Group relationships: will generate with alternative and or operators
+  - parent: GameMenu
+    children: [PongGameMenu, BricklesGameMenu, BowlingGameMenu]
+    relationship_type: group
+
+# Cross-tree constraint candidates
+# Original cross-tree constraints from feature model:
+#   (Constraint 0) OR[NOT[PlayBrickles][]][Brickles]
+#   (Constraint 1) OR[PlayBrickles][NOT[Brickles][]]
+#   (Constraint 2) OR[NOT[PlayPong][]][Pong]
+#   (Constraint 3) OR[PlayPong][NOT[Pong][]]
+#   (Constraint 4) OR[NOT[PlayBowling][]][Bowling]
+#   (Constraint 5) OR[PlayBowling][NOT[Bowling][]]
+#   (Constraint 6) OR[NOT[TopPaddle][]][Pong]
+#   (Constraint 7) OR[NOT[BottomPaddle][]][Pong]
+#   (Constraint 8) OR[NOT[Leftpong][]][Pong]
+#   (Constraint 9) OR[NOT[Rightpont][]][Pong]
+#   (Constraint 10) OR[NOT[ScoreBoard][]][Pong]
+#   (Constraint 11) OR[NOT[Floorpong][]][Pong]
+#   (Constraint 12) OR[NOT[Ceilingpong][]][Pong]
+#   (Constraint 13) OR[NOT[DividingLine][]][Pong]
+#   (Constraint 14) OR[NOT[PongBoard][]][Pong]
+#   (Constraint 15) OR[NOT[PongGameMenu][]][Pong]
+#   (Constraint 16) OR[NOT[BowlingBoard][]][Bowling]
+#   (Constraint 17) OR[NOT[BowlingBall][]][Bowling]
+#   (Constraint 18) OR[NOT[BowlingPin][]][Bowling]
+#   (Constraint 19) OR[NOT[Lane][]][Bowling]
+#   (Constraint 20) OR[NOT[Gutter][]][Bowling]
+#   (Constraint 21) OR[NOT[Edge][]][Bowling]
+#   (Constraint 22) OR[NOT[EndofAlley][]][Bowling]
+#   (Constraint 23) OR[NOT[RackofPins][]][Bowling]
+#   (Constraint 24) OR[NOT[BowlingGameMenu][]][Bowling]
+#   (Constraint 25) OR[NOT[BricklesGameMenu][]][Brickles]
+#   (Constraint 26) OR[NOT[BricklesBoard][]][Brickles]
+#   (Constraint 27) OR[NOT[Leftbrickles][]][Brickles]
+#   (Constraint 28) OR[NOT[Rightbrickles][]][Brickles]
+#   (Constraint 29) OR[NOT[BrickPile][]][Brickles]
+#   (Constraint 30) OR[NOT[Brick][]][Brickles]
+#   (Constraint 31) OR[NOT[Ceilingbrickles][]][Brickles]
+#   (Constraint 32) OR[NOT[Floorbrickles][]][Brickles]
+#   (Constraint 33) OR[NOT[Pucksupply][]][Brickles]
+#
+# cross_tree_mode: 'all' generates requires/excludes for all feature pairs
+#                  'leaf' generates only between leaf features
+#                  'extracted' generates only between features from CTCs
+cross_tree_candidates:
+  cross_tree_mode: extracted
+  cross_tree_features:
+    - BottomPaddle
+    - Bowling
+    - BowlingBall
+    - BowlingBoard
+    - BowlingGameMenu
+    - BowlingPin
+    - Brick
+    - BrickPile
+    - Brickles
+    - BricklesBoard
+    - BricklesGameMenu
+    - Ceilingbrickles
+    - Ceilingpong
+    - DividingLine
+    - Edge
+    - EndofAlley
+    - Floorbrickles
+    - Floorpong
+    - Gutter
+    - Lane
+    - Leftbrickles
+    - Leftpong
+    - PlayBowling
+    - PlayBrickles
+    - PlayPong
+    - Pong
+    - PongBoard
+    - PongGameMenu
+    - Pucksupply
+    - RackofPins
+    - Rightbrickles
+    - Rightpont
+    - ScoreBoard
+    - TopPaddle

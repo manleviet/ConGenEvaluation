@@ -1,0 +1,97 @@
+# KB Comparison Configuration
+# Compare learned KBs against ground truth feature models.
+# Run with: python -m apps.run_compare apps/conf/run_compare_config.toml -v
+
+[general]
+# Default output dir for eval JSON files (overridden by per-model kb_dir)
+output_dir = "data/results"
+verbose = true
+
+[compare]
+# Strategy: "all" (all 3), "description", "clause", or "semantic"
+strategy = "all"
+
+# =============================================================================
+# Models to compare
+# Each model needs: oracle (FM), bias (JSON), kb_dir (where KB files live)
+# kb_dir is also where *_eval.json files will be saved
+# =============================================================================
+
+# =============================================================================
+# REAL-FM-7 (14 features)
+# =============================================================================
+#[[models]]
+#name = "REAL-FM-7"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#kb_dir = "data/results/congen"
+
+[[models]]
+name = "REAL-FM-7"
+oracle = "data/fms/REAL-FM-7.uvl"
+bias = "data/bias/REAL-FM-7-bias.json"
+kb_dir = "data/results/interactive"
+#
+## =============================================================================
+## arcade-game (65 features)
+## =============================================================================
+#[[models]]
+#name = "arcade-game"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#kb_dir = "data/results/congen"
+
+[[models]]
+name = "arcade-game"
+oracle = "data/fms/arcade-game.uvl"
+bias = "data/bias/arcade-game-bias.json"
+kb_dir = "data/results/interactive"
+#
+## =============================================================================
+## fqa (179 features)
+## =============================================================================
+#[[models]]
+#name = "fqa"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#kb_dir = "data/results/congen"
+
+[[models]]
+name = "fqa"
+oracle = "data/fms/fqa.uvl"
+bias = "data/bias/fqa-bias.json"
+kb_dir = "data/results/interactive"
+#
+## =============================================================================
+## REAL-FM-4 (291 features)
+## =============================================================================
+#[[models]]
+#name = "REAL-FM-4"
+#oracle = "data/fms/REAL-FM-4.uvl"
+#bias = "data/bias/REAL-FM-4-bias.json"
+#kb_dir = "data/results/congen"
+#
+## =============================================================================
+## busybox-1.18.0 (854 features) - Large model
+## =============================================================================
+#[[models]]
+#name = "busybox-1.18.0"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#kb_dir = "data/results/congen"
+
+# =============================================================================
+# Uncomment when results are available
+# =============================================================================
+
+# [[models]]
+# name = "ea2468"
+# oracle = "data/fms/ea2468.uvl"
+# bias = "data/bias/ea2468-bias.json"
+# kb_dir = "data/results/congen"
+
+# [[models]]
+# name = "linux-2.6.33.3"
+# oracle = "data/fms/linux-2.6.33.3.uvl"
+# bias = "data/bias/linux-2.6.33.3-bias.json"
+# kb_dir = "data/results/congen"

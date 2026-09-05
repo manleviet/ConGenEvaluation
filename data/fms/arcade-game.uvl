@@ -1,0 +1,126 @@
+namespace ArcadeGame
+
+features
+	ArcadeGame {extended__ true}
+		mandatory
+			UseCases
+				optional
+					CheckPreviousBestScore
+					SaveScore
+				mandatory
+					SaveGame
+					ExitGame
+					InstallGame
+					UninstallGame
+					ListGame
+					PlayGame
+						mandatory
+							PlayGame_1 {abstract true}
+								or
+									PlayBrickles
+									PlayPong
+									PlayBowling
+							Initialization
+							AnimationLoop
+			ClassDiagram
+				mandatory
+					GameSprite
+						optional
+							SpritePair
+						mandatory
+							Rectangle
+								mandatory
+									Size
+									Point
+							GameSprite_3 {abstract true}
+								or
+									MovableSprite
+										mandatory
+											Velocity
+											MovableSprite_2 {abstract true}
+												or
+													Paddle
+														or
+															TopPaddle
+															BottomPaddle
+													Puck
+													BowlingBall
+													BowlingPin
+									StationarySprite
+										optional
+											Wall
+												or
+													Leftpong
+													Rightpont
+													Leftbrickles
+													Rightbrickles
+										mandatory
+											StationarySprite_2 {abstract true}
+												or
+													Brick
+													BrickPile
+													Ceilingbrickles
+													Floorbrickles
+													Lane
+													Gutter
+													Edge
+													EndofAlley
+													RackofPins
+													ScoreBoard
+													Floorpong
+													Ceilingpong
+													DividingLine
+				optional
+					Pucksupply
+				mandatory
+					Board
+						or
+							PongBoard
+							BricklesBoard
+							BowlingBoard
+					Menu
+						or
+							Pong
+							Brickles
+							Bowling
+					GameMenu
+						or
+							PongGameMenu
+							BricklesGameMenu
+							BowlingGameMenu
+
+constraints
+	!PlayBrickles | Brickles
+	PlayBrickles | !Brickles
+	!PlayPong | Pong
+	PlayPong | !Pong
+	!PlayBowling | Bowling
+	PlayBowling | !Bowling
+	!TopPaddle | Pong
+	!BottomPaddle | Pong
+	!Leftpong | Pong
+	!Rightpont | Pong
+	!ScoreBoard | Pong
+	!Floorpong | Pong
+	!Ceilingpong | Pong
+	!DividingLine | Pong
+	!PongBoard | Pong
+	!PongGameMenu | Pong
+	!BowlingBoard | Bowling
+	!BowlingBall | Bowling
+	!BowlingPin | Bowling
+	!Lane | Bowling
+	!Gutter | Bowling
+	!Edge | Bowling
+	!EndofAlley | Bowling
+	!RackofPins | Bowling
+	!BowlingGameMenu | Bowling
+	!BricklesGameMenu | Brickles
+	!BricklesBoard | Brickles
+	!Leftbrickles | Brickles
+	!Rightbrickles | Brickles
+	!BrickPile | Brickles
+	!Brick | Brickles
+	!Ceilingbrickles | Brickles
+	!Floorbrickles | Brickles
+	!Pucksupply | Brickles

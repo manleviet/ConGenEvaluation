@@ -1,0 +1,14 @@
+# ConGen Configuration
+# Run with: python -m apps.run_congen apps/conf/run_congen_config.toml
+
+[general]
+seed = 82
+output_dir = "data/results"
+verbose = true
+
+# Feature models to process
+[[models]]
+name = "REAL-FM-7_rs_1n"
+oracle = "data/fms/REAL-FM-7.uvl"
+bias = "data/bias/REAL-FM-7-bias.json"
+examples = "data/examples/REAL-FM-7_rs_1n.json"
