@@ -1,0 +1,740 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "mean_accuracy": 1.0,
+  "std_accuracy": 0.0,
+  "total_runtime_ms": 56416.17466695607,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c182",
+        "description": "BowlingPin requires Bowling"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 1,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 20,
+        "true_negatives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 17757.36320798751,
+        "consistency_checks": 258,
+        "memory_peak_mb": 5.172345161437988,
+        "quacq_runtime_ms": 17724.423000006936,
+        "query_generation_runtime_ms": 2178.718540351838,
+        "findscope_runtime_ms": 48830.10499959346,
+        "findc_runtime_ms": 18.039748654700816,
+        "dis_gen_runtime_ms": 0,
+        "reduce_runtime_ms": 3.167749964632094,
+        "solver_time_ms": 6421.479000000044,
+        "is_consistent_calls": 77041,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 45,
+        "query_generation_consistency_checks": 9849,
+        "prune_calls": 106,
+        "prune_is_consistent_calls": 67191,
+        "findscope_calls": 323,
+        "findc_calls": 15,
+        "findc_consistency_checks": 13,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 10,
+        "profiler": {
+          "query_generation_consistency_checks": 9849,
+          "solver_time": {
+            "count": 77063,
+            "total": 6.421479000000044,
+            "mean": 8.332765399737935e-05,
+            "min": 4.999999999810711e-06,
+            "max": 0.00039400000000000546,
+            "median": 8.300000000005525e-05,
+            "stddev": 1.0456353283062704e-05
+          },
+          "solver_time_accum": 6.421479000000044,
+          "is_consistent_calls": 77041,
+          "query_generation_runtime": {
+            "count": 45,
+            "total": 2.178718540351838,
+            "mean": 0.04841596756337418,
+            "min": 0.0005931659834459424,
+            "max": 0.5078510000603274,
+            "median": 0.0032517920481041074,
+            "stddev": 0.10573237611917624
+          },
+          "query_generation_calls": 45,
+          "paper_consistency_checks": 258,
+          "findscope_calls": 323,
+          "findscope_runtime": {
+            "count": 323,
+            "total": 48.83010499959346,
+            "mean": 0.15117679566437603,
+            "min": 4.624947905540466e-06,
+            "max": 1.512451499933377,
+            "median": 0.0006144579965621233,
+            "stddev": 0.22906675646623506
+          },
+          "prune_is_consistent_calls": 67191,
+          "prune_calls": 106,
+          "quacq_prune_partial_pruned": 44,
+          "findc_consistency_checks": 13,
+          "findc_calls": 15,
+          "findc_runtime": {
+            "count": 15,
+            "total": 0.018039748654700816,
+            "mean": 0.0012026499103133877,
+            "min": 0.0007325420156121254,
+            "max": 0.003255791962146759,
+            "median": 0.0008547500474378467,
+            "stddev": 0.0006496694833640646
+          },
+          "quacq_prune_complete_pruned": 1251,
+          "query_generation_repeat_skips": 2,
+          "redundancy_consistency_checks": 10,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.003167749964632094,
+            "mean": 0.003167749964632094,
+            "min": 0.003167749964632094,
+            "max": 0.003167749964632094
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 17.724423000006936,
+            "mean": 17.724423000006936,
+            "min": 17.724423000006936,
+            "max": 17.724423000006936
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 17.75736320798751,
+            "mean": 17.75736320798751,
+            "min": 17.75736320798751,
+            "max": 17.75736320798751
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c703",
+          "description": "BrickPile requires Brickles"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c61",
+          "description": "ClassDiagram --mandatory--> Board"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        },
+        {
+          "id": "c254",
+          "description": "RackofPins requires Bowling"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 10,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 39,
+        "negative": 4
+      },
+      "test_size": {
+        "positive": 20,
+        "negative": 2
+      },
+      "n_queries": 250,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 20,
+        "true_negatives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 18984.739499981515,
+        "consistency_checks": 254,
+        "memory_peak_mb": 4.955442428588867,
+        "quacq_runtime_ms": 18953.035375103354,
+        "query_generation_runtime_ms": 2003.5252078669146,
+        "findscope_runtime_ms": 53730.30008375645,
+        "findc_runtime_ms": 14.588085003197193,
+        "dis_gen_runtime_ms": 0,
+        "reduce_runtime_ms": 3.464665962383151,
+        "solver_time_ms": 6599.011999999206,
+        "is_consistent_calls": 81926,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 47,
+        "query_generation_consistency_checks": 9277,
+        "prune_calls": 119,
+        "prune_is_consistent_calls": 72666,
+        "findscope_calls": 288,
+        "findc_calls": 14,
+        "findc_consistency_checks": 6,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 11,
+        "profiler": {
+          "query_generation_consistency_checks": 9277,
+          "solver_time": {
+            "count": 81960,
+            "total": 6.599011999999206,
+            "mean": 8.051503172278192e-05,
+            "min": 5.000000001587068e-06,
+            "max": 0.00019899999999850593,
+            "median": 8.099999999799934e-05,
+            "stddev": 9.439241230875689e-06
+          },
+          "solver_time_accum": 6.599011999999206,
+          "is_consistent_calls": 81926,
+          "query_generation_runtime": {
+            "count": 47,
+            "total": 2.0035252078669146,
+            "mean": 0.04262819591206201,
+            "min": 0.0003809579648077488,
+            "max": 0.356432665954344,
+            "median": 0.004992666887119412,
+            "stddev": 0.07950713427047393
+          },
+          "query_generation_calls": 47,
+          "paper_consistency_checks": 254,
+          "prune_is_consistent_calls": 72666,
+          "quacq_prune_complete_pruned": 1243,
+          "prune_calls": 119,
+          "findscope_calls": 288,
+          "findscope_runtime": {
+            "count": 288,
+            "total": 53.73030008375645,
+            "mean": 0.18656354195748767,
+            "min": 4.083034582436085e-06,
+            "max": 1.5786095829680562,
+            "median": 0.00048691651318222284,
+            "stddev": 0.2804233916832668
+          },
+          "quacq_prune_partial_pruned": 89,
+          "findc_calls": 14,
+          "findc_runtime": {
+            "count": 14,
+            "total": 0.014588085003197193,
+            "mean": 0.0010420060716569424,
+            "min": 0.0007037089671939611,
+            "max": 0.0018817090895026922,
+            "median": 0.00085672945715487,
+            "stddev": 0.00039231861731542513
+          },
+          "findc_consistency_checks": 6,
+          "redundancy_consistency_checks": 11,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.003464665962383151,
+            "mean": 0.003464665962383151,
+            "min": 0.003464665962383151,
+            "max": 0.003464665962383151
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 18.953035375103354,
+            "mean": 18.953035375103354,
+            "min": 18.953035375103354,
+            "max": 18.953035375103354
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 18.984739499981515,
+            "mean": 18.984739499981515,
+            "min": 18.984739499981515,
+            "max": 18.984739499981515
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c212",
+          "description": "EndofAlley requires Bowling"
+        },
+        {
+          "id": "c1099",
+          "description": "Ceilingpong requires Pong"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 11,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 39,
+        "negative": 4
+      },
+      "test_size": {
+        "positive": 20,
+        "negative": 2
+      },
+      "n_queries": 250,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 19,
+        "true_negatives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 19582.632917095907,
+        "consistency_checks": 259,
+        "memory_peak_mb": 5.030012130737305,
+        "quacq_runtime_ms": 19550.879542017356,
+        "query_generation_runtime_ms": 1972.78999525588,
+        "findscope_runtime_ms": 58503.339950344525,
+        "findc_runtime_ms": 15.278208069503307,
+        "dis_gen_runtime_ms": 1.1103750439360738,
+        "reduce_runtime_ms": 3.8182500284165144,
+        "solver_time_ms": 6806.915999999667,
+        "is_consistent_calls": 83232,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 48,
+        "query_generation_consistency_checks": 9473,
+        "prune_calls": 127,
+        "prune_is_consistent_calls": 73754,
+        "findscope_calls": 288,
+        "findc_calls": 14,
+        "findc_consistency_checks": 10,
+        "dis_gen_calls": 1,
+        "dis_gen_consistency_checks": 1,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 12,
+        "profiler": {
+          "query_generation_consistency_checks": 9473,
+          "solver_time": {
+            "count": 83250,
+            "total": 6.806915999999667,
+            "mean": 8.176475675675276e-05,
+            "min": 4.0000000041118255e-06,
+            "max": 0.00020100000000411455,
+            "median": 8.299999999650254e-05,
+            "stddev": 9.334086276908223e-06
+          },
+          "solver_time_accum": 6.806915999999667,
+          "is_consistent_calls": 83232,
+          "query_generation_runtime": {
+            "count": 48,
+            "total": 1.97278999525588,
+            "mean": 0.041099791567830835,
+            "min": 0.0003321669064462185,
+            "max": 0.57736966595985,
+            "median": 0.003144229471217841,
+            "stddev": 0.09974531326845106
+          },
+          "query_generation_calls": 48,
+          "paper_consistency_checks": 259,
+          "prune_is_consistent_calls": 73754,
+          "quacq_prune_complete_pruned": 1267,
+          "prune_calls": 127,
+          "findscope_calls": 288,
+          "findscope_runtime": {
+            "count": 288,
+            "total": 58.503339950344525,
+            "mean": 0.20313659704980738,
+            "min": 4.042056389153004e-06,
+            "max": 1.9041526669170707,
+            "median": 0.0005119795678183436,
+            "stddev": 0.2982909881316769
+          },
+          "findc_calls": 14,
+          "findc_runtime": {
+            "count": 14,
+            "total": 0.015278208069503307,
+            "mean": 0.0010913005763930933,
+            "min": 0.0007348329527303576,
+            "max": 0.0024139999877661467,
+            "median": 0.0008911664481274784,
+            "stddev": 0.00045645157805978176
+          },
+          "quacq_prune_partial_pruned": 37,
+          "findc_consistency_checks": 10,
+          "dis_gen_consistency_checks": 1,
+          "dis_gen_calls": 1,
+          "dis_gen_runtime": {
+            "count": 1,
+            "total": 0.0011103750439360738,
+            "mean": 0.0011103750439360738,
+            "min": 0.0011103750439360738,
+            "max": 0.0011103750439360738
+          },
+          "quacq_findc_unconfirmed": 1,
+          "redundancy_consistency_checks": 12,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.0038182500284165144,
+            "mean": 0.0038182500284165144,
+            "min": 0.0038182500284165144,
+            "max": 0.0038182500284165144
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 19.550879542017356,
+            "mean": 19.550879542017356,
+            "min": 19.550879542017356,
+            "max": 19.550879542017356
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 19.582632917095907,
+            "mean": 19.582632917095907,
+            "min": 19.582632917095907,
+            "max": 19.582632917095907
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c179",
+          "description": "BowlingGameMenu requires Bowling"
+        },
+        {
+          "id": "c45",
+          "description": "MovableSprite --mandatory--> MovableSprite_2"
+        },
+        {
+          "id": "c48",
+          "description": "MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']"
+        },
+        {
+          "id": "c11",
+          "description": "UseCases --mandatory--> InstallGame"
+        },
+        {
+          "id": "c1531",
+          "description": "Leftpong requires Pong"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c1652",
+          "description": "PongGameMenu requires Pong"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 12,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 40,
+        "negative": 4
+      },
+      "test_size": {
+        "positive": 19,
+        "negative": 2
+      },
+      "n_queries": 250,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 18774.911875021644,
+      "std_ms": 930.5498922112606,
+      "min_ms": 17757.36320798751,
+      "max_ms": 19582.632917095907
+    },
+    "consistency_checks": {
+      "mean": 257,
+      "std": 2.6457513110645907,
+      "min": 254,
+      "max": 259
+    },
+    "memory": {
+      "mean_mb": 5.052599906921387,
+      "max_mb": 5.172345161437988
+    },
+    "quacq_runtime": {
+      "mean_ms": 18742.779305709217,
+      "std_ms": 931.204373916365,
+      "min_ms": 17724.423000006936,
+      "max_ms": 19550.879542017356
+    },
+    "query_gen_runtime": {
+      "mean_ms": 2051.677914491544,
+      "std_ms": 111.08849529898548,
+      "min_ms": 1972.78999525588,
+      "max_ms": 2178.718540351838
+    },
+    "findscope_runtime": {
+      "mean_ms": 53687.915011231475,
+      "std_ms": 4836.7567619105785,
+      "min_ms": 48830.10499959346,
+      "max_ms": 58503.339950344525
+    },
+    "findc_runtime": {
+      "mean_ms": 15.96868057580044,
+      "std_ms": 1.826488352616028,
+      "min_ms": 14.588085003197193,
+      "max_ms": 18.039748654700816
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 0.3701250146453579,
+      "std_ms": 0.6410753305179347,
+      "min_ms": 0,
+      "max_ms": 1.1103750439360738
+    },
+    "reduce_runtime": {
+      "mean_ms": 3.483555318477253,
+      "std_ms": 0.32566115684269303,
+      "min_ms": 3.167749964632094,
+      "max_ms": 3.8182500284165144
+    },
+    "solver_time": {
+      "mean_ms": 6609.135666666306,
+      "std_ms": 192.91782372882847,
+      "min_ms": 6421.479000000044,
+      "max_ms": 6806.915999999667
+    },
+    "is_consistent_calls": {
+      "mean": 80733,
+      "std": 3263.365900416317,
+      "min": 77041,
+      "max": 83232
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 46.666666666666664,
+      "std": 1.5275252316519468,
+      "min": 45,
+      "max": 48
+    },
+    "query_gen_checks": {
+      "mean": 9533,
+      "std": 290.6819567843866,
+      "min": 9277,
+      "max": 9849
+    },
+    "prune_calls": {
+      "mean": 117.33333333333333,
+      "std": 10.598742063723098,
+      "min": 106,
+      "max": 127
+    },
+    "prune_ic_calls": {
+      "mean": 71203.66666666667,
+      "std": 3517.3934004221555,
+      "min": 67191,
+      "max": 73754
+    },
+    "findscope_calls": {
+      "mean": 299.6666666666667,
+      "std": 20.207259421636902,
+      "min": 288,
+      "max": 323
+    },
+    "findc_calls": {
+      "mean": 14.333333333333334,
+      "std": 0.5773502691896257,
+      "min": 14,
+      "max": 15
+    },
+    "findc_checks": {
+      "mean": 9.666666666666666,
+      "std": 3.511884584284246,
+      "min": 6,
+      "max": 13
+    },
+    "dis_gen_calls": {
+      "mean": 0.3333333333333333,
+      "std": 0.5773502691896257,
+      "min": 0,
+      "max": 1
+    },
+    "dis_gen_checks": {
+      "mean": 0.3333333333333333,
+      "std": 0.5773502691896257,
+      "min": 0,
+      "max": 1
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 11,
+      "std": 1.0,
+      "min": 10,
+      "max": 12
+    }
+  },
+  "summary": null
+}

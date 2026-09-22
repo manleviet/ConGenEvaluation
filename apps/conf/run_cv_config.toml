@@ -1,0 +1,280 @@
+# Unified Cross-Validation Configuration
+# Run with: python -m apps.run_cv apps/conf/run_cv_config.toml -v
+
+[general]
+seed = 42
+output_dir = "data/results"
+verbose = true
+
+[evaluation]
+# Algorithm: "congen" or "interactive"
+algorithm = "congen"
+
+# Number of folds for cross-validation
+n_folds = 3
+
+# Solver settings
+solver_name = "glucose4"
+
+# Solver modes: "all" (both), "incremental", or "non-incremental"
+solver_mode = "incremental"
+
+# Shuffle bias ordering per fold
+shuffle_bias = true
+
+# Interactive-specific settings (only used when algorithm = "interactive")
+[evaluation.interactive]
+max_queries = 1000  # Maximum number of membership queries
+# Query generation mode for example-based learning:
+#   "example_only" - only draw queries from example pool (stops when pool empty)
+#   "example_first" - examples first, then SAT-generated queries from bias (up to max_queries)
+query_mode = "example_first"
+
+# =============================================================================
+# Models to evaluate
+# Sampling strategies: rs_1n, rs_2n, rs_3n, rs_m, 2cov, ff
+# =============================================================================
+
+# =============================================================================
+# REAL-FM-7 (14 features, |B| = 295)
+# =============================================================================
+
+#[[models]]
+#name = "REAL-FM-7_rs_1n"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#examples = "data/examples/REAL-FM-7_rs_1n.json"
+#folds_path = "data/folds/REAL-FM-7_rs_1n_folds.json"
+#
+#[[models]]
+#name = "REAL-FM-7_rs_2n"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#examples = "data/examples/REAL-FM-7_rs_2n.json"
+#folds_path = "data/folds/REAL-FM-7_rs_2n_folds.json"
+#
+#[[models]]
+#name = "REAL-FM-7_rs_3n"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#examples = "data/examples/REAL-FM-7_rs_3n.json"
+#folds_path = "data/folds/REAL-FM-7_rs_3n_folds.json"
+#
+#[[models]]
+#name = "REAL-FM-7_rs_m"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#examples = "data/examples/REAL-FM-7_rs_m.json"
+#folds_path = "data/folds/REAL-FM-7_rs_m_folds.json"
+#
+#[[models]]
+#name = "REAL-FM-7_2cov"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#examples = "data/examples/REAL-FM-7_2cov.json"
+#folds_path = "data/folds/REAL-FM-7_2cov_folds.json"
+#
+#[[models]]
+#name = "REAL-FM-7_ff"
+#oracle = "data/fms/REAL-FM-7.uvl"
+#bias = "data/bias/REAL-FM-7-bias.json"
+#examples = "data/examples/REAL-FM-7_ff.json"
+#folds_path = "data/folds/REAL-FM-7_ff_folds.json"
+
+### =============================================================================
+### arcade-game (65 features, |B| = 1,755)
+### =============================================================================
+#
+#[[models]]
+#name = "arcade-game_rs_1n"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#examples = "data/examples/arcade-game_rs_1n.json"
+#folds_path = "data/folds/arcade-game_rs_1n_folds.json"
+#
+#[[models]]
+#name = "arcade-game_rs_2n"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#examples = "data/examples/arcade-game_rs_2n.json"
+#folds_path = "data/folds/arcade-game_rs_2n_folds.json"
+#
+#[[models]]
+#name = "arcade-game_rs_3n"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#examples = "data/examples/arcade-game_rs_3n.json"
+#folds_path = "data/folds/arcade-game_rs_3n_folds.json"
+#
+#[[models]]
+#name = "arcade-game_rs_m"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#examples = "data/examples/arcade-game_rs_m.json"
+#folds_path = "data/folds/arcade-game_rs_m_folds.json"
+#
+#[[models]]
+#name = "arcade-game_2cov"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#examples = "data/examples/arcade-game_2cov.json"
+#folds_path = "data/folds/arcade-game_2cov_folds.json"
+#
+#[[models]]
+#name = "arcade-game_ff"
+#oracle = "data/fms/arcade-game.uvl"
+#bias = "data/bias/arcade-game-bias.json"
+#examples = "data/examples/arcade-game_ff.json"
+#folds_path = "data/folds/arcade-game_ff_folds.json"
+#
+### =============================================================================
+### fqa (179 features, |B| = 459)
+### =============================================================================
+#
+#[[models]]
+#name = "fqa_rs_1n"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#examples = "data/examples/fqa_rs_1n.json"
+#folds_path = "data/folds/fqa_rs_1n_folds.json"
+#
+#[[models]]
+#name = "fqa_rs_2n"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#examples = "data/examples/fqa_rs_2n.json"
+#folds_path = "data/folds/fqa_rs_2n_folds.json"
+#
+#[[models]]
+#name = "fqa_rs_3n"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#examples = "data/examples/fqa_rs_3n.json"
+#folds_path = "data/folds/fqa_rs_3n_folds.json"
+#
+#[[models]]
+#name = "fqa_rs_m"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#examples = "data/examples/fqa_rs_m.json"
+#folds_path = "data/folds/fqa_rs_m_folds.json"
+#
+#[[models]]
+#name = "fqa_2cov"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#examples = "data/examples/fqa_2cov.json"
+#folds_path = "data/folds/fqa_2cov_folds.json"
+#
+#[[models]]
+#name = "fqa_ff"
+#oracle = "data/fms/fqa.uvl"
+#bias = "data/bias/fqa-bias.json"
+#examples = "data/examples/fqa_ff.json"
+#folds_path = "data/folds/fqa_ff_folds.json"
+#
+### =============================================================================
+### REAL-FM-4 (291 features, |B| = 2,079)
+### =============================================================================
+#
+[[models]]
+name = "REAL-FM-4_rs_1n"
+oracle = "data/fms/REAL-FM-4.uvl"
+bias = "data/bias/REAL-FM-4-bias.json"
+examples = "data/examples/REAL-FM-4_rs_1n.json"
+folds_path = "data/folds/REAL-FM-4_rs_1n_folds.json"
+
+[[models]]
+name = "REAL-FM-4_rs_2n"
+oracle = "data/fms/REAL-FM-4.uvl"
+bias = "data/bias/REAL-FM-4-bias.json"
+examples = "data/examples/REAL-FM-4_rs_2n.json"
+folds_path = "data/folds/REAL-FM-4_rs_2n_folds.json"
+
+[[models]]
+name = "REAL-FM-4_rs_3n"
+oracle = "data/fms/REAL-FM-4.uvl"
+bias = "data/bias/REAL-FM-4-bias.json"
+examples = "data/examples/REAL-FM-4_rs_3n.json"
+folds_path = "data/folds/REAL-FM-4_rs_3n_folds.json"
+
+[[models]]
+name = "REAL-FM-4_rs_m"
+oracle = "data/fms/REAL-FM-4.uvl"
+bias = "data/bias/REAL-FM-4-bias.json"
+examples = "data/examples/REAL-FM-4_rs_m.json"
+folds_path = "data/folds/REAL-FM-4_rs_m_folds.json"
+
+[[models]]
+name = "REAL-FM-4_2cov"
+oracle = "data/fms/REAL-FM-4.uvl"
+bias = "data/bias/REAL-FM-4-bias.json"
+examples = "data/examples/REAL-FM-4_2cov.json"
+folds_path = "data/folds/REAL-FM-4_2cov_folds.json"
+
+[[models]]
+name = "REAL-FM-4_ff"
+oracle = "data/fms/REAL-FM-4.uvl"
+bias = "data/bias/REAL-FM-4-bias.json"
+examples = "data/examples/REAL-FM-4_ff.json"
+folds_path = "data/folds/REAL-FM-4_ff_folds.json"
+#
+## =============================================================================
+## busybox-1.18.0 (854 features, |B| = 6,635) - Large model, may take longer
+## =============================================================================
+#
+#[[models]]
+#name = "busybox-1.18.0_rs_1n"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#examples = "data/examples/busybox-1.18.0_rs_1n.json"
+#folds_path = "data/folds/busybox-1.18.0_rs_1n_folds.json"
+#
+#[[models]]
+#name = "busybox-1.18.0_rs_2n"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#examples = "data/examples/busybox-1.18.0_rs_2n.json"
+#folds_path = "data/folds/busybox-1.18.0_rs_2n_folds.json"
+#
+#[[models]]
+#name = "busybox-1.18.0_rs_3n"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#examples = "data/examples/busybox-1.18.0_rs_3n.json"
+#folds_path = "data/folds/busybox-1.18.0_rs_3n_folds.json"
+#
+#[[models]]
+#name = "busybox-1.18.0_rs_m"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#examples = "data/examples/busybox-1.18.0_rs_m.json"
+#folds_path = "data/folds/busybox-1.18.0_rs_m_folds.json"
+#
+#[[models]]
+#name = "busybox-1.18.0_2cov"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#examples = "data/examples/busybox-1.18.0_2cov.json"
+#folds_path = "data/folds/busybox-1.18.0_2cov_folds.json"
+#
+#[[models]]
+#name = "busybox-1.18.0_ff"
+#oracle = "data/fms/busybox-1.18.0.uvl"
+#bias = "data/bias/busybox-1.18.0-bias.json"
+#examples = "data/examples/busybox-1.18.0_ff.json"
+#folds_path = "data/folds/busybox-1.18.0_ff_folds.json"
+
+# =============================================================================
+# Models without examples (commented out)
+# =============================================================================
+
+# [[models]]
+# name = "ea2468"
+# oracle = "data/fms/ea2468.uvl"
+# bias = "data/bias/ea2468-bias.json"
+
+# [[models]]
+# name = "linux-2.6.33.3"
+# oracle = "data/fms/linux-2.6.33.3.uvl"
+# bias = "data/bias/linux-2.6.33.3-bias.json"

@@ -1,0 +1,85 @@
+# Configuration for generating test case examples from feature models
+# Based on AcqMSS paper sampling methods (Section "Sampling Methods")
+#
+# Usage: python -m apps.generate_examples apps/conf/generate_examples_config.toml
+
+[general]
+# Random seed for reproducibility
+seed = 82
+
+# Output directory for generated examples
+output_dir = "data/examples"
+
+# Verbose output
+verbose = true
+
+# Sampling strategies:
+#
+# 1. Random Sampling (RS) with different sizes (controlled E+/E- ratio):
+#    - rs_1n : n examples (n = number of features)
+#    - rs_2n : 2n examples
+#    - rs_3n : 3n examples
+#    - rs_m  : m examples (m = smallest number for 2-wise coverage)
+#
+# 2. Coverage-based:
+#    - 2cov  : 2-wise Coverage (pairwise) - each pair of features covered
+#    - ff    : Feature Frequency - each feature appears as True/False in E+/E-
+#
+# Default: run all strategies from paper
+strategies = ["rs_1n", "rs_2n", "rs_3n", "rs_m", "2cov", "ff"]
+
+# Feature models to process
+# Pre-computed values:
+#   n = number of features
+#   valid_configs = number of valid configurations (optional, for E+/E- distribution)
+#   m = 2-COV count (optional, for rs_m strategy)
+
+[[models]]
+path = "data/fms/REAL-FM-7.uvl"
+n = 14
+valid_configs = 80
+m = 9
+
+[[models]]
+path = "data/fms/arcade-game.uvl"
+n = 65
+# valid_configs = TBD (computation takes too long)
+m = 14
+
+[[models]]
+path = "data/fms/fqa.uvl"
+n = 179
+# valid_configs = TBD
+m = 16
+
+[[models]]
+path = "data/fms/REAL-FM-4.uvl"
+n = 291
+# valid_configs = TBD
+m = 18
+
+[[models]]
+path = "data/fms/busybox-1.18.0.uvl"
+n = 854
+# valid_configs = TBD
+# m = TBD
+
+[[models]]
+path = "data/fms/ea2468.uvl"
+n = 1408
+# valid_configs = TBD
+m = 22
+
+#[[models]]
+#path = "data/fms/linux-2.6.33.3.uvl"
+#n = 6467
+## valid_configs = TBD
+## m = TBD
+
+# Example with custom strategies
+# [[models]]
+# path = "data/fms/custom-model.uvl"
+# n = 100
+# valid_configs = 500
+# m = 20
+# strategies = ["rs_2n", "ff"]

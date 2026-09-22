@@ -1,0 +1,780 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "mean_accuracy": 1.0,
+  "std_accuracy": 0.0,
+  "total_runtime_ms": 70351.80454188958,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c31",
+        "description": "Authentication --mandatory--> AuthenticationImplementations"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 1,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 54,
+        "true_negatives": 6,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 22157.94454200659,
+        "consistency_checks": 1005,
+        "memory_peak_mb": 8.146454811096191,
+        "quacq_runtime_ms": 22138.715332956053,
+        "query_generation_runtime_ms": 3178.8326707901433,
+        "findscope_runtime_ms": 106005.90133783408,
+        "findc_runtime_ms": 68.20541922934353,
+        "dis_gen_runtime_ms": 25.206209160387516,
+        "reduce_runtime_ms": 3.2344170613214374,
+        "solver_time_ms": 6766.854999999857,
+        "is_consistent_calls": 109701,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 86,
+        "query_generation_consistency_checks": 22208,
+        "prune_calls": 403,
+        "prune_is_consistent_calls": 87643,
+        "findscope_calls": 1282,
+        "findc_calls": 54,
+        "findc_consistency_checks": 86,
+        "dis_gen_calls": 33,
+        "dis_gen_consistency_checks": 33,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 11,
+        "profiler": {
+          "query_generation_consistency_checks": 22208,
+          "solver_time": {
+            "count": 109981,
+            "total": 6.766854999999857,
+            "mean": 6.152749111209988e-05,
+            "min": 4.999999999921734e-06,
+            "max": 0.00031800000000004047,
+            "median": 6.099999999875649e-05,
+            "stddev": 8.284174771904028e-06
+          },
+          "solver_time_accum": 6.766854999999857,
+          "is_consistent_calls": 109701,
+          "query_generation_runtime": {
+            "count": 86,
+            "total": 3.1788326707901433,
+            "mean": 0.036963170590583065,
+            "min": 0.00025216699577867985,
+            "max": 0.3473488329909742,
+            "median": 0.008477874973323196,
+            "stddev": 0.06824908866228534
+          },
+          "query_generation_calls": 86,
+          "paper_consistency_checks": 1005,
+          "prune_is_consistent_calls": 87643,
+          "quacq_prune_complete_pruned": 239,
+          "prune_calls": 403,
+          "findscope_calls": 1282,
+          "findscope_runtime": {
+            "count": 1282,
+            "total": 106.00590133783408,
+            "mean": 0.08268791055993298,
+            "min": 4.66697383671999e-06,
+            "max": 0.906572625041008,
+            "median": 0.036261291068512946,
+            "stddev": 0.12217209704863659
+          },
+          "quacq_prune_partial_pruned": 5,
+          "findc_consistency_checks": 86,
+          "findc_calls": 54,
+          "findc_runtime": {
+            "count": 54,
+            "total": 0.06820541922934353,
+            "mean": 0.0012630633190619173,
+            "min": 0.00044916698243469,
+            "max": 0.0028732080245390534,
+            "median": 0.0012396040256135166,
+            "stddev": 0.0006602896386641413
+          },
+          "dis_gen_consistency_checks": 33,
+          "dis_gen_calls": 33,
+          "dis_gen_runtime": {
+            "count": 33,
+            "total": 0.025206209160387516,
+            "mean": 0.000763824520011743,
+            "min": 0.00043466698843985796,
+            "max": 0.0018395408987998962,
+            "median": 0.000520832953043282,
+            "stddev": 0.0005242342011049754
+          },
+          "quacq_findc_unconfirmed": 33,
+          "query_generation_repeat_skips": 154,
+          "redundancy_consistency_checks": 11,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.0032344170613214374,
+            "mean": 0.0032344170613214374,
+            "min": 0.0032344170613214374,
+            "max": 0.0032344170613214374
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 22.138715332956053,
+            "mean": 22.138715332956053,
+            "min": 22.138715332956053,
+            "max": 22.138715332956053
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 22.15794454200659,
+            "mean": 22.15794454200659,
+            "min": 22.15794454200659,
+            "max": 22.15794454200659
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c31",
+          "description": "Authentication --mandatory--> AuthenticationImplementations"
+        },
+        {
+          "id": "c226",
+          "description": "AuthenticatedUser requires Authentication"
+        },
+        {
+          "id": "c155",
+          "description": "DatabaseStorage --mandatory--> DataType"
+        },
+        {
+          "id": "c147",
+          "description": "DatabaseStorage --mandatory--> DatabaseStorageImplementations"
+        },
+        {
+          "id": "c39",
+          "description": "Authentication --mandatory--> AuthenticationMechanism"
+        },
+        {
+          "id": "c35",
+          "description": "Authentication --mandatory--> AuthenticationOperations"
+        },
+        {
+          "id": "c143",
+          "description": "DatabaseStorage --mandatory--> DatabaseStorageOperations"
+        },
+        {
+          "id": "c151",
+          "description": "DatabaseStorage --mandatory--> DatabaseType"
+        },
+        {
+          "id": "c137",
+          "description": "FileStorage --mandatory--> FileStorageImplementations"
+        },
+        {
+          "id": "c129",
+          "description": "FileStorage --mandatory--> FileStorageOperations"
+        },
+        {
+          "id": "c133",
+          "description": "FileStorage --mandatory--> FileType"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 459,
+        "n_mss": null,
+        "n_kb": 11,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 108,
+        "negative": 11
+      },
+      "test_size": {
+        "positive": 54,
+        "negative": 6
+      },
+      "n_queries": 1000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 54,
+        "true_negatives": 6,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 22407.89916703943,
+        "consistency_checks": 1002,
+        "memory_peak_mb": 7.741533279418945,
+        "quacq_runtime_ms": 22390.54562500678,
+        "query_generation_runtime_ms": 3284.205165808089,
+        "findscope_runtime_ms": 107130.13689266518,
+        "findc_runtime_ms": 65.42691576760262,
+        "dis_gen_runtime_ms": 21.696333307772875,
+        "reduce_runtime_ms": 4.231875063851476,
+        "solver_time_ms": 6841.942000000895,
+        "is_consistent_calls": 110565,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 88,
+        "query_generation_consistency_checks": 21705,
+        "prune_calls": 408,
+        "prune_is_consistent_calls": 89060,
+        "findscope_calls": 1266,
+        "findc_calls": 52,
+        "findc_consistency_checks": 86,
+        "dis_gen_calls": 33,
+        "dis_gen_consistency_checks": 33,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 14,
+        "profiler": {
+          "query_generation_consistency_checks": 21705,
+          "solver_time": {
+            "count": 110898,
+            "total": 6.841942000000895,
+            "mean": 6.169581056467109e-05,
+            "min": 4.000000000559112e-06,
+            "max": 0.0003150000000005093,
+            "median": 6.0000000004833964e-05,
+            "stddev": 6.837818996477803e-06
+          },
+          "solver_time_accum": 6.841942000000895,
+          "is_consistent_calls": 110565,
+          "query_generation_runtime": {
+            "count": 88,
+            "total": 3.284205165808089,
+            "mean": 0.037320513247819195,
+            "min": 0.000282999943010509,
+            "max": 0.24840070796199143,
+            "median": 0.014739312464371324,
+            "stddev": 0.0586618625472249
+          },
+          "query_generation_calls": 88,
+          "paper_consistency_checks": 1002,
+          "prune_is_consistent_calls": 89060,
+          "quacq_prune_complete_pruned": 238,
+          "prune_calls": 408,
+          "findscope_calls": 1266,
+          "findscope_runtime": {
+            "count": 1266,
+            "total": 107.13013689266518,
+            "mean": 0.084620961210636,
+            "min": 4.292000085115433e-06,
+            "max": 1.1008068750379607,
+            "median": 0.0012034164974465966,
+            "stddev": 0.12214162308935797
+          },
+          "quacq_prune_partial_pruned": 6,
+          "findc_consistency_checks": 86,
+          "findc_calls": 52,
+          "findc_runtime": {
+            "count": 52,
+            "total": 0.06542691576760262,
+            "mean": 0.0012582099186077428,
+            "min": 0.0004419999895617366,
+            "max": 0.0027722090017050505,
+            "median": 0.0014072709600441158,
+            "stddev": 0.0005429951849797056
+          },
+          "dis_gen_consistency_checks": 33,
+          "dis_gen_calls": 33,
+          "dis_gen_runtime": {
+            "count": 33,
+            "total": 0.021696333307772875,
+            "mean": 0.0006574646456900871,
+            "min": 0.00039425003342330456,
+            "max": 0.00179891602601856,
+            "median": 0.0005390410078689456,
+            "stddev": 0.00037106217594720843
+          },
+          "quacq_findc_unconfirmed": 33,
+          "query_generation_repeat_skips": 229,
+          "redundancy_consistency_checks": 14,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.004231875063851476,
+            "mean": 0.004231875063851476,
+            "min": 0.004231875063851476,
+            "max": 0.004231875063851476
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 22.39054562500678,
+            "mean": 22.39054562500678,
+            "min": 22.39054562500678,
+            "max": 22.39054562500678
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 22.40789916703943,
+            "mean": 22.40789916703943,
+            "min": 22.40789916703943,
+            "max": 22.40789916703943
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c226",
+          "description": "AuthenticatedUser requires Authentication"
+        },
+        {
+          "id": "c56",
+          "description": "Authentication --optional--> AnonymousUser"
+        },
+        {
+          "id": "c31",
+          "description": "Authentication --mandatory--> AuthenticationImplementations"
+        },
+        {
+          "id": "c83",
+          "description": "Logging --mandatory--> Format"
+        },
+        {
+          "id": "c79",
+          "description": "Logging --mandatory--> Handler"
+        },
+        {
+          "id": "c75",
+          "description": "Logging --mandatory--> LoggingImplementations"
+        },
+        {
+          "id": "c71",
+          "description": "Logging --mandatory--> LoggingOperations"
+        },
+        {
+          "id": "c90",
+          "description": "Level --or--> ['Trace', 'Debug', 'Info', 'Warning', 'Error']"
+        },
+        {
+          "id": "c352",
+          "description": "CypheredMessages requires Encryption"
+        },
+        {
+          "id": "c5",
+          "description": "Encryption --mandatory--> EncryptionAlgorithms"
+        },
+        {
+          "id": "c15",
+          "description": "Encryption --mandatory--> EncryptionImplementations"
+        },
+        {
+          "id": "c19",
+          "description": "Encryption --mandatory--> EncryptionOperations"
+        },
+        {
+          "id": "c278",
+          "description": "Privacy requires Authentication"
+        },
+        {
+          "id": "c27",
+          "description": "Encryption --mandatory--> Padding"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 459,
+        "n_mss": null,
+        "n_kb": 14,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 108,
+        "negative": 11
+      },
+      "test_size": {
+        "positive": 54,
+        "negative": 6
+      },
+      "n_queries": 1000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 54,
+        "true_negatives": 5,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 25653.55099993758,
+        "consistency_checks": 1000,
+        "memory_peak_mb": 8.500307083129883,
+        "quacq_runtime_ms": 25635.83533302881,
+        "query_generation_runtime_ms": 3172.1927963662893,
+        "findscope_runtime_ms": 128945.0244148029,
+        "findc_runtime_ms": 41.83517210185528,
+        "dis_gen_runtime_ms": 9.591916110366583,
+        "reduce_runtime_ms": 3.449500072747469,
+        "solver_time_ms": 7629.373000001806,
+        "is_consistent_calls": 122547,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 84,
+        "query_generation_consistency_checks": 22905,
+        "prune_calls": 426,
+        "prune_is_consistent_calls": 99688,
+        "findscope_calls": 1195,
+        "findc_calls": 51,
+        "findc_consistency_checks": 30,
+        "dis_gen_calls": 7,
+        "dis_gen_consistency_checks": 7,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 11,
+        "profiler": {
+          "query_generation_consistency_checks": 22905,
+          "solver_time": {
+            "count": 122641,
+            "total": 7.629373000001806,
+            "mean": 6.220899209890498e-05,
+            "min": 4.0000000041118255e-06,
+            "max": 0.00020500000000112095,
+            "median": 6.199999999978445e-05,
+            "stddev": 5.99625095111681e-06
+          },
+          "solver_time_accum": 7.629373000001806,
+          "is_consistent_calls": 122547,
+          "query_generation_runtime": {
+            "count": 84,
+            "total": 3.1721927963662893,
+            "mean": 0.03776419995674154,
+            "min": 0.00020558293908834457,
+            "max": 0.5106962920399383,
+            "median": 0.003599458432290703,
+            "stddev": 0.08476601464060239
+          },
+          "query_generation_calls": 84,
+          "paper_consistency_checks": 1000,
+          "prune_is_consistent_calls": 99688,
+          "quacq_prune_complete_pruned": 220,
+          "prune_calls": 426,
+          "findscope_calls": 1195,
+          "findscope_runtime": {
+            "count": 1195,
+            "total": 128.9450244148029,
+            "mean": 0.10790378612117398,
+            "min": 4.375004209578037e-06,
+            "max": 0.7294528749771416,
+            "median": 0.0445067499531433,
+            "stddev": 0.14108163143015695
+          },
+          "quacq_prune_partial_pruned": 9,
+          "findc_consistency_checks": 30,
+          "findc_calls": 51,
+          "findc_runtime": {
+            "count": 51,
+            "total": 0.04183517210185528,
+            "mean": 0.0008202974921932407,
+            "min": 0.0004475419409573078,
+            "max": 0.0027609170647338033,
+            "median": 0.0004990840097889304,
+            "stddev": 0.0006675294403694677
+          },
+          "dis_gen_consistency_checks": 7,
+          "dis_gen_calls": 7,
+          "dis_gen_runtime": {
+            "count": 7,
+            "total": 0.009591916110366583,
+            "mean": 0.001370273730052369,
+            "min": 0.000412957975640893,
+            "max": 0.0017654170515015721,
+            "median": 0.0017245829803869128,
+            "stddev": 0.000629272385912261
+          },
+          "quacq_findc_unconfirmed": 7,
+          "query_generation_repeat_skips": 36,
+          "redundancy_consistency_checks": 11,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.003449500072747469,
+            "mean": 0.003449500072747469,
+            "min": 0.003449500072747469,
+            "max": 0.003449500072747469
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 25.63583533302881,
+            "mean": 25.63583533302881,
+            "min": 25.63583533302881,
+            "max": 25.63583533302881
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 25.65355099993758,
+            "mean": 25.65355099993758,
+            "min": 25.65355099993758,
+            "max": 25.65355099993758
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c31",
+          "description": "Authentication --mandatory--> AuthenticationImplementations"
+        },
+        {
+          "id": "c56",
+          "description": "Authentication --optional--> AnonymousUser"
+        },
+        {
+          "id": "c328",
+          "description": "Confidentiality requires Encryption"
+        },
+        {
+          "id": "c5",
+          "description": "Encryption --mandatory--> EncryptionAlgorithms"
+        },
+        {
+          "id": "c15",
+          "description": "Encryption --mandatory--> EncryptionImplementations"
+        },
+        {
+          "id": "c19",
+          "description": "Encryption --mandatory--> EncryptionOperations"
+        },
+        {
+          "id": "c179",
+          "description": "Caching --mandatory--> CacheType"
+        },
+        {
+          "id": "c173",
+          "description": "Caching --mandatory--> CachingImplementations"
+        },
+        {
+          "id": "c169",
+          "description": "Caching --mandatory--> CachingOperations"
+        },
+        {
+          "id": "c107",
+          "description": "ContextualHelp --mandatory--> HelpType"
+        },
+        {
+          "id": "c116",
+          "description": "ContextualHelp --optional--> AuthenticatedUser"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 459,
+        "n_mss": null,
+        "n_kb": 11,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 108,
+        "negative": 12
+      },
+      "test_size": {
+        "positive": 54,
+        "negative": 5
+      },
+      "n_queries": 1000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 23406.464902994532,
+      "std_ms": 1950.0426338800582,
+      "min_ms": 22157.94454200659,
+      "max_ms": 25653.55099993758
+    },
+    "consistency_checks": {
+      "mean": 1002.3333333333334,
+      "std": 2.516611478423583,
+      "min": 1000,
+      "max": 1005
+    },
+    "memory": {
+      "mean_mb": 8.12943172454834,
+      "max_mb": 8.500307083129883
+    },
+    "quacq_runtime": {
+      "mean_ms": 23388.36543033055,
+      "std_ms": 1950.4346558266152,
+      "min_ms": 22138.715332956053,
+      "max_ms": 25635.83533302881
+    },
+    "query_gen_runtime": {
+      "mean_ms": 3211.743544321507,
+      "std_ms": 62.84136316503354,
+      "min_ms": 3172.1927963662893,
+      "max_ms": 3284.205165808089
+    },
+    "findscope_runtime": {
+      "mean_ms": 114027.02088176738,
+      "std_ms": 12931.5930362207,
+      "min_ms": 106005.90133783408,
+      "max_ms": 128945.0244148029
+    },
+    "findc_runtime": {
+      "mean_ms": 58.48916903293381,
+      "std_ms": 14.489538664395305,
+      "min_ms": 41.83517210185528,
+      "max_ms": 68.20541922934353
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 18.831486192842323,
+      "std_ms": 8.191889196450806,
+      "min_ms": 9.591916110366583,
+      "max_ms": 25.206209160387516
+    },
+    "reduce_runtime": {
+      "mean_ms": 3.638597399306794,
+      "std_ms": 0.5249275815640825,
+      "min_ms": 3.2344170613214374,
+      "max_ms": 4.231875063851476
+    },
+    "solver_time": {
+      "mean_ms": 7079.3900000008525,
+      "std_ms": 477.7766105721642,
+      "min_ms": 6766.854999999857,
+      "max_ms": 7629.373000001806
+    },
+    "is_consistent_calls": {
+      "mean": 114271,
+      "std": 7180.2337009320245,
+      "min": 109701,
+      "max": 122547
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 86,
+      "std": 2.0,
+      "min": 84,
+      "max": 88
+    },
+    "query_gen_checks": {
+      "mean": 22272.666666666668,
+      "std": 602.6079433042128,
+      "min": 21705,
+      "max": 22905
+    },
+    "prune_calls": {
+      "mean": 412.3333333333333,
+      "std": 12.096831541082704,
+      "min": 403,
+      "max": 426
+    },
+    "prune_ic_calls": {
+      "mean": 92130.33333333333,
+      "std": 6583.366641265951,
+      "min": 87643,
+      "max": 99688
+    },
+    "findscope_calls": {
+      "mean": 1247.6666666666667,
+      "std": 46.30694692304097,
+      "min": 1195,
+      "max": 1282
+    },
+    "findc_calls": {
+      "mean": 52.333333333333336,
+      "std": 1.5275252316519468,
+      "min": 51,
+      "max": 54
+    },
+    "findc_checks": {
+      "mean": 67.33333333333333,
+      "std": 32.331615074619044,
+      "min": 30,
+      "max": 86
+    },
+    "dis_gen_calls": {
+      "mean": 24.333333333333332,
+      "std": 15.01110699893027,
+      "min": 7,
+      "max": 33
+    },
+    "dis_gen_checks": {
+      "mean": 24.333333333333332,
+      "std": 15.01110699893027,
+      "min": 7,
+      "max": 33
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 12,
+      "std": 1.7320508075688772,
+      "min": 11,
+      "max": 14
+    }
+  },
+  "summary": null
+}

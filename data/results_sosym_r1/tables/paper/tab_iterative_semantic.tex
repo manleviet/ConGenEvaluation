@@ -1,0 +1,26 @@
+\begin{tabular}{llrrlrrlrrlrrlrrl}
+\toprule
+ &  & \multicolumn{3}{c}{$KB_1$} & \multicolumn{3}{c}{$KB_2$} & \multicolumn{3}{c}{$KB_3$} & \multicolumn{3}{c}{$KB_4$} & \multicolumn{3}{c}{$KB_5$} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14} \cmidrule(lr){15-17}
+Strategy & Method & F1 & q & stop & F1 & q & stop & F1 & q & stop & F1 & q & stop & F1 & q & stop \\
+\midrule
+RS($n$) & \textsc{ConGen} & \textbf{0.875} & -- & -- & \textbf{0.946} & -- & -- & \textbf{0.660} & -- & -- & \textbf{0.817} & -- & -- & \textbf{0.894} & -- & -- \\
+ & example-only & 0.465 & 17 & pool & 0.053 & 103 & pool & 0.064 & 52 & pool & 0.037 & 148 & pool & 0.627 & 416 & pool \\
+ & example-first & 0.666 & 1{,}134 & no query & 0.200 & 5{,}000 & budget & 0.630 & 5{,}000 & budget & 0.107 & 5{,}000 & budget & 0.634 & 1{,}000 & budget \\
+RS($2n$) & \textsc{ConGen} & \textbf{0.899} & -- & -- & \textbf{0.938} & -- & -- & \textbf{0.580} & -- & -- & \textbf{0.875} & -- & -- & n/a & n/a & n/a \\
+ & example-only & 0.429 & 26 & pool & 0.064 & 84 & pool & 0.069 & 96 & pool & 0.040 & 164 & pool & n/a & n/a & n/a \\
+ & example-first & 0.561 & 1{,}011 & no query & 0.202 & 5{,}000 & budget & 0.564 & 5{,}000 & budget & 0.251 & 5{,}000 & budget & n/a & n/a & n/a \\
+RS($3n$) & \textsc{ConGen} & \textbf{0.957} & -- & -- & \textbf{0.951} & -- & -- & 0.596 & -- & -- & \textbf{0.896} & -- & -- & n/a & n/a & n/a \\
+ & example-only & 0.429 & 30 & pool & 0.064 & 91 & pool & 0.129 & 118 & pool & 0.040 & 195 & pool & n/a & n/a & n/a \\
+ & example-first & 0.666 & 953 & no query & 0.176 & 5{,}000 & budget & \textbf{0.749} & 5{,}000 & budget & 0.090 & 5{,}000 & budget & n/a & n/a & n/a \\
+RS($m$) & \textsc{ConGen} & \textbf{0.775} & -- & -- & \textbf{0.939} & -- & -- & \textbf{0.806} & -- & -- & \textbf{0.803} & -- & -- & \textbf{0.907} & -- & -- \\
+ & example-only & 0.429 & 11 & pool & 0.034 & 9 & pool & 0.055 & 14 & pool & 0.014 & 16 & pool & 0.618 & 25 & pool \\
+ & example-first & 0.574 & 1{,}075 & no query & 0.190 & 5{,}000 & budget & 0.515 & 5{,}000 & budget & 0.088 & 5{,}000 & budget & 0.622 & 1{,}000 & budget \\
+2-COV & \textsc{ConGen} & \textbf{0.849} & -- & -- & \textbf{0.867} & -- & -- & \textbf{0.705} & -- & -- & \textbf{0.930} & -- & -- & \textbf{0.997} & -- & -- \\
+ & example-only & 0.465 & 32 & pool & 0.049 & 37 & pool & 0.151 & 36 & pool & 0.041 & 19 & pool & 0.619 & 35 & pool \\
+ & example-first & 0.680 & 2{,}386 & no query & 0.141 & 5{,}000 & budget & 0.441 & 5{,}000 & budget & 0.077 & 5{,}000 & budget & 0.625 & 1{,}000 & budget \\
+FF & \textsc{ConGen} & \textbf{0.852} & -- & -- & \textbf{0.918} & -- & -- & \textbf{0.727} & -- & -- & \textbf{0.811} & -- & -- & \textbf{0.891} & -- & -- \\
+ & example-only & 0.500 & 18 & pool & 0.049 & 45 & pool & 0.060 & 33 & pool & 0.023 & 59 & pool & 0.620 & 189 & pool \\
+ & example-first & 0.638 & 1{,}316 & no query & 0.196 & 5{,}000 & budget & 0.560 & 5{,}000 & budget & 0.210 & 5{,}000 & budget & 0.631 & 1{,}000 & budget \\
+\bottomrule
+\end{tabular}

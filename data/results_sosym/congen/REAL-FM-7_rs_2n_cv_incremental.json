@@ -1,0 +1,1977 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    0.5,
+    0.8,
+    0.375
+  ],
+  "mean_accuracy": 0.5583333333333333,
+  "std_accuracy": 0.21842237370135265,
+  "total_runtime_ms": 339.2333750380203,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c16",
+        "description": "compiler --or--> ['javac', 'mvc']"
+      },
+      {
+        "id": "c242",
+        "description": "model_code_synch requires diagram_builder"
+      },
+      {
+        "id": "c250",
+        "description": "model_code_synch excludes petri_net"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 3,
+    "evaluation": {
+      "description": {
+        "metrics": {
+          "accuracy": 0.14285714285714285,
+          "precision": 0.6666666666666666,
+          "recall": 0.15384615384615385,
+          "f1_score": 0.25,
+          "specificity": 0.0,
+          "true_positives": 2,
+          "true_negatives": 0,
+          "false_positives": 1,
+          "false_negatives": 11
+        },
+        "tp": [
+          {
+            "id": "c16",
+            "description": "compiler --or--> ['javac', 'mvc']"
+          },
+          {
+            "id": "c242",
+            "description": "model_code_synch requires diagram_builder"
+          }
+        ],
+        "fp": [
+          {
+            "id": "c250",
+            "description": "model_code_synch excludes petri_net"
+          }
+        ],
+        "fn": [
+          {
+            "id": null,
+            "description": "gui_builder --optional--> qt"
+          },
+          {
+            "id": null,
+            "description": "diagram_builder --mandatory--> uml"
+          },
+          {
+            "id": null,
+            "description": "gui_builder excludes sdi"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> diagram_builder"
+          },
+          {
+            "id": null,
+            "description": "jplug --mandatory--> interface"
+          },
+          {
+            "id": null,
+            "description": "diagram_builder --optional--> petri_net"
+          },
+          {
+            "id": null,
+            "description": "interface --alternative--> ['sdi', 'mdi']"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> compiler"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> gui_builder"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> model_code_synch"
+          },
+          {
+            "id": null,
+            "description": "gui_builder --mandatory--> java"
+          }
+        ]
+      },
+      "clause": {
+        "metrics": {
+          "accuracy": 0.9347826086956522,
+          "precision": 0.8333333333333334,
+          "recall": 0.22727272727272727,
+          "f1_score": 0.35714285714285715,
+          "specificity": 0.9960629921259843,
+          "true_positives": 5,
+          "true_negatives": 253,
+          "false_positives": 1,
+          "false_negatives": 17
+        },
+        "tp": [
+          {
+            "id": "c16",
+            "description": "compiler --or--> ['javac', 'mvc']"
+          },
+          {
+            "id": "c242",
+            "description": "model_code_synch requires diagram_builder"
+          }
+        ],
+        "fp": [
+          {
+            "id": "c250",
+            "description": "model_code_synch excludes petri_net"
+          }
+        ],
+        "fn": [
+          {
+            "id": null,
+            "description": "[-7, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-6, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-5, -3]"
+          },
+          {
+            "id": null,
+            "description": "[-9, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 13]"
+          },
+          {
+            "id": null,
+            "description": "[-4, -3]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-13, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 3, 4]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 6]"
+          },
+          {
+            "id": null,
+            "description": "[-14, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-4, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-3, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-8, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-1, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 1]"
+          }
+        ]
+      },
+      "semantic": {
+        "metrics": {
+          "accuracy": 0.43478260869565216,
+          "precision": 0.9090909090909091,
+          "recall": 0.45454545454545453,
+          "f1_score": 0.6060606060606061,
+          "specificity": 0.0,
+          "true_positives": 10,
+          "true_negatives": 0,
+          "false_positives": 1,
+          "false_negatives": 12
+        },
+        "tp": [],
+        "fp": [
+          {
+            "id": "[-14, -8]",
+            "description": "[-14, -8]"
+          }
+        ],
+        "fn": [
+          {
+            "id": null,
+            "description": "[-1, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 3, 4]"
+          },
+          {
+            "id": null,
+            "description": "[-4, -3]"
+          },
+          {
+            "id": null,
+            "description": "[-3, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-4, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 6]"
+          },
+          {
+            "id": null,
+            "description": "[-6, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-7, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 13]"
+          },
+          {
+            "id": null,
+            "description": "[-13, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-14, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-5, -3]"
+          }
+        ]
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 0.5,
+      "metrics": {
+        "accuracy": 0.5,
+        "precision": 1.0,
+        "recall": 0.4444444444444444,
+        "f1_score": 0.6153846153846153,
+        "specificity": 1.0,
+        "true_positives": 4,
+        "true_negatives": 1,
+        "false_positives": 0,
+        "false_negatives": 5
+      },
+      "performance": {
+        "runtime_ms": 293.41291601303965,
+        "consistency_checks": 531,
+        "memory_peak_mb": 0.4962730407714844,
+        "n_mss": 73,
+        "n_kb": 18,
+        "congen_runtime_ms": 279.4036249979399,
+        "acqmss_runtime_ms": 2164.001288241707,
+        "acqmss_calls": 569,
+        "reduce_runtime_ms": 4.466957994736731,
+        "solver_time_ms": 68.94599999999892,
+        "is_consistent_calls": 5832,
+        "is_consistent_test_cases_calls": 531,
+        "redundancy_consistency_checks": 74,
+        "profiler": {
+          "solver_time": {
+            "count": 5832,
+            "total": 0.06894599999999891,
+            "mean": 1.1822016460905164e-05,
+            "min": 1.9999999999742446e-06,
+            "max": 6.499999999998174e-05,
+            "median": 5.000000000032756e-06,
+            "stddev": 1.0529566160114218e-05
+          },
+          "is_consistent_calls": 5832,
+          "qx_runtime": {
+            "count": 11,
+            "total": 0.02655904006678611,
+            "mean": 0.0024144581878896465,
+            "min": 4.791014362126589e-06,
+            "max": 0.0066310829715803266,
+            "median": 0.000957417010795325,
+            "stddev": 0.0022713485158132158
+          },
+          "qx_calls": 11,
+          "quickxplain_calls": 1,
+          "quickxplain_runtime": {
+            "count": 1,
+            "total": 0.007624874997418374,
+            "mean": 0.007624874997418374,
+            "min": 0.007624874997418374,
+            "max": 0.007624874997418374
+          },
+          "shared_preprocessing_runtime": {
+            "count": 1,
+            "total": 0.007631790998857468,
+            "mean": 0.007631790998857468,
+            "min": 0.007631790998857468,
+            "max": 0.007631790998857468
+          },
+          "shared_preprocessing_quickxplain_checks": 8,
+          "solver_time_accum": 0.06870399999999893,
+          "is_consistent_test_cases_calls": 531,
+          "paper_consistency_checks": 531,
+          "shared_admpool_checks": 530,
+          "shared_admpool_solver_calls": 5733,
+          "acqmss_calls": 569,
+          "acqmss_runtime": {
+            "count": 569,
+            "total": 2.164001288241707,
+            "mean": 0.0038031657086848975,
+            "min": 5.790963768959045e-06,
+            "max": 0.2740833340212703,
+            "median": 0.0007040000054985285,
+            "stddev": 0.015746821708530596
+          },
+          "redundancy_consistency_checks": 74,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.004466957994736731,
+            "mean": 0.004466957994736731,
+            "min": 0.004466957994736731,
+            "max": 0.004466957994736731
+          },
+          "congen_calls": 1,
+          "congen_runtime": {
+            "count": 1,
+            "total": 0.2794036249979399,
+            "mean": 0.2794036249979399,
+            "min": 0.2794036249979399,
+            "max": 0.2794036249979399
+          },
+          "congen_total_time": {
+            "count": 1,
+            "total": 0.29341291601303965,
+            "mean": 0.29341291601303965,
+            "min": 0.29341291601303965,
+            "max": 0.29341291601303965
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c19",
+          "description": "diagram_builder --mandatory--> uml"
+        },
+        {
+          "id": "c250",
+          "description": "model_code_synch excludes petri_net"
+        },
+        {
+          "id": "c7",
+          "description": "gui_builder --mandatory--> java"
+        },
+        {
+          "id": "c241",
+          "description": "model_code_synch excludes mvc"
+        },
+        {
+          "id": "c14",
+          "description": "jplug --optional--> compiler"
+        },
+        {
+          "id": "c16",
+          "description": "compiler --or--> ['javac', 'mvc']"
+        },
+        {
+          "id": "c242",
+          "description": "model_code_synch requires diagram_builder"
+        },
+        {
+          "id": "c217",
+          "description": "compiler excludes qt"
+        },
+        {
+          "id": "c112",
+          "description": "model_code_synch excludes sdi"
+        },
+        {
+          "id": "c135",
+          "description": "java requires mdi"
+        },
+        {
+          "id": "c1",
+          "description": "jplug --mandatory--> interface"
+        },
+        {
+          "id": "c93",
+          "description": "uml requires interface"
+        },
+        {
+          "id": "c3",
+          "description": "interface --alternative--> ['sdi', 'mdi']"
+        },
+        {
+          "id": "c189",
+          "description": "qt requires java"
+        },
+        {
+          "id": "c178",
+          "description": "gui_builder excludes mvc"
+        },
+        {
+          "id": "c226",
+          "description": "diagram_builder excludes qt"
+        },
+        {
+          "id": "c294",
+          "description": "petri_net requires uml"
+        }
+      ],
+      "ne_constraints": [
+        "NOT(qt = true & sdi = true)"
+      ],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [
+        "c33",
+        "c288",
+        "c8",
+        "c20",
+        "c60",
+        "c63",
+        "c22",
+        "c141",
+        "c87",
+        "c54",
+        "c84",
+        "c23",
+        "c48",
+        "c66",
+        "c138",
+        "c45",
+        "c161",
+        "c90",
+        "c291",
+        "c245",
+        "c30",
+        "c36",
+        "c51",
+        "c78",
+        "c103",
+        "c132",
+        "c81",
+        "c57",
+        "c18",
+        "c229",
+        "c255",
+        "c165",
+        "c252",
+        "c75",
+        "c72",
+        "c4",
+        "c109",
+        "c220",
+        "c162",
+        "c42",
+        "c27",
+        "c202",
+        "c39",
+        "c214",
+        "c96",
+        "c2",
+        "c106",
+        "c69",
+        "c232",
+        "c12",
+        "c100",
+        "c287",
+        "c24",
+        "c10",
+        "c223",
+        "c6"
+      ],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": 73,
+        "n_kb": 17,
+        "n_ne": 1
+      },
+      "train_size": {
+        "positive": 17,
+        "negative": 1
+      },
+      "test_size": {
+        "positive": 9,
+        "negative": 1
+      },
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.30434782608695654,
+            "precision": 0.4117647058823529,
+            "recall": 0.5384615384615384,
+            "f1_score": 0.4666666666666667,
+            "specificity": 0.0,
+            "true_positives": 7,
+            "true_negatives": 0,
+            "false_positives": 10,
+            "false_negatives": 6
+          },
+          "tp": [
+            {
+              "id": "c19",
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": "c7",
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": "c14",
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c1",
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": "c3",
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c250",
+              "description": "model_code_synch excludes petri_net"
+            },
+            {
+              "id": "c241",
+              "description": "model_code_synch excludes mvc"
+            },
+            {
+              "id": "c217",
+              "description": "compiler excludes qt"
+            },
+            {
+              "id": "c112",
+              "description": "model_code_synch excludes sdi"
+            },
+            {
+              "id": "c135",
+              "description": "java requires mdi"
+            },
+            {
+              "id": "c93",
+              "description": "uml requires interface"
+            },
+            {
+              "id": "c189",
+              "description": "qt requires java"
+            },
+            {
+              "id": "c178",
+              "description": "gui_builder excludes mvc"
+            },
+            {
+              "id": "c226",
+              "description": "diagram_builder excludes qt"
+            },
+            {
+              "id": "c294",
+              "description": "petri_net requires uml"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9420289855072463,
+            "precision": 0.6153846153846154,
+            "recall": 0.7272727272727273,
+            "f1_score": 0.6666666666666667,
+            "specificity": 0.9606299212598425,
+            "true_positives": 16,
+            "true_negatives": 244,
+            "false_positives": 10,
+            "false_negatives": 6
+          },
+          "tp": [
+            {
+              "id": "c19",
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": "c7",
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": "c14",
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c1",
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": "c3",
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c250",
+              "description": "model_code_synch excludes petri_net"
+            },
+            {
+              "id": "c241",
+              "description": "model_code_synch excludes mvc"
+            },
+            {
+              "id": "c217",
+              "description": "compiler excludes qt"
+            },
+            {
+              "id": "c112",
+              "description": "model_code_synch excludes sdi"
+            },
+            {
+              "id": "c135",
+              "description": "java requires mdi"
+            },
+            {
+              "id": "c93",
+              "description": "uml requires interface"
+            },
+            {
+              "id": "c189",
+              "description": "qt requires java"
+            },
+            {
+              "id": "c178",
+              "description": "gui_builder excludes mvc"
+            },
+            {
+              "id": "c226",
+              "description": "diagram_builder excludes qt"
+            },
+            {
+              "id": "c294",
+              "description": "petri_net requires uml"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 1]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.7857142857142857,
+            "precision": 0.7857142857142857,
+            "recall": 1.0,
+            "f1_score": 0.88,
+            "specificity": 0.0,
+            "true_positives": 22,
+            "true_negatives": 0,
+            "false_positives": 6,
+            "false_negatives": 0
+          },
+          "tp": [],
+          "fp": [
+            {
+              "id": "[-14, -8]",
+              "description": "[-14, -8]"
+            },
+            {
+              "id": "[-11, -8]",
+              "description": "[-11, -8]"
+            },
+            {
+              "id": "[-9, -7]",
+              "description": "[-9, -7]"
+            },
+            {
+              "id": "[-8, -3]",
+              "description": "[-8, -3]"
+            },
+            {
+              "id": "[-11, -5]",
+              "description": "[-11, -5]"
+            },
+            {
+              "id": "[-12, -7]",
+              "description": "[-12, -7]"
+            }
+          ],
+          "fn": []
+        }
+      }
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 0.8,
+      "metrics": {
+        "accuracy": 0.8,
+        "precision": 1.0,
+        "recall": 0.7777777777777778,
+        "f1_score": 0.8750000000000001,
+        "specificity": 1.0,
+        "true_positives": 7,
+        "true_negatives": 1,
+        "false_positives": 0,
+        "false_negatives": 2
+      },
+      "performance": {
+        "runtime_ms": 324.0655420231633,
+        "consistency_checks": 541,
+        "memory_peak_mb": 0.49883270263671875,
+        "n_mss": 67,
+        "n_kb": 18,
+        "congen_runtime_ms": 309.9692079704255,
+        "acqmss_runtime_ms": 2414.8362425039522,
+        "acqmss_calls": 575,
+        "reduce_runtime_ms": 4.5034579816274345,
+        "solver_time_ms": 76.87499999999943,
+        "is_consistent_calls": 5902,
+        "is_consistent_test_cases_calls": 541,
+        "redundancy_consistency_checks": 68,
+        "profiler": {
+          "solver_time": {
+            "count": 5902,
+            "total": 0.07687499999999943,
+            "mean": 1.3025245679430604e-05,
+            "min": 1.9999999999742446e-06,
+            "max": 9.799999999998699e-05,
+            "median": 6.0000000000060005e-06,
+            "stddev": 1.1983078777421657e-05
+          },
+          "is_consistent_calls": 5902,
+          "qx_runtime": {
+            "count": 11,
+            "total": 0.02656675095204264,
+            "mean": 0.0024151591774584217,
+            "min": 5.040958058089018e-06,
+            "max": 0.006676833960227668,
+            "median": 0.000951541995164007,
+            "stddev": 0.0022698491256775036
+          },
+          "qx_calls": 11,
+          "quickxplain_calls": 1,
+          "quickxplain_runtime": {
+            "count": 1,
+            "total": 0.007654874993022531,
+            "mean": 0.007654874993022531,
+            "min": 0.007654874993022531,
+            "max": 0.007654874993022531
+          },
+          "shared_preprocessing_runtime": {
+            "count": 1,
+            "total": 0.007661874988116324,
+            "mean": 0.007661874988116324,
+            "min": 0.007661874988116324,
+            "max": 0.007661874988116324
+          },
+          "shared_preprocessing_quickxplain_checks": 8,
+          "solver_time_accum": 0.07662599999999939,
+          "is_consistent_test_cases_calls": 541,
+          "paper_consistency_checks": 541,
+          "shared_admpool_checks": 540,
+          "shared_admpool_solver_calls": 5809,
+          "acqmss_calls": 575,
+          "acqmss_runtime": {
+            "count": 575,
+            "total": 2.4148362425039522,
+            "mean": 0.0041997152043546995,
+            "min": 5.832989700138569e-06,
+            "max": 0.3045746670104563,
+            "median": 0.0007587499567307532,
+            "stddev": 0.017506684840386564
+          },
+          "redundancy_consistency_checks": 68,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.0045034579816274345,
+            "mean": 0.0045034579816274345,
+            "min": 0.0045034579816274345,
+            "max": 0.0045034579816274345
+          },
+          "congen_calls": 1,
+          "congen_runtime": {
+            "count": 1,
+            "total": 0.3099692079704255,
+            "mean": 0.3099692079704255,
+            "min": 0.3099692079704255,
+            "max": 0.3099692079704255
+          },
+          "congen_total_time": {
+            "count": 1,
+            "total": 0.3240655420231633,
+            "mean": 0.3240655420231633,
+            "min": 0.3240655420231633,
+            "max": 0.3240655420231633
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c16",
+          "description": "compiler --or--> ['javac', 'mvc']"
+        },
+        {
+          "id": "c165",
+          "description": "qt requires gui_builder"
+        },
+        {
+          "id": "c291",
+          "description": "petri_net requires diagram_builder"
+        },
+        {
+          "id": "c1",
+          "description": "jplug --mandatory--> interface"
+        },
+        {
+          "id": "c162",
+          "description": "java requires gui_builder"
+        },
+        {
+          "id": "c242",
+          "description": "model_code_synch requires diagram_builder"
+        },
+        {
+          "id": "c161",
+          "description": "gui_builder requires java"
+        },
+        {
+          "id": "c18",
+          "description": "jplug --optional--> diagram_builder"
+        },
+        {
+          "id": "c3",
+          "description": "interface --alternative--> ['sdi', 'mdi']"
+        },
+        {
+          "id": "c20",
+          "description": "diagram_builder --optional--> uml"
+        },
+        {
+          "id": "c193",
+          "description": "java excludes model_code_synch"
+        },
+        {
+          "id": "c250",
+          "description": "model_code_synch excludes petri_net"
+        },
+        {
+          "id": "c287",
+          "description": "diagram_builder requires uml"
+        },
+        {
+          "id": "c106",
+          "description": "java excludes sdi"
+        },
+        {
+          "id": "c6",
+          "description": "jplug --optional--> gui_builder"
+        },
+        {
+          "id": "c187",
+          "description": "gui_builder excludes petri_net"
+        },
+        {
+          "id": "c45",
+          "description": "compiler requires jplug"
+        }
+      ],
+      "ne_constraints": [
+        "NOT(qt = true & sdi = true)"
+      ],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [
+        "c10",
+        "c63",
+        "c189",
+        "c100",
+        "c245",
+        "c54",
+        "c2",
+        "c8",
+        "c27",
+        "c14",
+        "c211",
+        "c7",
+        "c22",
+        "c60",
+        "c135",
+        "c42",
+        "c232",
+        "c132",
+        "c57",
+        "c81",
+        "c294",
+        "c288",
+        "c48",
+        "c23",
+        "c78",
+        "c19",
+        "c90",
+        "c93",
+        "c24",
+        "c4",
+        "c66",
+        "c214",
+        "c255",
+        "c109",
+        "c12",
+        "c84",
+        "c39",
+        "c33",
+        "c30",
+        "c36",
+        "c87",
+        "c169",
+        "c72",
+        "c69",
+        "c103",
+        "c96",
+        "c51",
+        "c138",
+        "c252",
+        "c75"
+      ],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": 67,
+        "n_kb": 17,
+        "n_ne": 1
+      },
+      "train_size": {
+        "positive": 17,
+        "negative": 1
+      },
+      "test_size": {
+        "positive": 9,
+        "negative": 1
+      },
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.25,
+            "precision": 0.35294117647058826,
+            "recall": 0.46153846153846156,
+            "f1_score": 0.4000000000000001,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 11,
+            "false_negatives": 7
+          },
+          "tp": [
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c1",
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c18",
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": "c3",
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": "c6",
+              "description": "jplug --optional--> gui_builder"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c165",
+              "description": "qt requires gui_builder"
+            },
+            {
+              "id": "c291",
+              "description": "petri_net requires diagram_builder"
+            },
+            {
+              "id": "c162",
+              "description": "java requires gui_builder"
+            },
+            {
+              "id": "c161",
+              "description": "gui_builder requires java"
+            },
+            {
+              "id": "c20",
+              "description": "diagram_builder --optional--> uml"
+            },
+            {
+              "id": "c193",
+              "description": "java excludes model_code_synch"
+            },
+            {
+              "id": "c250",
+              "description": "model_code_synch excludes petri_net"
+            },
+            {
+              "id": "c287",
+              "description": "diagram_builder requires uml"
+            },
+            {
+              "id": "c106",
+              "description": "java excludes sdi"
+            },
+            {
+              "id": "c187",
+              "description": "gui_builder excludes petri_net"
+            },
+            {
+              "id": "c45",
+              "description": "compiler requires jplug"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9782608695652174,
+            "precision": 0.8333333333333334,
+            "recall": 0.9090909090909091,
+            "f1_score": 0.8695652173913043,
+            "specificity": 0.984251968503937,
+            "true_positives": 20,
+            "true_negatives": 250,
+            "false_positives": 4,
+            "false_negatives": 2
+          },
+          "tp": [
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c165",
+              "description": "qt requires gui_builder"
+            },
+            {
+              "id": "c291",
+              "description": "petri_net requires diagram_builder"
+            },
+            {
+              "id": "c1",
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": "c162",
+              "description": "java requires gui_builder"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c161",
+              "description": "gui_builder requires java"
+            },
+            {
+              "id": "c18",
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": "c3",
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": "c20",
+              "description": "diagram_builder --optional--> uml"
+            },
+            {
+              "id": "c287",
+              "description": "diagram_builder requires uml"
+            },
+            {
+              "id": "c6",
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": "c45",
+              "description": "compiler requires jplug"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c193",
+              "description": "java excludes model_code_synch"
+            },
+            {
+              "id": "c250",
+              "description": "model_code_synch excludes petri_net"
+            },
+            {
+              "id": "c106",
+              "description": "java excludes sdi"
+            },
+            {
+              "id": "c187",
+              "description": "gui_builder excludes petri_net"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.88,
+            "precision": 0.88,
+            "recall": 1.0,
+            "f1_score": 0.9361702127659575,
+            "specificity": 0.0,
+            "true_positives": 22,
+            "true_negatives": 0,
+            "false_positives": 3,
+            "false_negatives": 0
+          },
+          "tp": [],
+          "fp": [
+            {
+              "id": "[-8, -6]",
+              "description": "[-8, -6]"
+            },
+            {
+              "id": "[-14, -8]",
+              "description": "[-14, -8]"
+            },
+            {
+              "id": "[-14, -5]",
+              "description": "[-14, -5]"
+            }
+          ],
+          "fn": []
+        }
+      }
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 0.375,
+      "metrics": {
+        "accuracy": 0.375,
+        "precision": 1.0,
+        "recall": 0.375,
+        "f1_score": 0.5454545454545454,
+        "specificity": 0.0,
+        "true_positives": 3,
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 5
+      },
+      "performance": {
+        "runtime_ms": 334.56516603473574,
+        "consistency_checks": 541,
+        "memory_peak_mb": 0.5202150344848633,
+        "n_mss": 67,
+        "n_kb": 23,
+        "congen_runtime_ms": 310.47749996650964,
+        "acqmss_runtime_ms": 2420.0833830982447,
+        "acqmss_calls": 569,
+        "reduce_runtime_ms": 4.78999997721985,
+        "solver_time_ms": 76.2719999999994,
+        "is_consistent_calls": 6389,
+        "is_consistent_test_cases_calls": 541,
+        "redundancy_consistency_checks": 68,
+        "profiler": {
+          "solver_time": {
+            "count": 6389,
+            "total": 0.0762719999999994,
+            "mean": 1.1938018469243919e-05,
+            "min": 1.9999999999742446e-06,
+            "max": 6.80000000000125e-05,
+            "median": 5.000000000032756e-06,
+            "stddev": 1.0839275619139713e-05
+          },
+          "is_consistent_calls": 6389,
+          "qx_runtime": {
+            "count": 22,
+            "total": 0.05817625008057803,
+            "mean": 0.0026443750036626375,
+            "min": 3.2910029403865337e-06,
+            "max": 0.007553500006906688,
+            "median": 0.0010646665177773684,
+            "stddev": 0.0024397869106299306
+          },
+          "qx_calls": 22,
+          "quickxplain_calls": 2,
+          "quickxplain_runtime": {
+            "count": 2,
+            "total": 0.016564334044232965,
+            "mean": 0.008282167022116482,
+            "min": 0.007896542025264353,
+            "max": 0.008667792018968612,
+            "median": 0.008282167022116482,
+            "stddev": 0.0005453561005383639
+          },
+          "shared_preprocessing_runtime": {
+            "count": 2,
+            "total": 0.016578833980020136,
+            "mean": 0.008289416990010068,
+            "min": 0.007903459016233683,
+            "max": 0.008675374963786453,
+            "median": 0.008289416990010068,
+            "stddev": 0.0005458270010206033
+          },
+          "shared_preprocessing_quickxplain_checks": 16,
+          "solver_time_accum": 0.07575299999999943,
+          "is_consistent_test_cases_calls": 541,
+          "paper_consistency_checks": 541,
+          "shared_admpool_checks": 540,
+          "shared_admpool_solver_calls": 6287,
+          "acqmss_calls": 569,
+          "acqmss_runtime": {
+            "count": 569,
+            "total": 2.4200833830982447,
+            "mean": 0.004253222114408163,
+            "min": 5.582987796515226e-06,
+            "max": 0.3046102090156637,
+            "median": 0.0008159169810824096,
+            "stddev": 0.017488662336948256
+          },
+          "redundancy_consistency_checks": 68,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.00478999997721985,
+            "mean": 0.00478999997721985,
+            "min": 0.00478999997721985,
+            "max": 0.00478999997721985
+          },
+          "congen_calls": 1,
+          "congen_runtime": {
+            "count": 1,
+            "total": 0.31047749996650964,
+            "mean": 0.31047749996650964,
+            "min": 0.31047749996650964,
+            "max": 0.31047749996650964
+          },
+          "congen_total_time": {
+            "count": 1,
+            "total": 0.33456516603473574,
+            "mean": 0.33456516603473574,
+            "min": 0.33456516603473574,
+            "max": 0.33456516603473574
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c232",
+          "description": "petri_net excludes qt"
+        },
+        {
+          "id": "c214",
+          "description": "model_code_synch excludes qt"
+        },
+        {
+          "id": "c100",
+          "description": "mdi excludes sdi"
+        },
+        {
+          "id": "c238",
+          "description": "javac excludes model_code_synch"
+        },
+        {
+          "id": "c161",
+          "description": "gui_builder requires java"
+        },
+        {
+          "id": "c277",
+          "description": "javac excludes petri_net"
+        },
+        {
+          "id": "c90",
+          "description": "diagram_builder requires interface"
+        },
+        {
+          "id": "c16",
+          "description": "compiler --or--> ['javac', 'mvc']"
+        },
+        {
+          "id": "c242",
+          "description": "model_code_synch requires diagram_builder"
+        },
+        {
+          "id": "c2",
+          "description": "jplug --optional--> interface"
+        },
+        {
+          "id": "c4",
+          "description": "interface --or--> ['sdi', 'mdi']"
+        },
+        {
+          "id": "c22",
+          "description": "diagram_builder --optional--> petri_net"
+        },
+        {
+          "id": "c287",
+          "description": "diagram_builder requires uml"
+        },
+        {
+          "id": "c250",
+          "description": "model_code_synch excludes petri_net"
+        },
+        {
+          "id": "c8",
+          "description": "gui_builder --optional--> java"
+        },
+        {
+          "id": "c103",
+          "description": "gui_builder excludes sdi"
+        },
+        {
+          "id": "c36",
+          "description": "java requires jplug"
+        },
+        {
+          "id": "c20",
+          "description": "diagram_builder --optional--> uml"
+        },
+        {
+          "id": "c10",
+          "description": "gui_builder --optional--> qt"
+        },
+        {
+          "id": "c23",
+          "description": "jplug requires interface"
+        },
+        {
+          "id": "c14",
+          "description": "jplug --optional--> compiler"
+        },
+        {
+          "id": "c122",
+          "description": "sdi requires diagram_builder"
+        }
+      ],
+      "ne_constraints": [
+        "(NOT(qt = true & sdi = true) AND NOT(qt = true & sdi = true))"
+      ],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [
+        "c135",
+        "c106",
+        "c165",
+        "c255",
+        "c66",
+        "c294",
+        "c7",
+        "c252",
+        "c84",
+        "c48",
+        "c3",
+        "c1",
+        "c96",
+        "c39",
+        "c63",
+        "c93",
+        "c30",
+        "c6",
+        "c24",
+        "c45",
+        "c33",
+        "c291",
+        "c78",
+        "c87",
+        "c57",
+        "c12",
+        "c125",
+        "c162",
+        "c18",
+        "c54",
+        "c245",
+        "c109",
+        "c72",
+        "c42",
+        "c19",
+        "c189",
+        "c75",
+        "c132",
+        "c288",
+        "c138",
+        "c69",
+        "c27",
+        "c81",
+        "c60",
+        "c51"
+      ],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": 67,
+        "n_kb": 22,
+        "n_ne": 1
+      },
+      "train_size": {
+        "positive": 18,
+        "negative": 2
+      },
+      "test_size": {
+        "positive": 8,
+        "negative": 0
+      },
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.20689655172413793,
+            "precision": 0.2727272727272727,
+            "recall": 0.46153846153846156,
+            "f1_score": 0.3428571428571428,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 16,
+            "false_negatives": 7
+          },
+          "tp": [
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c22",
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": "c10",
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": "c14",
+              "description": "jplug --optional--> compiler"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c232",
+              "description": "petri_net excludes qt"
+            },
+            {
+              "id": "c214",
+              "description": "model_code_synch excludes qt"
+            },
+            {
+              "id": "c100",
+              "description": "mdi excludes sdi"
+            },
+            {
+              "id": "c238",
+              "description": "javac excludes model_code_synch"
+            },
+            {
+              "id": "c161",
+              "description": "gui_builder requires java"
+            },
+            {
+              "id": "c277",
+              "description": "javac excludes petri_net"
+            },
+            {
+              "id": "c90",
+              "description": "diagram_builder requires interface"
+            },
+            {
+              "id": "c2",
+              "description": "jplug --optional--> interface"
+            },
+            {
+              "id": "c4",
+              "description": "interface --or--> ['sdi', 'mdi']"
+            },
+            {
+              "id": "c287",
+              "description": "diagram_builder requires uml"
+            },
+            {
+              "id": "c250",
+              "description": "model_code_synch excludes petri_net"
+            },
+            {
+              "id": "c8",
+              "description": "gui_builder --optional--> java"
+            },
+            {
+              "id": "c36",
+              "description": "java requires jplug"
+            },
+            {
+              "id": "c20",
+              "description": "diagram_builder --optional--> uml"
+            },
+            {
+              "id": "c23",
+              "description": "jplug requires interface"
+            },
+            {
+              "id": "c122",
+              "description": "sdi requires diagram_builder"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9601449275362319,
+            "precision": 0.7037037037037037,
+            "recall": 0.8636363636363636,
+            "f1_score": 0.7755102040816326,
+            "specificity": 0.968503937007874,
+            "true_positives": 19,
+            "true_negatives": 246,
+            "false_positives": 8,
+            "false_negatives": 3
+          },
+          "tp": [
+            {
+              "id": "c100",
+              "description": "mdi excludes sdi"
+            },
+            {
+              "id": "c161",
+              "description": "gui_builder requires java"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c2",
+              "description": "jplug --optional--> interface"
+            },
+            {
+              "id": "c4",
+              "description": "interface --or--> ['sdi', 'mdi']"
+            },
+            {
+              "id": "c22",
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": "c287",
+              "description": "diagram_builder requires uml"
+            },
+            {
+              "id": "c8",
+              "description": "gui_builder --optional--> java"
+            },
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": "c20",
+              "description": "diagram_builder --optional--> uml"
+            },
+            {
+              "id": "c10",
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": "c23",
+              "description": "jplug requires interface"
+            },
+            {
+              "id": "c14",
+              "description": "jplug --optional--> compiler"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c232",
+              "description": "petri_net excludes qt"
+            },
+            {
+              "id": "c214",
+              "description": "model_code_synch excludes qt"
+            },
+            {
+              "id": "c238",
+              "description": "javac excludes model_code_synch"
+            },
+            {
+              "id": "c277",
+              "description": "javac excludes petri_net"
+            },
+            {
+              "id": "c90",
+              "description": "diagram_builder requires interface"
+            },
+            {
+              "id": "c250",
+              "description": "model_code_synch excludes petri_net"
+            },
+            {
+              "id": "c36",
+              "description": "java requires jplug"
+            },
+            {
+              "id": "c122",
+              "description": "sdi requires diagram_builder"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.7857142857142857,
+            "precision": 0.7857142857142857,
+            "recall": 1.0,
+            "f1_score": 0.88,
+            "specificity": 0.0,
+            "true_positives": 22,
+            "true_negatives": 0,
+            "false_positives": 6,
+            "false_negatives": 0
+          },
+          "tp": [],
+          "fp": [
+            {
+              "id": "[-14, -7]",
+              "description": "[-14, -7]"
+            },
+            {
+              "id": "[-8, -7]",
+              "description": "[-8, -7]"
+            },
+            {
+              "id": "[-10, -8]",
+              "description": "[-10, -8]"
+            },
+            {
+              "id": "[-14, -10]",
+              "description": "[-14, -10]"
+            },
+            {
+              "id": "[-14, -8]",
+              "description": "[-14, -8]"
+            },
+            {
+              "id": "[-3, 12]",
+              "description": "[-3, 12]"
+            }
+          ],
+          "fn": []
+        }
+      }
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 317.3478746903129,
+      "std_ms": 21.382754996917036,
+      "min_ms": 293.41291601303965,
+      "max_ms": 334.56516603473574
+    },
+    "consistency_checks": {
+      "mean": 537.6666666666666,
+      "std": 5.773502691896257,
+      "min": 531,
+      "max": 541
+    },
+    "memory": {
+      "mean_mb": 0.5051069259643555,
+      "max_mb": 0.5202150344848633
+    },
+    "kb_size": {
+      "n_mss_mean": 69,
+      "n_kb_mean": 19.666666666666668
+    },
+    "congen_runtime": {
+      "mean_ms": 299.95011097829166,
+      "std_ms": 17.7955936904031,
+      "min_ms": 279.4036249979399,
+      "max_ms": 310.47749996650964
+    },
+    "acqmss_runtime": {
+      "mean_ms": 2332.9736379479677,
+      "std_ms": 146.35786396721332,
+      "min_ms": 2164.001288241707,
+      "max_ms": 2420.0833830982447
+    },
+    "acqmss_calls": {
+      "mean": 571,
+      "std": 3.4641016151377544,
+      "min": 569,
+      "max": 575
+    },
+    "reduce_runtime": {
+      "mean_ms": 4.586805317861338,
+      "std_ms": 0.17691555741262974,
+      "min_ms": 4.466957994736731,
+      "max_ms": 4.78999997721985
+    },
+    "solver_time": {
+      "mean_ms": 74.03099999999925,
+      "std_ms": 4.414048142012333,
+      "min_ms": 68.94599999999892,
+      "max_ms": 76.87499999999943
+    },
+    "is_consistent_calls": {
+      "mean": 6041,
+      "std": 303.40237309553135,
+      "min": 5832,
+      "max": 6389
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 537.6666666666666,
+      "std": 5.773502691896257,
+      "min": 531,
+      "max": 541
+    },
+    "redundancy_consistency_checks": {
+      "mean": 70,
+      "std": 3.4641016151377544,
+      "min": 68,
+      "max": 74
+    }
+  },
+  "summary": {
+    "description": {
+      "precision": {
+        "mean": 0.345811,
+        "std": 0.056985
+      },
+      "recall": {
+        "mean": 0.487179,
+        "std": 0.036262
+      },
+      "f1_score": {
+        "mean": 0.403175,
+        "std": 0.050595
+      }
+    },
+    "clause": {
+      "precision": {
+        "mean": 0.717474,
+        "std": 0.089508
+      },
+      "recall": {
+        "mean": 0.833333,
+        "std": 0.077258
+      },
+      "f1_score": {
+        "mean": 0.770581,
+        "std": 0.082906
+      }
+    },
+    "semantic": {
+      "precision": {
+        "mean": 0.817143,
+        "std": 0.044447
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.898723,
+        "std": 0.026479
+      }
+    }
+  }
+}

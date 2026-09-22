@@ -1,0 +1,25 @@
+# QuAcq Constraint Acquisition Configuration
+# Run with: python -m apps.run_quacq apps/conf/run_quacq_config.toml -v
+
+[general]
+seed = 82
+output_dir = "data/results/quacq"
+verbose = true
+
+[quacq]
+# Maximum number of membership queries
+max_queries = 1000
+
+# Mode: "automated" (Oracle answers using FM) | "interactive" (human expert)
+#       "example_only" (learn from examples) | "example_first" (examples then oracle)
+mode = "automated"
+
+# SAT solver name
+solver_name = "glucose4"
+
+# Models to process
+[[models]]
+name = "REAL-FM-7"
+oracle = "data/fms/REAL-FM-7.uvl"
+bias = "data/bias/REAL-FM-7-bias.json"
+# examples = "data/examples/<model>_<sampling>.json"  # required for example_only/example_first

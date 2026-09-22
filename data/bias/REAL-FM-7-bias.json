@@ -1,0 +1,4571 @@
+{
+  "features": [
+    {
+      "name": "jplug",
+      "id": 1
+    },
+    {
+      "name": "interface",
+      "id": 2
+    },
+    {
+      "name": "sdi",
+      "id": 3
+    },
+    {
+      "name": "mdi",
+      "id": 4
+    },
+    {
+      "name": "gui_builder",
+      "id": 5
+    },
+    {
+      "name": "java",
+      "id": 6
+    },
+    {
+      "name": "qt",
+      "id": 7
+    },
+    {
+      "name": "model_code_synch",
+      "id": 8
+    },
+    {
+      "name": "compiler",
+      "id": 9
+    },
+    {
+      "name": "javac",
+      "id": 10
+    },
+    {
+      "name": "mvc",
+      "id": 11
+    },
+    {
+      "name": "diagram_builder",
+      "id": 12
+    },
+    {
+      "name": "uml",
+      "id": 13
+    },
+    {
+      "name": "petri_net",
+      "id": 14
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c1",
+      "operator": "mandatory",
+      "parent": "jplug",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -1,
+          2
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "description": "jplug --mandatory--> interface"
+    },
+    {
+      "id": "c2",
+      "operator": "optional",
+      "parent": "jplug",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -2,
+          1
+        ]
+      ],
+      "description": "jplug --optional--> interface"
+    },
+    {
+      "id": "c3",
+      "operator": "alternative",
+      "parent": "interface",
+      "children": [
+        "sdi",
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -2,
+          3,
+          4
+        ],
+        [
+          -3,
+          -4
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -4,
+          2
+        ]
+      ],
+      "description": "interface --alternative--> ['sdi', 'mdi']"
+    },
+    {
+      "id": "c4",
+      "operator": "or",
+      "parent": "interface",
+      "children": [
+        "sdi",
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -2,
+          3,
+          4
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -4,
+          2
+        ]
+      ],
+      "description": "interface --or--> ['sdi', 'mdi']"
+    },
+    {
+      "id": "c5",
+      "operator": "mandatory",
+      "parent": "jplug",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -1,
+          5
+        ],
+        [
+          -5,
+          1
+        ]
+      ],
+      "description": "jplug --mandatory--> gui_builder"
+    },
+    {
+      "id": "c6",
+      "operator": "optional",
+      "parent": "jplug",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -5,
+          1
+        ]
+      ],
+      "description": "jplug --optional--> gui_builder"
+    },
+    {
+      "id": "c7",
+      "operator": "mandatory",
+      "parent": "gui_builder",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -5,
+          6
+        ],
+        [
+          -6,
+          5
+        ]
+      ],
+      "description": "gui_builder --mandatory--> java"
+    },
+    {
+      "id": "c8",
+      "operator": "optional",
+      "parent": "gui_builder",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -6,
+          5
+        ]
+      ],
+      "description": "gui_builder --optional--> java"
+    },
+    {
+      "id": "c9",
+      "operator": "mandatory",
+      "parent": "gui_builder",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -5,
+          7
+        ],
+        [
+          -7,
+          5
+        ]
+      ],
+      "description": "gui_builder --mandatory--> qt"
+    },
+    {
+      "id": "c10",
+      "operator": "optional",
+      "parent": "gui_builder",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -7,
+          5
+        ]
+      ],
+      "description": "gui_builder --optional--> qt"
+    },
+    {
+      "id": "c11",
+      "operator": "mandatory",
+      "parent": "jplug",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -1,
+          8
+        ],
+        [
+          -8,
+          1
+        ]
+      ],
+      "description": "jplug --mandatory--> model_code_synch"
+    },
+    {
+      "id": "c12",
+      "operator": "optional",
+      "parent": "jplug",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -8,
+          1
+        ]
+      ],
+      "description": "jplug --optional--> model_code_synch"
+    },
+    {
+      "id": "c13",
+      "operator": "mandatory",
+      "parent": "jplug",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -1,
+          9
+        ],
+        [
+          -9,
+          1
+        ]
+      ],
+      "description": "jplug --mandatory--> compiler"
+    },
+    {
+      "id": "c14",
+      "operator": "optional",
+      "parent": "jplug",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -9,
+          1
+        ]
+      ],
+      "description": "jplug --optional--> compiler"
+    },
+    {
+      "id": "c15",
+      "operator": "alternative",
+      "parent": "compiler",
+      "children": [
+        "javac",
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -9,
+          10,
+          11
+        ],
+        [
+          -10,
+          -11
+        ],
+        [
+          -10,
+          9
+        ],
+        [
+          -11,
+          9
+        ]
+      ],
+      "description": "compiler --alternative--> ['javac', 'mvc']"
+    },
+    {
+      "id": "c16",
+      "operator": "or",
+      "parent": "compiler",
+      "children": [
+        "javac",
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -9,
+          10,
+          11
+        ],
+        [
+          -10,
+          9
+        ],
+        [
+          -11,
+          9
+        ]
+      ],
+      "description": "compiler --or--> ['javac', 'mvc']"
+    },
+    {
+      "id": "c17",
+      "operator": "mandatory",
+      "parent": "jplug",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -1,
+          12
+        ],
+        [
+          -12,
+          1
+        ]
+      ],
+      "description": "jplug --mandatory--> diagram_builder"
+    },
+    {
+      "id": "c18",
+      "operator": "optional",
+      "parent": "jplug",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -12,
+          1
+        ]
+      ],
+      "description": "jplug --optional--> diagram_builder"
+    },
+    {
+      "id": "c19",
+      "operator": "mandatory",
+      "parent": "diagram_builder",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -12,
+          13
+        ],
+        [
+          -13,
+          12
+        ]
+      ],
+      "description": "diagram_builder --mandatory--> uml"
+    },
+    {
+      "id": "c20",
+      "operator": "optional",
+      "parent": "diagram_builder",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -13,
+          12
+        ]
+      ],
+      "description": "diagram_builder --optional--> uml"
+    },
+    {
+      "id": "c21",
+      "operator": "mandatory",
+      "parent": "diagram_builder",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -12,
+          14
+        ],
+        [
+          -14,
+          12
+        ]
+      ],
+      "description": "diagram_builder --mandatory--> petri_net"
+    },
+    {
+      "id": "c22",
+      "operator": "optional",
+      "parent": "diagram_builder",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -14,
+          12
+        ]
+      ],
+      "description": "diagram_builder --optional--> petri_net"
+    },
+    {
+      "id": "c23",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "description": "jplug requires interface"
+    },
+    {
+      "id": "c24",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -2,
+          1
+        ]
+      ],
+      "description": "interface requires jplug"
+    },
+    {
+      "id": "c25",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -1,
+          -2
+        ]
+      ],
+      "description": "interface excludes jplug"
+    },
+    {
+      "id": "c26",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -1,
+          3
+        ]
+      ],
+      "description": "jplug requires sdi"
+    },
+    {
+      "id": "c27",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -3,
+          1
+        ]
+      ],
+      "description": "sdi requires jplug"
+    },
+    {
+      "id": "c28",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -1,
+          -3
+        ]
+      ],
+      "description": "jplug excludes sdi"
+    },
+    {
+      "id": "c29",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -1,
+          4
+        ]
+      ],
+      "description": "jplug requires mdi"
+    },
+    {
+      "id": "c30",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -4,
+          1
+        ]
+      ],
+      "description": "mdi requires jplug"
+    },
+    {
+      "id": "c31",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -1,
+          -4
+        ]
+      ],
+      "description": "jplug excludes mdi"
+    },
+    {
+      "id": "c32",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -1,
+          5
+        ]
+      ],
+      "description": "jplug requires gui_builder"
+    },
+    {
+      "id": "c33",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -5,
+          1
+        ]
+      ],
+      "description": "gui_builder requires jplug"
+    },
+    {
+      "id": "c34",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -1,
+          -5
+        ]
+      ],
+      "description": "gui_builder excludes jplug"
+    },
+    {
+      "id": "c35",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -1,
+          6
+        ]
+      ],
+      "description": "jplug requires java"
+    },
+    {
+      "id": "c36",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -6,
+          1
+        ]
+      ],
+      "description": "java requires jplug"
+    },
+    {
+      "id": "c37",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -1,
+          -6
+        ]
+      ],
+      "description": "java excludes jplug"
+    },
+    {
+      "id": "c38",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -1,
+          7
+        ]
+      ],
+      "description": "jplug requires qt"
+    },
+    {
+      "id": "c39",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -7,
+          1
+        ]
+      ],
+      "description": "qt requires jplug"
+    },
+    {
+      "id": "c40",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -1,
+          -7
+        ]
+      ],
+      "description": "jplug excludes qt"
+    },
+    {
+      "id": "c41",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -1,
+          8
+        ]
+      ],
+      "description": "jplug requires model_code_synch"
+    },
+    {
+      "id": "c42",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -8,
+          1
+        ]
+      ],
+      "description": "model_code_synch requires jplug"
+    },
+    {
+      "id": "c43",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -1,
+          -8
+        ]
+      ],
+      "description": "jplug excludes model_code_synch"
+    },
+    {
+      "id": "c44",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -1,
+          9
+        ]
+      ],
+      "description": "jplug requires compiler"
+    },
+    {
+      "id": "c45",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -9,
+          1
+        ]
+      ],
+      "description": "compiler requires jplug"
+    },
+    {
+      "id": "c46",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -1,
+          -9
+        ]
+      ],
+      "description": "compiler excludes jplug"
+    },
+    {
+      "id": "c47",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -1,
+          10
+        ]
+      ],
+      "description": "jplug requires javac"
+    },
+    {
+      "id": "c48",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -10,
+          1
+        ]
+      ],
+      "description": "javac requires jplug"
+    },
+    {
+      "id": "c49",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -1,
+          -10
+        ]
+      ],
+      "description": "javac excludes jplug"
+    },
+    {
+      "id": "c50",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -1,
+          11
+        ]
+      ],
+      "description": "jplug requires mvc"
+    },
+    {
+      "id": "c51",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -11,
+          1
+        ]
+      ],
+      "description": "mvc requires jplug"
+    },
+    {
+      "id": "c52",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -1,
+          -11
+        ]
+      ],
+      "description": "jplug excludes mvc"
+    },
+    {
+      "id": "c53",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -1,
+          12
+        ]
+      ],
+      "description": "jplug requires diagram_builder"
+    },
+    {
+      "id": "c54",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -12,
+          1
+        ]
+      ],
+      "description": "diagram_builder requires jplug"
+    },
+    {
+      "id": "c55",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -1,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes jplug"
+    },
+    {
+      "id": "c56",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -1,
+          13
+        ]
+      ],
+      "description": "jplug requires uml"
+    },
+    {
+      "id": "c57",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -13,
+          1
+        ]
+      ],
+      "description": "uml requires jplug"
+    },
+    {
+      "id": "c58",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -1,
+          -13
+        ]
+      ],
+      "description": "jplug excludes uml"
+    },
+    {
+      "id": "c59",
+      "operator": "requires",
+      "parent": "jplug",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -1,
+          14
+        ]
+      ],
+      "description": "jplug requires petri_net"
+    },
+    {
+      "id": "c60",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "jplug"
+      ],
+      "clauses": [
+        [
+          -14,
+          1
+        ]
+      ],
+      "description": "petri_net requires jplug"
+    },
+    {
+      "id": "c61",
+      "operator": "excludes",
+      "parent": "jplug",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -1,
+          -14
+        ]
+      ],
+      "description": "jplug excludes petri_net"
+    },
+    {
+      "id": "c62",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -2,
+          3
+        ]
+      ],
+      "description": "interface requires sdi"
+    },
+    {
+      "id": "c63",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -3,
+          2
+        ]
+      ],
+      "description": "sdi requires interface"
+    },
+    {
+      "id": "c64",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -2,
+          -3
+        ]
+      ],
+      "description": "interface excludes sdi"
+    },
+    {
+      "id": "c65",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -2,
+          4
+        ]
+      ],
+      "description": "interface requires mdi"
+    },
+    {
+      "id": "c66",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -4,
+          2
+        ]
+      ],
+      "description": "mdi requires interface"
+    },
+    {
+      "id": "c67",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -2,
+          -4
+        ]
+      ],
+      "description": "interface excludes mdi"
+    },
+    {
+      "id": "c68",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -2,
+          5
+        ]
+      ],
+      "description": "interface requires gui_builder"
+    },
+    {
+      "id": "c69",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -5,
+          2
+        ]
+      ],
+      "description": "gui_builder requires interface"
+    },
+    {
+      "id": "c70",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -2,
+          -5
+        ]
+      ],
+      "description": "gui_builder excludes interface"
+    },
+    {
+      "id": "c71",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -2,
+          6
+        ]
+      ],
+      "description": "interface requires java"
+    },
+    {
+      "id": "c72",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -6,
+          2
+        ]
+      ],
+      "description": "java requires interface"
+    },
+    {
+      "id": "c73",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -2,
+          -6
+        ]
+      ],
+      "description": "interface excludes java"
+    },
+    {
+      "id": "c74",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -2,
+          7
+        ]
+      ],
+      "description": "interface requires qt"
+    },
+    {
+      "id": "c75",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -7,
+          2
+        ]
+      ],
+      "description": "qt requires interface"
+    },
+    {
+      "id": "c76",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -2,
+          -7
+        ]
+      ],
+      "description": "interface excludes qt"
+    },
+    {
+      "id": "c77",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -2,
+          8
+        ]
+      ],
+      "description": "interface requires model_code_synch"
+    },
+    {
+      "id": "c78",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -8,
+          2
+        ]
+      ],
+      "description": "model_code_synch requires interface"
+    },
+    {
+      "id": "c79",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -2,
+          -8
+        ]
+      ],
+      "description": "interface excludes model_code_synch"
+    },
+    {
+      "id": "c80",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -2,
+          9
+        ]
+      ],
+      "description": "interface requires compiler"
+    },
+    {
+      "id": "c81",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -9,
+          2
+        ]
+      ],
+      "description": "compiler requires interface"
+    },
+    {
+      "id": "c82",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -2,
+          -9
+        ]
+      ],
+      "description": "compiler excludes interface"
+    },
+    {
+      "id": "c83",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -2,
+          10
+        ]
+      ],
+      "description": "interface requires javac"
+    },
+    {
+      "id": "c84",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -10,
+          2
+        ]
+      ],
+      "description": "javac requires interface"
+    },
+    {
+      "id": "c85",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -2,
+          -10
+        ]
+      ],
+      "description": "interface excludes javac"
+    },
+    {
+      "id": "c86",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -2,
+          11
+        ]
+      ],
+      "description": "interface requires mvc"
+    },
+    {
+      "id": "c87",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -11,
+          2
+        ]
+      ],
+      "description": "mvc requires interface"
+    },
+    {
+      "id": "c88",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -2,
+          -11
+        ]
+      ],
+      "description": "interface excludes mvc"
+    },
+    {
+      "id": "c89",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -2,
+          12
+        ]
+      ],
+      "description": "interface requires diagram_builder"
+    },
+    {
+      "id": "c90",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -12,
+          2
+        ]
+      ],
+      "description": "diagram_builder requires interface"
+    },
+    {
+      "id": "c91",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -2,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes interface"
+    },
+    {
+      "id": "c92",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -2,
+          13
+        ]
+      ],
+      "description": "interface requires uml"
+    },
+    {
+      "id": "c93",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -13,
+          2
+        ]
+      ],
+      "description": "uml requires interface"
+    },
+    {
+      "id": "c94",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -2,
+          -13
+        ]
+      ],
+      "description": "interface excludes uml"
+    },
+    {
+      "id": "c95",
+      "operator": "requires",
+      "parent": "interface",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -2,
+          14
+        ]
+      ],
+      "description": "interface requires petri_net"
+    },
+    {
+      "id": "c96",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "interface"
+      ],
+      "clauses": [
+        [
+          -14,
+          2
+        ]
+      ],
+      "description": "petri_net requires interface"
+    },
+    {
+      "id": "c97",
+      "operator": "excludes",
+      "parent": "interface",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -2,
+          -14
+        ]
+      ],
+      "description": "interface excludes petri_net"
+    },
+    {
+      "id": "c98",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -3,
+          4
+        ]
+      ],
+      "description": "sdi requires mdi"
+    },
+    {
+      "id": "c99",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -4,
+          3
+        ]
+      ],
+      "description": "mdi requires sdi"
+    },
+    {
+      "id": "c100",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -3,
+          -4
+        ]
+      ],
+      "description": "mdi excludes sdi"
+    },
+    {
+      "id": "c101",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -3,
+          5
+        ]
+      ],
+      "description": "sdi requires gui_builder"
+    },
+    {
+      "id": "c102",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -5,
+          3
+        ]
+      ],
+      "description": "gui_builder requires sdi"
+    },
+    {
+      "id": "c103",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -3,
+          -5
+        ]
+      ],
+      "description": "gui_builder excludes sdi"
+    },
+    {
+      "id": "c104",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -3,
+          6
+        ]
+      ],
+      "description": "sdi requires java"
+    },
+    {
+      "id": "c105",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -6,
+          3
+        ]
+      ],
+      "description": "java requires sdi"
+    },
+    {
+      "id": "c106",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -3,
+          -6
+        ]
+      ],
+      "description": "java excludes sdi"
+    },
+    {
+      "id": "c107",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -3,
+          7
+        ]
+      ],
+      "description": "sdi requires qt"
+    },
+    {
+      "id": "c108",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -7,
+          3
+        ]
+      ],
+      "description": "qt requires sdi"
+    },
+    {
+      "id": "c109",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -3,
+          -7
+        ]
+      ],
+      "description": "qt excludes sdi"
+    },
+    {
+      "id": "c110",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -3,
+          8
+        ]
+      ],
+      "description": "sdi requires model_code_synch"
+    },
+    {
+      "id": "c111",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -8,
+          3
+        ]
+      ],
+      "description": "model_code_synch requires sdi"
+    },
+    {
+      "id": "c112",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -3,
+          -8
+        ]
+      ],
+      "description": "model_code_synch excludes sdi"
+    },
+    {
+      "id": "c113",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -3,
+          9
+        ]
+      ],
+      "description": "sdi requires compiler"
+    },
+    {
+      "id": "c114",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -9,
+          3
+        ]
+      ],
+      "description": "compiler requires sdi"
+    },
+    {
+      "id": "c115",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -3,
+          -9
+        ]
+      ],
+      "description": "compiler excludes sdi"
+    },
+    {
+      "id": "c116",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -3,
+          10
+        ]
+      ],
+      "description": "sdi requires javac"
+    },
+    {
+      "id": "c117",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -10,
+          3
+        ]
+      ],
+      "description": "javac requires sdi"
+    },
+    {
+      "id": "c118",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -3,
+          -10
+        ]
+      ],
+      "description": "javac excludes sdi"
+    },
+    {
+      "id": "c119",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -3,
+          11
+        ]
+      ],
+      "description": "sdi requires mvc"
+    },
+    {
+      "id": "c120",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -11,
+          3
+        ]
+      ],
+      "description": "mvc requires sdi"
+    },
+    {
+      "id": "c121",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -3,
+          -11
+        ]
+      ],
+      "description": "mvc excludes sdi"
+    },
+    {
+      "id": "c122",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -3,
+          12
+        ]
+      ],
+      "description": "sdi requires diagram_builder"
+    },
+    {
+      "id": "c123",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -12,
+          3
+        ]
+      ],
+      "description": "diagram_builder requires sdi"
+    },
+    {
+      "id": "c124",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -3,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes sdi"
+    },
+    {
+      "id": "c125",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -3,
+          13
+        ]
+      ],
+      "description": "sdi requires uml"
+    },
+    {
+      "id": "c126",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -13,
+          3
+        ]
+      ],
+      "description": "uml requires sdi"
+    },
+    {
+      "id": "c127",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -3,
+          -13
+        ]
+      ],
+      "description": "sdi excludes uml"
+    },
+    {
+      "id": "c128",
+      "operator": "requires",
+      "parent": "sdi",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -3,
+          14
+        ]
+      ],
+      "description": "sdi requires petri_net"
+    },
+    {
+      "id": "c129",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "sdi"
+      ],
+      "clauses": [
+        [
+          -14,
+          3
+        ]
+      ],
+      "description": "petri_net requires sdi"
+    },
+    {
+      "id": "c130",
+      "operator": "excludes",
+      "parent": "sdi",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -3,
+          -14
+        ]
+      ],
+      "description": "petri_net excludes sdi"
+    },
+    {
+      "id": "c131",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -4,
+          5
+        ]
+      ],
+      "description": "mdi requires gui_builder"
+    },
+    {
+      "id": "c132",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -5,
+          4
+        ]
+      ],
+      "description": "gui_builder requires mdi"
+    },
+    {
+      "id": "c133",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -4,
+          -5
+        ]
+      ],
+      "description": "gui_builder excludes mdi"
+    },
+    {
+      "id": "c134",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -4,
+          6
+        ]
+      ],
+      "description": "mdi requires java"
+    },
+    {
+      "id": "c135",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -6,
+          4
+        ]
+      ],
+      "description": "java requires mdi"
+    },
+    {
+      "id": "c136",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -4,
+          -6
+        ]
+      ],
+      "description": "java excludes mdi"
+    },
+    {
+      "id": "c137",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -4,
+          7
+        ]
+      ],
+      "description": "mdi requires qt"
+    },
+    {
+      "id": "c138",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -7,
+          4
+        ]
+      ],
+      "description": "qt requires mdi"
+    },
+    {
+      "id": "c139",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -4,
+          -7
+        ]
+      ],
+      "description": "mdi excludes qt"
+    },
+    {
+      "id": "c140",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -4,
+          8
+        ]
+      ],
+      "description": "mdi requires model_code_synch"
+    },
+    {
+      "id": "c141",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -8,
+          4
+        ]
+      ],
+      "description": "model_code_synch requires mdi"
+    },
+    {
+      "id": "c142",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -4,
+          -8
+        ]
+      ],
+      "description": "mdi excludes model_code_synch"
+    },
+    {
+      "id": "c143",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -4,
+          9
+        ]
+      ],
+      "description": "mdi requires compiler"
+    },
+    {
+      "id": "c144",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -9,
+          4
+        ]
+      ],
+      "description": "compiler requires mdi"
+    },
+    {
+      "id": "c145",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -4,
+          -9
+        ]
+      ],
+      "description": "compiler excludes mdi"
+    },
+    {
+      "id": "c146",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -4,
+          10
+        ]
+      ],
+      "description": "mdi requires javac"
+    },
+    {
+      "id": "c147",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -10,
+          4
+        ]
+      ],
+      "description": "javac requires mdi"
+    },
+    {
+      "id": "c148",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -4,
+          -10
+        ]
+      ],
+      "description": "javac excludes mdi"
+    },
+    {
+      "id": "c149",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -4,
+          11
+        ]
+      ],
+      "description": "mdi requires mvc"
+    },
+    {
+      "id": "c150",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -11,
+          4
+        ]
+      ],
+      "description": "mvc requires mdi"
+    },
+    {
+      "id": "c151",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -4,
+          -11
+        ]
+      ],
+      "description": "mdi excludes mvc"
+    },
+    {
+      "id": "c152",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -4,
+          12
+        ]
+      ],
+      "description": "mdi requires diagram_builder"
+    },
+    {
+      "id": "c153",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -12,
+          4
+        ]
+      ],
+      "description": "diagram_builder requires mdi"
+    },
+    {
+      "id": "c154",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -4,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes mdi"
+    },
+    {
+      "id": "c155",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -4,
+          13
+        ]
+      ],
+      "description": "mdi requires uml"
+    },
+    {
+      "id": "c156",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -13,
+          4
+        ]
+      ],
+      "description": "uml requires mdi"
+    },
+    {
+      "id": "c157",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -4,
+          -13
+        ]
+      ],
+      "description": "mdi excludes uml"
+    },
+    {
+      "id": "c158",
+      "operator": "requires",
+      "parent": "mdi",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -4,
+          14
+        ]
+      ],
+      "description": "mdi requires petri_net"
+    },
+    {
+      "id": "c159",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "mdi"
+      ],
+      "clauses": [
+        [
+          -14,
+          4
+        ]
+      ],
+      "description": "petri_net requires mdi"
+    },
+    {
+      "id": "c160",
+      "operator": "excludes",
+      "parent": "mdi",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -4,
+          -14
+        ]
+      ],
+      "description": "mdi excludes petri_net"
+    },
+    {
+      "id": "c161",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -5,
+          6
+        ]
+      ],
+      "description": "gui_builder requires java"
+    },
+    {
+      "id": "c162",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -6,
+          5
+        ]
+      ],
+      "description": "java requires gui_builder"
+    },
+    {
+      "id": "c163",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -5,
+          -6
+        ]
+      ],
+      "description": "gui_builder excludes java"
+    },
+    {
+      "id": "c164",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -5,
+          7
+        ]
+      ],
+      "description": "gui_builder requires qt"
+    },
+    {
+      "id": "c165",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -7,
+          5
+        ]
+      ],
+      "description": "qt requires gui_builder"
+    },
+    {
+      "id": "c166",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -5,
+          -7
+        ]
+      ],
+      "description": "gui_builder excludes qt"
+    },
+    {
+      "id": "c167",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -5,
+          8
+        ]
+      ],
+      "description": "gui_builder requires model_code_synch"
+    },
+    {
+      "id": "c168",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -8,
+          5
+        ]
+      ],
+      "description": "model_code_synch requires gui_builder"
+    },
+    {
+      "id": "c169",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -5,
+          -8
+        ]
+      ],
+      "description": "gui_builder excludes model_code_synch"
+    },
+    {
+      "id": "c170",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -5,
+          9
+        ]
+      ],
+      "description": "gui_builder requires compiler"
+    },
+    {
+      "id": "c171",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -9,
+          5
+        ]
+      ],
+      "description": "compiler requires gui_builder"
+    },
+    {
+      "id": "c172",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -5,
+          -9
+        ]
+      ],
+      "description": "compiler excludes gui_builder"
+    },
+    {
+      "id": "c173",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -5,
+          10
+        ]
+      ],
+      "description": "gui_builder requires javac"
+    },
+    {
+      "id": "c174",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -10,
+          5
+        ]
+      ],
+      "description": "javac requires gui_builder"
+    },
+    {
+      "id": "c175",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -5,
+          -10
+        ]
+      ],
+      "description": "gui_builder excludes javac"
+    },
+    {
+      "id": "c176",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -5,
+          11
+        ]
+      ],
+      "description": "gui_builder requires mvc"
+    },
+    {
+      "id": "c177",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -11,
+          5
+        ]
+      ],
+      "description": "mvc requires gui_builder"
+    },
+    {
+      "id": "c178",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -5,
+          -11
+        ]
+      ],
+      "description": "gui_builder excludes mvc"
+    },
+    {
+      "id": "c179",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -5,
+          12
+        ]
+      ],
+      "description": "gui_builder requires diagram_builder"
+    },
+    {
+      "id": "c180",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -12,
+          5
+        ]
+      ],
+      "description": "diagram_builder requires gui_builder"
+    },
+    {
+      "id": "c181",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -5,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes gui_builder"
+    },
+    {
+      "id": "c182",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -5,
+          13
+        ]
+      ],
+      "description": "gui_builder requires uml"
+    },
+    {
+      "id": "c183",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -13,
+          5
+        ]
+      ],
+      "description": "uml requires gui_builder"
+    },
+    {
+      "id": "c184",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -5,
+          -13
+        ]
+      ],
+      "description": "gui_builder excludes uml"
+    },
+    {
+      "id": "c185",
+      "operator": "requires",
+      "parent": "gui_builder",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -5,
+          14
+        ]
+      ],
+      "description": "gui_builder requires petri_net"
+    },
+    {
+      "id": "c186",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "gui_builder"
+      ],
+      "clauses": [
+        [
+          -14,
+          5
+        ]
+      ],
+      "description": "petri_net requires gui_builder"
+    },
+    {
+      "id": "c187",
+      "operator": "excludes",
+      "parent": "gui_builder",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -5,
+          -14
+        ]
+      ],
+      "description": "gui_builder excludes petri_net"
+    },
+    {
+      "id": "c188",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -6,
+          7
+        ]
+      ],
+      "description": "java requires qt"
+    },
+    {
+      "id": "c189",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -7,
+          6
+        ]
+      ],
+      "description": "qt requires java"
+    },
+    {
+      "id": "c190",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -6,
+          -7
+        ]
+      ],
+      "description": "java excludes qt"
+    },
+    {
+      "id": "c191",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -6,
+          8
+        ]
+      ],
+      "description": "java requires model_code_synch"
+    },
+    {
+      "id": "c192",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -8,
+          6
+        ]
+      ],
+      "description": "model_code_synch requires java"
+    },
+    {
+      "id": "c193",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -6,
+          -8
+        ]
+      ],
+      "description": "java excludes model_code_synch"
+    },
+    {
+      "id": "c194",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -6,
+          9
+        ]
+      ],
+      "description": "java requires compiler"
+    },
+    {
+      "id": "c195",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -9,
+          6
+        ]
+      ],
+      "description": "compiler requires java"
+    },
+    {
+      "id": "c196",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -6,
+          -9
+        ]
+      ],
+      "description": "compiler excludes java"
+    },
+    {
+      "id": "c197",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -6,
+          10
+        ]
+      ],
+      "description": "java requires javac"
+    },
+    {
+      "id": "c198",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -10,
+          6
+        ]
+      ],
+      "description": "javac requires java"
+    },
+    {
+      "id": "c199",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -6,
+          -10
+        ]
+      ],
+      "description": "java excludes javac"
+    },
+    {
+      "id": "c200",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -6,
+          11
+        ]
+      ],
+      "description": "java requires mvc"
+    },
+    {
+      "id": "c201",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -11,
+          6
+        ]
+      ],
+      "description": "mvc requires java"
+    },
+    {
+      "id": "c202",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -6,
+          -11
+        ]
+      ],
+      "description": "java excludes mvc"
+    },
+    {
+      "id": "c203",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -6,
+          12
+        ]
+      ],
+      "description": "java requires diagram_builder"
+    },
+    {
+      "id": "c204",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -12,
+          6
+        ]
+      ],
+      "description": "diagram_builder requires java"
+    },
+    {
+      "id": "c205",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -6,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes java"
+    },
+    {
+      "id": "c206",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -6,
+          13
+        ]
+      ],
+      "description": "java requires uml"
+    },
+    {
+      "id": "c207",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -13,
+          6
+        ]
+      ],
+      "description": "uml requires java"
+    },
+    {
+      "id": "c208",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -6,
+          -13
+        ]
+      ],
+      "description": "java excludes uml"
+    },
+    {
+      "id": "c209",
+      "operator": "requires",
+      "parent": "java",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -6,
+          14
+        ]
+      ],
+      "description": "java requires petri_net"
+    },
+    {
+      "id": "c210",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "java"
+      ],
+      "clauses": [
+        [
+          -14,
+          6
+        ]
+      ],
+      "description": "petri_net requires java"
+    },
+    {
+      "id": "c211",
+      "operator": "excludes",
+      "parent": "java",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -6,
+          -14
+        ]
+      ],
+      "description": "java excludes petri_net"
+    },
+    {
+      "id": "c212",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -7,
+          8
+        ]
+      ],
+      "description": "qt requires model_code_synch"
+    },
+    {
+      "id": "c213",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -8,
+          7
+        ]
+      ],
+      "description": "model_code_synch requires qt"
+    },
+    {
+      "id": "c214",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -7,
+          -8
+        ]
+      ],
+      "description": "model_code_synch excludes qt"
+    },
+    {
+      "id": "c215",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -7,
+          9
+        ]
+      ],
+      "description": "qt requires compiler"
+    },
+    {
+      "id": "c216",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -9,
+          7
+        ]
+      ],
+      "description": "compiler requires qt"
+    },
+    {
+      "id": "c217",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -7,
+          -9
+        ]
+      ],
+      "description": "compiler excludes qt"
+    },
+    {
+      "id": "c218",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -7,
+          10
+        ]
+      ],
+      "description": "qt requires javac"
+    },
+    {
+      "id": "c219",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -10,
+          7
+        ]
+      ],
+      "description": "javac requires qt"
+    },
+    {
+      "id": "c220",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -7,
+          -10
+        ]
+      ],
+      "description": "javac excludes qt"
+    },
+    {
+      "id": "c221",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -7,
+          11
+        ]
+      ],
+      "description": "qt requires mvc"
+    },
+    {
+      "id": "c222",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -11,
+          7
+        ]
+      ],
+      "description": "mvc requires qt"
+    },
+    {
+      "id": "c223",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -7,
+          -11
+        ]
+      ],
+      "description": "mvc excludes qt"
+    },
+    {
+      "id": "c224",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -7,
+          12
+        ]
+      ],
+      "description": "qt requires diagram_builder"
+    },
+    {
+      "id": "c225",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -12,
+          7
+        ]
+      ],
+      "description": "diagram_builder requires qt"
+    },
+    {
+      "id": "c226",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -7,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes qt"
+    },
+    {
+      "id": "c227",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -7,
+          13
+        ]
+      ],
+      "description": "qt requires uml"
+    },
+    {
+      "id": "c228",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -13,
+          7
+        ]
+      ],
+      "description": "uml requires qt"
+    },
+    {
+      "id": "c229",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -7,
+          -13
+        ]
+      ],
+      "description": "qt excludes uml"
+    },
+    {
+      "id": "c230",
+      "operator": "requires",
+      "parent": "qt",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -7,
+          14
+        ]
+      ],
+      "description": "qt requires petri_net"
+    },
+    {
+      "id": "c231",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "qt"
+      ],
+      "clauses": [
+        [
+          -14,
+          7
+        ]
+      ],
+      "description": "petri_net requires qt"
+    },
+    {
+      "id": "c232",
+      "operator": "excludes",
+      "parent": "qt",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -7,
+          -14
+        ]
+      ],
+      "description": "petri_net excludes qt"
+    },
+    {
+      "id": "c233",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -8,
+          9
+        ]
+      ],
+      "description": "model_code_synch requires compiler"
+    },
+    {
+      "id": "c234",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -9,
+          8
+        ]
+      ],
+      "description": "compiler requires model_code_synch"
+    },
+    {
+      "id": "c235",
+      "operator": "excludes",
+      "parent": "model_code_synch",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -8,
+          -9
+        ]
+      ],
+      "description": "compiler excludes model_code_synch"
+    },
+    {
+      "id": "c236",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -8,
+          10
+        ]
+      ],
+      "description": "model_code_synch requires javac"
+    },
+    {
+      "id": "c237",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -10,
+          8
+        ]
+      ],
+      "description": "javac requires model_code_synch"
+    },
+    {
+      "id": "c238",
+      "operator": "excludes",
+      "parent": "model_code_synch",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -8,
+          -10
+        ]
+      ],
+      "description": "javac excludes model_code_synch"
+    },
+    {
+      "id": "c239",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -8,
+          11
+        ]
+      ],
+      "description": "model_code_synch requires mvc"
+    },
+    {
+      "id": "c240",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -11,
+          8
+        ]
+      ],
+      "description": "mvc requires model_code_synch"
+    },
+    {
+      "id": "c241",
+      "operator": "excludes",
+      "parent": "model_code_synch",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -8,
+          -11
+        ]
+      ],
+      "description": "model_code_synch excludes mvc"
+    },
+    {
+      "id": "c242",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -8,
+          12
+        ]
+      ],
+      "description": "model_code_synch requires diagram_builder"
+    },
+    {
+      "id": "c243",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -12,
+          8
+        ]
+      ],
+      "description": "diagram_builder requires model_code_synch"
+    },
+    {
+      "id": "c244",
+      "operator": "excludes",
+      "parent": "model_code_synch",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -8,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes model_code_synch"
+    },
+    {
+      "id": "c245",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -8,
+          13
+        ]
+      ],
+      "description": "model_code_synch requires uml"
+    },
+    {
+      "id": "c246",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -13,
+          8
+        ]
+      ],
+      "description": "uml requires model_code_synch"
+    },
+    {
+      "id": "c247",
+      "operator": "excludes",
+      "parent": "model_code_synch",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -8,
+          -13
+        ]
+      ],
+      "description": "model_code_synch excludes uml"
+    },
+    {
+      "id": "c248",
+      "operator": "requires",
+      "parent": "model_code_synch",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -8,
+          14
+        ]
+      ],
+      "description": "model_code_synch requires petri_net"
+    },
+    {
+      "id": "c249",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "model_code_synch"
+      ],
+      "clauses": [
+        [
+          -14,
+          8
+        ]
+      ],
+      "description": "petri_net requires model_code_synch"
+    },
+    {
+      "id": "c250",
+      "operator": "excludes",
+      "parent": "model_code_synch",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -8,
+          -14
+        ]
+      ],
+      "description": "model_code_synch excludes petri_net"
+    },
+    {
+      "id": "c251",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -9,
+          10
+        ]
+      ],
+      "description": "compiler requires javac"
+    },
+    {
+      "id": "c252",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -10,
+          9
+        ]
+      ],
+      "description": "javac requires compiler"
+    },
+    {
+      "id": "c253",
+      "operator": "excludes",
+      "parent": "compiler",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -9,
+          -10
+        ]
+      ],
+      "description": "compiler excludes javac"
+    },
+    {
+      "id": "c254",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -9,
+          11
+        ]
+      ],
+      "description": "compiler requires mvc"
+    },
+    {
+      "id": "c255",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -11,
+          9
+        ]
+      ],
+      "description": "mvc requires compiler"
+    },
+    {
+      "id": "c256",
+      "operator": "excludes",
+      "parent": "compiler",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -9,
+          -11
+        ]
+      ],
+      "description": "compiler excludes mvc"
+    },
+    {
+      "id": "c257",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -9,
+          12
+        ]
+      ],
+      "description": "compiler requires diagram_builder"
+    },
+    {
+      "id": "c258",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -12,
+          9
+        ]
+      ],
+      "description": "diagram_builder requires compiler"
+    },
+    {
+      "id": "c259",
+      "operator": "excludes",
+      "parent": "compiler",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -9,
+          -12
+        ]
+      ],
+      "description": "compiler excludes diagram_builder"
+    },
+    {
+      "id": "c260",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -9,
+          13
+        ]
+      ],
+      "description": "compiler requires uml"
+    },
+    {
+      "id": "c261",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -13,
+          9
+        ]
+      ],
+      "description": "uml requires compiler"
+    },
+    {
+      "id": "c262",
+      "operator": "excludes",
+      "parent": "compiler",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -9,
+          -13
+        ]
+      ],
+      "description": "compiler excludes uml"
+    },
+    {
+      "id": "c263",
+      "operator": "requires",
+      "parent": "compiler",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -9,
+          14
+        ]
+      ],
+      "description": "compiler requires petri_net"
+    },
+    {
+      "id": "c264",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "compiler"
+      ],
+      "clauses": [
+        [
+          -14,
+          9
+        ]
+      ],
+      "description": "petri_net requires compiler"
+    },
+    {
+      "id": "c265",
+      "operator": "excludes",
+      "parent": "compiler",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -9,
+          -14
+        ]
+      ],
+      "description": "compiler excludes petri_net"
+    },
+    {
+      "id": "c266",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -10,
+          11
+        ]
+      ],
+      "description": "javac requires mvc"
+    },
+    {
+      "id": "c267",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -11,
+          10
+        ]
+      ],
+      "description": "mvc requires javac"
+    },
+    {
+      "id": "c268",
+      "operator": "excludes",
+      "parent": "javac",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -10,
+          -11
+        ]
+      ],
+      "description": "javac excludes mvc"
+    },
+    {
+      "id": "c269",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -10,
+          12
+        ]
+      ],
+      "description": "javac requires diagram_builder"
+    },
+    {
+      "id": "c270",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -12,
+          10
+        ]
+      ],
+      "description": "diagram_builder requires javac"
+    },
+    {
+      "id": "c271",
+      "operator": "excludes",
+      "parent": "javac",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -10,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes javac"
+    },
+    {
+      "id": "c272",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -10,
+          13
+        ]
+      ],
+      "description": "javac requires uml"
+    },
+    {
+      "id": "c273",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -13,
+          10
+        ]
+      ],
+      "description": "uml requires javac"
+    },
+    {
+      "id": "c274",
+      "operator": "excludes",
+      "parent": "javac",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -10,
+          -13
+        ]
+      ],
+      "description": "javac excludes uml"
+    },
+    {
+      "id": "c275",
+      "operator": "requires",
+      "parent": "javac",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -10,
+          14
+        ]
+      ],
+      "description": "javac requires petri_net"
+    },
+    {
+      "id": "c276",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "javac"
+      ],
+      "clauses": [
+        [
+          -14,
+          10
+        ]
+      ],
+      "description": "petri_net requires javac"
+    },
+    {
+      "id": "c277",
+      "operator": "excludes",
+      "parent": "javac",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -10,
+          -14
+        ]
+      ],
+      "description": "javac excludes petri_net"
+    },
+    {
+      "id": "c278",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -11,
+          12
+        ]
+      ],
+      "description": "mvc requires diagram_builder"
+    },
+    {
+      "id": "c279",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -12,
+          11
+        ]
+      ],
+      "description": "diagram_builder requires mvc"
+    },
+    {
+      "id": "c280",
+      "operator": "excludes",
+      "parent": "mvc",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -11,
+          -12
+        ]
+      ],
+      "description": "diagram_builder excludes mvc"
+    },
+    {
+      "id": "c281",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -11,
+          13
+        ]
+      ],
+      "description": "mvc requires uml"
+    },
+    {
+      "id": "c282",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -13,
+          11
+        ]
+      ],
+      "description": "uml requires mvc"
+    },
+    {
+      "id": "c283",
+      "operator": "excludes",
+      "parent": "mvc",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -11,
+          -13
+        ]
+      ],
+      "description": "mvc excludes uml"
+    },
+    {
+      "id": "c284",
+      "operator": "requires",
+      "parent": "mvc",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -11,
+          14
+        ]
+      ],
+      "description": "mvc requires petri_net"
+    },
+    {
+      "id": "c285",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "mvc"
+      ],
+      "clauses": [
+        [
+          -14,
+          11
+        ]
+      ],
+      "description": "petri_net requires mvc"
+    },
+    {
+      "id": "c286",
+      "operator": "excludes",
+      "parent": "mvc",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -11,
+          -14
+        ]
+      ],
+      "description": "mvc excludes petri_net"
+    },
+    {
+      "id": "c287",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -12,
+          13
+        ]
+      ],
+      "description": "diagram_builder requires uml"
+    },
+    {
+      "id": "c288",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -13,
+          12
+        ]
+      ],
+      "description": "uml requires diagram_builder"
+    },
+    {
+      "id": "c289",
+      "operator": "excludes",
+      "parent": "diagram_builder",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -12,
+          -13
+        ]
+      ],
+      "description": "diagram_builder excludes uml"
+    },
+    {
+      "id": "c290",
+      "operator": "requires",
+      "parent": "diagram_builder",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -12,
+          14
+        ]
+      ],
+      "description": "diagram_builder requires petri_net"
+    },
+    {
+      "id": "c291",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "diagram_builder"
+      ],
+      "clauses": [
+        [
+          -14,
+          12
+        ]
+      ],
+      "description": "petri_net requires diagram_builder"
+    },
+    {
+      "id": "c292",
+      "operator": "excludes",
+      "parent": "diagram_builder",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -12,
+          -14
+        ]
+      ],
+      "description": "diagram_builder excludes petri_net"
+    },
+    {
+      "id": "c293",
+      "operator": "requires",
+      "parent": "uml",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -13,
+          14
+        ]
+      ],
+      "description": "uml requires petri_net"
+    },
+    {
+      "id": "c294",
+      "operator": "requires",
+      "parent": "petri_net",
+      "children": [
+        "uml"
+      ],
+      "clauses": [
+        [
+          -14,
+          13
+        ]
+      ],
+      "description": "petri_net requires uml"
+    },
+    {
+      "id": "c295",
+      "operator": "excludes",
+      "parent": "uml",
+      "children": [
+        "petri_net"
+      ],
+      "clauses": [
+        [
+          -13,
+          -14
+        ]
+      ],
+      "description": "petri_net excludes uml"
+    }
+  ]
+}

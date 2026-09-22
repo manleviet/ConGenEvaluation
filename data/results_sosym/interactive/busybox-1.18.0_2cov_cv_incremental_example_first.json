@@ -1,0 +1,692 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    1.0,
+    1.0,
+    0.7142857142857143
+  ],
+  "mean_accuracy": 0.9047619047619048,
+  "std_accuracy": 0.1649572197684645,
+  "total_runtime_ms": 5649988.751332974,
+  "intersected_kb": {
+    "kb_constraints": [],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 0,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "specificity": 1.0,
+        "true_positives": 0,
+        "true_negatives": 7,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 8102325.750708114,
+        "consistency_checks": 1018,
+        "memory_peak_mb": 115.9300889968872,
+        "quacq_runtime_ms": 8102065.309250029,
+        "query_generation_runtime_ms": 1382.0324568077922,
+        "findscope_runtime_ms": 56578333.08371133,
+        "findc_runtime_ms": 976.9691646797583,
+        "dis_gen_runtime_ms": 231.49883409496397,
+        "reduce_runtime_ms": 27.561625000089407,
+        "solver_time_ms": 1616961.9899995385,
+        "is_consistent_calls": 2507431,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 45,
+        "query_generation_consistency_checks": 107,
+        "prune_calls": 396,
+        "prune_is_consistent_calls": 2507329,
+        "findscope_calls": 1276,
+        "findc_calls": 44,
+        "findc_consistency_checks": 63,
+        "dis_gen_calls": 31,
+        "dis_gen_consistency_checks": 31,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 5,
+        "profiler": {
+          "query_generation_consistency_checks": 107,
+          "solver_time": {
+            "count": 2507535,
+            "total": 1616.9619899995384,
+            "mean": 0.0006448412444889258,
+            "min": 1.0000000003174137e-05,
+            "max": 0.0038229999999970232,
+            "median": 0.000653000000056636,
+            "stddev": 7.512688347178043e-05
+          },
+          "solver_time_accum": 1616.9619899995384,
+          "is_consistent_calls": 2507431,
+          "query_generation_runtime": {
+            "count": 45,
+            "total": 1.3820324568077922,
+            "mean": 0.030711832373506495,
+            "min": 0.0024793330812826753,
+            "max": 0.14533370803110301,
+            "median": 0.02149708301294595,
+            "stddev": 0.028199350152755206
+          },
+          "query_generation_calls": 45,
+          "paper_consistency_checks": 1018,
+          "prune_is_consistent_calls": 2507329,
+          "prune_calls": 396,
+          "findscope_calls": 1276,
+          "findscope_runtime": {
+            "count": 1276,
+            "total": 56578.33308371133,
+            "mean": 44.34038642924086,
+            "min": 5.084089934825897e-06,
+            "max": 289.6074753330322,
+            "median": 6.186922166496515,
+            "stddev": 67.71803768233268
+          },
+          "quacq_prune_partial_pruned": 506,
+          "findc_consistency_checks": 63,
+          "findc_calls": 44,
+          "findc_runtime": {
+            "count": 44,
+            "total": 0.9769691646797583,
+            "mean": 0.022203844651812688,
+            "min": 0.01234766689594835,
+            "max": 0.05432145798113197,
+            "median": 0.01487170800101012,
+            "stddev": 0.012835790849765908
+          },
+          "dis_gen_consistency_checks": 31,
+          "dis_gen_calls": 31,
+          "dis_gen_runtime": {
+            "count": 31,
+            "total": 0.23149883409496397,
+            "mean": 0.007467704325643999,
+            "min": 0.004605624941177666,
+            "max": 0.01799625006970018,
+            "median": 0.005489374976605177,
+            "stddev": 0.0044890252178612046
+          },
+          "quacq_findc_unconfirmed": 13,
+          "query_generation_repeat_skips": 31,
+          "redundancy_consistency_checks": 5,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.027561625000089407,
+            "mean": 0.027561625000089407,
+            "min": 0.027561625000089407,
+            "max": 0.027561625000089407
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 8102.065309250029,
+            "mean": 8102.065309250029,
+            "min": 8102.065309250029,
+            "max": 8102.065309250029
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 8102.325750708114,
+            "mean": 8102.325750708114,
+            "min": 8102.325750708114,
+            "max": 8102.325750708114
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c95",
+          "description": "root --mandatory--> BUSYBOX_EXEC_PATH"
+        },
+        {
+          "id": "c2368",
+          "description": "FEATURE_INSMOD_LOAD_MAP requires FEATURE_2_4_MODULES"
+        },
+        {
+          "id": "c1374",
+          "description": "FBSET --optional--> FEATURE_FBSET_FANCY"
+        },
+        {
+          "id": "c4309",
+          "description": "FEATURE_SH_NOFORK requires FEATURE_PREFER_APPLETS"
+        },
+        {
+          "id": "c923",
+          "description": "IFUPDOWN --mandatory--> IFUPDOWN_IFSTATE_PATH"
+        }
+      ],
+      "ne_constraints": [],
+      "ne_clauses": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "redundant_ne_constraints": [],
+      "statistics": {
+        "n_bias": 6635,
+        "n_mss": null,
+        "n_kb": 5,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 0,
+        "negative": 14
+      },
+      "test_size": {
+        "positive": 0,
+        "negative": 7
+      },
+      "n_queries": 1000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "specificity": 1.0,
+        "true_positives": 0,
+        "true_negatives": 7,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 8546408.62958401,
+        "consistency_checks": 1019,
+        "memory_peak_mb": 120.5962266921997,
+        "quacq_runtime_ms": 8546130.481499946,
+        "query_generation_runtime_ms": 2107.6631689211354,
+        "findscope_runtime_ms": 55931707.52910245,
+        "findc_runtime_ms": 1231.0420002322644,
+        "dis_gen_runtime_ms": 408.8267085608095,
+        "reduce_runtime_ms": 56.862999917939305,
+        "solver_time_ms": 1676730.191000366,
+        "is_consistent_calls": 2620936,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 33,
+        "query_generation_consistency_checks": 151,
+        "prune_calls": 413,
+        "prune_is_consistent_calls": 2620798,
+        "findscope_calls": 1243,
+        "findc_calls": 33,
+        "findc_consistency_checks": 105,
+        "dis_gen_calls": 49,
+        "dis_gen_consistency_checks": 49,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 10,
+        "profiler": {
+          "query_generation_consistency_checks": 151,
+          "solver_time": {
+            "count": 2621113,
+            "total": 1676.730191000366,
+            "mean": 0.000639701604242307,
+            "min": 7.999999999785956e-06,
+            "max": 0.002548000000160755,
+            "median": 0.0006549999998242129,
+            "stddev": 5.6743047806813055e-05
+          },
+          "solver_time_accum": 1676.730191000366,
+          "is_consistent_calls": 2620936,
+          "query_generation_runtime": {
+            "count": 33,
+            "total": 2.1076631689211354,
+            "mean": 0.06386858087639805,
+            "min": 0.006353667005896568,
+            "max": 0.19266941701062024,
+            "median": 0.03646395797841251,
+            "stddev": 0.05988420886579583
+          },
+          "query_generation_calls": 33,
+          "paper_consistency_checks": 1019,
+          "findscope_calls": 1243,
+          "findscope_runtime": {
+            "count": 1243,
+            "total": 55931.70752910245,
+            "mean": 44.997351189945654,
+            "min": 5.458015948534012e-06,
+            "max": 447.5581208751537,
+            "median": 7.440794582944363,
+            "stddev": 68.49644669295782
+          },
+          "prune_is_consistent_calls": 2620798,
+          "quacq_prune_partial_pruned": 525,
+          "prune_calls": 413,
+          "findc_calls": 33,
+          "findc_runtime": {
+            "count": 33,
+            "total": 1.2310420002322644,
+            "mean": 0.03730430303734134,
+            "min": 0.013747207936830819,
+            "max": 0.06702908291481435,
+            "median": 0.03434158302843571,
+            "stddev": 0.019511480258610863
+          },
+          "findc_consistency_checks": 105,
+          "dis_gen_consistency_checks": 49,
+          "dis_gen_calls": 49,
+          "dis_gen_runtime": {
+            "count": 49,
+            "total": 0.4088267085608095,
+            "mean": 0.008343402215526725,
+            "min": 0.005885041900910437,
+            "max": 0.03712987492326647,
+            "median": 0.007526791072450578,
+            "stddev": 0.004630913240120337
+          },
+          "quacq_findc_unconfirmed": 21,
+          "query_generation_repeat_skips": 81,
+          "redundancy_consistency_checks": 10,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.056862999917939305,
+            "mean": 0.056862999917939305,
+            "min": 0.056862999917939305,
+            "max": 0.056862999917939305
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 8546.130481499946,
+            "mean": 8546.130481499946,
+            "min": 8546.130481499946,
+            "max": 8546.130481499946
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 8546.40862958401,
+            "mean": 8546.40862958401,
+            "min": 8546.40862958401,
+            "max": 8546.40862958401
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c95",
+          "description": "root --mandatory--> BUSYBOX_EXEC_PATH"
+        },
+        {
+          "id": "c35",
+          "description": "UNICODE_SUPPORT --mandatory--> LAST_SUPPORTED_WCHAR"
+        },
+        {
+          "id": "c21",
+          "description": "UNICODE_SUPPORT --mandatory--> SUBST_WCHAR"
+        },
+        {
+          "id": "c1161",
+          "description": "root --mandatory--> CROSS_COMPILER_PREFIX"
+        },
+        {
+          "id": "c247",
+          "description": "root --mandatory--> DEFAULT_DEPMOD_FILE"
+        },
+        {
+          "id": "c155",
+          "description": "root --mandatory--> DEFAULT_MODULES_DIR"
+        },
+        {
+          "id": "c967",
+          "description": "root --mandatory--> DMALLOC_alt"
+        },
+        {
+          "id": "c565",
+          "description": "INIT --mandatory--> INIT_TERMINAL_TYPE"
+        },
+        {
+          "id": "c2368",
+          "description": "FEATURE_INSMOD_LOAD_MAP requires FEATURE_2_4_MODULES"
+        },
+        {
+          "id": "c1898",
+          "description": "BUILD_LIBBUSYBOX excludes FEATURE_PREFER_APPLETS"
+        }
+      ],
+      "ne_constraints": [],
+      "ne_clauses": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "redundant_ne_constraints": [],
+      "statistics": {
+        "n_bias": 6635,
+        "n_mss": null,
+        "n_kb": 10,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 0,
+        "negative": 14
+      },
+      "test_size": {
+        "positive": 0,
+        "negative": 7
+      },
+      "n_queries": 1000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 0.7142857142857143,
+      "metrics": {
+        "accuracy": 0.7142857142857143,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "specificity": 0.7142857142857143,
+        "true_positives": 0,
+        "true_negatives": 5,
+        "false_positives": 2,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 5649188.595707994,
+        "consistency_checks": 1008,
+        "memory_peak_mb": 90.41032886505127,
+        "quacq_runtime_ms": 5648908.02916605,
+        "query_generation_runtime_ms": 12628.106367774308,
+        "findscope_runtime_ms": 45161561.60899554,
+        "findc_runtime_ms": 1792.781877098605,
+        "dis_gen_runtime_ms": 423.1343779247254,
+        "reduce_runtime_ms": 0.06616697646677494,
+        "solver_time_ms": 1200359.0000003916,
+        "is_consistent_calls": 1908240,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 73,
+        "query_generation_consistency_checks": 847,
+        "prune_calls": 288,
+        "prune_is_consistent_calls": 1908082,
+        "findscope_calls": 1512,
+        "findc_calls": 72,
+        "findc_consistency_checks": 144,
+        "dis_gen_calls": 72,
+        "dis_gen_consistency_checks": 72,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 0,
+        "profiler": {
+          "query_generation_consistency_checks": 847,
+          "solver_time": {
+            "count": 1909145,
+            "total": 1200.3590000003917,
+            "mean": 0.0006287416618435958,
+            "min": 8.999999999481645e-06,
+            "max": 0.002856000000065251,
+            "median": 0.0006470000007539056,
+            "stddev": 5.9804546899936476e-05
+          },
+          "solver_time_accum": 1200.3588620003914,
+          "is_consistent_calls": 1908240,
+          "query_generation_runtime": {
+            "count": 73,
+            "total": 12.628106367774308,
+            "mean": 0.17298775846266176,
+            "min": 0.007441124878823757,
+            "max": 0.4665452081244439,
+            "median": 0.17702216701582074,
+            "stddev": 0.08500214630118082
+          },
+          "query_generation_calls": 73,
+          "paper_consistency_checks": 1008,
+          "findscope_calls": 1512,
+          "findscope_runtime": {
+            "count": 1512,
+            "total": 45161.561608995544,
+            "mean": 29.868757677907105,
+            "min": 5.37489540874958e-06,
+            "max": 140.9489137919154,
+            "median": 11.332102020620368,
+            "stddev": 38.31908174743667
+          },
+          "prune_is_consistent_calls": 1908082,
+          "quacq_prune_partial_pruned": 10,
+          "prune_calls": 288,
+          "findc_consistency_checks": 144,
+          "dis_gen_consistency_checks": 72,
+          "dis_gen_calls": 72,
+          "dis_gen_runtime": {
+            "count": 72,
+            "total": 0.4231343779247254,
+            "mean": 0.005876866360065631,
+            "min": 0.0038297080900520086,
+            "max": 0.008525833021849394,
+            "median": 0.005949437501840293,
+            "stddev": 0.001345645425189897
+          },
+          "quacq_findc_unconfirmed": 72,
+          "findc_calls": 72,
+          "findc_runtime": {
+            "count": 72,
+            "total": 1.792781877098605,
+            "mean": 0.02489974829303618,
+            "min": 0.01880091684870422,
+            "max": 0.03352012508548796,
+            "median": 0.024704312440007925,
+            "stddev": 0.0038996830188320637
+          },
+          "query_generation_repeat_skips": 706,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 6.616697646677494e-05,
+            "mean": 6.616697646677494e-05,
+            "min": 6.616697646677494e-05,
+            "max": 6.616697646677494e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 5648.90802916605,
+            "mean": 5648.90802916605,
+            "min": 5648.90802916605,
+            "max": 5648.90802916605
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 5649.188595707994,
+            "mean": 5649.188595707994,
+            "min": 5649.188595707994,
+            "max": 5649.188595707994
+          }
+        }
+      },
+      "kb_constraints": [],
+      "ne_constraints": [],
+      "ne_clauses": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "redundant_ne_constraints": [],
+      "statistics": {
+        "n_bias": 6635,
+        "n_mss": null,
+        "n_kb": 0,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 0,
+        "negative": 14
+      },
+      "test_size": {
+        "positive": 0,
+        "negative": 7
+      },
+      "n_queries": 1000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 7432640.99200004,
+      "std_ms": 1560393.936865802,
+      "min_ms": 5649188.595707994,
+      "max_ms": 8546408.62958401
+    },
+    "consistency_checks": {
+      "mean": 1015,
+      "std": 6.082762530298219,
+      "min": 1008,
+      "max": 1019
+    },
+    "memory": {
+      "mean_mb": 108.97888151804607,
+      "max_mb": 120.5962266921997
+    },
+    "quacq_runtime": {
+      "mean_ms": 7432367.939972009,
+      "std_ms": 1560399.1186200837,
+      "min_ms": 5648908.02916605,
+      "max_ms": 8546130.481499946
+    },
+    "query_gen_runtime": {
+      "mean_ms": 5372.600664501078,
+      "std_ms": 6293.918274037509,
+      "min_ms": 1382.0324568077922,
+      "max_ms": 12628.106367774308
+    },
+    "findscope_runtime": {
+      "mean_ms": 52557200.74060311,
+      "std_ms": 6412966.534739765,
+      "min_ms": 45161561.60899554,
+      "max_ms": 56578333.08371133
+    },
+    "findc_runtime": {
+      "mean_ms": 1333.5976806702092,
+      "std_ms": 417.4635865900359,
+      "min_ms": 976.9691646797583,
+      "max_ms": 1792.781877098605
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 354.4866401934996,
+      "std_ms": 106.75053951786397,
+      "min_ms": 231.49883409496397,
+      "max_ms": 423.1343779247254
+    },
+    "reduce_runtime": {
+      "mean_ms": 28.16359729816516,
+      "std_ms": 28.403201158163892,
+      "min_ms": 0.06616697646677494,
+      "max_ms": 56.862999917939305
+    },
+    "solver_time": {
+      "mean_ms": 1498017.060333432,
+      "std_ms": 259505.87685761522,
+      "min_ms": 1200359.0000003916,
+      "max_ms": 1676730.191000366
+    },
+    "is_consistent_calls": {
+      "mean": 2345535.6666666665,
+      "std": 382937.94708847196,
+      "min": 1908240,
+      "max": 2620936
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 50.333333333333336,
+      "std": 20.526405757787536,
+      "min": 33,
+      "max": 73
+    },
+    "query_gen_checks": {
+      "mean": 368.3333333333333,
+      "std": 415.12086593344515,
+      "min": 107,
+      "max": 847
+    },
+    "prune_calls": {
+      "mean": 365.6666666666667,
+      "std": 67.79626341719235,
+      "min": 288,
+      "max": 413
+    },
+    "prune_ic_calls": {
+      "mean": 2345403,
+      "std": 382956.97704964195,
+      "min": 1908082,
+      "max": 2620798
+    },
+    "findscope_calls": {
+      "mean": 1343.6666666666667,
+      "std": 146.71173549969797,
+      "min": 1243,
+      "max": 1512
+    },
+    "findc_calls": {
+      "mean": 49.666666666666664,
+      "std": 20.108041509140897,
+      "min": 33,
+      "max": 72
+    },
+    "findc_checks": {
+      "mean": 104,
+      "std": 40.50925820105819,
+      "min": 63,
+      "max": 144
+    },
+    "dis_gen_calls": {
+      "mean": 50.666666666666664,
+      "std": 20.55075018906447,
+      "min": 31,
+      "max": 72
+    },
+    "dis_gen_checks": {
+      "mean": 50.666666666666664,
+      "std": 20.55075018906447,
+      "min": 31,
+      "max": 72
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 5,
+      "std": 5.0,
+      "min": 0,
+      "max": 10
+    }
+  },
+  "summary": null
+}

@@ -1,0 +1,19 @@
+# Test Evaluation Config - REAL-FM-7 only
+# Run with: python -m apps.run_congen_eval apps/conf/test_eval_config.toml -v
+
+[general]
+seed = 82
+output_dir = "data/results"
+verbose = true
+
+[evaluation]
+strategy = "description"
+n_folds = 5
+solver_name = "glucose4"
+solver_mode = "incremental"
+
+[[models]]
+name = "REAL-FM-7_rs_1n"
+oracle = "data/fms/REAL-FM-7.uvl"
+bias = "data/bias/REAL-FM-7-bias.json"
+examples = "data/examples/REAL-FM-7_rs_1n.json"

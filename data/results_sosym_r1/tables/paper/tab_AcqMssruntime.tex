@@ -1,0 +1,82 @@
+% Cost per (knowledge base, sampling) unit. Every value is the MEAN OVER THE THREE
+% FOLDS of the quantity named, computed from data/results_sosym_r1/congen/<unit>.json.
+%
+% column              unit    source / expression
+% ------------------  ------  --------------------------------------------------------
+% AcqMss checks       checks  folds[].performance.profiler.paper_consistency_checks
+% AcqMss ms           ms      DERIVED: performance.congen_runtime_ms
+%                                      - performance.reduce_runtime_ms
+% Reduce checks       checks  folds[].performance.redundancy_consistency_checks
+% Reduce ms           ms      folds[].performance.reduce_runtime_ms
+% GenNE/QX checks     checks  profiler.shared_preprocessing_quickxplain_checks
+% GenNE/QX ms         ms      profiler.shared_preprocessing_runtime.total x 1000
+% total checks        checks  DERIVED: AcqMss + Reduce + GenNE/QX checks
+% total ms            ms      folds[].performance.runtime_ms
+%
+% SCOPES, measured over all 84 folds rather than assumed -- this is the containment
+% the one derived duration depends on, and getting it backwards printed a NEGATIVE
+% AcqMss runtime for KB2 before it was checked:
+%   reduce_runtime_ms is INSIDE congen_runtime_ms          (0 folds violate)
+%   shared_preprocessing_runtime is DISJOINT from it       (0 folds violate)
+%   congen_runtime_ms + preprocessing <= runtime_ms        (0 folds violate)
+%   profiler.congen_total_time == performance.runtime_ms   (0 folds violate)
+% So AcqMss is the acquisition loop minus Reduce, and preprocessing is NOT subtracted
+% from the loop: it never was part of it.
+%
+% EVERY CELL IS A MEAN OVER ALL THREE FOLDS. Five folds carry no GenNE/QX counters
+% at all: GenerateNE explains negative examples, and a training split with none never
+% runs it, so generate_ne.py returns before the counters are created. Those folds
+% contribute a measured ZERO and still count -- the phase ran zero times and cost
+% zero, which is a measurement, not a gap. Reading the absence as "no data" and
+% averaging over two folds instead would overstate the KB1 RS(m) preprocessing cost
+% by half. The correspondence is exact in both directions over all 84 folds: the
+% counters are absent in precisely the 5 folds whose training split has 0 negatives.
+% A counter missing while negatives ARE present is a different fault, and both the
+% generator and the gate raise on it rather than defaulting to zero.
+%
+% The three phase durations therefore sum to LESS than the total. The remainder is
+% setup and teardown outside all three timing scopes (5.8 ms to 11.8 s across the
+% folds); it is left unattributed rather than folded into a phase that did not spend it.
+%
+% profiler.acqmss_runtime is NOT used. It accumulates over thousands of nested
+% recursive calls -- 149.9 s against a 15.2 s run on KB3 RS(n) -- so it is not a
+% duration, and printing it beside one inflates AcqMss against Reduce, which is the
+% one comparison this table exists to support.
+\begin{tabular}{llrrrrrrrr}
+\toprule
+ &  & \multicolumn{2}{c}{AcqMss} & \multicolumn{2}{c}{\textsc{Reduce}} & \multicolumn{2}{c}{GenNE / QX} & \multicolumn{2}{c}{total} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10}
+KB & Strategy & checks & ms & checks & ms & checks & ms & checks & ms \\
+\midrule
+$KB_1$ & RS($n$) & 515 & 175 & 92 & 6 & 6 & 6 & 613 & 194 \\
+$KB_1$ & RS($2n$) & 538 & 368 & 70 & 6 & 11 & 13 & 619 & 394 \\
+$KB_1$ & RS($3n$) & 544 & 584 & 64 & 5 & 20 & 25 & 628 & 623 \\
+$KB_1$ & RS($m$) & 466 & 104 & 132 & 9 & 6 & 6 & 604 & 125 \\
+$KB_1$ & 2-COV & 10 & 1 & 300 & 18 & 48 & 49 & 358 & 75 \\
+$KB_1$ & FF & 464 & 95 & 135 & 8 & 15 & 14 & 614 & 125 \\
+$KB_2$ & RS($n$) & 706 & 2{,}365 & 236 & 47 & 165 & 2{,}586 & 1{,}107 & 5{,}188 \\
+$KB_2$ & RS($2n$) & 713 & 6{,}756 & 239 & 65 & 343 & 9{,}194 & 1{,}296 & 16{,}509 \\
+$KB_2$ & RS($3n$) & 744 & 12{,}910 & 237 & 83 & 521 & 20{,}143 & 1{,}502 & 34{,}086 \\
+$KB_2$ & RS($m$) & 476 & 128 & 345 & 35 & 11 & 53 & 832 & 239 \\
+$KB_2$ & 2-COV & 10 & 1 & 469 & 48 & 167 & 636 & 645 & 715 \\
+$KB_2$ & FF & 641 & 716 & 274 & 38 & 71 & 603 & 985 & 1{,}423 \\
+$KB_3$ & RS($n$) & 3{,}090 & 15{,}633 & 545 & 219 & 32 & 251 & 3{,}667 & 16{,}172 \\
+$KB_3$ & RS($2n$) & 3{,}241 & 35{,}668 & 380 & 195 & 74 & 678 & 3{,}695 & 36{,}644 \\
+$KB_3$ & RS($3n$) & 3{,}290 & 53{,}716 & 326 & 178 & 109 & 982 & 3{,}726 & 55{,}001 \\
+$KB_3$ & RS($m$) & 2{,}187 & 1{,}847 & 1{,}168 & 202 & 5 & 25 & 3{,}360 & 2{,}106 \\
+$KB_3$ & 2-COV & 1{,}429 & 268 & 1{,}383 & 222 & 85 & 393 & 2{,}897 & 922 \\
+$KB_3$ & FF & 2{,}702 & 3{,}871 & 856 & 167 & 31 & 161 & 3{,}589 & 4{,}236 \\
+$KB_4$ & RS($n$) & 3{,}591 & 174{,}664 & 735 & 682 & 269 & 10{,}495 & 4{,}595 & 186{,}496 \\
+$KB_4$ & RS($2n$) & 3{,}751 & 630{,}068 & 604 & 1{,}094 & 508 & 35{,}067 & 4{,}863 & 668{,}107 \\
+$KB_4$ & RS($3n$) & 3{,}786 & 1{,}470{,}006 & 567 & 1{,}584 & 745 & 74{,}839 & 5{,}098 & 1{,}550{,}234 \\
+$KB_4$ & RS($m$) & 2{,}526 & 4{,}223 & 1{,}422 & 361 & 11 & 114 & 3{,}958 & 4{,}755 \\
+$KB_4$ & 2-COV & 1{,}612 & 420 & 1{,}690 & 358 & 115 & 960 & 3{,}417 & 1{,}823 \\
+$KB_4$ & FF & 3{,}427 & 40{,}091 & 874 & 409 & 55 & 1{,}124 & 4{,}355 & 41{,}810 \\
+$KB_5$ & RS($n$) & 11{,}107 & 14{,}879{,}236 & 2{,}599 & 24{,}463 & 780 & 226{,}996 & 14{,}486 & 15{,}142{,}443 \\
+$KB_5$ & RS($2n$) & n/a & n/a & n/a & n/a & n/a & n/a & n/a & n/a \\
+$KB_5$ & RS($3n$) & n/a & n/a & n/a & n/a & n/a & n/a & n/a & n/a \\
+$KB_5$ & RS($m$) & 7{,}742 & 40{,}319 & 4{,}639 & 3{,}181 & 17 & 504 & 12{,}398 & 44{,}204 \\
+$KB_5$ & 2-COV & 14 & 56 & 6{,}648 & 3{,}348 & 161 & 3{,}688 & 6{,}823 & 7{,}447 \\
+$KB_5$ & FF & 9{,}691 & 2{,}907{,}736 & 3{,}582 & 16{,}086 & 79 & 12{,}376 & 13{,}351 & 2{,}938{,}079 \\
+\bottomrule
+\end{tabular}

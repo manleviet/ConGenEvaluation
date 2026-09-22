@@ -1,0 +1,1642 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    1.0,
+    1.0,
+    0.6666666666666666
+  ],
+  "mean_accuracy": 0.8888888888888888,
+  "std_accuracy": 0.1924500897298753,
+  "total_runtime_ms": 12515.584083041176,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c103",
+        "description": "gui_builder excludes sdi"
+      },
+      {
+        "id": "c16",
+        "description": "compiler --or--> ['javac', 'mvc']"
+      },
+      {
+        "id": "c242",
+        "description": "model_code_synch requires diagram_builder"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 3,
+    "evaluation": {
+      "description": {
+        "metrics": {
+          "accuracy": 0.23076923076923078,
+          "precision": 1.0,
+          "recall": 0.23076923076923078,
+          "f1_score": 0.375,
+          "specificity": 0.0,
+          "true_positives": 3,
+          "true_negatives": 0,
+          "false_positives": 0,
+          "false_negatives": 10
+        },
+        "tp": [
+          {
+            "id": "c103",
+            "description": "gui_builder excludes sdi"
+          },
+          {
+            "id": "c16",
+            "description": "compiler --or--> ['javac', 'mvc']"
+          },
+          {
+            "id": "c242",
+            "description": "model_code_synch requires diagram_builder"
+          }
+        ],
+        "fp": [],
+        "fn": [
+          {
+            "id": null,
+            "description": "jplug --optional--> gui_builder"
+          },
+          {
+            "id": null,
+            "description": "diagram_builder --mandatory--> uml"
+          },
+          {
+            "id": null,
+            "description": "gui_builder --optional--> qt"
+          },
+          {
+            "id": null,
+            "description": "interface --alternative--> ['sdi', 'mdi']"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> compiler"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> diagram_builder"
+          },
+          {
+            "id": null,
+            "description": "gui_builder --mandatory--> java"
+          },
+          {
+            "id": null,
+            "description": "jplug --optional--> model_code_synch"
+          },
+          {
+            "id": null,
+            "description": "jplug --mandatory--> interface"
+          },
+          {
+            "id": null,
+            "description": "diagram_builder --optional--> petri_net"
+          }
+        ]
+      },
+      "clause": {
+        "metrics": {
+          "accuracy": 0.9420289855072463,
+          "precision": 1.0,
+          "recall": 0.2727272727272727,
+          "f1_score": 0.42857142857142855,
+          "specificity": 1.0,
+          "true_positives": 6,
+          "true_negatives": 254,
+          "false_positives": 0,
+          "false_negatives": 16
+        },
+        "tp": [
+          {
+            "id": "c103",
+            "description": "gui_builder excludes sdi"
+          },
+          {
+            "id": "c16",
+            "description": "compiler --or--> ['javac', 'mvc']"
+          },
+          {
+            "id": "c242",
+            "description": "model_code_synch requires diagram_builder"
+          }
+        ],
+        "fp": [],
+        "fn": [
+          {
+            "id": null,
+            "description": "[-7, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-6, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-9, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 13]"
+          },
+          {
+            "id": null,
+            "description": "[-4, -3]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-13, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 3, 4]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 6]"
+          },
+          {
+            "id": null,
+            "description": "[-14, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-4, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-3, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-8, 1]"
+          },
+          {
+            "id": null,
+            "description": "[-1, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 1]"
+          }
+        ]
+      },
+      "semantic": {
+        "metrics": {
+          "accuracy": 0.5,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1_score": 0.6666666666666666,
+          "specificity": 0.0,
+          "true_positives": 11,
+          "true_negatives": 0,
+          "false_positives": 0,
+          "false_negatives": 11
+        },
+        "tp": [],
+        "fp": [],
+        "fn": [
+          {
+            "id": null,
+            "description": "[-1, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 3, 4]"
+          },
+          {
+            "id": null,
+            "description": "[-4, -3]"
+          },
+          {
+            "id": null,
+            "description": "[-3, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-4, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 6]"
+          },
+          {
+            "id": null,
+            "description": "[-6, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-7, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 13]"
+          },
+          {
+            "id": null,
+            "description": "[-13, 12]"
+          },
+          {
+            "id": null,
+            "description": "[-14, 12]"
+          }
+        ]
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "specificity": 1.0,
+        "true_positives": 0,
+        "true_negatives": 3,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 33014.14133398794,
+        "consistency_checks": 2681,
+        "memory_peak_mb": 8.162232398986816,
+        "quacq_runtime_ms": 33003.10712493956,
+        "query_generation_runtime_ms": 2075.264329672791,
+        "findscope_runtime_ms": 115794.86951499712,
+        "findc_runtime_ms": 429.7332960413769,
+        "dis_gen_runtime_ms": 172.41388536058366,
+        "reduce_runtime_ms": 1.680999994277954,
+        "solver_time_ms": 3413.259999999874,
+        "is_consistent_calls": 168118,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 242,
+        "query_generation_consistency_checks": 3337,
+        "prune_calls": 1151,
+        "prune_is_consistent_calls": 167185,
+        "findscope_calls": 3132,
+        "findc_calls": 240,
+        "findc_consistency_checks": 909,
+        "dis_gen_calls": 371,
+        "dis_gen_consistency_checks": 371,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 5,
+        "profiler": {
+          "query_generation_consistency_checks": 3337,
+          "solver_time": {
+            "count": 171807,
+            "total": 3.4132599999998736,
+            "mean": 1.9866827312041264e-05,
+            "min": 2.9999999995311555e-06,
+            "max": 0.0001239999999995689,
+            "median": 1.8999999999991246e-05,
+            "stddev": 3.317334600438151e-06
+          },
+          "solver_time_accum": 3.4132599999998736,
+          "is_consistent_calls": 168118,
+          "query_generation_runtime": {
+            "count": 242,
+            "total": 2.075264329672791,
+            "mean": 0.008575472436664426,
+            "min": 0.00011349993292242289,
+            "max": 0.05448737507686019,
+            "median": 0.0030581875471398234,
+            "stddev": 0.011872852318295211
+          },
+          "query_generation_calls": 242,
+          "paper_consistency_checks": 2681,
+          "findscope_calls": 3132,
+          "findscope_runtime": {
+            "count": 3132,
+            "total": 115.79486951499712,
+            "mean": 0.03697154199073982,
+            "min": 4.249974153935909e-06,
+            "max": 0.22793649998493493,
+            "median": 0.024631666485220194,
+            "stddev": 0.04511256735576068
+          },
+          "prune_is_consistent_calls": 167185,
+          "quacq_prune_partial_pruned": 192,
+          "prune_calls": 1151,
+          "findc_consistency_checks": 909,
+          "dis_gen_consistency_checks": 371,
+          "dis_gen_calls": 371,
+          "dis_gen_runtime": {
+            "count": 371,
+            "total": 0.17241388536058366,
+            "mean": 0.00046472745380211227,
+            "min": 0.00018450000789016485,
+            "max": 0.0011487090960144997,
+            "median": 0.00041941599920392036,
+            "stddev": 0.00017954550887105708
+          },
+          "quacq_findc_unconfirmed": 235,
+          "findc_calls": 240,
+          "findc_runtime": {
+            "count": 240,
+            "total": 0.4297332960413769,
+            "mean": 0.0017905554001724038,
+            "min": 0.00018083397299051285,
+            "max": 0.0038212910294532776,
+            "median": 0.0015304789994843304,
+            "stddev": 0.0007978903219512919
+          },
+          "query_generation_repeat_skips": 2348,
+          "quacq_prune_complete_pruned": 18,
+          "redundancy_consistency_checks": 5,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.001680999994277954,
+            "mean": 0.001680999994277954,
+            "min": 0.001680999994277954,
+            "max": 0.001680999994277954
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 33.00310712493956,
+            "mean": 33.00310712493956,
+            "min": 33.00310712493956,
+            "max": 33.00310712493956
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 33.014141333987936,
+            "mean": 33.014141333987936,
+            "min": 33.014141333987936,
+            "max": 33.014141333987936
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c242",
+          "description": "model_code_synch requires diagram_builder"
+        },
+        {
+          "id": "c100",
+          "description": "mdi excludes sdi"
+        },
+        {
+          "id": "c16",
+          "description": "compiler --or--> ['javac', 'mvc']"
+        },
+        {
+          "id": "c103",
+          "description": "gui_builder excludes sdi"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 4,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 0,
+        "negative": 6
+      },
+      "test_size": {
+        "positive": 0,
+        "negative": 3
+      },
+      "n_queries": 2681,
+      "convergence_reason": "no_query",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.21428571428571427,
+            "precision": 0.75,
+            "recall": 0.23076923076923078,
+            "f1_score": 0.3529411764705882,
+            "specificity": 0.0,
+            "true_positives": 3,
+            "true_negatives": 0,
+            "false_positives": 1,
+            "false_negatives": 10
+          },
+          "tp": [
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c100",
+              "description": "mdi excludes sdi"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9456521739130435,
+            "precision": 1.0,
+            "recall": 0.3181818181818182,
+            "f1_score": 0.4827586206896552,
+            "specificity": 1.0,
+            "true_positives": 7,
+            "true_negatives": 254,
+            "false_positives": 0,
+            "false_negatives": 15
+          },
+          "tp": [
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c100",
+              "description": "mdi excludes sdi"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 1]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.5454545454545454,
+            "precision": 1.0,
+            "recall": 0.5454545454545454,
+            "f1_score": 0.7058823529411764,
+            "specificity": 0.0,
+            "true_positives": 12,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 10
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            }
+          ]
+        },
+        "exact_equiv": false
+      },
+      "ne_clauses": []
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "specificity": 1.0,
+        "true_positives": 0,
+        "true_negatives": 3,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 15772.763665998355,
+        "consistency_checks": 2115,
+        "memory_peak_mb": 5.501450538635254,
+        "quacq_runtime_ms": 15762.816708069295,
+        "query_generation_runtime_ms": 1421.7596254311502,
+        "findscope_runtime_ms": 55185.001953388564,
+        "findc_runtime_ms": 346.7098344117403,
+        "dis_gen_runtime_ms": 206.22634468600154,
+        "reduce_runtime_ms": 1.1372079607099295,
+        "solver_time_ms": 2072.200999999999,
+        "is_consistent_calls": 106284,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 174,
+        "query_generation_consistency_checks": 2568,
+        "prune_calls": 843,
+        "prune_is_consistent_calls": 105589,
+        "findscope_calls": 2208,
+        "findc_calls": 172,
+        "findc_consistency_checks": 674,
+        "dis_gen_calls": 433,
+        "dis_gen_consistency_checks": 433,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 5,
+        "profiler": {
+          "query_generation_consistency_checks": 2568,
+          "solver_time": {
+            "count": 109269,
+            "total": 2.0722009999999993,
+            "mean": 1.8964216749489786e-05,
+            "min": 2.9999999995311555e-06,
+            "max": 0.00011600000000022703,
+            "median": 1.8999999999991246e-05,
+            "stddev": 2.7296590658864614e-06
+          },
+          "solver_time_accum": 2.0722009999999993,
+          "is_consistent_calls": 106284,
+          "query_generation_runtime": {
+            "count": 174,
+            "total": 1.4217596254311502,
+            "mean": 0.008171032330064082,
+            "min": 0.000153791974298656,
+            "max": 0.055467457976192236,
+            "median": 0.0020339375478215516,
+            "stddev": 0.012953557046658813
+          },
+          "query_generation_calls": 174,
+          "paper_consistency_checks": 2115,
+          "findscope_calls": 2208,
+          "findscope_runtime": {
+            "count": 2208,
+            "total": 55.185001953388564,
+            "mean": 0.02499320740642598,
+            "min": 4.124944098293781e-06,
+            "max": 0.11621670797467232,
+            "median": 0.016231875051744282,
+            "stddev": 0.029283767621600645
+          },
+          "prune_is_consistent_calls": 105589,
+          "quacq_prune_partial_pruned": 165,
+          "prune_calls": 843,
+          "findc_consistency_checks": 674,
+          "dis_gen_consistency_checks": 433,
+          "dis_gen_calls": 433,
+          "dis_gen_runtime": {
+            "count": 433,
+            "total": 0.20622634468600154,
+            "mean": 0.00047627331336259015,
+            "min": 0.00018391606863588095,
+            "max": 0.0008150829235091805,
+            "median": 0.0005473749479278922,
+            "stddev": 0.00016501174690108103
+          },
+          "quacq_findc_unconfirmed": 167,
+          "findc_calls": 172,
+          "findc_runtime": {
+            "count": 172,
+            "total": 0.3467098344117403,
+            "mean": 0.002015754851231048,
+            "min": 0.00022029096726328135,
+            "max": 0.0028748330660164356,
+            "median": 0.002161104464903474,
+            "stddev": 0.0006420264332373016
+          },
+          "query_generation_repeat_skips": 2007,
+          "quacq_prune_complete_pruned": 30,
+          "redundancy_consistency_checks": 5,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.0011372079607099295,
+            "mean": 0.0011372079607099295,
+            "min": 0.0011372079607099295,
+            "max": 0.0011372079607099295
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 15.762816708069295,
+            "mean": 15.762816708069295,
+            "min": 15.762816708069295,
+            "max": 15.762816708069295
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 15.772763665998355,
+            "mean": 15.772763665998355,
+            "min": 15.772763665998355,
+            "max": 15.772763665998355
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c103",
+          "description": "gui_builder excludes sdi"
+        },
+        {
+          "id": "c242",
+          "description": "model_code_synch requires diagram_builder"
+        },
+        {
+          "id": "c16",
+          "description": "compiler --or--> ['javac', 'mvc']"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 3,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 0,
+        "negative": 6
+      },
+      "test_size": {
+        "positive": 0,
+        "negative": 3
+      },
+      "n_queries": 2115,
+      "convergence_reason": "no_query",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.23076923076923078,
+            "precision": 1.0,
+            "recall": 0.23076923076923078,
+            "f1_score": 0.375,
+            "specificity": 0.0,
+            "true_positives": 3,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 10
+          },
+          "tp": [
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9420289855072463,
+            "precision": 1.0,
+            "recall": 0.2727272727272727,
+            "f1_score": 0.42857142857142855,
+            "specificity": 1.0,
+            "true_positives": 6,
+            "true_negatives": 254,
+            "false_positives": 0,
+            "false_negatives": 16
+          },
+          "tp": [
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 1]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.5,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6666666666666666,
+            "specificity": 0.0,
+            "true_positives": 11,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 11
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            }
+          ]
+        },
+        "exact_equiv": false
+      },
+      "ne_clauses": []
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 0.6666666666666666,
+      "metrics": {
+        "accuracy": 0.6666666666666666,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "specificity": 0.6666666666666666,
+        "true_positives": 0,
+        "true_negatives": 2,
+        "false_positives": 1,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 12477.031791000627,
+        "consistency_checks": 2363,
+        "memory_peak_mb": 5.055375099182129,
+        "quacq_runtime_ms": 12467.90216700174,
+        "query_generation_runtime_ms": 1177.0159179577604,
+        "findscope_runtime_ms": 41239.38118561637,
+        "findc_runtime_ms": 260.238331859,
+        "dis_gen_runtime_ms": 132.8857576008886,
+        "reduce_runtime_ms": 1.0372080141678452,
+        "solver_time_ms": 1776.5609999996875,
+        "is_consistent_calls": 91244,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 211,
+        "query_generation_consistency_checks": 2253,
+        "prune_calls": 998,
+        "prune_is_consistent_calls": 90532,
+        "findscope_calls": 2732,
+        "findc_calls": 206,
+        "findc_consistency_checks": 697,
+        "dis_gen_calls": 341,
+        "dis_gen_consistency_checks": 341,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 5,
+        "profiler": {
+          "query_generation_consistency_checks": 2253,
+          "solver_time": {
+            "count": 93828,
+            "total": 1.7765609999996874,
+            "mean": 1.8934230720037593e-05,
+            "min": 2.9999999999752447e-06,
+            "max": 0.00011800000000050659,
+            "median": 1.8999999999991246e-05,
+            "stddev": 2.9267056995283524e-06
+          },
+          "solver_time_accum": 1.7765609999996874,
+          "is_consistent_calls": 91244,
+          "query_generation_runtime": {
+            "count": 211,
+            "total": 1.1770159179577604,
+            "mean": 0.005578274492690808,
+            "min": 9.770796168595552e-05,
+            "max": 0.041615459020249546,
+            "median": 0.001167417038232088,
+            "stddev": 0.009192035659538451
+          },
+          "query_generation_calls": 211,
+          "paper_consistency_checks": 2363,
+          "prune_is_consistent_calls": 90532,
+          "quacq_prune_partial_pruned": 174,
+          "prune_calls": 998,
+          "findscope_calls": 2732,
+          "findscope_runtime": {
+            "count": 2732,
+            "total": 41.23938118561637,
+            "mean": 0.015094941868820046,
+            "min": 3.917026333510876e-06,
+            "max": 0.07705200009513646,
+            "median": 0.01021562545793131,
+            "stddev": 0.018739709000712573
+          },
+          "findc_consistency_checks": 697,
+          "findc_calls": 206,
+          "findc_runtime": {
+            "count": 206,
+            "total": 0.260238331859,
+            "mean": 0.001263292873101942,
+            "min": 0.0001595409121364355,
+            "max": 0.00248587504029274,
+            "median": 0.0012076875427737832,
+            "stddev": 0.0005685425284437322
+          },
+          "dis_gen_consistency_checks": 341,
+          "dis_gen_calls": 341,
+          "dis_gen_runtime": {
+            "count": 341,
+            "total": 0.1328857576008886,
+            "mean": 0.0003896943038149226,
+            "min": 0.00018145900685340166,
+            "max": 0.0007929579587653279,
+            "median": 0.0003077919827774167,
+            "stddev": 0.00017014667243649332
+          },
+          "quacq_findc_unconfirmed": 201,
+          "quacq_prune_complete_pruned": 44,
+          "query_generation_repeat_skips": 1626,
+          "redundancy_consistency_checks": 5,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.0010372080141678452,
+            "mean": 0.0010372080141678452,
+            "min": 0.0010372080141678452,
+            "max": 0.0010372080141678452
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 12.46790216700174,
+            "mean": 12.46790216700174,
+            "min": 12.46790216700174,
+            "max": 12.46790216700174
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 12.477031791000627,
+            "mean": 12.477031791000627,
+            "min": 12.477031791000627,
+            "max": 12.477031791000627
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c103",
+          "description": "gui_builder excludes sdi"
+        },
+        {
+          "id": "c242",
+          "description": "model_code_synch requires diagram_builder"
+        },
+        {
+          "id": "c16",
+          "description": "compiler --or--> ['javac', 'mvc']"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 3,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 0,
+        "negative": 6
+      },
+      "test_size": {
+        "positive": 0,
+        "negative": 3
+      },
+      "n_queries": 2363,
+      "convergence_reason": "no_query",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.23076923076923078,
+            "precision": 1.0,
+            "recall": 0.23076923076923078,
+            "f1_score": 0.375,
+            "specificity": 0.0,
+            "true_positives": 3,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 10
+          },
+          "tp": [
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9420289855072463,
+            "precision": 1.0,
+            "recall": 0.2727272727272727,
+            "f1_score": 0.42857142857142855,
+            "specificity": 1.0,
+            "true_positives": 6,
+            "true_negatives": 254,
+            "false_positives": 0,
+            "false_negatives": 16
+          },
+          "tp": [
+            {
+              "id": "c103",
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": "c242",
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": "c16",
+              "description": "compiler --or--> ['javac', 'mvc']"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 1]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.5,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6666666666666666,
+            "specificity": 0.0,
+            "true_positives": 11,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 11
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            }
+          ]
+        },
+        "exact_equiv": false
+      },
+      "ne_clauses": []
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 20421.312263662305,
+      "std_ms": 11029.504528481673,
+      "min_ms": 12477.031791000627,
+      "max_ms": 33014.14133398794
+    },
+    "consistency_checks": {
+      "mean": 2386.3333333333335,
+      "std": 283.72051976079086,
+      "min": 2115,
+      "max": 2681
+    },
+    "memory": {
+      "mean_mb": 6.239686012268066,
+      "max_mb": 8.162232398986816
+    },
+    "quacq_runtime": {
+      "mean_ms": 20411.275333336864,
+      "std_ms": 11028.58949998806,
+      "min_ms": 12467.90216700174,
+      "max_ms": 33003.10712493956
+    },
+    "query_gen_runtime": {
+      "mean_ms": 1558.0132910205673,
+      "std_ms": 464.36660983220827,
+      "min_ms": 1177.0159179577604,
+      "max_ms": 2075.264329672791
+    },
+    "findscope_runtime": {
+      "mean_ms": 70739.75088466734,
+      "std_ms": 39637.01389792685,
+      "min_ms": 41239.38118561637,
+      "max_ms": 115794.86951499712
+    },
+    "findc_runtime": {
+      "mean_ms": 345.5604874373724,
+      "std_ms": 84.75332718924325,
+      "min_ms": 260.238331859,
+      "max_ms": 429.7332960413769
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 170.50866254915795,
+      "std_ms": 36.7073948131455,
+      "min_ms": 132.8857576008886,
+      "max_ms": 206.22634468600154
+    },
+    "reduce_runtime": {
+      "mean_ms": 1.285138656385243,
+      "std_ms": 0.34645294984421815,
+      "min_ms": 1.0372080141678452,
+      "max_ms": 1.680999994277954
+    },
+    "solver_time": {
+      "mean_ms": 2420.6739999998535,
+      "std_ms": 872.2218628004439,
+      "min_ms": 1776.5609999996875,
+      "max_ms": 3413.259999999874
+    },
+    "is_consistent_calls": {
+      "mean": 121882,
+      "std": 40741.57792722319,
+      "min": 91244,
+      "max": 168118
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 209,
+      "std": 34.044089061098404,
+      "min": 174,
+      "max": 242
+    },
+    "query_gen_checks": {
+      "mean": 2719.3333333333335,
+      "std": 557.6202411438571,
+      "min": 2253,
+      "max": 3337
+    },
+    "prune_calls": {
+      "mean": 997.3333333333334,
+      "std": 154.00108224727947,
+      "min": 843,
+      "max": 1151
+    },
+    "prune_ic_calls": {
+      "mean": 121102,
+      "std": 40612.93487301798,
+      "min": 90532,
+      "max": 167185
+    },
+    "findscope_calls": {
+      "mean": 2690.6666666666665,
+      "std": 463.384649436441,
+      "min": 2208,
+      "max": 3132
+    },
+    "findc_calls": {
+      "mean": 206,
+      "std": 34.0,
+      "min": 172,
+      "max": 240
+    },
+    "findc_checks": {
+      "mean": 760,
+      "std": 129.549218446118,
+      "min": 674,
+      "max": 909
+    },
+    "dis_gen_calls": {
+      "mean": 381.6666666666667,
+      "std": 46.918368826434424,
+      "min": 341,
+      "max": 433
+    },
+    "dis_gen_checks": {
+      "mean": 381.6666666666667,
+      "std": 46.918368826434424,
+      "min": 341,
+      "max": 433
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 5,
+      "std": 0.0,
+      "min": 5,
+      "max": 5
+    }
+  },
+  "summary": {
+    "description": {
+      "precision": {
+        "mean": 0.916667,
+        "std": 0.117851
+      },
+      "recall": {
+        "mean": 0.230769,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.367647,
+        "std": 0.010399
+      }
+    },
+    "clause": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.287879,
+        "std": 0.021427
+      },
+      "f1_score": {
+        "mean": 0.446634,
+        "std": 0.025544
+      }
+    },
+    "semantic": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.515152,
+        "std": 0.021427
+      },
+      "f1_score": {
+        "mean": 0.679739,
+        "std": 0.018486
+      }
+    },
+    "exact_equiv": {
+      "attained": 0,
+      "scored": 3
+    }
+  }
+}

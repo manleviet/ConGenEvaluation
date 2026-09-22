@@ -1,0 +1,3873 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "mean_accuracy": 1.0,
+  "std_accuracy": 0.0,
+  "total_runtime_ms": 132119.8242920218,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c1369",
+        "description": "Floorpong requires Pong"
+      },
+      {
+        "id": "c1622",
+        "description": "Pong requires PlayPong"
+      },
+      {
+        "id": "c1649",
+        "description": "PongBoard requires Pong"
+      },
+      {
+        "id": "c173",
+        "description": "BowlingBall requires Bowling"
+      },
+      {
+        "id": "c176",
+        "description": "BowlingBoard requires Bowling"
+      },
+      {
+        "id": "c179",
+        "description": "BowlingGameMenu requires Bowling"
+      },
+      {
+        "id": "c224",
+        "description": "Lane requires Bowling"
+      },
+      {
+        "id": "c23",
+        "description": "PlayGame --mandatory--> Initialization"
+      },
+      {
+        "id": "c232",
+        "description": "Bowling requires PlayBowling"
+      },
+      {
+        "id": "c27",
+        "description": "ArcadeGame --mandatory--> ClassDiagram"
+      },
+      {
+        "id": "c29",
+        "description": "ClassDiagram --mandatory--> GameSprite"
+      },
+      {
+        "id": "c39",
+        "description": "GameSprite --mandatory--> GameSprite_3"
+      },
+      {
+        "id": "c61",
+        "description": "ClassDiagram --mandatory--> Board"
+      },
+      {
+        "id": "c625",
+        "description": "Brick requires Brickles"
+      },
+      {
+        "id": "c64",
+        "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+      },
+      {
+        "id": "c69",
+        "description": "ClassDiagram --mandatory--> GameMenu"
+      },
+      {
+        "id": "c703",
+        "description": "BrickPile requires Brickles"
+      },
+      {
+        "id": "c72",
+        "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+      },
+      {
+        "id": "c782",
+        "description": "BricklesBoard requires Brickles"
+      },
+      {
+        "id": "c785",
+        "description": "BricklesGameMenu requires Brickles"
+      },
+      {
+        "id": "c788",
+        "description": "Ceilingbrickles requires Brickles"
+      },
+      {
+        "id": "c815",
+        "description": "Leftbrickles requires Brickles"
+      },
+      {
+        "id": "c823",
+        "description": "Brickles requires PlayBrickles"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 23,
+    "evaluation": {
+      "description": {
+        "metrics": {
+          "accuracy": 0.273972602739726,
+          "precision": 0.8695652173913043,
+          "recall": 0.2857142857142857,
+          "f1_score": 0.4301075268817204,
+          "specificity": 0.0,
+          "true_positives": 20,
+          "true_negatives": 0,
+          "false_positives": 3,
+          "false_negatives": 50
+        },
+        "tp": [
+          {
+            "id": "c1369",
+            "description": "Floorpong requires Pong"
+          },
+          {
+            "id": "c1649",
+            "description": "PongBoard requires Pong"
+          },
+          {
+            "id": "c173",
+            "description": "BowlingBall requires Bowling"
+          },
+          {
+            "id": "c176",
+            "description": "BowlingBoard requires Bowling"
+          },
+          {
+            "id": "c179",
+            "description": "BowlingGameMenu requires Bowling"
+          },
+          {
+            "id": "c224",
+            "description": "Lane requires Bowling"
+          },
+          {
+            "id": "c23",
+            "description": "PlayGame --mandatory--> Initialization"
+          },
+          {
+            "id": "c27",
+            "description": "ArcadeGame --mandatory--> ClassDiagram"
+          },
+          {
+            "id": "c29",
+            "description": "ClassDiagram --mandatory--> GameSprite"
+          },
+          {
+            "id": "c39",
+            "description": "GameSprite --mandatory--> GameSprite_3"
+          },
+          {
+            "id": "c61",
+            "description": "ClassDiagram --mandatory--> Board"
+          },
+          {
+            "id": "c625",
+            "description": "Brick requires Brickles"
+          },
+          {
+            "id": "c64",
+            "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+          },
+          {
+            "id": "c69",
+            "description": "ClassDiagram --mandatory--> GameMenu"
+          },
+          {
+            "id": "c703",
+            "description": "BrickPile requires Brickles"
+          },
+          {
+            "id": "c72",
+            "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+          },
+          {
+            "id": "c782",
+            "description": "BricklesBoard requires Brickles"
+          },
+          {
+            "id": "c785",
+            "description": "BricklesGameMenu requires Brickles"
+          },
+          {
+            "id": "c788",
+            "description": "Ceilingbrickles requires Brickles"
+          },
+          {
+            "id": "c815",
+            "description": "Leftbrickles requires Brickles"
+          }
+        ],
+        "fp": [
+          {
+            "id": "c1622",
+            "description": "Pong requires PlayPong"
+          },
+          {
+            "id": "c232",
+            "description": "Bowling requires PlayBowling"
+          },
+          {
+            "id": "c823",
+            "description": "Brickles requires PlayBrickles"
+          }
+        ],
+        "fn": [
+          {
+            "id": null,
+            "description": "Pucksupply requires Brickles"
+          },
+          {
+            "id": null,
+            "description": "Rightbrickles requires Brickles"
+          },
+          {
+            "id": null,
+            "description": "UseCases --mandatory--> PlayGame"
+          },
+          {
+            "id": null,
+            "description": "BottomPaddle requires Pong"
+          },
+          {
+            "id": null,
+            "description": "GameSprite_3 --or--> ['MovableSprite', 'StationarySprite']"
+          },
+          {
+            "id": null,
+            "description": "MovableSprite --mandatory--> MovableSprite_2"
+          },
+          {
+            "id": null,
+            "description": "ArcadeGame --mandatory--> UseCases"
+          },
+          {
+            "id": null,
+            "description": "UseCases --optional--> CheckPreviousBestScore"
+          },
+          {
+            "id": null,
+            "description": "GameSprite --mandatory--> Rectangle"
+          },
+          {
+            "id": null,
+            "description": "GameSprite --optional--> SpritePair"
+          },
+          {
+            "id": null,
+            "description": "Ceilingpong requires Pong"
+          },
+          {
+            "id": null,
+            "description": "BowlingPin requires Bowling"
+          },
+          {
+            "id": null,
+            "description": "Edge requires Bowling"
+          },
+          {
+            "id": null,
+            "description": "DividingLine requires Pong"
+          },
+          {
+            "id": null,
+            "description": "MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']"
+          },
+          {
+            "id": null,
+            "description": "UseCases --mandatory--> UninstallGame"
+          },
+          {
+            "id": null,
+            "description": "PlayGame --mandatory--> PlayGame_1"
+          },
+          {
+            "id": null,
+            "description": "EndofAlley requires Bowling"
+          },
+          {
+            "id": null,
+            "description": "Floorbrickles requires Brickles"
+          },
+          {
+            "id": null,
+            "description": "UseCases --mandatory--> ExitGame"
+          },
+          {
+            "id": null,
+            "description": "PongGameMenu requires Pong"
+          },
+          {
+            "id": null,
+            "description": "PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']"
+          },
+          {
+            "id": null,
+            "description": "StationarySprite --optional--> Wall"
+          },
+          {
+            "id": null,
+            "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+          },
+          {
+            "id": null,
+            "description": "UseCases --optional--> SaveScore"
+          },
+          {
+            "id": null,
+            "description": "MovableSprite --mandatory--> Velocity"
+          },
+          {
+            "id": null,
+            "description": "(Constraint 5) OR[PlayBowling][NOT[Bowling][]]"
+          },
+          {
+            "id": null,
+            "description": "ScoreBoard requires Pong"
+          },
+          {
+            "id": null,
+            "description": "(Constraint 1) OR[PlayBrickles][NOT[Brickles][]]"
+          },
+          {
+            "id": null,
+            "description": "PlayBrickles requires Brickles"
+          },
+          {
+            "id": null,
+            "description": "ClassDiagram --mandatory--> Menu"
+          },
+          {
+            "id": null,
+            "description": "StationarySprite_2 --or--> ['Brick', 'BrickPile', 'Ceilingbrickles', 'Floorbrickles', 'Lane', 'Gutter', 'Edge', 'EndofAlley', 'RackofPins', 'ScoreBoard', 'Floorpong', 'Ceilingpong', 'DividingLine']"
+          },
+          {
+            "id": null,
+            "description": "(Constraint 3) OR[PlayPong][NOT[Pong][]]"
+          },
+          {
+            "id": null,
+            "description": "Rectangle --mandatory--> Size"
+          },
+          {
+            "id": null,
+            "description": "TopPaddle requires Pong"
+          },
+          {
+            "id": null,
+            "description": "RackofPins requires Bowling"
+          },
+          {
+            "id": null,
+            "description": "StationarySprite --mandatory--> StationarySprite_2"
+          },
+          {
+            "id": null,
+            "description": "UseCases --mandatory--> ListGame"
+          },
+          {
+            "id": null,
+            "description": "ClassDiagram --optional--> Pucksupply"
+          },
+          {
+            "id": null,
+            "description": "Rightpont requires Pong"
+          },
+          {
+            "id": null,
+            "description": "Paddle --or--> ['TopPaddle', 'BottomPaddle']"
+          },
+          {
+            "id": null,
+            "description": "Gutter requires Bowling"
+          },
+          {
+            "id": null,
+            "description": "Rectangle --mandatory--> Point"
+          },
+          {
+            "id": null,
+            "description": "UseCases --mandatory--> SaveGame"
+          },
+          {
+            "id": null,
+            "description": "UseCases --mandatory--> InstallGame"
+          },
+          {
+            "id": null,
+            "description": "PlayGame --mandatory--> AnimationLoop"
+          },
+          {
+            "id": null,
+            "description": "Leftpong requires Pong"
+          },
+          {
+            "id": null,
+            "description": "PlayPong requires Pong"
+          },
+          {
+            "id": null,
+            "description": "Menu --or--> ['Pong', 'Brickles', 'Bowling']"
+          },
+          {
+            "id": null,
+            "description": "PlayBowling requires Bowling"
+          }
+        ]
+      },
+      "clause": {
+        "metrics": {
+          "accuracy": 0.9474860335195531,
+          "precision": 1.0,
+          "recall": 0.27692307692307694,
+          "f1_score": 0.4337349397590362,
+          "specificity": 1.0,
+          "true_positives": 36,
+          "true_negatives": 1660,
+          "false_positives": 0,
+          "false_negatives": 94
+        },
+        "tp": [
+          {
+            "id": "c1369",
+            "description": "Floorpong requires Pong"
+          },
+          {
+            "id": "c1622",
+            "description": "Pong requires PlayPong"
+          },
+          {
+            "id": "c1649",
+            "description": "PongBoard requires Pong"
+          },
+          {
+            "id": "c173",
+            "description": "BowlingBall requires Bowling"
+          },
+          {
+            "id": "c176",
+            "description": "BowlingBoard requires Bowling"
+          },
+          {
+            "id": "c179",
+            "description": "BowlingGameMenu requires Bowling"
+          },
+          {
+            "id": "c224",
+            "description": "Lane requires Bowling"
+          },
+          {
+            "id": "c23",
+            "description": "PlayGame --mandatory--> Initialization"
+          },
+          {
+            "id": "c232",
+            "description": "Bowling requires PlayBowling"
+          },
+          {
+            "id": "c27",
+            "description": "ArcadeGame --mandatory--> ClassDiagram"
+          },
+          {
+            "id": "c29",
+            "description": "ClassDiagram --mandatory--> GameSprite"
+          },
+          {
+            "id": "c39",
+            "description": "GameSprite --mandatory--> GameSprite_3"
+          },
+          {
+            "id": "c61",
+            "description": "ClassDiagram --mandatory--> Board"
+          },
+          {
+            "id": "c625",
+            "description": "Brick requires Brickles"
+          },
+          {
+            "id": "c64",
+            "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+          },
+          {
+            "id": "c69",
+            "description": "ClassDiagram --mandatory--> GameMenu"
+          },
+          {
+            "id": "c703",
+            "description": "BrickPile requires Brickles"
+          },
+          {
+            "id": "c72",
+            "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+          },
+          {
+            "id": "c782",
+            "description": "BricklesBoard requires Brickles"
+          },
+          {
+            "id": "c785",
+            "description": "BricklesGameMenu requires Brickles"
+          },
+          {
+            "id": "c788",
+            "description": "Ceilingbrickles requires Brickles"
+          },
+          {
+            "id": "c815",
+            "description": "Leftbrickles requires Brickles"
+          },
+          {
+            "id": "c823",
+            "description": "Brickles requires PlayBrickles"
+          }
+        ],
+        "fp": [],
+        "fn": [
+          {
+            "id": null,
+            "description": "[-45, 61]"
+          },
+          {
+            "id": null,
+            "description": "[-49, 39]"
+          },
+          {
+            "id": null,
+            "description": "[-9, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-39, 25]"
+          },
+          {
+            "id": null,
+            "description": "[-22, 20]"
+          },
+          {
+            "id": null,
+            "description": "[-23, 24, 25]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 7]"
+          },
+          {
+            "id": null,
+            "description": "[-47, 39]"
+          },
+          {
+            "id": null,
+            "description": "[-18, 20]"
+          },
+          {
+            "id": null,
+            "description": "[-61, 58]"
+          },
+          {
+            "id": null,
+            "description": "[-38, 60]"
+          },
+          {
+            "id": null,
+            "description": "[-37, 34]"
+          },
+          {
+            "id": null,
+            "description": "[-28, 27]"
+          },
+          {
+            "id": null,
+            "description": "[-49, 59]"
+          },
+          {
+            "id": null,
+            "description": "[-59, 58]"
+          },
+          {
+            "id": null,
+            "description": "[-28, 32, 33]"
+          },
+          {
+            "id": null,
+            "description": "[-16, 10]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 9]"
+          },
+          {
+            "id": null,
+            "description": "[-36, 59]"
+          },
+          {
+            "id": null,
+            "description": "[-32, 59]"
+          }
+        ]
+      },
+      "semantic": {
+        "metrics": {
+          "accuracy": 0.34615384615384615,
+          "precision": 1.0,
+          "recall": 0.34615384615384615,
+          "f1_score": 0.5142857142857142,
+          "specificity": 0.0,
+          "true_positives": 45,
+          "true_negatives": 0,
+          "false_positives": 0,
+          "false_negatives": 85
+        },
+        "tp": [],
+        "fp": [],
+        "fn": [
+          {
+            "id": null,
+            "description": "[-1, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-3, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-4, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 5]"
+          },
+          {
+            "id": null,
+            "description": "[-5, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 6]"
+          },
+          {
+            "id": null,
+            "description": "[-6, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 7]"
+          },
+          {
+            "id": null,
+            "description": "[-7, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 8]"
+          },
+          {
+            "id": null,
+            "description": "[-8, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 9]"
+          },
+          {
+            "id": null,
+            "description": "[-9, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-2, 10]"
+          },
+          {
+            "id": null,
+            "description": "[-10, 2]"
+          },
+          {
+            "id": null,
+            "description": "[-10, 11]"
+          },
+          {
+            "id": null,
+            "description": "[-11, 10]"
+          },
+          {
+            "id": null,
+            "description": "[-12, 11]"
+          },
+          {
+            "id": null,
+            "description": "[-13, 11]"
+          },
+          {
+            "id": null,
+            "description": "[-14, 11]"
+          }
+        ]
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 59,
+        "true_negatives": 7,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 217804.81254193,
+        "consistency_checks": 5005,
+        "memory_peak_mb": 24.082432746887207,
+        "quacq_runtime_ms": 217751.1662079487,
+        "query_generation_runtime_ms": 18876.878414768726,
+        "findscope_runtime_ms": 904236.7419903167,
+        "findc_runtime_ms": 644.980751327239,
+        "dis_gen_runtime_ms": 280.2694656420499,
+        "reduce_runtime_ms": 42.521791998296976,
+        "solver_time_ms": 36509.93300000429,
+        "is_consistent_calls": 386923,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 463,
+        "query_generation_consistency_checks": 28057,
+        "prune_calls": 1953,
+        "prune_is_consistent_calls": 364991,
+        "findscope_calls": 6480,
+        "findc_calls": 378,
+        "findc_consistency_checks": 360,
+        "dis_gen_calls": 162,
+        "dis_gen_consistency_checks": 162,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 44,
+        "profiler": {
+          "query_generation_consistency_checks": 28057,
+          "solver_time": {
+            "count": 393614,
+            "total": 36.50993300000429,
+            "mean": 9.275567688142263e-05,
+            "min": 3.9999999996709334e-06,
+            "max": 0.00048300000000267573,
+            "median": 9.000000000014552e-05,
+            "stddev": 1.589991548679179e-05
+          },
+          "solver_time_accum": 36.50993300000429,
+          "is_consistent_calls": 386923,
+          "query_generation_runtime": {
+            "count": 463,
+            "total": 18.876878414768726,
+            "mean": 0.04077079571224347,
+            "min": 0.00034804095048457384,
+            "max": 0.5816142080584541,
+            "median": 0.029629791039042175,
+            "stddev": 0.04696498968646406
+          },
+          "query_generation_calls": 463,
+          "paper_consistency_checks": 5005,
+          "prune_is_consistent_calls": 364991,
+          "quacq_prune_complete_pruned": 1439,
+          "prune_calls": 1953,
+          "findscope_calls": 6480,
+          "findscope_runtime": {
+            "count": 6480,
+            "total": 904.2367419903167,
+            "mean": 0.1395427070972711,
+            "min": 4.541943781077862e-06,
+            "max": 1.5391272080596536,
+            "median": 0.0005574789829552174,
+            "stddev": 0.1863400086265823
+          },
+          "quacq_prune_partial_pruned": 155,
+          "findc_calls": 378,
+          "findc_runtime": {
+            "count": 378,
+            "total": 0.644980751327239,
+            "mean": 0.0017062982839344946,
+            "min": 0.00022141693625599146,
+            "max": 0.006328249932266772,
+            "median": 0.0005236460128799081,
+            "stddev": 0.0015745524109185719
+          },
+          "findc_consistency_checks": 360,
+          "dis_gen_consistency_checks": 162,
+          "dis_gen_calls": 162,
+          "dis_gen_runtime": {
+            "count": 162,
+            "total": 0.2802694656420499,
+            "mean": 0.001730058429889197,
+            "min": 0.0010759580181911588,
+            "max": 0.004267832962796092,
+            "median": 0.0016512289876118302,
+            "stddev": 0.0005256407723244575
+          },
+          "quacq_findc_unconfirmed": 161,
+          "query_generation_repeat_skips": 1623,
+          "redundancy_consistency_checks": 44,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.042521791998296976,
+            "mean": 0.042521791998296976,
+            "min": 0.042521791998296976,
+            "max": 0.042521791998296976
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 217.7511662079487,
+            "mean": 217.7511662079487,
+            "min": 217.7511662079487,
+            "max": 217.7511662079487
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 217.80481254193,
+            "mean": 217.80481254193,
+            "min": 217.80481254193,
+            "max": 217.80481254193
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c173",
+          "description": "BowlingBall requires Bowling"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c625",
+          "description": "Brick requires Brickles"
+        },
+        {
+          "id": "c1531",
+          "description": "Leftpong requires Pong"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        },
+        {
+          "id": "c179",
+          "description": "BowlingGameMenu requires Bowling"
+        },
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c69",
+          "description": "ClassDiagram --mandatory--> GameMenu"
+        },
+        {
+          "id": "c29",
+          "description": "ClassDiagram --mandatory--> GameSprite"
+        },
+        {
+          "id": "c65",
+          "description": "ClassDiagram --mandatory--> Menu"
+        },
+        {
+          "id": "c19",
+          "description": "PlayGame --mandatory--> PlayGame_1"
+        },
+        {
+          "id": "c221",
+          "description": "Gutter requires Bowling"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c1",
+          "description": "ArcadeGame --mandatory--> UseCases"
+        },
+        {
+          "id": "c15",
+          "description": "UseCases --mandatory--> ListGame"
+        },
+        {
+          "id": "c839",
+          "description": "Pucksupply requires Brickles"
+        },
+        {
+          "id": "c703",
+          "description": "BrickPile requires Brickles"
+        },
+        {
+          "id": "c1369",
+          "description": "Floorpong requires Pong"
+        },
+        {
+          "id": "c1664",
+          "description": "Rightpont requires Pong"
+        },
+        {
+          "id": "c13",
+          "description": "UseCases --mandatory--> UninstallGame"
+        },
+        {
+          "id": "c824",
+          "description": "PlayBrickles requires Brickles"
+        },
+        {
+          "id": "c22",
+          "description": "PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']"
+        },
+        {
+          "id": "c233",
+          "description": "PlayBowling requires Bowling"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        },
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c61",
+          "description": "ClassDiagram --mandatory--> Board"
+        },
+        {
+          "id": "c72",
+          "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+        },
+        {
+          "id": "c11",
+          "description": "UseCases --mandatory--> InstallGame"
+        },
+        {
+          "id": "c39",
+          "description": "GameSprite --mandatory--> GameSprite_3"
+        },
+        {
+          "id": "c50",
+          "description": "Paddle --or--> ['TopPaddle', 'BottomPaddle']"
+        },
+        {
+          "id": "c803",
+          "description": "Floorbrickles requires Brickles"
+        },
+        {
+          "id": "c815",
+          "description": "Leftbrickles requires Brickles"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        },
+        {
+          "id": "c212",
+          "description": "EndofAlley requires Bowling"
+        },
+        {
+          "id": "c788",
+          "description": "Ceilingbrickles requires Brickles"
+        },
+        {
+          "id": "c224",
+          "description": "Lane requires Bowling"
+        },
+        {
+          "id": "c23",
+          "description": "PlayGame --mandatory--> Initialization"
+        },
+        {
+          "id": "c9",
+          "description": "UseCases --mandatory--> ExitGame"
+        },
+        {
+          "id": "c7",
+          "description": "UseCases --mandatory--> SaveGame"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 44,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 117,
+        "negative": 12
+      },
+      "test_size": {
+        "positive": 59,
+        "negative": 7
+      },
+      "n_queries": 5000,
+      "convergence_reason": "max_queries",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.5616438356164384,
+            "precision": 0.9318181818181818,
+            "recall": 0.5857142857142857,
+            "f1_score": 0.7192982456140351,
+            "specificity": 0.0,
+            "true_positives": 41,
+            "true_negatives": 0,
+            "false_positives": 3,
+            "false_negatives": 29
+          },
+          "tp": [
+            {
+              "id": "c173",
+              "description": "BowlingBall requires Bowling"
+            },
+            {
+              "id": "c27",
+              "description": "ArcadeGame --mandatory--> ClassDiagram"
+            },
+            {
+              "id": "c625",
+              "description": "Brick requires Brickles"
+            },
+            {
+              "id": "c1531",
+              "description": "Leftpong requires Pong"
+            },
+            {
+              "id": "c782",
+              "description": "BricklesBoard requires Brickles"
+            },
+            {
+              "id": "c785",
+              "description": "BricklesGameMenu requires Brickles"
+            },
+            {
+              "id": "c179",
+              "description": "BowlingGameMenu requires Bowling"
+            },
+            {
+              "id": "c182",
+              "description": "BowlingPin requires Bowling"
+            },
+            {
+              "id": "c69",
+              "description": "ClassDiagram --mandatory--> GameMenu"
+            },
+            {
+              "id": "c29",
+              "description": "ClassDiagram --mandatory--> GameSprite"
+            },
+            {
+              "id": "c65",
+              "description": "ClassDiagram --mandatory--> Menu"
+            },
+            {
+              "id": "c19",
+              "description": "PlayGame --mandatory--> PlayGame_1"
+            },
+            {
+              "id": "c221",
+              "description": "Gutter requires Bowling"
+            },
+            {
+              "id": "c1621",
+              "description": "PlayPong requires Pong"
+            },
+            {
+              "id": "c1649",
+              "description": "PongBoard requires Pong"
+            },
+            {
+              "id": "c1",
+              "description": "ArcadeGame --mandatory--> UseCases"
+            },
+            {
+              "id": "c15",
+              "description": "UseCases --mandatory--> ListGame"
+            },
+            {
+              "id": "c839",
+              "description": "Pucksupply requires Brickles"
+            },
+            {
+              "id": "c703",
+              "description": "BrickPile requires Brickles"
+            },
+            {
+              "id": "c1369",
+              "description": "Floorpong requires Pong"
+            },
+            {
+              "id": "c1664",
+              "description": "Rightpont requires Pong"
+            },
+            {
+              "id": "c13",
+              "description": "UseCases --mandatory--> UninstallGame"
+            },
+            {
+              "id": "c824",
+              "description": "PlayBrickles requires Brickles"
+            },
+            {
+              "id": "c22",
+              "description": "PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']"
+            },
+            {
+              "id": "c233",
+              "description": "PlayBowling requires Bowling"
+            },
+            {
+              "id": "c64",
+              "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+            },
+            {
+              "id": "c176",
+              "description": "BowlingBoard requires Bowling"
+            },
+            {
+              "id": "c61",
+              "description": "ClassDiagram --mandatory--> Board"
+            },
+            {
+              "id": "c72",
+              "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+            },
+            {
+              "id": "c11",
+              "description": "UseCases --mandatory--> InstallGame"
+            },
+            {
+              "id": "c39",
+              "description": "GameSprite --mandatory--> GameSprite_3"
+            },
+            {
+              "id": "c50",
+              "description": "Paddle --or--> ['TopPaddle', 'BottomPaddle']"
+            },
+            {
+              "id": "c803",
+              "description": "Floorbrickles requires Brickles"
+            },
+            {
+              "id": "c815",
+              "description": "Leftbrickles requires Brickles"
+            },
+            {
+              "id": "c209",
+              "description": "Edge requires Bowling"
+            },
+            {
+              "id": "c212",
+              "description": "EndofAlley requires Bowling"
+            },
+            {
+              "id": "c788",
+              "description": "Ceilingbrickles requires Brickles"
+            },
+            {
+              "id": "c224",
+              "description": "Lane requires Bowling"
+            },
+            {
+              "id": "c23",
+              "description": "PlayGame --mandatory--> Initialization"
+            },
+            {
+              "id": "c9",
+              "description": "UseCases --mandatory--> ExitGame"
+            },
+            {
+              "id": "c7",
+              "description": "UseCases --mandatory--> SaveGame"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c232",
+              "description": "Bowling requires PlayBowling"
+            },
+            {
+              "id": "c823",
+              "description": "Brickles requires PlayBrickles"
+            },
+            {
+              "id": "c1622",
+              "description": "Pong requires PlayPong"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "Rightbrickles requires Brickles"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> PlayGame"
+            },
+            {
+              "id": null,
+              "description": "BottomPaddle requires Pong"
+            },
+            {
+              "id": null,
+              "description": "GameSprite_3 --or--> ['MovableSprite', 'StationarySprite']"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite --mandatory--> MovableSprite_2"
+            },
+            {
+              "id": null,
+              "description": "UseCases --optional--> CheckPreviousBestScore"
+            },
+            {
+              "id": null,
+              "description": "GameSprite --mandatory--> Rectangle"
+            },
+            {
+              "id": null,
+              "description": "Ceilingpong requires Pong"
+            },
+            {
+              "id": null,
+              "description": "DividingLine requires Pong"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']"
+            },
+            {
+              "id": null,
+              "description": "PongGameMenu requires Pong"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite --optional--> Wall"
+            },
+            {
+              "id": null,
+              "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+            },
+            {
+              "id": null,
+              "description": "UseCases --optional--> SaveScore"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite --mandatory--> Velocity"
+            },
+            {
+              "id": null,
+              "description": "ScoreBoard requires Pong"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 5) OR[PlayBowling][NOT[Bowling][]]"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 1) OR[PlayBrickles][NOT[Brickles][]]"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite_2 --or--> ['Brick', 'BrickPile', 'Ceilingbrickles', 'Floorbrickles', 'Lane', 'Gutter', 'Edge', 'EndofAlley', 'RackofPins', 'ScoreBoard', 'Floorpong', 'Ceilingpong', 'DividingLine']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 3) OR[PlayPong][NOT[Pong][]]"
+            },
+            {
+              "id": null,
+              "description": "Rectangle --mandatory--> Size"
+            },
+            {
+              "id": null,
+              "description": "TopPaddle requires Pong"
+            },
+            {
+              "id": null,
+              "description": "RackofPins requires Bowling"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite --mandatory--> StationarySprite_2"
+            },
+            {
+              "id": null,
+              "description": "ClassDiagram --optional--> Pucksupply"
+            },
+            {
+              "id": null,
+              "description": "Rectangle --mandatory--> Point"
+            },
+            {
+              "id": null,
+              "description": "PlayGame --mandatory--> AnimationLoop"
+            },
+            {
+              "id": null,
+              "description": "Menu --or--> ['Pong', 'Brickles', 'Bowling']"
+            },
+            {
+              "id": null,
+              "description": "GameSprite --optional--> SpritePair"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9664804469273743,
+            "precision": 1.0,
+            "recall": 0.5384615384615384,
+            "f1_score": 0.7000000000000001,
+            "specificity": 1.0,
+            "true_positives": 70,
+            "true_negatives": 1660,
+            "false_positives": 0,
+            "false_negatives": 60
+          },
+          "tp": [
+            {
+              "id": "c173",
+              "description": "BowlingBall requires Bowling"
+            },
+            {
+              "id": "c27",
+              "description": "ArcadeGame --mandatory--> ClassDiagram"
+            },
+            {
+              "id": "c625",
+              "description": "Brick requires Brickles"
+            },
+            {
+              "id": "c1531",
+              "description": "Leftpong requires Pong"
+            },
+            {
+              "id": "c782",
+              "description": "BricklesBoard requires Brickles"
+            },
+            {
+              "id": "c232",
+              "description": "Bowling requires PlayBowling"
+            },
+            {
+              "id": "c823",
+              "description": "Brickles requires PlayBrickles"
+            },
+            {
+              "id": "c785",
+              "description": "BricklesGameMenu requires Brickles"
+            },
+            {
+              "id": "c179",
+              "description": "BowlingGameMenu requires Bowling"
+            },
+            {
+              "id": "c182",
+              "description": "BowlingPin requires Bowling"
+            },
+            {
+              "id": "c69",
+              "description": "ClassDiagram --mandatory--> GameMenu"
+            },
+            {
+              "id": "c29",
+              "description": "ClassDiagram --mandatory--> GameSprite"
+            },
+            {
+              "id": "c65",
+              "description": "ClassDiagram --mandatory--> Menu"
+            },
+            {
+              "id": "c19",
+              "description": "PlayGame --mandatory--> PlayGame_1"
+            },
+            {
+              "id": "c221",
+              "description": "Gutter requires Bowling"
+            },
+            {
+              "id": "c1621",
+              "description": "PlayPong requires Pong"
+            },
+            {
+              "id": "c1649",
+              "description": "PongBoard requires Pong"
+            },
+            {
+              "id": "c1622",
+              "description": "Pong requires PlayPong"
+            },
+            {
+              "id": "c1",
+              "description": "ArcadeGame --mandatory--> UseCases"
+            },
+            {
+              "id": "c15",
+              "description": "UseCases --mandatory--> ListGame"
+            },
+            {
+              "id": "c839",
+              "description": "Pucksupply requires Brickles"
+            },
+            {
+              "id": "c703",
+              "description": "BrickPile requires Brickles"
+            },
+            {
+              "id": "c1369",
+              "description": "Floorpong requires Pong"
+            },
+            {
+              "id": "c1664",
+              "description": "Rightpont requires Pong"
+            },
+            {
+              "id": "c13",
+              "description": "UseCases --mandatory--> UninstallGame"
+            },
+            {
+              "id": "c824",
+              "description": "PlayBrickles requires Brickles"
+            },
+            {
+              "id": "c22",
+              "description": "PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']"
+            },
+            {
+              "id": "c233",
+              "description": "PlayBowling requires Bowling"
+            },
+            {
+              "id": "c64",
+              "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+            },
+            {
+              "id": "c176",
+              "description": "BowlingBoard requires Bowling"
+            },
+            {
+              "id": "c61",
+              "description": "ClassDiagram --mandatory--> Board"
+            },
+            {
+              "id": "c72",
+              "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+            },
+            {
+              "id": "c11",
+              "description": "UseCases --mandatory--> InstallGame"
+            },
+            {
+              "id": "c39",
+              "description": "GameSprite --mandatory--> GameSprite_3"
+            },
+            {
+              "id": "c50",
+              "description": "Paddle --or--> ['TopPaddle', 'BottomPaddle']"
+            },
+            {
+              "id": "c803",
+              "description": "Floorbrickles requires Brickles"
+            },
+            {
+              "id": "c815",
+              "description": "Leftbrickles requires Brickles"
+            },
+            {
+              "id": "c209",
+              "description": "Edge requires Bowling"
+            },
+            {
+              "id": "c212",
+              "description": "EndofAlley requires Bowling"
+            },
+            {
+              "id": "c788",
+              "description": "Ceilingbrickles requires Brickles"
+            },
+            {
+              "id": "c224",
+              "description": "Lane requires Bowling"
+            },
+            {
+              "id": "c23",
+              "description": "PlayGame --mandatory--> Initialization"
+            },
+            {
+              "id": "c9",
+              "description": "UseCases --mandatory--> ExitGame"
+            },
+            {
+              "id": "c7",
+              "description": "UseCases --mandatory--> SaveGame"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-31, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-52, 59]"
+            },
+            {
+              "id": null,
+              "description": "[-63, 59]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 16]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 23]"
+            },
+            {
+              "id": null,
+              "description": "[-60, 58]"
+            },
+            {
+              "id": null,
+              "description": "[-42, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 26]"
+            },
+            {
+              "id": null,
+              "description": "[-34, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-40, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-51, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-49, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-29, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-27, 24]"
+            },
+            {
+              "id": null,
+              "description": "[-39, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-22, 20]"
+            },
+            {
+              "id": null,
+              "description": "[-53, 17]"
+            },
+            {
+              "id": null,
+              "description": "[-27, 28, 29, 30, 31]"
+            },
+            {
+              "id": null,
+              "description": "[-23, 24, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-47, 39]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.6461538461538462,
+            "precision": 1.0,
+            "recall": 0.6461538461538462,
+            "f1_score": 0.7850467289719627,
+            "specificity": 0.0,
+            "true_positives": 84,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 46
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-10, 16]"
+            },
+            {
+              "id": null,
+              "description": "[-18, 20]"
+            },
+            {
+              "id": null,
+              "description": "[-20, 21]"
+            },
+            {
+              "id": null,
+              "description": "[-21, 20]"
+            },
+            {
+              "id": null,
+              "description": "[-20, 22]"
+            },
+            {
+              "id": null,
+              "description": "[-22, 20]"
+            },
+            {
+              "id": null,
+              "description": "[-23, 24, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 26]"
+            },
+            {
+              "id": null,
+              "description": "[-26, 24]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-27, 24]"
+            },
+            {
+              "id": null,
+              "description": "[-27, 28, 29, 30, 31]"
+            },
+            {
+              "id": null,
+              "description": "[-28, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-29, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-30, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-31, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-34, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-34, 35, 36, 37, 38]"
+            },
+            {
+              "id": null,
+              "description": "[-35, 34]"
+            },
+            {
+              "id": null,
+              "description": "[-36, 34]"
+            }
+          ]
+        },
+        "exact_equiv": false
+      },
+      "ne_clauses": []
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 59,
+        "true_negatives": 6,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 321651.43987501506,
+        "consistency_checks": 5000,
+        "memory_peak_mb": 27.066960334777832,
+        "quacq_runtime_ms": 321600.1516659744,
+        "query_generation_runtime_ms": 10316.91421486903,
+        "findscope_runtime_ms": 1350075.4686500877,
+        "findc_runtime_ms": 199.4102958124131,
+        "dis_gen_runtime_ms": 25.886500952765346,
+        "reduce_runtime_ms": 38.63654099404812,
+        "solver_time_ms": 48279.148000010086,
+        "is_consistent_calls": 502414,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 391,
+        "query_generation_consistency_checks": 26741,
+        "prune_calls": 1834,
+        "prune_is_consistent_calls": 476861,
+        "findscope_calls": 6649,
+        "findc_calls": 305,
+        "findc_consistency_checks": 60,
+        "dis_gen_calls": 17,
+        "dis_gen_consistency_checks": 17,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 33,
+        "profiler": {
+          "query_generation_consistency_checks": 26741,
+          "solver_time": {
+            "count": 503712,
+            "total": 48.27914800001009,
+            "mean": 9.584672987741029e-05,
+            "min": 4.000000000115023e-06,
+            "max": 0.0005760000000094578,
+            "median": 9.800000000836917e-05,
+            "stddev": 1.4239187974037962e-05
+          },
+          "solver_time_accum": 48.27914800001009,
+          "is_consistent_calls": 502414,
+          "query_generation_runtime": {
+            "count": 391,
+            "total": 10.31691421486903,
+            "mean": 0.026385969859000075,
+            "min": 0.00024399999529123306,
+            "max": 0.46186699997633696,
+            "median": 0.007812749943695962,
+            "stddev": 0.05118231205451871
+          },
+          "query_generation_calls": 391,
+          "paper_consistency_checks": 5000,
+          "prune_is_consistent_calls": 476861,
+          "quacq_prune_complete_pruned": 1483,
+          "prune_calls": 1834,
+          "findscope_calls": 6649,
+          "findscope_runtime": {
+            "count": 6649,
+            "total": 1350.0754686500877,
+            "mean": 0.20304940121072157,
+            "min": 4.832982085645199e-06,
+            "max": 3.742598333978094,
+            "median": 0.10129962500650436,
+            "stddev": 0.28578532050928207
+          },
+          "quacq_prune_partial_pruned": 131,
+          "findc_consistency_checks": 60,
+          "findc_calls": 305,
+          "findc_runtime": {
+            "count": 305,
+            "total": 0.1994102958124131,
+            "mean": 0.0006538042485652888,
+            "min": 0.0002042920095846057,
+            "max": 0.0050868329126387835,
+            "median": 0.0004235830856487155,
+            "stddev": 0.0007120775763306198
+          },
+          "query_generation_repeat_skips": 772,
+          "dis_gen_consistency_checks": 17,
+          "dis_gen_calls": 17,
+          "dis_gen_runtime": {
+            "count": 17,
+            "total": 0.025886500952765346,
+            "mean": 0.0015227353501626674,
+            "min": 0.0013419579481706023,
+            "max": 0.003466958994977176,
+            "median": 0.0013955830363556743,
+            "stddev": 0.0005045611731892581
+          },
+          "quacq_findc_unconfirmed": 17,
+          "redundancy_consistency_checks": 33,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.03863654099404812,
+            "mean": 0.03863654099404812,
+            "min": 0.03863654099404812,
+            "max": 0.03863654099404812
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 321.6001516659744,
+            "mean": 321.6001516659744,
+            "min": 321.6001516659744,
+            "max": 321.6001516659744
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 321.65143987501506,
+            "mean": 321.65143987501506,
+            "min": 321.65143987501506,
+            "max": 321.65143987501506
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c173",
+          "description": "BowlingBall requires Bowling"
+        },
+        {
+          "id": "c788",
+          "description": "Ceilingbrickles requires Brickles"
+        },
+        {
+          "id": "c703",
+          "description": "BrickPile requires Brickles"
+        },
+        {
+          "id": "c625",
+          "description": "Brick requires Brickles"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c25",
+          "description": "PlayGame --mandatory--> AnimationLoop"
+        },
+        {
+          "id": "c29",
+          "description": "ClassDiagram --mandatory--> GameSprite"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        },
+        {
+          "id": "c39",
+          "description": "GameSprite --mandatory--> GameSprite_3"
+        },
+        {
+          "id": "c69",
+          "description": "ClassDiagram --mandatory--> GameMenu"
+        },
+        {
+          "id": "c65",
+          "description": "ClassDiagram --mandatory--> Menu"
+        },
+        {
+          "id": "c145",
+          "description": "BottomPaddle requires Pong"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        },
+        {
+          "id": "c61",
+          "description": "ClassDiagram --mandatory--> Board"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c1652",
+          "description": "PongGameMenu requires Pong"
+        },
+        {
+          "id": "c72",
+          "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+        },
+        {
+          "id": "c1369",
+          "description": "Floorpong requires Pong"
+        },
+        {
+          "id": "c1664",
+          "description": "Rightpont requires Pong"
+        },
+        {
+          "id": "c54",
+          "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+        },
+        {
+          "id": "c1667",
+          "description": "ScoreBoard requires Pong"
+        },
+        {
+          "id": "c23",
+          "description": "PlayGame --mandatory--> Initialization"
+        },
+        {
+          "id": "c33",
+          "description": "GameSprite --mandatory--> Rectangle"
+        },
+        {
+          "id": "c1670",
+          "description": "TopPaddle requires Pong"
+        },
+        {
+          "id": "c1099",
+          "description": "Ceilingpong requires Pong"
+        },
+        {
+          "id": "c179",
+          "description": "BowlingGameMenu requires Bowling"
+        },
+        {
+          "id": "c815",
+          "description": "Leftbrickles requires Brickles"
+        },
+        {
+          "id": "c224",
+          "description": "Lane requires Bowling"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 33,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 117,
+        "negative": 13
+      },
+      "test_size": {
+        "positive": 59,
+        "negative": 6
+      },
+      "n_queries": 5000,
+      "convergence_reason": "max_queries",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.410958904109589,
+            "precision": 0.9090909090909091,
+            "recall": 0.42857142857142855,
+            "f1_score": 0.5825242718446602,
+            "specificity": 0.0,
+            "true_positives": 30,
+            "true_negatives": 0,
+            "false_positives": 3,
+            "false_negatives": 40
+          },
+          "tp": [
+            {
+              "id": "c173",
+              "description": "BowlingBall requires Bowling"
+            },
+            {
+              "id": "c788",
+              "description": "Ceilingbrickles requires Brickles"
+            },
+            {
+              "id": "c703",
+              "description": "BrickPile requires Brickles"
+            },
+            {
+              "id": "c625",
+              "description": "Brick requires Brickles"
+            },
+            {
+              "id": "c176",
+              "description": "BowlingBoard requires Bowling"
+            },
+            {
+              "id": "c782",
+              "description": "BricklesBoard requires Brickles"
+            },
+            {
+              "id": "c25",
+              "description": "PlayGame --mandatory--> AnimationLoop"
+            },
+            {
+              "id": "c29",
+              "description": "ClassDiagram --mandatory--> GameSprite"
+            },
+            {
+              "id": "c27",
+              "description": "ArcadeGame --mandatory--> ClassDiagram"
+            },
+            {
+              "id": "c785",
+              "description": "BricklesGameMenu requires Brickles"
+            },
+            {
+              "id": "c39",
+              "description": "GameSprite --mandatory--> GameSprite_3"
+            },
+            {
+              "id": "c69",
+              "description": "ClassDiagram --mandatory--> GameMenu"
+            },
+            {
+              "id": "c65",
+              "description": "ClassDiagram --mandatory--> Menu"
+            },
+            {
+              "id": "c145",
+              "description": "BottomPaddle requires Pong"
+            },
+            {
+              "id": "c64",
+              "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+            },
+            {
+              "id": "c61",
+              "description": "ClassDiagram --mandatory--> Board"
+            },
+            {
+              "id": "c1649",
+              "description": "PongBoard requires Pong"
+            },
+            {
+              "id": "c1652",
+              "description": "PongGameMenu requires Pong"
+            },
+            {
+              "id": "c72",
+              "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+            },
+            {
+              "id": "c1369",
+              "description": "Floorpong requires Pong"
+            },
+            {
+              "id": "c1664",
+              "description": "Rightpont requires Pong"
+            },
+            {
+              "id": "c54",
+              "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+            },
+            {
+              "id": "c1667",
+              "description": "ScoreBoard requires Pong"
+            },
+            {
+              "id": "c23",
+              "description": "PlayGame --mandatory--> Initialization"
+            },
+            {
+              "id": "c33",
+              "description": "GameSprite --mandatory--> Rectangle"
+            },
+            {
+              "id": "c1670",
+              "description": "TopPaddle requires Pong"
+            },
+            {
+              "id": "c1099",
+              "description": "Ceilingpong requires Pong"
+            },
+            {
+              "id": "c179",
+              "description": "BowlingGameMenu requires Bowling"
+            },
+            {
+              "id": "c815",
+              "description": "Leftbrickles requires Brickles"
+            },
+            {
+              "id": "c224",
+              "description": "Lane requires Bowling"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c232",
+              "description": "Bowling requires PlayBowling"
+            },
+            {
+              "id": "c823",
+              "description": "Brickles requires PlayBrickles"
+            },
+            {
+              "id": "c1622",
+              "description": "Pong requires PlayPong"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "Pucksupply requires Brickles"
+            },
+            {
+              "id": null,
+              "description": "Rightbrickles requires Brickles"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> PlayGame"
+            },
+            {
+              "id": null,
+              "description": "GameSprite_3 --or--> ['MovableSprite', 'StationarySprite']"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite --mandatory--> MovableSprite_2"
+            },
+            {
+              "id": null,
+              "description": "ArcadeGame --mandatory--> UseCases"
+            },
+            {
+              "id": null,
+              "description": "UseCases --optional--> CheckPreviousBestScore"
+            },
+            {
+              "id": null,
+              "description": "GameSprite --optional--> SpritePair"
+            },
+            {
+              "id": null,
+              "description": "BowlingPin requires Bowling"
+            },
+            {
+              "id": null,
+              "description": "Edge requires Bowling"
+            },
+            {
+              "id": null,
+              "description": "DividingLine requires Pong"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> UninstallGame"
+            },
+            {
+              "id": null,
+              "description": "PlayGame --mandatory--> PlayGame_1"
+            },
+            {
+              "id": null,
+              "description": "EndofAlley requires Bowling"
+            },
+            {
+              "id": null,
+              "description": "Floorbrickles requires Brickles"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> ExitGame"
+            },
+            {
+              "id": null,
+              "description": "PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite --optional--> Wall"
+            },
+            {
+              "id": null,
+              "description": "UseCases --optional--> SaveScore"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite --mandatory--> Velocity"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 5) OR[PlayBowling][NOT[Bowling][]]"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 1) OR[PlayBrickles][NOT[Brickles][]]"
+            },
+            {
+              "id": null,
+              "description": "PlayBrickles requires Brickles"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite_2 --or--> ['Brick', 'BrickPile', 'Ceilingbrickles', 'Floorbrickles', 'Lane', 'Gutter', 'Edge', 'EndofAlley', 'RackofPins', 'ScoreBoard', 'Floorpong', 'Ceilingpong', 'DividingLine']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 3) OR[PlayPong][NOT[Pong][]]"
+            },
+            {
+              "id": null,
+              "description": "Rectangle --mandatory--> Size"
+            },
+            {
+              "id": null,
+              "description": "RackofPins requires Bowling"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite --mandatory--> StationarySprite_2"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> ListGame"
+            },
+            {
+              "id": null,
+              "description": "ClassDiagram --optional--> Pucksupply"
+            },
+            {
+              "id": null,
+              "description": "Paddle --or--> ['TopPaddle', 'BottomPaddle']"
+            },
+            {
+              "id": null,
+              "description": "Gutter requires Bowling"
+            },
+            {
+              "id": null,
+              "description": "Rectangle --mandatory--> Point"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> SaveGame"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> InstallGame"
+            },
+            {
+              "id": null,
+              "description": "Leftpong requires Pong"
+            },
+            {
+              "id": null,
+              "description": "PlayPong requires Pong"
+            },
+            {
+              "id": null,
+              "description": "Menu --or--> ['Pong', 'Brickles', 'Bowling']"
+            },
+            {
+              "id": null,
+              "description": "PlayBowling requires Bowling"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9569832402234637,
+            "precision": 1.0,
+            "recall": 0.4076923076923077,
+            "f1_score": 0.5792349726775957,
+            "specificity": 1.0,
+            "true_positives": 53,
+            "true_negatives": 1660,
+            "false_positives": 0,
+            "false_negatives": 77
+          },
+          "tp": [
+            {
+              "id": "c173",
+              "description": "BowlingBall requires Bowling"
+            },
+            {
+              "id": "c788",
+              "description": "Ceilingbrickles requires Brickles"
+            },
+            {
+              "id": "c703",
+              "description": "BrickPile requires Brickles"
+            },
+            {
+              "id": "c625",
+              "description": "Brick requires Brickles"
+            },
+            {
+              "id": "c232",
+              "description": "Bowling requires PlayBowling"
+            },
+            {
+              "id": "c176",
+              "description": "BowlingBoard requires Bowling"
+            },
+            {
+              "id": "c782",
+              "description": "BricklesBoard requires Brickles"
+            },
+            {
+              "id": "c25",
+              "description": "PlayGame --mandatory--> AnimationLoop"
+            },
+            {
+              "id": "c29",
+              "description": "ClassDiagram --mandatory--> GameSprite"
+            },
+            {
+              "id": "c27",
+              "description": "ArcadeGame --mandatory--> ClassDiagram"
+            },
+            {
+              "id": "c823",
+              "description": "Brickles requires PlayBrickles"
+            },
+            {
+              "id": "c785",
+              "description": "BricklesGameMenu requires Brickles"
+            },
+            {
+              "id": "c39",
+              "description": "GameSprite --mandatory--> GameSprite_3"
+            },
+            {
+              "id": "c69",
+              "description": "ClassDiagram --mandatory--> GameMenu"
+            },
+            {
+              "id": "c65",
+              "description": "ClassDiagram --mandatory--> Menu"
+            },
+            {
+              "id": "c145",
+              "description": "BottomPaddle requires Pong"
+            },
+            {
+              "id": "c64",
+              "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+            },
+            {
+              "id": "c61",
+              "description": "ClassDiagram --mandatory--> Board"
+            },
+            {
+              "id": "c1649",
+              "description": "PongBoard requires Pong"
+            },
+            {
+              "id": "c1622",
+              "description": "Pong requires PlayPong"
+            },
+            {
+              "id": "c1652",
+              "description": "PongGameMenu requires Pong"
+            },
+            {
+              "id": "c72",
+              "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+            },
+            {
+              "id": "c1369",
+              "description": "Floorpong requires Pong"
+            },
+            {
+              "id": "c1664",
+              "description": "Rightpont requires Pong"
+            },
+            {
+              "id": "c54",
+              "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+            },
+            {
+              "id": "c1667",
+              "description": "ScoreBoard requires Pong"
+            },
+            {
+              "id": "c23",
+              "description": "PlayGame --mandatory--> Initialization"
+            },
+            {
+              "id": "c33",
+              "description": "GameSprite --mandatory--> Rectangle"
+            },
+            {
+              "id": "c1670",
+              "description": "TopPaddle requires Pong"
+            },
+            {
+              "id": "c1099",
+              "description": "Ceilingpong requires Pong"
+            },
+            {
+              "id": "c179",
+              "description": "BowlingGameMenu requires Bowling"
+            },
+            {
+              "id": "c815",
+              "description": "Leftbrickles requires Brickles"
+            },
+            {
+              "id": "c224",
+              "description": "Lane requires Bowling"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-45, 61]"
+            },
+            {
+              "id": null,
+              "description": "[-49, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-39, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-22, 20]"
+            },
+            {
+              "id": null,
+              "description": "[-23, 24, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-47, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-61, 58]"
+            },
+            {
+              "id": null,
+              "description": "[-38, 60]"
+            },
+            {
+              "id": null,
+              "description": "[-28, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-59, 58]"
+            },
+            {
+              "id": null,
+              "description": "[-28, 32, 33]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-20, 21]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 26]"
+            },
+            {
+              "id": null,
+              "description": "[-34, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-40, 39]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.5,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6666666666666666,
+            "specificity": 0.0,
+            "true_positives": 65,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 65
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 8]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 10]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 10]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 11]"
+            }
+          ]
+        },
+        "exact_equiv": false
+      },
+      "ne_clauses": []
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 58,
+        "true_negatives": 6,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 131996.05770793278,
+        "consistency_checks": 5011,
+        "memory_peak_mb": 19.811062812805176,
+        "quacq_runtime_ms": 131951.78137510084,
+        "query_generation_runtime_ms": 18158.726116409525,
+        "findscope_runtime_ms": 475295.6126985373,
+        "findc_runtime_ms": 593.2732977671549,
+        "dis_gen_runtime_ms": 389.7412938531488,
+        "reduce_runtime_ms": 36.69512504711747,
+        "solver_time_ms": 25777.658000003856,
+        "is_consistent_calls": 284208,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 431,
+        "query_generation_consistency_checks": 31076,
+        "prune_calls": 1903,
+        "prune_is_consistent_calls": 260065,
+        "findscope_calls": 6347,
+        "findc_calls": 329,
+        "findc_consistency_checks": 246,
+        "dis_gen_calls": 108,
+        "dis_gen_consistency_checks": 108,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 46,
+        "profiler": {
+          "query_generation_consistency_checks": 31076,
+          "solver_time": {
+            "count": 291541,
+            "total": 25.777658000003857,
+            "mean": 8.841863751583433e-05,
+            "min": 3.9999999996709334e-06,
+            "max": 0.00041099999999971715,
+            "median": 8.600000000313912e-05,
+            "stddev": 1.4955064440831279e-05
+          },
+          "solver_time_accum": 25.777658000003857,
+          "is_consistent_calls": 284208,
+          "query_generation_runtime": {
+            "count": 431,
+            "total": 18.158726116409525,
+            "mean": 0.04213161511927964,
+            "min": 0.00034549995325505733,
+            "max": 0.5658113330136985,
+            "median": 0.025001416099257767,
+            "stddev": 0.05329297347448391
+          },
+          "query_generation_calls": 431,
+          "paper_consistency_checks": 5011,
+          "prune_is_consistent_calls": 260065,
+          "quacq_prune_complete_pruned": 1526,
+          "prune_calls": 1903,
+          "findscope_calls": 6347,
+          "findscope_runtime": {
+            "count": 6347,
+            "total": 475.2956126985373,
+            "mean": 0.07488508156586376,
+            "min": 4.708068445324898e-06,
+            "max": 1.6490036669420078,
+            "median": 0.043909208034165204,
+            "stddev": 0.10951249202368143
+          },
+          "quacq_prune_partial_pruned": 94,
+          "findc_calls": 329,
+          "findc_runtime": {
+            "count": 329,
+            "total": 0.5932732977671549,
+            "mean": 0.0018032623032436317,
+            "min": 0.00017112493515014648,
+            "max": 0.0055389999179169536,
+            "median": 0.00020391703583300114,
+            "stddev": 0.002191038860379215
+          },
+          "findc_consistency_checks": 246,
+          "query_generation_repeat_skips": 1253,
+          "dis_gen_consistency_checks": 108,
+          "dis_gen_calls": 108,
+          "dis_gen_runtime": {
+            "count": 108,
+            "total": 0.3897412938531488,
+            "mean": 0.003608715683825452,
+            "min": 0.0033996249549090862,
+            "max": 0.003936041030101478,
+            "median": 0.003601770964451134,
+            "stddev": 0.00010319910940228886
+          },
+          "quacq_findc_unconfirmed": 108,
+          "redundancy_consistency_checks": 46,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.03669512504711747,
+            "mean": 0.03669512504711747,
+            "min": 0.03669512504711747,
+            "max": 0.03669512504711747
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 131.95178137510084,
+            "mean": 131.95178137510084,
+            "min": 131.95178137510084,
+            "max": 131.95178137510084
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 131.99605770793278,
+            "mean": 131.99605770793278,
+            "min": 131.99605770793278,
+            "max": 131.99605770793278
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c788",
+          "description": "Ceilingbrickles requires Brickles"
+        },
+        {
+          "id": "c173",
+          "description": "BowlingBall requires Bowling"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c54",
+          "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+        },
+        {
+          "id": "c37",
+          "description": "Rectangle --mandatory--> Point"
+        },
+        {
+          "id": "c145",
+          "description": "BottomPaddle requires Pong"
+        },
+        {
+          "id": "c1099",
+          "description": "Ceilingpong requires Pong"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c1159",
+          "description": "DividingLine requires Pong"
+        },
+        {
+          "id": "c1",
+          "description": "ArcadeGame --mandatory--> UseCases"
+        },
+        {
+          "id": "c1652",
+          "description": "PongGameMenu requires Pong"
+        },
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c224",
+          "description": "Lane requires Bowling"
+        },
+        {
+          "id": "c29",
+          "description": "ClassDiagram --mandatory--> GameSprite"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c703",
+          "description": "BrickPile requires Brickles"
+        },
+        {
+          "id": "c39",
+          "description": "GameSprite --mandatory--> GameSprite_3"
+        },
+        {
+          "id": "c33",
+          "description": "GameSprite --mandatory--> Rectangle"
+        },
+        {
+          "id": "c845",
+          "description": "Rightbrickles requires Brickles"
+        },
+        {
+          "id": "c815",
+          "description": "Leftbrickles requires Brickles"
+        },
+        {
+          "id": "c233",
+          "description": "PlayBowling requires Bowling"
+        },
+        {
+          "id": "c68",
+          "description": "Menu --or--> ['Pong', 'Brickles', 'Bowling']"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        },
+        {
+          "id": "c61",
+          "description": "ClassDiagram --mandatory--> Board"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c824",
+          "description": "PlayBrickles requires Brickles"
+        },
+        {
+          "id": "c839",
+          "description": "Pucksupply requires Brickles"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c212",
+          "description": "EndofAlley requires Bowling"
+        },
+        {
+          "id": "c69",
+          "description": "ClassDiagram --mandatory--> GameMenu"
+        },
+        {
+          "id": "c221",
+          "description": "Gutter requires Bowling"
+        },
+        {
+          "id": "c72",
+          "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+        },
+        {
+          "id": "c1667",
+          "description": "ScoreBoard requires Pong"
+        },
+        {
+          "id": "c1369",
+          "description": "Floorpong requires Pong"
+        },
+        {
+          "id": "c23",
+          "description": "PlayGame --mandatory--> Initialization"
+        },
+        {
+          "id": "c179",
+          "description": "BowlingGameMenu requires Bowling"
+        },
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c625",
+          "description": "Brick requires Brickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        },
+        {
+          "id": "c254",
+          "description": "RackofPins requires Bowling"
+        },
+        {
+          "id": "c25",
+          "description": "PlayGame --mandatory--> AnimationLoop"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c45",
+          "description": "MovableSprite --mandatory--> MovableSprite_2"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 45,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 118,
+        "negative": 13
+      },
+      "test_size": {
+        "positive": 58,
+        "negative": 6
+      },
+      "n_queries": 5000,
+      "convergence_reason": "max_queries",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.5753424657534246,
+            "precision": 0.9333333333333333,
+            "recall": 0.6,
+            "f1_score": 0.7304347826086957,
+            "specificity": 0.0,
+            "true_positives": 42,
+            "true_negatives": 0,
+            "false_positives": 3,
+            "false_negatives": 28
+          },
+          "tp": [
+            {
+              "id": "c788",
+              "description": "Ceilingbrickles requires Brickles"
+            },
+            {
+              "id": "c173",
+              "description": "BowlingBall requires Bowling"
+            },
+            {
+              "id": "c27",
+              "description": "ArcadeGame --mandatory--> ClassDiagram"
+            },
+            {
+              "id": "c54",
+              "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+            },
+            {
+              "id": "c37",
+              "description": "Rectangle --mandatory--> Point"
+            },
+            {
+              "id": "c145",
+              "description": "BottomPaddle requires Pong"
+            },
+            {
+              "id": "c1099",
+              "description": "Ceilingpong requires Pong"
+            },
+            {
+              "id": "c1159",
+              "description": "DividingLine requires Pong"
+            },
+            {
+              "id": "c1",
+              "description": "ArcadeGame --mandatory--> UseCases"
+            },
+            {
+              "id": "c1652",
+              "description": "PongGameMenu requires Pong"
+            },
+            {
+              "id": "c176",
+              "description": "BowlingBoard requires Bowling"
+            },
+            {
+              "id": "c224",
+              "description": "Lane requires Bowling"
+            },
+            {
+              "id": "c29",
+              "description": "ClassDiagram --mandatory--> GameSprite"
+            },
+            {
+              "id": "c703",
+              "description": "BrickPile requires Brickles"
+            },
+            {
+              "id": "c39",
+              "description": "GameSprite --mandatory--> GameSprite_3"
+            },
+            {
+              "id": "c33",
+              "description": "GameSprite --mandatory--> Rectangle"
+            },
+            {
+              "id": "c845",
+              "description": "Rightbrickles requires Brickles"
+            },
+            {
+              "id": "c815",
+              "description": "Leftbrickles requires Brickles"
+            },
+            {
+              "id": "c233",
+              "description": "PlayBowling requires Bowling"
+            },
+            {
+              "id": "c68",
+              "description": "Menu --or--> ['Pong', 'Brickles', 'Bowling']"
+            },
+            {
+              "id": "c64",
+              "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+            },
+            {
+              "id": "c61",
+              "description": "ClassDiagram --mandatory--> Board"
+            },
+            {
+              "id": "c782",
+              "description": "BricklesBoard requires Brickles"
+            },
+            {
+              "id": "c824",
+              "description": "PlayBrickles requires Brickles"
+            },
+            {
+              "id": "c839",
+              "description": "Pucksupply requires Brickles"
+            },
+            {
+              "id": "c1621",
+              "description": "PlayPong requires Pong"
+            },
+            {
+              "id": "c212",
+              "description": "EndofAlley requires Bowling"
+            },
+            {
+              "id": "c69",
+              "description": "ClassDiagram --mandatory--> GameMenu"
+            },
+            {
+              "id": "c221",
+              "description": "Gutter requires Bowling"
+            },
+            {
+              "id": "c72",
+              "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+            },
+            {
+              "id": "c1667",
+              "description": "ScoreBoard requires Pong"
+            },
+            {
+              "id": "c1369",
+              "description": "Floorpong requires Pong"
+            },
+            {
+              "id": "c23",
+              "description": "PlayGame --mandatory--> Initialization"
+            },
+            {
+              "id": "c179",
+              "description": "BowlingGameMenu requires Bowling"
+            },
+            {
+              "id": "c182",
+              "description": "BowlingPin requires Bowling"
+            },
+            {
+              "id": "c625",
+              "description": "Brick requires Brickles"
+            },
+            {
+              "id": "c785",
+              "description": "BricklesGameMenu requires Brickles"
+            },
+            {
+              "id": "c209",
+              "description": "Edge requires Bowling"
+            },
+            {
+              "id": "c254",
+              "description": "RackofPins requires Bowling"
+            },
+            {
+              "id": "c25",
+              "description": "PlayGame --mandatory--> AnimationLoop"
+            },
+            {
+              "id": "c1649",
+              "description": "PongBoard requires Pong"
+            },
+            {
+              "id": "c45",
+              "description": "MovableSprite --mandatory--> MovableSprite_2"
+            }
+          ],
+          "fp": [
+            {
+              "id": "c1622",
+              "description": "Pong requires PlayPong"
+            },
+            {
+              "id": "c823",
+              "description": "Brickles requires PlayBrickles"
+            },
+            {
+              "id": "c232",
+              "description": "Bowling requires PlayBowling"
+            }
+          ],
+          "fn": [
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> PlayGame"
+            },
+            {
+              "id": null,
+              "description": "GameSprite_3 --or--> ['MovableSprite', 'StationarySprite']"
+            },
+            {
+              "id": null,
+              "description": "UseCases --optional--> CheckPreviousBestScore"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> UninstallGame"
+            },
+            {
+              "id": null,
+              "description": "PlayGame --mandatory--> PlayGame_1"
+            },
+            {
+              "id": null,
+              "description": "Floorbrickles requires Brickles"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> ExitGame"
+            },
+            {
+              "id": null,
+              "description": "PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite --optional--> Wall"
+            },
+            {
+              "id": null,
+              "description": "UseCases --optional--> SaveScore"
+            },
+            {
+              "id": null,
+              "description": "MovableSprite --mandatory--> Velocity"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 5) OR[PlayBowling][NOT[Bowling][]]"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 1) OR[PlayBrickles][NOT[Brickles][]]"
+            },
+            {
+              "id": null,
+              "description": "ClassDiagram --mandatory--> Menu"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite_2 --or--> ['Brick', 'BrickPile', 'Ceilingbrickles', 'Floorbrickles', 'Lane', 'Gutter', 'Edge', 'EndofAlley', 'RackofPins', 'ScoreBoard', 'Floorpong', 'Ceilingpong', 'DividingLine']"
+            },
+            {
+              "id": null,
+              "description": "(Constraint 3) OR[PlayPong][NOT[Pong][]]"
+            },
+            {
+              "id": null,
+              "description": "Rectangle --mandatory--> Size"
+            },
+            {
+              "id": null,
+              "description": "TopPaddle requires Pong"
+            },
+            {
+              "id": null,
+              "description": "StationarySprite --mandatory--> StationarySprite_2"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> ListGame"
+            },
+            {
+              "id": null,
+              "description": "ClassDiagram --optional--> Pucksupply"
+            },
+            {
+              "id": null,
+              "description": "Rightpont requires Pong"
+            },
+            {
+              "id": null,
+              "description": "Paddle --or--> ['TopPaddle', 'BottomPaddle']"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> SaveGame"
+            },
+            {
+              "id": null,
+              "description": "UseCases --mandatory--> InstallGame"
+            },
+            {
+              "id": null,
+              "description": "Leftpong requires Pong"
+            },
+            {
+              "id": null,
+              "description": "GameSprite --optional--> SpritePair"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9664804469273743,
+            "precision": 1.0,
+            "recall": 0.5384615384615384,
+            "f1_score": 0.7000000000000001,
+            "specificity": 1.0,
+            "true_positives": 70,
+            "true_negatives": 1660,
+            "false_positives": 0,
+            "false_negatives": 60
+          },
+          "tp": [
+            {
+              "id": "c788",
+              "description": "Ceilingbrickles requires Brickles"
+            },
+            {
+              "id": "c173",
+              "description": "BowlingBall requires Bowling"
+            },
+            {
+              "id": "c27",
+              "description": "ArcadeGame --mandatory--> ClassDiagram"
+            },
+            {
+              "id": "c54",
+              "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+            },
+            {
+              "id": "c37",
+              "description": "Rectangle --mandatory--> Point"
+            },
+            {
+              "id": "c145",
+              "description": "BottomPaddle requires Pong"
+            },
+            {
+              "id": "c1099",
+              "description": "Ceilingpong requires Pong"
+            },
+            {
+              "id": "c1622",
+              "description": "Pong requires PlayPong"
+            },
+            {
+              "id": "c1159",
+              "description": "DividingLine requires Pong"
+            },
+            {
+              "id": "c1",
+              "description": "ArcadeGame --mandatory--> UseCases"
+            },
+            {
+              "id": "c1652",
+              "description": "PongGameMenu requires Pong"
+            },
+            {
+              "id": "c176",
+              "description": "BowlingBoard requires Bowling"
+            },
+            {
+              "id": "c224",
+              "description": "Lane requires Bowling"
+            },
+            {
+              "id": "c29",
+              "description": "ClassDiagram --mandatory--> GameSprite"
+            },
+            {
+              "id": "c823",
+              "description": "Brickles requires PlayBrickles"
+            },
+            {
+              "id": "c703",
+              "description": "BrickPile requires Brickles"
+            },
+            {
+              "id": "c39",
+              "description": "GameSprite --mandatory--> GameSprite_3"
+            },
+            {
+              "id": "c33",
+              "description": "GameSprite --mandatory--> Rectangle"
+            },
+            {
+              "id": "c845",
+              "description": "Rightbrickles requires Brickles"
+            },
+            {
+              "id": "c815",
+              "description": "Leftbrickles requires Brickles"
+            },
+            {
+              "id": "c233",
+              "description": "PlayBowling requires Bowling"
+            },
+            {
+              "id": "c68",
+              "description": "Menu --or--> ['Pong', 'Brickles', 'Bowling']"
+            },
+            {
+              "id": "c64",
+              "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+            },
+            {
+              "id": "c61",
+              "description": "ClassDiagram --mandatory--> Board"
+            },
+            {
+              "id": "c782",
+              "description": "BricklesBoard requires Brickles"
+            },
+            {
+              "id": "c824",
+              "description": "PlayBrickles requires Brickles"
+            },
+            {
+              "id": "c839",
+              "description": "Pucksupply requires Brickles"
+            },
+            {
+              "id": "c1621",
+              "description": "PlayPong requires Pong"
+            },
+            {
+              "id": "c232",
+              "description": "Bowling requires PlayBowling"
+            },
+            {
+              "id": "c212",
+              "description": "EndofAlley requires Bowling"
+            },
+            {
+              "id": "c69",
+              "description": "ClassDiagram --mandatory--> GameMenu"
+            },
+            {
+              "id": "c221",
+              "description": "Gutter requires Bowling"
+            },
+            {
+              "id": "c72",
+              "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+            },
+            {
+              "id": "c1667",
+              "description": "ScoreBoard requires Pong"
+            },
+            {
+              "id": "c1369",
+              "description": "Floorpong requires Pong"
+            },
+            {
+              "id": "c23",
+              "description": "PlayGame --mandatory--> Initialization"
+            },
+            {
+              "id": "c179",
+              "description": "BowlingGameMenu requires Bowling"
+            },
+            {
+              "id": "c182",
+              "description": "BowlingPin requires Bowling"
+            },
+            {
+              "id": "c625",
+              "description": "Brick requires Brickles"
+            },
+            {
+              "id": "c785",
+              "description": "BricklesGameMenu requires Brickles"
+            },
+            {
+              "id": "c209",
+              "description": "Edge requires Bowling"
+            },
+            {
+              "id": "c254",
+              "description": "RackofPins requires Bowling"
+            },
+            {
+              "id": "c25",
+              "description": "PlayGame --mandatory--> AnimationLoop"
+            },
+            {
+              "id": "c1649",
+              "description": "PongBoard requires Pong"
+            },
+            {
+              "id": "c45",
+              "description": "MovableSprite --mandatory--> MovableSprite_2"
+            }
+          ],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-13, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-31, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 8]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 23]"
+            },
+            {
+              "id": null,
+              "description": "[-42, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 26]"
+            },
+            {
+              "id": null,
+              "description": "[-34, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-40, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-51, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-49, 39]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-29, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-39, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-53, 17]"
+            },
+            {
+              "id": null,
+              "description": "[-35, 59]"
+            },
+            {
+              "id": null,
+              "description": "[-27, 28, 29, 30, 31]"
+            },
+            {
+              "id": null,
+              "description": "[-23, 24, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-47, 39]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.6615384615384615,
+            "precision": 1.0,
+            "recall": 0.6615384615384615,
+            "f1_score": 0.7962962962962964,
+            "specificity": 0.0,
+            "true_positives": 86,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 44
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-2, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 7]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 8]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 10]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 10]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-20, 21]"
+            },
+            {
+              "id": null,
+              "description": "[-23, 24, 25]"
+            },
+            {
+              "id": null,
+              "description": "[-24, 26]"
+            },
+            {
+              "id": null,
+              "description": "[-26, 24]"
+            },
+            {
+              "id": null,
+              "description": "[-27, 28, 29, 30, 31]"
+            },
+            {
+              "id": null,
+              "description": "[-28, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-29, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-30, 27]"
+            },
+            {
+              "id": null,
+              "description": "[-31, 27]"
+            }
+          ]
+        },
+        "exact_equiv": false
+      },
+      "ne_clauses": []
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 223817.4367082926,
+      "std_ms": 94970.54666189909,
+      "min_ms": 131996.05770793278,
+      "max_ms": 321651.43987501506
+    },
+    "consistency_checks": {
+      "mean": 5005.333333333333,
+      "std": 5.507570547286102,
+      "min": 5000,
+      "max": 5011
+    },
+    "memory": {
+      "mean_mb": 23.65348529815674,
+      "max_mb": 27.066960334777832
+    },
+    "quacq_runtime": {
+      "mean_ms": 223767.69974967465,
+      "std_ms": 94967.23169277975,
+      "min_ms": 131951.78137510084,
+      "max_ms": 321600.1516659744
+    },
+    "query_gen_runtime": {
+      "mean_ms": 15784.172915349094,
+      "std_ms": 4748.381193037356,
+      "min_ms": 10316.91421486903,
+      "max_ms": 18876.878414768726
+    },
+    "findscope_runtime": {
+      "mean_ms": 909869.2744463139,
+      "std_ms": 437417.1271921742,
+      "min_ms": 475295.6126985373,
+      "max_ms": 1350075.4686500877
+    },
+    "findc_runtime": {
+      "mean_ms": 479.221448302269,
+      "std_ms": 243.69884279924906,
+      "min_ms": 199.4102958124131,
+      "max_ms": 644.980751327239
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 231.9657534826547,
+      "std_ms": 186.67488860430188,
+      "min_ms": 25.886500952765346,
+      "max_ms": 389.7412938531488
+    },
+    "reduce_runtime": {
+      "mean_ms": 39.284486013154186,
+      "std_ms": 2.9668816122033146,
+      "min_ms": 36.69512504711747,
+      "max_ms": 42.521791998296976
+    },
+    "solver_time": {
+      "mean_ms": 36855.57966667274,
+      "std_ms": 11254.726419097417,
+      "min_ms": 25777.658000003856,
+      "max_ms": 48279.148000010086
+    },
+    "is_consistent_calls": {
+      "mean": 391181.6666666667,
+      "std": 109165.31862424684,
+      "min": 284208,
+      "max": 502414
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 428.3333333333333,
+      "std": 36.073998022583154,
+      "min": 391,
+      "max": 463
+    },
+    "query_gen_checks": {
+      "mean": 28624.666666666668,
+      "std": 2222.5526615433287,
+      "min": 26741,
+      "max": 31076
+    },
+    "prune_calls": {
+      "mean": 1896.6666666666667,
+      "std": 59.752266344744896,
+      "min": 1834,
+      "max": 1953
+    },
+    "prune_ic_calls": {
+      "mean": 367305.6666666667,
+      "std": 108416.53317337413,
+      "min": 260065,
+      "max": 476861
+    },
+    "findscope_calls": {
+      "mean": 6492,
+      "std": 151.3571934200684,
+      "min": 6347,
+      "max": 6649
+    },
+    "findc_calls": {
+      "mean": 337.3333333333333,
+      "std": 37.20663023351259,
+      "min": 305,
+      "max": 378
+    },
+    "findc_checks": {
+      "mean": 222,
+      "std": 151.43315356948756,
+      "min": 60,
+      "max": 360
+    },
+    "dis_gen_calls": {
+      "mean": 95.66666666666667,
+      "std": 73.28255817951045,
+      "min": 17,
+      "max": 162
+    },
+    "dis_gen_checks": {
+      "mean": 95.66666666666667,
+      "std": 73.28255817951045,
+      "min": 17,
+      "max": 162
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 41,
+      "std": 7.0,
+      "min": 33,
+      "max": 46
+    }
+  },
+  "summary": {
+    "description": {
+      "precision": {
+        "mean": 0.924747,
+        "std": 0.011088
+      },
+      "recall": {
+        "mean": 0.538095,
+        "std": 0.077664
+      },
+      "f1_score": {
+        "mean": 0.677419,
+        "std": 0.067255
+      }
+    },
+    "clause": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.494872,
+        "std": 0.061645
+      },
+      "f1_score": {
+        "mean": 0.659745,
+        "std": 0.056929
+      }
+    },
+    "semantic": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.602564,
+        "std": 0.072795
+      },
+      "f1_score": {
+        "mean": 0.749337,
+        "std": 0.058637
+      }
+    },
+    "exact_equiv": {
+      "attained": 0,
+      "scored": 3
+    }
+  }
+}

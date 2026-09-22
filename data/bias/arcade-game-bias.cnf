@@ -1,0 +1,3790 @@
+c Constraint Bias B
+c Generated for constraint acquisition
+c Number of features: 65
+c Number of constraints: 1755
+c
+c Feature mapping:
+c   1: ArcadeGame
+c   2: UseCases
+c   3: CheckPreviousBestScore
+c   4: SaveScore
+c   5: SaveGame
+c   6: ExitGame
+c   7: InstallGame
+c   8: UninstallGame
+c   9: ListGame
+c   10: PlayGame
+c   11: PlayGame_1
+c   12: PlayBrickles
+c   13: PlayPong
+c   14: PlayBowling
+c   15: Initialization
+c   16: AnimationLoop
+c   17: ClassDiagram
+c   18: GameSprite
+c   19: SpritePair
+c   20: Rectangle
+c   21: Size
+c   22: Point
+c   23: GameSprite_3
+c   24: MovableSprite
+c   25: StationarySprite
+c   26: Velocity
+c   27: MovableSprite_2
+c   28: Paddle
+c   29: Puck
+c   30: BowlingBall
+c   31: BowlingPin
+c   32: TopPaddle
+c   33: BottomPaddle
+c   34: Wall
+c   35: Leftpong
+c   36: Rightpont
+c   37: Leftbrickles
+c   38: Rightbrickles
+c   39: StationarySprite_2
+c   40: Brick
+c   41: BrickPile
+c   42: Ceilingbrickles
+c   43: Floorbrickles
+c   44: Lane
+c   45: Gutter
+c   46: Edge
+c   47: EndofAlley
+c   48: RackofPins
+c   49: ScoreBoard
+c   50: Floorpong
+c   51: Ceilingpong
+c   52: DividingLine
+c   53: Pucksupply
+c   54: Board
+c   55: PongBoard
+c   56: BricklesBoard
+c   57: BowlingBoard
+c   58: Menu
+c   59: Pong
+c   60: Brickles
+c   61: Bowling
+c   62: GameMenu
+c   63: PongGameMenu
+c   64: BricklesGameMenu
+c   65: BowlingGameMenu
+c
+c Constraint descriptions:
+c   c1: ArcadeGame --mandatory--> UseCases
+c   c2: ArcadeGame --optional--> UseCases
+c   c3: UseCases --mandatory--> CheckPreviousBestScore
+c   c4: UseCases --optional--> CheckPreviousBestScore
+c   c5: UseCases --mandatory--> SaveScore
+c   c6: UseCases --optional--> SaveScore
+c   c7: UseCases --mandatory--> SaveGame
+c   c8: UseCases --optional--> SaveGame
+c   c9: UseCases --mandatory--> ExitGame
+c   c10: UseCases --optional--> ExitGame
+c   c11: UseCases --mandatory--> InstallGame
+c   c12: UseCases --optional--> InstallGame
+c   c13: UseCases --mandatory--> UninstallGame
+c   c14: UseCases --optional--> UninstallGame
+c   c15: UseCases --mandatory--> ListGame
+c   c16: UseCases --optional--> ListGame
+c   c17: UseCases --mandatory--> PlayGame
+c   c18: UseCases --optional--> PlayGame
+c   c19: PlayGame --mandatory--> PlayGame_1
+c   c20: PlayGame --optional--> PlayGame_1
+c   c21: PlayGame_1 --alternative--> ['PlayBrickles', 'PlayPong', 'PlayBowling']
+c   c22: PlayGame_1 --or--> ['PlayBrickles', 'PlayPong', 'PlayBowling']
+c   c23: PlayGame --mandatory--> Initialization
+c   c24: PlayGame --optional--> Initialization
+c   c25: PlayGame --mandatory--> AnimationLoop
+c   c26: PlayGame --optional--> AnimationLoop
+c   c27: ArcadeGame --mandatory--> ClassDiagram
+c   c28: ArcadeGame --optional--> ClassDiagram
+c   c29: ClassDiagram --mandatory--> GameSprite
+c   c30: ClassDiagram --optional--> GameSprite
+c   c31: GameSprite --mandatory--> SpritePair
+c   c32: GameSprite --optional--> SpritePair
+c   c33: GameSprite --mandatory--> Rectangle
+c   c34: GameSprite --optional--> Rectangle
+c   c35: Rectangle --mandatory--> Size
+c   c36: Rectangle --optional--> Size
+c   c37: Rectangle --mandatory--> Point
+c   c38: Rectangle --optional--> Point
+c   c39: GameSprite --mandatory--> GameSprite_3
+c   c40: GameSprite --optional--> GameSprite_3
+c   c41: GameSprite_3 --alternative--> ['MovableSprite', 'StationarySprite']
+c   c42: GameSprite_3 --or--> ['MovableSprite', 'StationarySprite']
+c   c43: MovableSprite --mandatory--> Velocity
+c   c44: MovableSprite --optional--> Velocity
+c   c45: MovableSprite --mandatory--> MovableSprite_2
+c   c46: MovableSprite --optional--> MovableSprite_2
+c   c47: MovableSprite_2 --alternative--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']
+c   c48: MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']
+c   c49: Paddle --alternative--> ['TopPaddle', 'BottomPaddle']
+c   c50: Paddle --or--> ['TopPaddle', 'BottomPaddle']
+c   c51: StationarySprite --mandatory--> Wall
+c   c52: StationarySprite --optional--> Wall
+c   c53: Wall --alternative--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']
+c   c54: Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']
+c   c55: StationarySprite --mandatory--> StationarySprite_2
+c   c56: StationarySprite --optional--> StationarySprite_2
+c   c57: StationarySprite_2 --alternative--> ['Brick', 'BrickPile', 'Ceilingbrickles', 'Floorbrickles', 'Lane', 'Gutter', 'Edge', 'EndofAlley', 'RackofPins', 'ScoreBoard', 'Floorpong', 'Ceilingpong', 'DividingLine']
+c   c58: StationarySprite_2 --or--> ['Brick', 'BrickPile', 'Ceilingbrickles', 'Floorbrickles', 'Lane', 'Gutter', 'Edge', 'EndofAlley', 'RackofPins', 'ScoreBoard', 'Floorpong', 'Ceilingpong', 'DividingLine']
+c   c59: ClassDiagram --mandatory--> Pucksupply
+c   c60: ClassDiagram --optional--> Pucksupply
+c   c61: ClassDiagram --mandatory--> Board
+c   c62: ClassDiagram --optional--> Board
+c   c63: Board --alternative--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']
+c   c64: Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']
+c   c65: ClassDiagram --mandatory--> Menu
+c   c66: ClassDiagram --optional--> Menu
+c   c67: Menu --alternative--> ['Pong', 'Brickles', 'Bowling']
+c   c68: Menu --or--> ['Pong', 'Brickles', 'Bowling']
+c   c69: ClassDiagram --mandatory--> GameMenu
+c   c70: ClassDiagram --optional--> GameMenu
+c   c71: GameMenu --alternative--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']
+c   c72: GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']
+c   c73: BottomPaddle requires Bowling
+c   c74: Bowling requires BottomPaddle
+c   c75: BottomPaddle excludes Bowling
+c   c76: BottomPaddle requires BowlingBall
+c   c77: BowlingBall requires BottomPaddle
+c   c78: BottomPaddle excludes BowlingBall
+c   c79: BottomPaddle requires BowlingBoard
+c   c80: BowlingBoard requires BottomPaddle
+c   c81: BottomPaddle excludes BowlingBoard
+c   c82: BottomPaddle requires BowlingGameMenu
+c   c83: BowlingGameMenu requires BottomPaddle
+c   c84: BottomPaddle excludes BowlingGameMenu
+c   c85: BottomPaddle requires BowlingPin
+c   c86: BowlingPin requires BottomPaddle
+c   c87: BottomPaddle excludes BowlingPin
+c   c88: BottomPaddle requires Brick
+c   c89: Brick requires BottomPaddle
+c   c90: BottomPaddle excludes Brick
+c   c91: BottomPaddle requires BrickPile
+c   c92: BrickPile requires BottomPaddle
+c   c93: BottomPaddle excludes BrickPile
+c   c94: BottomPaddle requires Brickles
+c   c95: Brickles requires BottomPaddle
+c   c96: BottomPaddle excludes Brickles
+c   c97: BottomPaddle requires BricklesBoard
+c   c98: BricklesBoard requires BottomPaddle
+c   c99: BottomPaddle excludes BricklesBoard
+c   c100: BottomPaddle requires BricklesGameMenu
+c   c101: BricklesGameMenu requires BottomPaddle
+c   c102: BottomPaddle excludes BricklesGameMenu
+c   c103: BottomPaddle requires Ceilingbrickles
+c   c104: Ceilingbrickles requires BottomPaddle
+c   c105: BottomPaddle excludes Ceilingbrickles
+c   c106: BottomPaddle requires Ceilingpong
+c   c107: Ceilingpong requires BottomPaddle
+c   c108: BottomPaddle excludes Ceilingpong
+c   c109: BottomPaddle requires DividingLine
+c   c110: DividingLine requires BottomPaddle
+c   c111: BottomPaddle excludes DividingLine
+c   c112: BottomPaddle requires Edge
+c   c113: Edge requires BottomPaddle
+c   c114: BottomPaddle excludes Edge
+c   c115: BottomPaddle requires EndofAlley
+c   c116: EndofAlley requires BottomPaddle
+c   c117: BottomPaddle excludes EndofAlley
+c   c118: BottomPaddle requires Floorbrickles
+c   c119: Floorbrickles requires BottomPaddle
+c   c120: BottomPaddle excludes Floorbrickles
+c   c121: BottomPaddle requires Floorpong
+c   c122: Floorpong requires BottomPaddle
+c   c123: BottomPaddle excludes Floorpong
+c   c124: BottomPaddle requires Gutter
+c   c125: Gutter requires BottomPaddle
+c   c126: BottomPaddle excludes Gutter
+c   c127: BottomPaddle requires Lane
+c   c128: Lane requires BottomPaddle
+c   c129: BottomPaddle excludes Lane
+c   c130: BottomPaddle requires Leftbrickles
+c   c131: Leftbrickles requires BottomPaddle
+c   c132: BottomPaddle excludes Leftbrickles
+c   c133: BottomPaddle requires Leftpong
+c   c134: Leftpong requires BottomPaddle
+c   c135: BottomPaddle excludes Leftpong
+c   c136: BottomPaddle requires PlayBowling
+c   c137: PlayBowling requires BottomPaddle
+c   c138: BottomPaddle excludes PlayBowling
+c   c139: BottomPaddle requires PlayBrickles
+c   c140: PlayBrickles requires BottomPaddle
+c   c141: BottomPaddle excludes PlayBrickles
+c   c142: BottomPaddle requires PlayPong
+c   c143: PlayPong requires BottomPaddle
+c   c144: BottomPaddle excludes PlayPong
+c   c145: BottomPaddle requires Pong
+c   c146: Pong requires BottomPaddle
+c   c147: BottomPaddle excludes Pong
+c   c148: BottomPaddle requires PongBoard
+c   c149: PongBoard requires BottomPaddle
+c   c150: BottomPaddle excludes PongBoard
+c   c151: BottomPaddle requires PongGameMenu
+c   c152: PongGameMenu requires BottomPaddle
+c   c153: BottomPaddle excludes PongGameMenu
+c   c154: BottomPaddle requires Pucksupply
+c   c155: Pucksupply requires BottomPaddle
+c   c156: BottomPaddle excludes Pucksupply
+c   c157: BottomPaddle requires RackofPins
+c   c158: RackofPins requires BottomPaddle
+c   c159: BottomPaddle excludes RackofPins
+c   c160: BottomPaddle requires Rightbrickles
+c   c161: Rightbrickles requires BottomPaddle
+c   c162: BottomPaddle excludes Rightbrickles
+c   c163: BottomPaddle requires Rightpont
+c   c164: Rightpont requires BottomPaddle
+c   c165: BottomPaddle excludes Rightpont
+c   c166: BottomPaddle requires ScoreBoard
+c   c167: ScoreBoard requires BottomPaddle
+c   c168: BottomPaddle excludes ScoreBoard
+c   c169: BottomPaddle requires TopPaddle
+c   c170: TopPaddle requires BottomPaddle
+c   c171: BottomPaddle excludes TopPaddle
+c   c172: Bowling requires BowlingBall
+c   c173: BowlingBall requires Bowling
+c   c174: Bowling excludes BowlingBall
+c   c175: Bowling requires BowlingBoard
+c   c176: BowlingBoard requires Bowling
+c   c177: Bowling excludes BowlingBoard
+c   c178: Bowling requires BowlingGameMenu
+c   c179: BowlingGameMenu requires Bowling
+c   c180: Bowling excludes BowlingGameMenu
+c   c181: Bowling requires BowlingPin
+c   c182: BowlingPin requires Bowling
+c   c183: Bowling excludes BowlingPin
+c   c184: Bowling requires Brick
+c   c185: Brick requires Bowling
+c   c186: Bowling excludes Brick
+c   c187: Bowling requires BrickPile
+c   c188: BrickPile requires Bowling
+c   c189: Bowling excludes BrickPile
+c   c190: Bowling requires Brickles
+c   c191: Brickles requires Bowling
+c   c192: Bowling excludes Brickles
+c   c193: Bowling requires BricklesBoard
+c   c194: BricklesBoard requires Bowling
+c   c195: Bowling excludes BricklesBoard
+c   c196: Bowling requires BricklesGameMenu
+c   c197: BricklesGameMenu requires Bowling
+c   c198: Bowling excludes BricklesGameMenu
+c   c199: Bowling requires Ceilingbrickles
+c   c200: Ceilingbrickles requires Bowling
+c   c201: Bowling excludes Ceilingbrickles
+c   c202: Bowling requires Ceilingpong
+c   c203: Ceilingpong requires Bowling
+c   c204: Bowling excludes Ceilingpong
+c   c205: Bowling requires DividingLine
+c   c206: DividingLine requires Bowling
+c   c207: Bowling excludes DividingLine
+c   c208: Bowling requires Edge
+c   c209: Edge requires Bowling
+c   c210: Bowling excludes Edge
+c   c211: Bowling requires EndofAlley
+c   c212: EndofAlley requires Bowling
+c   c213: Bowling excludes EndofAlley
+c   c214: Bowling requires Floorbrickles
+c   c215: Floorbrickles requires Bowling
+c   c216: Bowling excludes Floorbrickles
+c   c217: Bowling requires Floorpong
+c   c218: Floorpong requires Bowling
+c   c219: Bowling excludes Floorpong
+c   c220: Bowling requires Gutter
+c   c221: Gutter requires Bowling
+c   c222: Bowling excludes Gutter
+c   c223: Bowling requires Lane
+c   c224: Lane requires Bowling
+c   c225: Bowling excludes Lane
+c   c226: Bowling requires Leftbrickles
+c   c227: Leftbrickles requires Bowling
+c   c228: Bowling excludes Leftbrickles
+c   c229: Bowling requires Leftpong
+c   c230: Leftpong requires Bowling
+c   c231: Bowling excludes Leftpong
+c   c232: Bowling requires PlayBowling
+c   c233: PlayBowling requires Bowling
+c   c234: Bowling excludes PlayBowling
+c   c235: Bowling requires PlayBrickles
+c   c236: PlayBrickles requires Bowling
+c   c237: Bowling excludes PlayBrickles
+c   c238: Bowling requires PlayPong
+c   c239: PlayPong requires Bowling
+c   c240: Bowling excludes PlayPong
+c   c241: Bowling requires Pong
+c   c242: Pong requires Bowling
+c   c243: Bowling excludes Pong
+c   c244: Bowling requires PongBoard
+c   c245: PongBoard requires Bowling
+c   c246: Bowling excludes PongBoard
+c   c247: Bowling requires PongGameMenu
+c   c248: PongGameMenu requires Bowling
+c   c249: Bowling excludes PongGameMenu
+c   c250: Bowling requires Pucksupply
+c   c251: Pucksupply requires Bowling
+c   c252: Bowling excludes Pucksupply
+c   c253: Bowling requires RackofPins
+c   c254: RackofPins requires Bowling
+c   c255: Bowling excludes RackofPins
+c   c256: Bowling requires Rightbrickles
+c   c257: Rightbrickles requires Bowling
+c   c258: Bowling excludes Rightbrickles
+c   c259: Bowling requires Rightpont
+c   c260: Rightpont requires Bowling
+c   c261: Bowling excludes Rightpont
+c   c262: Bowling requires ScoreBoard
+c   c263: ScoreBoard requires Bowling
+c   c264: Bowling excludes ScoreBoard
+c   c265: Bowling requires TopPaddle
+c   c266: TopPaddle requires Bowling
+c   c267: Bowling excludes TopPaddle
+c   c268: BowlingBall requires BowlingBoard
+c   c269: BowlingBoard requires BowlingBall
+c   c270: BowlingBall excludes BowlingBoard
+c   c271: BowlingBall requires BowlingGameMenu
+c   c272: BowlingGameMenu requires BowlingBall
+c   c273: BowlingBall excludes BowlingGameMenu
+c   c274: BowlingBall requires BowlingPin
+c   c275: BowlingPin requires BowlingBall
+c   c276: BowlingBall excludes BowlingPin
+c   c277: BowlingBall requires Brick
+c   c278: Brick requires BowlingBall
+c   c279: BowlingBall excludes Brick
+c   c280: BowlingBall requires BrickPile
+c   c281: BrickPile requires BowlingBall
+c   c282: BowlingBall excludes BrickPile
+c   c283: BowlingBall requires Brickles
+c   c284: Brickles requires BowlingBall
+c   c285: BowlingBall excludes Brickles
+c   c286: BowlingBall requires BricklesBoard
+c   c287: BricklesBoard requires BowlingBall
+c   c288: BowlingBall excludes BricklesBoard
+c   c289: BowlingBall requires BricklesGameMenu
+c   c290: BricklesGameMenu requires BowlingBall
+c   c291: BowlingBall excludes BricklesGameMenu
+c   c292: BowlingBall requires Ceilingbrickles
+c   c293: Ceilingbrickles requires BowlingBall
+c   c294: BowlingBall excludes Ceilingbrickles
+c   c295: BowlingBall requires Ceilingpong
+c   c296: Ceilingpong requires BowlingBall
+c   c297: BowlingBall excludes Ceilingpong
+c   c298: BowlingBall requires DividingLine
+c   c299: DividingLine requires BowlingBall
+c   c300: BowlingBall excludes DividingLine
+c   c301: BowlingBall requires Edge
+c   c302: Edge requires BowlingBall
+c   c303: BowlingBall excludes Edge
+c   c304: BowlingBall requires EndofAlley
+c   c305: EndofAlley requires BowlingBall
+c   c306: BowlingBall excludes EndofAlley
+c   c307: BowlingBall requires Floorbrickles
+c   c308: Floorbrickles requires BowlingBall
+c   c309: BowlingBall excludes Floorbrickles
+c   c310: BowlingBall requires Floorpong
+c   c311: Floorpong requires BowlingBall
+c   c312: BowlingBall excludes Floorpong
+c   c313: BowlingBall requires Gutter
+c   c314: Gutter requires BowlingBall
+c   c315: BowlingBall excludes Gutter
+c   c316: BowlingBall requires Lane
+c   c317: Lane requires BowlingBall
+c   c318: BowlingBall excludes Lane
+c   c319: BowlingBall requires Leftbrickles
+c   c320: Leftbrickles requires BowlingBall
+c   c321: BowlingBall excludes Leftbrickles
+c   c322: BowlingBall requires Leftpong
+c   c323: Leftpong requires BowlingBall
+c   c324: BowlingBall excludes Leftpong
+c   c325: BowlingBall requires PlayBowling
+c   c326: PlayBowling requires BowlingBall
+c   c327: BowlingBall excludes PlayBowling
+c   c328: BowlingBall requires PlayBrickles
+c   c329: PlayBrickles requires BowlingBall
+c   c330: BowlingBall excludes PlayBrickles
+c   c331: BowlingBall requires PlayPong
+c   c332: PlayPong requires BowlingBall
+c   c333: BowlingBall excludes PlayPong
+c   c334: BowlingBall requires Pong
+c   c335: Pong requires BowlingBall
+c   c336: BowlingBall excludes Pong
+c   c337: BowlingBall requires PongBoard
+c   c338: PongBoard requires BowlingBall
+c   c339: BowlingBall excludes PongBoard
+c   c340: BowlingBall requires PongGameMenu
+c   c341: PongGameMenu requires BowlingBall
+c   c342: BowlingBall excludes PongGameMenu
+c   c343: BowlingBall requires Pucksupply
+c   c344: Pucksupply requires BowlingBall
+c   c345: BowlingBall excludes Pucksupply
+c   c346: BowlingBall requires RackofPins
+c   c347: RackofPins requires BowlingBall
+c   c348: BowlingBall excludes RackofPins
+c   c349: BowlingBall requires Rightbrickles
+c   c350: Rightbrickles requires BowlingBall
+c   c351: BowlingBall excludes Rightbrickles
+c   c352: BowlingBall requires Rightpont
+c   c353: Rightpont requires BowlingBall
+c   c354: BowlingBall excludes Rightpont
+c   c355: BowlingBall requires ScoreBoard
+c   c356: ScoreBoard requires BowlingBall
+c   c357: BowlingBall excludes ScoreBoard
+c   c358: BowlingBall requires TopPaddle
+c   c359: TopPaddle requires BowlingBall
+c   c360: BowlingBall excludes TopPaddle
+c   c361: BowlingBoard requires BowlingGameMenu
+c   c362: BowlingGameMenu requires BowlingBoard
+c   c363: BowlingBoard excludes BowlingGameMenu
+c   c364: BowlingBoard requires BowlingPin
+c   c365: BowlingPin requires BowlingBoard
+c   c366: BowlingBoard excludes BowlingPin
+c   c367: BowlingBoard requires Brick
+c   c368: Brick requires BowlingBoard
+c   c369: BowlingBoard excludes Brick
+c   c370: BowlingBoard requires BrickPile
+c   c371: BrickPile requires BowlingBoard
+c   c372: BowlingBoard excludes BrickPile
+c   c373: BowlingBoard requires Brickles
+c   c374: Brickles requires BowlingBoard
+c   c375: BowlingBoard excludes Brickles
+c   c376: BowlingBoard requires BricklesBoard
+c   c377: BricklesBoard requires BowlingBoard
+c   c378: BowlingBoard excludes BricklesBoard
+c   c379: BowlingBoard requires BricklesGameMenu
+c   c380: BricklesGameMenu requires BowlingBoard
+c   c381: BowlingBoard excludes BricklesGameMenu
+c   c382: BowlingBoard requires Ceilingbrickles
+c   c383: Ceilingbrickles requires BowlingBoard
+c   c384: BowlingBoard excludes Ceilingbrickles
+c   c385: BowlingBoard requires Ceilingpong
+c   c386: Ceilingpong requires BowlingBoard
+c   c387: BowlingBoard excludes Ceilingpong
+c   c388: BowlingBoard requires DividingLine
+c   c389: DividingLine requires BowlingBoard
+c   c390: BowlingBoard excludes DividingLine
+c   c391: BowlingBoard requires Edge
+c   c392: Edge requires BowlingBoard
+c   c393: BowlingBoard excludes Edge
+c   c394: BowlingBoard requires EndofAlley
+c   c395: EndofAlley requires BowlingBoard
+c   c396: BowlingBoard excludes EndofAlley
+c   c397: BowlingBoard requires Floorbrickles
+c   c398: Floorbrickles requires BowlingBoard
+c   c399: BowlingBoard excludes Floorbrickles
+c   c400: BowlingBoard requires Floorpong
+c   c401: Floorpong requires BowlingBoard
+c   c402: BowlingBoard excludes Floorpong
+c   c403: BowlingBoard requires Gutter
+c   c404: Gutter requires BowlingBoard
+c   c405: BowlingBoard excludes Gutter
+c   c406: BowlingBoard requires Lane
+c   c407: Lane requires BowlingBoard
+c   c408: BowlingBoard excludes Lane
+c   c409: BowlingBoard requires Leftbrickles
+c   c410: Leftbrickles requires BowlingBoard
+c   c411: BowlingBoard excludes Leftbrickles
+c   c412: BowlingBoard requires Leftpong
+c   c413: Leftpong requires BowlingBoard
+c   c414: BowlingBoard excludes Leftpong
+c   c415: BowlingBoard requires PlayBowling
+c   c416: PlayBowling requires BowlingBoard
+c   c417: BowlingBoard excludes PlayBowling
+c   c418: BowlingBoard requires PlayBrickles
+c   c419: PlayBrickles requires BowlingBoard
+c   c420: BowlingBoard excludes PlayBrickles
+c   c421: BowlingBoard requires PlayPong
+c   c422: PlayPong requires BowlingBoard
+c   c423: BowlingBoard excludes PlayPong
+c   c424: BowlingBoard requires Pong
+c   c425: Pong requires BowlingBoard
+c   c426: BowlingBoard excludes Pong
+c   c427: BowlingBoard requires PongBoard
+c   c428: PongBoard requires BowlingBoard
+c   c429: BowlingBoard excludes PongBoard
+c   c430: BowlingBoard requires PongGameMenu
+c   c431: PongGameMenu requires BowlingBoard
+c   c432: BowlingBoard excludes PongGameMenu
+c   c433: BowlingBoard requires Pucksupply
+c   c434: Pucksupply requires BowlingBoard
+c   c435: BowlingBoard excludes Pucksupply
+c   c436: BowlingBoard requires RackofPins
+c   c437: RackofPins requires BowlingBoard
+c   c438: BowlingBoard excludes RackofPins
+c   c439: BowlingBoard requires Rightbrickles
+c   c440: Rightbrickles requires BowlingBoard
+c   c441: BowlingBoard excludes Rightbrickles
+c   c442: BowlingBoard requires Rightpont
+c   c443: Rightpont requires BowlingBoard
+c   c444: BowlingBoard excludes Rightpont
+c   c445: BowlingBoard requires ScoreBoard
+c   c446: ScoreBoard requires BowlingBoard
+c   c447: BowlingBoard excludes ScoreBoard
+c   c448: BowlingBoard requires TopPaddle
+c   c449: TopPaddle requires BowlingBoard
+c   c450: BowlingBoard excludes TopPaddle
+c   c451: BowlingGameMenu requires BowlingPin
+c   c452: BowlingPin requires BowlingGameMenu
+c   c453: BowlingGameMenu excludes BowlingPin
+c   c454: BowlingGameMenu requires Brick
+c   c455: Brick requires BowlingGameMenu
+c   c456: BowlingGameMenu excludes Brick
+c   c457: BowlingGameMenu requires BrickPile
+c   c458: BrickPile requires BowlingGameMenu
+c   c459: BowlingGameMenu excludes BrickPile
+c   c460: BowlingGameMenu requires Brickles
+c   c461: Brickles requires BowlingGameMenu
+c   c462: BowlingGameMenu excludes Brickles
+c   c463: BowlingGameMenu requires BricklesBoard
+c   c464: BricklesBoard requires BowlingGameMenu
+c   c465: BowlingGameMenu excludes BricklesBoard
+c   c466: BowlingGameMenu requires BricklesGameMenu
+c   c467: BricklesGameMenu requires BowlingGameMenu
+c   c468: BowlingGameMenu excludes BricklesGameMenu
+c   c469: BowlingGameMenu requires Ceilingbrickles
+c   c470: Ceilingbrickles requires BowlingGameMenu
+c   c471: BowlingGameMenu excludes Ceilingbrickles
+c   c472: BowlingGameMenu requires Ceilingpong
+c   c473: Ceilingpong requires BowlingGameMenu
+c   c474: BowlingGameMenu excludes Ceilingpong
+c   c475: BowlingGameMenu requires DividingLine
+c   c476: DividingLine requires BowlingGameMenu
+c   c477: BowlingGameMenu excludes DividingLine
+c   c478: BowlingGameMenu requires Edge
+c   c479: Edge requires BowlingGameMenu
+c   c480: BowlingGameMenu excludes Edge
+c   c481: BowlingGameMenu requires EndofAlley
+c   c482: EndofAlley requires BowlingGameMenu
+c   c483: BowlingGameMenu excludes EndofAlley
+c   c484: BowlingGameMenu requires Floorbrickles
+c   c485: Floorbrickles requires BowlingGameMenu
+c   c486: BowlingGameMenu excludes Floorbrickles
+c   c487: BowlingGameMenu requires Floorpong
+c   c488: Floorpong requires BowlingGameMenu
+c   c489: BowlingGameMenu excludes Floorpong
+c   c490: BowlingGameMenu requires Gutter
+c   c491: Gutter requires BowlingGameMenu
+c   c492: BowlingGameMenu excludes Gutter
+c   c493: BowlingGameMenu requires Lane
+c   c494: Lane requires BowlingGameMenu
+c   c495: BowlingGameMenu excludes Lane
+c   c496: BowlingGameMenu requires Leftbrickles
+c   c497: Leftbrickles requires BowlingGameMenu
+c   c498: BowlingGameMenu excludes Leftbrickles
+c   c499: BowlingGameMenu requires Leftpong
+c   c500: Leftpong requires BowlingGameMenu
+c   c501: BowlingGameMenu excludes Leftpong
+c   c502: BowlingGameMenu requires PlayBowling
+c   c503: PlayBowling requires BowlingGameMenu
+c   c504: BowlingGameMenu excludes PlayBowling
+c   c505: BowlingGameMenu requires PlayBrickles
+c   c506: PlayBrickles requires BowlingGameMenu
+c   c507: BowlingGameMenu excludes PlayBrickles
+c   c508: BowlingGameMenu requires PlayPong
+c   c509: PlayPong requires BowlingGameMenu
+c   c510: BowlingGameMenu excludes PlayPong
+c   c511: BowlingGameMenu requires Pong
+c   c512: Pong requires BowlingGameMenu
+c   c513: BowlingGameMenu excludes Pong
+c   c514: BowlingGameMenu requires PongBoard
+c   c515: PongBoard requires BowlingGameMenu
+c   c516: BowlingGameMenu excludes PongBoard
+c   c517: BowlingGameMenu requires PongGameMenu
+c   c518: PongGameMenu requires BowlingGameMenu
+c   c519: BowlingGameMenu excludes PongGameMenu
+c   c520: BowlingGameMenu requires Pucksupply
+c   c521: Pucksupply requires BowlingGameMenu
+c   c522: BowlingGameMenu excludes Pucksupply
+c   c523: BowlingGameMenu requires RackofPins
+c   c524: RackofPins requires BowlingGameMenu
+c   c525: BowlingGameMenu excludes RackofPins
+c   c526: BowlingGameMenu requires Rightbrickles
+c   c527: Rightbrickles requires BowlingGameMenu
+c   c528: BowlingGameMenu excludes Rightbrickles
+c   c529: BowlingGameMenu requires Rightpont
+c   c530: Rightpont requires BowlingGameMenu
+c   c531: BowlingGameMenu excludes Rightpont
+c   c532: BowlingGameMenu requires ScoreBoard
+c   c533: ScoreBoard requires BowlingGameMenu
+c   c534: BowlingGameMenu excludes ScoreBoard
+c   c535: BowlingGameMenu requires TopPaddle
+c   c536: TopPaddle requires BowlingGameMenu
+c   c537: BowlingGameMenu excludes TopPaddle
+c   c538: BowlingPin requires Brick
+c   c539: Brick requires BowlingPin
+c   c540: BowlingPin excludes Brick
+c   c541: BowlingPin requires BrickPile
+c   c542: BrickPile requires BowlingPin
+c   c543: BowlingPin excludes BrickPile
+c   c544: BowlingPin requires Brickles
+c   c545: Brickles requires BowlingPin
+c   c546: BowlingPin excludes Brickles
+c   c547: BowlingPin requires BricklesBoard
+c   c548: BricklesBoard requires BowlingPin
+c   c549: BowlingPin excludes BricklesBoard
+c   c550: BowlingPin requires BricklesGameMenu
+c   c551: BricklesGameMenu requires BowlingPin
+c   c552: BowlingPin excludes BricklesGameMenu
+c   c553: BowlingPin requires Ceilingbrickles
+c   c554: Ceilingbrickles requires BowlingPin
+c   c555: BowlingPin excludes Ceilingbrickles
+c   c556: BowlingPin requires Ceilingpong
+c   c557: Ceilingpong requires BowlingPin
+c   c558: BowlingPin excludes Ceilingpong
+c   c559: BowlingPin requires DividingLine
+c   c560: DividingLine requires BowlingPin
+c   c561: BowlingPin excludes DividingLine
+c   c562: BowlingPin requires Edge
+c   c563: Edge requires BowlingPin
+c   c564: BowlingPin excludes Edge
+c   c565: BowlingPin requires EndofAlley
+c   c566: EndofAlley requires BowlingPin
+c   c567: BowlingPin excludes EndofAlley
+c   c568: BowlingPin requires Floorbrickles
+c   c569: Floorbrickles requires BowlingPin
+c   c570: BowlingPin excludes Floorbrickles
+c   c571: BowlingPin requires Floorpong
+c   c572: Floorpong requires BowlingPin
+c   c573: BowlingPin excludes Floorpong
+c   c574: BowlingPin requires Gutter
+c   c575: Gutter requires BowlingPin
+c   c576: BowlingPin excludes Gutter
+c   c577: BowlingPin requires Lane
+c   c578: Lane requires BowlingPin
+c   c579: BowlingPin excludes Lane
+c   c580: BowlingPin requires Leftbrickles
+c   c581: Leftbrickles requires BowlingPin
+c   c582: BowlingPin excludes Leftbrickles
+c   c583: BowlingPin requires Leftpong
+c   c584: Leftpong requires BowlingPin
+c   c585: BowlingPin excludes Leftpong
+c   c586: BowlingPin requires PlayBowling
+c   c587: PlayBowling requires BowlingPin
+c   c588: BowlingPin excludes PlayBowling
+c   c589: BowlingPin requires PlayBrickles
+c   c590: PlayBrickles requires BowlingPin
+c   c591: BowlingPin excludes PlayBrickles
+c   c592: BowlingPin requires PlayPong
+c   c593: PlayPong requires BowlingPin
+c   c594: BowlingPin excludes PlayPong
+c   c595: BowlingPin requires Pong
+c   c596: Pong requires BowlingPin
+c   c597: BowlingPin excludes Pong
+c   c598: BowlingPin requires PongBoard
+c   c599: PongBoard requires BowlingPin
+c   c600: BowlingPin excludes PongBoard
+c   c601: BowlingPin requires PongGameMenu
+c   c602: PongGameMenu requires BowlingPin
+c   c603: BowlingPin excludes PongGameMenu
+c   c604: BowlingPin requires Pucksupply
+c   c605: Pucksupply requires BowlingPin
+c   c606: BowlingPin excludes Pucksupply
+c   c607: BowlingPin requires RackofPins
+c   c608: RackofPins requires BowlingPin
+c   c609: BowlingPin excludes RackofPins
+c   c610: BowlingPin requires Rightbrickles
+c   c611: Rightbrickles requires BowlingPin
+c   c612: BowlingPin excludes Rightbrickles
+c   c613: BowlingPin requires Rightpont
+c   c614: Rightpont requires BowlingPin
+c   c615: BowlingPin excludes Rightpont
+c   c616: BowlingPin requires ScoreBoard
+c   c617: ScoreBoard requires BowlingPin
+c   c618: BowlingPin excludes ScoreBoard
+c   c619: BowlingPin requires TopPaddle
+c   c620: TopPaddle requires BowlingPin
+c   c621: BowlingPin excludes TopPaddle
+c   c622: Brick requires BrickPile
+c   c623: BrickPile requires Brick
+c   c624: Brick excludes BrickPile
+c   c625: Brick requires Brickles
+c   c626: Brickles requires Brick
+c   c627: Brick excludes Brickles
+c   c628: Brick requires BricklesBoard
+c   c629: BricklesBoard requires Brick
+c   c630: Brick excludes BricklesBoard
+c   c631: Brick requires BricklesGameMenu
+c   c632: BricklesGameMenu requires Brick
+c   c633: Brick excludes BricklesGameMenu
+c   c634: Brick requires Ceilingbrickles
+c   c635: Ceilingbrickles requires Brick
+c   c636: Brick excludes Ceilingbrickles
+c   c637: Brick requires Ceilingpong
+c   c638: Ceilingpong requires Brick
+c   c639: Brick excludes Ceilingpong
+c   c640: Brick requires DividingLine
+c   c641: DividingLine requires Brick
+c   c642: Brick excludes DividingLine
+c   c643: Brick requires Edge
+c   c644: Edge requires Brick
+c   c645: Brick excludes Edge
+c   c646: Brick requires EndofAlley
+c   c647: EndofAlley requires Brick
+c   c648: Brick excludes EndofAlley
+c   c649: Brick requires Floorbrickles
+c   c650: Floorbrickles requires Brick
+c   c651: Brick excludes Floorbrickles
+c   c652: Brick requires Floorpong
+c   c653: Floorpong requires Brick
+c   c654: Brick excludes Floorpong
+c   c655: Brick requires Gutter
+c   c656: Gutter requires Brick
+c   c657: Brick excludes Gutter
+c   c658: Brick requires Lane
+c   c659: Lane requires Brick
+c   c660: Brick excludes Lane
+c   c661: Brick requires Leftbrickles
+c   c662: Leftbrickles requires Brick
+c   c663: Brick excludes Leftbrickles
+c   c664: Brick requires Leftpong
+c   c665: Leftpong requires Brick
+c   c666: Brick excludes Leftpong
+c   c667: Brick requires PlayBowling
+c   c668: PlayBowling requires Brick
+c   c669: Brick excludes PlayBowling
+c   c670: Brick requires PlayBrickles
+c   c671: PlayBrickles requires Brick
+c   c672: Brick excludes PlayBrickles
+c   c673: Brick requires PlayPong
+c   c674: PlayPong requires Brick
+c   c675: Brick excludes PlayPong
+c   c676: Brick requires Pong
+c   c677: Pong requires Brick
+c   c678: Brick excludes Pong
+c   c679: Brick requires PongBoard
+c   c680: PongBoard requires Brick
+c   c681: Brick excludes PongBoard
+c   c682: Brick requires PongGameMenu
+c   c683: PongGameMenu requires Brick
+c   c684: Brick excludes PongGameMenu
+c   c685: Brick requires Pucksupply
+c   c686: Pucksupply requires Brick
+c   c687: Brick excludes Pucksupply
+c   c688: Brick requires RackofPins
+c   c689: RackofPins requires Brick
+c   c690: Brick excludes RackofPins
+c   c691: Brick requires Rightbrickles
+c   c692: Rightbrickles requires Brick
+c   c693: Brick excludes Rightbrickles
+c   c694: Brick requires Rightpont
+c   c695: Rightpont requires Brick
+c   c696: Brick excludes Rightpont
+c   c697: Brick requires ScoreBoard
+c   c698: ScoreBoard requires Brick
+c   c699: Brick excludes ScoreBoard
+c   c700: Brick requires TopPaddle
+c   c701: TopPaddle requires Brick
+c   c702: Brick excludes TopPaddle
+c   c703: BrickPile requires Brickles
+c   c704: Brickles requires BrickPile
+c   c705: BrickPile excludes Brickles
+c   c706: BrickPile requires BricklesBoard
+c   c707: BricklesBoard requires BrickPile
+c   c708: BrickPile excludes BricklesBoard
+c   c709: BrickPile requires BricklesGameMenu
+c   c710: BricklesGameMenu requires BrickPile
+c   c711: BrickPile excludes BricklesGameMenu
+c   c712: BrickPile requires Ceilingbrickles
+c   c713: Ceilingbrickles requires BrickPile
+c   c714: BrickPile excludes Ceilingbrickles
+c   c715: BrickPile requires Ceilingpong
+c   c716: Ceilingpong requires BrickPile
+c   c717: BrickPile excludes Ceilingpong
+c   c718: BrickPile requires DividingLine
+c   c719: DividingLine requires BrickPile
+c   c720: BrickPile excludes DividingLine
+c   c721: BrickPile requires Edge
+c   c722: Edge requires BrickPile
+c   c723: BrickPile excludes Edge
+c   c724: BrickPile requires EndofAlley
+c   c725: EndofAlley requires BrickPile
+c   c726: BrickPile excludes EndofAlley
+c   c727: BrickPile requires Floorbrickles
+c   c728: Floorbrickles requires BrickPile
+c   c729: BrickPile excludes Floorbrickles
+c   c730: BrickPile requires Floorpong
+c   c731: Floorpong requires BrickPile
+c   c732: BrickPile excludes Floorpong
+c   c733: BrickPile requires Gutter
+c   c734: Gutter requires BrickPile
+c   c735: BrickPile excludes Gutter
+c   c736: BrickPile requires Lane
+c   c737: Lane requires BrickPile
+c   c738: BrickPile excludes Lane
+c   c739: BrickPile requires Leftbrickles
+c   c740: Leftbrickles requires BrickPile
+c   c741: BrickPile excludes Leftbrickles
+c   c742: BrickPile requires Leftpong
+c   c743: Leftpong requires BrickPile
+c   c744: BrickPile excludes Leftpong
+c   c745: BrickPile requires PlayBowling
+c   c746: PlayBowling requires BrickPile
+c   c747: BrickPile excludes PlayBowling
+c   c748: BrickPile requires PlayBrickles
+c   c749: PlayBrickles requires BrickPile
+c   c750: BrickPile excludes PlayBrickles
+c   c751: BrickPile requires PlayPong
+c   c752: PlayPong requires BrickPile
+c   c753: BrickPile excludes PlayPong
+c   c754: BrickPile requires Pong
+c   c755: Pong requires BrickPile
+c   c756: BrickPile excludes Pong
+c   c757: BrickPile requires PongBoard
+c   c758: PongBoard requires BrickPile
+c   c759: BrickPile excludes PongBoard
+c   c760: BrickPile requires PongGameMenu
+c   c761: PongGameMenu requires BrickPile
+c   c762: BrickPile excludes PongGameMenu
+c   c763: BrickPile requires Pucksupply
+c   c764: Pucksupply requires BrickPile
+c   c765: BrickPile excludes Pucksupply
+c   c766: BrickPile requires RackofPins
+c   c767: RackofPins requires BrickPile
+c   c768: BrickPile excludes RackofPins
+c   c769: BrickPile requires Rightbrickles
+c   c770: Rightbrickles requires BrickPile
+c   c771: BrickPile excludes Rightbrickles
+c   c772: BrickPile requires Rightpont
+c   c773: Rightpont requires BrickPile
+c   c774: BrickPile excludes Rightpont
+c   c775: BrickPile requires ScoreBoard
+c   c776: ScoreBoard requires BrickPile
+c   c777: BrickPile excludes ScoreBoard
+c   c778: BrickPile requires TopPaddle
+c   c779: TopPaddle requires BrickPile
+c   c780: BrickPile excludes TopPaddle
+c   c781: Brickles requires BricklesBoard
+c   c782: BricklesBoard requires Brickles
+c   c783: Brickles excludes BricklesBoard
+c   c784: Brickles requires BricklesGameMenu
+c   c785: BricklesGameMenu requires Brickles
+c   c786: Brickles excludes BricklesGameMenu
+c   c787: Brickles requires Ceilingbrickles
+c   c788: Ceilingbrickles requires Brickles
+c   c789: Brickles excludes Ceilingbrickles
+c   c790: Brickles requires Ceilingpong
+c   c791: Ceilingpong requires Brickles
+c   c792: Brickles excludes Ceilingpong
+c   c793: Brickles requires DividingLine
+c   c794: DividingLine requires Brickles
+c   c795: Brickles excludes DividingLine
+c   c796: Brickles requires Edge
+c   c797: Edge requires Brickles
+c   c798: Brickles excludes Edge
+c   c799: Brickles requires EndofAlley
+c   c800: EndofAlley requires Brickles
+c   c801: Brickles excludes EndofAlley
+c   c802: Brickles requires Floorbrickles
+c   c803: Floorbrickles requires Brickles
+c   c804: Brickles excludes Floorbrickles
+c   c805: Brickles requires Floorpong
+c   c806: Floorpong requires Brickles
+c   c807: Brickles excludes Floorpong
+c   c808: Brickles requires Gutter
+c   c809: Gutter requires Brickles
+c   c810: Brickles excludes Gutter
+c   c811: Brickles requires Lane
+c   c812: Lane requires Brickles
+c   c813: Brickles excludes Lane
+c   c814: Brickles requires Leftbrickles
+c   c815: Leftbrickles requires Brickles
+c   c816: Brickles excludes Leftbrickles
+c   c817: Brickles requires Leftpong
+c   c818: Leftpong requires Brickles
+c   c819: Brickles excludes Leftpong
+c   c820: Brickles requires PlayBowling
+c   c821: PlayBowling requires Brickles
+c   c822: Brickles excludes PlayBowling
+c   c823: Brickles requires PlayBrickles
+c   c824: PlayBrickles requires Brickles
+c   c825: Brickles excludes PlayBrickles
+c   c826: Brickles requires PlayPong
+c   c827: PlayPong requires Brickles
+c   c828: Brickles excludes PlayPong
+c   c829: Brickles requires Pong
+c   c830: Pong requires Brickles
+c   c831: Brickles excludes Pong
+c   c832: Brickles requires PongBoard
+c   c833: PongBoard requires Brickles
+c   c834: Brickles excludes PongBoard
+c   c835: Brickles requires PongGameMenu
+c   c836: PongGameMenu requires Brickles
+c   c837: Brickles excludes PongGameMenu
+c   c838: Brickles requires Pucksupply
+c   c839: Pucksupply requires Brickles
+c   c840: Brickles excludes Pucksupply
+c   c841: Brickles requires RackofPins
+c   c842: RackofPins requires Brickles
+c   c843: Brickles excludes RackofPins
+c   c844: Brickles requires Rightbrickles
+c   c845: Rightbrickles requires Brickles
+c   c846: Brickles excludes Rightbrickles
+c   c847: Brickles requires Rightpont
+c   c848: Rightpont requires Brickles
+c   c849: Brickles excludes Rightpont
+c   c850: Brickles requires ScoreBoard
+c   c851: ScoreBoard requires Brickles
+c   c852: Brickles excludes ScoreBoard
+c   c853: Brickles requires TopPaddle
+c   c854: TopPaddle requires Brickles
+c   c855: Brickles excludes TopPaddle
+c   c856: BricklesBoard requires BricklesGameMenu
+c   c857: BricklesGameMenu requires BricklesBoard
+c   c858: BricklesBoard excludes BricklesGameMenu
+c   c859: BricklesBoard requires Ceilingbrickles
+c   c860: Ceilingbrickles requires BricklesBoard
+c   c861: BricklesBoard excludes Ceilingbrickles
+c   c862: BricklesBoard requires Ceilingpong
+c   c863: Ceilingpong requires BricklesBoard
+c   c864: BricklesBoard excludes Ceilingpong
+c   c865: BricklesBoard requires DividingLine
+c   c866: DividingLine requires BricklesBoard
+c   c867: BricklesBoard excludes DividingLine
+c   c868: BricklesBoard requires Edge
+c   c869: Edge requires BricklesBoard
+c   c870: BricklesBoard excludes Edge
+c   c871: BricklesBoard requires EndofAlley
+c   c872: EndofAlley requires BricklesBoard
+c   c873: BricklesBoard excludes EndofAlley
+c   c874: BricklesBoard requires Floorbrickles
+c   c875: Floorbrickles requires BricklesBoard
+c   c876: BricklesBoard excludes Floorbrickles
+c   c877: BricklesBoard requires Floorpong
+c   c878: Floorpong requires BricklesBoard
+c   c879: BricklesBoard excludes Floorpong
+c   c880: BricklesBoard requires Gutter
+c   c881: Gutter requires BricklesBoard
+c   c882: BricklesBoard excludes Gutter
+c   c883: BricklesBoard requires Lane
+c   c884: Lane requires BricklesBoard
+c   c885: BricklesBoard excludes Lane
+c   c886: BricklesBoard requires Leftbrickles
+c   c887: Leftbrickles requires BricklesBoard
+c   c888: BricklesBoard excludes Leftbrickles
+c   c889: BricklesBoard requires Leftpong
+c   c890: Leftpong requires BricklesBoard
+c   c891: BricklesBoard excludes Leftpong
+c   c892: BricklesBoard requires PlayBowling
+c   c893: PlayBowling requires BricklesBoard
+c   c894: BricklesBoard excludes PlayBowling
+c   c895: BricklesBoard requires PlayBrickles
+c   c896: PlayBrickles requires BricklesBoard
+c   c897: BricklesBoard excludes PlayBrickles
+c   c898: BricklesBoard requires PlayPong
+c   c899: PlayPong requires BricklesBoard
+c   c900: BricklesBoard excludes PlayPong
+c   c901: BricklesBoard requires Pong
+c   c902: Pong requires BricklesBoard
+c   c903: BricklesBoard excludes Pong
+c   c904: BricklesBoard requires PongBoard
+c   c905: PongBoard requires BricklesBoard
+c   c906: BricklesBoard excludes PongBoard
+c   c907: BricklesBoard requires PongGameMenu
+c   c908: PongGameMenu requires BricklesBoard
+c   c909: BricklesBoard excludes PongGameMenu
+c   c910: BricklesBoard requires Pucksupply
+c   c911: Pucksupply requires BricklesBoard
+c   c912: BricklesBoard excludes Pucksupply
+c   c913: BricklesBoard requires RackofPins
+c   c914: RackofPins requires BricklesBoard
+c   c915: BricklesBoard excludes RackofPins
+c   c916: BricklesBoard requires Rightbrickles
+c   c917: Rightbrickles requires BricklesBoard
+c   c918: BricklesBoard excludes Rightbrickles
+c   c919: BricklesBoard requires Rightpont
+c   c920: Rightpont requires BricklesBoard
+c   c921: BricklesBoard excludes Rightpont
+c   c922: BricklesBoard requires ScoreBoard
+c   c923: ScoreBoard requires BricklesBoard
+c   c924: BricklesBoard excludes ScoreBoard
+c   c925: BricklesBoard requires TopPaddle
+c   c926: TopPaddle requires BricklesBoard
+c   c927: BricklesBoard excludes TopPaddle
+c   c928: BricklesGameMenu requires Ceilingbrickles
+c   c929: Ceilingbrickles requires BricklesGameMenu
+c   c930: BricklesGameMenu excludes Ceilingbrickles
+c   c931: BricklesGameMenu requires Ceilingpong
+c   c932: Ceilingpong requires BricklesGameMenu
+c   c933: BricklesGameMenu excludes Ceilingpong
+c   c934: BricklesGameMenu requires DividingLine
+c   c935: DividingLine requires BricklesGameMenu
+c   c936: BricklesGameMenu excludes DividingLine
+c   c937: BricklesGameMenu requires Edge
+c   c938: Edge requires BricklesGameMenu
+c   c939: BricklesGameMenu excludes Edge
+c   c940: BricklesGameMenu requires EndofAlley
+c   c941: EndofAlley requires BricklesGameMenu
+c   c942: BricklesGameMenu excludes EndofAlley
+c   c943: BricklesGameMenu requires Floorbrickles
+c   c944: Floorbrickles requires BricklesGameMenu
+c   c945: BricklesGameMenu excludes Floorbrickles
+c   c946: BricklesGameMenu requires Floorpong
+c   c947: Floorpong requires BricklesGameMenu
+c   c948: BricklesGameMenu excludes Floorpong
+c   c949: BricklesGameMenu requires Gutter
+c   c950: Gutter requires BricklesGameMenu
+c   c951: BricklesGameMenu excludes Gutter
+c   c952: BricklesGameMenu requires Lane
+c   c953: Lane requires BricklesGameMenu
+c   c954: BricklesGameMenu excludes Lane
+c   c955: BricklesGameMenu requires Leftbrickles
+c   c956: Leftbrickles requires BricklesGameMenu
+c   c957: BricklesGameMenu excludes Leftbrickles
+c   c958: BricklesGameMenu requires Leftpong
+c   c959: Leftpong requires BricklesGameMenu
+c   c960: BricklesGameMenu excludes Leftpong
+c   c961: BricklesGameMenu requires PlayBowling
+c   c962: PlayBowling requires BricklesGameMenu
+c   c963: BricklesGameMenu excludes PlayBowling
+c   c964: BricklesGameMenu requires PlayBrickles
+c   c965: PlayBrickles requires BricklesGameMenu
+c   c966: BricklesGameMenu excludes PlayBrickles
+c   c967: BricklesGameMenu requires PlayPong
+c   c968: PlayPong requires BricklesGameMenu
+c   c969: BricklesGameMenu excludes PlayPong
+c   c970: BricklesGameMenu requires Pong
+c   c971: Pong requires BricklesGameMenu
+c   c972: BricklesGameMenu excludes Pong
+c   c973: BricklesGameMenu requires PongBoard
+c   c974: PongBoard requires BricklesGameMenu
+c   c975: BricklesGameMenu excludes PongBoard
+c   c976: BricklesGameMenu requires PongGameMenu
+c   c977: PongGameMenu requires BricklesGameMenu
+c   c978: BricklesGameMenu excludes PongGameMenu
+c   c979: BricklesGameMenu requires Pucksupply
+c   c980: Pucksupply requires BricklesGameMenu
+c   c981: BricklesGameMenu excludes Pucksupply
+c   c982: BricklesGameMenu requires RackofPins
+c   c983: RackofPins requires BricklesGameMenu
+c   c984: BricklesGameMenu excludes RackofPins
+c   c985: BricklesGameMenu requires Rightbrickles
+c   c986: Rightbrickles requires BricklesGameMenu
+c   c987: BricklesGameMenu excludes Rightbrickles
+c   c988: BricklesGameMenu requires Rightpont
+c   c989: Rightpont requires BricklesGameMenu
+c   c990: BricklesGameMenu excludes Rightpont
+c   c991: BricklesGameMenu requires ScoreBoard
+c   c992: ScoreBoard requires BricklesGameMenu
+c   c993: BricklesGameMenu excludes ScoreBoard
+c   c994: BricklesGameMenu requires TopPaddle
+c   c995: TopPaddle requires BricklesGameMenu
+c   c996: BricklesGameMenu excludes TopPaddle
+c   c997: Ceilingbrickles requires Ceilingpong
+c   c998: Ceilingpong requires Ceilingbrickles
+c   c999: Ceilingbrickles excludes Ceilingpong
+c   c1000: Ceilingbrickles requires DividingLine
+c   c1001: DividingLine requires Ceilingbrickles
+c   c1002: Ceilingbrickles excludes DividingLine
+c   c1003: Ceilingbrickles requires Edge
+c   c1004: Edge requires Ceilingbrickles
+c   c1005: Ceilingbrickles excludes Edge
+c   c1006: Ceilingbrickles requires EndofAlley
+c   c1007: EndofAlley requires Ceilingbrickles
+c   c1008: Ceilingbrickles excludes EndofAlley
+c   c1009: Ceilingbrickles requires Floorbrickles
+c   c1010: Floorbrickles requires Ceilingbrickles
+c   c1011: Ceilingbrickles excludes Floorbrickles
+c   c1012: Ceilingbrickles requires Floorpong
+c   c1013: Floorpong requires Ceilingbrickles
+c   c1014: Ceilingbrickles excludes Floorpong
+c   c1015: Ceilingbrickles requires Gutter
+c   c1016: Gutter requires Ceilingbrickles
+c   c1017: Ceilingbrickles excludes Gutter
+c   c1018: Ceilingbrickles requires Lane
+c   c1019: Lane requires Ceilingbrickles
+c   c1020: Ceilingbrickles excludes Lane
+c   c1021: Ceilingbrickles requires Leftbrickles
+c   c1022: Leftbrickles requires Ceilingbrickles
+c   c1023: Ceilingbrickles excludes Leftbrickles
+c   c1024: Ceilingbrickles requires Leftpong
+c   c1025: Leftpong requires Ceilingbrickles
+c   c1026: Ceilingbrickles excludes Leftpong
+c   c1027: Ceilingbrickles requires PlayBowling
+c   c1028: PlayBowling requires Ceilingbrickles
+c   c1029: Ceilingbrickles excludes PlayBowling
+c   c1030: Ceilingbrickles requires PlayBrickles
+c   c1031: PlayBrickles requires Ceilingbrickles
+c   c1032: Ceilingbrickles excludes PlayBrickles
+c   c1033: Ceilingbrickles requires PlayPong
+c   c1034: PlayPong requires Ceilingbrickles
+c   c1035: Ceilingbrickles excludes PlayPong
+c   c1036: Ceilingbrickles requires Pong
+c   c1037: Pong requires Ceilingbrickles
+c   c1038: Ceilingbrickles excludes Pong
+c   c1039: Ceilingbrickles requires PongBoard
+c   c1040: PongBoard requires Ceilingbrickles
+c   c1041: Ceilingbrickles excludes PongBoard
+c   c1042: Ceilingbrickles requires PongGameMenu
+c   c1043: PongGameMenu requires Ceilingbrickles
+c   c1044: Ceilingbrickles excludes PongGameMenu
+c   c1045: Ceilingbrickles requires Pucksupply
+c   c1046: Pucksupply requires Ceilingbrickles
+c   c1047: Ceilingbrickles excludes Pucksupply
+c   c1048: Ceilingbrickles requires RackofPins
+c   c1049: RackofPins requires Ceilingbrickles
+c   c1050: Ceilingbrickles excludes RackofPins
+c   c1051: Ceilingbrickles requires Rightbrickles
+c   c1052: Rightbrickles requires Ceilingbrickles
+c   c1053: Ceilingbrickles excludes Rightbrickles
+c   c1054: Ceilingbrickles requires Rightpont
+c   c1055: Rightpont requires Ceilingbrickles
+c   c1056: Ceilingbrickles excludes Rightpont
+c   c1057: Ceilingbrickles requires ScoreBoard
+c   c1058: ScoreBoard requires Ceilingbrickles
+c   c1059: Ceilingbrickles excludes ScoreBoard
+c   c1060: Ceilingbrickles requires TopPaddle
+c   c1061: TopPaddle requires Ceilingbrickles
+c   c1062: Ceilingbrickles excludes TopPaddle
+c   c1063: Ceilingpong requires DividingLine
+c   c1064: DividingLine requires Ceilingpong
+c   c1065: Ceilingpong excludes DividingLine
+c   c1066: Ceilingpong requires Edge
+c   c1067: Edge requires Ceilingpong
+c   c1068: Ceilingpong excludes Edge
+c   c1069: Ceilingpong requires EndofAlley
+c   c1070: EndofAlley requires Ceilingpong
+c   c1071: Ceilingpong excludes EndofAlley
+c   c1072: Ceilingpong requires Floorbrickles
+c   c1073: Floorbrickles requires Ceilingpong
+c   c1074: Ceilingpong excludes Floorbrickles
+c   c1075: Ceilingpong requires Floorpong
+c   c1076: Floorpong requires Ceilingpong
+c   c1077: Ceilingpong excludes Floorpong
+c   c1078: Ceilingpong requires Gutter
+c   c1079: Gutter requires Ceilingpong
+c   c1080: Ceilingpong excludes Gutter
+c   c1081: Ceilingpong requires Lane
+c   c1082: Lane requires Ceilingpong
+c   c1083: Ceilingpong excludes Lane
+c   c1084: Ceilingpong requires Leftbrickles
+c   c1085: Leftbrickles requires Ceilingpong
+c   c1086: Ceilingpong excludes Leftbrickles
+c   c1087: Ceilingpong requires Leftpong
+c   c1088: Leftpong requires Ceilingpong
+c   c1089: Ceilingpong excludes Leftpong
+c   c1090: Ceilingpong requires PlayBowling
+c   c1091: PlayBowling requires Ceilingpong
+c   c1092: Ceilingpong excludes PlayBowling
+c   c1093: Ceilingpong requires PlayBrickles
+c   c1094: PlayBrickles requires Ceilingpong
+c   c1095: Ceilingpong excludes PlayBrickles
+c   c1096: Ceilingpong requires PlayPong
+c   c1097: PlayPong requires Ceilingpong
+c   c1098: Ceilingpong excludes PlayPong
+c   c1099: Ceilingpong requires Pong
+c   c1100: Pong requires Ceilingpong
+c   c1101: Ceilingpong excludes Pong
+c   c1102: Ceilingpong requires PongBoard
+c   c1103: PongBoard requires Ceilingpong
+c   c1104: Ceilingpong excludes PongBoard
+c   c1105: Ceilingpong requires PongGameMenu
+c   c1106: PongGameMenu requires Ceilingpong
+c   c1107: Ceilingpong excludes PongGameMenu
+c   c1108: Ceilingpong requires Pucksupply
+c   c1109: Pucksupply requires Ceilingpong
+c   c1110: Ceilingpong excludes Pucksupply
+c   c1111: Ceilingpong requires RackofPins
+c   c1112: RackofPins requires Ceilingpong
+c   c1113: Ceilingpong excludes RackofPins
+c   c1114: Ceilingpong requires Rightbrickles
+c   c1115: Rightbrickles requires Ceilingpong
+c   c1116: Ceilingpong excludes Rightbrickles
+c   c1117: Ceilingpong requires Rightpont
+c   c1118: Rightpont requires Ceilingpong
+c   c1119: Ceilingpong excludes Rightpont
+c   c1120: Ceilingpong requires ScoreBoard
+c   c1121: ScoreBoard requires Ceilingpong
+c   c1122: Ceilingpong excludes ScoreBoard
+c   c1123: Ceilingpong requires TopPaddle
+c   c1124: TopPaddle requires Ceilingpong
+c   c1125: Ceilingpong excludes TopPaddle
+c   c1126: DividingLine requires Edge
+c   c1127: Edge requires DividingLine
+c   c1128: DividingLine excludes Edge
+c   c1129: DividingLine requires EndofAlley
+c   c1130: EndofAlley requires DividingLine
+c   c1131: DividingLine excludes EndofAlley
+c   c1132: DividingLine requires Floorbrickles
+c   c1133: Floorbrickles requires DividingLine
+c   c1134: DividingLine excludes Floorbrickles
+c   c1135: DividingLine requires Floorpong
+c   c1136: Floorpong requires DividingLine
+c   c1137: DividingLine excludes Floorpong
+c   c1138: DividingLine requires Gutter
+c   c1139: Gutter requires DividingLine
+c   c1140: DividingLine excludes Gutter
+c   c1141: DividingLine requires Lane
+c   c1142: Lane requires DividingLine
+c   c1143: DividingLine excludes Lane
+c   c1144: DividingLine requires Leftbrickles
+c   c1145: Leftbrickles requires DividingLine
+c   c1146: DividingLine excludes Leftbrickles
+c   c1147: DividingLine requires Leftpong
+c   c1148: Leftpong requires DividingLine
+c   c1149: DividingLine excludes Leftpong
+c   c1150: DividingLine requires PlayBowling
+c   c1151: PlayBowling requires DividingLine
+c   c1152: DividingLine excludes PlayBowling
+c   c1153: DividingLine requires PlayBrickles
+c   c1154: PlayBrickles requires DividingLine
+c   c1155: DividingLine excludes PlayBrickles
+c   c1156: DividingLine requires PlayPong
+c   c1157: PlayPong requires DividingLine
+c   c1158: DividingLine excludes PlayPong
+c   c1159: DividingLine requires Pong
+c   c1160: Pong requires DividingLine
+c   c1161: DividingLine excludes Pong
+c   c1162: DividingLine requires PongBoard
+c   c1163: PongBoard requires DividingLine
+c   c1164: DividingLine excludes PongBoard
+c   c1165: DividingLine requires PongGameMenu
+c   c1166: PongGameMenu requires DividingLine
+c   c1167: DividingLine excludes PongGameMenu
+c   c1168: DividingLine requires Pucksupply
+c   c1169: Pucksupply requires DividingLine
+c   c1170: DividingLine excludes Pucksupply
+c   c1171: DividingLine requires RackofPins
+c   c1172: RackofPins requires DividingLine
+c   c1173: DividingLine excludes RackofPins
+c   c1174: DividingLine requires Rightbrickles
+c   c1175: Rightbrickles requires DividingLine
+c   c1176: DividingLine excludes Rightbrickles
+c   c1177: DividingLine requires Rightpont
+c   c1178: Rightpont requires DividingLine
+c   c1179: DividingLine excludes Rightpont
+c   c1180: DividingLine requires ScoreBoard
+c   c1181: ScoreBoard requires DividingLine
+c   c1182: DividingLine excludes ScoreBoard
+c   c1183: DividingLine requires TopPaddle
+c   c1184: TopPaddle requires DividingLine
+c   c1185: DividingLine excludes TopPaddle
+c   c1186: Edge requires EndofAlley
+c   c1187: EndofAlley requires Edge
+c   c1188: Edge excludes EndofAlley
+c   c1189: Edge requires Floorbrickles
+c   c1190: Floorbrickles requires Edge
+c   c1191: Edge excludes Floorbrickles
+c   c1192: Edge requires Floorpong
+c   c1193: Floorpong requires Edge
+c   c1194: Edge excludes Floorpong
+c   c1195: Edge requires Gutter
+c   c1196: Gutter requires Edge
+c   c1197: Edge excludes Gutter
+c   c1198: Edge requires Lane
+c   c1199: Lane requires Edge
+c   c1200: Edge excludes Lane
+c   c1201: Edge requires Leftbrickles
+c   c1202: Leftbrickles requires Edge
+c   c1203: Edge excludes Leftbrickles
+c   c1204: Edge requires Leftpong
+c   c1205: Leftpong requires Edge
+c   c1206: Edge excludes Leftpong
+c   c1207: Edge requires PlayBowling
+c   c1208: PlayBowling requires Edge
+c   c1209: Edge excludes PlayBowling
+c   c1210: Edge requires PlayBrickles
+c   c1211: PlayBrickles requires Edge
+c   c1212: Edge excludes PlayBrickles
+c   c1213: Edge requires PlayPong
+c   c1214: PlayPong requires Edge
+c   c1215: Edge excludes PlayPong
+c   c1216: Edge requires Pong
+c   c1217: Pong requires Edge
+c   c1218: Edge excludes Pong
+c   c1219: Edge requires PongBoard
+c   c1220: PongBoard requires Edge
+c   c1221: Edge excludes PongBoard
+c   c1222: Edge requires PongGameMenu
+c   c1223: PongGameMenu requires Edge
+c   c1224: Edge excludes PongGameMenu
+c   c1225: Edge requires Pucksupply
+c   c1226: Pucksupply requires Edge
+c   c1227: Edge excludes Pucksupply
+c   c1228: Edge requires RackofPins
+c   c1229: RackofPins requires Edge
+c   c1230: Edge excludes RackofPins
+c   c1231: Edge requires Rightbrickles
+c   c1232: Rightbrickles requires Edge
+c   c1233: Edge excludes Rightbrickles
+c   c1234: Edge requires Rightpont
+c   c1235: Rightpont requires Edge
+c   c1236: Edge excludes Rightpont
+c   c1237: Edge requires ScoreBoard
+c   c1238: ScoreBoard requires Edge
+c   c1239: Edge excludes ScoreBoard
+c   c1240: Edge requires TopPaddle
+c   c1241: TopPaddle requires Edge
+c   c1242: Edge excludes TopPaddle
+c   c1243: EndofAlley requires Floorbrickles
+c   c1244: Floorbrickles requires EndofAlley
+c   c1245: EndofAlley excludes Floorbrickles
+c   c1246: EndofAlley requires Floorpong
+c   c1247: Floorpong requires EndofAlley
+c   c1248: EndofAlley excludes Floorpong
+c   c1249: EndofAlley requires Gutter
+c   c1250: Gutter requires EndofAlley
+c   c1251: EndofAlley excludes Gutter
+c   c1252: EndofAlley requires Lane
+c   c1253: Lane requires EndofAlley
+c   c1254: EndofAlley excludes Lane
+c   c1255: EndofAlley requires Leftbrickles
+c   c1256: Leftbrickles requires EndofAlley
+c   c1257: EndofAlley excludes Leftbrickles
+c   c1258: EndofAlley requires Leftpong
+c   c1259: Leftpong requires EndofAlley
+c   c1260: EndofAlley excludes Leftpong
+c   c1261: EndofAlley requires PlayBowling
+c   c1262: PlayBowling requires EndofAlley
+c   c1263: EndofAlley excludes PlayBowling
+c   c1264: EndofAlley requires PlayBrickles
+c   c1265: PlayBrickles requires EndofAlley
+c   c1266: EndofAlley excludes PlayBrickles
+c   c1267: EndofAlley requires PlayPong
+c   c1268: PlayPong requires EndofAlley
+c   c1269: EndofAlley excludes PlayPong
+c   c1270: EndofAlley requires Pong
+c   c1271: Pong requires EndofAlley
+c   c1272: EndofAlley excludes Pong
+c   c1273: EndofAlley requires PongBoard
+c   c1274: PongBoard requires EndofAlley
+c   c1275: EndofAlley excludes PongBoard
+c   c1276: EndofAlley requires PongGameMenu
+c   c1277: PongGameMenu requires EndofAlley
+c   c1278: EndofAlley excludes PongGameMenu
+c   c1279: EndofAlley requires Pucksupply
+c   c1280: Pucksupply requires EndofAlley
+c   c1281: EndofAlley excludes Pucksupply
+c   c1282: EndofAlley requires RackofPins
+c   c1283: RackofPins requires EndofAlley
+c   c1284: EndofAlley excludes RackofPins
+c   c1285: EndofAlley requires Rightbrickles
+c   c1286: Rightbrickles requires EndofAlley
+c   c1287: EndofAlley excludes Rightbrickles
+c   c1288: EndofAlley requires Rightpont
+c   c1289: Rightpont requires EndofAlley
+c   c1290: EndofAlley excludes Rightpont
+c   c1291: EndofAlley requires ScoreBoard
+c   c1292: ScoreBoard requires EndofAlley
+c   c1293: EndofAlley excludes ScoreBoard
+c   c1294: EndofAlley requires TopPaddle
+c   c1295: TopPaddle requires EndofAlley
+c   c1296: EndofAlley excludes TopPaddle
+c   c1297: Floorbrickles requires Floorpong
+c   c1298: Floorpong requires Floorbrickles
+c   c1299: Floorbrickles excludes Floorpong
+c   c1300: Floorbrickles requires Gutter
+c   c1301: Gutter requires Floorbrickles
+c   c1302: Floorbrickles excludes Gutter
+c   c1303: Floorbrickles requires Lane
+c   c1304: Lane requires Floorbrickles
+c   c1305: Floorbrickles excludes Lane
+c   c1306: Floorbrickles requires Leftbrickles
+c   c1307: Leftbrickles requires Floorbrickles
+c   c1308: Floorbrickles excludes Leftbrickles
+c   c1309: Floorbrickles requires Leftpong
+c   c1310: Leftpong requires Floorbrickles
+c   c1311: Floorbrickles excludes Leftpong
+c   c1312: Floorbrickles requires PlayBowling
+c   c1313: PlayBowling requires Floorbrickles
+c   c1314: Floorbrickles excludes PlayBowling
+c   c1315: Floorbrickles requires PlayBrickles
+c   c1316: PlayBrickles requires Floorbrickles
+c   c1317: Floorbrickles excludes PlayBrickles
+c   c1318: Floorbrickles requires PlayPong
+c   c1319: PlayPong requires Floorbrickles
+c   c1320: Floorbrickles excludes PlayPong
+c   c1321: Floorbrickles requires Pong
+c   c1322: Pong requires Floorbrickles
+c   c1323: Floorbrickles excludes Pong
+c   c1324: Floorbrickles requires PongBoard
+c   c1325: PongBoard requires Floorbrickles
+c   c1326: Floorbrickles excludes PongBoard
+c   c1327: Floorbrickles requires PongGameMenu
+c   c1328: PongGameMenu requires Floorbrickles
+c   c1329: Floorbrickles excludes PongGameMenu
+c   c1330: Floorbrickles requires Pucksupply
+c   c1331: Pucksupply requires Floorbrickles
+c   c1332: Floorbrickles excludes Pucksupply
+c   c1333: Floorbrickles requires RackofPins
+c   c1334: RackofPins requires Floorbrickles
+c   c1335: Floorbrickles excludes RackofPins
+c   c1336: Floorbrickles requires Rightbrickles
+c   c1337: Rightbrickles requires Floorbrickles
+c   c1338: Floorbrickles excludes Rightbrickles
+c   c1339: Floorbrickles requires Rightpont
+c   c1340: Rightpont requires Floorbrickles
+c   c1341: Floorbrickles excludes Rightpont
+c   c1342: Floorbrickles requires ScoreBoard
+c   c1343: ScoreBoard requires Floorbrickles
+c   c1344: Floorbrickles excludes ScoreBoard
+c   c1345: Floorbrickles requires TopPaddle
+c   c1346: TopPaddle requires Floorbrickles
+c   c1347: Floorbrickles excludes TopPaddle
+c   c1348: Floorpong requires Gutter
+c   c1349: Gutter requires Floorpong
+c   c1350: Floorpong excludes Gutter
+c   c1351: Floorpong requires Lane
+c   c1352: Lane requires Floorpong
+c   c1353: Floorpong excludes Lane
+c   c1354: Floorpong requires Leftbrickles
+c   c1355: Leftbrickles requires Floorpong
+c   c1356: Floorpong excludes Leftbrickles
+c   c1357: Floorpong requires Leftpong
+c   c1358: Leftpong requires Floorpong
+c   c1359: Floorpong excludes Leftpong
+c   c1360: Floorpong requires PlayBowling
+c   c1361: PlayBowling requires Floorpong
+c   c1362: Floorpong excludes PlayBowling
+c   c1363: Floorpong requires PlayBrickles
+c   c1364: PlayBrickles requires Floorpong
+c   c1365: Floorpong excludes PlayBrickles
+c   c1366: Floorpong requires PlayPong
+c   c1367: PlayPong requires Floorpong
+c   c1368: Floorpong excludes PlayPong
+c   c1369: Floorpong requires Pong
+c   c1370: Pong requires Floorpong
+c   c1371: Floorpong excludes Pong
+c   c1372: Floorpong requires PongBoard
+c   c1373: PongBoard requires Floorpong
+c   c1374: Floorpong excludes PongBoard
+c   c1375: Floorpong requires PongGameMenu
+c   c1376: PongGameMenu requires Floorpong
+c   c1377: Floorpong excludes PongGameMenu
+c   c1378: Floorpong requires Pucksupply
+c   c1379: Pucksupply requires Floorpong
+c   c1380: Floorpong excludes Pucksupply
+c   c1381: Floorpong requires RackofPins
+c   c1382: RackofPins requires Floorpong
+c   c1383: Floorpong excludes RackofPins
+c   c1384: Floorpong requires Rightbrickles
+c   c1385: Rightbrickles requires Floorpong
+c   c1386: Floorpong excludes Rightbrickles
+c   c1387: Floorpong requires Rightpont
+c   c1388: Rightpont requires Floorpong
+c   c1389: Floorpong excludes Rightpont
+c   c1390: Floorpong requires ScoreBoard
+c   c1391: ScoreBoard requires Floorpong
+c   c1392: Floorpong excludes ScoreBoard
+c   c1393: Floorpong requires TopPaddle
+c   c1394: TopPaddle requires Floorpong
+c   c1395: Floorpong excludes TopPaddle
+c   c1396: Gutter requires Lane
+c   c1397: Lane requires Gutter
+c   c1398: Gutter excludes Lane
+c   c1399: Gutter requires Leftbrickles
+c   c1400: Leftbrickles requires Gutter
+c   c1401: Gutter excludes Leftbrickles
+c   c1402: Gutter requires Leftpong
+c   c1403: Leftpong requires Gutter
+c   c1404: Gutter excludes Leftpong
+c   c1405: Gutter requires PlayBowling
+c   c1406: PlayBowling requires Gutter
+c   c1407: Gutter excludes PlayBowling
+c   c1408: Gutter requires PlayBrickles
+c   c1409: PlayBrickles requires Gutter
+c   c1410: Gutter excludes PlayBrickles
+c   c1411: Gutter requires PlayPong
+c   c1412: PlayPong requires Gutter
+c   c1413: Gutter excludes PlayPong
+c   c1414: Gutter requires Pong
+c   c1415: Pong requires Gutter
+c   c1416: Gutter excludes Pong
+c   c1417: Gutter requires PongBoard
+c   c1418: PongBoard requires Gutter
+c   c1419: Gutter excludes PongBoard
+c   c1420: Gutter requires PongGameMenu
+c   c1421: PongGameMenu requires Gutter
+c   c1422: Gutter excludes PongGameMenu
+c   c1423: Gutter requires Pucksupply
+c   c1424: Pucksupply requires Gutter
+c   c1425: Gutter excludes Pucksupply
+c   c1426: Gutter requires RackofPins
+c   c1427: RackofPins requires Gutter
+c   c1428: Gutter excludes RackofPins
+c   c1429: Gutter requires Rightbrickles
+c   c1430: Rightbrickles requires Gutter
+c   c1431: Gutter excludes Rightbrickles
+c   c1432: Gutter requires Rightpont
+c   c1433: Rightpont requires Gutter
+c   c1434: Gutter excludes Rightpont
+c   c1435: Gutter requires ScoreBoard
+c   c1436: ScoreBoard requires Gutter
+c   c1437: Gutter excludes ScoreBoard
+c   c1438: Gutter requires TopPaddle
+c   c1439: TopPaddle requires Gutter
+c   c1440: Gutter excludes TopPaddle
+c   c1441: Lane requires Leftbrickles
+c   c1442: Leftbrickles requires Lane
+c   c1443: Lane excludes Leftbrickles
+c   c1444: Lane requires Leftpong
+c   c1445: Leftpong requires Lane
+c   c1446: Lane excludes Leftpong
+c   c1447: Lane requires PlayBowling
+c   c1448: PlayBowling requires Lane
+c   c1449: Lane excludes PlayBowling
+c   c1450: Lane requires PlayBrickles
+c   c1451: PlayBrickles requires Lane
+c   c1452: Lane excludes PlayBrickles
+c   c1453: Lane requires PlayPong
+c   c1454: PlayPong requires Lane
+c   c1455: Lane excludes PlayPong
+c   c1456: Lane requires Pong
+c   c1457: Pong requires Lane
+c   c1458: Lane excludes Pong
+c   c1459: Lane requires PongBoard
+c   c1460: PongBoard requires Lane
+c   c1461: Lane excludes PongBoard
+c   c1462: Lane requires PongGameMenu
+c   c1463: PongGameMenu requires Lane
+c   c1464: Lane excludes PongGameMenu
+c   c1465: Lane requires Pucksupply
+c   c1466: Pucksupply requires Lane
+c   c1467: Lane excludes Pucksupply
+c   c1468: Lane requires RackofPins
+c   c1469: RackofPins requires Lane
+c   c1470: Lane excludes RackofPins
+c   c1471: Lane requires Rightbrickles
+c   c1472: Rightbrickles requires Lane
+c   c1473: Lane excludes Rightbrickles
+c   c1474: Lane requires Rightpont
+c   c1475: Rightpont requires Lane
+c   c1476: Lane excludes Rightpont
+c   c1477: Lane requires ScoreBoard
+c   c1478: ScoreBoard requires Lane
+c   c1479: Lane excludes ScoreBoard
+c   c1480: Lane requires TopPaddle
+c   c1481: TopPaddle requires Lane
+c   c1482: Lane excludes TopPaddle
+c   c1483: Leftbrickles requires Leftpong
+c   c1484: Leftpong requires Leftbrickles
+c   c1485: Leftbrickles excludes Leftpong
+c   c1486: Leftbrickles requires PlayBowling
+c   c1487: PlayBowling requires Leftbrickles
+c   c1488: Leftbrickles excludes PlayBowling
+c   c1489: Leftbrickles requires PlayBrickles
+c   c1490: PlayBrickles requires Leftbrickles
+c   c1491: Leftbrickles excludes PlayBrickles
+c   c1492: Leftbrickles requires PlayPong
+c   c1493: PlayPong requires Leftbrickles
+c   c1494: Leftbrickles excludes PlayPong
+c   c1495: Leftbrickles requires Pong
+c   c1496: Pong requires Leftbrickles
+c   c1497: Leftbrickles excludes Pong
+c   c1498: Leftbrickles requires PongBoard
+c   c1499: PongBoard requires Leftbrickles
+c   c1500: Leftbrickles excludes PongBoard
+c   c1501: Leftbrickles requires PongGameMenu
+c   c1502: PongGameMenu requires Leftbrickles
+c   c1503: Leftbrickles excludes PongGameMenu
+c   c1504: Leftbrickles requires Pucksupply
+c   c1505: Pucksupply requires Leftbrickles
+c   c1506: Leftbrickles excludes Pucksupply
+c   c1507: Leftbrickles requires RackofPins
+c   c1508: RackofPins requires Leftbrickles
+c   c1509: Leftbrickles excludes RackofPins
+c   c1510: Leftbrickles requires Rightbrickles
+c   c1511: Rightbrickles requires Leftbrickles
+c   c1512: Leftbrickles excludes Rightbrickles
+c   c1513: Leftbrickles requires Rightpont
+c   c1514: Rightpont requires Leftbrickles
+c   c1515: Leftbrickles excludes Rightpont
+c   c1516: Leftbrickles requires ScoreBoard
+c   c1517: ScoreBoard requires Leftbrickles
+c   c1518: Leftbrickles excludes ScoreBoard
+c   c1519: Leftbrickles requires TopPaddle
+c   c1520: TopPaddle requires Leftbrickles
+c   c1521: Leftbrickles excludes TopPaddle
+c   c1522: Leftpong requires PlayBowling
+c   c1523: PlayBowling requires Leftpong
+c   c1524: Leftpong excludes PlayBowling
+c   c1525: Leftpong requires PlayBrickles
+c   c1526: PlayBrickles requires Leftpong
+c   c1527: Leftpong excludes PlayBrickles
+c   c1528: Leftpong requires PlayPong
+c   c1529: PlayPong requires Leftpong
+c   c1530: Leftpong excludes PlayPong
+c   c1531: Leftpong requires Pong
+c   c1532: Pong requires Leftpong
+c   c1533: Leftpong excludes Pong
+c   c1534: Leftpong requires PongBoard
+c   c1535: PongBoard requires Leftpong
+c   c1536: Leftpong excludes PongBoard
+c   c1537: Leftpong requires PongGameMenu
+c   c1538: PongGameMenu requires Leftpong
+c   c1539: Leftpong excludes PongGameMenu
+c   c1540: Leftpong requires Pucksupply
+c   c1541: Pucksupply requires Leftpong
+c   c1542: Leftpong excludes Pucksupply
+c   c1543: Leftpong requires RackofPins
+c   c1544: RackofPins requires Leftpong
+c   c1545: Leftpong excludes RackofPins
+c   c1546: Leftpong requires Rightbrickles
+c   c1547: Rightbrickles requires Leftpong
+c   c1548: Leftpong excludes Rightbrickles
+c   c1549: Leftpong requires Rightpont
+c   c1550: Rightpont requires Leftpong
+c   c1551: Leftpong excludes Rightpont
+c   c1552: Leftpong requires ScoreBoard
+c   c1553: ScoreBoard requires Leftpong
+c   c1554: Leftpong excludes ScoreBoard
+c   c1555: Leftpong requires TopPaddle
+c   c1556: TopPaddle requires Leftpong
+c   c1557: Leftpong excludes TopPaddle
+c   c1558: PlayBowling requires PlayBrickles
+c   c1559: PlayBrickles requires PlayBowling
+c   c1560: PlayBowling excludes PlayBrickles
+c   c1561: PlayBowling requires PlayPong
+c   c1562: PlayPong requires PlayBowling
+c   c1563: PlayBowling excludes PlayPong
+c   c1564: PlayBowling requires Pong
+c   c1565: Pong requires PlayBowling
+c   c1566: PlayBowling excludes Pong
+c   c1567: PlayBowling requires PongBoard
+c   c1568: PongBoard requires PlayBowling
+c   c1569: PlayBowling excludes PongBoard
+c   c1570: PlayBowling requires PongGameMenu
+c   c1571: PongGameMenu requires PlayBowling
+c   c1572: PlayBowling excludes PongGameMenu
+c   c1573: PlayBowling requires Pucksupply
+c   c1574: Pucksupply requires PlayBowling
+c   c1575: PlayBowling excludes Pucksupply
+c   c1576: PlayBowling requires RackofPins
+c   c1577: RackofPins requires PlayBowling
+c   c1578: PlayBowling excludes RackofPins
+c   c1579: PlayBowling requires Rightbrickles
+c   c1580: Rightbrickles requires PlayBowling
+c   c1581: PlayBowling excludes Rightbrickles
+c   c1582: PlayBowling requires Rightpont
+c   c1583: Rightpont requires PlayBowling
+c   c1584: PlayBowling excludes Rightpont
+c   c1585: PlayBowling requires ScoreBoard
+c   c1586: ScoreBoard requires PlayBowling
+c   c1587: PlayBowling excludes ScoreBoard
+c   c1588: PlayBowling requires TopPaddle
+c   c1589: TopPaddle requires PlayBowling
+c   c1590: PlayBowling excludes TopPaddle
+c   c1591: PlayBrickles requires PlayPong
+c   c1592: PlayPong requires PlayBrickles
+c   c1593: PlayBrickles excludes PlayPong
+c   c1594: PlayBrickles requires Pong
+c   c1595: Pong requires PlayBrickles
+c   c1596: PlayBrickles excludes Pong
+c   c1597: PlayBrickles requires PongBoard
+c   c1598: PongBoard requires PlayBrickles
+c   c1599: PlayBrickles excludes PongBoard
+c   c1600: PlayBrickles requires PongGameMenu
+c   c1601: PongGameMenu requires PlayBrickles
+c   c1602: PlayBrickles excludes PongGameMenu
+c   c1603: PlayBrickles requires Pucksupply
+c   c1604: Pucksupply requires PlayBrickles
+c   c1605: PlayBrickles excludes Pucksupply
+c   c1606: PlayBrickles requires RackofPins
+c   c1607: RackofPins requires PlayBrickles
+c   c1608: PlayBrickles excludes RackofPins
+c   c1609: PlayBrickles requires Rightbrickles
+c   c1610: Rightbrickles requires PlayBrickles
+c   c1611: PlayBrickles excludes Rightbrickles
+c   c1612: PlayBrickles requires Rightpont
+c   c1613: Rightpont requires PlayBrickles
+c   c1614: PlayBrickles excludes Rightpont
+c   c1615: PlayBrickles requires ScoreBoard
+c   c1616: ScoreBoard requires PlayBrickles
+c   c1617: PlayBrickles excludes ScoreBoard
+c   c1618: PlayBrickles requires TopPaddle
+c   c1619: TopPaddle requires PlayBrickles
+c   c1620: PlayBrickles excludes TopPaddle
+c   c1621: PlayPong requires Pong
+c   c1622: Pong requires PlayPong
+c   c1623: PlayPong excludes Pong
+c   c1624: PlayPong requires PongBoard
+c   c1625: PongBoard requires PlayPong
+c   c1626: PlayPong excludes PongBoard
+c   c1627: PlayPong requires PongGameMenu
+c   c1628: PongGameMenu requires PlayPong
+c   c1629: PlayPong excludes PongGameMenu
+c   c1630: PlayPong requires Pucksupply
+c   c1631: Pucksupply requires PlayPong
+c   c1632: PlayPong excludes Pucksupply
+c   c1633: PlayPong requires RackofPins
+c   c1634: RackofPins requires PlayPong
+c   c1635: PlayPong excludes RackofPins
+c   c1636: PlayPong requires Rightbrickles
+c   c1637: Rightbrickles requires PlayPong
+c   c1638: PlayPong excludes Rightbrickles
+c   c1639: PlayPong requires Rightpont
+c   c1640: Rightpont requires PlayPong
+c   c1641: PlayPong excludes Rightpont
+c   c1642: PlayPong requires ScoreBoard
+c   c1643: ScoreBoard requires PlayPong
+c   c1644: PlayPong excludes ScoreBoard
+c   c1645: PlayPong requires TopPaddle
+c   c1646: TopPaddle requires PlayPong
+c   c1647: PlayPong excludes TopPaddle
+c   c1648: Pong requires PongBoard
+c   c1649: PongBoard requires Pong
+c   c1650: Pong excludes PongBoard
+c   c1651: Pong requires PongGameMenu
+c   c1652: PongGameMenu requires Pong
+c   c1653: Pong excludes PongGameMenu
+c   c1654: Pong requires Pucksupply
+c   c1655: Pucksupply requires Pong
+c   c1656: Pong excludes Pucksupply
+c   c1657: Pong requires RackofPins
+c   c1658: RackofPins requires Pong
+c   c1659: Pong excludes RackofPins
+c   c1660: Pong requires Rightbrickles
+c   c1661: Rightbrickles requires Pong
+c   c1662: Pong excludes Rightbrickles
+c   c1663: Pong requires Rightpont
+c   c1664: Rightpont requires Pong
+c   c1665: Pong excludes Rightpont
+c   c1666: Pong requires ScoreBoard
+c   c1667: ScoreBoard requires Pong
+c   c1668: Pong excludes ScoreBoard
+c   c1669: Pong requires TopPaddle
+c   c1670: TopPaddle requires Pong
+c   c1671: Pong excludes TopPaddle
+c   c1672: PongBoard requires PongGameMenu
+c   c1673: PongGameMenu requires PongBoard
+c   c1674: PongBoard excludes PongGameMenu
+c   c1675: PongBoard requires Pucksupply
+c   c1676: Pucksupply requires PongBoard
+c   c1677: PongBoard excludes Pucksupply
+c   c1678: PongBoard requires RackofPins
+c   c1679: RackofPins requires PongBoard
+c   c1680: PongBoard excludes RackofPins
+c   c1681: PongBoard requires Rightbrickles
+c   c1682: Rightbrickles requires PongBoard
+c   c1683: PongBoard excludes Rightbrickles
+c   c1684: PongBoard requires Rightpont
+c   c1685: Rightpont requires PongBoard
+c   c1686: PongBoard excludes Rightpont
+c   c1687: PongBoard requires ScoreBoard
+c   c1688: ScoreBoard requires PongBoard
+c   c1689: PongBoard excludes ScoreBoard
+c   c1690: PongBoard requires TopPaddle
+c   c1691: TopPaddle requires PongBoard
+c   c1692: PongBoard excludes TopPaddle
+c   c1693: PongGameMenu requires Pucksupply
+c   c1694: Pucksupply requires PongGameMenu
+c   c1695: PongGameMenu excludes Pucksupply
+c   c1696: PongGameMenu requires RackofPins
+c   c1697: RackofPins requires PongGameMenu
+c   c1698: PongGameMenu excludes RackofPins
+c   c1699: PongGameMenu requires Rightbrickles
+c   c1700: Rightbrickles requires PongGameMenu
+c   c1701: PongGameMenu excludes Rightbrickles
+c   c1702: PongGameMenu requires Rightpont
+c   c1703: Rightpont requires PongGameMenu
+c   c1704: PongGameMenu excludes Rightpont
+c   c1705: PongGameMenu requires ScoreBoard
+c   c1706: ScoreBoard requires PongGameMenu
+c   c1707: PongGameMenu excludes ScoreBoard
+c   c1708: PongGameMenu requires TopPaddle
+c   c1709: TopPaddle requires PongGameMenu
+c   c1710: PongGameMenu excludes TopPaddle
+c   c1711: Pucksupply requires RackofPins
+c   c1712: RackofPins requires Pucksupply
+c   c1713: Pucksupply excludes RackofPins
+c   c1714: Pucksupply requires Rightbrickles
+c   c1715: Rightbrickles requires Pucksupply
+c   c1716: Pucksupply excludes Rightbrickles
+c   c1717: Pucksupply requires Rightpont
+c   c1718: Rightpont requires Pucksupply
+c   c1719: Pucksupply excludes Rightpont
+c   c1720: Pucksupply requires ScoreBoard
+c   c1721: ScoreBoard requires Pucksupply
+c   c1722: Pucksupply excludes ScoreBoard
+c   c1723: Pucksupply requires TopPaddle
+c   c1724: TopPaddle requires Pucksupply
+c   c1725: Pucksupply excludes TopPaddle
+c   c1726: RackofPins requires Rightbrickles
+c   c1727: Rightbrickles requires RackofPins
+c   c1728: RackofPins excludes Rightbrickles
+c   c1729: RackofPins requires Rightpont
+c   c1730: Rightpont requires RackofPins
+c   c1731: RackofPins excludes Rightpont
+c   c1732: RackofPins requires ScoreBoard
+c   c1733: ScoreBoard requires RackofPins
+c   c1734: RackofPins excludes ScoreBoard
+c   c1735: RackofPins requires TopPaddle
+c   c1736: TopPaddle requires RackofPins
+c   c1737: RackofPins excludes TopPaddle
+c   c1738: Rightbrickles requires Rightpont
+c   c1739: Rightpont requires Rightbrickles
+c   c1740: Rightbrickles excludes Rightpont
+c   c1741: Rightbrickles requires ScoreBoard
+c   c1742: ScoreBoard requires Rightbrickles
+c   c1743: Rightbrickles excludes ScoreBoard
+c   c1744: Rightbrickles requires TopPaddle
+c   c1745: TopPaddle requires Rightbrickles
+c   c1746: Rightbrickles excludes TopPaddle
+c   c1747: Rightpont requires ScoreBoard
+c   c1748: ScoreBoard requires Rightpont
+c   c1749: Rightpont excludes ScoreBoard
+c   c1750: Rightpont requires TopPaddle
+c   c1751: TopPaddle requires Rightpont
+c   c1752: Rightpont excludes TopPaddle
+c   c1753: ScoreBoard requires TopPaddle
+c   c1754: TopPaddle requires ScoreBoard
+c   c1755: ScoreBoard excludes TopPaddle
+c
+p cnf 65 1960
+-1 2 0
+-2 1 0
+-2 1 0
+-2 3 0
+-3 2 0
+-3 2 0
+-2 4 0
+-4 2 0
+-4 2 0
+-2 5 0
+-5 2 0
+-5 2 0
+-2 6 0
+-6 2 0
+-6 2 0
+-2 7 0
+-7 2 0
+-7 2 0
+-2 8 0
+-8 2 0
+-8 2 0
+-2 9 0
+-9 2 0
+-9 2 0
+-2 10 0
+-10 2 0
+-10 2 0
+-10 11 0
+-11 10 0
+-11 10 0
+-11 12 13 14 0
+-12 -13 0
+-12 -14 0
+-13 -14 0
+-12 11 0
+-13 11 0
+-14 11 0
+-11 12 13 14 0
+-12 11 0
+-13 11 0
+-14 11 0
+-10 15 0
+-15 10 0
+-15 10 0
+-10 16 0
+-16 10 0
+-16 10 0
+-1 17 0
+-17 1 0
+-17 1 0
+-17 18 0
+-18 17 0
+-18 17 0
+-18 19 0
+-19 18 0
+-19 18 0
+-18 20 0
+-20 18 0
+-20 18 0
+-20 21 0
+-21 20 0
+-21 20 0
+-20 22 0
+-22 20 0
+-22 20 0
+-18 23 0
+-23 18 0
+-23 18 0
+-23 24 25 0
+-24 -25 0
+-24 23 0
+-25 23 0
+-23 24 25 0
+-24 23 0
+-25 23 0
+-24 26 0
+-26 24 0
+-26 24 0
+-24 27 0
+-27 24 0
+-27 24 0
+-27 28 29 30 31 0
+-28 -29 0
+-28 -30 0
+-28 -31 0
+-29 -30 0
+-29 -31 0
+-30 -31 0
+-28 27 0
+-29 27 0
+-30 27 0
+-31 27 0
+-27 28 29 30 31 0
+-28 27 0
+-29 27 0
+-30 27 0
+-31 27 0
+-28 32 33 0
+-32 -33 0
+-32 28 0
+-33 28 0
+-28 32 33 0
+-32 28 0
+-33 28 0
+-25 34 0
+-34 25 0
+-34 25 0
+-34 35 36 37 38 0
+-35 -36 0
+-35 -37 0
+-35 -38 0
+-36 -37 0
+-36 -38 0
+-37 -38 0
+-35 34 0
+-36 34 0
+-37 34 0
+-38 34 0
+-34 35 36 37 38 0
+-35 34 0
+-36 34 0
+-37 34 0
+-38 34 0
+-25 39 0
+-39 25 0
+-39 25 0
+-39 40 41 42 43 44 45 46 47 48 49 50 51 52 0
+-40 -41 0
+-40 -42 0
+-40 -43 0
+-40 -44 0
+-40 -45 0
+-40 -46 0
+-40 -47 0
+-40 -48 0
+-40 -49 0
+-40 -50 0
+-40 -51 0
+-40 -52 0
+-41 -42 0
+-41 -43 0
+-41 -44 0
+-41 -45 0
+-41 -46 0
+-41 -47 0
+-41 -48 0
+-41 -49 0
+-41 -50 0
+-41 -51 0
+-41 -52 0
+-42 -43 0
+-42 -44 0
+-42 -45 0
+-42 -46 0
+-42 -47 0
+-42 -48 0
+-42 -49 0
+-42 -50 0
+-42 -51 0
+-42 -52 0
+-43 -44 0
+-43 -45 0
+-43 -46 0
+-43 -47 0
+-43 -48 0
+-43 -49 0
+-43 -50 0
+-43 -51 0
+-43 -52 0
+-44 -45 0
+-44 -46 0
+-44 -47 0
+-44 -48 0
+-44 -49 0
+-44 -50 0
+-44 -51 0
+-44 -52 0
+-45 -46 0
+-45 -47 0
+-45 -48 0
+-45 -49 0
+-45 -50 0
+-45 -51 0
+-45 -52 0
+-46 -47 0
+-46 -48 0
+-46 -49 0
+-46 -50 0
+-46 -51 0
+-46 -52 0
+-47 -48 0
+-47 -49 0
+-47 -50 0
+-47 -51 0
+-47 -52 0
+-48 -49 0
+-48 -50 0
+-48 -51 0
+-48 -52 0
+-49 -50 0
+-49 -51 0
+-49 -52 0
+-50 -51 0
+-50 -52 0
+-51 -52 0
+-40 39 0
+-41 39 0
+-42 39 0
+-43 39 0
+-44 39 0
+-45 39 0
+-46 39 0
+-47 39 0
+-48 39 0
+-49 39 0
+-50 39 0
+-51 39 0
+-52 39 0
+-39 40 41 42 43 44 45 46 47 48 49 50 51 52 0
+-40 39 0
+-41 39 0
+-42 39 0
+-43 39 0
+-44 39 0
+-45 39 0
+-46 39 0
+-47 39 0
+-48 39 0
+-49 39 0
+-50 39 0
+-51 39 0
+-52 39 0
+-17 53 0
+-53 17 0
+-53 17 0
+-17 54 0
+-54 17 0
+-54 17 0
+-54 55 56 57 0
+-55 -56 0
+-55 -57 0
+-56 -57 0
+-55 54 0
+-56 54 0
+-57 54 0
+-54 55 56 57 0
+-55 54 0
+-56 54 0
+-57 54 0
+-17 58 0
+-58 17 0
+-58 17 0
+-58 59 60 61 0
+-59 -60 0
+-59 -61 0
+-60 -61 0
+-59 58 0
+-60 58 0
+-61 58 0
+-58 59 60 61 0
+-59 58 0
+-60 58 0
+-61 58 0
+-17 62 0
+-62 17 0
+-62 17 0
+-62 63 64 65 0
+-63 -64 0
+-63 -65 0
+-64 -65 0
+-63 62 0
+-64 62 0
+-65 62 0
+-62 63 64 65 0
+-63 62 0
+-64 62 0
+-65 62 0
+-33 61 0
+-61 33 0
+-33 -61 0
+-33 30 0
+-30 33 0
+-33 -30 0
+-33 57 0
+-57 33 0
+-33 -57 0
+-33 65 0
+-65 33 0
+-33 -65 0
+-33 31 0
+-31 33 0
+-33 -31 0
+-33 40 0
+-40 33 0
+-33 -40 0
+-33 41 0
+-41 33 0
+-33 -41 0
+-33 60 0
+-60 33 0
+-33 -60 0
+-33 56 0
+-56 33 0
+-33 -56 0
+-33 64 0
+-64 33 0
+-33 -64 0
+-33 42 0
+-42 33 0
+-33 -42 0
+-33 51 0
+-51 33 0
+-33 -51 0
+-33 52 0
+-52 33 0
+-33 -52 0
+-33 46 0
+-46 33 0
+-33 -46 0
+-33 47 0
+-47 33 0
+-33 -47 0
+-33 43 0
+-43 33 0
+-33 -43 0
+-33 50 0
+-50 33 0
+-33 -50 0
+-33 45 0
+-45 33 0
+-33 -45 0
+-33 44 0
+-44 33 0
+-33 -44 0
+-33 37 0
+-37 33 0
+-33 -37 0
+-33 35 0
+-35 33 0
+-33 -35 0
+-33 14 0
+-14 33 0
+-33 -14 0
+-33 12 0
+-12 33 0
+-33 -12 0
+-33 13 0
+-13 33 0
+-33 -13 0
+-33 59 0
+-59 33 0
+-33 -59 0
+-33 55 0
+-55 33 0
+-33 -55 0
+-33 63 0
+-63 33 0
+-33 -63 0
+-33 53 0
+-53 33 0
+-33 -53 0
+-33 48 0
+-48 33 0
+-33 -48 0
+-33 38 0
+-38 33 0
+-33 -38 0
+-33 36 0
+-36 33 0
+-33 -36 0
+-33 49 0
+-49 33 0
+-33 -49 0
+-33 32 0
+-32 33 0
+-33 -32 0
+-61 30 0
+-30 61 0
+-61 -30 0
+-61 57 0
+-57 61 0
+-61 -57 0
+-61 65 0
+-65 61 0
+-61 -65 0
+-61 31 0
+-31 61 0
+-61 -31 0
+-61 40 0
+-40 61 0
+-61 -40 0
+-61 41 0
+-41 61 0
+-61 -41 0
+-61 60 0
+-60 61 0
+-61 -60 0
+-61 56 0
+-56 61 0
+-61 -56 0
+-61 64 0
+-64 61 0
+-61 -64 0
+-61 42 0
+-42 61 0
+-61 -42 0
+-61 51 0
+-51 61 0
+-61 -51 0
+-61 52 0
+-52 61 0
+-61 -52 0
+-61 46 0
+-46 61 0
+-61 -46 0
+-61 47 0
+-47 61 0
+-61 -47 0
+-61 43 0
+-43 61 0
+-61 -43 0
+-61 50 0
+-50 61 0
+-61 -50 0
+-61 45 0
+-45 61 0
+-61 -45 0
+-61 44 0
+-44 61 0
+-61 -44 0
+-61 37 0
+-37 61 0
+-61 -37 0
+-61 35 0
+-35 61 0
+-61 -35 0
+-61 14 0
+-14 61 0
+-61 -14 0
+-61 12 0
+-12 61 0
+-61 -12 0
+-61 13 0
+-13 61 0
+-61 -13 0
+-61 59 0
+-59 61 0
+-61 -59 0
+-61 55 0
+-55 61 0
+-61 -55 0
+-61 63 0
+-63 61 0
+-61 -63 0
+-61 53 0
+-53 61 0
+-61 -53 0
+-61 48 0
+-48 61 0
+-61 -48 0
+-61 38 0
+-38 61 0
+-61 -38 0
+-61 36 0
+-36 61 0
+-61 -36 0
+-61 49 0
+-49 61 0
+-61 -49 0
+-61 32 0
+-32 61 0
+-61 -32 0
+-30 57 0
+-57 30 0
+-30 -57 0
+-30 65 0
+-65 30 0
+-30 -65 0
+-30 31 0
+-31 30 0
+-30 -31 0
+-30 40 0
+-40 30 0
+-30 -40 0
+-30 41 0
+-41 30 0
+-30 -41 0
+-30 60 0
+-60 30 0
+-30 -60 0
+-30 56 0
+-56 30 0
+-30 -56 0
+-30 64 0
+-64 30 0
+-30 -64 0
+-30 42 0
+-42 30 0
+-30 -42 0
+-30 51 0
+-51 30 0
+-30 -51 0
+-30 52 0
+-52 30 0
+-30 -52 0
+-30 46 0
+-46 30 0
+-30 -46 0
+-30 47 0
+-47 30 0
+-30 -47 0
+-30 43 0
+-43 30 0
+-30 -43 0
+-30 50 0
+-50 30 0
+-30 -50 0
+-30 45 0
+-45 30 0
+-30 -45 0
+-30 44 0
+-44 30 0
+-30 -44 0
+-30 37 0
+-37 30 0
+-30 -37 0
+-30 35 0
+-35 30 0
+-30 -35 0
+-30 14 0
+-14 30 0
+-30 -14 0
+-30 12 0
+-12 30 0
+-30 -12 0
+-30 13 0
+-13 30 0
+-30 -13 0
+-30 59 0
+-59 30 0
+-30 -59 0
+-30 55 0
+-55 30 0
+-30 -55 0
+-30 63 0
+-63 30 0
+-30 -63 0
+-30 53 0
+-53 30 0
+-30 -53 0
+-30 48 0
+-48 30 0
+-30 -48 0
+-30 38 0
+-38 30 0
+-30 -38 0
+-30 36 0
+-36 30 0
+-30 -36 0
+-30 49 0
+-49 30 0
+-30 -49 0
+-30 32 0
+-32 30 0
+-30 -32 0
+-57 65 0
+-65 57 0
+-57 -65 0
+-57 31 0
+-31 57 0
+-57 -31 0
+-57 40 0
+-40 57 0
+-57 -40 0
+-57 41 0
+-41 57 0
+-57 -41 0
+-57 60 0
+-60 57 0
+-57 -60 0
+-57 56 0
+-56 57 0
+-57 -56 0
+-57 64 0
+-64 57 0
+-57 -64 0
+-57 42 0
+-42 57 0
+-57 -42 0
+-57 51 0
+-51 57 0
+-57 -51 0
+-57 52 0
+-52 57 0
+-57 -52 0
+-57 46 0
+-46 57 0
+-57 -46 0
+-57 47 0
+-47 57 0
+-57 -47 0
+-57 43 0
+-43 57 0
+-57 -43 0
+-57 50 0
+-50 57 0
+-57 -50 0
+-57 45 0
+-45 57 0
+-57 -45 0
+-57 44 0
+-44 57 0
+-57 -44 0
+-57 37 0
+-37 57 0
+-57 -37 0
+-57 35 0
+-35 57 0
+-57 -35 0
+-57 14 0
+-14 57 0
+-57 -14 0
+-57 12 0
+-12 57 0
+-57 -12 0
+-57 13 0
+-13 57 0
+-57 -13 0
+-57 59 0
+-59 57 0
+-57 -59 0
+-57 55 0
+-55 57 0
+-57 -55 0
+-57 63 0
+-63 57 0
+-57 -63 0
+-57 53 0
+-53 57 0
+-57 -53 0
+-57 48 0
+-48 57 0
+-57 -48 0
+-57 38 0
+-38 57 0
+-57 -38 0
+-57 36 0
+-36 57 0
+-57 -36 0
+-57 49 0
+-49 57 0
+-57 -49 0
+-57 32 0
+-32 57 0
+-57 -32 0
+-65 31 0
+-31 65 0
+-65 -31 0
+-65 40 0
+-40 65 0
+-65 -40 0
+-65 41 0
+-41 65 0
+-65 -41 0
+-65 60 0
+-60 65 0
+-65 -60 0
+-65 56 0
+-56 65 0
+-65 -56 0
+-65 64 0
+-64 65 0
+-65 -64 0
+-65 42 0
+-42 65 0
+-65 -42 0
+-65 51 0
+-51 65 0
+-65 -51 0
+-65 52 0
+-52 65 0
+-65 -52 0
+-65 46 0
+-46 65 0
+-65 -46 0
+-65 47 0
+-47 65 0
+-65 -47 0
+-65 43 0
+-43 65 0
+-65 -43 0
+-65 50 0
+-50 65 0
+-65 -50 0
+-65 45 0
+-45 65 0
+-65 -45 0
+-65 44 0
+-44 65 0
+-65 -44 0
+-65 37 0
+-37 65 0
+-65 -37 0
+-65 35 0
+-35 65 0
+-65 -35 0
+-65 14 0
+-14 65 0
+-65 -14 0
+-65 12 0
+-12 65 0
+-65 -12 0
+-65 13 0
+-13 65 0
+-65 -13 0
+-65 59 0
+-59 65 0
+-65 -59 0
+-65 55 0
+-55 65 0
+-65 -55 0
+-65 63 0
+-63 65 0
+-65 -63 0
+-65 53 0
+-53 65 0
+-65 -53 0
+-65 48 0
+-48 65 0
+-65 -48 0
+-65 38 0
+-38 65 0
+-65 -38 0
+-65 36 0
+-36 65 0
+-65 -36 0
+-65 49 0
+-49 65 0
+-65 -49 0
+-65 32 0
+-32 65 0
+-65 -32 0
+-31 40 0
+-40 31 0
+-31 -40 0
+-31 41 0
+-41 31 0
+-31 -41 0
+-31 60 0
+-60 31 0
+-31 -60 0
+-31 56 0
+-56 31 0
+-31 -56 0
+-31 64 0
+-64 31 0
+-31 -64 0
+-31 42 0
+-42 31 0
+-31 -42 0
+-31 51 0
+-51 31 0
+-31 -51 0
+-31 52 0
+-52 31 0
+-31 -52 0
+-31 46 0
+-46 31 0
+-31 -46 0
+-31 47 0
+-47 31 0
+-31 -47 0
+-31 43 0
+-43 31 0
+-31 -43 0
+-31 50 0
+-50 31 0
+-31 -50 0
+-31 45 0
+-45 31 0
+-31 -45 0
+-31 44 0
+-44 31 0
+-31 -44 0
+-31 37 0
+-37 31 0
+-31 -37 0
+-31 35 0
+-35 31 0
+-31 -35 0
+-31 14 0
+-14 31 0
+-31 -14 0
+-31 12 0
+-12 31 0
+-31 -12 0
+-31 13 0
+-13 31 0
+-31 -13 0
+-31 59 0
+-59 31 0
+-31 -59 0
+-31 55 0
+-55 31 0
+-31 -55 0
+-31 63 0
+-63 31 0
+-31 -63 0
+-31 53 0
+-53 31 0
+-31 -53 0
+-31 48 0
+-48 31 0
+-31 -48 0
+-31 38 0
+-38 31 0
+-31 -38 0
+-31 36 0
+-36 31 0
+-31 -36 0
+-31 49 0
+-49 31 0
+-31 -49 0
+-31 32 0
+-32 31 0
+-31 -32 0
+-40 41 0
+-41 40 0
+-40 -41 0
+-40 60 0
+-60 40 0
+-40 -60 0
+-40 56 0
+-56 40 0
+-40 -56 0
+-40 64 0
+-64 40 0
+-40 -64 0
+-40 42 0
+-42 40 0
+-40 -42 0
+-40 51 0
+-51 40 0
+-40 -51 0
+-40 52 0
+-52 40 0
+-40 -52 0
+-40 46 0
+-46 40 0
+-40 -46 0
+-40 47 0
+-47 40 0
+-40 -47 0
+-40 43 0
+-43 40 0
+-40 -43 0
+-40 50 0
+-50 40 0
+-40 -50 0
+-40 45 0
+-45 40 0
+-40 -45 0
+-40 44 0
+-44 40 0
+-40 -44 0
+-40 37 0
+-37 40 0
+-40 -37 0
+-40 35 0
+-35 40 0
+-40 -35 0
+-40 14 0
+-14 40 0
+-40 -14 0
+-40 12 0
+-12 40 0
+-40 -12 0
+-40 13 0
+-13 40 0
+-40 -13 0
+-40 59 0
+-59 40 0
+-40 -59 0
+-40 55 0
+-55 40 0
+-40 -55 0
+-40 63 0
+-63 40 0
+-40 -63 0
+-40 53 0
+-53 40 0
+-40 -53 0
+-40 48 0
+-48 40 0
+-40 -48 0
+-40 38 0
+-38 40 0
+-40 -38 0
+-40 36 0
+-36 40 0
+-40 -36 0
+-40 49 0
+-49 40 0
+-40 -49 0
+-40 32 0
+-32 40 0
+-40 -32 0
+-41 60 0
+-60 41 0
+-41 -60 0
+-41 56 0
+-56 41 0
+-41 -56 0
+-41 64 0
+-64 41 0
+-41 -64 0
+-41 42 0
+-42 41 0
+-41 -42 0
+-41 51 0
+-51 41 0
+-41 -51 0
+-41 52 0
+-52 41 0
+-41 -52 0
+-41 46 0
+-46 41 0
+-41 -46 0
+-41 47 0
+-47 41 0
+-41 -47 0
+-41 43 0
+-43 41 0
+-41 -43 0
+-41 50 0
+-50 41 0
+-41 -50 0
+-41 45 0
+-45 41 0
+-41 -45 0
+-41 44 0
+-44 41 0
+-41 -44 0
+-41 37 0
+-37 41 0
+-41 -37 0
+-41 35 0
+-35 41 0
+-41 -35 0
+-41 14 0
+-14 41 0
+-41 -14 0
+-41 12 0
+-12 41 0
+-41 -12 0
+-41 13 0
+-13 41 0
+-41 -13 0
+-41 59 0
+-59 41 0
+-41 -59 0
+-41 55 0
+-55 41 0
+-41 -55 0
+-41 63 0
+-63 41 0
+-41 -63 0
+-41 53 0
+-53 41 0
+-41 -53 0
+-41 48 0
+-48 41 0
+-41 -48 0
+-41 38 0
+-38 41 0
+-41 -38 0
+-41 36 0
+-36 41 0
+-41 -36 0
+-41 49 0
+-49 41 0
+-41 -49 0
+-41 32 0
+-32 41 0
+-41 -32 0
+-60 56 0
+-56 60 0
+-60 -56 0
+-60 64 0
+-64 60 0
+-60 -64 0
+-60 42 0
+-42 60 0
+-60 -42 0
+-60 51 0
+-51 60 0
+-60 -51 0
+-60 52 0
+-52 60 0
+-60 -52 0
+-60 46 0
+-46 60 0
+-60 -46 0
+-60 47 0
+-47 60 0
+-60 -47 0
+-60 43 0
+-43 60 0
+-60 -43 0
+-60 50 0
+-50 60 0
+-60 -50 0
+-60 45 0
+-45 60 0
+-60 -45 0
+-60 44 0
+-44 60 0
+-60 -44 0
+-60 37 0
+-37 60 0
+-60 -37 0
+-60 35 0
+-35 60 0
+-60 -35 0
+-60 14 0
+-14 60 0
+-60 -14 0
+-60 12 0
+-12 60 0
+-60 -12 0
+-60 13 0
+-13 60 0
+-60 -13 0
+-60 59 0
+-59 60 0
+-60 -59 0
+-60 55 0
+-55 60 0
+-60 -55 0
+-60 63 0
+-63 60 0
+-60 -63 0
+-60 53 0
+-53 60 0
+-60 -53 0
+-60 48 0
+-48 60 0
+-60 -48 0
+-60 38 0
+-38 60 0
+-60 -38 0
+-60 36 0
+-36 60 0
+-60 -36 0
+-60 49 0
+-49 60 0
+-60 -49 0
+-60 32 0
+-32 60 0
+-60 -32 0
+-56 64 0
+-64 56 0
+-56 -64 0
+-56 42 0
+-42 56 0
+-56 -42 0
+-56 51 0
+-51 56 0
+-56 -51 0
+-56 52 0
+-52 56 0
+-56 -52 0
+-56 46 0
+-46 56 0
+-56 -46 0
+-56 47 0
+-47 56 0
+-56 -47 0
+-56 43 0
+-43 56 0
+-56 -43 0
+-56 50 0
+-50 56 0
+-56 -50 0
+-56 45 0
+-45 56 0
+-56 -45 0
+-56 44 0
+-44 56 0
+-56 -44 0
+-56 37 0
+-37 56 0
+-56 -37 0
+-56 35 0
+-35 56 0
+-56 -35 0
+-56 14 0
+-14 56 0
+-56 -14 0
+-56 12 0
+-12 56 0
+-56 -12 0
+-56 13 0
+-13 56 0
+-56 -13 0
+-56 59 0
+-59 56 0
+-56 -59 0
+-56 55 0
+-55 56 0
+-56 -55 0
+-56 63 0
+-63 56 0
+-56 -63 0
+-56 53 0
+-53 56 0
+-56 -53 0
+-56 48 0
+-48 56 0
+-56 -48 0
+-56 38 0
+-38 56 0
+-56 -38 0
+-56 36 0
+-36 56 0
+-56 -36 0
+-56 49 0
+-49 56 0
+-56 -49 0
+-56 32 0
+-32 56 0
+-56 -32 0
+-64 42 0
+-42 64 0
+-64 -42 0
+-64 51 0
+-51 64 0
+-64 -51 0
+-64 52 0
+-52 64 0
+-64 -52 0
+-64 46 0
+-46 64 0
+-64 -46 0
+-64 47 0
+-47 64 0
+-64 -47 0
+-64 43 0
+-43 64 0
+-64 -43 0
+-64 50 0
+-50 64 0
+-64 -50 0
+-64 45 0
+-45 64 0
+-64 -45 0
+-64 44 0
+-44 64 0
+-64 -44 0
+-64 37 0
+-37 64 0
+-64 -37 0
+-64 35 0
+-35 64 0
+-64 -35 0
+-64 14 0
+-14 64 0
+-64 -14 0
+-64 12 0
+-12 64 0
+-64 -12 0
+-64 13 0
+-13 64 0
+-64 -13 0
+-64 59 0
+-59 64 0
+-64 -59 0
+-64 55 0
+-55 64 0
+-64 -55 0
+-64 63 0
+-63 64 0
+-64 -63 0
+-64 53 0
+-53 64 0
+-64 -53 0
+-64 48 0
+-48 64 0
+-64 -48 0
+-64 38 0
+-38 64 0
+-64 -38 0
+-64 36 0
+-36 64 0
+-64 -36 0
+-64 49 0
+-49 64 0
+-64 -49 0
+-64 32 0
+-32 64 0
+-64 -32 0
+-42 51 0
+-51 42 0
+-42 -51 0
+-42 52 0
+-52 42 0
+-42 -52 0
+-42 46 0
+-46 42 0
+-42 -46 0
+-42 47 0
+-47 42 0
+-42 -47 0
+-42 43 0
+-43 42 0
+-42 -43 0
+-42 50 0
+-50 42 0
+-42 -50 0
+-42 45 0
+-45 42 0
+-42 -45 0
+-42 44 0
+-44 42 0
+-42 -44 0
+-42 37 0
+-37 42 0
+-42 -37 0
+-42 35 0
+-35 42 0
+-42 -35 0
+-42 14 0
+-14 42 0
+-42 -14 0
+-42 12 0
+-12 42 0
+-42 -12 0
+-42 13 0
+-13 42 0
+-42 -13 0
+-42 59 0
+-59 42 0
+-42 -59 0
+-42 55 0
+-55 42 0
+-42 -55 0
+-42 63 0
+-63 42 0
+-42 -63 0
+-42 53 0
+-53 42 0
+-42 -53 0
+-42 48 0
+-48 42 0
+-42 -48 0
+-42 38 0
+-38 42 0
+-42 -38 0
+-42 36 0
+-36 42 0
+-42 -36 0
+-42 49 0
+-49 42 0
+-42 -49 0
+-42 32 0
+-32 42 0
+-42 -32 0
+-51 52 0
+-52 51 0
+-51 -52 0
+-51 46 0
+-46 51 0
+-51 -46 0
+-51 47 0
+-47 51 0
+-51 -47 0
+-51 43 0
+-43 51 0
+-51 -43 0
+-51 50 0
+-50 51 0
+-51 -50 0
+-51 45 0
+-45 51 0
+-51 -45 0
+-51 44 0
+-44 51 0
+-51 -44 0
+-51 37 0
+-37 51 0
+-51 -37 0
+-51 35 0
+-35 51 0
+-51 -35 0
+-51 14 0
+-14 51 0
+-51 -14 0
+-51 12 0
+-12 51 0
+-51 -12 0
+-51 13 0
+-13 51 0
+-51 -13 0
+-51 59 0
+-59 51 0
+-51 -59 0
+-51 55 0
+-55 51 0
+-51 -55 0
+-51 63 0
+-63 51 0
+-51 -63 0
+-51 53 0
+-53 51 0
+-51 -53 0
+-51 48 0
+-48 51 0
+-51 -48 0
+-51 38 0
+-38 51 0
+-51 -38 0
+-51 36 0
+-36 51 0
+-51 -36 0
+-51 49 0
+-49 51 0
+-51 -49 0
+-51 32 0
+-32 51 0
+-51 -32 0
+-52 46 0
+-46 52 0
+-52 -46 0
+-52 47 0
+-47 52 0
+-52 -47 0
+-52 43 0
+-43 52 0
+-52 -43 0
+-52 50 0
+-50 52 0
+-52 -50 0
+-52 45 0
+-45 52 0
+-52 -45 0
+-52 44 0
+-44 52 0
+-52 -44 0
+-52 37 0
+-37 52 0
+-52 -37 0
+-52 35 0
+-35 52 0
+-52 -35 0
+-52 14 0
+-14 52 0
+-52 -14 0
+-52 12 0
+-12 52 0
+-52 -12 0
+-52 13 0
+-13 52 0
+-52 -13 0
+-52 59 0
+-59 52 0
+-52 -59 0
+-52 55 0
+-55 52 0
+-52 -55 0
+-52 63 0
+-63 52 0
+-52 -63 0
+-52 53 0
+-53 52 0
+-52 -53 0
+-52 48 0
+-48 52 0
+-52 -48 0
+-52 38 0
+-38 52 0
+-52 -38 0
+-52 36 0
+-36 52 0
+-52 -36 0
+-52 49 0
+-49 52 0
+-52 -49 0
+-52 32 0
+-32 52 0
+-52 -32 0
+-46 47 0
+-47 46 0
+-46 -47 0
+-46 43 0
+-43 46 0
+-46 -43 0
+-46 50 0
+-50 46 0
+-46 -50 0
+-46 45 0
+-45 46 0
+-46 -45 0
+-46 44 0
+-44 46 0
+-46 -44 0
+-46 37 0
+-37 46 0
+-46 -37 0
+-46 35 0
+-35 46 0
+-46 -35 0
+-46 14 0
+-14 46 0
+-46 -14 0
+-46 12 0
+-12 46 0
+-46 -12 0
+-46 13 0
+-13 46 0
+-46 -13 0
+-46 59 0
+-59 46 0
+-46 -59 0
+-46 55 0
+-55 46 0
+-46 -55 0
+-46 63 0
+-63 46 0
+-46 -63 0
+-46 53 0
+-53 46 0
+-46 -53 0
+-46 48 0
+-48 46 0
+-46 -48 0
+-46 38 0
+-38 46 0
+-46 -38 0
+-46 36 0
+-36 46 0
+-46 -36 0
+-46 49 0
+-49 46 0
+-46 -49 0
+-46 32 0
+-32 46 0
+-46 -32 0
+-47 43 0
+-43 47 0
+-47 -43 0
+-47 50 0
+-50 47 0
+-47 -50 0
+-47 45 0
+-45 47 0
+-47 -45 0
+-47 44 0
+-44 47 0
+-47 -44 0
+-47 37 0
+-37 47 0
+-47 -37 0
+-47 35 0
+-35 47 0
+-47 -35 0
+-47 14 0
+-14 47 0
+-47 -14 0
+-47 12 0
+-12 47 0
+-47 -12 0
+-47 13 0
+-13 47 0
+-47 -13 0
+-47 59 0
+-59 47 0
+-47 -59 0
+-47 55 0
+-55 47 0
+-47 -55 0
+-47 63 0
+-63 47 0
+-47 -63 0
+-47 53 0
+-53 47 0
+-47 -53 0
+-47 48 0
+-48 47 0
+-47 -48 0
+-47 38 0
+-38 47 0
+-47 -38 0
+-47 36 0
+-36 47 0
+-47 -36 0
+-47 49 0
+-49 47 0
+-47 -49 0
+-47 32 0
+-32 47 0
+-47 -32 0
+-43 50 0
+-50 43 0
+-43 -50 0
+-43 45 0
+-45 43 0
+-43 -45 0
+-43 44 0
+-44 43 0
+-43 -44 0
+-43 37 0
+-37 43 0
+-43 -37 0
+-43 35 0
+-35 43 0
+-43 -35 0
+-43 14 0
+-14 43 0
+-43 -14 0
+-43 12 0
+-12 43 0
+-43 -12 0
+-43 13 0
+-13 43 0
+-43 -13 0
+-43 59 0
+-59 43 0
+-43 -59 0
+-43 55 0
+-55 43 0
+-43 -55 0
+-43 63 0
+-63 43 0
+-43 -63 0
+-43 53 0
+-53 43 0
+-43 -53 0
+-43 48 0
+-48 43 0
+-43 -48 0
+-43 38 0
+-38 43 0
+-43 -38 0
+-43 36 0
+-36 43 0
+-43 -36 0
+-43 49 0
+-49 43 0
+-43 -49 0
+-43 32 0
+-32 43 0
+-43 -32 0
+-50 45 0
+-45 50 0
+-50 -45 0
+-50 44 0
+-44 50 0
+-50 -44 0
+-50 37 0
+-37 50 0
+-50 -37 0
+-50 35 0
+-35 50 0
+-50 -35 0
+-50 14 0
+-14 50 0
+-50 -14 0
+-50 12 0
+-12 50 0
+-50 -12 0
+-50 13 0
+-13 50 0
+-50 -13 0
+-50 59 0
+-59 50 0
+-50 -59 0
+-50 55 0
+-55 50 0
+-50 -55 0
+-50 63 0
+-63 50 0
+-50 -63 0
+-50 53 0
+-53 50 0
+-50 -53 0
+-50 48 0
+-48 50 0
+-50 -48 0
+-50 38 0
+-38 50 0
+-50 -38 0
+-50 36 0
+-36 50 0
+-50 -36 0
+-50 49 0
+-49 50 0
+-50 -49 0
+-50 32 0
+-32 50 0
+-50 -32 0
+-45 44 0
+-44 45 0
+-45 -44 0
+-45 37 0
+-37 45 0
+-45 -37 0
+-45 35 0
+-35 45 0
+-45 -35 0
+-45 14 0
+-14 45 0
+-45 -14 0
+-45 12 0
+-12 45 0
+-45 -12 0
+-45 13 0
+-13 45 0
+-45 -13 0
+-45 59 0
+-59 45 0
+-45 -59 0
+-45 55 0
+-55 45 0
+-45 -55 0
+-45 63 0
+-63 45 0
+-45 -63 0
+-45 53 0
+-53 45 0
+-45 -53 0
+-45 48 0
+-48 45 0
+-45 -48 0
+-45 38 0
+-38 45 0
+-45 -38 0
+-45 36 0
+-36 45 0
+-45 -36 0
+-45 49 0
+-49 45 0
+-45 -49 0
+-45 32 0
+-32 45 0
+-45 -32 0
+-44 37 0
+-37 44 0
+-44 -37 0
+-44 35 0
+-35 44 0
+-44 -35 0
+-44 14 0
+-14 44 0
+-44 -14 0
+-44 12 0
+-12 44 0
+-44 -12 0
+-44 13 0
+-13 44 0
+-44 -13 0
+-44 59 0
+-59 44 0
+-44 -59 0
+-44 55 0
+-55 44 0
+-44 -55 0
+-44 63 0
+-63 44 0
+-44 -63 0
+-44 53 0
+-53 44 0
+-44 -53 0
+-44 48 0
+-48 44 0
+-44 -48 0
+-44 38 0
+-38 44 0
+-44 -38 0
+-44 36 0
+-36 44 0
+-44 -36 0
+-44 49 0
+-49 44 0
+-44 -49 0
+-44 32 0
+-32 44 0
+-44 -32 0
+-37 35 0
+-35 37 0
+-37 -35 0
+-37 14 0
+-14 37 0
+-37 -14 0
+-37 12 0
+-12 37 0
+-37 -12 0
+-37 13 0
+-13 37 0
+-37 -13 0
+-37 59 0
+-59 37 0
+-37 -59 0
+-37 55 0
+-55 37 0
+-37 -55 0
+-37 63 0
+-63 37 0
+-37 -63 0
+-37 53 0
+-53 37 0
+-37 -53 0
+-37 48 0
+-48 37 0
+-37 -48 0
+-37 38 0
+-38 37 0
+-37 -38 0
+-37 36 0
+-36 37 0
+-37 -36 0
+-37 49 0
+-49 37 0
+-37 -49 0
+-37 32 0
+-32 37 0
+-37 -32 0
+-35 14 0
+-14 35 0
+-35 -14 0
+-35 12 0
+-12 35 0
+-35 -12 0
+-35 13 0
+-13 35 0
+-35 -13 0
+-35 59 0
+-59 35 0
+-35 -59 0
+-35 55 0
+-55 35 0
+-35 -55 0
+-35 63 0
+-63 35 0
+-35 -63 0
+-35 53 0
+-53 35 0
+-35 -53 0
+-35 48 0
+-48 35 0
+-35 -48 0
+-35 38 0
+-38 35 0
+-35 -38 0
+-35 36 0
+-36 35 0
+-35 -36 0
+-35 49 0
+-49 35 0
+-35 -49 0
+-35 32 0
+-32 35 0
+-35 -32 0
+-14 12 0
+-12 14 0
+-14 -12 0
+-14 13 0
+-13 14 0
+-14 -13 0
+-14 59 0
+-59 14 0
+-14 -59 0
+-14 55 0
+-55 14 0
+-14 -55 0
+-14 63 0
+-63 14 0
+-14 -63 0
+-14 53 0
+-53 14 0
+-14 -53 0
+-14 48 0
+-48 14 0
+-14 -48 0
+-14 38 0
+-38 14 0
+-14 -38 0
+-14 36 0
+-36 14 0
+-14 -36 0
+-14 49 0
+-49 14 0
+-14 -49 0
+-14 32 0
+-32 14 0
+-14 -32 0
+-12 13 0
+-13 12 0
+-12 -13 0
+-12 59 0
+-59 12 0
+-12 -59 0
+-12 55 0
+-55 12 0
+-12 -55 0
+-12 63 0
+-63 12 0
+-12 -63 0
+-12 53 0
+-53 12 0
+-12 -53 0
+-12 48 0
+-48 12 0
+-12 -48 0
+-12 38 0
+-38 12 0
+-12 -38 0
+-12 36 0
+-36 12 0
+-12 -36 0
+-12 49 0
+-49 12 0
+-12 -49 0
+-12 32 0
+-32 12 0
+-12 -32 0
+-13 59 0
+-59 13 0
+-13 -59 0
+-13 55 0
+-55 13 0
+-13 -55 0
+-13 63 0
+-63 13 0
+-13 -63 0
+-13 53 0
+-53 13 0
+-13 -53 0
+-13 48 0
+-48 13 0
+-13 -48 0
+-13 38 0
+-38 13 0
+-13 -38 0
+-13 36 0
+-36 13 0
+-13 -36 0
+-13 49 0
+-49 13 0
+-13 -49 0
+-13 32 0
+-32 13 0
+-13 -32 0
+-59 55 0
+-55 59 0
+-59 -55 0
+-59 63 0
+-63 59 0
+-59 -63 0
+-59 53 0
+-53 59 0
+-59 -53 0
+-59 48 0
+-48 59 0
+-59 -48 0
+-59 38 0
+-38 59 0
+-59 -38 0
+-59 36 0
+-36 59 0
+-59 -36 0
+-59 49 0
+-49 59 0
+-59 -49 0
+-59 32 0
+-32 59 0
+-59 -32 0
+-55 63 0
+-63 55 0
+-55 -63 0
+-55 53 0
+-53 55 0
+-55 -53 0
+-55 48 0
+-48 55 0
+-55 -48 0
+-55 38 0
+-38 55 0
+-55 -38 0
+-55 36 0
+-36 55 0
+-55 -36 0
+-55 49 0
+-49 55 0
+-55 -49 0
+-55 32 0
+-32 55 0
+-55 -32 0
+-63 53 0
+-53 63 0
+-63 -53 0
+-63 48 0
+-48 63 0
+-63 -48 0
+-63 38 0
+-38 63 0
+-63 -38 0
+-63 36 0
+-36 63 0
+-63 -36 0
+-63 49 0
+-49 63 0
+-63 -49 0
+-63 32 0
+-32 63 0
+-63 -32 0
+-53 48 0
+-48 53 0
+-53 -48 0
+-53 38 0
+-38 53 0
+-53 -38 0
+-53 36 0
+-36 53 0
+-53 -36 0
+-53 49 0
+-49 53 0
+-53 -49 0
+-53 32 0
+-32 53 0
+-53 -32 0
+-48 38 0
+-38 48 0
+-48 -38 0
+-48 36 0
+-36 48 0
+-48 -36 0
+-48 49 0
+-49 48 0
+-48 -49 0
+-48 32 0
+-32 48 0
+-48 -32 0
+-38 36 0
+-36 38 0
+-38 -36 0
+-38 49 0
+-49 38 0
+-38 -49 0
+-38 32 0
+-32 38 0
+-38 -32 0
+-36 49 0
+-49 36 0
+-36 -49 0
+-36 32 0
+-32 36 0
+-36 -32 0
+-49 32 0
+-32 49 0
+-49 -32 0

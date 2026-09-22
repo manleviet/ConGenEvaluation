@@ -1,0 +1,5094 @@
+c Constraint Bias B
+c Generated for constraint acquisition
+c Number of features: 291
+c Number of constraints: 2079
+c
+c Feature mapping:
+c   1: eShop
+c   2: Storefront
+c   3: Homepage
+c   4: Staticcontent
+c   5: Dynamiccontent
+c   6: Contenttype
+c   7: Welcomemessage
+c   8: Specialoffers
+c   9: Variationsource
+c   10: Timedependent
+c   11: Personalized
+c   12: Registration
+c   13: Registrationenforcement
+c   14: Registertobrowse
+c   15: Registertobuy
+c   16: None
+c   17: Registrationinformation
+c   18: Logincredentials
+c   19: Shippingaddress
+c   20: Multipleshippingaddresses
+c   21: Billingaddress
+c   22: Multiplebillingaddresses
+c   23: Creditcardinformation
+c   24: Cardholdername
+c   25: Cardnumber
+c   26: Expirydate
+c   27: Securityinformation
+c   28: Demographics
+c   29: Age
+c   30: Income
+c   31: Education
+c   32: CustomDemographicfield
+c   33: PersonalInformation
+c   34: Preferences
+c   35: Sitelayout
+c   36: Listsize
+c   37: Language
+c   38: Reminders
+c   39: Quickcheckoutprofile
+c   40: Customfields
+c   41: Userbehaviourtrackinginformation
+c   42: Catalog
+c   43: ProductInformation
+c   44: Producttype
+c   45: Eletronicgoods
+c   46: Physicalgoods
+c   47: Services
+c   48: Basicinformation
+c   49: Detailedinformation
+c   50: Warrantyinformation
+c   51: Customerreviews
+c   52: Associatedassets
+c   53: Documents
+c   54: Mediafiles
+c   55: Image
+c   56: Video
+c   57: Sound
+c   58: Thumbnail
+c   59: a2Dimage
+c   60: a3Dimage
+c   61: a360degreesimage
+c   62: Differentperspectives
+c   63: Gallery
+c   64: Productvariants
+c   65: Complexproductconfiguration
+c   66: Size
+c   67: Weight
+c   68: Availability
+c   69: Customfields1
+c   70: Categories
+c   71: Catalog1
+c   72: Categories1
+c   73: Multi_level
+c   74: Multipleclassification
+c   75: Multiplecatalogs
+c   76: Searching
+c   77: Basicsearch
+c   78: Advancedsearch
+c   79: Browsing
+c   80: Productpage
+c   81: Categorypage
+c   82: Indexpage
+c   83: Sortingfilters
+c   84: Price
+c   85: Quality
+c   86: Price_Qualityratio
+c   87: Manufacturername
+c   88: Customfilter
+c   89: Customviews
+c   90: Seasonalproductviews
+c   91: Personalizedviews
+c   92: Wishlist
+c   93: Wishlistsaveaftersession
+c   94: E_mailwishlist
+c   95: Multiplewishlists
+c   96: Permissions
+c   97: Publicaccess
+c   98: Restrictedaccess
+c   99: Privateaccess
+c   100: Buypaths
+c   101: Shoppingcart
+c   102: Inventorymanagementpolicy
+c   103: Cartcontentpage
+c   104: Cartsummarypage
+c   105: Cartsaveaftersession
+c   106: Checkout
+c   107: Checkouttype
+c   108: Registeredcheckout
+c   109: Guestcheckout
+c   110: Quickcheckout
+c   111: Enableprofileupdateoncheckout
+c   112: Shippingoptions
+c   113: Qualityofserviceselection
+c   114: Carrierselection
+c   115: Giftoptions
+c   116: Multipleshipments
+c   117: Shippingcostcalculation
+c   118: Taxationoptions
+c   119: Customtaxation
+c   120: Taxgateways
+c   121: FType
+c   122: Fixed_ratetaxation
+c   123: Rule_basedtaxation
+c   124: Taxcodes
+c   125: Address
+c   126: Shipping
+c   127: Billing
+c   128: Resolution
+c   129: Country
+c   130: Region
+c   131: City
+c   132: Ammountspecification
+c   133: Surcharge
+c   134: Percentage
+c   135: CertiTAX
+c   136: CyberSource
+c   137: Customtaxgateway
+c   138: Paymentoptions
+c   139: Paymenttypes
+c   140: COD
+c   141: Creditcard
+c   142: Debitcard
+c   143: Eletroniccheque
+c   144: Faxmailorder
+c   145: Purchaseorder
+c   146: Giftcertificate
+c   147: Phoneorder
+c   148: Custompaymenttype
+c   149: Frauddetection
+c   150: Paymentgateways
+c   151: Authorize_Net
+c   152: CyberSource1
+c   153: LinkPoint
+c   154: Paradata
+c   155: SkipJack
+c   156: VerisignPayflowPro
+c   157: Custompaymentgateway
+c   158: Orderconfirmation
+c   159: Eletronicpage
+c   160: E_mail
+c   161: Phone
+c   162: Mail
+c   163: Buypaths_4
+c   164: PhoneOrdering
+c   165: DigitalDialing
+c   166: RotaryDialing
+c   167: Customerservice
+c   168: Questionandfeedbackforms
+c   169: Productreturns
+c   170: Orderstatusreview
+c   171: Shipmentstatustracking
+c   172: Questionandfeedbacktracking
+c   173: Filteringcriteria
+c   174: Ordernumber
+c   175: Orderdate
+c   176: Orderstatus
+c   177: Requestorderhardcopy
+c   178: Internaltracking
+c   179: Partnertracking
+c   180: Userbehaviourtracking
+c   181: Behaviourtracked
+c   182: Locallyvisitedpages
+c   183: Externalreferringpages
+c   184: Previouspurchases1
+c   185: Businessmanagement
+c   186: Ordermanagement
+c   187: Fulfillment
+c   188: Physicalgoodsfulfillment
+c   189: Eletronicgoodsfulfillment
+c   190: Servicesfulfillment
+c   191: Warehousemanagement
+c   192: Shipping1
+c   193: Customshippingmethod
+c   194: Shippinggateways
+c   195: Pricing
+c   196: Flatrate
+c   197: Ratefactors
+c   198: Quantitypurchased
+c   199: Ordertotal
+c   200: Weight1
+c   201: Productclassification
+c   202: FedEX
+c   203: UPS
+c   204: USPS
+c   205: CanadaPost
+c   206: Customshippinggateway
+c   207: Filerepository
+c   208: Licensemanagement
+c   209: Appointmentscheduling
+c   210: Resourceplanning
+c   211: Targeting
+c   212: Targetingcriteria
+c   213: Customerpreferences
+c   214: Personalinformation
+c   215: Demographics1
+c   216: Previouspurchases
+c   217: Shoppingcartcontent
+c   218: Wishlistcontent
+c   219: Previouslyvisitedpages
+c   220: Dateandtime
+c   221: Customtargetcriteria
+c   222: Targetingmechanisms
+c   223: Advertisements
+c   224: Discounts
+c   225: Sellstrategies
+c   226: Advertisementtypes
+c   227: Bannerads
+c   228: Pop_upads
+c   229: Advertisementsources
+c   230: Houseadvertisements
+c   231: Paidadvertisements
+c   232: Advertisementmanagementinterface
+c   233: Advertisementresponsetracking
+c   234: Contextsensitiveads
+c   235: Discountconditions
+c   236: Productandquantityscope
+c   237: Timescope
+c   238: Purchasevaluescope
+c   239: Award
+c   240: Percentagediscount
+c   241: Fixeddiscount
+c   242: Freeitem
+c   243: Eligibilityrequirements
+c   244: Customersegments
+c   245: Shippingaddress1
+c   246: Graduationby
+c   247: Purchasevalue
+c   248: Quantity
+c   249: Coupons
+c   250: Handlingmultiplediscounts
+c   251: Productkitting
+c   252: Up_selling
+c   253: Cross_selling
+c   254: Substituteproducts
+c   255: Pastcustomersalsobought
+c   256: Displayandnotification
+c   257: Assignmenttopagetypesfordisplay
+c   258: Productflagging
+c   259: E_mails
+c   260: Personalized1
+c   261: Responsetracking
+c   262: Campaigns
+c   263: Affiliates
+c   264: Affiliateregistration
+c   265: Commissiontracking
+c   266: Inventorytracking
+c   267: Allowbackorders
+c   268: Procurement
+c   269: Stockreplenishment
+c   270: Manual
+c   271: Automatic
+c   272: Non_repudiationservice
+c   273: Reportingandanalysis
+c   274: Reporttypes
+c   275: Reportformats
+c   276: Levelofdetail
+c   277: Externalsystemsintegration
+c   278: Fulfillmentsystem
+c   279: Inventorymanagementsystem
+c   280: Procurementsystem
+c   281: Externaldistributorsystem
+c   282: Administration
+c   283: Contentmanagement
+c   284: Productdatabasemanagement
+c   285: Presentationoptions
+c   286: Generallayoutmanagement
+c   287: Contentapproval
+c   288: Storeadministration
+c   289: Sitesearch
+c   290: Searchengineregistration
+c   291: Domainnamesetup
+c
+c Constraint descriptions:
+c   c1: eShop --mandatory--> Storefront
+c   c2: eShop --optional--> Storefront
+c   c3: Storefront --mandatory--> Homepage
+c   c4: Storefront --optional--> Homepage
+c   c5: Homepage --alternative--> ['Staticcontent', 'Dynamiccontent']
+c   c6: Homepage --or--> ['Staticcontent', 'Dynamiccontent']
+c   c7: Dynamiccontent --mandatory--> Contenttype
+c   c8: Dynamiccontent --optional--> Contenttype
+c   c9: Contenttype --alternative--> ['Welcomemessage', 'Specialoffers']
+c   c10: Contenttype --or--> ['Welcomemessage', 'Specialoffers']
+c   c11: Dynamiccontent --mandatory--> Variationsource
+c   c12: Dynamiccontent --optional--> Variationsource
+c   c13: Variationsource --alternative--> ['Timedependent', 'Personalized']
+c   c14: Variationsource --or--> ['Timedependent', 'Personalized']
+c   c15: Storefront --mandatory--> Registration
+c   c16: Storefront --optional--> Registration
+c   c17: Registration --mandatory--> Registrationenforcement
+c   c18: Registration --optional--> Registrationenforcement
+c   c19: Registrationenforcement --alternative--> ['Registertobrowse', 'Registertobuy', 'None']
+c   c20: Registrationenforcement --or--> ['Registertobrowse', 'Registertobuy', 'None']
+c   c21: Registration --mandatory--> Registrationinformation
+c   c22: Registration --optional--> Registrationinformation
+c   c23: Registrationinformation --mandatory--> Logincredentials
+c   c24: Registrationinformation --optional--> Logincredentials
+c   c25: Registrationinformation --mandatory--> Shippingaddress
+c   c26: Registrationinformation --optional--> Shippingaddress
+c   c27: Shippingaddress --mandatory--> Multipleshippingaddresses
+c   c28: Shippingaddress --optional--> Multipleshippingaddresses
+c   c29: Registrationinformation --mandatory--> Billingaddress
+c   c30: Registrationinformation --optional--> Billingaddress
+c   c31: Billingaddress --mandatory--> Multiplebillingaddresses
+c   c32: Billingaddress --optional--> Multiplebillingaddresses
+c   c33: Registrationinformation --mandatory--> Creditcardinformation
+c   c34: Registrationinformation --optional--> Creditcardinformation
+c   c35: Creditcardinformation --mandatory--> Cardholdername
+c   c36: Creditcardinformation --optional--> Cardholdername
+c   c37: Creditcardinformation --mandatory--> Cardnumber
+c   c38: Creditcardinformation --optional--> Cardnumber
+c   c39: Creditcardinformation --mandatory--> Expirydate
+c   c40: Creditcardinformation --optional--> Expirydate
+c   c41: Creditcardinformation --mandatory--> Securityinformation
+c   c42: Creditcardinformation --optional--> Securityinformation
+c   c43: Registrationinformation --mandatory--> Demographics
+c   c44: Registrationinformation --optional--> Demographics
+c   c45: Demographics --alternative--> ['Age', 'Income', 'Education', 'CustomDemographicfield']
+c   c46: Demographics --or--> ['Age', 'Income', 'Education', 'CustomDemographicfield']
+c   c47: Registrationinformation --mandatory--> PersonalInformation
+c   c48: Registrationinformation --optional--> PersonalInformation
+c   c49: Registrationinformation --mandatory--> Preferences
+c   c50: Registrationinformation --optional--> Preferences
+c   c51: Preferences --alternative--> ['Sitelayout', 'Listsize', 'Language']
+c   c52: Preferences --or--> ['Sitelayout', 'Listsize', 'Language']
+c   c53: Registrationinformation --mandatory--> Reminders
+c   c54: Registrationinformation --optional--> Reminders
+c   c55: Registrationinformation --mandatory--> Quickcheckoutprofile
+c   c56: Registrationinformation --optional--> Quickcheckoutprofile
+c   c57: Registrationinformation --mandatory--> Customfields
+c   c58: Registrationinformation --optional--> Customfields
+c   c59: Registration --mandatory--> Userbehaviourtrackinginformation
+c   c60: Registration --optional--> Userbehaviourtrackinginformation
+c   c61: Storefront --mandatory--> Catalog
+c   c62: Storefront --optional--> Catalog
+c   c63: Catalog --mandatory--> ProductInformation
+c   c64: Catalog --optional--> ProductInformation
+c   c65: ProductInformation --mandatory--> Producttype
+c   c66: ProductInformation --optional--> Producttype
+c   c67: Producttype --alternative--> ['Eletronicgoods', 'Physicalgoods', 'Services']
+c   c68: Producttype --or--> ['Eletronicgoods', 'Physicalgoods', 'Services']
+c   c69: ProductInformation --mandatory--> Basicinformation
+c   c70: ProductInformation --optional--> Basicinformation
+c   c71: ProductInformation --mandatory--> Detailedinformation
+c   c72: ProductInformation --optional--> Detailedinformation
+c   c73: ProductInformation --mandatory--> Warrantyinformation
+c   c74: ProductInformation --optional--> Warrantyinformation
+c   c75: ProductInformation --mandatory--> Customerreviews
+c   c76: ProductInformation --optional--> Customerreviews
+c   c77: ProductInformation --mandatory--> Associatedassets
+c   c78: ProductInformation --optional--> Associatedassets
+c   c79: Associatedassets --alternative--> ['Documents', 'Mediafiles']
+c   c80: Associatedassets --or--> ['Documents', 'Mediafiles']
+c   c81: Mediafiles --alternative--> ['Image', 'Video', 'Sound']
+c   c82: Mediafiles --or--> ['Image', 'Video', 'Sound']
+c   c83: Image --alternative--> ['Thumbnail', 'a2Dimage', 'a3Dimage', 'a360degreesimage', 'Differentperspectives', 'Gallery']
+c   c84: Image --or--> ['Thumbnail', 'a2Dimage', 'a3Dimage', 'a360degreesimage', 'Differentperspectives', 'Gallery']
+c   c85: ProductInformation --mandatory--> Productvariants
+c   c86: ProductInformation --optional--> Productvariants
+c   c87: Productvariants --mandatory--> Complexproductconfiguration
+c   c88: Productvariants --optional--> Complexproductconfiguration
+c   c89: ProductInformation --mandatory--> Size
+c   c90: ProductInformation --optional--> Size
+c   c91: ProductInformation --mandatory--> Weight
+c   c92: ProductInformation --optional--> Weight
+c   c93: ProductInformation --mandatory--> Availability
+c   c94: ProductInformation --optional--> Availability
+c   c95: ProductInformation --mandatory--> Customfields1
+c   c96: ProductInformation --optional--> Customfields1
+c   c97: Catalog --mandatory--> Categories
+c   c98: Catalog --optional--> Categories
+c   c99: Categories --mandatory--> Catalog1
+c   c100: Categories --optional--> Catalog1
+c   c101: Catalog1 --mandatory--> Categories1
+c   c102: Catalog1 --optional--> Categories1
+c   c103: Categories1 --mandatory--> Multi_level
+c   c104: Categories1 --optional--> Multi_level
+c   c105: Categories1 --mandatory--> Multipleclassification
+c   c106: Categories1 --optional--> Multipleclassification
+c   c107: Catalog --mandatory--> Multiplecatalogs
+c   c108: Catalog --optional--> Multiplecatalogs
+c   c109: Catalog --mandatory--> Searching
+c   c110: Catalog --optional--> Searching
+c   c111: Searching --alternative--> ['Basicsearch', 'Advancedsearch']
+c   c112: Searching --or--> ['Basicsearch', 'Advancedsearch']
+c   c113: Catalog --mandatory--> Browsing
+c   c114: Catalog --optional--> Browsing
+c   c115: Browsing --mandatory--> Productpage
+c   c116: Browsing --optional--> Productpage
+c   c117: Browsing --mandatory--> Categorypage
+c   c118: Browsing --optional--> Categorypage
+c   c119: Browsing --mandatory--> Indexpage
+c   c120: Browsing --optional--> Indexpage
+c   c121: Indexpage --mandatory--> Sortingfilters
+c   c122: Indexpage --optional--> Sortingfilters
+c   c123: Sortingfilters --alternative--> ['Price', 'Quality', 'Price_Qualityratio', 'Manufacturername', 'Customfilter']
+c   c124: Sortingfilters --or--> ['Price', 'Quality', 'Price_Qualityratio', 'Manufacturername', 'Customfilter']
+c   c125: Catalog --mandatory--> Customviews
+c   c126: Catalog --optional--> Customviews
+c   c127: Customviews --mandatory--> Seasonalproductviews
+c   c128: Customviews --optional--> Seasonalproductviews
+c   c129: Customviews --mandatory--> Personalizedviews
+c   c130: Customviews --optional--> Personalizedviews
+c   c131: Storefront --mandatory--> Wishlist
+c   c132: Storefront --optional--> Wishlist
+c   c133: Wishlist --mandatory--> Wishlistsaveaftersession
+c   c134: Wishlist --optional--> Wishlistsaveaftersession
+c   c135: Wishlist --mandatory--> E_mailwishlist
+c   c136: Wishlist --optional--> E_mailwishlist
+c   c137: Wishlist --mandatory--> Multiplewishlists
+c   c138: Wishlist --optional--> Multiplewishlists
+c   c139: Wishlist --mandatory--> Permissions
+c   c140: Wishlist --optional--> Permissions
+c   c141: Permissions --alternative--> ['Publicaccess', 'Restrictedaccess', 'Privateaccess']
+c   c142: Permissions --or--> ['Publicaccess', 'Restrictedaccess', 'Privateaccess']
+c   c143: Storefront --mandatory--> Buypaths
+c   c144: Storefront --optional--> Buypaths
+c   c145: Buypaths --mandatory--> Shoppingcart
+c   c146: Buypaths --optional--> Shoppingcart
+c   c147: Shoppingcart --mandatory--> Inventorymanagementpolicy
+c   c148: Shoppingcart --optional--> Inventorymanagementpolicy
+c   c149: Shoppingcart --mandatory--> Cartcontentpage
+c   c150: Shoppingcart --optional--> Cartcontentpage
+c   c151: Shoppingcart --mandatory--> Cartsummarypage
+c   c152: Shoppingcart --optional--> Cartsummarypage
+c   c153: Shoppingcart --mandatory--> Cartsaveaftersession
+c   c154: Shoppingcart --optional--> Cartsaveaftersession
+c   c155: Buypaths --mandatory--> Checkout
+c   c156: Buypaths --optional--> Checkout
+c   c157: Checkout --mandatory--> Checkouttype
+c   c158: Checkout --optional--> Checkouttype
+c   c159: Checkouttype --alternative--> ['Registeredcheckout', 'Guestcheckout']
+c   c160: Checkouttype --or--> ['Registeredcheckout', 'Guestcheckout']
+c   c161: Registeredcheckout --mandatory--> Quickcheckout
+c   c162: Registeredcheckout --optional--> Quickcheckout
+c   c163: Quickcheckout --mandatory--> Enableprofileupdateoncheckout
+c   c164: Quickcheckout --optional--> Enableprofileupdateoncheckout
+c   c165: Checkout --mandatory--> Shippingoptions
+c   c166: Checkout --optional--> Shippingoptions
+c   c167: Shippingoptions --mandatory--> Qualityofserviceselection
+c   c168: Shippingoptions --optional--> Qualityofserviceselection
+c   c169: Shippingoptions --mandatory--> Carrierselection
+c   c170: Shippingoptions --optional--> Carrierselection
+c   c171: Shippingoptions --mandatory--> Giftoptions
+c   c172: Shippingoptions --optional--> Giftoptions
+c   c173: Shippingoptions --mandatory--> Multipleshipments
+c   c174: Shippingoptions --optional--> Multipleshipments
+c   c175: Shippingoptions --mandatory--> Shippingcostcalculation
+c   c176: Shippingoptions --optional--> Shippingcostcalculation
+c   c177: Checkout --mandatory--> Taxationoptions
+c   c178: Checkout --optional--> Taxationoptions
+c   c179: Taxationoptions --alternative--> ['Customtaxation', 'Taxgateways']
+c   c180: Taxationoptions --or--> ['Customtaxation', 'Taxgateways']
+c   c181: Customtaxation --mandatory--> FType
+c   c182: Customtaxation --optional--> FType
+c   c183: FType --alternative--> ['Fixed_ratetaxation', 'Rule_basedtaxation']
+c   c184: FType --or--> ['Fixed_ratetaxation', 'Rule_basedtaxation']
+c   c185: Rule_basedtaxation --mandatory--> Taxcodes
+c   c186: Rule_basedtaxation --optional--> Taxcodes
+c   c187: Rule_basedtaxation --mandatory--> Address
+c   c188: Rule_basedtaxation --optional--> Address
+c   c189: Address --mandatory--> Shipping
+c   c190: Address --optional--> Shipping
+c   c191: Address --mandatory--> Billing
+c   c192: Address --optional--> Billing
+c   c193: Rule_basedtaxation --mandatory--> Resolution
+c   c194: Rule_basedtaxation --optional--> Resolution
+c   c195: Resolution --alternative--> ['Country', 'Region', 'City']
+c   c196: Resolution --or--> ['Country', 'Region', 'City']
+c   c197: Customtaxation --mandatory--> Ammountspecification
+c   c198: Customtaxation --optional--> Ammountspecification
+c   c199: Ammountspecification --alternative--> ['Surcharge', 'Percentage']
+c   c200: Ammountspecification --or--> ['Surcharge', 'Percentage']
+c   c201: Taxgateways --alternative--> ['CertiTAX', 'CyberSource', 'Customtaxgateway']
+c   c202: Taxgateways --or--> ['CertiTAX', 'CyberSource', 'Customtaxgateway']
+c   c203: Checkout --mandatory--> Paymentoptions
+c   c204: Checkout --optional--> Paymentoptions
+c   c205: Paymentoptions --mandatory--> Paymenttypes
+c   c206: Paymentoptions --optional--> Paymenttypes
+c   c207: Paymenttypes --alternative--> ['COD', 'Creditcard', 'Debitcard', 'Eletroniccheque', 'Faxmailorder', 'Purchaseorder', 'Giftcertificate', 'Phoneorder', 'Custompaymenttype']
+c   c208: Paymenttypes --or--> ['COD', 'Creditcard', 'Debitcard', 'Eletroniccheque', 'Faxmailorder', 'Purchaseorder', 'Giftcertificate', 'Phoneorder', 'Custompaymenttype']
+c   c209: Paymentoptions --mandatory--> Frauddetection
+c   c210: Paymentoptions --optional--> Frauddetection
+c   c211: Paymentoptions --mandatory--> Paymentgateways
+c   c212: Paymentoptions --optional--> Paymentgateways
+c   c213: Paymentgateways --alternative--> ['Authorize_Net', 'CyberSource1', 'LinkPoint', 'Paradata', 'SkipJack', 'VerisignPayflowPro', 'Custompaymentgateway']
+c   c214: Paymentgateways --or--> ['Authorize_Net', 'CyberSource1', 'LinkPoint', 'Paradata', 'SkipJack', 'VerisignPayflowPro', 'Custompaymentgateway']
+c   c215: Buypaths --mandatory--> Orderconfirmation
+c   c216: Buypaths --optional--> Orderconfirmation
+c   c217: Orderconfirmation --alternative--> ['Eletronicpage', 'E_mail', 'Phone', 'Mail']
+c   c218: Orderconfirmation --or--> ['Eletronicpage', 'E_mail', 'Phone', 'Mail']
+c   c219: Buypaths --mandatory--> Buypaths_4
+c   c220: Buypaths --optional--> Buypaths_4
+c   c221: Buypaths_4 --mandatory--> PhoneOrdering
+c   c222: Buypaths_4 --optional--> PhoneOrdering
+c   c223: PhoneOrdering --mandatory--> DigitalDialing
+c   c224: PhoneOrdering --optional--> DigitalDialing
+c   c225: PhoneOrdering --mandatory--> RotaryDialing
+c   c226: PhoneOrdering --optional--> RotaryDialing
+c   c227: Storefront --mandatory--> Customerservice
+c   c228: Storefront --optional--> Customerservice
+c   c229: Customerservice --alternative--> ['Questionandfeedbackforms', 'Productreturns', 'Orderstatusreview', 'Shipmentstatustracking']
+c   c230: Customerservice --or--> ['Questionandfeedbackforms', 'Productreturns', 'Orderstatusreview', 'Shipmentstatustracking']
+c   c231: Questionandfeedbackforms --mandatory--> Questionandfeedbacktracking
+c   c232: Questionandfeedbackforms --optional--> Questionandfeedbacktracking
+c   c233: Orderstatusreview --mandatory--> Filteringcriteria
+c   c234: Orderstatusreview --optional--> Filteringcriteria
+c   c235: Filteringcriteria --alternative--> ['Ordernumber', 'Orderdate', 'Orderstatus']
+c   c236: Filteringcriteria --or--> ['Ordernumber', 'Orderdate', 'Orderstatus']
+c   c237: Orderstatusreview --mandatory--> Requestorderhardcopy
+c   c238: Orderstatusreview --optional--> Requestorderhardcopy
+c   c239: Shipmentstatustracking --alternative--> ['Internaltracking', 'Partnertracking']
+c   c240: Shipmentstatustracking --or--> ['Internaltracking', 'Partnertracking']
+c   c241: Storefront --mandatory--> Userbehaviourtracking
+c   c242: Storefront --optional--> Userbehaviourtracking
+c   c243: Userbehaviourtracking --mandatory--> Behaviourtracked
+c   c244: Userbehaviourtracking --optional--> Behaviourtracked
+c   c245: Behaviourtracked --alternative--> ['Locallyvisitedpages', 'Externalreferringpages', 'Previouspurchases1']
+c   c246: Behaviourtracked --or--> ['Locallyvisitedpages', 'Externalreferringpages', 'Previouspurchases1']
+c   c247: eShop --mandatory--> Businessmanagement
+c   c248: eShop --optional--> Businessmanagement
+c   c249: Businessmanagement --mandatory--> Ordermanagement
+c   c250: Businessmanagement --optional--> Ordermanagement
+c   c251: Ordermanagement --mandatory--> Fulfillment
+c   c252: Ordermanagement --optional--> Fulfillment
+c   c253: Fulfillment --alternative--> ['Physicalgoodsfulfillment', 'Eletronicgoodsfulfillment', 'Servicesfulfillment']
+c   c254: Fulfillment --or--> ['Physicalgoodsfulfillment', 'Eletronicgoodsfulfillment', 'Servicesfulfillment']
+c   c255: Physicalgoodsfulfillment --mandatory--> Warehousemanagement
+c   c256: Physicalgoodsfulfillment --optional--> Warehousemanagement
+c   c257: Physicalgoodsfulfillment --mandatory--> Shipping1
+c   c258: Physicalgoodsfulfillment --optional--> Shipping1
+c   c259: Shipping1 --alternative--> ['Customshippingmethod', 'Shippinggateways']
+c   c260: Shipping1 --or--> ['Customshippingmethod', 'Shippinggateways']
+c   c261: Customshippingmethod --mandatory--> Pricing
+c   c262: Customshippingmethod --optional--> Pricing
+c   c263: Pricing --mandatory--> Flatrate
+c   c264: Pricing --optional--> Flatrate
+c   c265: Pricing --mandatory--> Ratefactors
+c   c266: Pricing --optional--> Ratefactors
+c   c267: Ratefactors --alternative--> ['Quantitypurchased', 'Ordertotal', 'Weight1', 'Productclassification']
+c   c268: Ratefactors --or--> ['Quantitypurchased', 'Ordertotal', 'Weight1', 'Productclassification']
+c   c269: Shippinggateways --alternative--> ['FedEX', 'UPS', 'USPS', 'CanadaPost', 'Customshippinggateway']
+c   c270: Shippinggateways --or--> ['FedEX', 'UPS', 'USPS', 'CanadaPost', 'Customshippinggateway']
+c   c271: Eletronicgoodsfulfillment --mandatory--> Filerepository
+c   c272: Eletronicgoodsfulfillment --optional--> Filerepository
+c   c273: Eletronicgoodsfulfillment --mandatory--> Licensemanagement
+c   c274: Eletronicgoodsfulfillment --optional--> Licensemanagement
+c   c275: Servicesfulfillment --mandatory--> Appointmentscheduling
+c   c276: Servicesfulfillment --optional--> Appointmentscheduling
+c   c277: Servicesfulfillment --mandatory--> Resourceplanning
+c   c278: Servicesfulfillment --optional--> Resourceplanning
+c   c279: Businessmanagement --mandatory--> Targeting
+c   c280: Businessmanagement --optional--> Targeting
+c   c281: Targeting --mandatory--> Targetingcriteria
+c   c282: Targeting --optional--> Targetingcriteria
+c   c283: Targetingcriteria --alternative--> ['Customerpreferences', 'Personalinformation', 'Demographics1', 'Previouspurchases', 'Shoppingcartcontent', 'Wishlistcontent', 'Previouslyvisitedpages', 'Dateandtime', 'Customtargetcriteria']
+c   c284: Targetingcriteria --or--> ['Customerpreferences', 'Personalinformation', 'Demographics1', 'Previouspurchases', 'Shoppingcartcontent', 'Wishlistcontent', 'Previouslyvisitedpages', 'Dateandtime', 'Customtargetcriteria']
+c   c285: Targeting --mandatory--> Targetingmechanisms
+c   c286: Targeting --optional--> Targetingmechanisms
+c   c287: Targetingmechanisms --alternative--> ['Advertisements', 'Discounts', 'Sellstrategies']
+c   c288: Targetingmechanisms --or--> ['Advertisements', 'Discounts', 'Sellstrategies']
+c   c289: Advertisements --mandatory--> Advertisementtypes
+c   c290: Advertisements --optional--> Advertisementtypes
+c   c291: Advertisementtypes --alternative--> ['Bannerads', 'Pop_upads']
+c   c292: Advertisementtypes --or--> ['Bannerads', 'Pop_upads']
+c   c293: Advertisements --mandatory--> Advertisementsources
+c   c294: Advertisements --optional--> Advertisementsources
+c   c295: Advertisementsources --alternative--> ['Houseadvertisements', 'Paidadvertisements']
+c   c296: Advertisementsources --or--> ['Houseadvertisements', 'Paidadvertisements']
+c   c297: Paidadvertisements --mandatory--> Advertisementmanagementinterface
+c   c298: Paidadvertisements --optional--> Advertisementmanagementinterface
+c   c299: Advertisements --mandatory--> Advertisementresponsetracking
+c   c300: Advertisements --optional--> Advertisementresponsetracking
+c   c301: Advertisements --mandatory--> Contextsensitiveads
+c   c302: Advertisements --optional--> Contextsensitiveads
+c   c303: Discounts --mandatory--> Discountconditions
+c   c304: Discounts --optional--> Discountconditions
+c   c305: Discountconditions --mandatory--> Productandquantityscope
+c   c306: Discountconditions --optional--> Productandquantityscope
+c   c307: Discountconditions --mandatory--> Timescope
+c   c308: Discountconditions --optional--> Timescope
+c   c309: Discountconditions --mandatory--> Purchasevaluescope
+c   c310: Discountconditions --optional--> Purchasevaluescope
+c   c311: Discounts --mandatory--> Award
+c   c312: Discounts --optional--> Award
+c   c313: Award --alternative--> ['Percentagediscount', 'Fixeddiscount', 'Freeitem']
+c   c314: Award --or--> ['Percentagediscount', 'Fixeddiscount', 'Freeitem']
+c   c315: Discounts --mandatory--> Eligibilityrequirements
+c   c316: Discounts --optional--> Eligibilityrequirements
+c   c317: Eligibilityrequirements --mandatory--> Customersegments
+c   c318: Eligibilityrequirements --optional--> Customersegments
+c   c319: Eligibilityrequirements --mandatory--> Shippingaddress1
+c   c320: Eligibilityrequirements --optional--> Shippingaddress1
+c   c321: Discounts --mandatory--> Graduationby
+c   c322: Discounts --optional--> Graduationby
+c   c323: Graduationby --alternative--> ['Purchasevalue', 'Quantity']
+c   c324: Graduationby --or--> ['Purchasevalue', 'Quantity']
+c   c325: Discounts --mandatory--> Coupons
+c   c326: Discounts --optional--> Coupons
+c   c327: Discounts --mandatory--> Handlingmultiplediscounts
+c   c328: Discounts --optional--> Handlingmultiplediscounts
+c   c329: Sellstrategies --alternative--> ['Productkitting', 'Up_selling', 'Cross_selling']
+c   c330: Sellstrategies --or--> ['Productkitting', 'Up_selling', 'Cross_selling']
+c   c331: Up_selling --mandatory--> Substituteproducts
+c   c332: Up_selling --optional--> Substituteproducts
+c   c333: Cross_selling --mandatory--> Pastcustomersalsobought
+c   c334: Cross_selling --optional--> Pastcustomersalsobought
+c   c335: Targeting --mandatory--> Displayandnotification
+c   c336: Targeting --optional--> Displayandnotification
+c   c337: Displayandnotification --alternative--> ['Assignmenttopagetypesfordisplay', 'Productflagging', 'E_mails']
+c   c338: Displayandnotification --or--> ['Assignmenttopagetypesfordisplay', 'Productflagging', 'E_mails']
+c   c339: E_mails --mandatory--> Personalized1
+c   c340: E_mails --optional--> Personalized1
+c   c341: E_mails --mandatory--> Responsetracking
+c   c342: E_mails --optional--> Responsetracking
+c   c343: Targeting --mandatory--> Campaigns
+c   c344: Targeting --optional--> Campaigns
+c   c345: Businessmanagement --mandatory--> Affiliates
+c   c346: Businessmanagement --optional--> Affiliates
+c   c347: Affiliates --mandatory--> Affiliateregistration
+c   c348: Affiliates --optional--> Affiliateregistration
+c   c349: Affiliates --mandatory--> Commissiontracking
+c   c350: Affiliates --optional--> Commissiontracking
+c   c351: Businessmanagement --mandatory--> Inventorytracking
+c   c352: Businessmanagement --optional--> Inventorytracking
+c   c353: Inventorytracking --mandatory--> Allowbackorders
+c   c354: Inventorytracking --optional--> Allowbackorders
+c   c355: Businessmanagement --mandatory--> Procurement
+c   c356: Businessmanagement --optional--> Procurement
+c   c357: Procurement --mandatory--> Stockreplenishment
+c   c358: Procurement --optional--> Stockreplenishment
+c   c359: Stockreplenishment --mandatory--> Manual
+c   c360: Stockreplenishment --optional--> Manual
+c   c361: Stockreplenishment --mandatory--> Automatic
+c   c362: Stockreplenishment --optional--> Automatic
+c   c363: Automatic --mandatory--> Non_repudiationservice
+c   c364: Automatic --optional--> Non_repudiationservice
+c   c365: Businessmanagement --mandatory--> Reportingandanalysis
+c   c366: Businessmanagement --optional--> Reportingandanalysis
+c   c367: Reportingandanalysis --mandatory--> Reporttypes
+c   c368: Reportingandanalysis --optional--> Reporttypes
+c   c369: Reportingandanalysis --mandatory--> Reportformats
+c   c370: Reportingandanalysis --optional--> Reportformats
+c   c371: Reportingandanalysis --mandatory--> Levelofdetail
+c   c372: Reportingandanalysis --optional--> Levelofdetail
+c   c373: Businessmanagement --mandatory--> Externalsystemsintegration
+c   c374: Businessmanagement --optional--> Externalsystemsintegration
+c   c375: Externalsystemsintegration --alternative--> ['Fulfillmentsystem', 'Inventorymanagementsystem', 'Procurementsystem', 'Externaldistributorsystem']
+c   c376: Externalsystemsintegration --or--> ['Fulfillmentsystem', 'Inventorymanagementsystem', 'Procurementsystem', 'Externaldistributorsystem']
+c   c377: Businessmanagement --mandatory--> Administration
+c   c378: Businessmanagement --optional--> Administration
+c   c379: Administration --mandatory--> Contentmanagement
+c   c380: Administration --optional--> Contentmanagement
+c   c381: Contentmanagement --mandatory--> Productdatabasemanagement
+c   c382: Contentmanagement --optional--> Productdatabasemanagement
+c   c383: Contentmanagement --mandatory--> Presentationoptions
+c   c384: Contentmanagement --optional--> Presentationoptions
+c   c385: Contentmanagement --mandatory--> Generallayoutmanagement
+c   c386: Contentmanagement --optional--> Generallayoutmanagement
+c   c387: Contentmanagement --mandatory--> Contentapproval
+c   c388: Contentmanagement --optional--> Contentapproval
+c   c389: Administration --mandatory--> Storeadministration
+c   c390: Administration --optional--> Storeadministration
+c   c391: Storeadministration --mandatory--> Sitesearch
+c   c392: Storeadministration --optional--> Sitesearch
+c   c393: Storeadministration --mandatory--> Searchengineregistration
+c   c394: Storeadministration --optional--> Searchengineregistration
+c   c395: Storeadministration --mandatory--> Domainnamesetup
+c   c396: Storeadministration --optional--> Domainnamesetup
+c   c397: Availability requires Categories
+c   c398: Categories requires Availability
+c   c399: Availability excludes Categories
+c   c400: Availability requires Categorypage
+c   c401: Categorypage requires Availability
+c   c402: Availability excludes Categorypage
+c   c403: Availability requires Customerpreferences
+c   c404: Customerpreferences requires Availability
+c   c405: Availability excludes Customerpreferences
+c   c406: Availability requires Discounts
+c   c407: Discounts requires Availability
+c   c408: Availability excludes Discounts
+c   c409: Availability requires E_mailwishlist
+c   c410: E_mailwishlist requires Availability
+c   c411: Availability excludes E_mailwishlist
+c   c412: Availability requires Eletronicgoods
+c   c413: Eletronicgoods requires Availability
+c   c414: Availability excludes Eletronicgoods
+c   c415: Availability requires Eletronicgoodsfulfillment
+c   c416: Eletronicgoodsfulfillment requires Availability
+c   c417: Availability excludes Eletronicgoodsfulfillment
+c   c418: Availability requires Externalreferringpages
+c   c419: Externalreferringpages requires Availability
+c   c420: Availability excludes Externalreferringpages
+c   c421: Availability requires Inventorytracking
+c   c422: Inventorytracking requires Availability
+c   c423: Availability excludes Inventorytracking
+c   c424: Availability requires Locallyvisitedpages
+c   c425: Locallyvisitedpages requires Availability
+c   c426: Availability excludes Locallyvisitedpages
+c   c427: Availability requires Permissions
+c   c428: Permissions requires Availability
+c   c429: Availability excludes Permissions
+c   c430: Availability requires Physicalgoods
+c   c431: Physicalgoods requires Availability
+c   c432: Availability excludes Physicalgoods
+c   c433: Availability requires Physicalgoodsfulfillment
+c   c434: Physicalgoodsfulfillment requires Availability
+c   c435: Availability excludes Physicalgoodsfulfillment
+c   c436: Availability requires Preferences
+c   c437: Preferences requires Availability
+c   c438: Availability excludes Preferences
+c   c439: Availability requires Previouslyvisitedpages
+c   c440: Previouslyvisitedpages requires Availability
+c   c441: Availability excludes Previouslyvisitedpages
+c   c442: Availability requires Quickcheckout
+c   c443: Quickcheckout requires Availability
+c   c444: Availability excludes Quickcheckout
+c   c445: Availability requires Quickcheckoutprofile
+c   c446: Quickcheckoutprofile requires Availability
+c   c447: Availability excludes Quickcheckoutprofile
+c   c448: Availability requires Registeredcheckout
+c   c449: Registeredcheckout requires Availability
+c   c450: Availability excludes Registeredcheckout
+c   c451: Availability requires Registertobuy
+c   c452: Registertobuy requires Availability
+c   c453: Availability excludes Registertobuy
+c   c454: Availability requires Registration
+c   c455: Registration requires Availability
+c   c456: Availability excludes Registration
+c   c457: Availability requires Registrationenforcement
+c   c458: Registrationenforcement requires Availability
+c   c459: Availability excludes Registrationenforcement
+c   c460: Availability requires Services
+c   c461: Services requires Availability
+c   c462: Availability excludes Services
+c   c463: Availability requires Servicesfulfillment
+c   c464: Servicesfulfillment requires Availability
+c   c465: Availability excludes Servicesfulfillment
+c   c466: Availability requires Shipping1
+c   c467: Shipping1 requires Availability
+c   c468: Availability excludes Shipping1
+c   c469: Availability requires Shippingoptions
+c   c470: Shippingoptions requires Availability
+c   c471: Availability excludes Shippingoptions
+c   c472: Availability requires Size
+c   c473: Size requires Availability
+c   c474: Availability excludes Size
+c   c475: Availability requires Specialoffers
+c   c476: Specialoffers requires Availability
+c   c477: Availability excludes Specialoffers
+c   c478: Availability requires Userbehaviourtracking
+c   c479: Userbehaviourtracking requires Availability
+c   c480: Availability excludes Userbehaviourtracking
+c   c481: Availability requires Userbehaviourtrackinginformation
+c   c482: Userbehaviourtrackinginformation requires Availability
+c   c483: Availability excludes Userbehaviourtrackinginformation
+c   c484: Availability requires Weight
+c   c485: Weight requires Availability
+c   c486: Availability excludes Weight
+c   c487: Availability requires Wishlist
+c   c488: Wishlist requires Availability
+c   c489: Availability excludes Wishlist
+c   c490: Availability requires Wishlistcontent
+c   c491: Wishlistcontent requires Availability
+c   c492: Availability excludes Wishlistcontent
+c   c493: Availability requires Wishlistsaveaftersession
+c   c494: Wishlistsaveaftersession requires Availability
+c   c495: Availability excludes Wishlistsaveaftersession
+c   c496: Categories requires Categorypage
+c   c497: Categorypage requires Categories
+c   c498: Categories excludes Categorypage
+c   c499: Categories requires Customerpreferences
+c   c500: Customerpreferences requires Categories
+c   c501: Categories excludes Customerpreferences
+c   c502: Categories requires Discounts
+c   c503: Discounts requires Categories
+c   c504: Categories excludes Discounts
+c   c505: Categories requires E_mailwishlist
+c   c506: E_mailwishlist requires Categories
+c   c507: Categories excludes E_mailwishlist
+c   c508: Categories requires Eletronicgoods
+c   c509: Eletronicgoods requires Categories
+c   c510: Categories excludes Eletronicgoods
+c   c511: Categories requires Eletronicgoodsfulfillment
+c   c512: Eletronicgoodsfulfillment requires Categories
+c   c513: Categories excludes Eletronicgoodsfulfillment
+c   c514: Categories requires Externalreferringpages
+c   c515: Externalreferringpages requires Categories
+c   c516: Categories excludes Externalreferringpages
+c   c517: Categories requires Inventorytracking
+c   c518: Inventorytracking requires Categories
+c   c519: Categories excludes Inventorytracking
+c   c520: Categories requires Locallyvisitedpages
+c   c521: Locallyvisitedpages requires Categories
+c   c522: Categories excludes Locallyvisitedpages
+c   c523: Categories requires Permissions
+c   c524: Permissions requires Categories
+c   c525: Categories excludes Permissions
+c   c526: Categories requires Physicalgoods
+c   c527: Physicalgoods requires Categories
+c   c528: Categories excludes Physicalgoods
+c   c529: Categories requires Physicalgoodsfulfillment
+c   c530: Physicalgoodsfulfillment requires Categories
+c   c531: Categories excludes Physicalgoodsfulfillment
+c   c532: Categories requires Preferences
+c   c533: Preferences requires Categories
+c   c534: Categories excludes Preferences
+c   c535: Categories requires Previouslyvisitedpages
+c   c536: Previouslyvisitedpages requires Categories
+c   c537: Categories excludes Previouslyvisitedpages
+c   c538: Categories requires Quickcheckout
+c   c539: Quickcheckout requires Categories
+c   c540: Categories excludes Quickcheckout
+c   c541: Categories requires Quickcheckoutprofile
+c   c542: Quickcheckoutprofile requires Categories
+c   c543: Categories excludes Quickcheckoutprofile
+c   c544: Categories requires Registeredcheckout
+c   c545: Registeredcheckout requires Categories
+c   c546: Categories excludes Registeredcheckout
+c   c547: Categories requires Registertobuy
+c   c548: Registertobuy requires Categories
+c   c549: Categories excludes Registertobuy
+c   c550: Categories requires Registration
+c   c551: Registration requires Categories
+c   c552: Categories excludes Registration
+c   c553: Categories requires Registrationenforcement
+c   c554: Registrationenforcement requires Categories
+c   c555: Categories excludes Registrationenforcement
+c   c556: Categories requires Services
+c   c557: Services requires Categories
+c   c558: Categories excludes Services
+c   c559: Categories requires Servicesfulfillment
+c   c560: Servicesfulfillment requires Categories
+c   c561: Categories excludes Servicesfulfillment
+c   c562: Categories requires Shipping1
+c   c563: Shipping1 requires Categories
+c   c564: Categories excludes Shipping1
+c   c565: Categories requires Shippingoptions
+c   c566: Shippingoptions requires Categories
+c   c567: Categories excludes Shippingoptions
+c   c568: Categories requires Size
+c   c569: Size requires Categories
+c   c570: Categories excludes Size
+c   c571: Categories requires Specialoffers
+c   c572: Specialoffers requires Categories
+c   c573: Categories excludes Specialoffers
+c   c574: Categories requires Userbehaviourtracking
+c   c575: Userbehaviourtracking requires Categories
+c   c576: Categories excludes Userbehaviourtracking
+c   c577: Categories requires Userbehaviourtrackinginformation
+c   c578: Userbehaviourtrackinginformation requires Categories
+c   c579: Categories excludes Userbehaviourtrackinginformation
+c   c580: Categories requires Weight
+c   c581: Weight requires Categories
+c   c582: Categories excludes Weight
+c   c583: Categories requires Wishlist
+c   c584: Wishlist requires Categories
+c   c585: Categories excludes Wishlist
+c   c586: Categories requires Wishlistcontent
+c   c587: Wishlistcontent requires Categories
+c   c588: Categories excludes Wishlistcontent
+c   c589: Categories requires Wishlistsaveaftersession
+c   c590: Wishlistsaveaftersession requires Categories
+c   c591: Categories excludes Wishlistsaveaftersession
+c   c592: Categorypage requires Customerpreferences
+c   c593: Customerpreferences requires Categorypage
+c   c594: Categorypage excludes Customerpreferences
+c   c595: Categorypage requires Discounts
+c   c596: Discounts requires Categorypage
+c   c597: Categorypage excludes Discounts
+c   c598: Categorypage requires E_mailwishlist
+c   c599: E_mailwishlist requires Categorypage
+c   c600: Categorypage excludes E_mailwishlist
+c   c601: Categorypage requires Eletronicgoods
+c   c602: Eletronicgoods requires Categorypage
+c   c603: Categorypage excludes Eletronicgoods
+c   c604: Categorypage requires Eletronicgoodsfulfillment
+c   c605: Eletronicgoodsfulfillment requires Categorypage
+c   c606: Categorypage excludes Eletronicgoodsfulfillment
+c   c607: Categorypage requires Externalreferringpages
+c   c608: Externalreferringpages requires Categorypage
+c   c609: Categorypage excludes Externalreferringpages
+c   c610: Categorypage requires Inventorytracking
+c   c611: Inventorytracking requires Categorypage
+c   c612: Categorypage excludes Inventorytracking
+c   c613: Categorypage requires Locallyvisitedpages
+c   c614: Locallyvisitedpages requires Categorypage
+c   c615: Categorypage excludes Locallyvisitedpages
+c   c616: Categorypage requires Permissions
+c   c617: Permissions requires Categorypage
+c   c618: Categorypage excludes Permissions
+c   c619: Categorypage requires Physicalgoods
+c   c620: Physicalgoods requires Categorypage
+c   c621: Categorypage excludes Physicalgoods
+c   c622: Categorypage requires Physicalgoodsfulfillment
+c   c623: Physicalgoodsfulfillment requires Categorypage
+c   c624: Categorypage excludes Physicalgoodsfulfillment
+c   c625: Categorypage requires Preferences
+c   c626: Preferences requires Categorypage
+c   c627: Categorypage excludes Preferences
+c   c628: Categorypage requires Previouslyvisitedpages
+c   c629: Previouslyvisitedpages requires Categorypage
+c   c630: Categorypage excludes Previouslyvisitedpages
+c   c631: Categorypage requires Quickcheckout
+c   c632: Quickcheckout requires Categorypage
+c   c633: Categorypage excludes Quickcheckout
+c   c634: Categorypage requires Quickcheckoutprofile
+c   c635: Quickcheckoutprofile requires Categorypage
+c   c636: Categorypage excludes Quickcheckoutprofile
+c   c637: Categorypage requires Registeredcheckout
+c   c638: Registeredcheckout requires Categorypage
+c   c639: Categorypage excludes Registeredcheckout
+c   c640: Categorypage requires Registertobuy
+c   c641: Registertobuy requires Categorypage
+c   c642: Categorypage excludes Registertobuy
+c   c643: Categorypage requires Registration
+c   c644: Registration requires Categorypage
+c   c645: Categorypage excludes Registration
+c   c646: Categorypage requires Registrationenforcement
+c   c647: Registrationenforcement requires Categorypage
+c   c648: Categorypage excludes Registrationenforcement
+c   c649: Categorypage requires Services
+c   c650: Services requires Categorypage
+c   c651: Categorypage excludes Services
+c   c652: Categorypage requires Servicesfulfillment
+c   c653: Servicesfulfillment requires Categorypage
+c   c654: Categorypage excludes Servicesfulfillment
+c   c655: Categorypage requires Shipping1
+c   c656: Shipping1 requires Categorypage
+c   c657: Categorypage excludes Shipping1
+c   c658: Categorypage requires Shippingoptions
+c   c659: Shippingoptions requires Categorypage
+c   c660: Categorypage excludes Shippingoptions
+c   c661: Categorypage requires Size
+c   c662: Size requires Categorypage
+c   c663: Categorypage excludes Size
+c   c664: Categorypage requires Specialoffers
+c   c665: Specialoffers requires Categorypage
+c   c666: Categorypage excludes Specialoffers
+c   c667: Categorypage requires Userbehaviourtracking
+c   c668: Userbehaviourtracking requires Categorypage
+c   c669: Categorypage excludes Userbehaviourtracking
+c   c670: Categorypage requires Userbehaviourtrackinginformation
+c   c671: Userbehaviourtrackinginformation requires Categorypage
+c   c672: Categorypage excludes Userbehaviourtrackinginformation
+c   c673: Categorypage requires Weight
+c   c674: Weight requires Categorypage
+c   c675: Categorypage excludes Weight
+c   c676: Categorypage requires Wishlist
+c   c677: Wishlist requires Categorypage
+c   c678: Categorypage excludes Wishlist
+c   c679: Categorypage requires Wishlistcontent
+c   c680: Wishlistcontent requires Categorypage
+c   c681: Categorypage excludes Wishlistcontent
+c   c682: Categorypage requires Wishlistsaveaftersession
+c   c683: Wishlistsaveaftersession requires Categorypage
+c   c684: Categorypage excludes Wishlistsaveaftersession
+c   c685: Customerpreferences requires Discounts
+c   c686: Discounts requires Customerpreferences
+c   c687: Customerpreferences excludes Discounts
+c   c688: Customerpreferences requires E_mailwishlist
+c   c689: E_mailwishlist requires Customerpreferences
+c   c690: Customerpreferences excludes E_mailwishlist
+c   c691: Customerpreferences requires Eletronicgoods
+c   c692: Eletronicgoods requires Customerpreferences
+c   c693: Customerpreferences excludes Eletronicgoods
+c   c694: Customerpreferences requires Eletronicgoodsfulfillment
+c   c695: Eletronicgoodsfulfillment requires Customerpreferences
+c   c696: Customerpreferences excludes Eletronicgoodsfulfillment
+c   c697: Customerpreferences requires Externalreferringpages
+c   c698: Externalreferringpages requires Customerpreferences
+c   c699: Customerpreferences excludes Externalreferringpages
+c   c700: Customerpreferences requires Inventorytracking
+c   c701: Inventorytracking requires Customerpreferences
+c   c702: Customerpreferences excludes Inventorytracking
+c   c703: Customerpreferences requires Locallyvisitedpages
+c   c704: Locallyvisitedpages requires Customerpreferences
+c   c705: Customerpreferences excludes Locallyvisitedpages
+c   c706: Customerpreferences requires Permissions
+c   c707: Permissions requires Customerpreferences
+c   c708: Customerpreferences excludes Permissions
+c   c709: Customerpreferences requires Physicalgoods
+c   c710: Physicalgoods requires Customerpreferences
+c   c711: Customerpreferences excludes Physicalgoods
+c   c712: Customerpreferences requires Physicalgoodsfulfillment
+c   c713: Physicalgoodsfulfillment requires Customerpreferences
+c   c714: Customerpreferences excludes Physicalgoodsfulfillment
+c   c715: Customerpreferences requires Preferences
+c   c716: Preferences requires Customerpreferences
+c   c717: Customerpreferences excludes Preferences
+c   c718: Customerpreferences requires Previouslyvisitedpages
+c   c719: Previouslyvisitedpages requires Customerpreferences
+c   c720: Customerpreferences excludes Previouslyvisitedpages
+c   c721: Customerpreferences requires Quickcheckout
+c   c722: Quickcheckout requires Customerpreferences
+c   c723: Customerpreferences excludes Quickcheckout
+c   c724: Customerpreferences requires Quickcheckoutprofile
+c   c725: Quickcheckoutprofile requires Customerpreferences
+c   c726: Customerpreferences excludes Quickcheckoutprofile
+c   c727: Customerpreferences requires Registeredcheckout
+c   c728: Registeredcheckout requires Customerpreferences
+c   c729: Customerpreferences excludes Registeredcheckout
+c   c730: Customerpreferences requires Registertobuy
+c   c731: Registertobuy requires Customerpreferences
+c   c732: Customerpreferences excludes Registertobuy
+c   c733: Customerpreferences requires Registration
+c   c734: Registration requires Customerpreferences
+c   c735: Customerpreferences excludes Registration
+c   c736: Customerpreferences requires Registrationenforcement
+c   c737: Registrationenforcement requires Customerpreferences
+c   c738: Customerpreferences excludes Registrationenforcement
+c   c739: Customerpreferences requires Services
+c   c740: Services requires Customerpreferences
+c   c741: Customerpreferences excludes Services
+c   c742: Customerpreferences requires Servicesfulfillment
+c   c743: Servicesfulfillment requires Customerpreferences
+c   c744: Customerpreferences excludes Servicesfulfillment
+c   c745: Customerpreferences requires Shipping1
+c   c746: Shipping1 requires Customerpreferences
+c   c747: Customerpreferences excludes Shipping1
+c   c748: Customerpreferences requires Shippingoptions
+c   c749: Shippingoptions requires Customerpreferences
+c   c750: Customerpreferences excludes Shippingoptions
+c   c751: Customerpreferences requires Size
+c   c752: Size requires Customerpreferences
+c   c753: Customerpreferences excludes Size
+c   c754: Customerpreferences requires Specialoffers
+c   c755: Specialoffers requires Customerpreferences
+c   c756: Customerpreferences excludes Specialoffers
+c   c757: Customerpreferences requires Userbehaviourtracking
+c   c758: Userbehaviourtracking requires Customerpreferences
+c   c759: Customerpreferences excludes Userbehaviourtracking
+c   c760: Customerpreferences requires Userbehaviourtrackinginformation
+c   c761: Userbehaviourtrackinginformation requires Customerpreferences
+c   c762: Customerpreferences excludes Userbehaviourtrackinginformation
+c   c763: Customerpreferences requires Weight
+c   c764: Weight requires Customerpreferences
+c   c765: Customerpreferences excludes Weight
+c   c766: Customerpreferences requires Wishlist
+c   c767: Wishlist requires Customerpreferences
+c   c768: Customerpreferences excludes Wishlist
+c   c769: Customerpreferences requires Wishlistcontent
+c   c770: Wishlistcontent requires Customerpreferences
+c   c771: Customerpreferences excludes Wishlistcontent
+c   c772: Customerpreferences requires Wishlistsaveaftersession
+c   c773: Wishlistsaveaftersession requires Customerpreferences
+c   c774: Customerpreferences excludes Wishlistsaveaftersession
+c   c775: Discounts requires E_mailwishlist
+c   c776: E_mailwishlist requires Discounts
+c   c777: Discounts excludes E_mailwishlist
+c   c778: Discounts requires Eletronicgoods
+c   c779: Eletronicgoods requires Discounts
+c   c780: Discounts excludes Eletronicgoods
+c   c781: Discounts requires Eletronicgoodsfulfillment
+c   c782: Eletronicgoodsfulfillment requires Discounts
+c   c783: Discounts excludes Eletronicgoodsfulfillment
+c   c784: Discounts requires Externalreferringpages
+c   c785: Externalreferringpages requires Discounts
+c   c786: Discounts excludes Externalreferringpages
+c   c787: Discounts requires Inventorytracking
+c   c788: Inventorytracking requires Discounts
+c   c789: Discounts excludes Inventorytracking
+c   c790: Discounts requires Locallyvisitedpages
+c   c791: Locallyvisitedpages requires Discounts
+c   c792: Discounts excludes Locallyvisitedpages
+c   c793: Discounts requires Permissions
+c   c794: Permissions requires Discounts
+c   c795: Discounts excludes Permissions
+c   c796: Discounts requires Physicalgoods
+c   c797: Physicalgoods requires Discounts
+c   c798: Discounts excludes Physicalgoods
+c   c799: Discounts requires Physicalgoodsfulfillment
+c   c800: Physicalgoodsfulfillment requires Discounts
+c   c801: Discounts excludes Physicalgoodsfulfillment
+c   c802: Discounts requires Preferences
+c   c803: Preferences requires Discounts
+c   c804: Discounts excludes Preferences
+c   c805: Discounts requires Previouslyvisitedpages
+c   c806: Previouslyvisitedpages requires Discounts
+c   c807: Discounts excludes Previouslyvisitedpages
+c   c808: Discounts requires Quickcheckout
+c   c809: Quickcheckout requires Discounts
+c   c810: Discounts excludes Quickcheckout
+c   c811: Discounts requires Quickcheckoutprofile
+c   c812: Quickcheckoutprofile requires Discounts
+c   c813: Discounts excludes Quickcheckoutprofile
+c   c814: Discounts requires Registeredcheckout
+c   c815: Registeredcheckout requires Discounts
+c   c816: Discounts excludes Registeredcheckout
+c   c817: Discounts requires Registertobuy
+c   c818: Registertobuy requires Discounts
+c   c819: Discounts excludes Registertobuy
+c   c820: Discounts requires Registration
+c   c821: Registration requires Discounts
+c   c822: Discounts excludes Registration
+c   c823: Discounts requires Registrationenforcement
+c   c824: Registrationenforcement requires Discounts
+c   c825: Discounts excludes Registrationenforcement
+c   c826: Discounts requires Services
+c   c827: Services requires Discounts
+c   c828: Discounts excludes Services
+c   c829: Discounts requires Servicesfulfillment
+c   c830: Servicesfulfillment requires Discounts
+c   c831: Discounts excludes Servicesfulfillment
+c   c832: Discounts requires Shipping1
+c   c833: Shipping1 requires Discounts
+c   c834: Discounts excludes Shipping1
+c   c835: Discounts requires Shippingoptions
+c   c836: Shippingoptions requires Discounts
+c   c837: Discounts excludes Shippingoptions
+c   c838: Discounts requires Size
+c   c839: Size requires Discounts
+c   c840: Discounts excludes Size
+c   c841: Discounts requires Specialoffers
+c   c842: Specialoffers requires Discounts
+c   c843: Discounts excludes Specialoffers
+c   c844: Discounts requires Userbehaviourtracking
+c   c845: Userbehaviourtracking requires Discounts
+c   c846: Discounts excludes Userbehaviourtracking
+c   c847: Discounts requires Userbehaviourtrackinginformation
+c   c848: Userbehaviourtrackinginformation requires Discounts
+c   c849: Discounts excludes Userbehaviourtrackinginformation
+c   c850: Discounts requires Weight
+c   c851: Weight requires Discounts
+c   c852: Discounts excludes Weight
+c   c853: Discounts requires Wishlist
+c   c854: Wishlist requires Discounts
+c   c855: Discounts excludes Wishlist
+c   c856: Discounts requires Wishlistcontent
+c   c857: Wishlistcontent requires Discounts
+c   c858: Discounts excludes Wishlistcontent
+c   c859: Discounts requires Wishlistsaveaftersession
+c   c860: Wishlistsaveaftersession requires Discounts
+c   c861: Discounts excludes Wishlistsaveaftersession
+c   c862: E_mailwishlist requires Eletronicgoods
+c   c863: Eletronicgoods requires E_mailwishlist
+c   c864: E_mailwishlist excludes Eletronicgoods
+c   c865: E_mailwishlist requires Eletronicgoodsfulfillment
+c   c866: Eletronicgoodsfulfillment requires E_mailwishlist
+c   c867: E_mailwishlist excludes Eletronicgoodsfulfillment
+c   c868: E_mailwishlist requires Externalreferringpages
+c   c869: Externalreferringpages requires E_mailwishlist
+c   c870: E_mailwishlist excludes Externalreferringpages
+c   c871: E_mailwishlist requires Inventorytracking
+c   c872: Inventorytracking requires E_mailwishlist
+c   c873: E_mailwishlist excludes Inventorytracking
+c   c874: E_mailwishlist requires Locallyvisitedpages
+c   c875: Locallyvisitedpages requires E_mailwishlist
+c   c876: E_mailwishlist excludes Locallyvisitedpages
+c   c877: E_mailwishlist requires Permissions
+c   c878: Permissions requires E_mailwishlist
+c   c879: E_mailwishlist excludes Permissions
+c   c880: E_mailwishlist requires Physicalgoods
+c   c881: Physicalgoods requires E_mailwishlist
+c   c882: E_mailwishlist excludes Physicalgoods
+c   c883: E_mailwishlist requires Physicalgoodsfulfillment
+c   c884: Physicalgoodsfulfillment requires E_mailwishlist
+c   c885: E_mailwishlist excludes Physicalgoodsfulfillment
+c   c886: E_mailwishlist requires Preferences
+c   c887: Preferences requires E_mailwishlist
+c   c888: E_mailwishlist excludes Preferences
+c   c889: E_mailwishlist requires Previouslyvisitedpages
+c   c890: Previouslyvisitedpages requires E_mailwishlist
+c   c891: E_mailwishlist excludes Previouslyvisitedpages
+c   c892: E_mailwishlist requires Quickcheckout
+c   c893: Quickcheckout requires E_mailwishlist
+c   c894: E_mailwishlist excludes Quickcheckout
+c   c895: E_mailwishlist requires Quickcheckoutprofile
+c   c896: Quickcheckoutprofile requires E_mailwishlist
+c   c897: E_mailwishlist excludes Quickcheckoutprofile
+c   c898: E_mailwishlist requires Registeredcheckout
+c   c899: Registeredcheckout requires E_mailwishlist
+c   c900: E_mailwishlist excludes Registeredcheckout
+c   c901: E_mailwishlist requires Registertobuy
+c   c902: Registertobuy requires E_mailwishlist
+c   c903: E_mailwishlist excludes Registertobuy
+c   c904: E_mailwishlist requires Registration
+c   c905: Registration requires E_mailwishlist
+c   c906: E_mailwishlist excludes Registration
+c   c907: E_mailwishlist requires Registrationenforcement
+c   c908: Registrationenforcement requires E_mailwishlist
+c   c909: E_mailwishlist excludes Registrationenforcement
+c   c910: E_mailwishlist requires Services
+c   c911: Services requires E_mailwishlist
+c   c912: E_mailwishlist excludes Services
+c   c913: E_mailwishlist requires Servicesfulfillment
+c   c914: Servicesfulfillment requires E_mailwishlist
+c   c915: E_mailwishlist excludes Servicesfulfillment
+c   c916: E_mailwishlist requires Shipping1
+c   c917: Shipping1 requires E_mailwishlist
+c   c918: E_mailwishlist excludes Shipping1
+c   c919: E_mailwishlist requires Shippingoptions
+c   c920: Shippingoptions requires E_mailwishlist
+c   c921: E_mailwishlist excludes Shippingoptions
+c   c922: E_mailwishlist requires Size
+c   c923: Size requires E_mailwishlist
+c   c924: E_mailwishlist excludes Size
+c   c925: E_mailwishlist requires Specialoffers
+c   c926: Specialoffers requires E_mailwishlist
+c   c927: E_mailwishlist excludes Specialoffers
+c   c928: E_mailwishlist requires Userbehaviourtracking
+c   c929: Userbehaviourtracking requires E_mailwishlist
+c   c930: E_mailwishlist excludes Userbehaviourtracking
+c   c931: E_mailwishlist requires Userbehaviourtrackinginformation
+c   c932: Userbehaviourtrackinginformation requires E_mailwishlist
+c   c933: E_mailwishlist excludes Userbehaviourtrackinginformation
+c   c934: E_mailwishlist requires Weight
+c   c935: Weight requires E_mailwishlist
+c   c936: E_mailwishlist excludes Weight
+c   c937: E_mailwishlist requires Wishlist
+c   c938: Wishlist requires E_mailwishlist
+c   c939: E_mailwishlist excludes Wishlist
+c   c940: E_mailwishlist requires Wishlistcontent
+c   c941: Wishlistcontent requires E_mailwishlist
+c   c942: E_mailwishlist excludes Wishlistcontent
+c   c943: E_mailwishlist requires Wishlistsaveaftersession
+c   c944: Wishlistsaveaftersession requires E_mailwishlist
+c   c945: E_mailwishlist excludes Wishlistsaveaftersession
+c   c946: Eletronicgoods requires Eletronicgoodsfulfillment
+c   c947: Eletronicgoodsfulfillment requires Eletronicgoods
+c   c948: Eletronicgoods excludes Eletronicgoodsfulfillment
+c   c949: Eletronicgoods requires Externalreferringpages
+c   c950: Externalreferringpages requires Eletronicgoods
+c   c951: Eletronicgoods excludes Externalreferringpages
+c   c952: Eletronicgoods requires Inventorytracking
+c   c953: Inventorytracking requires Eletronicgoods
+c   c954: Eletronicgoods excludes Inventorytracking
+c   c955: Eletronicgoods requires Locallyvisitedpages
+c   c956: Locallyvisitedpages requires Eletronicgoods
+c   c957: Eletronicgoods excludes Locallyvisitedpages
+c   c958: Eletronicgoods requires Permissions
+c   c959: Permissions requires Eletronicgoods
+c   c960: Eletronicgoods excludes Permissions
+c   c961: Eletronicgoods requires Physicalgoods
+c   c962: Physicalgoods requires Eletronicgoods
+c   c963: Eletronicgoods excludes Physicalgoods
+c   c964: Eletronicgoods requires Physicalgoodsfulfillment
+c   c965: Physicalgoodsfulfillment requires Eletronicgoods
+c   c966: Eletronicgoods excludes Physicalgoodsfulfillment
+c   c967: Eletronicgoods requires Preferences
+c   c968: Preferences requires Eletronicgoods
+c   c969: Eletronicgoods excludes Preferences
+c   c970: Eletronicgoods requires Previouslyvisitedpages
+c   c971: Previouslyvisitedpages requires Eletronicgoods
+c   c972: Eletronicgoods excludes Previouslyvisitedpages
+c   c973: Eletronicgoods requires Quickcheckout
+c   c974: Quickcheckout requires Eletronicgoods
+c   c975: Eletronicgoods excludes Quickcheckout
+c   c976: Eletronicgoods requires Quickcheckoutprofile
+c   c977: Quickcheckoutprofile requires Eletronicgoods
+c   c978: Eletronicgoods excludes Quickcheckoutprofile
+c   c979: Eletronicgoods requires Registeredcheckout
+c   c980: Registeredcheckout requires Eletronicgoods
+c   c981: Eletronicgoods excludes Registeredcheckout
+c   c982: Eletronicgoods requires Registertobuy
+c   c983: Registertobuy requires Eletronicgoods
+c   c984: Eletronicgoods excludes Registertobuy
+c   c985: Eletronicgoods requires Registration
+c   c986: Registration requires Eletronicgoods
+c   c987: Eletronicgoods excludes Registration
+c   c988: Eletronicgoods requires Registrationenforcement
+c   c989: Registrationenforcement requires Eletronicgoods
+c   c990: Eletronicgoods excludes Registrationenforcement
+c   c991: Eletronicgoods requires Services
+c   c992: Services requires Eletronicgoods
+c   c993: Eletronicgoods excludes Services
+c   c994: Eletronicgoods requires Servicesfulfillment
+c   c995: Servicesfulfillment requires Eletronicgoods
+c   c996: Eletronicgoods excludes Servicesfulfillment
+c   c997: Eletronicgoods requires Shipping1
+c   c998: Shipping1 requires Eletronicgoods
+c   c999: Eletronicgoods excludes Shipping1
+c   c1000: Eletronicgoods requires Shippingoptions
+c   c1001: Shippingoptions requires Eletronicgoods
+c   c1002: Eletronicgoods excludes Shippingoptions
+c   c1003: Eletronicgoods requires Size
+c   c1004: Size requires Eletronicgoods
+c   c1005: Eletronicgoods excludes Size
+c   c1006: Eletronicgoods requires Specialoffers
+c   c1007: Specialoffers requires Eletronicgoods
+c   c1008: Eletronicgoods excludes Specialoffers
+c   c1009: Eletronicgoods requires Userbehaviourtracking
+c   c1010: Userbehaviourtracking requires Eletronicgoods
+c   c1011: Eletronicgoods excludes Userbehaviourtracking
+c   c1012: Eletronicgoods requires Userbehaviourtrackinginformation
+c   c1013: Userbehaviourtrackinginformation requires Eletronicgoods
+c   c1014: Eletronicgoods excludes Userbehaviourtrackinginformation
+c   c1015: Eletronicgoods requires Weight
+c   c1016: Weight requires Eletronicgoods
+c   c1017: Eletronicgoods excludes Weight
+c   c1018: Eletronicgoods requires Wishlist
+c   c1019: Wishlist requires Eletronicgoods
+c   c1020: Eletronicgoods excludes Wishlist
+c   c1021: Eletronicgoods requires Wishlistcontent
+c   c1022: Wishlistcontent requires Eletronicgoods
+c   c1023: Eletronicgoods excludes Wishlistcontent
+c   c1024: Eletronicgoods requires Wishlistsaveaftersession
+c   c1025: Wishlistsaveaftersession requires Eletronicgoods
+c   c1026: Eletronicgoods excludes Wishlistsaveaftersession
+c   c1027: Eletronicgoodsfulfillment requires Externalreferringpages
+c   c1028: Externalreferringpages requires Eletronicgoodsfulfillment
+c   c1029: Eletronicgoodsfulfillment excludes Externalreferringpages
+c   c1030: Eletronicgoodsfulfillment requires Inventorytracking
+c   c1031: Inventorytracking requires Eletronicgoodsfulfillment
+c   c1032: Eletronicgoodsfulfillment excludes Inventorytracking
+c   c1033: Eletronicgoodsfulfillment requires Locallyvisitedpages
+c   c1034: Locallyvisitedpages requires Eletronicgoodsfulfillment
+c   c1035: Eletronicgoodsfulfillment excludes Locallyvisitedpages
+c   c1036: Eletronicgoodsfulfillment requires Permissions
+c   c1037: Permissions requires Eletronicgoodsfulfillment
+c   c1038: Eletronicgoodsfulfillment excludes Permissions
+c   c1039: Eletronicgoodsfulfillment requires Physicalgoods
+c   c1040: Physicalgoods requires Eletronicgoodsfulfillment
+c   c1041: Eletronicgoodsfulfillment excludes Physicalgoods
+c   c1042: Eletronicgoodsfulfillment requires Physicalgoodsfulfillment
+c   c1043: Physicalgoodsfulfillment requires Eletronicgoodsfulfillment
+c   c1044: Eletronicgoodsfulfillment excludes Physicalgoodsfulfillment
+c   c1045: Eletronicgoodsfulfillment requires Preferences
+c   c1046: Preferences requires Eletronicgoodsfulfillment
+c   c1047: Eletronicgoodsfulfillment excludes Preferences
+c   c1048: Eletronicgoodsfulfillment requires Previouslyvisitedpages
+c   c1049: Previouslyvisitedpages requires Eletronicgoodsfulfillment
+c   c1050: Eletronicgoodsfulfillment excludes Previouslyvisitedpages
+c   c1051: Eletronicgoodsfulfillment requires Quickcheckout
+c   c1052: Quickcheckout requires Eletronicgoodsfulfillment
+c   c1053: Eletronicgoodsfulfillment excludes Quickcheckout
+c   c1054: Eletronicgoodsfulfillment requires Quickcheckoutprofile
+c   c1055: Quickcheckoutprofile requires Eletronicgoodsfulfillment
+c   c1056: Eletronicgoodsfulfillment excludes Quickcheckoutprofile
+c   c1057: Eletronicgoodsfulfillment requires Registeredcheckout
+c   c1058: Registeredcheckout requires Eletronicgoodsfulfillment
+c   c1059: Eletronicgoodsfulfillment excludes Registeredcheckout
+c   c1060: Eletronicgoodsfulfillment requires Registertobuy
+c   c1061: Registertobuy requires Eletronicgoodsfulfillment
+c   c1062: Eletronicgoodsfulfillment excludes Registertobuy
+c   c1063: Eletronicgoodsfulfillment requires Registration
+c   c1064: Registration requires Eletronicgoodsfulfillment
+c   c1065: Eletronicgoodsfulfillment excludes Registration
+c   c1066: Eletronicgoodsfulfillment requires Registrationenforcement
+c   c1067: Registrationenforcement requires Eletronicgoodsfulfillment
+c   c1068: Eletronicgoodsfulfillment excludes Registrationenforcement
+c   c1069: Eletronicgoodsfulfillment requires Services
+c   c1070: Services requires Eletronicgoodsfulfillment
+c   c1071: Eletronicgoodsfulfillment excludes Services
+c   c1072: Eletronicgoodsfulfillment requires Servicesfulfillment
+c   c1073: Servicesfulfillment requires Eletronicgoodsfulfillment
+c   c1074: Eletronicgoodsfulfillment excludes Servicesfulfillment
+c   c1075: Eletronicgoodsfulfillment requires Shipping1
+c   c1076: Shipping1 requires Eletronicgoodsfulfillment
+c   c1077: Eletronicgoodsfulfillment excludes Shipping1
+c   c1078: Eletronicgoodsfulfillment requires Shippingoptions
+c   c1079: Shippingoptions requires Eletronicgoodsfulfillment
+c   c1080: Eletronicgoodsfulfillment excludes Shippingoptions
+c   c1081: Eletronicgoodsfulfillment requires Size
+c   c1082: Size requires Eletronicgoodsfulfillment
+c   c1083: Eletronicgoodsfulfillment excludes Size
+c   c1084: Eletronicgoodsfulfillment requires Specialoffers
+c   c1085: Specialoffers requires Eletronicgoodsfulfillment
+c   c1086: Eletronicgoodsfulfillment excludes Specialoffers
+c   c1087: Eletronicgoodsfulfillment requires Userbehaviourtracking
+c   c1088: Userbehaviourtracking requires Eletronicgoodsfulfillment
+c   c1089: Eletronicgoodsfulfillment excludes Userbehaviourtracking
+c   c1090: Eletronicgoodsfulfillment requires Userbehaviourtrackinginformation
+c   c1091: Userbehaviourtrackinginformation requires Eletronicgoodsfulfillment
+c   c1092: Eletronicgoodsfulfillment excludes Userbehaviourtrackinginformation
+c   c1093: Eletronicgoodsfulfillment requires Weight
+c   c1094: Weight requires Eletronicgoodsfulfillment
+c   c1095: Eletronicgoodsfulfillment excludes Weight
+c   c1096: Eletronicgoodsfulfillment requires Wishlist
+c   c1097: Wishlist requires Eletronicgoodsfulfillment
+c   c1098: Eletronicgoodsfulfillment excludes Wishlist
+c   c1099: Eletronicgoodsfulfillment requires Wishlistcontent
+c   c1100: Wishlistcontent requires Eletronicgoodsfulfillment
+c   c1101: Eletronicgoodsfulfillment excludes Wishlistcontent
+c   c1102: Eletronicgoodsfulfillment requires Wishlistsaveaftersession
+c   c1103: Wishlistsaveaftersession requires Eletronicgoodsfulfillment
+c   c1104: Eletronicgoodsfulfillment excludes Wishlistsaveaftersession
+c   c1105: Externalreferringpages requires Inventorytracking
+c   c1106: Inventorytracking requires Externalreferringpages
+c   c1107: Externalreferringpages excludes Inventorytracking
+c   c1108: Externalreferringpages requires Locallyvisitedpages
+c   c1109: Locallyvisitedpages requires Externalreferringpages
+c   c1110: Externalreferringpages excludes Locallyvisitedpages
+c   c1111: Externalreferringpages requires Permissions
+c   c1112: Permissions requires Externalreferringpages
+c   c1113: Externalreferringpages excludes Permissions
+c   c1114: Externalreferringpages requires Physicalgoods
+c   c1115: Physicalgoods requires Externalreferringpages
+c   c1116: Externalreferringpages excludes Physicalgoods
+c   c1117: Externalreferringpages requires Physicalgoodsfulfillment
+c   c1118: Physicalgoodsfulfillment requires Externalreferringpages
+c   c1119: Externalreferringpages excludes Physicalgoodsfulfillment
+c   c1120: Externalreferringpages requires Preferences
+c   c1121: Preferences requires Externalreferringpages
+c   c1122: Externalreferringpages excludes Preferences
+c   c1123: Externalreferringpages requires Previouslyvisitedpages
+c   c1124: Previouslyvisitedpages requires Externalreferringpages
+c   c1125: Externalreferringpages excludes Previouslyvisitedpages
+c   c1126: Externalreferringpages requires Quickcheckout
+c   c1127: Quickcheckout requires Externalreferringpages
+c   c1128: Externalreferringpages excludes Quickcheckout
+c   c1129: Externalreferringpages requires Quickcheckoutprofile
+c   c1130: Quickcheckoutprofile requires Externalreferringpages
+c   c1131: Externalreferringpages excludes Quickcheckoutprofile
+c   c1132: Externalreferringpages requires Registeredcheckout
+c   c1133: Registeredcheckout requires Externalreferringpages
+c   c1134: Externalreferringpages excludes Registeredcheckout
+c   c1135: Externalreferringpages requires Registertobuy
+c   c1136: Registertobuy requires Externalreferringpages
+c   c1137: Externalreferringpages excludes Registertobuy
+c   c1138: Externalreferringpages requires Registration
+c   c1139: Registration requires Externalreferringpages
+c   c1140: Externalreferringpages excludes Registration
+c   c1141: Externalreferringpages requires Registrationenforcement
+c   c1142: Registrationenforcement requires Externalreferringpages
+c   c1143: Externalreferringpages excludes Registrationenforcement
+c   c1144: Externalreferringpages requires Services
+c   c1145: Services requires Externalreferringpages
+c   c1146: Externalreferringpages excludes Services
+c   c1147: Externalreferringpages requires Servicesfulfillment
+c   c1148: Servicesfulfillment requires Externalreferringpages
+c   c1149: Externalreferringpages excludes Servicesfulfillment
+c   c1150: Externalreferringpages requires Shipping1
+c   c1151: Shipping1 requires Externalreferringpages
+c   c1152: Externalreferringpages excludes Shipping1
+c   c1153: Externalreferringpages requires Shippingoptions
+c   c1154: Shippingoptions requires Externalreferringpages
+c   c1155: Externalreferringpages excludes Shippingoptions
+c   c1156: Externalreferringpages requires Size
+c   c1157: Size requires Externalreferringpages
+c   c1158: Externalreferringpages excludes Size
+c   c1159: Externalreferringpages requires Specialoffers
+c   c1160: Specialoffers requires Externalreferringpages
+c   c1161: Externalreferringpages excludes Specialoffers
+c   c1162: Externalreferringpages requires Userbehaviourtracking
+c   c1163: Userbehaviourtracking requires Externalreferringpages
+c   c1164: Externalreferringpages excludes Userbehaviourtracking
+c   c1165: Externalreferringpages requires Userbehaviourtrackinginformation
+c   c1166: Userbehaviourtrackinginformation requires Externalreferringpages
+c   c1167: Externalreferringpages excludes Userbehaviourtrackinginformation
+c   c1168: Externalreferringpages requires Weight
+c   c1169: Weight requires Externalreferringpages
+c   c1170: Externalreferringpages excludes Weight
+c   c1171: Externalreferringpages requires Wishlist
+c   c1172: Wishlist requires Externalreferringpages
+c   c1173: Externalreferringpages excludes Wishlist
+c   c1174: Externalreferringpages requires Wishlistcontent
+c   c1175: Wishlistcontent requires Externalreferringpages
+c   c1176: Externalreferringpages excludes Wishlistcontent
+c   c1177: Externalreferringpages requires Wishlistsaveaftersession
+c   c1178: Wishlistsaveaftersession requires Externalreferringpages
+c   c1179: Externalreferringpages excludes Wishlistsaveaftersession
+c   c1180: Inventorytracking requires Locallyvisitedpages
+c   c1181: Locallyvisitedpages requires Inventorytracking
+c   c1182: Inventorytracking excludes Locallyvisitedpages
+c   c1183: Inventorytracking requires Permissions
+c   c1184: Permissions requires Inventorytracking
+c   c1185: Inventorytracking excludes Permissions
+c   c1186: Inventorytracking requires Physicalgoods
+c   c1187: Physicalgoods requires Inventorytracking
+c   c1188: Inventorytracking excludes Physicalgoods
+c   c1189: Inventorytracking requires Physicalgoodsfulfillment
+c   c1190: Physicalgoodsfulfillment requires Inventorytracking
+c   c1191: Inventorytracking excludes Physicalgoodsfulfillment
+c   c1192: Inventorytracking requires Preferences
+c   c1193: Preferences requires Inventorytracking
+c   c1194: Inventorytracking excludes Preferences
+c   c1195: Inventorytracking requires Previouslyvisitedpages
+c   c1196: Previouslyvisitedpages requires Inventorytracking
+c   c1197: Inventorytracking excludes Previouslyvisitedpages
+c   c1198: Inventorytracking requires Quickcheckout
+c   c1199: Quickcheckout requires Inventorytracking
+c   c1200: Inventorytracking excludes Quickcheckout
+c   c1201: Inventorytracking requires Quickcheckoutprofile
+c   c1202: Quickcheckoutprofile requires Inventorytracking
+c   c1203: Inventorytracking excludes Quickcheckoutprofile
+c   c1204: Inventorytracking requires Registeredcheckout
+c   c1205: Registeredcheckout requires Inventorytracking
+c   c1206: Inventorytracking excludes Registeredcheckout
+c   c1207: Inventorytracking requires Registertobuy
+c   c1208: Registertobuy requires Inventorytracking
+c   c1209: Inventorytracking excludes Registertobuy
+c   c1210: Inventorytracking requires Registration
+c   c1211: Registration requires Inventorytracking
+c   c1212: Inventorytracking excludes Registration
+c   c1213: Inventorytracking requires Registrationenforcement
+c   c1214: Registrationenforcement requires Inventorytracking
+c   c1215: Inventorytracking excludes Registrationenforcement
+c   c1216: Inventorytracking requires Services
+c   c1217: Services requires Inventorytracking
+c   c1218: Inventorytracking excludes Services
+c   c1219: Inventorytracking requires Servicesfulfillment
+c   c1220: Servicesfulfillment requires Inventorytracking
+c   c1221: Inventorytracking excludes Servicesfulfillment
+c   c1222: Inventorytracking requires Shipping1
+c   c1223: Shipping1 requires Inventorytracking
+c   c1224: Inventorytracking excludes Shipping1
+c   c1225: Inventorytracking requires Shippingoptions
+c   c1226: Shippingoptions requires Inventorytracking
+c   c1227: Inventorytracking excludes Shippingoptions
+c   c1228: Inventorytracking requires Size
+c   c1229: Size requires Inventorytracking
+c   c1230: Inventorytracking excludes Size
+c   c1231: Inventorytracking requires Specialoffers
+c   c1232: Specialoffers requires Inventorytracking
+c   c1233: Inventorytracking excludes Specialoffers
+c   c1234: Inventorytracking requires Userbehaviourtracking
+c   c1235: Userbehaviourtracking requires Inventorytracking
+c   c1236: Inventorytracking excludes Userbehaviourtracking
+c   c1237: Inventorytracking requires Userbehaviourtrackinginformation
+c   c1238: Userbehaviourtrackinginformation requires Inventorytracking
+c   c1239: Inventorytracking excludes Userbehaviourtrackinginformation
+c   c1240: Inventorytracking requires Weight
+c   c1241: Weight requires Inventorytracking
+c   c1242: Inventorytracking excludes Weight
+c   c1243: Inventorytracking requires Wishlist
+c   c1244: Wishlist requires Inventorytracking
+c   c1245: Inventorytracking excludes Wishlist
+c   c1246: Inventorytracking requires Wishlistcontent
+c   c1247: Wishlistcontent requires Inventorytracking
+c   c1248: Inventorytracking excludes Wishlistcontent
+c   c1249: Inventorytracking requires Wishlistsaveaftersession
+c   c1250: Wishlistsaveaftersession requires Inventorytracking
+c   c1251: Inventorytracking excludes Wishlistsaveaftersession
+c   c1252: Locallyvisitedpages requires Permissions
+c   c1253: Permissions requires Locallyvisitedpages
+c   c1254: Locallyvisitedpages excludes Permissions
+c   c1255: Locallyvisitedpages requires Physicalgoods
+c   c1256: Physicalgoods requires Locallyvisitedpages
+c   c1257: Locallyvisitedpages excludes Physicalgoods
+c   c1258: Locallyvisitedpages requires Physicalgoodsfulfillment
+c   c1259: Physicalgoodsfulfillment requires Locallyvisitedpages
+c   c1260: Locallyvisitedpages excludes Physicalgoodsfulfillment
+c   c1261: Locallyvisitedpages requires Preferences
+c   c1262: Preferences requires Locallyvisitedpages
+c   c1263: Locallyvisitedpages excludes Preferences
+c   c1264: Locallyvisitedpages requires Previouslyvisitedpages
+c   c1265: Previouslyvisitedpages requires Locallyvisitedpages
+c   c1266: Locallyvisitedpages excludes Previouslyvisitedpages
+c   c1267: Locallyvisitedpages requires Quickcheckout
+c   c1268: Quickcheckout requires Locallyvisitedpages
+c   c1269: Locallyvisitedpages excludes Quickcheckout
+c   c1270: Locallyvisitedpages requires Quickcheckoutprofile
+c   c1271: Quickcheckoutprofile requires Locallyvisitedpages
+c   c1272: Locallyvisitedpages excludes Quickcheckoutprofile
+c   c1273: Locallyvisitedpages requires Registeredcheckout
+c   c1274: Registeredcheckout requires Locallyvisitedpages
+c   c1275: Locallyvisitedpages excludes Registeredcheckout
+c   c1276: Locallyvisitedpages requires Registertobuy
+c   c1277: Registertobuy requires Locallyvisitedpages
+c   c1278: Locallyvisitedpages excludes Registertobuy
+c   c1279: Locallyvisitedpages requires Registration
+c   c1280: Registration requires Locallyvisitedpages
+c   c1281: Locallyvisitedpages excludes Registration
+c   c1282: Locallyvisitedpages requires Registrationenforcement
+c   c1283: Registrationenforcement requires Locallyvisitedpages
+c   c1284: Locallyvisitedpages excludes Registrationenforcement
+c   c1285: Locallyvisitedpages requires Services
+c   c1286: Services requires Locallyvisitedpages
+c   c1287: Locallyvisitedpages excludes Services
+c   c1288: Locallyvisitedpages requires Servicesfulfillment
+c   c1289: Servicesfulfillment requires Locallyvisitedpages
+c   c1290: Locallyvisitedpages excludes Servicesfulfillment
+c   c1291: Locallyvisitedpages requires Shipping1
+c   c1292: Shipping1 requires Locallyvisitedpages
+c   c1293: Locallyvisitedpages excludes Shipping1
+c   c1294: Locallyvisitedpages requires Shippingoptions
+c   c1295: Shippingoptions requires Locallyvisitedpages
+c   c1296: Locallyvisitedpages excludes Shippingoptions
+c   c1297: Locallyvisitedpages requires Size
+c   c1298: Size requires Locallyvisitedpages
+c   c1299: Locallyvisitedpages excludes Size
+c   c1300: Locallyvisitedpages requires Specialoffers
+c   c1301: Specialoffers requires Locallyvisitedpages
+c   c1302: Locallyvisitedpages excludes Specialoffers
+c   c1303: Locallyvisitedpages requires Userbehaviourtracking
+c   c1304: Userbehaviourtracking requires Locallyvisitedpages
+c   c1305: Locallyvisitedpages excludes Userbehaviourtracking
+c   c1306: Locallyvisitedpages requires Userbehaviourtrackinginformation
+c   c1307: Userbehaviourtrackinginformation requires Locallyvisitedpages
+c   c1308: Locallyvisitedpages excludes Userbehaviourtrackinginformation
+c   c1309: Locallyvisitedpages requires Weight
+c   c1310: Weight requires Locallyvisitedpages
+c   c1311: Locallyvisitedpages excludes Weight
+c   c1312: Locallyvisitedpages requires Wishlist
+c   c1313: Wishlist requires Locallyvisitedpages
+c   c1314: Locallyvisitedpages excludes Wishlist
+c   c1315: Locallyvisitedpages requires Wishlistcontent
+c   c1316: Wishlistcontent requires Locallyvisitedpages
+c   c1317: Locallyvisitedpages excludes Wishlistcontent
+c   c1318: Locallyvisitedpages requires Wishlistsaveaftersession
+c   c1319: Wishlistsaveaftersession requires Locallyvisitedpages
+c   c1320: Locallyvisitedpages excludes Wishlistsaveaftersession
+c   c1321: Permissions requires Physicalgoods
+c   c1322: Physicalgoods requires Permissions
+c   c1323: Permissions excludes Physicalgoods
+c   c1324: Permissions requires Physicalgoodsfulfillment
+c   c1325: Physicalgoodsfulfillment requires Permissions
+c   c1326: Permissions excludes Physicalgoodsfulfillment
+c   c1327: Permissions requires Preferences
+c   c1328: Preferences requires Permissions
+c   c1329: Permissions excludes Preferences
+c   c1330: Permissions requires Previouslyvisitedpages
+c   c1331: Previouslyvisitedpages requires Permissions
+c   c1332: Permissions excludes Previouslyvisitedpages
+c   c1333: Permissions requires Quickcheckout
+c   c1334: Quickcheckout requires Permissions
+c   c1335: Permissions excludes Quickcheckout
+c   c1336: Permissions requires Quickcheckoutprofile
+c   c1337: Quickcheckoutprofile requires Permissions
+c   c1338: Permissions excludes Quickcheckoutprofile
+c   c1339: Permissions requires Registeredcheckout
+c   c1340: Registeredcheckout requires Permissions
+c   c1341: Permissions excludes Registeredcheckout
+c   c1342: Permissions requires Registertobuy
+c   c1343: Registertobuy requires Permissions
+c   c1344: Permissions excludes Registertobuy
+c   c1345: Permissions requires Registration
+c   c1346: Registration requires Permissions
+c   c1347: Permissions excludes Registration
+c   c1348: Permissions requires Registrationenforcement
+c   c1349: Registrationenforcement requires Permissions
+c   c1350: Permissions excludes Registrationenforcement
+c   c1351: Permissions requires Services
+c   c1352: Services requires Permissions
+c   c1353: Permissions excludes Services
+c   c1354: Permissions requires Servicesfulfillment
+c   c1355: Servicesfulfillment requires Permissions
+c   c1356: Permissions excludes Servicesfulfillment
+c   c1357: Permissions requires Shipping1
+c   c1358: Shipping1 requires Permissions
+c   c1359: Permissions excludes Shipping1
+c   c1360: Permissions requires Shippingoptions
+c   c1361: Shippingoptions requires Permissions
+c   c1362: Permissions excludes Shippingoptions
+c   c1363: Permissions requires Size
+c   c1364: Size requires Permissions
+c   c1365: Permissions excludes Size
+c   c1366: Permissions requires Specialoffers
+c   c1367: Specialoffers requires Permissions
+c   c1368: Permissions excludes Specialoffers
+c   c1369: Permissions requires Userbehaviourtracking
+c   c1370: Userbehaviourtracking requires Permissions
+c   c1371: Permissions excludes Userbehaviourtracking
+c   c1372: Permissions requires Userbehaviourtrackinginformation
+c   c1373: Userbehaviourtrackinginformation requires Permissions
+c   c1374: Permissions excludes Userbehaviourtrackinginformation
+c   c1375: Permissions requires Weight
+c   c1376: Weight requires Permissions
+c   c1377: Permissions excludes Weight
+c   c1378: Permissions requires Wishlist
+c   c1379: Wishlist requires Permissions
+c   c1380: Permissions excludes Wishlist
+c   c1381: Permissions requires Wishlistcontent
+c   c1382: Wishlistcontent requires Permissions
+c   c1383: Permissions excludes Wishlistcontent
+c   c1384: Permissions requires Wishlistsaveaftersession
+c   c1385: Wishlistsaveaftersession requires Permissions
+c   c1386: Permissions excludes Wishlistsaveaftersession
+c   c1387: Physicalgoods requires Physicalgoodsfulfillment
+c   c1388: Physicalgoodsfulfillment requires Physicalgoods
+c   c1389: Physicalgoods excludes Physicalgoodsfulfillment
+c   c1390: Physicalgoods requires Preferences
+c   c1391: Preferences requires Physicalgoods
+c   c1392: Physicalgoods excludes Preferences
+c   c1393: Physicalgoods requires Previouslyvisitedpages
+c   c1394: Previouslyvisitedpages requires Physicalgoods
+c   c1395: Physicalgoods excludes Previouslyvisitedpages
+c   c1396: Physicalgoods requires Quickcheckout
+c   c1397: Quickcheckout requires Physicalgoods
+c   c1398: Physicalgoods excludes Quickcheckout
+c   c1399: Physicalgoods requires Quickcheckoutprofile
+c   c1400: Quickcheckoutprofile requires Physicalgoods
+c   c1401: Physicalgoods excludes Quickcheckoutprofile
+c   c1402: Physicalgoods requires Registeredcheckout
+c   c1403: Registeredcheckout requires Physicalgoods
+c   c1404: Physicalgoods excludes Registeredcheckout
+c   c1405: Physicalgoods requires Registertobuy
+c   c1406: Registertobuy requires Physicalgoods
+c   c1407: Physicalgoods excludes Registertobuy
+c   c1408: Physicalgoods requires Registration
+c   c1409: Registration requires Physicalgoods
+c   c1410: Physicalgoods excludes Registration
+c   c1411: Physicalgoods requires Registrationenforcement
+c   c1412: Registrationenforcement requires Physicalgoods
+c   c1413: Physicalgoods excludes Registrationenforcement
+c   c1414: Physicalgoods requires Services
+c   c1415: Services requires Physicalgoods
+c   c1416: Physicalgoods excludes Services
+c   c1417: Physicalgoods requires Servicesfulfillment
+c   c1418: Servicesfulfillment requires Physicalgoods
+c   c1419: Physicalgoods excludes Servicesfulfillment
+c   c1420: Physicalgoods requires Shipping1
+c   c1421: Shipping1 requires Physicalgoods
+c   c1422: Physicalgoods excludes Shipping1
+c   c1423: Physicalgoods requires Shippingoptions
+c   c1424: Shippingoptions requires Physicalgoods
+c   c1425: Physicalgoods excludes Shippingoptions
+c   c1426: Physicalgoods requires Size
+c   c1427: Size requires Physicalgoods
+c   c1428: Physicalgoods excludes Size
+c   c1429: Physicalgoods requires Specialoffers
+c   c1430: Specialoffers requires Physicalgoods
+c   c1431: Physicalgoods excludes Specialoffers
+c   c1432: Physicalgoods requires Userbehaviourtracking
+c   c1433: Userbehaviourtracking requires Physicalgoods
+c   c1434: Physicalgoods excludes Userbehaviourtracking
+c   c1435: Physicalgoods requires Userbehaviourtrackinginformation
+c   c1436: Userbehaviourtrackinginformation requires Physicalgoods
+c   c1437: Physicalgoods excludes Userbehaviourtrackinginformation
+c   c1438: Physicalgoods requires Weight
+c   c1439: Weight requires Physicalgoods
+c   c1440: Physicalgoods excludes Weight
+c   c1441: Physicalgoods requires Wishlist
+c   c1442: Wishlist requires Physicalgoods
+c   c1443: Physicalgoods excludes Wishlist
+c   c1444: Physicalgoods requires Wishlistcontent
+c   c1445: Wishlistcontent requires Physicalgoods
+c   c1446: Physicalgoods excludes Wishlistcontent
+c   c1447: Physicalgoods requires Wishlistsaveaftersession
+c   c1448: Wishlistsaveaftersession requires Physicalgoods
+c   c1449: Physicalgoods excludes Wishlistsaveaftersession
+c   c1450: Physicalgoodsfulfillment requires Preferences
+c   c1451: Preferences requires Physicalgoodsfulfillment
+c   c1452: Physicalgoodsfulfillment excludes Preferences
+c   c1453: Physicalgoodsfulfillment requires Previouslyvisitedpages
+c   c1454: Previouslyvisitedpages requires Physicalgoodsfulfillment
+c   c1455: Physicalgoodsfulfillment excludes Previouslyvisitedpages
+c   c1456: Physicalgoodsfulfillment requires Quickcheckout
+c   c1457: Quickcheckout requires Physicalgoodsfulfillment
+c   c1458: Physicalgoodsfulfillment excludes Quickcheckout
+c   c1459: Physicalgoodsfulfillment requires Quickcheckoutprofile
+c   c1460: Quickcheckoutprofile requires Physicalgoodsfulfillment
+c   c1461: Physicalgoodsfulfillment excludes Quickcheckoutprofile
+c   c1462: Physicalgoodsfulfillment requires Registeredcheckout
+c   c1463: Registeredcheckout requires Physicalgoodsfulfillment
+c   c1464: Physicalgoodsfulfillment excludes Registeredcheckout
+c   c1465: Physicalgoodsfulfillment requires Registertobuy
+c   c1466: Registertobuy requires Physicalgoodsfulfillment
+c   c1467: Physicalgoodsfulfillment excludes Registertobuy
+c   c1468: Physicalgoodsfulfillment requires Registration
+c   c1469: Registration requires Physicalgoodsfulfillment
+c   c1470: Physicalgoodsfulfillment excludes Registration
+c   c1471: Physicalgoodsfulfillment requires Registrationenforcement
+c   c1472: Registrationenforcement requires Physicalgoodsfulfillment
+c   c1473: Physicalgoodsfulfillment excludes Registrationenforcement
+c   c1474: Physicalgoodsfulfillment requires Services
+c   c1475: Services requires Physicalgoodsfulfillment
+c   c1476: Physicalgoodsfulfillment excludes Services
+c   c1477: Physicalgoodsfulfillment requires Servicesfulfillment
+c   c1478: Servicesfulfillment requires Physicalgoodsfulfillment
+c   c1479: Physicalgoodsfulfillment excludes Servicesfulfillment
+c   c1480: Physicalgoodsfulfillment requires Shipping1
+c   c1481: Shipping1 requires Physicalgoodsfulfillment
+c   c1482: Physicalgoodsfulfillment excludes Shipping1
+c   c1483: Physicalgoodsfulfillment requires Shippingoptions
+c   c1484: Shippingoptions requires Physicalgoodsfulfillment
+c   c1485: Physicalgoodsfulfillment excludes Shippingoptions
+c   c1486: Physicalgoodsfulfillment requires Size
+c   c1487: Size requires Physicalgoodsfulfillment
+c   c1488: Physicalgoodsfulfillment excludes Size
+c   c1489: Physicalgoodsfulfillment requires Specialoffers
+c   c1490: Specialoffers requires Physicalgoodsfulfillment
+c   c1491: Physicalgoodsfulfillment excludes Specialoffers
+c   c1492: Physicalgoodsfulfillment requires Userbehaviourtracking
+c   c1493: Userbehaviourtracking requires Physicalgoodsfulfillment
+c   c1494: Physicalgoodsfulfillment excludes Userbehaviourtracking
+c   c1495: Physicalgoodsfulfillment requires Userbehaviourtrackinginformation
+c   c1496: Userbehaviourtrackinginformation requires Physicalgoodsfulfillment
+c   c1497: Physicalgoodsfulfillment excludes Userbehaviourtrackinginformation
+c   c1498: Physicalgoodsfulfillment requires Weight
+c   c1499: Weight requires Physicalgoodsfulfillment
+c   c1500: Physicalgoodsfulfillment excludes Weight
+c   c1501: Physicalgoodsfulfillment requires Wishlist
+c   c1502: Wishlist requires Physicalgoodsfulfillment
+c   c1503: Physicalgoodsfulfillment excludes Wishlist
+c   c1504: Physicalgoodsfulfillment requires Wishlistcontent
+c   c1505: Wishlistcontent requires Physicalgoodsfulfillment
+c   c1506: Physicalgoodsfulfillment excludes Wishlistcontent
+c   c1507: Physicalgoodsfulfillment requires Wishlistsaveaftersession
+c   c1508: Wishlistsaveaftersession requires Physicalgoodsfulfillment
+c   c1509: Physicalgoodsfulfillment excludes Wishlistsaveaftersession
+c   c1510: Preferences requires Previouslyvisitedpages
+c   c1511: Previouslyvisitedpages requires Preferences
+c   c1512: Preferences excludes Previouslyvisitedpages
+c   c1513: Preferences requires Quickcheckout
+c   c1514: Quickcheckout requires Preferences
+c   c1515: Preferences excludes Quickcheckout
+c   c1516: Preferences requires Quickcheckoutprofile
+c   c1517: Quickcheckoutprofile requires Preferences
+c   c1518: Preferences excludes Quickcheckoutprofile
+c   c1519: Preferences requires Registeredcheckout
+c   c1520: Registeredcheckout requires Preferences
+c   c1521: Preferences excludes Registeredcheckout
+c   c1522: Preferences requires Registertobuy
+c   c1523: Registertobuy requires Preferences
+c   c1524: Preferences excludes Registertobuy
+c   c1525: Preferences requires Registration
+c   c1526: Registration requires Preferences
+c   c1527: Preferences excludes Registration
+c   c1528: Preferences requires Registrationenforcement
+c   c1529: Registrationenforcement requires Preferences
+c   c1530: Preferences excludes Registrationenforcement
+c   c1531: Preferences requires Services
+c   c1532: Services requires Preferences
+c   c1533: Preferences excludes Services
+c   c1534: Preferences requires Servicesfulfillment
+c   c1535: Servicesfulfillment requires Preferences
+c   c1536: Preferences excludes Servicesfulfillment
+c   c1537: Preferences requires Shipping1
+c   c1538: Shipping1 requires Preferences
+c   c1539: Preferences excludes Shipping1
+c   c1540: Preferences requires Shippingoptions
+c   c1541: Shippingoptions requires Preferences
+c   c1542: Preferences excludes Shippingoptions
+c   c1543: Preferences requires Size
+c   c1544: Size requires Preferences
+c   c1545: Preferences excludes Size
+c   c1546: Preferences requires Specialoffers
+c   c1547: Specialoffers requires Preferences
+c   c1548: Preferences excludes Specialoffers
+c   c1549: Preferences requires Userbehaviourtracking
+c   c1550: Userbehaviourtracking requires Preferences
+c   c1551: Preferences excludes Userbehaviourtracking
+c   c1552: Preferences requires Userbehaviourtrackinginformation
+c   c1553: Userbehaviourtrackinginformation requires Preferences
+c   c1554: Preferences excludes Userbehaviourtrackinginformation
+c   c1555: Preferences requires Weight
+c   c1556: Weight requires Preferences
+c   c1557: Preferences excludes Weight
+c   c1558: Preferences requires Wishlist
+c   c1559: Wishlist requires Preferences
+c   c1560: Preferences excludes Wishlist
+c   c1561: Preferences requires Wishlistcontent
+c   c1562: Wishlistcontent requires Preferences
+c   c1563: Preferences excludes Wishlistcontent
+c   c1564: Preferences requires Wishlistsaveaftersession
+c   c1565: Wishlistsaveaftersession requires Preferences
+c   c1566: Preferences excludes Wishlistsaveaftersession
+c   c1567: Previouslyvisitedpages requires Quickcheckout
+c   c1568: Quickcheckout requires Previouslyvisitedpages
+c   c1569: Previouslyvisitedpages excludes Quickcheckout
+c   c1570: Previouslyvisitedpages requires Quickcheckoutprofile
+c   c1571: Quickcheckoutprofile requires Previouslyvisitedpages
+c   c1572: Previouslyvisitedpages excludes Quickcheckoutprofile
+c   c1573: Previouslyvisitedpages requires Registeredcheckout
+c   c1574: Registeredcheckout requires Previouslyvisitedpages
+c   c1575: Previouslyvisitedpages excludes Registeredcheckout
+c   c1576: Previouslyvisitedpages requires Registertobuy
+c   c1577: Registertobuy requires Previouslyvisitedpages
+c   c1578: Previouslyvisitedpages excludes Registertobuy
+c   c1579: Previouslyvisitedpages requires Registration
+c   c1580: Registration requires Previouslyvisitedpages
+c   c1581: Previouslyvisitedpages excludes Registration
+c   c1582: Previouslyvisitedpages requires Registrationenforcement
+c   c1583: Registrationenforcement requires Previouslyvisitedpages
+c   c1584: Previouslyvisitedpages excludes Registrationenforcement
+c   c1585: Previouslyvisitedpages requires Services
+c   c1586: Services requires Previouslyvisitedpages
+c   c1587: Previouslyvisitedpages excludes Services
+c   c1588: Previouslyvisitedpages requires Servicesfulfillment
+c   c1589: Servicesfulfillment requires Previouslyvisitedpages
+c   c1590: Previouslyvisitedpages excludes Servicesfulfillment
+c   c1591: Previouslyvisitedpages requires Shipping1
+c   c1592: Shipping1 requires Previouslyvisitedpages
+c   c1593: Previouslyvisitedpages excludes Shipping1
+c   c1594: Previouslyvisitedpages requires Shippingoptions
+c   c1595: Shippingoptions requires Previouslyvisitedpages
+c   c1596: Previouslyvisitedpages excludes Shippingoptions
+c   c1597: Previouslyvisitedpages requires Size
+c   c1598: Size requires Previouslyvisitedpages
+c   c1599: Previouslyvisitedpages excludes Size
+c   c1600: Previouslyvisitedpages requires Specialoffers
+c   c1601: Specialoffers requires Previouslyvisitedpages
+c   c1602: Previouslyvisitedpages excludes Specialoffers
+c   c1603: Previouslyvisitedpages requires Userbehaviourtracking
+c   c1604: Userbehaviourtracking requires Previouslyvisitedpages
+c   c1605: Previouslyvisitedpages excludes Userbehaviourtracking
+c   c1606: Previouslyvisitedpages requires Userbehaviourtrackinginformation
+c   c1607: Userbehaviourtrackinginformation requires Previouslyvisitedpages
+c   c1608: Previouslyvisitedpages excludes Userbehaviourtrackinginformation
+c   c1609: Previouslyvisitedpages requires Weight
+c   c1610: Weight requires Previouslyvisitedpages
+c   c1611: Previouslyvisitedpages excludes Weight
+c   c1612: Previouslyvisitedpages requires Wishlist
+c   c1613: Wishlist requires Previouslyvisitedpages
+c   c1614: Previouslyvisitedpages excludes Wishlist
+c   c1615: Previouslyvisitedpages requires Wishlistcontent
+c   c1616: Wishlistcontent requires Previouslyvisitedpages
+c   c1617: Previouslyvisitedpages excludes Wishlistcontent
+c   c1618: Previouslyvisitedpages requires Wishlistsaveaftersession
+c   c1619: Wishlistsaveaftersession requires Previouslyvisitedpages
+c   c1620: Previouslyvisitedpages excludes Wishlistsaveaftersession
+c   c1621: Quickcheckout requires Quickcheckoutprofile
+c   c1622: Quickcheckoutprofile requires Quickcheckout
+c   c1623: Quickcheckout excludes Quickcheckoutprofile
+c   c1624: Quickcheckout requires Registeredcheckout
+c   c1625: Registeredcheckout requires Quickcheckout
+c   c1626: Quickcheckout excludes Registeredcheckout
+c   c1627: Quickcheckout requires Registertobuy
+c   c1628: Registertobuy requires Quickcheckout
+c   c1629: Quickcheckout excludes Registertobuy
+c   c1630: Quickcheckout requires Registration
+c   c1631: Registration requires Quickcheckout
+c   c1632: Quickcheckout excludes Registration
+c   c1633: Quickcheckout requires Registrationenforcement
+c   c1634: Registrationenforcement requires Quickcheckout
+c   c1635: Quickcheckout excludes Registrationenforcement
+c   c1636: Quickcheckout requires Services
+c   c1637: Services requires Quickcheckout
+c   c1638: Quickcheckout excludes Services
+c   c1639: Quickcheckout requires Servicesfulfillment
+c   c1640: Servicesfulfillment requires Quickcheckout
+c   c1641: Quickcheckout excludes Servicesfulfillment
+c   c1642: Quickcheckout requires Shipping1
+c   c1643: Shipping1 requires Quickcheckout
+c   c1644: Quickcheckout excludes Shipping1
+c   c1645: Quickcheckout requires Shippingoptions
+c   c1646: Shippingoptions requires Quickcheckout
+c   c1647: Quickcheckout excludes Shippingoptions
+c   c1648: Quickcheckout requires Size
+c   c1649: Size requires Quickcheckout
+c   c1650: Quickcheckout excludes Size
+c   c1651: Quickcheckout requires Specialoffers
+c   c1652: Specialoffers requires Quickcheckout
+c   c1653: Quickcheckout excludes Specialoffers
+c   c1654: Quickcheckout requires Userbehaviourtracking
+c   c1655: Userbehaviourtracking requires Quickcheckout
+c   c1656: Quickcheckout excludes Userbehaviourtracking
+c   c1657: Quickcheckout requires Userbehaviourtrackinginformation
+c   c1658: Userbehaviourtrackinginformation requires Quickcheckout
+c   c1659: Quickcheckout excludes Userbehaviourtrackinginformation
+c   c1660: Quickcheckout requires Weight
+c   c1661: Weight requires Quickcheckout
+c   c1662: Quickcheckout excludes Weight
+c   c1663: Quickcheckout requires Wishlist
+c   c1664: Wishlist requires Quickcheckout
+c   c1665: Quickcheckout excludes Wishlist
+c   c1666: Quickcheckout requires Wishlistcontent
+c   c1667: Wishlistcontent requires Quickcheckout
+c   c1668: Quickcheckout excludes Wishlistcontent
+c   c1669: Quickcheckout requires Wishlistsaveaftersession
+c   c1670: Wishlistsaveaftersession requires Quickcheckout
+c   c1671: Quickcheckout excludes Wishlistsaveaftersession
+c   c1672: Quickcheckoutprofile requires Registeredcheckout
+c   c1673: Registeredcheckout requires Quickcheckoutprofile
+c   c1674: Quickcheckoutprofile excludes Registeredcheckout
+c   c1675: Quickcheckoutprofile requires Registertobuy
+c   c1676: Registertobuy requires Quickcheckoutprofile
+c   c1677: Quickcheckoutprofile excludes Registertobuy
+c   c1678: Quickcheckoutprofile requires Registration
+c   c1679: Registration requires Quickcheckoutprofile
+c   c1680: Quickcheckoutprofile excludes Registration
+c   c1681: Quickcheckoutprofile requires Registrationenforcement
+c   c1682: Registrationenforcement requires Quickcheckoutprofile
+c   c1683: Quickcheckoutprofile excludes Registrationenforcement
+c   c1684: Quickcheckoutprofile requires Services
+c   c1685: Services requires Quickcheckoutprofile
+c   c1686: Quickcheckoutprofile excludes Services
+c   c1687: Quickcheckoutprofile requires Servicesfulfillment
+c   c1688: Servicesfulfillment requires Quickcheckoutprofile
+c   c1689: Quickcheckoutprofile excludes Servicesfulfillment
+c   c1690: Quickcheckoutprofile requires Shipping1
+c   c1691: Shipping1 requires Quickcheckoutprofile
+c   c1692: Quickcheckoutprofile excludes Shipping1
+c   c1693: Quickcheckoutprofile requires Shippingoptions
+c   c1694: Shippingoptions requires Quickcheckoutprofile
+c   c1695: Quickcheckoutprofile excludes Shippingoptions
+c   c1696: Quickcheckoutprofile requires Size
+c   c1697: Size requires Quickcheckoutprofile
+c   c1698: Quickcheckoutprofile excludes Size
+c   c1699: Quickcheckoutprofile requires Specialoffers
+c   c1700: Specialoffers requires Quickcheckoutprofile
+c   c1701: Quickcheckoutprofile excludes Specialoffers
+c   c1702: Quickcheckoutprofile requires Userbehaviourtracking
+c   c1703: Userbehaviourtracking requires Quickcheckoutprofile
+c   c1704: Quickcheckoutprofile excludes Userbehaviourtracking
+c   c1705: Quickcheckoutprofile requires Userbehaviourtrackinginformation
+c   c1706: Userbehaviourtrackinginformation requires Quickcheckoutprofile
+c   c1707: Quickcheckoutprofile excludes Userbehaviourtrackinginformation
+c   c1708: Quickcheckoutprofile requires Weight
+c   c1709: Weight requires Quickcheckoutprofile
+c   c1710: Quickcheckoutprofile excludes Weight
+c   c1711: Quickcheckoutprofile requires Wishlist
+c   c1712: Wishlist requires Quickcheckoutprofile
+c   c1713: Quickcheckoutprofile excludes Wishlist
+c   c1714: Quickcheckoutprofile requires Wishlistcontent
+c   c1715: Wishlistcontent requires Quickcheckoutprofile
+c   c1716: Quickcheckoutprofile excludes Wishlistcontent
+c   c1717: Quickcheckoutprofile requires Wishlistsaveaftersession
+c   c1718: Wishlistsaveaftersession requires Quickcheckoutprofile
+c   c1719: Quickcheckoutprofile excludes Wishlistsaveaftersession
+c   c1720: Registeredcheckout requires Registertobuy
+c   c1721: Registertobuy requires Registeredcheckout
+c   c1722: Registeredcheckout excludes Registertobuy
+c   c1723: Registeredcheckout requires Registration
+c   c1724: Registration requires Registeredcheckout
+c   c1725: Registeredcheckout excludes Registration
+c   c1726: Registeredcheckout requires Registrationenforcement
+c   c1727: Registrationenforcement requires Registeredcheckout
+c   c1728: Registeredcheckout excludes Registrationenforcement
+c   c1729: Registeredcheckout requires Services
+c   c1730: Services requires Registeredcheckout
+c   c1731: Registeredcheckout excludes Services
+c   c1732: Registeredcheckout requires Servicesfulfillment
+c   c1733: Servicesfulfillment requires Registeredcheckout
+c   c1734: Registeredcheckout excludes Servicesfulfillment
+c   c1735: Registeredcheckout requires Shipping1
+c   c1736: Shipping1 requires Registeredcheckout
+c   c1737: Registeredcheckout excludes Shipping1
+c   c1738: Registeredcheckout requires Shippingoptions
+c   c1739: Shippingoptions requires Registeredcheckout
+c   c1740: Registeredcheckout excludes Shippingoptions
+c   c1741: Registeredcheckout requires Size
+c   c1742: Size requires Registeredcheckout
+c   c1743: Registeredcheckout excludes Size
+c   c1744: Registeredcheckout requires Specialoffers
+c   c1745: Specialoffers requires Registeredcheckout
+c   c1746: Registeredcheckout excludes Specialoffers
+c   c1747: Registeredcheckout requires Userbehaviourtracking
+c   c1748: Userbehaviourtracking requires Registeredcheckout
+c   c1749: Registeredcheckout excludes Userbehaviourtracking
+c   c1750: Registeredcheckout requires Userbehaviourtrackinginformation
+c   c1751: Userbehaviourtrackinginformation requires Registeredcheckout
+c   c1752: Registeredcheckout excludes Userbehaviourtrackinginformation
+c   c1753: Registeredcheckout requires Weight
+c   c1754: Weight requires Registeredcheckout
+c   c1755: Registeredcheckout excludes Weight
+c   c1756: Registeredcheckout requires Wishlist
+c   c1757: Wishlist requires Registeredcheckout
+c   c1758: Registeredcheckout excludes Wishlist
+c   c1759: Registeredcheckout requires Wishlistcontent
+c   c1760: Wishlistcontent requires Registeredcheckout
+c   c1761: Registeredcheckout excludes Wishlistcontent
+c   c1762: Registeredcheckout requires Wishlistsaveaftersession
+c   c1763: Wishlistsaveaftersession requires Registeredcheckout
+c   c1764: Registeredcheckout excludes Wishlistsaveaftersession
+c   c1765: Registertobuy requires Registration
+c   c1766: Registration requires Registertobuy
+c   c1767: Registertobuy excludes Registration
+c   c1768: Registertobuy requires Registrationenforcement
+c   c1769: Registrationenforcement requires Registertobuy
+c   c1770: Registertobuy excludes Registrationenforcement
+c   c1771: Registertobuy requires Services
+c   c1772: Services requires Registertobuy
+c   c1773: Registertobuy excludes Services
+c   c1774: Registertobuy requires Servicesfulfillment
+c   c1775: Servicesfulfillment requires Registertobuy
+c   c1776: Registertobuy excludes Servicesfulfillment
+c   c1777: Registertobuy requires Shipping1
+c   c1778: Shipping1 requires Registertobuy
+c   c1779: Registertobuy excludes Shipping1
+c   c1780: Registertobuy requires Shippingoptions
+c   c1781: Shippingoptions requires Registertobuy
+c   c1782: Registertobuy excludes Shippingoptions
+c   c1783: Registertobuy requires Size
+c   c1784: Size requires Registertobuy
+c   c1785: Registertobuy excludes Size
+c   c1786: Registertobuy requires Specialoffers
+c   c1787: Specialoffers requires Registertobuy
+c   c1788: Registertobuy excludes Specialoffers
+c   c1789: Registertobuy requires Userbehaviourtracking
+c   c1790: Userbehaviourtracking requires Registertobuy
+c   c1791: Registertobuy excludes Userbehaviourtracking
+c   c1792: Registertobuy requires Userbehaviourtrackinginformation
+c   c1793: Userbehaviourtrackinginformation requires Registertobuy
+c   c1794: Registertobuy excludes Userbehaviourtrackinginformation
+c   c1795: Registertobuy requires Weight
+c   c1796: Weight requires Registertobuy
+c   c1797: Registertobuy excludes Weight
+c   c1798: Registertobuy requires Wishlist
+c   c1799: Wishlist requires Registertobuy
+c   c1800: Registertobuy excludes Wishlist
+c   c1801: Registertobuy requires Wishlistcontent
+c   c1802: Wishlistcontent requires Registertobuy
+c   c1803: Registertobuy excludes Wishlistcontent
+c   c1804: Registertobuy requires Wishlistsaveaftersession
+c   c1805: Wishlistsaveaftersession requires Registertobuy
+c   c1806: Registertobuy excludes Wishlistsaveaftersession
+c   c1807: Registration requires Registrationenforcement
+c   c1808: Registrationenforcement requires Registration
+c   c1809: Registration excludes Registrationenforcement
+c   c1810: Registration requires Services
+c   c1811: Services requires Registration
+c   c1812: Registration excludes Services
+c   c1813: Registration requires Servicesfulfillment
+c   c1814: Servicesfulfillment requires Registration
+c   c1815: Registration excludes Servicesfulfillment
+c   c1816: Registration requires Shipping1
+c   c1817: Shipping1 requires Registration
+c   c1818: Registration excludes Shipping1
+c   c1819: Registration requires Shippingoptions
+c   c1820: Shippingoptions requires Registration
+c   c1821: Registration excludes Shippingoptions
+c   c1822: Registration requires Size
+c   c1823: Size requires Registration
+c   c1824: Registration excludes Size
+c   c1825: Registration requires Specialoffers
+c   c1826: Specialoffers requires Registration
+c   c1827: Registration excludes Specialoffers
+c   c1828: Registration requires Userbehaviourtracking
+c   c1829: Userbehaviourtracking requires Registration
+c   c1830: Registration excludes Userbehaviourtracking
+c   c1831: Registration requires Userbehaviourtrackinginformation
+c   c1832: Userbehaviourtrackinginformation requires Registration
+c   c1833: Registration excludes Userbehaviourtrackinginformation
+c   c1834: Registration requires Weight
+c   c1835: Weight requires Registration
+c   c1836: Registration excludes Weight
+c   c1837: Registration requires Wishlist
+c   c1838: Wishlist requires Registration
+c   c1839: Registration excludes Wishlist
+c   c1840: Registration requires Wishlistcontent
+c   c1841: Wishlistcontent requires Registration
+c   c1842: Registration excludes Wishlistcontent
+c   c1843: Registration requires Wishlistsaveaftersession
+c   c1844: Wishlistsaveaftersession requires Registration
+c   c1845: Registration excludes Wishlistsaveaftersession
+c   c1846: Registrationenforcement requires Services
+c   c1847: Services requires Registrationenforcement
+c   c1848: Registrationenforcement excludes Services
+c   c1849: Registrationenforcement requires Servicesfulfillment
+c   c1850: Servicesfulfillment requires Registrationenforcement
+c   c1851: Registrationenforcement excludes Servicesfulfillment
+c   c1852: Registrationenforcement requires Shipping1
+c   c1853: Shipping1 requires Registrationenforcement
+c   c1854: Registrationenforcement excludes Shipping1
+c   c1855: Registrationenforcement requires Shippingoptions
+c   c1856: Shippingoptions requires Registrationenforcement
+c   c1857: Registrationenforcement excludes Shippingoptions
+c   c1858: Registrationenforcement requires Size
+c   c1859: Size requires Registrationenforcement
+c   c1860: Registrationenforcement excludes Size
+c   c1861: Registrationenforcement requires Specialoffers
+c   c1862: Specialoffers requires Registrationenforcement
+c   c1863: Registrationenforcement excludes Specialoffers
+c   c1864: Registrationenforcement requires Userbehaviourtracking
+c   c1865: Userbehaviourtracking requires Registrationenforcement
+c   c1866: Registrationenforcement excludes Userbehaviourtracking
+c   c1867: Registrationenforcement requires Userbehaviourtrackinginformation
+c   c1868: Userbehaviourtrackinginformation requires Registrationenforcement
+c   c1869: Registrationenforcement excludes Userbehaviourtrackinginformation
+c   c1870: Registrationenforcement requires Weight
+c   c1871: Weight requires Registrationenforcement
+c   c1872: Registrationenforcement excludes Weight
+c   c1873: Registrationenforcement requires Wishlist
+c   c1874: Wishlist requires Registrationenforcement
+c   c1875: Registrationenforcement excludes Wishlist
+c   c1876: Registrationenforcement requires Wishlistcontent
+c   c1877: Wishlistcontent requires Registrationenforcement
+c   c1878: Registrationenforcement excludes Wishlistcontent
+c   c1879: Registrationenforcement requires Wishlistsaveaftersession
+c   c1880: Wishlistsaveaftersession requires Registrationenforcement
+c   c1881: Registrationenforcement excludes Wishlistsaveaftersession
+c   c1882: Services requires Servicesfulfillment
+c   c1883: Servicesfulfillment requires Services
+c   c1884: Services excludes Servicesfulfillment
+c   c1885: Services requires Shipping1
+c   c1886: Shipping1 requires Services
+c   c1887: Services excludes Shipping1
+c   c1888: Services requires Shippingoptions
+c   c1889: Shippingoptions requires Services
+c   c1890: Services excludes Shippingoptions
+c   c1891: Services requires Size
+c   c1892: Size requires Services
+c   c1893: Services excludes Size
+c   c1894: Services requires Specialoffers
+c   c1895: Specialoffers requires Services
+c   c1896: Services excludes Specialoffers
+c   c1897: Services requires Userbehaviourtracking
+c   c1898: Userbehaviourtracking requires Services
+c   c1899: Services excludes Userbehaviourtracking
+c   c1900: Services requires Userbehaviourtrackinginformation
+c   c1901: Userbehaviourtrackinginformation requires Services
+c   c1902: Services excludes Userbehaviourtrackinginformation
+c   c1903: Services requires Weight
+c   c1904: Weight requires Services
+c   c1905: Services excludes Weight
+c   c1906: Services requires Wishlist
+c   c1907: Wishlist requires Services
+c   c1908: Services excludes Wishlist
+c   c1909: Services requires Wishlistcontent
+c   c1910: Wishlistcontent requires Services
+c   c1911: Services excludes Wishlistcontent
+c   c1912: Services requires Wishlistsaveaftersession
+c   c1913: Wishlistsaveaftersession requires Services
+c   c1914: Services excludes Wishlistsaveaftersession
+c   c1915: Servicesfulfillment requires Shipping1
+c   c1916: Shipping1 requires Servicesfulfillment
+c   c1917: Servicesfulfillment excludes Shipping1
+c   c1918: Servicesfulfillment requires Shippingoptions
+c   c1919: Shippingoptions requires Servicesfulfillment
+c   c1920: Servicesfulfillment excludes Shippingoptions
+c   c1921: Servicesfulfillment requires Size
+c   c1922: Size requires Servicesfulfillment
+c   c1923: Servicesfulfillment excludes Size
+c   c1924: Servicesfulfillment requires Specialoffers
+c   c1925: Specialoffers requires Servicesfulfillment
+c   c1926: Servicesfulfillment excludes Specialoffers
+c   c1927: Servicesfulfillment requires Userbehaviourtracking
+c   c1928: Userbehaviourtracking requires Servicesfulfillment
+c   c1929: Servicesfulfillment excludes Userbehaviourtracking
+c   c1930: Servicesfulfillment requires Userbehaviourtrackinginformation
+c   c1931: Userbehaviourtrackinginformation requires Servicesfulfillment
+c   c1932: Servicesfulfillment excludes Userbehaviourtrackinginformation
+c   c1933: Servicesfulfillment requires Weight
+c   c1934: Weight requires Servicesfulfillment
+c   c1935: Servicesfulfillment excludes Weight
+c   c1936: Servicesfulfillment requires Wishlist
+c   c1937: Wishlist requires Servicesfulfillment
+c   c1938: Servicesfulfillment excludes Wishlist
+c   c1939: Servicesfulfillment requires Wishlistcontent
+c   c1940: Wishlistcontent requires Servicesfulfillment
+c   c1941: Servicesfulfillment excludes Wishlistcontent
+c   c1942: Servicesfulfillment requires Wishlistsaveaftersession
+c   c1943: Wishlistsaveaftersession requires Servicesfulfillment
+c   c1944: Servicesfulfillment excludes Wishlistsaveaftersession
+c   c1945: Shipping1 requires Shippingoptions
+c   c1946: Shippingoptions requires Shipping1
+c   c1947: Shipping1 excludes Shippingoptions
+c   c1948: Shipping1 requires Size
+c   c1949: Size requires Shipping1
+c   c1950: Shipping1 excludes Size
+c   c1951: Shipping1 requires Specialoffers
+c   c1952: Specialoffers requires Shipping1
+c   c1953: Shipping1 excludes Specialoffers
+c   c1954: Shipping1 requires Userbehaviourtracking
+c   c1955: Userbehaviourtracking requires Shipping1
+c   c1956: Shipping1 excludes Userbehaviourtracking
+c   c1957: Shipping1 requires Userbehaviourtrackinginformation
+c   c1958: Userbehaviourtrackinginformation requires Shipping1
+c   c1959: Shipping1 excludes Userbehaviourtrackinginformation
+c   c1960: Shipping1 requires Weight
+c   c1961: Weight requires Shipping1
+c   c1962: Shipping1 excludes Weight
+c   c1963: Shipping1 requires Wishlist
+c   c1964: Wishlist requires Shipping1
+c   c1965: Shipping1 excludes Wishlist
+c   c1966: Shipping1 requires Wishlistcontent
+c   c1967: Wishlistcontent requires Shipping1
+c   c1968: Shipping1 excludes Wishlistcontent
+c   c1969: Shipping1 requires Wishlistsaveaftersession
+c   c1970: Wishlistsaveaftersession requires Shipping1
+c   c1971: Shipping1 excludes Wishlistsaveaftersession
+c   c1972: Shippingoptions requires Size
+c   c1973: Size requires Shippingoptions
+c   c1974: Shippingoptions excludes Size
+c   c1975: Shippingoptions requires Specialoffers
+c   c1976: Specialoffers requires Shippingoptions
+c   c1977: Shippingoptions excludes Specialoffers
+c   c1978: Shippingoptions requires Userbehaviourtracking
+c   c1979: Userbehaviourtracking requires Shippingoptions
+c   c1980: Shippingoptions excludes Userbehaviourtracking
+c   c1981: Shippingoptions requires Userbehaviourtrackinginformation
+c   c1982: Userbehaviourtrackinginformation requires Shippingoptions
+c   c1983: Shippingoptions excludes Userbehaviourtrackinginformation
+c   c1984: Shippingoptions requires Weight
+c   c1985: Weight requires Shippingoptions
+c   c1986: Shippingoptions excludes Weight
+c   c1987: Shippingoptions requires Wishlist
+c   c1988: Wishlist requires Shippingoptions
+c   c1989: Shippingoptions excludes Wishlist
+c   c1990: Shippingoptions requires Wishlistcontent
+c   c1991: Wishlistcontent requires Shippingoptions
+c   c1992: Shippingoptions excludes Wishlistcontent
+c   c1993: Shippingoptions requires Wishlistsaveaftersession
+c   c1994: Wishlistsaveaftersession requires Shippingoptions
+c   c1995: Shippingoptions excludes Wishlistsaveaftersession
+c   c1996: Size requires Specialoffers
+c   c1997: Specialoffers requires Size
+c   c1998: Size excludes Specialoffers
+c   c1999: Size requires Userbehaviourtracking
+c   c2000: Userbehaviourtracking requires Size
+c   c2001: Size excludes Userbehaviourtracking
+c   c2002: Size requires Userbehaviourtrackinginformation
+c   c2003: Userbehaviourtrackinginformation requires Size
+c   c2004: Size excludes Userbehaviourtrackinginformation
+c   c2005: Size requires Weight
+c   c2006: Weight requires Size
+c   c2007: Size excludes Weight
+c   c2008: Size requires Wishlist
+c   c2009: Wishlist requires Size
+c   c2010: Size excludes Wishlist
+c   c2011: Size requires Wishlistcontent
+c   c2012: Wishlistcontent requires Size
+c   c2013: Size excludes Wishlistcontent
+c   c2014: Size requires Wishlistsaveaftersession
+c   c2015: Wishlistsaveaftersession requires Size
+c   c2016: Size excludes Wishlistsaveaftersession
+c   c2017: Specialoffers requires Userbehaviourtracking
+c   c2018: Userbehaviourtracking requires Specialoffers
+c   c2019: Specialoffers excludes Userbehaviourtracking
+c   c2020: Specialoffers requires Userbehaviourtrackinginformation
+c   c2021: Userbehaviourtrackinginformation requires Specialoffers
+c   c2022: Specialoffers excludes Userbehaviourtrackinginformation
+c   c2023: Specialoffers requires Weight
+c   c2024: Weight requires Specialoffers
+c   c2025: Specialoffers excludes Weight
+c   c2026: Specialoffers requires Wishlist
+c   c2027: Wishlist requires Specialoffers
+c   c2028: Specialoffers excludes Wishlist
+c   c2029: Specialoffers requires Wishlistcontent
+c   c2030: Wishlistcontent requires Specialoffers
+c   c2031: Specialoffers excludes Wishlistcontent
+c   c2032: Specialoffers requires Wishlistsaveaftersession
+c   c2033: Wishlistsaveaftersession requires Specialoffers
+c   c2034: Specialoffers excludes Wishlistsaveaftersession
+c   c2035: Userbehaviourtracking requires Userbehaviourtrackinginformation
+c   c2036: Userbehaviourtrackinginformation requires Userbehaviourtracking
+c   c2037: Userbehaviourtracking excludes Userbehaviourtrackinginformation
+c   c2038: Userbehaviourtracking requires Weight
+c   c2039: Weight requires Userbehaviourtracking
+c   c2040: Userbehaviourtracking excludes Weight
+c   c2041: Userbehaviourtracking requires Wishlist
+c   c2042: Wishlist requires Userbehaviourtracking
+c   c2043: Userbehaviourtracking excludes Wishlist
+c   c2044: Userbehaviourtracking requires Wishlistcontent
+c   c2045: Wishlistcontent requires Userbehaviourtracking
+c   c2046: Userbehaviourtracking excludes Wishlistcontent
+c   c2047: Userbehaviourtracking requires Wishlistsaveaftersession
+c   c2048: Wishlistsaveaftersession requires Userbehaviourtracking
+c   c2049: Userbehaviourtracking excludes Wishlistsaveaftersession
+c   c2050: Userbehaviourtrackinginformation requires Weight
+c   c2051: Weight requires Userbehaviourtrackinginformation
+c   c2052: Userbehaviourtrackinginformation excludes Weight
+c   c2053: Userbehaviourtrackinginformation requires Wishlist
+c   c2054: Wishlist requires Userbehaviourtrackinginformation
+c   c2055: Userbehaviourtrackinginformation excludes Wishlist
+c   c2056: Userbehaviourtrackinginformation requires Wishlistcontent
+c   c2057: Wishlistcontent requires Userbehaviourtrackinginformation
+c   c2058: Userbehaviourtrackinginformation excludes Wishlistcontent
+c   c2059: Userbehaviourtrackinginformation requires Wishlistsaveaftersession
+c   c2060: Wishlistsaveaftersession requires Userbehaviourtrackinginformation
+c   c2061: Userbehaviourtrackinginformation excludes Wishlistsaveaftersession
+c   c2062: Weight requires Wishlist
+c   c2063: Wishlist requires Weight
+c   c2064: Weight excludes Wishlist
+c   c2065: Weight requires Wishlistcontent
+c   c2066: Wishlistcontent requires Weight
+c   c2067: Weight excludes Wishlistcontent
+c   c2068: Weight requires Wishlistsaveaftersession
+c   c2069: Wishlistsaveaftersession requires Weight
+c   c2070: Weight excludes Wishlistsaveaftersession
+c   c2071: Wishlist requires Wishlistcontent
+c   c2072: Wishlistcontent requires Wishlist
+c   c2073: Wishlist excludes Wishlistcontent
+c   c2074: Wishlist requires Wishlistsaveaftersession
+c   c2075: Wishlistsaveaftersession requires Wishlist
+c   c2076: Wishlist excludes Wishlistsaveaftersession
+c   c2077: Wishlistcontent requires Wishlistsaveaftersession
+c   c2078: Wishlistsaveaftersession requires Wishlistcontent
+c   c2079: Wishlistcontent excludes Wishlistsaveaftersession
+c
+p cnf 291 2714
+-1 2 0
+-2 1 0
+-2 1 0
+-2 3 0
+-3 2 0
+-3 2 0
+-3 4 5 0
+-4 -5 0
+-4 3 0
+-5 3 0
+-3 4 5 0
+-4 3 0
+-5 3 0
+-5 6 0
+-6 5 0
+-6 5 0
+-6 7 8 0
+-7 -8 0
+-7 6 0
+-8 6 0
+-6 7 8 0
+-7 6 0
+-8 6 0
+-5 9 0
+-9 5 0
+-9 5 0
+-9 10 11 0
+-10 -11 0
+-10 9 0
+-11 9 0
+-9 10 11 0
+-10 9 0
+-11 9 0
+-2 12 0
+-12 2 0
+-12 2 0
+-12 13 0
+-13 12 0
+-13 12 0
+-13 14 15 16 0
+-14 -15 0
+-14 -16 0
+-15 -16 0
+-14 13 0
+-15 13 0
+-16 13 0
+-13 14 15 16 0
+-14 13 0
+-15 13 0
+-16 13 0
+-12 17 0
+-17 12 0
+-17 12 0
+-17 18 0
+-18 17 0
+-18 17 0
+-17 19 0
+-19 17 0
+-19 17 0
+-19 20 0
+-20 19 0
+-20 19 0
+-17 21 0
+-21 17 0
+-21 17 0
+-21 22 0
+-22 21 0
+-22 21 0
+-17 23 0
+-23 17 0
+-23 17 0
+-23 24 0
+-24 23 0
+-24 23 0
+-23 25 0
+-25 23 0
+-25 23 0
+-23 26 0
+-26 23 0
+-26 23 0
+-23 27 0
+-27 23 0
+-27 23 0
+-17 28 0
+-28 17 0
+-28 17 0
+-28 29 30 31 32 0
+-29 -30 0
+-29 -31 0
+-29 -32 0
+-30 -31 0
+-30 -32 0
+-31 -32 0
+-29 28 0
+-30 28 0
+-31 28 0
+-32 28 0
+-28 29 30 31 32 0
+-29 28 0
+-30 28 0
+-31 28 0
+-32 28 0
+-17 33 0
+-33 17 0
+-33 17 0
+-17 34 0
+-34 17 0
+-34 17 0
+-34 35 36 37 0
+-35 -36 0
+-35 -37 0
+-36 -37 0
+-35 34 0
+-36 34 0
+-37 34 0
+-34 35 36 37 0
+-35 34 0
+-36 34 0
+-37 34 0
+-17 38 0
+-38 17 0
+-38 17 0
+-17 39 0
+-39 17 0
+-39 17 0
+-17 40 0
+-40 17 0
+-40 17 0
+-12 41 0
+-41 12 0
+-41 12 0
+-2 42 0
+-42 2 0
+-42 2 0
+-42 43 0
+-43 42 0
+-43 42 0
+-43 44 0
+-44 43 0
+-44 43 0
+-44 45 46 47 0
+-45 -46 0
+-45 -47 0
+-46 -47 0
+-45 44 0
+-46 44 0
+-47 44 0
+-44 45 46 47 0
+-45 44 0
+-46 44 0
+-47 44 0
+-43 48 0
+-48 43 0
+-48 43 0
+-43 49 0
+-49 43 0
+-49 43 0
+-43 50 0
+-50 43 0
+-50 43 0
+-43 51 0
+-51 43 0
+-51 43 0
+-43 52 0
+-52 43 0
+-52 43 0
+-52 53 54 0
+-53 -54 0
+-53 52 0
+-54 52 0
+-52 53 54 0
+-53 52 0
+-54 52 0
+-54 55 56 57 0
+-55 -56 0
+-55 -57 0
+-56 -57 0
+-55 54 0
+-56 54 0
+-57 54 0
+-54 55 56 57 0
+-55 54 0
+-56 54 0
+-57 54 0
+-55 58 59 60 61 62 63 0
+-58 -59 0
+-58 -60 0
+-58 -61 0
+-58 -62 0
+-58 -63 0
+-59 -60 0
+-59 -61 0
+-59 -62 0
+-59 -63 0
+-60 -61 0
+-60 -62 0
+-60 -63 0
+-61 -62 0
+-61 -63 0
+-62 -63 0
+-58 55 0
+-59 55 0
+-60 55 0
+-61 55 0
+-62 55 0
+-63 55 0
+-55 58 59 60 61 62 63 0
+-58 55 0
+-59 55 0
+-60 55 0
+-61 55 0
+-62 55 0
+-63 55 0
+-43 64 0
+-64 43 0
+-64 43 0
+-64 65 0
+-65 64 0
+-65 64 0
+-43 66 0
+-66 43 0
+-66 43 0
+-43 67 0
+-67 43 0
+-67 43 0
+-43 68 0
+-68 43 0
+-68 43 0
+-43 69 0
+-69 43 0
+-69 43 0
+-42 70 0
+-70 42 0
+-70 42 0
+-70 71 0
+-71 70 0
+-71 70 0
+-71 72 0
+-72 71 0
+-72 71 0
+-72 73 0
+-73 72 0
+-73 72 0
+-72 74 0
+-74 72 0
+-74 72 0
+-42 75 0
+-75 42 0
+-75 42 0
+-42 76 0
+-76 42 0
+-76 42 0
+-76 77 78 0
+-77 -78 0
+-77 76 0
+-78 76 0
+-76 77 78 0
+-77 76 0
+-78 76 0
+-42 79 0
+-79 42 0
+-79 42 0
+-79 80 0
+-80 79 0
+-80 79 0
+-79 81 0
+-81 79 0
+-81 79 0
+-79 82 0
+-82 79 0
+-82 79 0
+-82 83 0
+-83 82 0
+-83 82 0
+-83 84 85 86 87 88 0
+-84 -85 0
+-84 -86 0
+-84 -87 0
+-84 -88 0
+-85 -86 0
+-85 -87 0
+-85 -88 0
+-86 -87 0
+-86 -88 0
+-87 -88 0
+-84 83 0
+-85 83 0
+-86 83 0
+-87 83 0
+-88 83 0
+-83 84 85 86 87 88 0
+-84 83 0
+-85 83 0
+-86 83 0
+-87 83 0
+-88 83 0
+-42 89 0
+-89 42 0
+-89 42 0
+-89 90 0
+-90 89 0
+-90 89 0
+-89 91 0
+-91 89 0
+-91 89 0
+-2 92 0
+-92 2 0
+-92 2 0
+-92 93 0
+-93 92 0
+-93 92 0
+-92 94 0
+-94 92 0
+-94 92 0
+-92 95 0
+-95 92 0
+-95 92 0
+-92 96 0
+-96 92 0
+-96 92 0
+-96 97 98 99 0
+-97 -98 0
+-97 -99 0
+-98 -99 0
+-97 96 0
+-98 96 0
+-99 96 0
+-96 97 98 99 0
+-97 96 0
+-98 96 0
+-99 96 0
+-2 100 0
+-100 2 0
+-100 2 0
+-100 101 0
+-101 100 0
+-101 100 0
+-101 102 0
+-102 101 0
+-102 101 0
+-101 103 0
+-103 101 0
+-103 101 0
+-101 104 0
+-104 101 0
+-104 101 0
+-101 105 0
+-105 101 0
+-105 101 0
+-100 106 0
+-106 100 0
+-106 100 0
+-106 107 0
+-107 106 0
+-107 106 0
+-107 108 109 0
+-108 -109 0
+-108 107 0
+-109 107 0
+-107 108 109 0
+-108 107 0
+-109 107 0
+-108 110 0
+-110 108 0
+-110 108 0
+-110 111 0
+-111 110 0
+-111 110 0
+-106 112 0
+-112 106 0
+-112 106 0
+-112 113 0
+-113 112 0
+-113 112 0
+-112 114 0
+-114 112 0
+-114 112 0
+-112 115 0
+-115 112 0
+-115 112 0
+-112 116 0
+-116 112 0
+-116 112 0
+-112 117 0
+-117 112 0
+-117 112 0
+-106 118 0
+-118 106 0
+-118 106 0
+-118 119 120 0
+-119 -120 0
+-119 118 0
+-120 118 0
+-118 119 120 0
+-119 118 0
+-120 118 0
+-119 121 0
+-121 119 0
+-121 119 0
+-121 122 123 0
+-122 -123 0
+-122 121 0
+-123 121 0
+-121 122 123 0
+-122 121 0
+-123 121 0
+-123 124 0
+-124 123 0
+-124 123 0
+-123 125 0
+-125 123 0
+-125 123 0
+-125 126 0
+-126 125 0
+-126 125 0
+-125 127 0
+-127 125 0
+-127 125 0
+-123 128 0
+-128 123 0
+-128 123 0
+-128 129 130 131 0
+-129 -130 0
+-129 -131 0
+-130 -131 0
+-129 128 0
+-130 128 0
+-131 128 0
+-128 129 130 131 0
+-129 128 0
+-130 128 0
+-131 128 0
+-119 132 0
+-132 119 0
+-132 119 0
+-132 133 134 0
+-133 -134 0
+-133 132 0
+-134 132 0
+-132 133 134 0
+-133 132 0
+-134 132 0
+-120 135 136 137 0
+-135 -136 0
+-135 -137 0
+-136 -137 0
+-135 120 0
+-136 120 0
+-137 120 0
+-120 135 136 137 0
+-135 120 0
+-136 120 0
+-137 120 0
+-106 138 0
+-138 106 0
+-138 106 0
+-138 139 0
+-139 138 0
+-139 138 0
+-139 140 141 142 143 144 145 146 147 148 0
+-140 -141 0
+-140 -142 0
+-140 -143 0
+-140 -144 0
+-140 -145 0
+-140 -146 0
+-140 -147 0
+-140 -148 0
+-141 -142 0
+-141 -143 0
+-141 -144 0
+-141 -145 0
+-141 -146 0
+-141 -147 0
+-141 -148 0
+-142 -143 0
+-142 -144 0
+-142 -145 0
+-142 -146 0
+-142 -147 0
+-142 -148 0
+-143 -144 0
+-143 -145 0
+-143 -146 0
+-143 -147 0
+-143 -148 0
+-144 -145 0
+-144 -146 0
+-144 -147 0
+-144 -148 0
+-145 -146 0
+-145 -147 0
+-145 -148 0
+-146 -147 0
+-146 -148 0
+-147 -148 0
+-140 139 0
+-141 139 0
+-142 139 0
+-143 139 0
+-144 139 0
+-145 139 0
+-146 139 0
+-147 139 0
+-148 139 0
+-139 140 141 142 143 144 145 146 147 148 0
+-140 139 0
+-141 139 0
+-142 139 0
+-143 139 0
+-144 139 0
+-145 139 0
+-146 139 0
+-147 139 0
+-148 139 0
+-138 149 0
+-149 138 0
+-149 138 0
+-138 150 0
+-150 138 0
+-150 138 0
+-150 151 152 153 154 155 156 157 0
+-151 -152 0
+-151 -153 0
+-151 -154 0
+-151 -155 0
+-151 -156 0
+-151 -157 0
+-152 -153 0
+-152 -154 0
+-152 -155 0
+-152 -156 0
+-152 -157 0
+-153 -154 0
+-153 -155 0
+-153 -156 0
+-153 -157 0
+-154 -155 0
+-154 -156 0
+-154 -157 0
+-155 -156 0
+-155 -157 0
+-156 -157 0
+-151 150 0
+-152 150 0
+-153 150 0
+-154 150 0
+-155 150 0
+-156 150 0
+-157 150 0
+-150 151 152 153 154 155 156 157 0
+-151 150 0
+-152 150 0
+-153 150 0
+-154 150 0
+-155 150 0
+-156 150 0
+-157 150 0
+-100 158 0
+-158 100 0
+-158 100 0
+-158 159 160 161 162 0
+-159 -160 0
+-159 -161 0
+-159 -162 0
+-160 -161 0
+-160 -162 0
+-161 -162 0
+-159 158 0
+-160 158 0
+-161 158 0
+-162 158 0
+-158 159 160 161 162 0
+-159 158 0
+-160 158 0
+-161 158 0
+-162 158 0
+-100 163 0
+-163 100 0
+-163 100 0
+-163 164 0
+-164 163 0
+-164 163 0
+-164 165 0
+-165 164 0
+-165 164 0
+-164 166 0
+-166 164 0
+-166 164 0
+-2 167 0
+-167 2 0
+-167 2 0
+-167 168 169 170 171 0
+-168 -169 0
+-168 -170 0
+-168 -171 0
+-169 -170 0
+-169 -171 0
+-170 -171 0
+-168 167 0
+-169 167 0
+-170 167 0
+-171 167 0
+-167 168 169 170 171 0
+-168 167 0
+-169 167 0
+-170 167 0
+-171 167 0
+-168 172 0
+-172 168 0
+-172 168 0
+-170 173 0
+-173 170 0
+-173 170 0
+-173 174 175 176 0
+-174 -175 0
+-174 -176 0
+-175 -176 0
+-174 173 0
+-175 173 0
+-176 173 0
+-173 174 175 176 0
+-174 173 0
+-175 173 0
+-176 173 0
+-170 177 0
+-177 170 0
+-177 170 0
+-171 178 179 0
+-178 -179 0
+-178 171 0
+-179 171 0
+-171 178 179 0
+-178 171 0
+-179 171 0
+-2 180 0
+-180 2 0
+-180 2 0
+-180 181 0
+-181 180 0
+-181 180 0
+-181 182 183 184 0
+-182 -183 0
+-182 -184 0
+-183 -184 0
+-182 181 0
+-183 181 0
+-184 181 0
+-181 182 183 184 0
+-182 181 0
+-183 181 0
+-184 181 0
+-1 185 0
+-185 1 0
+-185 1 0
+-185 186 0
+-186 185 0
+-186 185 0
+-186 187 0
+-187 186 0
+-187 186 0
+-187 188 189 190 0
+-188 -189 0
+-188 -190 0
+-189 -190 0
+-188 187 0
+-189 187 0
+-190 187 0
+-187 188 189 190 0
+-188 187 0
+-189 187 0
+-190 187 0
+-188 191 0
+-191 188 0
+-191 188 0
+-188 192 0
+-192 188 0
+-192 188 0
+-192 193 194 0
+-193 -194 0
+-193 192 0
+-194 192 0
+-192 193 194 0
+-193 192 0
+-194 192 0
+-193 195 0
+-195 193 0
+-195 193 0
+-195 196 0
+-196 195 0
+-196 195 0
+-195 197 0
+-197 195 0
+-197 195 0
+-197 198 199 200 201 0
+-198 -199 0
+-198 -200 0
+-198 -201 0
+-199 -200 0
+-199 -201 0
+-200 -201 0
+-198 197 0
+-199 197 0
+-200 197 0
+-201 197 0
+-197 198 199 200 201 0
+-198 197 0
+-199 197 0
+-200 197 0
+-201 197 0
+-194 202 203 204 205 206 0
+-202 -203 0
+-202 -204 0
+-202 -205 0
+-202 -206 0
+-203 -204 0
+-203 -205 0
+-203 -206 0
+-204 -205 0
+-204 -206 0
+-205 -206 0
+-202 194 0
+-203 194 0
+-204 194 0
+-205 194 0
+-206 194 0
+-194 202 203 204 205 206 0
+-202 194 0
+-203 194 0
+-204 194 0
+-205 194 0
+-206 194 0
+-189 207 0
+-207 189 0
+-207 189 0
+-189 208 0
+-208 189 0
+-208 189 0
+-190 209 0
+-209 190 0
+-209 190 0
+-190 210 0
+-210 190 0
+-210 190 0
+-185 211 0
+-211 185 0
+-211 185 0
+-211 212 0
+-212 211 0
+-212 211 0
+-212 213 214 215 216 217 218 219 220 221 0
+-213 -214 0
+-213 -215 0
+-213 -216 0
+-213 -217 0
+-213 -218 0
+-213 -219 0
+-213 -220 0
+-213 -221 0
+-214 -215 0
+-214 -216 0
+-214 -217 0
+-214 -218 0
+-214 -219 0
+-214 -220 0
+-214 -221 0
+-215 -216 0
+-215 -217 0
+-215 -218 0
+-215 -219 0
+-215 -220 0
+-215 -221 0
+-216 -217 0
+-216 -218 0
+-216 -219 0
+-216 -220 0
+-216 -221 0
+-217 -218 0
+-217 -219 0
+-217 -220 0
+-217 -221 0
+-218 -219 0
+-218 -220 0
+-218 -221 0
+-219 -220 0
+-219 -221 0
+-220 -221 0
+-213 212 0
+-214 212 0
+-215 212 0
+-216 212 0
+-217 212 0
+-218 212 0
+-219 212 0
+-220 212 0
+-221 212 0
+-212 213 214 215 216 217 218 219 220 221 0
+-213 212 0
+-214 212 0
+-215 212 0
+-216 212 0
+-217 212 0
+-218 212 0
+-219 212 0
+-220 212 0
+-221 212 0
+-211 222 0
+-222 211 0
+-222 211 0
+-222 223 224 225 0
+-223 -224 0
+-223 -225 0
+-224 -225 0
+-223 222 0
+-224 222 0
+-225 222 0
+-222 223 224 225 0
+-223 222 0
+-224 222 0
+-225 222 0
+-223 226 0
+-226 223 0
+-226 223 0
+-226 227 228 0
+-227 -228 0
+-227 226 0
+-228 226 0
+-226 227 228 0
+-227 226 0
+-228 226 0
+-223 229 0
+-229 223 0
+-229 223 0
+-229 230 231 0
+-230 -231 0
+-230 229 0
+-231 229 0
+-229 230 231 0
+-230 229 0
+-231 229 0
+-231 232 0
+-232 231 0
+-232 231 0
+-223 233 0
+-233 223 0
+-233 223 0
+-223 234 0
+-234 223 0
+-234 223 0
+-224 235 0
+-235 224 0
+-235 224 0
+-235 236 0
+-236 235 0
+-236 235 0
+-235 237 0
+-237 235 0
+-237 235 0
+-235 238 0
+-238 235 0
+-238 235 0
+-224 239 0
+-239 224 0
+-239 224 0
+-239 240 241 242 0
+-240 -241 0
+-240 -242 0
+-241 -242 0
+-240 239 0
+-241 239 0
+-242 239 0
+-239 240 241 242 0
+-240 239 0
+-241 239 0
+-242 239 0
+-224 243 0
+-243 224 0
+-243 224 0
+-243 244 0
+-244 243 0
+-244 243 0
+-243 245 0
+-245 243 0
+-245 243 0
+-224 246 0
+-246 224 0
+-246 224 0
+-246 247 248 0
+-247 -248 0
+-247 246 0
+-248 246 0
+-246 247 248 0
+-247 246 0
+-248 246 0
+-224 249 0
+-249 224 0
+-249 224 0
+-224 250 0
+-250 224 0
+-250 224 0
+-225 251 252 253 0
+-251 -252 0
+-251 -253 0
+-252 -253 0
+-251 225 0
+-252 225 0
+-253 225 0
+-225 251 252 253 0
+-251 225 0
+-252 225 0
+-253 225 0
+-252 254 0
+-254 252 0
+-254 252 0
+-253 255 0
+-255 253 0
+-255 253 0
+-211 256 0
+-256 211 0
+-256 211 0
+-256 257 258 259 0
+-257 -258 0
+-257 -259 0
+-258 -259 0
+-257 256 0
+-258 256 0
+-259 256 0
+-256 257 258 259 0
+-257 256 0
+-258 256 0
+-259 256 0
+-259 260 0
+-260 259 0
+-260 259 0
+-259 261 0
+-261 259 0
+-261 259 0
+-211 262 0
+-262 211 0
+-262 211 0
+-185 263 0
+-263 185 0
+-263 185 0
+-263 264 0
+-264 263 0
+-264 263 0
+-263 265 0
+-265 263 0
+-265 263 0
+-185 266 0
+-266 185 0
+-266 185 0
+-266 267 0
+-267 266 0
+-267 266 0
+-185 268 0
+-268 185 0
+-268 185 0
+-268 269 0
+-269 268 0
+-269 268 0
+-269 270 0
+-270 269 0
+-270 269 0
+-269 271 0
+-271 269 0
+-271 269 0
+-271 272 0
+-272 271 0
+-272 271 0
+-185 273 0
+-273 185 0
+-273 185 0
+-273 274 0
+-274 273 0
+-274 273 0
+-273 275 0
+-275 273 0
+-275 273 0
+-273 276 0
+-276 273 0
+-276 273 0
+-185 277 0
+-277 185 0
+-277 185 0
+-277 278 279 280 281 0
+-278 -279 0
+-278 -280 0
+-278 -281 0
+-279 -280 0
+-279 -281 0
+-280 -281 0
+-278 277 0
+-279 277 0
+-280 277 0
+-281 277 0
+-277 278 279 280 281 0
+-278 277 0
+-279 277 0
+-280 277 0
+-281 277 0
+-185 282 0
+-282 185 0
+-282 185 0
+-282 283 0
+-283 282 0
+-283 282 0
+-283 284 0
+-284 283 0
+-284 283 0
+-283 285 0
+-285 283 0
+-285 283 0
+-283 286 0
+-286 283 0
+-286 283 0
+-283 287 0
+-287 283 0
+-287 283 0
+-282 288 0
+-288 282 0
+-288 282 0
+-288 289 0
+-289 288 0
+-289 288 0
+-288 290 0
+-290 288 0
+-290 288 0
+-288 291 0
+-291 288 0
+-291 288 0
+-68 70 0
+-70 68 0
+-68 -70 0
+-68 81 0
+-81 68 0
+-68 -81 0
+-68 213 0
+-213 68 0
+-68 -213 0
+-68 224 0
+-224 68 0
+-68 -224 0
+-68 94 0
+-94 68 0
+-68 -94 0
+-68 45 0
+-45 68 0
+-68 -45 0
+-68 189 0
+-189 68 0
+-68 -189 0
+-68 183 0
+-183 68 0
+-68 -183 0
+-68 266 0
+-266 68 0
+-68 -266 0
+-68 182 0
+-182 68 0
+-68 -182 0
+-68 96 0
+-96 68 0
+-68 -96 0
+-68 46 0
+-46 68 0
+-68 -46 0
+-68 188 0
+-188 68 0
+-68 -188 0
+-68 34 0
+-34 68 0
+-68 -34 0
+-68 219 0
+-219 68 0
+-68 -219 0
+-68 110 0
+-110 68 0
+-68 -110 0
+-68 39 0
+-39 68 0
+-68 -39 0
+-68 108 0
+-108 68 0
+-68 -108 0
+-68 15 0
+-15 68 0
+-68 -15 0
+-68 12 0
+-12 68 0
+-68 -12 0
+-68 13 0
+-13 68 0
+-68 -13 0
+-68 47 0
+-47 68 0
+-68 -47 0
+-68 190 0
+-190 68 0
+-68 -190 0
+-68 192 0
+-192 68 0
+-68 -192 0
+-68 112 0
+-112 68 0
+-68 -112 0
+-68 66 0
+-66 68 0
+-68 -66 0
+-68 8 0
+-8 68 0
+-68 -8 0
+-68 180 0
+-180 68 0
+-68 -180 0
+-68 41 0
+-41 68 0
+-68 -41 0
+-68 67 0
+-67 68 0
+-68 -67 0
+-68 92 0
+-92 68 0
+-68 -92 0
+-68 218 0
+-218 68 0
+-68 -218 0
+-68 93 0
+-93 68 0
+-68 -93 0
+-70 81 0
+-81 70 0
+-70 -81 0
+-70 213 0
+-213 70 0
+-70 -213 0
+-70 224 0
+-224 70 0
+-70 -224 0
+-70 94 0
+-94 70 0
+-70 -94 0
+-70 45 0
+-45 70 0
+-70 -45 0
+-70 189 0
+-189 70 0
+-70 -189 0
+-70 183 0
+-183 70 0
+-70 -183 0
+-70 266 0
+-266 70 0
+-70 -266 0
+-70 182 0
+-182 70 0
+-70 -182 0
+-70 96 0
+-96 70 0
+-70 -96 0
+-70 46 0
+-46 70 0
+-70 -46 0
+-70 188 0
+-188 70 0
+-70 -188 0
+-70 34 0
+-34 70 0
+-70 -34 0
+-70 219 0
+-219 70 0
+-70 -219 0
+-70 110 0
+-110 70 0
+-70 -110 0
+-70 39 0
+-39 70 0
+-70 -39 0
+-70 108 0
+-108 70 0
+-70 -108 0
+-70 15 0
+-15 70 0
+-70 -15 0
+-70 12 0
+-12 70 0
+-70 -12 0
+-70 13 0
+-13 70 0
+-70 -13 0
+-70 47 0
+-47 70 0
+-70 -47 0
+-70 190 0
+-190 70 0
+-70 -190 0
+-70 192 0
+-192 70 0
+-70 -192 0
+-70 112 0
+-112 70 0
+-70 -112 0
+-70 66 0
+-66 70 0
+-70 -66 0
+-70 8 0
+-8 70 0
+-70 -8 0
+-70 180 0
+-180 70 0
+-70 -180 0
+-70 41 0
+-41 70 0
+-70 -41 0
+-70 67 0
+-67 70 0
+-70 -67 0
+-70 92 0
+-92 70 0
+-70 -92 0
+-70 218 0
+-218 70 0
+-70 -218 0
+-70 93 0
+-93 70 0
+-70 -93 0
+-81 213 0
+-213 81 0
+-81 -213 0
+-81 224 0
+-224 81 0
+-81 -224 0
+-81 94 0
+-94 81 0
+-81 -94 0
+-81 45 0
+-45 81 0
+-81 -45 0
+-81 189 0
+-189 81 0
+-81 -189 0
+-81 183 0
+-183 81 0
+-81 -183 0
+-81 266 0
+-266 81 0
+-81 -266 0
+-81 182 0
+-182 81 0
+-81 -182 0
+-81 96 0
+-96 81 0
+-81 -96 0
+-81 46 0
+-46 81 0
+-81 -46 0
+-81 188 0
+-188 81 0
+-81 -188 0
+-81 34 0
+-34 81 0
+-81 -34 0
+-81 219 0
+-219 81 0
+-81 -219 0
+-81 110 0
+-110 81 0
+-81 -110 0
+-81 39 0
+-39 81 0
+-81 -39 0
+-81 108 0
+-108 81 0
+-81 -108 0
+-81 15 0
+-15 81 0
+-81 -15 0
+-81 12 0
+-12 81 0
+-81 -12 0
+-81 13 0
+-13 81 0
+-81 -13 0
+-81 47 0
+-47 81 0
+-81 -47 0
+-81 190 0
+-190 81 0
+-81 -190 0
+-81 192 0
+-192 81 0
+-81 -192 0
+-81 112 0
+-112 81 0
+-81 -112 0
+-81 66 0
+-66 81 0
+-81 -66 0
+-81 8 0
+-8 81 0
+-81 -8 0
+-81 180 0
+-180 81 0
+-81 -180 0
+-81 41 0
+-41 81 0
+-81 -41 0
+-81 67 0
+-67 81 0
+-81 -67 0
+-81 92 0
+-92 81 0
+-81 -92 0
+-81 218 0
+-218 81 0
+-81 -218 0
+-81 93 0
+-93 81 0
+-81 -93 0
+-213 224 0
+-224 213 0
+-213 -224 0
+-213 94 0
+-94 213 0
+-213 -94 0
+-213 45 0
+-45 213 0
+-213 -45 0
+-213 189 0
+-189 213 0
+-213 -189 0
+-213 183 0
+-183 213 0
+-213 -183 0
+-213 266 0
+-266 213 0
+-213 -266 0
+-213 182 0
+-182 213 0
+-213 -182 0
+-213 96 0
+-96 213 0
+-213 -96 0
+-213 46 0
+-46 213 0
+-213 -46 0
+-213 188 0
+-188 213 0
+-213 -188 0
+-213 34 0
+-34 213 0
+-213 -34 0
+-213 219 0
+-219 213 0
+-213 -219 0
+-213 110 0
+-110 213 0
+-213 -110 0
+-213 39 0
+-39 213 0
+-213 -39 0
+-213 108 0
+-108 213 0
+-213 -108 0
+-213 15 0
+-15 213 0
+-213 -15 0
+-213 12 0
+-12 213 0
+-213 -12 0
+-213 13 0
+-13 213 0
+-213 -13 0
+-213 47 0
+-47 213 0
+-213 -47 0
+-213 190 0
+-190 213 0
+-213 -190 0
+-213 192 0
+-192 213 0
+-213 -192 0
+-213 112 0
+-112 213 0
+-213 -112 0
+-213 66 0
+-66 213 0
+-213 -66 0
+-213 8 0
+-8 213 0
+-213 -8 0
+-213 180 0
+-180 213 0
+-213 -180 0
+-213 41 0
+-41 213 0
+-213 -41 0
+-213 67 0
+-67 213 0
+-213 -67 0
+-213 92 0
+-92 213 0
+-213 -92 0
+-213 218 0
+-218 213 0
+-213 -218 0
+-213 93 0
+-93 213 0
+-213 -93 0
+-224 94 0
+-94 224 0
+-224 -94 0
+-224 45 0
+-45 224 0
+-224 -45 0
+-224 189 0
+-189 224 0
+-224 -189 0
+-224 183 0
+-183 224 0
+-224 -183 0
+-224 266 0
+-266 224 0
+-224 -266 0
+-224 182 0
+-182 224 0
+-224 -182 0
+-224 96 0
+-96 224 0
+-224 -96 0
+-224 46 0
+-46 224 0
+-224 -46 0
+-224 188 0
+-188 224 0
+-224 -188 0
+-224 34 0
+-34 224 0
+-224 -34 0
+-224 219 0
+-219 224 0
+-224 -219 0
+-224 110 0
+-110 224 0
+-224 -110 0
+-224 39 0
+-39 224 0
+-224 -39 0
+-224 108 0
+-108 224 0
+-224 -108 0
+-224 15 0
+-15 224 0
+-224 -15 0
+-224 12 0
+-12 224 0
+-224 -12 0
+-224 13 0
+-13 224 0
+-224 -13 0
+-224 47 0
+-47 224 0
+-224 -47 0
+-224 190 0
+-190 224 0
+-224 -190 0
+-224 192 0
+-192 224 0
+-224 -192 0
+-224 112 0
+-112 224 0
+-224 -112 0
+-224 66 0
+-66 224 0
+-224 -66 0
+-224 8 0
+-8 224 0
+-224 -8 0
+-224 180 0
+-180 224 0
+-224 -180 0
+-224 41 0
+-41 224 0
+-224 -41 0
+-224 67 0
+-67 224 0
+-224 -67 0
+-224 92 0
+-92 224 0
+-224 -92 0
+-224 218 0
+-218 224 0
+-224 -218 0
+-224 93 0
+-93 224 0
+-224 -93 0
+-94 45 0
+-45 94 0
+-94 -45 0
+-94 189 0
+-189 94 0
+-94 -189 0
+-94 183 0
+-183 94 0
+-94 -183 0
+-94 266 0
+-266 94 0
+-94 -266 0
+-94 182 0
+-182 94 0
+-94 -182 0
+-94 96 0
+-96 94 0
+-94 -96 0
+-94 46 0
+-46 94 0
+-94 -46 0
+-94 188 0
+-188 94 0
+-94 -188 0
+-94 34 0
+-34 94 0
+-94 -34 0
+-94 219 0
+-219 94 0
+-94 -219 0
+-94 110 0
+-110 94 0
+-94 -110 0
+-94 39 0
+-39 94 0
+-94 -39 0
+-94 108 0
+-108 94 0
+-94 -108 0
+-94 15 0
+-15 94 0
+-94 -15 0
+-94 12 0
+-12 94 0
+-94 -12 0
+-94 13 0
+-13 94 0
+-94 -13 0
+-94 47 0
+-47 94 0
+-94 -47 0
+-94 190 0
+-190 94 0
+-94 -190 0
+-94 192 0
+-192 94 0
+-94 -192 0
+-94 112 0
+-112 94 0
+-94 -112 0
+-94 66 0
+-66 94 0
+-94 -66 0
+-94 8 0
+-8 94 0
+-94 -8 0
+-94 180 0
+-180 94 0
+-94 -180 0
+-94 41 0
+-41 94 0
+-94 -41 0
+-94 67 0
+-67 94 0
+-94 -67 0
+-94 92 0
+-92 94 0
+-94 -92 0
+-94 218 0
+-218 94 0
+-94 -218 0
+-94 93 0
+-93 94 0
+-94 -93 0
+-45 189 0
+-189 45 0
+-45 -189 0
+-45 183 0
+-183 45 0
+-45 -183 0
+-45 266 0
+-266 45 0
+-45 -266 0
+-45 182 0
+-182 45 0
+-45 -182 0
+-45 96 0
+-96 45 0
+-45 -96 0
+-45 46 0
+-46 45 0
+-45 -46 0
+-45 188 0
+-188 45 0
+-45 -188 0
+-45 34 0
+-34 45 0
+-45 -34 0
+-45 219 0
+-219 45 0
+-45 -219 0
+-45 110 0
+-110 45 0
+-45 -110 0
+-45 39 0
+-39 45 0
+-45 -39 0
+-45 108 0
+-108 45 0
+-45 -108 0
+-45 15 0
+-15 45 0
+-45 -15 0
+-45 12 0
+-12 45 0
+-45 -12 0
+-45 13 0
+-13 45 0
+-45 -13 0
+-45 47 0
+-47 45 0
+-45 -47 0
+-45 190 0
+-190 45 0
+-45 -190 0
+-45 192 0
+-192 45 0
+-45 -192 0
+-45 112 0
+-112 45 0
+-45 -112 0
+-45 66 0
+-66 45 0
+-45 -66 0
+-45 8 0
+-8 45 0
+-45 -8 0
+-45 180 0
+-180 45 0
+-45 -180 0
+-45 41 0
+-41 45 0
+-45 -41 0
+-45 67 0
+-67 45 0
+-45 -67 0
+-45 92 0
+-92 45 0
+-45 -92 0
+-45 218 0
+-218 45 0
+-45 -218 0
+-45 93 0
+-93 45 0
+-45 -93 0
+-189 183 0
+-183 189 0
+-189 -183 0
+-189 266 0
+-266 189 0
+-189 -266 0
+-189 182 0
+-182 189 0
+-189 -182 0
+-189 96 0
+-96 189 0
+-189 -96 0
+-189 46 0
+-46 189 0
+-189 -46 0
+-189 188 0
+-188 189 0
+-189 -188 0
+-189 34 0
+-34 189 0
+-189 -34 0
+-189 219 0
+-219 189 0
+-189 -219 0
+-189 110 0
+-110 189 0
+-189 -110 0
+-189 39 0
+-39 189 0
+-189 -39 0
+-189 108 0
+-108 189 0
+-189 -108 0
+-189 15 0
+-15 189 0
+-189 -15 0
+-189 12 0
+-12 189 0
+-189 -12 0
+-189 13 0
+-13 189 0
+-189 -13 0
+-189 47 0
+-47 189 0
+-189 -47 0
+-189 190 0
+-190 189 0
+-189 -190 0
+-189 192 0
+-192 189 0
+-189 -192 0
+-189 112 0
+-112 189 0
+-189 -112 0
+-189 66 0
+-66 189 0
+-189 -66 0
+-189 8 0
+-8 189 0
+-189 -8 0
+-189 180 0
+-180 189 0
+-189 -180 0
+-189 41 0
+-41 189 0
+-189 -41 0
+-189 67 0
+-67 189 0
+-189 -67 0
+-189 92 0
+-92 189 0
+-189 -92 0
+-189 218 0
+-218 189 0
+-189 -218 0
+-189 93 0
+-93 189 0
+-189 -93 0
+-183 266 0
+-266 183 0
+-183 -266 0
+-183 182 0
+-182 183 0
+-183 -182 0
+-183 96 0
+-96 183 0
+-183 -96 0
+-183 46 0
+-46 183 0
+-183 -46 0
+-183 188 0
+-188 183 0
+-183 -188 0
+-183 34 0
+-34 183 0
+-183 -34 0
+-183 219 0
+-219 183 0
+-183 -219 0
+-183 110 0
+-110 183 0
+-183 -110 0
+-183 39 0
+-39 183 0
+-183 -39 0
+-183 108 0
+-108 183 0
+-183 -108 0
+-183 15 0
+-15 183 0
+-183 -15 0
+-183 12 0
+-12 183 0
+-183 -12 0
+-183 13 0
+-13 183 0
+-183 -13 0
+-183 47 0
+-47 183 0
+-183 -47 0
+-183 190 0
+-190 183 0
+-183 -190 0
+-183 192 0
+-192 183 0
+-183 -192 0
+-183 112 0
+-112 183 0
+-183 -112 0
+-183 66 0
+-66 183 0
+-183 -66 0
+-183 8 0
+-8 183 0
+-183 -8 0
+-183 180 0
+-180 183 0
+-183 -180 0
+-183 41 0
+-41 183 0
+-183 -41 0
+-183 67 0
+-67 183 0
+-183 -67 0
+-183 92 0
+-92 183 0
+-183 -92 0
+-183 218 0
+-218 183 0
+-183 -218 0
+-183 93 0
+-93 183 0
+-183 -93 0
+-266 182 0
+-182 266 0
+-266 -182 0
+-266 96 0
+-96 266 0
+-266 -96 0
+-266 46 0
+-46 266 0
+-266 -46 0
+-266 188 0
+-188 266 0
+-266 -188 0
+-266 34 0
+-34 266 0
+-266 -34 0
+-266 219 0
+-219 266 0
+-266 -219 0
+-266 110 0
+-110 266 0
+-266 -110 0
+-266 39 0
+-39 266 0
+-266 -39 0
+-266 108 0
+-108 266 0
+-266 -108 0
+-266 15 0
+-15 266 0
+-266 -15 0
+-266 12 0
+-12 266 0
+-266 -12 0
+-266 13 0
+-13 266 0
+-266 -13 0
+-266 47 0
+-47 266 0
+-266 -47 0
+-266 190 0
+-190 266 0
+-266 -190 0
+-266 192 0
+-192 266 0
+-266 -192 0
+-266 112 0
+-112 266 0
+-266 -112 0
+-266 66 0
+-66 266 0
+-266 -66 0
+-266 8 0
+-8 266 0
+-266 -8 0
+-266 180 0
+-180 266 0
+-266 -180 0
+-266 41 0
+-41 266 0
+-266 -41 0
+-266 67 0
+-67 266 0
+-266 -67 0
+-266 92 0
+-92 266 0
+-266 -92 0
+-266 218 0
+-218 266 0
+-266 -218 0
+-266 93 0
+-93 266 0
+-266 -93 0
+-182 96 0
+-96 182 0
+-182 -96 0
+-182 46 0
+-46 182 0
+-182 -46 0
+-182 188 0
+-188 182 0
+-182 -188 0
+-182 34 0
+-34 182 0
+-182 -34 0
+-182 219 0
+-219 182 0
+-182 -219 0
+-182 110 0
+-110 182 0
+-182 -110 0
+-182 39 0
+-39 182 0
+-182 -39 0
+-182 108 0
+-108 182 0
+-182 -108 0
+-182 15 0
+-15 182 0
+-182 -15 0
+-182 12 0
+-12 182 0
+-182 -12 0
+-182 13 0
+-13 182 0
+-182 -13 0
+-182 47 0
+-47 182 0
+-182 -47 0
+-182 190 0
+-190 182 0
+-182 -190 0
+-182 192 0
+-192 182 0
+-182 -192 0
+-182 112 0
+-112 182 0
+-182 -112 0
+-182 66 0
+-66 182 0
+-182 -66 0
+-182 8 0
+-8 182 0
+-182 -8 0
+-182 180 0
+-180 182 0
+-182 -180 0
+-182 41 0
+-41 182 0
+-182 -41 0
+-182 67 0
+-67 182 0
+-182 -67 0
+-182 92 0
+-92 182 0
+-182 -92 0
+-182 218 0
+-218 182 0
+-182 -218 0
+-182 93 0
+-93 182 0
+-182 -93 0
+-96 46 0
+-46 96 0
+-96 -46 0
+-96 188 0
+-188 96 0
+-96 -188 0
+-96 34 0
+-34 96 0
+-96 -34 0
+-96 219 0
+-219 96 0
+-96 -219 0
+-96 110 0
+-110 96 0
+-96 -110 0
+-96 39 0
+-39 96 0
+-96 -39 0
+-96 108 0
+-108 96 0
+-96 -108 0
+-96 15 0
+-15 96 0
+-96 -15 0
+-96 12 0
+-12 96 0
+-96 -12 0
+-96 13 0
+-13 96 0
+-96 -13 0
+-96 47 0
+-47 96 0
+-96 -47 0
+-96 190 0
+-190 96 0
+-96 -190 0
+-96 192 0
+-192 96 0
+-96 -192 0
+-96 112 0
+-112 96 0
+-96 -112 0
+-96 66 0
+-66 96 0
+-96 -66 0
+-96 8 0
+-8 96 0
+-96 -8 0
+-96 180 0
+-180 96 0
+-96 -180 0
+-96 41 0
+-41 96 0
+-96 -41 0
+-96 67 0
+-67 96 0
+-96 -67 0
+-96 92 0
+-92 96 0
+-96 -92 0
+-96 218 0
+-218 96 0
+-96 -218 0
+-96 93 0
+-93 96 0
+-96 -93 0
+-46 188 0
+-188 46 0
+-46 -188 0
+-46 34 0
+-34 46 0
+-46 -34 0
+-46 219 0
+-219 46 0
+-46 -219 0
+-46 110 0
+-110 46 0
+-46 -110 0
+-46 39 0
+-39 46 0
+-46 -39 0
+-46 108 0
+-108 46 0
+-46 -108 0
+-46 15 0
+-15 46 0
+-46 -15 0
+-46 12 0
+-12 46 0
+-46 -12 0
+-46 13 0
+-13 46 0
+-46 -13 0
+-46 47 0
+-47 46 0
+-46 -47 0
+-46 190 0
+-190 46 0
+-46 -190 0
+-46 192 0
+-192 46 0
+-46 -192 0
+-46 112 0
+-112 46 0
+-46 -112 0
+-46 66 0
+-66 46 0
+-46 -66 0
+-46 8 0
+-8 46 0
+-46 -8 0
+-46 180 0
+-180 46 0
+-46 -180 0
+-46 41 0
+-41 46 0
+-46 -41 0
+-46 67 0
+-67 46 0
+-46 -67 0
+-46 92 0
+-92 46 0
+-46 -92 0
+-46 218 0
+-218 46 0
+-46 -218 0
+-46 93 0
+-93 46 0
+-46 -93 0
+-188 34 0
+-34 188 0
+-188 -34 0
+-188 219 0
+-219 188 0
+-188 -219 0
+-188 110 0
+-110 188 0
+-188 -110 0
+-188 39 0
+-39 188 0
+-188 -39 0
+-188 108 0
+-108 188 0
+-188 -108 0
+-188 15 0
+-15 188 0
+-188 -15 0
+-188 12 0
+-12 188 0
+-188 -12 0
+-188 13 0
+-13 188 0
+-188 -13 0
+-188 47 0
+-47 188 0
+-188 -47 0
+-188 190 0
+-190 188 0
+-188 -190 0
+-188 192 0
+-192 188 0
+-188 -192 0
+-188 112 0
+-112 188 0
+-188 -112 0
+-188 66 0
+-66 188 0
+-188 -66 0
+-188 8 0
+-8 188 0
+-188 -8 0
+-188 180 0
+-180 188 0
+-188 -180 0
+-188 41 0
+-41 188 0
+-188 -41 0
+-188 67 0
+-67 188 0
+-188 -67 0
+-188 92 0
+-92 188 0
+-188 -92 0
+-188 218 0
+-218 188 0
+-188 -218 0
+-188 93 0
+-93 188 0
+-188 -93 0
+-34 219 0
+-219 34 0
+-34 -219 0
+-34 110 0
+-110 34 0
+-34 -110 0
+-34 39 0
+-39 34 0
+-34 -39 0
+-34 108 0
+-108 34 0
+-34 -108 0
+-34 15 0
+-15 34 0
+-34 -15 0
+-34 12 0
+-12 34 0
+-34 -12 0
+-34 13 0
+-13 34 0
+-34 -13 0
+-34 47 0
+-47 34 0
+-34 -47 0
+-34 190 0
+-190 34 0
+-34 -190 0
+-34 192 0
+-192 34 0
+-34 -192 0
+-34 112 0
+-112 34 0
+-34 -112 0
+-34 66 0
+-66 34 0
+-34 -66 0
+-34 8 0
+-8 34 0
+-34 -8 0
+-34 180 0
+-180 34 0
+-34 -180 0
+-34 41 0
+-41 34 0
+-34 -41 0
+-34 67 0
+-67 34 0
+-34 -67 0
+-34 92 0
+-92 34 0
+-34 -92 0
+-34 218 0
+-218 34 0
+-34 -218 0
+-34 93 0
+-93 34 0
+-34 -93 0
+-219 110 0
+-110 219 0
+-219 -110 0
+-219 39 0
+-39 219 0
+-219 -39 0
+-219 108 0
+-108 219 0
+-219 -108 0
+-219 15 0
+-15 219 0
+-219 -15 0
+-219 12 0
+-12 219 0
+-219 -12 0
+-219 13 0
+-13 219 0
+-219 -13 0
+-219 47 0
+-47 219 0
+-219 -47 0
+-219 190 0
+-190 219 0
+-219 -190 0
+-219 192 0
+-192 219 0
+-219 -192 0
+-219 112 0
+-112 219 0
+-219 -112 0
+-219 66 0
+-66 219 0
+-219 -66 0
+-219 8 0
+-8 219 0
+-219 -8 0
+-219 180 0
+-180 219 0
+-219 -180 0
+-219 41 0
+-41 219 0
+-219 -41 0
+-219 67 0
+-67 219 0
+-219 -67 0
+-219 92 0
+-92 219 0
+-219 -92 0
+-219 218 0
+-218 219 0
+-219 -218 0
+-219 93 0
+-93 219 0
+-219 -93 0
+-110 39 0
+-39 110 0
+-110 -39 0
+-110 108 0
+-108 110 0
+-110 -108 0
+-110 15 0
+-15 110 0
+-110 -15 0
+-110 12 0
+-12 110 0
+-110 -12 0
+-110 13 0
+-13 110 0
+-110 -13 0
+-110 47 0
+-47 110 0
+-110 -47 0
+-110 190 0
+-190 110 0
+-110 -190 0
+-110 192 0
+-192 110 0
+-110 -192 0
+-110 112 0
+-112 110 0
+-110 -112 0
+-110 66 0
+-66 110 0
+-110 -66 0
+-110 8 0
+-8 110 0
+-110 -8 0
+-110 180 0
+-180 110 0
+-110 -180 0
+-110 41 0
+-41 110 0
+-110 -41 0
+-110 67 0
+-67 110 0
+-110 -67 0
+-110 92 0
+-92 110 0
+-110 -92 0
+-110 218 0
+-218 110 0
+-110 -218 0
+-110 93 0
+-93 110 0
+-110 -93 0
+-39 108 0
+-108 39 0
+-39 -108 0
+-39 15 0
+-15 39 0
+-39 -15 0
+-39 12 0
+-12 39 0
+-39 -12 0
+-39 13 0
+-13 39 0
+-39 -13 0
+-39 47 0
+-47 39 0
+-39 -47 0
+-39 190 0
+-190 39 0
+-39 -190 0
+-39 192 0
+-192 39 0
+-39 -192 0
+-39 112 0
+-112 39 0
+-39 -112 0
+-39 66 0
+-66 39 0
+-39 -66 0
+-39 8 0
+-8 39 0
+-39 -8 0
+-39 180 0
+-180 39 0
+-39 -180 0
+-39 41 0
+-41 39 0
+-39 -41 0
+-39 67 0
+-67 39 0
+-39 -67 0
+-39 92 0
+-92 39 0
+-39 -92 0
+-39 218 0
+-218 39 0
+-39 -218 0
+-39 93 0
+-93 39 0
+-39 -93 0
+-108 15 0
+-15 108 0
+-108 -15 0
+-108 12 0
+-12 108 0
+-108 -12 0
+-108 13 0
+-13 108 0
+-108 -13 0
+-108 47 0
+-47 108 0
+-108 -47 0
+-108 190 0
+-190 108 0
+-108 -190 0
+-108 192 0
+-192 108 0
+-108 -192 0
+-108 112 0
+-112 108 0
+-108 -112 0
+-108 66 0
+-66 108 0
+-108 -66 0
+-108 8 0
+-8 108 0
+-108 -8 0
+-108 180 0
+-180 108 0
+-108 -180 0
+-108 41 0
+-41 108 0
+-108 -41 0
+-108 67 0
+-67 108 0
+-108 -67 0
+-108 92 0
+-92 108 0
+-108 -92 0
+-108 218 0
+-218 108 0
+-108 -218 0
+-108 93 0
+-93 108 0
+-108 -93 0
+-15 12 0
+-12 15 0
+-15 -12 0
+-15 13 0
+-13 15 0
+-15 -13 0
+-15 47 0
+-47 15 0
+-15 -47 0
+-15 190 0
+-190 15 0
+-15 -190 0
+-15 192 0
+-192 15 0
+-15 -192 0
+-15 112 0
+-112 15 0
+-15 -112 0
+-15 66 0
+-66 15 0
+-15 -66 0
+-15 8 0
+-8 15 0
+-15 -8 0
+-15 180 0
+-180 15 0
+-15 -180 0
+-15 41 0
+-41 15 0
+-15 -41 0
+-15 67 0
+-67 15 0
+-15 -67 0
+-15 92 0
+-92 15 0
+-15 -92 0
+-15 218 0
+-218 15 0
+-15 -218 0
+-15 93 0
+-93 15 0
+-15 -93 0
+-12 13 0
+-13 12 0
+-12 -13 0
+-12 47 0
+-47 12 0
+-12 -47 0
+-12 190 0
+-190 12 0
+-12 -190 0
+-12 192 0
+-192 12 0
+-12 -192 0
+-12 112 0
+-112 12 0
+-12 -112 0
+-12 66 0
+-66 12 0
+-12 -66 0
+-12 8 0
+-8 12 0
+-12 -8 0
+-12 180 0
+-180 12 0
+-12 -180 0
+-12 41 0
+-41 12 0
+-12 -41 0
+-12 67 0
+-67 12 0
+-12 -67 0
+-12 92 0
+-92 12 0
+-12 -92 0
+-12 218 0
+-218 12 0
+-12 -218 0
+-12 93 0
+-93 12 0
+-12 -93 0
+-13 47 0
+-47 13 0
+-13 -47 0
+-13 190 0
+-190 13 0
+-13 -190 0
+-13 192 0
+-192 13 0
+-13 -192 0
+-13 112 0
+-112 13 0
+-13 -112 0
+-13 66 0
+-66 13 0
+-13 -66 0
+-13 8 0
+-8 13 0
+-13 -8 0
+-13 180 0
+-180 13 0
+-13 -180 0
+-13 41 0
+-41 13 0
+-13 -41 0
+-13 67 0
+-67 13 0
+-13 -67 0
+-13 92 0
+-92 13 0
+-13 -92 0
+-13 218 0
+-218 13 0
+-13 -218 0
+-13 93 0
+-93 13 0
+-13 -93 0
+-47 190 0
+-190 47 0
+-47 -190 0
+-47 192 0
+-192 47 0
+-47 -192 0
+-47 112 0
+-112 47 0
+-47 -112 0
+-47 66 0
+-66 47 0
+-47 -66 0
+-47 8 0
+-8 47 0
+-47 -8 0
+-47 180 0
+-180 47 0
+-47 -180 0
+-47 41 0
+-41 47 0
+-47 -41 0
+-47 67 0
+-67 47 0
+-47 -67 0
+-47 92 0
+-92 47 0
+-47 -92 0
+-47 218 0
+-218 47 0
+-47 -218 0
+-47 93 0
+-93 47 0
+-47 -93 0
+-190 192 0
+-192 190 0
+-190 -192 0
+-190 112 0
+-112 190 0
+-190 -112 0
+-190 66 0
+-66 190 0
+-190 -66 0
+-190 8 0
+-8 190 0
+-190 -8 0
+-190 180 0
+-180 190 0
+-190 -180 0
+-190 41 0
+-41 190 0
+-190 -41 0
+-190 67 0
+-67 190 0
+-190 -67 0
+-190 92 0
+-92 190 0
+-190 -92 0
+-190 218 0
+-218 190 0
+-190 -218 0
+-190 93 0
+-93 190 0
+-190 -93 0
+-192 112 0
+-112 192 0
+-192 -112 0
+-192 66 0
+-66 192 0
+-192 -66 0
+-192 8 0
+-8 192 0
+-192 -8 0
+-192 180 0
+-180 192 0
+-192 -180 0
+-192 41 0
+-41 192 0
+-192 -41 0
+-192 67 0
+-67 192 0
+-192 -67 0
+-192 92 0
+-92 192 0
+-192 -92 0
+-192 218 0
+-218 192 0
+-192 -218 0
+-192 93 0
+-93 192 0
+-192 -93 0
+-112 66 0
+-66 112 0
+-112 -66 0
+-112 8 0
+-8 112 0
+-112 -8 0
+-112 180 0
+-180 112 0
+-112 -180 0
+-112 41 0
+-41 112 0
+-112 -41 0
+-112 67 0
+-67 112 0
+-112 -67 0
+-112 92 0
+-92 112 0
+-112 -92 0
+-112 218 0
+-218 112 0
+-112 -218 0
+-112 93 0
+-93 112 0
+-112 -93 0
+-66 8 0
+-8 66 0
+-66 -8 0
+-66 180 0
+-180 66 0
+-66 -180 0
+-66 41 0
+-41 66 0
+-66 -41 0
+-66 67 0
+-67 66 0
+-66 -67 0
+-66 92 0
+-92 66 0
+-66 -92 0
+-66 218 0
+-218 66 0
+-66 -218 0
+-66 93 0
+-93 66 0
+-66 -93 0
+-8 180 0
+-180 8 0
+-8 -180 0
+-8 41 0
+-41 8 0
+-8 -41 0
+-8 67 0
+-67 8 0
+-8 -67 0
+-8 92 0
+-92 8 0
+-8 -92 0
+-8 218 0
+-218 8 0
+-8 -218 0
+-8 93 0
+-93 8 0
+-8 -93 0
+-180 41 0
+-41 180 0
+-180 -41 0
+-180 67 0
+-67 180 0
+-180 -67 0
+-180 92 0
+-92 180 0
+-180 -92 0
+-180 218 0
+-218 180 0
+-180 -218 0
+-180 93 0
+-93 180 0
+-180 -93 0
+-41 67 0
+-67 41 0
+-41 -67 0
+-41 92 0
+-92 41 0
+-41 -92 0
+-41 218 0
+-218 41 0
+-41 -218 0
+-41 93 0
+-93 41 0
+-41 -93 0
+-67 92 0
+-92 67 0
+-67 -92 0
+-67 218 0
+-218 67 0
+-67 -218 0
+-67 93 0
+-93 67 0
+-67 -93 0
+-92 218 0
+-218 92 0
+-92 -218 0
+-92 93 0
+-93 92 0
+-92 -93 0
+-218 93 0
+-93 218 0
+-218 -93 0

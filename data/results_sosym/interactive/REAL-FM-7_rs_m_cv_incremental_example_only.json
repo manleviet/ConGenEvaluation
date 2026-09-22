@@ -1,0 +1,1349 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    0.75,
+    1.0,
+    1.0
+  ],
+  "mean_accuracy": 0.9166666666666666,
+  "std_accuracy": 0.14433756729740646,
+  "total_runtime_ms": 104.7379169613123,
+  "intersected_kb": {
+    "kb_constraints": [],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 0,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 0.75,
+      "metrics": {
+        "accuracy": 0.75,
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1_score": 0.8571428571428571,
+        "specificity": 0.0,
+        "true_positives": 3,
+        "true_negatives": 0,
+        "false_positives": 1,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 49.6640409110114,
+        "consistency_checks": 4,
+        "memory_peak_mb": 0.35230445861816406,
+        "quacq_runtime_ms": 43.63262502010912,
+        "query_generation_runtime_ms": 7.663709111511707,
+        "findscope_runtime_ms": 0,
+        "findc_runtime_ms": 0,
+        "dis_gen_runtime_ms": 0,
+        "reduce_runtime_ms": 0.023374916054308414,
+        "solver_time_ms": 14.492000000000226,
+        "is_consistent_calls": 995,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 5,
+        "query_generation_consistency_checks": 167,
+        "prune_calls": 4,
+        "prune_is_consistent_calls": 828,
+        "findscope_calls": 0,
+        "findc_calls": 0,
+        "findc_consistency_checks": 0,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 0,
+        "profiler": {
+          "query_generation_consistency_checks": 167,
+          "solver_time": {
+            "count": 995,
+            "total": 0.014492000000000227,
+            "mean": 1.4564824120603243e-05,
+            "min": 3.999999999976245e-06,
+            "max": 4.999999999999449e-05,
+            "median": 1.5999999999988246e-05,
+            "stddev": 4.3700288047966535e-06
+          },
+          "solver_time_accum": 0.014492000000000227,
+          "is_consistent_calls": 995,
+          "query_generation_runtime": {
+            "count": 5,
+            "total": 0.007663709111511707,
+            "mean": 0.0015327418223023415,
+            "min": 0.00016316701658070087,
+            "max": 0.005787166999652982,
+            "median": 0.000544500071555376,
+            "stddev": 0.0023863824826175317
+          },
+          "query_generation_calls": 5,
+          "paper_consistency_checks": 4,
+          "prune_is_consistent_calls": 828,
+          "quacq_prune_complete_pruned": 167,
+          "prune_calls": 4,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 2.3374916054308414e-05,
+            "mean": 2.3374916054308414e-05,
+            "min": 2.3374916054308414e-05,
+            "max": 2.3374916054308414e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 0.04363262502010912,
+            "mean": 0.04363262502010912,
+            "min": 0.04363262502010912,
+            "max": 0.04363262502010912
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 0.0496640409110114,
+            "mean": 0.0496640409110114,
+            "min": 0.0496640409110114,
+            "max": 0.0496640409110114
+          }
+        }
+      },
+      "kb_constraints": [],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 0,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 5,
+        "negative": 0
+      },
+      "test_size": {
+        "positive": 3,
+        "negative": 1
+      },
+      "n_queries": 4,
+      "convergence_reason": "pool_exhausted",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "specificity": 0.0,
+            "true_positives": 0,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 13
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": null,
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9239130434782609,
+            "precision": 1.0,
+            "recall": 0.045454545454545456,
+            "f1_score": 0.08695652173913045,
+            "specificity": 1.0,
+            "true_positives": 1,
+            "true_negatives": 254,
+            "false_positives": 0,
+            "false_negatives": 21
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-9, 10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.2727272727272727,
+            "precision": 1.0,
+            "recall": 0.2727272727272727,
+            "f1_score": 0.42857142857142855,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 16
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 12]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 0.0,
+        "true_positives": 3,
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 88.28391705173999,
+        "consistency_checks": 14,
+        "memory_peak_mb": 0.35230445861816406,
+        "quacq_runtime_ms": 82.41687505505979,
+        "query_generation_runtime_ms": 2.3155839880928397,
+        "findscope_runtime_ms": 124.62149979546666,
+        "findc_runtime_ms": 0.46087498776614666,
+        "dis_gen_runtime_ms": 0,
+        "reduce_runtime_ms": 0.0262079993262887,
+        "solver_time_ms": 28.47300000000019,
+        "is_consistent_calls": 1797,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 7,
+        "query_generation_consistency_checks": 48,
+        "prune_calls": 9,
+        "prune_is_consistent_calls": 1745,
+        "findscope_calls": 11,
+        "findc_calls": 1,
+        "findc_consistency_checks": 4,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 0,
+        "profiler": {
+          "query_generation_consistency_checks": 48,
+          "solver_time": {
+            "count": 1797,
+            "total": 0.028473000000000193,
+            "mean": 1.5844741235392428e-05,
+            "min": 3.0000000000030003e-06,
+            "max": 7.40000000000185e-05,
+            "median": 1.6999999999989246e-05,
+            "stddev": 3.859711582393888e-06
+          },
+          "solver_time_accum": 0.028473000000000193,
+          "is_consistent_calls": 1797,
+          "query_generation_runtime": {
+            "count": 7,
+            "total": 0.0023155839880928397,
+            "mean": 0.00033079771258469137,
+            "min": 3.4170225262641907e-06,
+            "max": 0.0011265419889241457,
+            "median": 0.00016974995378404856,
+            "stddev": 0.0003775481006163436
+          },
+          "query_generation_calls": 7,
+          "paper_consistency_checks": 14,
+          "prune_is_consistent_calls": 1745,
+          "quacq_prune_complete_pruned": 152,
+          "prune_calls": 9,
+          "findscope_calls": 11,
+          "findscope_runtime": {
+            "count": 11,
+            "total": 0.12462149979546666,
+            "mean": 0.011329227254133333,
+            "min": 4.125060513615608e-06,
+            "max": 0.031226999941281974,
+            "median": 0.007716374937444925,
+            "stddev": 0.013645593283592
+          },
+          "quacq_prune_partial_pruned": 7,
+          "findc_consistency_checks": 4,
+          "quacq_findc_unconfirmed": 1,
+          "findc_calls": 1,
+          "findc_runtime": {
+            "count": 1,
+            "total": 0.00046087498776614666,
+            "mean": 0.00046087498776614666,
+            "min": 0.00046087498776614666,
+            "max": 0.00046087498776614666
+          },
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 2.62079993262887e-05,
+            "mean": 2.62079993262887e-05,
+            "min": 2.62079993262887e-05,
+            "max": 2.62079993262887e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 0.08241687505505979,
+            "mean": 0.08241687505505979,
+            "min": 0.08241687505505979,
+            "max": 0.08241687505505979
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 0.08828391705173999,
+            "mean": 0.08828391705173999,
+            "min": 0.08828391705173999,
+            "max": 0.08828391705173999
+          }
+        }
+      },
+      "kb_constraints": [],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 0,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 5,
+        "negative": 1
+      },
+      "test_size": {
+        "positive": 3,
+        "negative": 0
+      },
+      "n_queries": 14,
+      "convergence_reason": "pool_exhausted",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "specificity": 0.0,
+            "true_positives": 0,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 13
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": null,
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9239130434782609,
+            "precision": 1.0,
+            "recall": 0.045454545454545456,
+            "f1_score": 0.08695652173913045,
+            "specificity": 1.0,
+            "true_positives": 1,
+            "true_negatives": 254,
+            "false_positives": 0,
+            "false_negatives": 21
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-9, 10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.2727272727272727,
+            "precision": 1.0,
+            "recall": 0.2727272727272727,
+            "f1_score": 0.42857142857142855,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 16
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 12]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 0.0,
+        "true_positives": 2,
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 102.34337497968227,
+        "consistency_checks": 14,
+        "memory_peak_mb": 0.3553018569946289,
+        "quacq_runtime_ms": 96.11149993725121,
+        "query_generation_runtime_ms": 9.389417129568756,
+        "findscope_runtime_ms": 176.2990860734135,
+        "findc_runtime_ms": 0.529457931406796,
+        "dis_gen_runtime_ms": 0,
+        "reduce_runtime_ms": 0.02520799171179533,
+        "solver_time_ms": 33.1480000000003,
+        "is_consistent_calls": 2031,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 7,
+        "query_generation_consistency_checks": 191,
+        "prune_calls": 9,
+        "prune_is_consistent_calls": 1836,
+        "findscope_calls": 11,
+        "findc_calls": 1,
+        "findc_consistency_checks": 4,
+        "dis_gen_calls": 0,
+        "dis_gen_consistency_checks": 0,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 0,
+        "profiler": {
+          "query_generation_consistency_checks": 191,
+          "solver_time": {
+            "count": 2031,
+            "total": 0.0331480000000003,
+            "mean": 1.632102412604643e-05,
+            "min": 3.0000000000030003e-06,
+            "max": 6.20000000000065e-05,
+            "median": 1.6999999999989246e-05,
+            "stddev": 3.91036844986558e-06
+          },
+          "solver_time_accum": 0.0331480000000003,
+          "is_consistent_calls": 2031,
+          "query_generation_runtime": {
+            "count": 7,
+            "total": 0.009389417129568756,
+            "mean": 0.001341345304224108,
+            "min": 2.500019036233425e-06,
+            "max": 0.008111000061035156,
+            "median": 0.00021091592498123646,
+            "stddev": 0.002989555500612568
+          },
+          "query_generation_calls": 7,
+          "paper_consistency_checks": 14,
+          "prune_is_consistent_calls": 1836,
+          "quacq_prune_complete_pruned": 157,
+          "prune_calls": 9,
+          "findscope_calls": 11,
+          "findscope_runtime": {
+            "count": 11,
+            "total": 0.1762990860734135,
+            "mean": 0.01602718964303759,
+            "min": 4.207948222756386e-06,
+            "max": 0.044235332985408604,
+            "median": 0.010887291980907321,
+            "stddev": 0.01933812940422388
+          },
+          "quacq_prune_partial_pruned": 13,
+          "findc_consistency_checks": 4,
+          "quacq_findc_unconfirmed": 1,
+          "findc_calls": 1,
+          "findc_runtime": {
+            "count": 1,
+            "total": 0.000529457931406796,
+            "mean": 0.000529457931406796,
+            "min": 0.000529457931406796,
+            "max": 0.000529457931406796
+          },
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 2.520799171179533e-05,
+            "mean": 2.520799171179533e-05,
+            "min": 2.520799171179533e-05,
+            "max": 2.520799171179533e-05
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 0.09611149993725121,
+            "mean": 0.09611149993725121,
+            "min": 0.09611149993725121,
+            "max": 0.09611149993725121
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 0.10234337497968227,
+            "mean": 0.10234337497968227,
+            "min": 0.10234337497968227,
+            "max": 0.10234337497968227
+          }
+        }
+      },
+      "kb_constraints": [],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 295,
+        "n_mss": null,
+        "n_kb": 0,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 6,
+        "negative": 1
+      },
+      "test_size": {
+        "positive": 2,
+        "negative": 0
+      },
+      "n_queries": 14,
+      "convergence_reason": "pool_exhausted",
+      "evaluation": {
+        "description": {
+          "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "specificity": 0.0,
+            "true_positives": 0,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 13
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "jplug --mandatory--> interface"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> model_code_synch"
+            },
+            {
+              "id": null,
+              "description": "interface --alternative--> ['sdi', 'mdi']"
+            },
+            {
+              "id": null,
+              "description": "compiler --or--> ['javac', 'mvc']"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --mandatory--> java"
+            },
+            {
+              "id": null,
+              "description": "gui_builder --optional--> qt"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> gui_builder"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> compiler"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --mandatory--> uml"
+            },
+            {
+              "id": null,
+              "description": "gui_builder excludes sdi"
+            },
+            {
+              "id": null,
+              "description": "model_code_synch requires diagram_builder"
+            },
+            {
+              "id": null,
+              "description": "diagram_builder --optional--> petri_net"
+            },
+            {
+              "id": null,
+              "description": "jplug --optional--> diagram_builder"
+            }
+          ]
+        },
+        "clause": {
+          "metrics": {
+            "accuracy": 0.9239130434782609,
+            "precision": 1.0,
+            "recall": 0.045454545454545456,
+            "f1_score": 0.08695652173913045,
+            "specificity": 1.0,
+            "true_positives": 1,
+            "true_negatives": 254,
+            "false_positives": 0,
+            "false_negatives": 21
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-9, 10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 1]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            }
+          ]
+        },
+        "semantic": {
+          "metrics": {
+            "accuracy": 0.2727272727272727,
+            "precision": 1.0,
+            "recall": 0.2727272727272727,
+            "f1_score": 0.42857142857142855,
+            "specificity": 0.0,
+            "true_positives": 6,
+            "true_negatives": 0,
+            "false_positives": 0,
+            "false_negatives": 16
+          },
+          "tp": [],
+          "fp": [],
+          "fn": [
+            {
+              "id": null,
+              "description": "[-1, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-2, 3, 4]"
+            },
+            {
+              "id": null,
+              "description": "[-4, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-3, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-4, 2]"
+            },
+            {
+              "id": null,
+              "description": "[-5, 6]"
+            },
+            {
+              "id": null,
+              "description": "[-6, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-7, 5]"
+            },
+            {
+              "id": null,
+              "description": "[-9, 10, 11]"
+            },
+            {
+              "id": null,
+              "description": "[-10, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-11, 9]"
+            },
+            {
+              "id": null,
+              "description": "[-12, 13]"
+            },
+            {
+              "id": null,
+              "description": "[-13, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-14, 12]"
+            },
+            {
+              "id": null,
+              "description": "[-5, -3]"
+            },
+            {
+              "id": null,
+              "description": "[-8, 12]"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 80.09711098081122,
+      "std_ms": 27.277204855188224,
+      "min_ms": 49.6640409110114,
+      "max_ms": 102.34337497968227
+    },
+    "consistency_checks": {
+      "mean": 10.666666666666666,
+      "std": 5.773502691896257,
+      "min": 4,
+      "max": 14
+    },
+    "memory": {
+      "mean_mb": 0.35330359141031903,
+      "max_mb": 0.3553018569946289
+    },
+    "quacq_runtime": {
+      "mean_ms": 74.0536666708067,
+      "std_ms": 27.22068182469154,
+      "min_ms": 43.63262502010912,
+      "max_ms": 96.11149993725121
+    },
+    "query_gen_runtime": {
+      "mean_ms": 6.456236743057768,
+      "std_ms": 3.6882612392285314,
+      "min_ms": 2.3155839880928397,
+      "max_ms": 9.389417129568756
+    },
+    "findscope_runtime": {
+      "mean_ms": 100.30686195629339,
+      "std_ms": 90.6297034504573,
+      "min_ms": 0,
+      "max_ms": 176.2990860734135
+    },
+    "findc_runtime": {
+      "mean_ms": 0.3301109730576475,
+      "std_ms": 0.2879337526921849,
+      "min_ms": 0,
+      "max_ms": 0.529457931406796
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 0,
+      "std_ms": 0.0,
+      "min_ms": 0,
+      "max_ms": 0
+    },
+    "reduce_runtime": {
+      "mean_ms": 0.024930302364130814,
+      "std_ms": 0.0014368102647351836,
+      "min_ms": 0.023374916054308414,
+      "max_ms": 0.0262079993262887
+    },
+    "solver_time": {
+      "mean_ms": 25.37100000000024,
+      "std_ms": 9.707130729520463,
+      "min_ms": 14.492000000000226,
+      "max_ms": 33.1480000000003
+    },
+    "is_consistent_calls": {
+      "mean": 1607.6666666666667,
+      "std": 543.3316973390503,
+      "min": 995,
+      "max": 2031
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 6.333333333333333,
+      "std": 1.1547005383792515,
+      "min": 5,
+      "max": 7
+    },
+    "query_gen_checks": {
+      "mean": 135.33333333333334,
+      "std": 76.5789353107846,
+      "min": 48,
+      "max": 191
+    },
+    "prune_calls": {
+      "mean": 7.333333333333333,
+      "std": 2.8867513459481287,
+      "min": 4,
+      "max": 9
+    },
+    "prune_ic_calls": {
+      "mean": 1469.6666666666667,
+      "std": 557.559264413509,
+      "min": 828,
+      "max": 1836
+    },
+    "findscope_calls": {
+      "mean": 7.333333333333333,
+      "std": 6.3508529610858835,
+      "min": 0,
+      "max": 11
+    },
+    "findc_calls": {
+      "mean": 0.6666666666666666,
+      "std": 0.5773502691896257,
+      "min": 0,
+      "max": 1
+    },
+    "findc_checks": {
+      "mean": 2.6666666666666665,
+      "std": 2.309401076758503,
+      "min": 0,
+      "max": 4
+    },
+    "dis_gen_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "dis_gen_checks": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    }
+  },
+  "summary": {
+    "description": {
+      "precision": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "clause": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.045455,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.086957,
+        "std": 0.0
+      }
+    },
+    "semantic": {
+      "precision": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall": {
+        "mean": 0.272727,
+        "std": 0.0
+      },
+      "f1_score": {
+        "mean": 0.428571,
+        "std": 0.0
+      }
+    }
+  }
+}

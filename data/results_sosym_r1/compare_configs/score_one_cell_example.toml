@@ -1,0 +1,24 @@
+# A worked example: score ONE freshly produced cell without touching the committed
+# trees. Written by hand, unlike its siblings here, and kept short on purpose.
+#
+# `kb_dir` points into the scratch directory the run_cv step writes to. run_compare's
+# config mode writes each evaluation back into the file named by kb_dir -- which is
+# exactly what you want when that file is your own scratch copy, and exactly what you
+# must avoid when it names a committed tree.
+#
+# Paths are relative to the repository root, so run this from there. For any other
+# cell, generate the equivalent instead of editing this by hand:
+#
+#   python3 tools/sosym_r1/make_score_configs.py --cv-dir scratch/congen --out scratch
+[general]
+output_dir = "scratch"
+verbose = false
+
+[compare]
+strategy = "all"
+
+[[models]]
+name = "REAL-FM-7_ff_cv_incremental"
+oracle = "data/fms/REAL-FM-7.uvl"
+bias = "data/bias/REAL-FM-7-bias.json"
+kb_dir = "scratch/congen/REAL-FM-7_ff_cv_incremental.json"

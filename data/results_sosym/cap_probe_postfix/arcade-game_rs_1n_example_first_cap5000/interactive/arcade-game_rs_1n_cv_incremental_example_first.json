@@ -1,0 +1,1088 @@
+{
+  "n_folds": 3,
+  "fold_accuracies": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "mean_accuracy": 1.0,
+  "std_accuracy": 0.0,
+  "total_runtime_ms": 1070178.6823750008,
+  "intersected_kb": {
+    "kb_constraints": [
+      {
+        "id": "c1621",
+        "description": "PlayPong requires Pong"
+      },
+      {
+        "id": "c1622",
+        "description": "Pong requires PlayPong"
+      },
+      {
+        "id": "c1649",
+        "description": "PongBoard requires Pong"
+      },
+      {
+        "id": "c176",
+        "description": "BowlingBoard requires Bowling"
+      },
+      {
+        "id": "c182",
+        "description": "BowlingPin requires Bowling"
+      },
+      {
+        "id": "c209",
+        "description": "Edge requires Bowling"
+      },
+      {
+        "id": "c212",
+        "description": "EndofAlley requires Bowling"
+      },
+      {
+        "id": "c232",
+        "description": "Bowling requires PlayBowling"
+      },
+      {
+        "id": "c233",
+        "description": "PlayBowling requires Bowling"
+      },
+      {
+        "id": "c27",
+        "description": "ArcadeGame --mandatory--> ClassDiagram"
+      },
+      {
+        "id": "c29",
+        "description": "ClassDiagram --mandatory--> GameSprite"
+      },
+      {
+        "id": "c782",
+        "description": "BricklesBoard requires Brickles"
+      },
+      {
+        "id": "c785",
+        "description": "BricklesGameMenu requires Brickles"
+      },
+      {
+        "id": "c788",
+        "description": "Ceilingbrickles requires Brickles"
+      },
+      {
+        "id": "c815",
+        "description": "Leftbrickles requires Brickles"
+      },
+      {
+        "id": "c823",
+        "description": "Brickles requires PlayBrickles"
+      }
+    ],
+    "bg_clauses": [
+      [
+        1
+      ]
+    ],
+    "n_kb": 16,
+    "evaluation": null
+  },
+  "folds": [
+    {
+      "fold_index": 0,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 20,
+        "true_negatives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 285533.7409169879,
+        "consistency_checks": 5001,
+        "memory_peak_mb": 26.784428596496582,
+        "quacq_runtime_ms": 285482.4675830314,
+        "query_generation_runtime_ms": 9880.209794617258,
+        "findscope_runtime_ms": 1295983.0189561471,
+        "findc_runtime_ms": 1202.4037868250161,
+        "dis_gen_runtime_ms": 720.5209548119456,
+        "reduce_runtime_ms": 50.49141601193696,
+        "solver_time_ms": 44271.31800000901,
+        "is_consistent_calls": 462806,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 377,
+        "query_generation_consistency_checks": 13012,
+        "prune_calls": 1910,
+        "prune_is_consistent_calls": 452537,
+        "findscope_calls": 6169,
+        "findc_calls": 337,
+        "findc_consistency_checks": 397,
+        "dis_gen_calls": 182,
+        "dis_gen_consistency_checks": 182,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 45,
+        "profiler": {
+          "query_generation_consistency_checks": 13012,
+          "solver_time": {
+            "count": 466173,
+            "total": 44.271318000009,
+            "mean": 9.496757212453103e-05,
+            "min": 4.999999999810711e-06,
+            "max": 0.0004210000000011149,
+            "median": 9.600000000009601e-05,
+            "stddev": 1.2080331802386442e-05
+          },
+          "solver_time_accum": 44.271318000009,
+          "is_consistent_calls": 462806,
+          "query_generation_runtime": {
+            "count": 377,
+            "total": 9.880209794617258,
+            "mean": 0.026207453036120047,
+            "min": 0.0005994170205667615,
+            "max": 0.5049158330075443,
+            "median": 0.01827295799739659,
+            "stddev": 0.039879988251456375
+          },
+          "query_generation_calls": 377,
+          "paper_consistency_checks": 5001,
+          "findscope_calls": 6169,
+          "findscope_runtime": {
+            "count": 6169,
+            "total": 1295.9830189561471,
+            "mean": 0.21007991878037724,
+            "min": 4.624947905540466e-06,
+            "max": 2.977864957996644,
+            "median": 0.0005324590019881725,
+            "stddev": 0.2856194615113838
+          },
+          "prune_is_consistent_calls": 452537,
+          "prune_calls": 1910,
+          "quacq_prune_partial_pruned": 248,
+          "findc_consistency_checks": 397,
+          "findc_calls": 337,
+          "findc_runtime": {
+            "count": 337,
+            "total": 1.2024037868250161,
+            "mean": 0.003567963759124677,
+            "min": 0.0002934590447694063,
+            "max": 0.006601916975341737,
+            "median": 0.005584958009421825,
+            "stddev": 0.0027740718460992947
+          },
+          "quacq_prune_complete_pruned": 1316,
+          "query_generation_repeat_skips": 1050,
+          "dis_gen_consistency_checks": 182,
+          "dis_gen_calls": 182,
+          "dis_gen_runtime": {
+            "count": 182,
+            "total": 0.7205209548119456,
+            "mean": 0.00395890634512058,
+            "min": 0.003383500035852194,
+            "max": 0.0042002080008387566,
+            "median": 0.003992729005403817,
+            "stddev": 0.00014119369693661735
+          },
+          "quacq_findc_unconfirmed": 182,
+          "redundancy_consistency_checks": 45,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.05049141601193696,
+            "mean": 0.05049141601193696,
+            "min": 0.05049141601193696,
+            "max": 0.05049141601193696
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 285.4824675830314,
+            "mean": 285.4824675830314,
+            "min": 285.4824675830314,
+            "max": 285.4824675830314
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 285.5337409169879,
+            "mean": 285.5337409169879,
+            "min": 285.5337409169879,
+            "max": 285.5337409169879
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c703",
+          "description": "BrickPile requires Brickles"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c61",
+          "description": "ClassDiagram --mandatory--> Board"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        },
+        {
+          "id": "c254",
+          "description": "RackofPins requires Bowling"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c1159",
+          "description": "DividingLine requires Pong"
+        },
+        {
+          "id": "c72",
+          "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+        },
+        {
+          "id": "c179",
+          "description": "BowlingGameMenu requires Bowling"
+        },
+        {
+          "id": "c29",
+          "description": "ClassDiagram --mandatory--> GameSprite"
+        },
+        {
+          "id": "c39",
+          "description": "GameSprite --mandatory--> GameSprite_3"
+        },
+        {
+          "id": "c33",
+          "description": "GameSprite --mandatory--> Rectangle"
+        },
+        {
+          "id": "c37",
+          "description": "Rectangle --mandatory--> Point"
+        },
+        {
+          "id": "c35",
+          "description": "Rectangle --mandatory--> Size"
+        },
+        {
+          "id": "c788",
+          "description": "Ceilingbrickles requires Brickles"
+        },
+        {
+          "id": "c803",
+          "description": "Floorbrickles requires Brickles"
+        },
+        {
+          "id": "c145",
+          "description": "BottomPaddle requires Pong"
+        },
+        {
+          "id": "c1369",
+          "description": "Floorpong requires Pong"
+        },
+        {
+          "id": "c1531",
+          "description": "Leftpong requires Pong"
+        },
+        {
+          "id": "c25",
+          "description": "PlayGame --mandatory--> AnimationLoop"
+        },
+        {
+          "id": "c233",
+          "description": "PlayBowling requires Bowling"
+        },
+        {
+          "id": "c173",
+          "description": "BowlingBall requires Bowling"
+        },
+        {
+          "id": "c815",
+          "description": "Leftbrickles requires Brickles"
+        },
+        {
+          "id": "c824",
+          "description": "PlayBrickles requires Brickles"
+        },
+        {
+          "id": "c19",
+          "description": "PlayGame --mandatory--> PlayGame_1"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c69",
+          "description": "ClassDiagram --mandatory--> GameMenu"
+        },
+        {
+          "id": "c839",
+          "description": "Pucksupply requires Brickles"
+        },
+        {
+          "id": "c54",
+          "description": "Wall --or--> ['Leftpong', 'Rightpont', 'Leftbrickles', 'Rightbrickles']"
+        },
+        {
+          "id": "c1",
+          "description": "ArcadeGame --mandatory--> UseCases"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c1652",
+          "description": "PongGameMenu requires Pong"
+        },
+        {
+          "id": "c1664",
+          "description": "Rightpont requires Pong"
+        },
+        {
+          "id": "c1667",
+          "description": "ScoreBoard requires Pong"
+        },
+        {
+          "id": "c224",
+          "description": "Lane requires Bowling"
+        },
+        {
+          "id": "c625",
+          "description": "Brick requires Brickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        },
+        {
+          "id": "c221",
+          "description": "Gutter requires Bowling"
+        },
+        {
+          "id": "c212",
+          "description": "EndofAlley requires Bowling"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 45,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 39,
+        "negative": 4
+      },
+      "test_size": {
+        "positive": 20,
+        "negative": 2
+      },
+      "n_queries": 5000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 1,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 20,
+        "true_negatives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 611405.4171669995,
+        "consistency_checks": 5004,
+        "memory_peak_mb": 35.39980125427246,
+        "quacq_runtime_ms": 611349.4559170213,
+        "query_generation_runtime_ms": 12096.666495897807,
+        "findscope_runtime_ms": 2972932.4671217473,
+        "findc_runtime_ms": 499.77865430992097,
+        "dis_gen_runtime_ms": 197.65233097132295,
+        "reduce_runtime_ms": 36.69170802459121,
+        "solver_time_ms": 69431.5009999981,
+        "is_consistent_calls": 687973,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 464,
+        "query_generation_consistency_checks": 12707,
+        "prune_calls": 1930,
+        "prune_is_consistent_calls": 678577,
+        "findscope_calls": 6467,
+        "findc_calls": 431,
+        "findc_consistency_checks": 132,
+        "dis_gen_calls": 58,
+        "dis_gen_consistency_checks": 58,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 21,
+        "profiler": {
+          "query_generation_consistency_checks": 12707,
+          "solver_time": {
+            "count": 691495,
+            "total": 69.4315009999981,
+            "mean": 0.00010040781350551789,
+            "min": 3.999999989900971e-06,
+            "max": 0.0003829999999993561,
+            "median": 0.00010300000002416709,
+            "stddev": 1.2884130557699873e-05
+          },
+          "solver_time_accum": 69.4315009999981,
+          "is_consistent_calls": 687973,
+          "query_generation_runtime": {
+            "count": 464,
+            "total": 12.096666495897807,
+            "mean": 0.026070401930814238,
+            "min": 0.0003838329575955868,
+            "max": 0.35644533298909664,
+            "median": 0.015866229543462396,
+            "stddev": 0.031325528755798006
+          },
+          "query_generation_calls": 464,
+          "paper_consistency_checks": 5004,
+          "prune_is_consistent_calls": 678577,
+          "quacq_prune_complete_pruned": 1243,
+          "prune_calls": 1930,
+          "findscope_calls": 6467,
+          "findscope_runtime": {
+            "count": 6467,
+            "total": 2972.9324671217473,
+            "mean": 0.45970812851735693,
+            "min": 4.00003045797348e-06,
+            "max": 2.8778166249394417,
+            "median": 0.21605495794210583,
+            "stddev": 0.5663876611603352
+          },
+          "quacq_prune_partial_pruned": 177,
+          "findc_calls": 431,
+          "findc_runtime": {
+            "count": 431,
+            "total": 0.49977865430992097,
+            "mean": 0.0011595792443385637,
+            "min": 0.0005048750899732113,
+            "max": 0.008016124949790537,
+            "median": 0.0005324580706655979,
+            "stddev": 0.0015432561056468379
+          },
+          "findc_consistency_checks": 132,
+          "dis_gen_consistency_checks": 58,
+          "dis_gen_calls": 58,
+          "dis_gen_runtime": {
+            "count": 58,
+            "total": 0.19765233097132295,
+            "mean": 0.0034077988098503956,
+            "min": 0.003181957988999784,
+            "max": 0.0044390830444172025,
+            "median": 0.0033794789924286306,
+            "stddev": 0.00021953672967062437
+          },
+          "quacq_findc_unconfirmed": 58,
+          "query_generation_repeat_skips": 1597,
+          "redundancy_consistency_checks": 21,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.03669170802459121,
+            "mean": 0.03669170802459121,
+            "min": 0.03669170802459121,
+            "max": 0.03669170802459121
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 611.3494559170213,
+            "mean": 611.3494559170213,
+            "min": 611.3494559170213,
+            "max": 611.3494559170213
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 611.4054171669995,
+            "mean": 611.4054171669995,
+            "min": 611.4054171669995,
+            "max": 611.4054171669995
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c212",
+          "description": "EndofAlley requires Bowling"
+        },
+        {
+          "id": "c1099",
+          "description": "Ceilingpong requires Pong"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c64",
+          "description": "Board --or--> ['PongBoard', 'BricklesBoard', 'BowlingBoard']"
+        },
+        {
+          "id": "c61",
+          "description": "ClassDiagram --mandatory--> Board"
+        },
+        {
+          "id": "c39",
+          "description": "GameSprite --mandatory--> GameSprite_3"
+        },
+        {
+          "id": "c29",
+          "description": "ClassDiagram --mandatory--> GameSprite"
+        },
+        {
+          "id": "c233",
+          "description": "PlayBowling requires Bowling"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        },
+        {
+          "id": "c45",
+          "description": "MovableSprite --mandatory--> MovableSprite_2"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c815",
+          "description": "Leftbrickles requires Brickles"
+        },
+        {
+          "id": "c788",
+          "description": "Ceilingbrickles requires Brickles"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 21,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 39,
+        "negative": 4
+      },
+      "test_size": {
+        "positive": 20,
+        "negative": 2
+      },
+      "n_queries": 5000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    },
+    {
+      "fold_index": 2,
+      "accuracy": 1.0,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "specificity": 1.0,
+        "true_positives": 19,
+        "true_negatives": 2,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "performance": {
+        "runtime_ms": 172683.70208295528,
+        "consistency_checks": 5000,
+        "memory_peak_mb": 20.92091178894043,
+        "quacq_runtime_ms": 172641.1548750475,
+        "query_generation_runtime_ms": 14394.736074842513,
+        "findscope_runtime_ms": 473990.5999043258,
+        "findc_runtime_ms": 953.7091638194397,
+        "dis_gen_runtime_ms": 451.2724131345749,
+        "reduce_runtime_ms": 27.93929202016443,
+        "solver_time_ms": 31449.51799999433,
+        "is_consistent_calls": 333148,
+        "is_consistent_test_cases_calls": 0,
+        "quacq_calls": 1,
+        "query_generation_calls": 393,
+        "query_generation_consistency_checks": 14157,
+        "prune_calls": 1244,
+        "prune_is_consistent_calls": 323040,
+        "findscope_calls": 7871,
+        "findc_calls": 347,
+        "findc_consistency_checks": 620,
+        "dis_gen_calls": 300,
+        "dis_gen_consistency_checks": 300,
+        "reduce_calls": 1,
+        "redundancy_consistency_checks": 32,
+        "profiler": {
+          "query_generation_consistency_checks": 14157,
+          "solver_time": {
+            "count": 338149,
+            "total": 31.449517999994328,
+            "mean": 9.300491203580176e-05,
+            "min": 3.999999989900971e-06,
+            "max": 0.000413999999977932,
+            "median": 9.1999999995096e-05,
+            "stddev": 1.327279329202723e-05
+          },
+          "solver_time_accum": 31.449517999994328,
+          "is_consistent_calls": 333148,
+          "query_generation_runtime": {
+            "count": 393,
+            "total": 14.394736074842513,
+            "mean": 0.03662782716244914,
+            "min": 0.0003346669254824519,
+            "max": 0.5781897080596536,
+            "median": 0.027681582956574857,
+            "stddev": 0.04313842092699964
+          },
+          "query_generation_calls": 393,
+          "paper_consistency_checks": 5000,
+          "prune_is_consistent_calls": 323040,
+          "quacq_prune_complete_pruned": 1377,
+          "prune_calls": 1244,
+          "findscope_calls": 7871,
+          "findscope_runtime": {
+            "count": 7871,
+            "total": 473.9905999043258,
+            "mean": 0.06021987039821189,
+            "min": 3.917026333510876e-06,
+            "max": 1.88830420805607,
+            "median": 0.00015849992632865906,
+            "stddev": 0.13292940097297792
+          },
+          "findc_calls": 347,
+          "findc_runtime": {
+            "count": 347,
+            "total": 0.9537091638194397,
+            "mean": 0.0027484413942923335,
+            "min": 0.00034129200503230095,
+            "max": 0.0037382920272648335,
+            "median": 0.002971750102005899,
+            "stddev": 0.0008895026276560073
+          },
+          "quacq_prune_partial_pruned": 159,
+          "findc_consistency_checks": 620,
+          "dis_gen_consistency_checks": 300,
+          "dis_gen_calls": 300,
+          "dis_gen_runtime": {
+            "count": 300,
+            "total": 0.4512724131345749,
+            "mean": 0.0015042413771152495,
+            "min": 0.0011309159453958273,
+            "max": 0.0018627080135047436,
+            "median": 0.0015108749503269792,
+            "stddev": 0.00014199505772651656
+          },
+          "quacq_findc_unconfirmed": 300,
+          "query_generation_repeat_skips": 2582,
+          "redundancy_consistency_checks": 32,
+          "reduce_calls": 1,
+          "reduce_runtime": {
+            "count": 1,
+            "total": 0.02793929202016443,
+            "mean": 0.02793929202016443,
+            "min": 0.02793929202016443,
+            "max": 0.02793929202016443
+          },
+          "quacq_calls": 1,
+          "quacq_runtime": {
+            "count": 1,
+            "total": 172.6411548750475,
+            "mean": 172.6411548750475,
+            "min": 172.6411548750475,
+            "max": 172.6411548750475
+          },
+          "quacq_total_time": {
+            "count": 1,
+            "total": 172.68370208295528,
+            "mean": 172.68370208295528,
+            "min": 172.68370208295528,
+            "max": 172.68370208295528
+          }
+        }
+      },
+      "kb_constraints": [
+        {
+          "id": "c182",
+          "description": "BowlingPin requires Bowling"
+        },
+        {
+          "id": "c179",
+          "description": "BowlingGameMenu requires Bowling"
+        },
+        {
+          "id": "c45",
+          "description": "MovableSprite --mandatory--> MovableSprite_2"
+        },
+        {
+          "id": "c48",
+          "description": "MovableSprite_2 --or--> ['Paddle', 'Puck', 'BowlingBall', 'BowlingPin']"
+        },
+        {
+          "id": "c11",
+          "description": "UseCases --mandatory--> InstallGame"
+        },
+        {
+          "id": "c1531",
+          "description": "Leftpong requires Pong"
+        },
+        {
+          "id": "c1621",
+          "description": "PlayPong requires Pong"
+        },
+        {
+          "id": "c1652",
+          "description": "PongGameMenu requires Pong"
+        },
+        {
+          "id": "c1622",
+          "description": "Pong requires PlayPong"
+        },
+        {
+          "id": "c823",
+          "description": "Brickles requires PlayBrickles"
+        },
+        {
+          "id": "c782",
+          "description": "BricklesBoard requires Brickles"
+        },
+        {
+          "id": "c785",
+          "description": "BricklesGameMenu requires Brickles"
+        },
+        {
+          "id": "c23",
+          "description": "PlayGame --mandatory--> Initialization"
+        },
+        {
+          "id": "c1369",
+          "description": "Floorpong requires Pong"
+        },
+        {
+          "id": "c1649",
+          "description": "PongBoard requires Pong"
+        },
+        {
+          "id": "c625",
+          "description": "Brick requires Brickles"
+        },
+        {
+          "id": "c815",
+          "description": "Leftbrickles requires Brickles"
+        },
+        {
+          "id": "c703",
+          "description": "BrickPile requires Brickles"
+        },
+        {
+          "id": "c1",
+          "description": "ArcadeGame --mandatory--> UseCases"
+        },
+        {
+          "id": "c69",
+          "description": "ClassDiagram --mandatory--> GameMenu"
+        },
+        {
+          "id": "c27",
+          "description": "ArcadeGame --mandatory--> ClassDiagram"
+        },
+        {
+          "id": "c72",
+          "description": "GameMenu --or--> ['PongGameMenu', 'BricklesGameMenu', 'BowlingGameMenu']"
+        },
+        {
+          "id": "c29",
+          "description": "ClassDiagram --mandatory--> GameSprite"
+        },
+        {
+          "id": "c788",
+          "description": "Ceilingbrickles requires Brickles"
+        },
+        {
+          "id": "c232",
+          "description": "Bowling requires PlayBowling"
+        },
+        {
+          "id": "c173",
+          "description": "BowlingBall requires Bowling"
+        },
+        {
+          "id": "c224",
+          "description": "Lane requires Bowling"
+        },
+        {
+          "id": "c221",
+          "description": "Gutter requires Bowling"
+        },
+        {
+          "id": "c176",
+          "description": "BowlingBoard requires Bowling"
+        },
+        {
+          "id": "c212",
+          "description": "EndofAlley requires Bowling"
+        },
+        {
+          "id": "c233",
+          "description": "PlayBowling requires Bowling"
+        },
+        {
+          "id": "c209",
+          "description": "Edge requires Bowling"
+        }
+      ],
+      "ne_constraints": [],
+      "bg_clauses": [
+        [
+          1
+        ]
+      ],
+      "redundant_constraints": [],
+      "statistics": {
+        "n_bias": 1755,
+        "n_mss": null,
+        "n_kb": 32,
+        "n_ne": 0
+      },
+      "train_size": {
+        "positive": 40,
+        "negative": 4
+      },
+      "test_size": {
+        "positive": 19,
+        "negative": 2
+      },
+      "n_queries": 5000,
+      "convergence_reason": "max_queries",
+      "evaluation": null
+    }
+  ],
+  "performance": {
+    "n_runs": 3,
+    "runtime": {
+      "mean_ms": 356540.9533889809,
+      "std_ms": 227817.26007669698,
+      "min_ms": 172683.70208295528,
+      "max_ms": 611405.4171669995
+    },
+    "consistency_checks": {
+      "mean": 5001.666666666667,
+      "std": 2.0816659994661326,
+      "min": 5000,
+      "max": 5004
+    },
+    "memory": {
+      "mean_mb": 27.701713879903156,
+      "max_mb": 35.39980125427246
+    },
+    "quacq_runtime": {
+      "mean_ms": 356491.0261250334,
+      "std_ms": 227811.11669636198,
+      "min_ms": 172641.1548750475,
+      "max_ms": 611349.4559170213
+    },
+    "query_gen_runtime": {
+      "mean_ms": 12123.870788452527,
+      "std_ms": 2257.3860854672535,
+      "min_ms": 9880.209794617258,
+      "max_ms": 14394.736074842513
+    },
+    "findscope_runtime": {
+      "mean_ms": 1580968.6953274067,
+      "std_ms": 1273613.0655484074,
+      "min_ms": 473990.5999043258,
+      "max_ms": 2972932.4671217473
+    },
+    "findc_runtime": {
+      "mean_ms": 885.297201651459,
+      "std_ms": 356.27330328866725,
+      "min_ms": 499.77865430992097,
+      "max_ms": 1202.4037868250161
+    },
+    "dis_gen_runtime": {
+      "mean_ms": 456.48189963928115,
+      "std_ms": 261.47323670211193,
+      "min_ms": 197.65233097132295,
+      "max_ms": 720.5209548119456
+    },
+    "reduce_runtime": {
+      "mean_ms": 38.3741386855642,
+      "std_ms": 11.369806675216914,
+      "min_ms": 27.93929202016443,
+      "max_ms": 50.49141601193696
+    },
+    "solver_time": {
+      "mean_ms": 48384.11233333381,
+      "std_ms": 19322.113395648918,
+      "min_ms": 31449.51799999433,
+      "max_ms": 69431.5009999981
+    },
+    "is_consistent_calls": {
+      "mean": 494642.3333333333,
+      "std": 179542.08210426138,
+      "min": 333148,
+      "max": 687973
+    },
+    "is_consistent_test_cases_calls": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "quacq_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "query_gen_calls": {
+      "mean": 411.3333333333333,
+      "std": 46.30694692304097,
+      "min": 377,
+      "max": 464
+    },
+    "query_gen_checks": {
+      "mean": 13292,
+      "std": 764.476945368531,
+      "min": 12707,
+      "max": 14157
+    },
+    "prune_calls": {
+      "mean": 1694.6666666666667,
+      "std": 390.41687122015276,
+      "min": 1244,
+      "max": 1930
+    },
+    "prune_ic_calls": {
+      "mean": 484718,
+      "std": 179939.85707174495,
+      "min": 323040,
+      "max": 678577
+    },
+    "findscope_calls": {
+      "mean": 6835.666666666667,
+      "std": 908.9209719955488,
+      "min": 6169,
+      "max": 7871
+    },
+    "findc_calls": {
+      "mean": 371.6666666666667,
+      "std": 51.62686639079824,
+      "min": 337,
+      "max": 431
+    },
+    "findc_checks": {
+      "mean": 383,
+      "std": 244.3010437963784,
+      "min": 132,
+      "max": 620
+    },
+    "dis_gen_calls": {
+      "mean": 180,
+      "std": 121.01239605924675,
+      "min": 58,
+      "max": 300
+    },
+    "dis_gen_checks": {
+      "mean": 180,
+      "std": 121.01239605924675,
+      "min": 58,
+      "max": 300
+    },
+    "reduce_calls": {
+      "mean": 1,
+      "std": 0.0,
+      "min": 1,
+      "max": 1
+    },
+    "redundancy_consistency_checks": {
+      "mean": 32.666666666666664,
+      "std": 12.013880860626733,
+      "min": 21,
+      "max": 45
+    }
+  },
+  "summary": null
+}
