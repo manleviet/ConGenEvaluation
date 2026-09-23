@@ -26,21 +26,40 @@ def _grid(tree: ResultTree, value):
     return rows
 
 
-def fm_summary(tree: ResultTree, data: Path) -> str:
-    """#features, |B|, #clauses and the domain, one row per knowledge base.
+def target_constraints(fm_dir: Path, stem: str) -> int:
+    """|C_tau| in CONSTRAINTS for one model, counted from its UVL.
 
-    Static inputs, not results -- generated anyway so the gate covers them. |B| and
-    #clauses are read from the committed bias statistics rather than recounted
-    here: those files are what the bias generator actually produced, and a second
-    count of the same thing would be a second chance to be wrong.
+    The convention and the counter live in ``revision_target_theory_size``, which is
+    also where the gate asserts them; importing it here keeps ONE definition rather
+    than a generator copy that could drift from the checked one.
+    """
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from revision_target_theory_size import count_by_owner_scan
+    return count_by_owner_scan(fm_dir / f"{stem}.uvl")["total"]
+
+
+def fm_summary(tree: ResultTree, data: Path) -> str:
+    """#features, |C_tau|, |B| and the domain, one row per knowledge base.
+
+    Static inputs, not results -- generated anyway so the gate covers them. |B| is read
+    from the committed bias statistics rather than recounted here: that file is what the
+    bias generator actually produced, and a second count of the same thing would be a
+    second chance to be wrong. The clause count B expands to was dropped by the
+    2026-09-23 review; it is still recorded in data/bias/<model>-bias-stats.txt.
+
+    |C_tau| is COUNTED FROM THE UVL, and in CONSTRAINTS -- the unit of |KB|, so that
+    the two can be compared. The paper prints the same value again in tab:kb_size's
+    header; both come from this one function, so they cannot drift apart.
     """
     rows = []
     for stem, label, short, domain in KNOWLEDGE_BASES:
         s = bias_stats(data / "bias", stem)
         rows.append([f"{label} ({short})", tex.count(s["features"]),
-                     tex.count(s["bias"]), tex.count(s["clauses"]), domain])
+                     tex.count(target_constraints(data / "fms", stem)),
+                     tex.count(s["bias"]), domain])
     return tex.tabular("lrrrl",
-                       [["", r"\#features", r"$|B|$", r"\#clauses", "domain"]], rows)
+                       [["", r"\#features", r"$|C_\tau|$", r"$|B|$", "domain"]], rows)
 
 
 def example_sizes_table(tree: ResultTree, data: Path) -> str:
@@ -122,33 +141,41 @@ def _unit_cost(tree: ResultTree, stem: str, samp: str) -> dict[str, float | None
             "total_checks": checks["total"], "total_ms": ms["total"]}
 
 
-COST_COLUMNS = ("acqmss_checks", "acqmss_ms", "reduce_checks", "reduce_ms",
-                "prep_checks", "prep_ms", "total_checks", "total_ms")
+# The five columns the paper prints, in its order. The per-phase durations that
+# ``_unit_cost`` still computes are deliberately absent: see acqmss_runtime.
+COST_COLUMNS = ("acqmss_checks", "reduce_checks", "prep_checks",
+                "total_checks", "total_ms")
 
 
 def acqmss_runtime(tree: ResultTree, data: Path) -> str:
-    """Cost per unit: three phases and a total, in checks and milliseconds.
+    """Cost per unit: checks per phase, checks in total, and the total runtime.
 
-    One row per (knowledge base, sampling), like every other table, and one column per
-    quantity. No aggregation over samplings: a mean across samplers would hide that
-    2-COV costs ten consistency checks where RS(3n) costs thousands, and any narrower
-    view the paper wants is derivable from this one without recomputing anything.
+    ONE ROW PER (knowledge base, sampling), blocked by knowledge base with the label
+    printed once, which is how the paper reads it. The three PER-PHASE durations are
+    no longer printed: the paper reports the phases in checks, which are
+    machine-independent, and one total duration. They remain derivable from the JSON
+    through ``_unit_cost`` and their scopes are still asserted by the gate, so
+    dropping the columns loses a rendering and not a measurement.
     """
     rows = []
-    for stem, label, *_ in KNOWLEDGE_BASES:
-        for samp, samp_label in SAMPLINGS:
+    for i, (stem, label, *_) in enumerate(KNOWLEDGE_BASES):
+        if i:
+            rows.append([tex.MIDRULE])
+        for j, (samp, samp_label) in enumerate(SAMPLINGS):
+            first = tex.multirow(len(SAMPLINGS), label) if j == 0 else ""
             if is_not_run(stem, samp):
-                rows.append([label, samp_label] + [tex.NA] * len(COST_COLUMNS))
+                # One n/a spanning the five value columns, not five of them: the unit
+                # was not run, and five separate markers read as five absences.
+                rows.append([first, samp_label,
+                             tex.multicolumn(len(COST_COLUMNS), tex.NA)])
                 continue
             v = _unit_cost(tree, stem, samp)
-            rows.append([label, samp_label] + [
+            rows.append([first, samp_label] + [
                 (tex.count(v[c]) if c.endswith("checks") else tex.millis(v[c]))
                 for c in COST_COLUMNS])
-    header = [["", "", tex.multicolumn(2, "AcqMss"), tex.multicolumn(2, r"\textsc{Reduce}"),
-               tex.multicolumn(2, "GenNE / QX"), tex.multicolumn(2, "total")],
-              ["KB", "Strategy"] + ["checks", "ms"] * 4]
-    rules = [tex.cmidrules(4, 2, first_col=3), ""]
-    return COST_HEADER + tex.tabular("ll" + "rr" * 4, header, rows, rules)
+    header = [["KB", "Strategy", r"\textsc{AcqMss}", r"\textsc{Reduce}",
+               r"\textsc{GenerateNE}", "total checks", "total runtime"]]
+    return COST_HEADER + tex.tabular("ll" + "r" * len(COST_COLUMNS), header, rows)
 
 
 def accuracy_all(tree: ResultTree, data: Path) -> str:
@@ -158,57 +185,43 @@ def accuracy_all(tree: ResultTree, data: Path) -> str:
             return tex.NA
         mean, sd = tree.accuracy(folds)
         return tex.plus_minus(mean, sd)
-    return tex.tabular("l" + "r" * len(KB_LABELS),
+    # Centred value columns, as the paper sets them: every cell is "mean $\\pm$ sd"
+    # of the same width, so right-alignment buys nothing and reads ragged.
+    return tex.tabular("l" + "c" * len(KB_LABELS),
                        [["Strategy", *KB_LABELS]], _grid(tree, cell))
 
 
 def comparison_strategies(tree: ResultTree, data: Path) -> str:
-    """F1 under each of the three comparison strategies.
+    """F1 under each comparison strategy, and the semantic tier split into P and R.
+
+    ONE TABLE. Precision and recall used to be a second fragment, and the exact
+    equivalence rate a third column of it; the paper now prints the five quantities
+    together and quotes the equivalence rate in prose instead. Equivalence is still
+    asserted -- check_paper_numbers.py holds it at 1 of 84 -- so what was dropped is
+    a column, not a claim.
 
     PER-FOLD MEAN, not the intersected knowledge base. The two are different
     quantities and the submitted table printed the second under a per-fold label.
     """
-    header = [[""] + [tex.multicolumn(3, lb) for lb in KB_LABELS],
-              ["Strategy"] + [short for _ in KB_LABELS for _t, short in TIERS]]
-    rules = [tex.cmidrules(len(KB_LABELS), 3), ""]
+    header = [["", "", tex.multicolumn(3, "F1 by strategy"),
+               tex.multicolumn(2, "semantic")],
+              ["KB", "Strategy", "Desc", "Clause", "Sem", "P", "R"]]
+    rules = [r"\cmidrule(lr){3-5} \cmidrule(lr){6-7}", ""]
     rows = []
-    for samp, samp_label in SAMPLINGS:
-        cells = [samp_label]
-        for stem, *_ in KNOWLEDGE_BASES:
+    for i, (stem, label, *_) in enumerate(KNOWLEDGE_BASES):
+        if i:
+            rows.append([tex.MIDRULE])
+        for j, (samp, samp_label) in enumerate(SAMPLINGS):
+            first = label if j == 0 else ""
             if is_not_run(stem, samp):
-                cells.append(tex.multicolumn(3, tex.NA))
+                rows.append([first, samp_label, tex.multicolumn(5, tex.NA)])
                 continue
             folds = tree.require(stem, samp)
-            cells += [tex.quality(tree.tier_f1(folds, t)) for t, _ in TIERS]
-        rows.append(cells)
-    return tex.tabular("l" + "rrr" * len(KB_LABELS), header, rows, rules)
-
-
-def semantic_pr(tree: ResultTree, data: Path) -> str:
-    """Semantic precision, recall, and exact equivalence as attained/scored.
-
-    ONE TABLE, not two. Precision and recall are the two halves of the semantic
-    tier and are read together; exact equivalence is the same question asked at
-    its strictest, and a reader who sees 1.000 recall beside 0/3 equivalence has
-    learned something that two separate tables would have kept apart.
-    """
-    header = [[""] + [tex.multicolumn(3, lb) for lb in KB_LABELS],
-              ["Strategy"] + [c for _ in KB_LABELS for c in ("P", "R", "eq.")]]
-    rules = [tex.cmidrules(len(KB_LABELS), 3), ""]
-    rows = []
-    for samp, samp_label in SAMPLINGS:
-        cells = [samp_label]
-        for stem, *_ in KNOWLEDGE_BASES:
-            if is_not_run(stem, samp):
-                cells.append(tex.multicolumn(3, tex.NA))
-                continue
-            folds = tree.require(stem, samp)
-            attained, scored = tree.exact_equivalence(folds)
-            cells += [tex.quality(tree.semantic(folds, "precision")),
-                      tex.quality(tree.semantic(folds, "recall")),
-                      (f"{attained}/{scored}" if scored else tex.UNDEFINED)]
-        rows.append(cells)
-    return tex.tabular("l" + "rrr" * len(KB_LABELS), header, rows, rules)
+            rows.append([first, samp_label]
+                        + [tex.quality(tree.tier_f1(folds, t)) for t, _ in TIERS]
+                        + [tex.quality(tree.semantic(folds, "precision")),
+                           tex.quality(tree.semantic(folds, "recall"))])
+    return tex.tabular("ll" + "rrrrr", header, rows, rules)
 
 
 def kb_size(tree: ResultTree, data: Path) -> str:
@@ -219,9 +232,18 @@ def kb_size(tree: ResultTree, data: Path) -> str:
     kept them. That policy is what the accuracy and F1 columns were scored against,
     so a different count here would not describe the same knowledge base.
     """
+    # Three header rows: the KB, its target-theory size, then the two columns. |C_tau|
+    # rides in the header because it is one number per knowledge base, not per cell,
+    # and because |KB| is unreadable without it -- 177 delivered is a different story
+    # against a target of 70 than against one of 905. Same counter as tab:fm_summary.
     header = [[""] + [tex.multicolumn(2, lb) for lb in KB_LABELS],
-              ["Strategy"] + [c for _ in KB_LABELS for c in (r"$|MSS|$", r"$|KB|$")]]
-    rules = [tex.cmidrules(len(KB_LABELS), 2), ""]
+              [""] + [tex.multicolumn(2, rf"($|C_\tau|$={target_constraints(data / 'fms', stem)})")
+                      for stem, *_ in KNOWLEDGE_BASES],
+              # $|B'|$, not $|MSS|$: S6.2.3 names the unreduced subset B' and the
+              # CABSC comparison rests on that name, so the column and the prose use
+              # one symbol. The VALUE is unchanged -- statistics.n_mss either way.
+              ["Strategy"] + [c for _ in KB_LABELS for c in (r"$|B'|$", r"$|KB|$")]]
+    rules = ["", tex.cmidrules(len(KB_LABELS), 2), ""]
     rows = []
     for samp, samp_label in SAMPLINGS:
         cells = [samp_label]

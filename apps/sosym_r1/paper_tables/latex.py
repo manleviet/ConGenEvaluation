@@ -13,6 +13,9 @@ from __future__ import annotations
 
 from .frozen import NA, UNDEFINED
 
+# A body row holding only this is emitted as a rule, not as a row of cells.
+MIDRULE = r"\midrule"
+
 
 def quality(value: float | None, not_run: bool = False) -> str:
     """A metric in [0, 1]: three decimals, leading zero kept.
@@ -87,6 +90,12 @@ def tabular(colspec: str, header_rows: list[list[str]], body_rows: list[list[str
             out.append(rules[i])
     out.append(r"\midrule")
     for row in body_rows:
+        # A one-cell row holding a rule is a SEPARATOR, emitted verbatim. The paper
+        # rules between knowledge-base blocks, and parse_tex skips rule lines, so the
+        # gate reads the same rows either way.
+        if len(row) == 1 and row[0] in (r"\midrule", r"\addlinespace"):
+            out.append(row[0])
+            continue
         out.append(" & ".join(row) + r" \\")
     out += [r"\bottomrule", r"\end{tabular}"]
     return "\n".join(out) + "\n"
@@ -104,3 +113,13 @@ def cmidrules(n_groups: int, width: int, first_col: int = 2) -> str:
 
 def multicolumn(span: int, text: str, align: str = "c") -> str:
     return rf"\multicolumn{{{span}}}{{{align}}}{{{text}}}"
+
+
+def multirow(span: int, text: str) -> str:
+    """``\multirow{6}{*}{$KB_1$}`` -- one label for a block of rows.
+
+    The manuscript prints the knowledge base once per block rather than once per row.
+    It needs the ``multirow`` package, which the manuscript already loads; the
+    fragment carries no preamble, so this is the one place the dependency is named.
+    """
+    return rf"\multirow{{{span}}}{{*}}{{{text}}}"

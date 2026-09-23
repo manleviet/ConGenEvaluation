@@ -204,11 +204,16 @@ for model, want in EXPECTED_CTAU.items():
         continue
     check(f'|Ctau| {model} from UVL', count_ctau_from_uvl(uvl), want)
 
-# S5.3 prints the five counts as a SEQUENCE, "22, 342, 130, 428, and 994 clauses for
-# KB1 to KB5". The dict above cannot catch a KB relabelling; the order can, and the
-# order is what a reader maps onto the rows of every other table.
+# CLAUSES, not constraints. The paper no longer prints these -- the 2026-09-23 review
+# dropped the sentence that listed them -- and it now prints |C_tau| in CONSTRAINTS
+# (13, 102, 70, 219, 905) in tab:fm_summary and tab:kb_size's header, which
+# revision_target_theory_size asserts. Same symbol, different unit, two to seven times
+# apart. These stay asserted because every semantic recall in the paper is measured
+# against this clause-level ground truth: the number left the prose, not the evaluation.
+# The order is asserted too, because the dict cannot catch a KB relabelling and the
+# labels KB1..KB5 are what every table's rows are read through.
 KB_ORDER = ['REAL-FM-7', 'fqa', 'arcade-game', 'REAL-FM-4', 'busybox-1.18.0']
-check('|Ctau| in the KB1..KB5 order S5.3 prints them',
+check('|Ctau| in the KB1..KB5 order the tables are read through',
       [EXPECTED_CTAU[m] for m in KB_ORDER], [22, 342, 130, 428, 994])
 
 print('\n2. the same |Ctau| appears as tp+fn in the corrected results')
@@ -646,12 +651,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import revision_bias_composition            # noqa: E402
 import revision_cabsc_condition             # noqa: E402
 import revision_ea2468_limit                # noqa: E402
+import revision_minimal_review              # noqa: E402
 import revision_order_and_working_example   # noqa: E402
 import revision_run_cost                    # noqa: E402
+import revision_target_theory_size          # noqa: E402
 
 for module in (revision_bias_composition, revision_ea2468_limit,
                revision_run_cost, revision_order_and_working_example,
-               revision_cabsc_condition):
+               revision_cabsc_condition, revision_minimal_review,
+               revision_target_theory_size):
     try:
         module.run(check, REPO)
     except Exception as exc:                # a source that moved or vanished
@@ -672,7 +680,7 @@ if failures:
 # indistinguishable from a clean one to anything reading the exit code. The same shape
 # passed an artifact whose test suite had not run at all, because pytest was absent and
 # `grep FAILED` found nothing.
-MINIMUM_CHECKS = 265
+MINIMUM_CHECKS = 325
 if checks < MINIMUM_CHECKS:
     print(f'FAIL: only {checks} checks ran; expected at least {MINIMUM_CHECKS}.')
     print('An empty or truncated run is not a pass. Something above exited early or')

@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """The ea2468 feasibility figures: what recomputes here, and what does not.
 
-S5.3 ends with the practical limit of the study: "one QuickXplain run of the
+S6.1.1 ends with the practical limit of the study, and since the 2026-09-23 review it
+states the limit WITHOUT its figures: "the bias exceeds two million candidates and the
+preprocessing step would exceed the compute budget of the study". The two figures below
+are quoted by the response letter, and they are what that sentence rests on, so they
+stay asserted here.
+
+The removed wording was: "one QuickXplain run of the
 preprocessing step took about 95 seconds against the two-million-candidate bias
 ... and the projected preprocessing for all sampling strategies exceeded 46 hours
 before acquisition could start."
@@ -14,7 +20,7 @@ THE TWO FIGURES HAVE DIFFERENT STANDING, AND THE PAPER MUST SAY SO
     committed is the probe's report,
     `plans/reports/measurement-260822-0149-ea2468-congen-feasibility-probe-report.md`,
     which records the rate, the window it was measured over, and the machine.
-    That machine was an Apple M1 Pro / 16 GB -- NOT the M4 Pro / 48 GB of S5.3.
+    That machine was an Apple M1 Pro / 16 GB -- NOT the M4 Pro / 48 GB of S6.1.
     So the rate is a cited report, not a measurement of the reported setup, and
     the gate below pins it to the committed report rather than pretending
     otherwise. Fabricating a data file to make it look recomputed would make the
@@ -96,7 +102,7 @@ def run(check, repo: Path) -> None:
     fig = figures_from_report(report)
     check('report states the per-negative rate, in seconds',
           fig['rate_s'], REPORT_RATE_S_PER_NEGATIVE, tol=1e-9)
-    check('   ... which is the "about 95 seconds" S5.3 quotes', round(fig['rate_s']), 95)
+    check('   ... which is the "about 95 seconds" the letter quotes', round(fig['rate_s']), 95)
     check('report states the projected total, in hours',
           fig['total_h'], REPORT_TOTAL_HOURS, tol=1e-9)
 
@@ -108,7 +114,7 @@ def run(check, repo: Path) -> None:
     projected_h = runs * REPORT_RATE_S_PER_NEGATIVE / 3600
     check('projected preprocessing, hours (runs x the report rate)',
           round(projected_h, 1), 46.1, tol=1e-9)
-    check('   ... which "exceeded 46 hours", as S5.3 says', projected_h > 46.0, True)
+    check('   ... which "exceeded 46 hours", as the letter says', projected_h > 46.0, True)
 
     # The absence is reported, never asserted: a later run that DOES commit raw
     # output should not turn this gate red.
@@ -119,4 +125,4 @@ def run(check, repo: Path) -> None:
               f'({", ".join(missing)}).')
         print('      The 95 s rate is therefore cited from the report above, and was '
               'measured on an')
-        print('      Apple M1 Pro / 16 GB -- not the M4 Pro / 48 GB machine of S5.3.')
+        print('      Apple M1 Pro / 16 GB -- not the M4 Pro / 48 GB machine of S6.1.')

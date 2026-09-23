@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Two claims the revision added that no cell carries: the order-sensitivity
-figures of S5.3, and the arithmetic of the working-example bias in S3.
+figures of S6.4, and the arithmetic of the working-example bias in S3.
 
 ORDER SENSITIVITY -- WHY THE EXISTING CHECKS DO NOT COVER THESE
 ---------------------------------------------------------------
@@ -47,7 +47,7 @@ import json
 import statistics
 from pathlib import Path
 
-# S5.3, the order-sensitivity sentence.
+# S6.4, the order-sensitivity threat.
 DEGENERATE_THRESHOLD = 0.1
 PAPER_ORDER_SENSITIVITY = {
     'degenerate_folds': 12,
@@ -59,8 +59,8 @@ PAPER_ORDER_SENSITIVITY = {
 DEGENERATE_MODELS = {'REAL-FM-7', 'arcade-game'}          # KB1 and KB3
 DEGENERATE_STRATEGIES = {'2cov', 'rs_m', 'ff'}
 
-# S5.3, "On KB3 under RS(n) ... the description-based F1 is 0.313 against a
-# semantic F1 of 0.660", quoted from tab:comparison_strategies.
+# S6.3 quotes the semantic F1 of 0.660 on KB3 under RS(n); the description-based
+# 0.313 beside it is now a Table 12 cell rather than prose. Both are asserted.
 PAPER_TIER_EXAMPLE = {'model': 'arcade-game', 'sampling': 'rs_1n',
                       'description': 0.313, 'semantic': 0.660}
 
@@ -119,7 +119,7 @@ def canonical(entry: tuple[str, str, str]) -> tuple:
 
 
 def run(check, repo: Path) -> None:
-    print('\n[order] S5.3: how far the reduction order can move a score (F1, not P and R)')
+    print('\n[order] S6.4: how far the reduction order can move a score (F1, not P and R)')
     data = json.loads((repo / 'data' / 'results_sosym_r1' / 'order_sensitivity'
                        / 'order_sensitivity.json').read_text())
     spreads = [(r['model'], r['fold'], f1_spreads(r)) for r in data['folds']]

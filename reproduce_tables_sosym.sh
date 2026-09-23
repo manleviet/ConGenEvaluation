@@ -210,9 +210,11 @@ for f in results_tables.md results_tables.tex significance.md \
          target-clause-counts.md; do
   [ -s "$TABLES_DIR/$f" ] || die "missing or empty artifact: $TABLES_DIR/$f"
 done
+# Eleven since the 2026-09-23 review: the paper folded semantic precision and recall
+# into the comparison-strategies table, so the fragment that held them is absorbed.
 n_frag=$(ls "$TABLES_DIR"/paper/*.tex 2>/dev/null | wc -l | tr -d ' ')
-[ "$n_frag" -eq 12 ] \
-  || die "expected 12 paper fragments in $TABLES_DIR/paper, found $n_frag"
+[ "$n_frag" -eq 11 ] \
+  || die "expected 11 paper fragments in $TABLES_DIR/paper, found $n_frag"
 echo "  ok: four artifacts and $n_frag paper fragments present and non-empty"
 
 # An artifact must state the state at generation time, never a plan.

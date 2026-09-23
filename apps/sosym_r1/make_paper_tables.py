@@ -47,8 +47,10 @@ def build_all(out: Path) -> list[tuple[str, int]]:
         "tab_example_sizes": cg.example_sizes_table(tree, DATA),
         "tab_AcqMssruntime": cg.acqmss_runtime(tree, DATA),
         "tab_accuracy_all": cg.accuracy_all(tree, DATA),
+        # semantic_pr is gone: the paper folded P and R into tab_comparison_strategies
+        # and moved the exact-equivalence rate into prose, where the numbers gate
+        # holds it. One table in the paper, one fragment here.
         "tab_comparison_strategies": cg.comparison_strategies(tree, DATA),
-        "tab_semantic_pr": cg.semantic_pr(tree, DATA),
         "tab_kb_size": cg.kb_size(tree, DATA),
         "tab_iterative_accuracy": cmp_.iterative_accuracy(tree, DATA),
         "tab_iterative_semantic": cmp_.iterative_semantic(tree, DATA),
@@ -91,8 +93,8 @@ def main() -> int:
     print(f"{len(written)} fragments -> {out}")
     # A positive count, never the absence of an error: an empty run would otherwise
     # print a tidy summary of nothing and exit 0.
-    if len(written) < 12:
-        print(f"FAIL: wrote {len(written)} fragments, expected 12.", file=sys.stderr)
+    if len(written) < 11:
+        print(f"FAIL: wrote {len(written)} fragments, expected 11.", file=sys.stderr)
         return 1
     return 0
 

@@ -47,7 +47,7 @@ class Audit:
     def __init__(self) -> None:
         self.checked = 0
         self.bad: list[str] = []
-        self.properties: tuple[int, float] | None = None
+        self.properties: tuple[int, float | None] | None = None
 
     def cell(self, where: str, got: str, want: str) -> None:
         self.checked += 1
@@ -78,12 +78,53 @@ def _grid(audit: Audit, path: Path, header_lines: int, want_cell, label: str,
                            want_cell(stem, samp, j))
 
 
+def _target_constraints(stem: str) -> int:
+    """|C_tau| in CONSTRAINTS, counted from the UVL by the convention the gate asserts."""
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from revision_target_theory_size import count_by_owner_scan
+    return count_by_owner_scan(DATA / "fms" / f"{stem}.uvl")["total"]
+
+
+def _kb_major(audit: Audit, path: Path, header_lines: int, want_cell, label: str,
+              width: int) -> None:
+    """Rows are (knowledge base, sampling); the KB label is printed once per block.
+
+    ``rows_of`` drops the rules between blocks and ``expand`` turns an n/a
+    ``\\multicolumn`` back into ``width`` cells, so the row count is KBs x samplings
+    whatever the blocking looks like.
+    """
+    rows = P.body_rows(path, header_lines)
+    expected = len(KBS) * len(SAMPLINGS)
+    if len(rows) != expected:
+        audit.bad.append(f"{label}: {len(rows)} body rows, expected {expected}")
+        return
+    i = 0
+    for stem in KBS:
+        for samp in SAMPLINGS:
+            cells = P.expand(rows[i])[2:]
+            for j, got in enumerate(cells[:width]):
+                audit.cell(f"{label} {stem} {samp} col{j}", got,
+                           NA if (stem, samp) in NOT_RUN else want_cell(stem, samp, j))
+            i += 1
+
+
 def check_fm_summary(a: Audit, d: Path) -> None:
+    """Four numbers per model: features, |C_tau|, |B|, and the clauses B expands to.
+
+    |C_tau| is RE-COUNTED from the UVL here, by the same convention the gate asserts,
+    and the identical value is re-counted again in check_kb_size for that table's
+    header. The two printings of one number are therefore each held to the source
+    rather than to each other, which is the only way a drift between them shows up as
+    two failures instead of none.
+    """
     rows = P.body_rows(d / "tab_fm_summary.tex", 1)
     for stem, row in zip(KBS, rows):
         n = R.bias_numbers(DATA / "bias", stem)
-        for j, key in enumerate(("features", "bias", "clauses")):
-            a.cell(f"fm_summary {stem} {key}", row[1 + j], R.fmt_count(n[key]))
+        a.cell(f"fm_summary {stem} features", row[1], R.fmt_count(n["features"]))
+        a.cell(f"fm_summary {stem} target constraints", row[2],
+               R.fmt_count(_target_constraints(stem)))
+        a.cell(f"fm_summary {stem} bias", row[3], R.fmt_count(n["bias"]))
 
 
 def check_example_sizes(a: Audit, d: Path) -> None:
@@ -94,17 +135,24 @@ def check_example_sizes(a: Audit, d: Path) -> None:
     _grid(a, d / "tab_example_sizes.tex", 2, want, "example_sizes", per_kb=2)
 
 
-COST_COLS = ("acqmss checks", "acqmss ms", "reduce checks", "reduce ms",
-             "prep checks", "prep ms", "total checks", "total ms")
-MS_COLUMNS = {3: "AcqMss ms", 5: "Reduce ms", 7: "GenNE/QX ms", 9: "total ms"}
-CHECK_PARTS, CHECK_TOTAL = [2, 4, 6], 8
-MS_PARTS, MS_TOTAL = [3, 5, 7], 9
+COST_COLS = ("acqmss checks", "reduce checks", "genne checks",
+             "total checks", "total ms")
+# Indices into the raw row, which starts with the KB label and the strategy.
+MS_COLUMNS = {6: "total ms"}
+CHECK_PARTS, CHECK_TOTAL = [2, 3, 4], 5
 # The fragment header declares this; P5 is what keeps the declaration true.
 DECLARED_FOLDS = 3
 
 
 def _cost_rows(d: Path) -> list[list[str]]:
-    return P.body_rows(d / "tab_AcqMssruntime.tex", 2)
+    """The cost rows, EXPANDED, so every row has the same width.
+
+    One header row since the per-phase duration columns went: there is no longer a
+    grouped header to span them. The n/a rows carry one ``\\multicolumn{5}`` where a
+    run would carry five cells, so the property checks -- which index by column --
+    would read past the end of a row that is short only typographically.
+    """
+    return [P.expand(r) for r in P.body_rows(d / "tab_AcqMssruntime.tex", 1)]
 
 
 def check_acqmss_runtime(a: Audit, d: Path) -> None:
@@ -136,9 +184,11 @@ def check_acqmss_runtime(a: Audit, d: Path) -> None:
             loop = R.perf_mean(fs, "congen_runtime_ms")
             red_ms = R.perf_mean(fs, "reduce_runtime_ms") or 0.0
             pre_ms = R.profiler_total_ms(fs, "shared_preprocessing_runtime")
-            want = [R.fmt_count(acq_c), R.fmt_count(loop - red_ms),
-                    R.fmt_count(red_c), R.fmt_count(red_ms),
-                    R.fmt_count(pre_c), R.fmt_count(pre_ms),
+            # The per-phase durations are no longer printed. They are still read
+            # here, because check_cost_properties asserts their scopes and a value
+            # nothing reads is a scope nothing checks.
+            _unprinted = (loop - red_ms, red_ms, pre_ms)
+            want = [R.fmt_count(acq_c), R.fmt_count(red_c), R.fmt_count(pre_c),
                     R.fmt_count(acq_c + red_c + pre_c),
                     R.fmt_count(R.perf_mean(fs, "runtime_ms"))]
             for j, got in enumerate(cells):
@@ -156,12 +206,15 @@ def check_cost_properties(a: Audit, d: Path) -> None:
     """
     rows = _cost_rows(d)
     failures = PR.durations_non_negative(rows, MS_COLUMNS)
-    over, slack = PR.phases_within_total(rows, MS_PARTS, MS_TOTAL, "runtime")
-    failures += over
     failures += PR.parts_sum_to_total(rows, CHECK_PARTS, CHECK_TOTAL, "checks")
+    # The per-phase durations are no longer printed, so "phases sum within their
+    # total" can no longer be asked OF THE TABLE. It is still asked, and of a
+    # stronger object: timing_scopes checks the containment on all 84 folds in the
+    # JSON, where the scopes actually live. Dropping the table-level version removes
+    # a restatement, not a check.
     failures += PR.timing_scopes(TREE / "congen")
     failures += PR.fold_counts(TREE / "congen", DECLARED_FOLDS)
-    a.properties = (len(rows), slack)
+    a.properties = (len(rows), None)
     a.bad += failures
 
 
@@ -175,35 +228,40 @@ def check_accuracy_all(a: Audit, d: Path) -> None:
 
 
 def check_comparison_strategies(a: Audit, d: Path) -> None:
+    """Five quantities per unit, in the paper's KB-major layout.
+
+    Precision and recall moved in from the fragment that used to hold them, and the
+    exact-equivalence column moved out to prose, where check_paper_numbers.py holds
+    it at 1 of 84. So this walks rows of (KB, Strategy) rather than the
+    sampling-major grid the other tables use.
+    """
     tiers = ["description", "clause", "semantic"]
-    def want(stem, samp, j):
-        if (stem, samp) in NOT_RUN:
-            return NA
-        return R.fmt_quality(R.tier_mean(a.folds(stem, samp, "congen"), tiers[j], "f1_score"))
-    _grid(a, d / "tab_comparison_strategies.tex", 2, want, "comparison_strategies", 3)
 
-
-def check_semantic_pr(a: Audit, d: Path) -> None:
     def want(stem, samp, j):
-        if (stem, samp) in NOT_RUN:
-            return NA
         fs = a.folds(stem, samp, "congen")
-        if j == 0:
-            return R.fmt_quality(R.tier_mean(fs, "semantic", "precision"))
-        if j == 1:
-            return R.fmt_quality(R.tier_mean(fs, "semantic", "recall"))
-        hit, scored = R.equivalence(fs)
-        return f"{hit}/{scored}" if scored else UND
-    _grid(a, d / "tab_semantic_pr.tex", 2, want, "semantic_pr", 3)
+        if j < 3:
+            return R.fmt_quality(R.tier_mean(fs, tiers[j], "f1_score"))
+        return R.fmt_quality(R.tier_mean(fs, "semantic",
+                                         "precision" if j == 3 else "recall"))
+
+    _kb_major(a, d / "tab_comparison_strategies.tex", 2, want,
+              "comparison_strategies", 5)
 
 
 def check_kb_size(a: Audit, d: Path) -> None:
+    """|MSS| and |KB| per unit, and the |C_tau| the header prints for each model."""
+    header = P.rows_of(d / "tab_kb_size.tex")[1]
+    for k, stem in enumerate(KBS):
+        a.cell(f"kb_size header {stem} target constraints",
+               P.expand(header)[1 + k * 2],
+               rf"($|C_\tau|$={R.fmt_count(_target_constraints(stem))})")
+
     def want(stem, samp, j):
         if (stem, samp) in NOT_RUN:
             return NA
         fs = a.folds(stem, samp, "congen")
         return R.fmt_count(R.stat_mean(fs, "n_mss" if j == 0 else "n_kb"))
-    _grid(a, d / "tab_kb_size.tex", 2, want, "kb_size", per_kb=2)
+    _grid(a, d / "tab_kb_size.tex", 3, want, "kb_size", per_kb=2)
 
 
 def _method_grid(a: Audit, path: Path, header_lines: int, want_cell, label: str,
@@ -432,7 +490,7 @@ def check_significance(a: Audit, d: Path) -> None:
 
 
 CHECKS = (check_fm_summary, check_example_sizes, check_acqmss_runtime,
-          check_accuracy_all, check_comparison_strategies, check_semantic_pr,
+          check_accuracy_all, check_comparison_strategies, 
           check_kb_size, check_cost_properties, check_iterative_accuracy, check_iterative_semantic,
           check_runtime_comparison, check_rule_learners, check_significance)
 
@@ -457,7 +515,10 @@ def main() -> int:
 
     if audit.properties:
         n_rows, slack = audit.properties
-        print(f"\ncost-table properties: {n_rows} units checked for negative\n  durations, phase sums within their total, and parts summing to it;\n  largest unattributed runtime slack {slack:.0f} ms")
+        print(f"\ncost-table properties: {n_rows} units checked for negative\n"
+              f"  durations and for check parts summing to their total; phase-scope\n"
+              f"  containment is checked on the JSON over all 84 folds"
+              + (f"; slack {slack:.0f} ms" if slack is not None else ""))
     print(f"\n{audit.checked} cells checked, {len(audit.bad)} mismatched")
     for line in audit.bad[:40]:
         print(f"  {line}")

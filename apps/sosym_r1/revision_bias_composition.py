@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""The bias-composition figures the SoSyM revision added (tab:biasformula, S5.3).
+"""The bias-composition figures behind the evaluation bias (S6.1.2, tab:fm_summary).
+
+WHERE THESE NUMBERS LIVE NOW
+----------------------------
+The 2026-09-23 minimal-change review REMOVED tab:biasformula. |B| survives in
+tab:fm_summary and the closed form survives in words ("Two candidates are generated
+per hierarchical relationship and three per pair of such features"), so most of this
+file still holds a printed claim. What no longer appears anywhere in the paper is the
+h_bin / h_grp / k breakdown, the per-model reduction factors, and the sentence naming
+KB5 as hierarchy-dominated. Those are retained because the response letter quotes
+them; the checks say so at their own site rather than citing a section that dropped
+them.
 
 WHAT THE PAPER CLAIMS, AND WHY IT NEEDED A GATE
 -----------------------------------------------
@@ -57,7 +68,8 @@ PAPER_BIAS_TABLE = [
     ('ea2468',         'ea2468', 1408, 1377, 12,  1168,  2047362, '1.5'),
 ]
 
-# S5.3 prose, "they include both a hierarchy-dominated model (KB5, with 838
+# NO LONGER IN THE PAPER -- the response letter quotes it. Was: "they include both a
+# hierarchy-dominated model (KB5, with 838
 # hierarchical and 58 cross-tree candidate features) and a cross-tree-dominated
 # one (KB3, with 36 and 34)". Stem -> (hierarchical candidates, k).
 PAPER_SELECTION_CRITERIA = {'busybox-1.18.0': (838, 58), 'arcade-game': (36, 34)}
@@ -113,7 +125,7 @@ def composition_from_stats(path: Path) -> dict:
 
 
 def closed_form(h_bin: int, h_grp: int, k: int) -> int:
-    """|B| = 2 (h_bin + h_grp) + 3 C(k,2), the formula S5.3 states."""
+    """|B| = 2 (h_bin + h_grp) + 3 C(k,2), the rule S6.1.2 states in words."""
     return 2 * (h_bin + h_grp) + 3 * math.comb(k, 2)
 
 
@@ -150,7 +162,8 @@ def run(check, repo: Path) -> None:
         check(f'{label} k', st['k'], k)
         check(f'{label} k, config agrees', cfg['k'], k)
         check(f'{label} |B|', st['bias'], bias)
-        # The claim S5.3 makes in words: "The formula is exact on all five models."
+        # The claim S6.1.2 makes in words: two candidates per hierarchical relationship and
+        # three per admitted pair.
         check(f'{label} |B| == 2(h_bin + h_grp) + 3C(k,2), EXACTLY',
               closed_form(st['h_bin'], st['h_grp'], st['k']), bias)
         # The operator pairs the recovery above relies on.
@@ -169,7 +182,7 @@ def run(check, repo: Path) -> None:
         check(f'{label} cross-tree mode is "extracted"',
               composition_from_config(cfg_dir / f'{stem}.yaml')['mode'], 'extracted')
 
-    print('\n[bias] the selection criteria quoted in S5.3')
+    print('\n[bias] the selection criteria, no longer printed, quoted in the letter')
     for stem, (hier, k) in PAPER_SELECTION_CRITERIA.items():
         st = composition_from_stats(bias_dir / f'{stem}-bias-stats.txt')
         check(f'{stem}: hierarchical candidates', st['h_bin'] + st['h_grp'], hier)
@@ -182,7 +195,7 @@ def run(check, repo: Path) -> None:
     ea = composition_from_stats(bias_dir / 'ea2468-bias-stats.txt')
     check('ea2468 keeps 1,168 of its 1,408 features in cross-tree constraints',
           (ea['k'], ea['n']), (1168, 1408))
-    check('ea2468 |B| is above two million, as S5.3 says', ea['bias'] > 2_000_000, True)
+    check('ea2468 |B| is above two million, as S6.1.1 says', ea['bias'] > 2_000_000, True)
 
     print('\n[bias] the reduction against the unrestricted language (n/k)^2')
     for stem, label, n, _hb, _hg, _k, bias, printed in PAPER_BIAS_TABLE:
