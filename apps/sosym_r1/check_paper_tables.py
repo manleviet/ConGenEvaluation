@@ -283,79 +283,6 @@ def _method_grid(a: Audit, path: Path, header_lines: int, want_cell, label: str,
             i += 1
 
 
-def check_iterative_accuracy(a: Audit, d: Path) -> None:
-    def want(stem, samp, method, j):
-        if (stem, samp) in NOT_RUN:
-            return NA
-        mean, _ = R.accuracy_mean_sd(a.folds(stem, samp, method))
-        return R.fmt_quality(mean)
-    _method_grid(a, d / "tab_iterative_accuracy.tex", 1, want, "iterative_accuracy")
-
-
-def check_iterative_semantic(a: Audit, d: Path) -> None:
-    short = {"max_queries": "budget", "no_query": "no query", "pool_exhausted": "pool"}
-    def want(stem, samp, method, j):
-        if (stem, samp) in NOT_RUN:
-            return NA
-        fs = a.folds(stem, samp, method)
-        if j == 0:
-            return R.fmt_quality(R.tier_mean(fs, "semantic", "f1_score"))
-        if method == "congen":
-            return UND
-        if j == 1:
-            return R.fmt_count(R.queries_mean(fs))
-        return ",".join(short.get(s, s) for s in R.stop_set(fs)) or UND
-    _method_grid(a, d / "tab_iterative_semantic.tex", 2, want, "iterative_semantic", 3)
-
-
-def check_runtime_comparison(a: Audit, d: Path) -> None:
-    def want(stem, samp, method, j):
-        if (stem, samp) in NOT_RUN:
-            return NA
-        return R.fmt_count(R.perf_mean(a.folds(stem, samp, method), "runtime_ms"))
-    _method_grid(a, d / "tab_runtime_comparison.tex", 1, want, "runtime_comparison")
-
-
-def check_rule_learners(a: Audit, d: Path) -> None:
-    import json
-    doc = json.loads((TREE / "baselines" / "baselines.json").read_text())
-    by: dict[tuple[str, str], list[dict]] = {}
-    for row in doc["rows"]:
-        unit = row["kb"]
-        stem = next(s for s in KBS if unit.startswith(s + "_"))
-        by.setdefault((unit[len(stem) + 1:] and stem, unit[len(stem) + 1:]), [])
-        by.setdefault((stem, unit[len(stem) + 1:]), []).append(row)
-
-    rows = P.body_rows(d / "tab_rule_learners.tex", 2)
-    keys = ["accuracy", "sem_precision", "sem_recall", "sem_f1"]
-    i = 0
-    for samp in SAMPLINGS:
-        for learner in LEARNERS:
-            cells = P.expand(rows[i])[2:]
-            for k, stem in enumerate(KBS):
-                block = cells[k * 4:(k + 1) * 4]
-                if (stem, samp) in NOT_RUN:
-                    for j, got in enumerate(block):
-                        a.cell(f"rule_learners {samp} {learner} {stem} col{j}", got, NA)
-                    continue
-                unit = [r for r in by.get((stem, samp), []) if r["learner"] == learner]
-                scored = [r for r in unit if not r.get("degenerate")]
-                if not unit:
-                    want = [UND] * 4
-                elif not scored:
-                    reasons = {r.get("degenerate") for r in unit}
-                    label = ("too few" if reasons == {"too_few_instances"}
-                             else "no rules" if reasons == {"no_rules_learned"}
-                             else "degenerate")
-                    want = [label] * 4
-                else:
-                    want = [R.fmt_quality(sum(r[k_] for r in scored) / len(scored))
-                            for k_ in keys]
-                for j, got in enumerate(block):
-                    a.cell(f"rule_learners {samp} {learner} {stem} col{j}", got, want[j])
-            i += 1
-
-
 def check_significance(a: Audit, d: Path) -> None:
     from significance_tests import ALPHA, compute, floor_p, holm
     family = {r["name"].split()[0] for r in holm(compute()) if True}
@@ -396,19 +323,21 @@ def check_iterative_accuracy(a: Audit, d: Path) -> None:
 
 
 def check_iterative_semantic(a: Audit, d: Path) -> None:
-    short = {"max_queries": "budget", "no_query": "no query", "pool_exhausted": "pool"}
+    """F1 and queries per (sampling, method, KB). The stop column moved to the caption.
+
+    ConGen's query cell is EMPTY, not a marker: it issues no query, and the paper sets
+    the cell blank rather than with a dash that would read as a minus sign. The
+    stopping rules are still checked -- per fold, by check_paper_numbers.py -- which is
+    a stronger statement than the set of reasons this column used to print.
+    """
     def want(stem, samp, method, j):
         if (stem, samp) in NOT_RUN:
             return NA
         fs = a.folds(stem, samp, method)
         if j == 0:
             return R.fmt_quality(R.tier_mean(fs, "semantic", "f1_score"))
-        if method == "congen":
-            return UND
-        if j == 1:
-            return R.fmt_count(R.queries_mean(fs))
-        return ",".join(short.get(s, s) for s in R.stop_set(fs)) or UND
-    _method_grid(a, d / "tab_iterative_semantic.tex", 2, want, "iterative_semantic", 3)
+        return "" if method == "congen" else R.fmt_count(R.queries_mean(fs))
+    _method_grid(a, d / "tab_iterative_semantic.tex", 2, want, "iterative_semantic", 2)
 
 
 def check_runtime_comparison(a: Audit, d: Path) -> None:
@@ -420,45 +349,45 @@ def check_runtime_comparison(a: Audit, d: Path) -> None:
 
 
 def check_rule_learners(a: Audit, d: Path) -> None:
+    """One row per (knowledge base, strategy, learner), for the scored combinations.
+
+    The table prints only the combinations where both classes carry at least ten
+    training instances. Which those are is RE-DERIVED here from the baselines file
+    rather than read off the fragment: a fragment that quietly dropped a scored
+    combination would otherwise agree with a checker that only looked at the rows it
+    found.
+    """
     import json
     doc = json.loads((TREE / "baselines" / "baselines.json").read_text())
-    by: dict[tuple[str, str], list[dict]] = {}
+    by: dict[tuple[str, str, str], list[dict]] = {}
     for row in doc["rows"]:
         unit = row["kb"]
         stem = next(s for s in KBS if unit.startswith(s + "_"))
-        by.setdefault((unit[len(stem) + 1:] and stem, unit[len(stem) + 1:]), [])
-        by.setdefault((stem, unit[len(stem) + 1:]), []).append(row)
+        by.setdefault((stem, unit[len(stem) + 1:], row["learner"]), []).append(row)
 
-    rows = P.body_rows(d / "tab_rule_learners.tex", 2)
+    scored = [(stem, samp) for stem in KBS for samp in SAMPLINGS
+              if any(not r.get("degenerate")
+                     for learner in LEARNERS
+                     for r in by.get((stem, samp, learner), []))]
+    rows = P.body_rows(d / "tab_rule_learners.tex", 1)
+    expected = len(scored) * len(LEARNERS)
+    if len(rows) != expected:
+        a.bad.append(f"rule_learners: {len(rows)} body rows, expected {expected} "
+                     f"({len(scored)} scored combinations x {len(LEARNERS)} learners)")
+        return
+
     keys = ["accuracy", "sem_precision", "sem_recall", "sem_f1"]
     i = 0
-    for samp in SAMPLINGS:
+    for stem, samp in scored:
         for learner in LEARNERS:
-            cells = P.expand(rows[i])[2:]
-            for k, stem in enumerate(KBS):
-                block = cells[k * 4:(k + 1) * 4]
-                if (stem, samp) in NOT_RUN:
-                    for j, got in enumerate(block):
-                        a.cell(f"rule_learners {samp} {learner} {stem} col{j}", got, NA)
-                    continue
-                unit = [r for r in by.get((stem, samp), []) if r["learner"] == learner]
-                scored = [r for r in unit if not r.get("degenerate")]
-                if not unit:
-                    want = [UND] * 4
-                elif not scored:
-                    reasons = {r.get("degenerate") for r in unit}
-                    label = ("too few" if reasons == {"too_few_instances"}
-                             else "no rules" if reasons == {"no_rules_learned"}
-                             else "degenerate")
-                    want = [label] * 4
-                else:
-                    want = [R.fmt_quality(sum(r[k_] for r in scored) / len(scored))
-                            for k_ in keys]
-                for j, got in enumerate(block):
-                    a.cell(f"rule_learners {samp} {learner} {stem} col{j}", got, want[j])
+            cells = P.expand(rows[i])[3:]
+            unit = by.get((stem, samp, learner), [])
+            kept = [r for r in unit if not r.get("degenerate")]
+            want = ([R.fmt_quality(sum(r[k] for r in kept) / len(kept)) for k in keys]
+                    if kept else [UND] * 4)
+            for j, got in enumerate(cells[:4]):
+                a.cell(f"rule_learners {stem} {samp} {learner} col{j}", got, want[j])
             i += 1
-
-
 def check_significance(a: Audit, d: Path) -> None:
     from significance_tests import ALPHA, compute, floor_p, holm
     family = {r["name"].split()[0] for r in holm(compute()) if True}
@@ -494,7 +423,13 @@ CHECKS = (check_fm_summary, check_example_sizes, check_acqmss_runtime,
           check_kb_size, check_cost_properties, check_iterative_accuracy, check_iterative_semantic,
           check_runtime_comparison, check_rule_learners, check_significance)
 
-MINIMUM_CELLS = 1000
+# Nine hundred since the 2026-09-23 S6.2.5 pass. The count fell by 354 because two
+# tables now print less: the semantic table dropped its stop column (-90) and the
+# rule-learner table prints one row per SCORED combination instead of a grid that was
+# mostly "too few" markers (-264). The combinations it no longer prints are still
+# checked -- the scored set is re-derived here and the row count asserted against it --
+# so what fell is the number of printed cells, not the number of facts held.
+MINIMUM_CELLS = 900
 
 
 def main() -> int:

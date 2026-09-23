@@ -56,6 +56,11 @@ def build_all(out: Path) -> list[tuple[str, int]]:
         "tab_iterative_semantic": cmp_.iterative_semantic(tree, DATA),
         "tab_runtime_comparison": cmp_.runtime_comparison(tree, DATA),
         "tab_rule_learners": cmp_.rule_learners(tree, DATA, BASELINES),
+        # ARTIFACT-ONLY, NOT PRINTED. The 2026-09-23 review moved the significance
+        # results into S6.2.5's prose and dropped the table. The fragment stays: the
+        # Wilcoxon medians, the Holm family and the exclusion of claim 2 are asserted
+        # against it, and a reader who wants the per-claim rows has nowhere else to
+        # look. It is the one fragment with no table in the paper.
         "tab_significance": _significance(),
     }
 

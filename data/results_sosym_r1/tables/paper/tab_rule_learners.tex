@@ -1,26 +1,37 @@
-\begin{tabular}{llrrrrrrrrrrrrrrrrrrrr}
+\begin{tabular}{lllrrrr}
 \toprule
- &  & \multicolumn{4}{c}{$KB_1$} & \multicolumn{4}{c}{$KB_2$} & \multicolumn{4}{c}{$KB_3$} & \multicolumn{4}{c}{$KB_4$} & \multicolumn{4}{c}{$KB_5$} \\
-\cmidrule(lr){3-6} \cmidrule(lr){7-10} \cmidrule(lr){11-14} \cmidrule(lr){15-18} \cmidrule(lr){19-22}
-Strategy & Learner & acc. & P & R & F1 & acc. & P & R & F1 & acc. & P & R & F1 & acc. & P & R & F1 & acc. & P & R & F1 \\
+KB & Strategy & Learner & acc. & P & R & F1 \\
 \midrule
-RS($n$) & RIPPER & \multicolumn{4}{c}{too few} & 0.944 & 0.167 & 0.031 & 0.013 & \multicolumn{4}{c}{too few} & 0.993 & 0.833 & 0.034 & 0.065 & 0.993 & 0.917 & 0.455 & 0.606 \\
- & CN2 & \multicolumn{4}{c}{too few} & 0.950 & 0.000 & 0.040 & 0.000 & \multicolumn{4}{c}{too few} & 0.983 & 0.611 & 0.015 & 0.029 & 0.993 & 1.000 & 0.455 & 0.625 \\
- & Decision tree & \multicolumn{4}{c}{too few} & 0.944 & 0.000 & 0.019 & 0.000 & \multicolumn{4}{c}{too few} & 0.993 & 0.778 & 0.022 & 0.042 & 0.992 & 1.000 & 0.454 & 0.625 \\
-RS($2n$) & RIPPER & \multicolumn{4}{c}{too few} & 0.958 & 0.111 & 0.031 & 0.023 & \multicolumn{4}{c}{too few} & 0.997 & 0.778 & 0.029 & 0.055 & \multicolumn{4}{c}{n/a} \\
- & CN2 & \multicolumn{4}{c}{too few} & 0.952 & 0.417 & 0.027 & 0.050 & \multicolumn{4}{c}{too few} & 0.998 & 1.000 & 0.033 & 0.065 & \multicolumn{4}{c}{n/a} \\
- & Decision tree & \multicolumn{4}{c}{too few} & 0.944 & 0.067 & 0.019 & 0.011 & \multicolumn{4}{c}{too few} & 0.993 & 0.667 & 0.017 & 0.033 & \multicolumn{4}{c}{n/a} \\
-RS($3n$) & RIPPER & \multicolumn{4}{c}{too few} & 0.967 & 0.167 & 0.031 & 0.015 & 0.974 & 1.000 & 0.090 & 0.163 & 0.991 & 0.889 & 0.022 & 0.043 & \multicolumn{4}{c}{n/a} \\
- & CN2 & \multicolumn{4}{c}{too few} & 0.978 & 0.389 & 0.018 & 0.034 & 0.980 & 1.000 & 0.074 & 0.138 & 0.991 & 0.889 & 0.021 & 0.041 & \multicolumn{4}{c}{n/a} \\
- & Decision tree & \multicolumn{4}{c}{too few} & 0.967 & 0.261 & 0.018 & 0.033 & 0.985 & 1.000 & 0.074 & 0.138 & 0.992 & 0.889 & 0.027 & 0.053 & \multicolumn{4}{c}{n/a} \\
-RS($m$) & RIPPER & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
- & CN2 & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
- & Decision tree & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
-2-COV & RIPPER & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
- & CN2 & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
- & Decision tree & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
-FF & RIPPER & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
- & CN2 & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
- & Decision tree & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} & \multicolumn{4}{c}{too few} \\
+$KB_2$ & RS($n$) & RIPPER & 0.944 & 0.167 & 0.031 & 0.013 \\
+ &  & CN2 & 0.950 & 0.000 & 0.040 & 0.000 \\
+ &  & Decision tree & 0.944 & 0.000 & 0.019 & 0.000 \\
+\midrule
+$KB_2$ & RS($2n$) & RIPPER & 0.958 & 0.111 & 0.031 & 0.023 \\
+ &  & CN2 & 0.952 & 0.417 & 0.027 & 0.050 \\
+ &  & Decision tree & 0.944 & 0.067 & 0.019 & 0.011 \\
+\midrule
+$KB_2$ & RS($3n$) & RIPPER & 0.967 & 0.167 & 0.031 & 0.015 \\
+ &  & CN2 & 0.978 & 0.389 & 0.018 & 0.034 \\
+ &  & Decision tree & 0.967 & 0.261 & 0.018 & 0.033 \\
+\midrule
+$KB_3$ & RS($3n$) & RIPPER & 0.974 & 1.000 & 0.090 & 0.163 \\
+ &  & CN2 & 0.980 & 1.000 & 0.074 & 0.138 \\
+ &  & Decision tree & 0.985 & 1.000 & 0.074 & 0.138 \\
+\midrule
+$KB_4$ & RS($n$) & RIPPER & 0.993 & 0.833 & 0.034 & 0.065 \\
+ &  & CN2 & 0.983 & 0.611 & 0.015 & 0.029 \\
+ &  & Decision tree & 0.993 & 0.778 & 0.022 & 0.042 \\
+\midrule
+$KB_4$ & RS($2n$) & RIPPER & 0.997 & 0.778 & 0.029 & 0.055 \\
+ &  & CN2 & 0.998 & 1.000 & 0.033 & 0.065 \\
+ &  & Decision tree & 0.993 & 0.667 & 0.017 & 0.033 \\
+\midrule
+$KB_4$ & RS($3n$) & RIPPER & 0.991 & 0.889 & 0.022 & 0.043 \\
+ &  & CN2 & 0.991 & 0.889 & 0.021 & 0.041 \\
+ &  & Decision tree & 0.992 & 0.889 & 0.027 & 0.053 \\
+\midrule
+$KB_5$ & RS($n$) & RIPPER & 0.993 & 0.917 & 0.455 & 0.606 \\
+ &  & CN2 & 0.993 & 1.000 & 0.455 & 0.625 \\
+ &  & Decision tree & 0.992 & 1.000 & 0.454 & 0.625 \\
 \bottomrule
 \end{tabular}

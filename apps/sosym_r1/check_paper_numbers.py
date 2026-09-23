@@ -464,6 +464,40 @@ check('folds stopping on no_query (asked everything available)', stops.get('no_q
 check('folds stopping on pool_exhausted (data-limited)', stops.get('pool_exhausted'), 84)
 check('interactive folds total', sum(stops.values()), 168)
 
+# Table 14's caption: "Every example-only run stopped when the example pool was
+# exhausted, and every example-first run when the query budget was reached (5,000, and
+# 1,000 for KB5), except on KB1, where no further query could be generated."
+#
+# The counts above are totals; the caption is a statement about WHICH fold stopped how,
+# and a total cannot tell "all 18 KB1 folds" from "18 folds scattered anywhere". Both
+# halves are checked per fold, and the budget is read from the folds that hit it rather
+# than from a constant, so a re-run at another cap moves the check rather than passing.
+by_mode: dict = {}
+for _b, _d, fo in folds_of('*_cv_*.json', REPO / 'data' / 'results_sosym_r1' / 'interactive'):
+    mode = 'example_first' if 'example_first' in _b else 'example_only'
+    by_mode.setdefault(mode, []).append((_b.split('_cv_')[0], fo))
+check('example-only folds NOT stopping on an exhausted pool',
+      [b for b, f in by_mode['example_only'] if f.get('convergence_reason') != 'pool_exhausted'],
+      [])
+first_no_query = sorted({b for b, f in by_mode['example_first']
+                         if f.get('convergence_reason') == 'no_query'})
+check('example-first units that ran out of generatable queries',
+      sorted({b.split('_rs')[0].split('_2cov')[0].split('_ff')[0] for b in first_no_query}),
+      ['REAL-FM-7'])
+check('   ... and that is every KB1 fold, all 18',
+      len([b for b, f in by_mode['example_first'] if b.startswith('REAL-FM-7')]), 18)
+check('example-first folds elsewhere, all stopped by the budget',
+      [b for b, f in by_mode['example_first']
+       if not b.startswith('REAL-FM-7') and f.get('convergence_reason') != 'max_queries'],
+      [])
+budgets = sorted({f['n_queries'] for b, f in by_mode['example_first']
+                  if f.get('convergence_reason') == 'max_queries'})
+check('the budgets the example-first runs reached', budgets, [1000, 5000])
+check('   ... and 1,000 is busybox alone',
+      sorted({b.split('_')[0] for b, f in by_mode['example_first']
+              if f.get('convergence_reason') == 'max_queries' and f['n_queries'] == 1000}),
+      ['busybox-1.18.0'])
+
 # busybox at two budgets. The strongest form of "the baseline was not starved":
 # not a similar score, the SAME fourteen constraints. One fold, same split and
 # seed as the cap-1,000 run, so it compares against that fold and nothing else.
@@ -571,7 +605,7 @@ else:
 #     quietly excluded forever. An absence rendered as a result is the failure
 #     mode this whole effort has been about.
 # ---------------------------------------------------------------------------
-print('\n9. significance: medians, Holm rejections, and what cannot be tested')
+print('\n9. S6.2.5 significance: medians, Holm rejections, and what cannot be tested')
 try:
     from significance_tests import compute as _sig_compute, holm as _holm, floor_p, ALPHA
 except ImportError as exc:                      # scipy absent, or the tool moved
@@ -584,6 +618,14 @@ else:
         check(f'claim {claim}: median difference', sig[claim]['median'], med, tol=5e-5)
     check('claim 1a wins', sig['1a']['wins'], 28)
     check('claim 1b wins (the one instance against)', sig['1b']['wins'], 27)
+    # S6.2.5: "Semantic comparison exceeds description-based comparison ... on all 28
+    # combinations, with a median difference of 0.357."
+    check('claim 3 wins, all 28 combinations', sig['3']['wins'], 28)
+    # S6.2.5: "All four differences are significant (p < 10^-7)." Asserted on the RAW
+    # p, not the Holm-adjusted one: Holm can only raise it, so a raw p below the
+    # threshold is the stronger statement and the one the sentence makes.
+    for claim in ('1a', '1b', '3', '5'):
+        check(f'claim {claim}: p below 1e-7', bool(sig[claim]['p'] < 1e-7), True)
 
     fam = _holm(_sig_compute())
     check('claims in the Holm family', len(fam), 4)
@@ -681,7 +723,7 @@ if failures:
 # indistinguishable from a clean one to anything reading the exit code. The same shape
 # passed an artifact whose test suite had not run at all, because pytest was absent and
 # `grep FAILED` found nothing.
-MINIMUM_CHECKS = 340
+MINIMUM_CHECKS = 350
 if checks < MINIMUM_CHECKS:
     print(f'FAIL: only {checks} checks ran; expected at least {MINIMUM_CHECKS}.')
     print('An empty or truncated run is not a pass. Something above exited early or')

@@ -261,6 +261,14 @@ carries the passive results and \`interactive/\` the iterative baseline, and a
 table that draws a column from one and a stale copy of the other reproduces from
 neither. The script asserts both are present before it emits anything.
 
+## One fragment is not a table in the paper
+
+\`tables/paper/tab_significance.tex\` is **artifact-only**. The paper states the Wilcoxon
+result in prose (Section 6.2.5) and prints no significance table; the fragment is kept
+because the per-claim rows -- median difference, wins, the exact-test method, the Holm
+verdict, and the one claim the design cannot test -- exist nowhere else, and the numbers
+gate asserts them against it. Every other fragment here corresponds to a printed table.
+
 ## Gates passed
 
 - \`check_timing_provenance.py\` — no reported runtime overlaps another run
