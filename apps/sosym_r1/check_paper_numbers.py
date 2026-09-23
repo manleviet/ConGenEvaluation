@@ -648,6 +648,7 @@ else:
 # maintained in two trees to stay contiguous in both.
 # ---------------------------------------------------------------------------
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import generator_contracts                 # noqa: E402
 import revision_bias_composition            # noqa: E402
 import revision_cabsc_condition             # noqa: E402
 import revision_ea2468_limit                # noqa: E402
@@ -659,7 +660,7 @@ import revision_target_theory_size          # noqa: E402
 for module in (revision_bias_composition, revision_ea2468_limit,
                revision_run_cost, revision_order_and_working_example,
                revision_cabsc_condition, revision_minimal_review,
-               revision_target_theory_size):
+               revision_target_theory_size, generator_contracts):
     try:
         module.run(check, REPO)
     except Exception as exc:                # a source that moved or vanished
@@ -680,7 +681,7 @@ if failures:
 # indistinguishable from a clean one to anything reading the exit code. The same shape
 # passed an artifact whose test suite had not run at all, because pytest was absent and
 # `grep FAILED` found nothing.
-MINIMUM_CHECKS = 325
+MINIMUM_CHECKS = 340
 if checks < MINIMUM_CHECKS:
     print(f'FAIL: only {checks} checks ran; expected at least {MINIMUM_CHECKS}.')
     print('An empty or truncated run is not a pass. Something above exited early or')

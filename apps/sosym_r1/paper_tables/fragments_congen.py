@@ -212,7 +212,10 @@ def comparison_strategies(tree: ResultTree, data: Path) -> str:
         if i:
             rows.append([tex.MIDRULE])
         for j, (samp, samp_label) in enumerate(SAMPLINGS):
-            first = label if j == 0 else ""
+            # One label per block, as Table 9 sets it. The n/a rows stay INSIDE the
+            # group: a knowledge base with two unevaluated samplings still has six
+            # rows, and lifting them out would make KB5 look like a different shape.
+            first = tex.multirow(len(SAMPLINGS), label) if j == 0 else ""
             if is_not_run(stem, samp):
                 rows.append([first, samp_label, tex.multicolumn(5, tex.NA)])
                 continue

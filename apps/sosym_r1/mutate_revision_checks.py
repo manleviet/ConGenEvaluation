@@ -12,7 +12,7 @@ found nothing because pytest had never run. Both were green the whole time.
 
 WHAT THIS DOES
 --------------
-It runs the seven revision modules once to collect every assertion, then re-runs
+It runs the eight gate modules once to collect every assertion, then re-runs
 them once per assertion with THAT assertion's expected value altered, and
 requires exactly two things:
 
@@ -37,6 +37,7 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import generator_contracts                 # noqa: E402
 import revision_bias_composition            # noqa: E402
 import revision_cabsc_condition             # noqa: E402
 import revision_ea2468_limit                # noqa: E402
@@ -48,7 +49,7 @@ import revision_target_theory_size          # noqa: E402
 MODULES = (revision_bias_composition, revision_ea2468_limit,
            revision_run_cost, revision_order_and_working_example,
            revision_cabsc_condition, revision_minimal_review,
-           revision_target_theory_size)
+           revision_target_theory_size, generator_contracts)
 
 
 def passes(got, want, tol: float | None) -> bool:

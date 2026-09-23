@@ -48,7 +48,15 @@ PAPER_KB2_RS = ('0.367', '0.966')           # RS(m) to RS(3n)
 PAPER_WIDEST, PAPER_SECOND_WIDEST = 'busybox-1.18.0', 'REAL-FM-7'
 
 # --- S6.2.4, the comparison-strategy paragraph ------------------------------
-PAPER_EQUIVALENT_UNIT = ('REAL-FM-7', 'rs_3n')   # "on one fold only, on KB1 under RS(3n)"
+# S6.4: "equivalence holds on 1 of the 84 folds". The UNIT is no longer in the paper --
+# the 2026-09-23 review removed the S6.2.4 sentence that named it -- and is quoted by
+# the response letter instead.
+PAPER_EQUIVALENT_FOLDS = 1
+LETTER_EQUIVALENT_UNIT = ('REAL-FM-7', 'rs_3n', 2)
+# S6.2.4 and S6.3: "semantic precision stays below 1 on all of them" / "on every
+# combination". 28 combinations; the closest to 1 is busybox under 2-COV.
+PAPER_COMBINATIONS = 28
+PAPER_MAX_PRECISION = '0.994'
 
 
 def render(value: float, places: int) -> str:
@@ -172,25 +180,50 @@ def run(check, repo: Path) -> None:
            confusion['true_negatives']), (3573, 832, 522))
 
     print('\n[review] S6.2.4: the tier ordering, and the one equivalent fold')
-    # "The semantic strategy yields the highest F1-score on every combination, followed
-    #  by clause-based and then description-based comparison."
-    inversions = []
-    for (stem, samp), folds in cells.items():
-        tiers = {t: statistics.mean(f['evaluation'][t]['metrics']['f1_score'] for f in folds)
-                 for t in ('description', 'clause', 'semantic')}
-        if not tiers['description'] <= tiers['clause'] <= tiers['semantic']:
-            inversions.append(f'{stem} {samp}')
-    check('combinations where Desc <= Clause <= Sem does NOT hold', inversions, [])
+    # S6.2.4: "The semantic F1-score is at least as high as the clause-based one on
+    # every combination, and both exceed the description-based one." Two relations,
+    # asserted as two: the sentence makes one non-strict and the other strict, and a
+    # single <= chain would hold even if the strict half failed.
+    tiers = {k: {tier: statistics.mean(f['evaluation'][tier]['metrics']['f1_score']
+                                       for f in v)
+                 for tier in ('description', 'clause', 'semantic')}
+             for k, v in cells.items()}
+    check('combinations scored', len(tiers), PAPER_COMBINATIONS)
+    check('combinations where semantic F1 is BELOW clause F1',
+          [k for k, v in tiers.items() if v['semantic'] < v['clause']], [])
+    check('combinations where clause F1 does not EXCEED description F1',
+          [k for k, v in tiers.items() if v['clause'] <= v['description']], [])
+    check('combinations where semantic F1 does not EXCEED description F1',
+          [k for k, v in tiers.items() if v['semantic'] <= v['description']], [])
 
-    # `exact_equiv` sits on the fold's evaluation block, NOT inside the semantic tier:
-    # equivalence is a property of the whole delivered theory, and the tier is one way
-    # of scoring it. Reading it a level deeper returns None on every fold and would
-    # report "0 folds equivalent" against a paper that says 1.
+    # S6.2.4 and S6.3: "semantic precision stays below 1 on all of them".
+    precision = {k: statistics.mean(f['evaluation']['semantic']['metrics']['precision']
+                                    for f in v) for k, v in cells.items()}
+    check('combinations where semantic precision reaches 1',
+          [k for k, v in precision.items() if v >= 1.0], [])
+    check('   ... the closest any combination gets, as printed',
+          render(max(precision.values()), 3), PAPER_MAX_PRECISION)
+    check('   ... and it is busybox under 2-COV',
+          max(precision, key=precision.get), ('busybox-1.18.0', '2cov'))
+
+    # PER FOLD the claim does not hold, and that is REPORTED, not gated: the sentence
+    # is about combinations, which are means over three folds, and one fold does reach
+    # 1.000. Gating the per-fold count would assert something the paper does not claim.
+    per_fold_perfect = [(stem, samp, f['fold_index'])
+                        for (stem, samp), folds in cells.items() for f in folds
+                        if f['evaluation']['semantic']['metrics']['precision'] >= 1.0]
+    print(f'      note: {len(per_fold_perfect)} of 84 folds reach semantic precision '
+          f'1.000 ({", ".join(f"{a} {b} f{c}" for a, b, c in per_fold_perfect)}); every '
+          f'combination mean stays below 1, which is what the paper claims.')
+
     equivalent = [(stem, samp, f['fold_index'])
                   for (stem, samp), folds in cells.items() for f in folds
                   if f.get('evaluation', {}).get('exact_equiv') in (1, True)]
-    check('folds reaching exact equivalence', len(equivalent), 1)
-    check('   ... the unit it happens on', equivalent[0][:2], PAPER_EQUIVALENT_UNIT)
+    check('folds reaching exact equivalence, as S6.4 says', len(equivalent),
+          PAPER_EQUIVALENT_FOLDS)
+    # The unit left the paper with the S6.2.4 sentence; the response letter quotes it.
+    check('   ... the fold it happens on, quoted by the letter', equivalent[0],
+          LETTER_EQUIVALENT_UNIT)
     perfect = [(stem, samp, f['fold_index'])
                for (stem, samp), folds in cells.items() for f in folds
                if semantic_f1(f) == 1.0]

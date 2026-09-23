@@ -45,7 +45,7 @@ table is written:
 - **`apps/sosym_r1/check_timing_provenance.py`** — refuses a runtime measured while
   another sweep unit was in flight.
 - **`apps/sosym_r1/check_paper_numbers.py`** — recomputes every number quoted in the
-  paper's prose from the committed data. 334 checks.
+  paper's prose from the committed data. 345 checks.
 
 and one runs after the tables are written:
 
