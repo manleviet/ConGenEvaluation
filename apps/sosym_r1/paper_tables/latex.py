@@ -41,6 +41,20 @@ def millis(value: float | None, not_run: bool = False) -> str:
     return count(value, not_run)
 
 
+def one_decimal(value: float | None, not_run: bool = False) -> str:
+    """A mean of counts: one decimal, thousands-separated.
+
+    A mean over folds of an integer quantity is not an integer, and rounding it to
+    one would hide the spread that makes the column worth printing -- 0.7 and 0.0
+    are different findings about how much a method learned.
+    """
+    if value is None:
+        return NA if not_run else UNDEFINED
+    whole, frac = divmod(round(abs(value) * 10), 10)
+    sign = "-" if value < 0 else ""
+    return f"{sign}{_thousands(whole)}.{frac}"
+
+
 def plus_minus(mean: float | None, sd: float | None, not_run: bool = False) -> str:
     """``mean $\\pm$ sd``, both to three decimals."""
     if mean is None:
@@ -93,7 +107,8 @@ def tabular(colspec: str, header_rows: list[list[str]], body_rows: list[list[str
         # A one-cell row holding a rule is a SEPARATOR, emitted verbatim. The paper
         # rules between knowledge-base blocks, and parse_tex skips rule lines, so the
         # gate reads the same rows either way.
-        if len(row) == 1 and row[0] in (r"\midrule", r"\addlinespace"):
+        if len(row) == 1 and row[0].startswith(
+                (r"\midrule", r"\cmidrule", r"\addlinespace")):
             out.append(row[0])
             continue
         out.append(" & ".join(row) + r" \\")
@@ -109,6 +124,16 @@ def cmidrules(n_groups: int, width: int, first_col: int = 2) -> str:
         parts.append(rf"\cmidrule(lr){{{c}-{c + width - 1}}}")
         c += width
     return " ".join(parts)
+
+
+def cmidrule(first: int, last: int, trim: str = "l") -> str:
+    """``\\cmidrule(l){2-7}`` -- a rule under part of a row, inside a block.
+
+    Used where a table groups rows twice: the outer group is separated by a full
+    ``\\midrule`` and the inner one by this, which stops short of the outer label
+    column so the span that label covers reads as unbroken.
+    """
+    return rf"\cmidrule({trim}){{{first}-{last}}}"
 
 
 def multicolumn(span: int, text: str, align: str = "c") -> str:

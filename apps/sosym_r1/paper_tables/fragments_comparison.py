@@ -34,51 +34,88 @@ def _ruled(rows: list[list[str]]) -> list[list[str]]:
     return out
 
 
-def _method_rows(tree: ResultTree, cell_fn, bold: bool = False):
-    """One row per (sampling, method); ``cell_fn(folds) -> (text, value|None)``."""
+def _method_rows(tree: ResultTree, cell_fn):
+    """One row per (sampling, method), one cell per knowledge base.
+
+    For the tables that rank nothing. The bolded, two-cells-per-KB shape lives in
+    :func:`_paired_table`; the two were one function while accuracy printed a single
+    column, and keeping the unused branch here would leave a bolding path that
+    nothing exercises.
+    """
     rows = []
     for samp, samp_label in SAMPLINGS:
         for i, (method, method_label) in enumerate(METHODS):
-            head = [tex.multirow(len(METHODS), samp_label) if i == 0 else "",
-                    method_label]
-            texts, values = [], []
+            row = [tex.multirow(len(METHODS), samp_label) if i == 0 else "",
+                   method_label]
+            for stem, *_ in KNOWLEDGE_BASES:
+                row.append(tex.NA if is_not_run(stem, samp)
+                           else cell_fn(_method_folds(tree, stem, samp, method)))
+            rows.append(row)
+    return _ruled(rows)
+
+
+def _paired_table(tree: ResultTree, cell_fn, sub_labels: tuple[str, str]) -> str:
+    """Two cells per knowledge base, with the bold decided on the left one.
+
+    ``cell_fn(folds, method) -> (left, right, value | None)``. ``value`` is what the
+    bold is computed from, so a table can print a quantity it does not rank.
+
+    A knowledge base that was not run collapses to ONE ``n/a`` spanning both
+    columns: two markers side by side read as two separate absences, when only the
+    unit is absent.
+    """
+    header = [["", ""] + [tex.multicolumn(2, lb) for lb in KB_LABELS],
+              ["Strategy", "Method"] + [c for _ in KB_LABELS for c in sub_labels]]
+    # Two label columns, so the grouped rules start at column 3.
+    rules = [tex.cmidrules(len(KB_LABELS), 2, first_col=3), ""]
+    rows = []
+    for samp, samp_label in SAMPLINGS:
+        block = []
+        for i, (method, method_label) in enumerate(METHODS):
+            cells = [tex.multirow(len(METHODS), samp_label) if i == 0 else "",
+                     method_label]
+            values = []
             for stem, *_ in KNOWLEDGE_BASES:
                 if is_not_run(stem, samp):
-                    texts.append(tex.NA)
+                    cells.append(tex.multicolumn(2, tex.NA))
                     values.append(None)
                     continue
-                text, value = cell_fn(_method_folds(tree, stem, samp, method))
-                texts.append(text)
+                left, right, value = cell_fn(
+                    _method_folds(tree, stem, samp, method), method)
+                cells += [left, right]
                 values.append(value)
-            rows.append((head, texts, values))
-    if not bold:
-        return _ruled([h + t for h, t, _ in rows])
-    # Bold is computed per (sampling, KB) across the three methods, so it has to be
-    # decided after all three rows exist. Hand-bolding a winner is how a claim with
-    # no derivation behind it survives every regeneration.
-    out = [list(h + t) for h, t, _ in rows]
-    for block in range(0, len(rows), len(METHODS)):
-        group = rows[block:block + len(METHODS)]
+            block.append((cells, values))
+        # Bold is computed per (sampling, KB) across the three methods, after all
+        # three rows exist. The left cell of KB k sits at 2 + 2k once every earlier
+        # KB has contributed its pair -- except where an n/a collapsed the pair into
+        # one cell, which is why the index is taken from the row rather than assumed.
         for col in range(len(KB_LABELS)):
-            column = [g[2][col] for g in group]
-            marked = tex.bold_max([g[1][col] for g in group], column)
+            marked = tex.bold_max([_left_cell(b[0], col) for b in block],
+                                  [b[1][col] for b in block])
             for k, value in enumerate(marked):
-                out[block + k][2 + col] = value
-    return _ruled(out)
+                _set_left_cell(block[k][0], col, value)
+        rows += [b[0] for b in block]
+    # Ruled once, over the whole body: _ruled counts three-row blocks, so calling it
+    # per block would never reach a boundary and would emit no rule at all.
+    return tex.tabular("ll" + "rr" * len(KB_LABELS), header, _ruled(rows), rules)
 
 
 def iterative_accuracy(tree: ResultTree, data: Path) -> str:
-    """Predictive accuracy for ConGen and the two iterative modes.
+    """Test-fold accuracy and the size of the learned knowledge base.
 
     Six sampling strategies, not four. The submitted paper printed four; nothing
     ever decided to drop the other two, so they are not inherited as dropped.
+
+    |KB| sits beside the accuracy it was reached with because neither says much
+    alone: the example-only runs reach 0.9-plus accuracy with a knowledge base that
+    is EMPTY on six combinations, which is a fact about the test folds rather than
+    about what was learned. Bold stays on accuracy only -- there is no best size,
+    and bolding the largest would assert that more constraints are better.
     """
-    def cell(folds):
+    def cell(folds, _method):
         mean, _sd = tree.accuracy(folds)
-        return tex.quality(mean), mean
-    return tex.tabular("ll" + "r" * len(KB_LABELS),
-                       [["Strategy", "Method", *KB_LABELS]],
-                       _method_rows(tree, cell, bold=True))
+        return tex.quality(mean), tex.one_decimal(tree.kb_size(folds)), mean
+    return _paired_table(tree, cell, ("acc.", "$|KB|$"))
 
 
 def iterative_semantic(tree: ResultTree, data: Path) -> str:
@@ -92,60 +129,29 @@ def iterative_semantic(tree: ResultTree, data: Path) -> str:
     ConGen's q cells are EMPTY, not ``--``. ConGen issues no query, and a dash set
     beside a number column reads as a minus sign.
     """
-    header = [["", ""] + [tex.multicolumn(2, lb) for lb in KB_LABELS],
-              ["Strategy", "Method"] + [c for _ in KB_LABELS for c in ("F1", "q")]]
-    # Two label columns, so the grouped rules start at column 3.
-    rules = [tex.cmidrules(len(KB_LABELS), 2, first_col=3), ""]
-    rows = []
-    for samp, samp_label in SAMPLINGS:
-        block = []
-        for i, (method, method_label) in enumerate(METHODS):
-            cells = [tex.multirow(len(METHODS), samp_label) if i == 0 else "",
-                     method_label]
-            f1s = []
-            for stem, *_ in KNOWLEDGE_BASES:
-                if is_not_run(stem, samp):
-                    # One n/a across both columns: the unit was not run, and two
-                    # markers read as two separate absences.
-                    cells.append(tex.multicolumn(2, tex.NA))
-                    f1s.append(None)
-                    continue
-                folds = _method_folds(tree, stem, samp, method)
-                f1 = tree.tier_f1(folds, "semantic")
-                f1s.append(f1)
-                cells += [tex.quality(f1),
-                          "" if method == "congen" else tex.count(tree.queries(folds))]
-            block.append((cells, f1s))
-        # Bold is computed per (sampling, KB) across the three methods, after all
-        # three rows exist. The F1 column of KB k sits at 2 + 2k once every earlier
-        # KB has contributed its pair -- except where an n/a collapsed the pair into
-        # one cell, which is why the index is taken from the row rather than assumed.
-        for col in range(len(KB_LABELS)):
-            marked = tex.bold_max([_f1_cell(b[0], col) for b in block],
-                                  [b[1][col] for b in block])
-            for k, value in enumerate(marked):
-                _set_f1_cell(block[k][0], col, value)
-        rows += [b[0] for b in block]
-    # Ruled once, over the whole body: _ruled counts three-row blocks, so calling it
-    # per block would never reach a boundary and would emit no rule at all.
-    return tex.tabular("ll" + "rr" * len(KB_LABELS), header, _ruled(rows), rules)
+    def cell(folds, method):
+        f1 = tree.tier_f1(folds, "semantic")
+        return (tex.quality(f1),
+                "" if method == "congen" else tex.count(tree.queries(folds)),
+                f1)
+    return _paired_table(tree, cell, ("F1", "q"))
 
 
-def _f1_index(cells: list[str], kb: int) -> int:
-    """Where knowledge base ``kb``'s F1 cell sits, counting collapsed n/a pairs."""
+def _pair_index(cells: list[str], kb: int) -> int:
+    """Where knowledge base ``kb``'s LEFT cell sits, counting collapsed n/a pairs."""
     i = 2
     for _ in range(kb):
         i += 1 if cells[i].startswith(r"\multicolumn") else 2
     return i
 
 
-def _f1_cell(cells: list[str], kb: int) -> str:
-    cell = cells[_f1_index(cells, kb)]
+def _left_cell(cells: list[str], kb: int) -> str:
+    cell = cells[_pair_index(cells, kb)]
     return "" if cell.startswith(r"\multicolumn") else cell
 
 
-def _set_f1_cell(cells: list[str], kb: int, value: str) -> None:
-    i = _f1_index(cells, kb)
+def _set_left_cell(cells: list[str], kb: int, value: str) -> None:
+    i = _pair_index(cells, kb)
     if not cells[i].startswith(r"\multicolumn"):
         cells[i] = value
 
@@ -158,8 +164,7 @@ def runtime_comparison(tree: ResultTree, data: Path) -> str:
     the standing rule exists to prevent. The paper's caption has to say so.
     """
     def cell(folds):
-        ms = tree.runtime_ms(folds)
-        return tex.millis(ms), None      # no argmax: fastest is not "best" here
+        return tex.millis(tree.runtime_ms(folds))   # no argmax: fastest is not "best"
     return tex.tabular("ll" + "r" * len(KB_LABELS),
                        [["Strategy", "Method", *KB_LABELS]],
                        _method_rows(tree, cell))
@@ -191,14 +196,30 @@ def rule_learners(tree: ResultTree, data: Path, baselines: Path) -> str:
 
     label_of = {stem: label for stem, label, *_ in KNOWLEDGE_BASES}
     samp_label_of = dict(SAMPLINGS)
+    # Grouped twice: a knowledge base spans its strategies, a strategy spans its
+    # learners. The spans are counted from `scored`, not written down -- a hand-set
+    # \multirow{9} outlives the ninth row it was counted for.
+    by_stem: dict[str, list[str]] = {}
+    for stem, samp in scored:
+        by_stem.setdefault(stem, []).append(samp)
+
+    n_cols = 7
     body: list[list[str]] = []
-    for block, (stem, samp) in enumerate(scored):
-        if block:
+    for s, (stem, samps) in enumerate(by_stem.items()):
+        if s:
             body.append([tex.MIDRULE])
-        for i, (learner, learner_label) in enumerate(LEARNERS):
-            head = ([label_of[stem], samp_label_of[samp]] if i == 0 else ["", ""])
-            body.append(head + [learner_label]
-                        + _learner_cells(rows_by_cell.get((stem, samp, learner), [])))
+        for b, samp in enumerate(samps):
+            if b:
+                # Stops short of the knowledge-base column, so its span reads unbroken.
+                body.append([tex.cmidrule(2, n_cols)])
+            for i, (learner, learner_label) in enumerate(LEARNERS):
+                first = b == 0 and i == 0
+                head = [tex.multirow(len(samps) * len(LEARNERS), label_of[stem])
+                        if first else "",
+                        tex.multirow(len(LEARNERS), samp_label_of[samp])
+                        if i == 0 else ""]
+                body.append(head + [learner_label]
+                            + _learner_cells(rows_by_cell.get((stem, samp, learner), [])))
     header = [["KB", "Strategy", "Learner", "acc.", "P", "R", "F1"]]
     return tex.tabular("lll" + "rrrr", header, body)
 

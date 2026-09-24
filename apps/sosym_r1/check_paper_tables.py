@@ -314,12 +314,22 @@ def check_significance(a: Audit, d: Path) -> None:
 
 
 def check_iterative_accuracy(a: Audit, d: Path) -> None:
+    """Accuracy and the learned KB size per (sampling, method, KB).
+
+    |KB| is re-counted from the ``kb_constraints`` list, the same source the
+    generator reads but through this module's own reader, and deliberately NOT from
+    ``statistics.n_kb``: agreeing with a summary field would only prove the summary
+    was copied, not that the column counts constraints.
+    """
     def want(stem, samp, method, j):
         if (stem, samp) in NOT_RUN:
             return NA
-        mean, _ = R.accuracy_mean_sd(a.folds(stem, samp, method))
-        return R.fmt_quality(mean)
-    _method_grid(a, d / "tab_iterative_accuracy.tex", 1, want, "iterative_accuracy")
+        fs = a.folds(stem, samp, method)
+        if j == 0:
+            mean, _ = R.accuracy_mean_sd(fs)
+            return R.fmt_quality(mean)
+        return R.fmt_one_decimal(R.kb_size_mean(fs))
+    _method_grid(a, d / "tab_iterative_accuracy.tex", 2, want, "iterative_accuracy", 2)
 
 
 def check_iterative_semantic(a: Audit, d: Path) -> None:
@@ -429,7 +439,7 @@ CHECKS = (check_fm_summary, check_example_sizes, check_acqmss_runtime,
 # mostly "too few" markers (-264). The combinations it no longer prints are still
 # checked -- the scored set is re-derived here and the row count asserted against it --
 # so what fell is the number of printed cells, not the number of facts held.
-MINIMUM_CELLS = 900
+MINIMUM_CELLS = 1000
 
 
 def main() -> int:

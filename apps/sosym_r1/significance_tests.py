@@ -100,14 +100,20 @@ def compute() -> list:
     results = []
 
     def paired(name: str, a: str, b: str):
-        pairs = [(D[c][a], D[c][b]) for c in cells
-                 if D[c].get(a) is not None and D[c].get(b) is not None]
+        used = [c for c in cells
+                if D[c].get(a) is not None and D[c].get(b) is not None]
+        pairs = [(D[c][a], D[c][b]) for c in used]
         diff = [x - y for x, y in pairs]
         stat, p = wilcoxon([x for x, _ in pairs], [y for _, y in pairs],
                            method=METHOD)
         results.append({'name': name, 'n': len(pairs), 'median': statistics.median(diff),
                         'wins': sum(1 for d in diff if d > 0), 'p': p, 'W': stat,
-                        'method': METHOD, 'ties': count_ties(diff)})
+                        'method': METHOD, 'ties': count_ties(diff),
+                        # The combinations that do NOT go the claimed way. A "27 of
+                        # 28" whose missing one is unnamed cannot be checked, and the
+                        # paper names it -- so the test reports it rather than
+                        # leaving the gate to re-derive it from a second copy of D.
+                        'losses': [c for c, d in zip(used, diff) if d <= 0]})
 
     paired('1a ConGen vs iterative, no oracle', 'cg', 'eo')
     paired('1b ConGen vs iterative, with oracle', 'cg', 'ef')

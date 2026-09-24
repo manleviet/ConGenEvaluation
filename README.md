@@ -45,14 +45,15 @@ table is written:
 - **`apps/sosym_r1/check_timing_provenance.py`** — refuses a runtime measured while
   another sweep unit was in flight.
 - **`apps/sosym_r1/check_paper_numbers.py`** — recomputes every number quoted in the
-  paper's prose from the committed data. 356 checks.
+  paper's prose from the committed data. 412 checks -- the count it prints when it
+  finishes, so a reader can compare this line with their own run in one step.
 
 and one runs after the tables are written:
 
 - **`apps/sosym_r1/check_paper_tables.py`** — re-derives every cell of every paper
   fragment from the same result files, with a reader that shares no aggregation or
-  formatting code with the generator. 1,420 cells. A fragment it cannot parse is a
-  failure, not a skip.
+  formatting code with the generator. 1,041 cells, again the count it prints. A
+  fragment it cannot parse is a failure, not a skip.
 
   It also checks properties that do not depend on the generator's expressions at all:
   no printed duration is negative, phases sum within their total, declared parts sum to

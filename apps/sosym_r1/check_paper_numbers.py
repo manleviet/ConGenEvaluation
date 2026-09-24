@@ -306,8 +306,14 @@ check('cells where ConGen is below the accept-everything baseline', below_trivia
 
 # ---------------------------------------------------------------------------
 # 4. Fold agreement, reported as a STABILITY statistic and never as a score.
+#
+#    QUOTED IN THE RESPONSE LETTER, NOT IN THE PAPER. The 2026-09-24 review
+#    dropped the sentence that carried the 29-80% range. The checks stay because
+#    the letter still states it and because the range is the evidence behind the
+#    threats-to-validity claim that folds disagree; what is removed is the section
+#    reference, which would otherwise send a reader to a paragraph that is gone.
 # ---------------------------------------------------------------------------
-print('\n4. fold-agreement range (stability statistic, not a quality score)')
+print('\n4. fold-agreement range (letter only; no longer printed in the paper)')
 agree: dict[str, float] = {}
 for f in sorted(glob.glob(str(R1 / '*.json'))):
     d = json.load(open(f))
@@ -347,7 +353,16 @@ if p.exists():
 # ---------------------------------------------------------------------------
 # 6. The 2-COV applicability threshold quoted in B20 / A5.
 # ---------------------------------------------------------------------------
-print('\n6. the 2-COV boundary: passive acquisition has no positive examples to work with')
+# QUOTED IN THE RESPONSE LETTER, NOT IN THE PAPER. The two 2-COV paragraphs that
+# carried 11 of 15 training folds without a positive example, and the 19-37 usable
+# queries, were dropped by the 2026-09-24 review. Both counts stay asserted: they
+# are why 2-COV is the one strategy where ConGen matches the iterative methods, a
+# claim the paper still makes, and a reader of the letter still meets the numbers.
+#
+# The two counts are DIFFERENT FACTS and must not be merged: 11 folds train on no
+# positive example, 13 have no positive TEST configuration. Merging them has been
+# tried once already.
+print('\n6. the 2-COV boundary (letter; the paper no longer prints these counts)')
 tr_zero = tr_tot = te_zero = 0
 max_pos = 0
 for base, _d, fo in folds_of('*2cov*.json', R1):
@@ -378,7 +393,11 @@ check('2-COV folds with no positive TEST example', te_zero, 13)
 #    fold-0 vs mean, pooled vs mean, intersected vs mean. Quote the aggregation
 #    the paper uses, and say which one it is.
 # ---------------------------------------------------------------------------
-print('\n7. cap sensitivity of the iterative baseline (per-fold means)')
+# QUOTED IN THE RESPONSE LETTER, NOT IN THE PAPER. The cap probe answers the
+# question of whether the iterative baseline was starved of budget, and the
+# answer lives in the letter. The paper states only that the baselines hit their
+# budget, which Table 14's caption carries and the per-fold checks above assert.
+print('\n7. cap sensitivity of the iterative baseline (letter only, per-fold means)')
 import re as _re
 
 cap_rows: dict[tuple[str, str], dict[int, float]] = {}
@@ -605,7 +624,7 @@ else:
 #     quietly excluded forever. An absence rendered as a result is the failure
 #     mode this whole effort has been about.
 # ---------------------------------------------------------------------------
-print('\n9. S6.2.5 significance: medians, Holm rejections, and what cannot be tested')
+print('\n9. S6.2.6 significance: medians, Holm rejections, and what cannot be tested')
 try:
     from significance_tests import compute as _sig_compute, holm as _holm, floor_p, ALPHA
 except ImportError as exc:                      # scipy absent, or the tool moved
@@ -616,12 +635,19 @@ else:
                           ('5', 28, 0.1461), ('2', 5, 0.0445)):
         check(f'claim {claim}: n', sig[claim]['n'], n)
         check(f'claim {claim}: median difference', sig[claim]['median'], med, tol=5e-5)
-    check('claim 1a wins', sig['1a']['wins'], 28)
-    check('claim 1b wins (the one instance against)', sig['1b']['wins'], 27)
-    # S6.2.5: "Semantic comparison exceeds description-based comparison ... on all 28
-    # combinations, with a median difference of 0.357."
-    check('claim 3 wins, all 28 combinations', sig['3']['wins'], 28)
-    # S6.2.5: "All four differences are significant (p < 10^-7)." Asserted on the RAW
+    check('claim 1a wins, all 28 (S6.2.6 (i))', sig['1a']['wins'], 28)
+    check('claim 1b wins, 27 of 28 (S6.2.6 (ii))', sig['1b']['wins'], 27)
+    # S6.2.6 names the exception: "the exception is KB3 under RS(3n)". A count of 27
+    # cannot tell that apart from any other cell going the other way, and the
+    # sentence makes the stronger statement, so the stronger one is asserted.
+    check('   ... and it is KB3 under RS(3n), as the sentence says',
+          sig['1b']['losses'], ['arcade-game_rs_3n'])
+    check('claim 5 wins, all 28 (S6.2.6 (iii))', sig['5']['wins'], 28)
+    # S6.2.6 (iv): "semantic comparison exceeds description-based comparison of
+    # ConGen's result on all 28 combinations, with a median difference of 0.357."
+    check('claim 3 wins, all 28 combinations (S6.2.6 (iv))', sig['3']['wins'], 28)
+    check('   ... with no combination against it', sig['3']['losses'], [])
+    # S6.2.6: "All four differences are significant (p < 10^-7)." Asserted on the RAW
     # p, not the Holm-adjusted one: Holm can only raise it, so a raw p below the
     # threshold is the stronger statement and the one the sentence makes.
     for claim in ('1a', '1b', '3', '5'):
@@ -652,6 +678,14 @@ else:
     check('claim 2 floor p exceeds alpha (cannot reject at any outcome)',
           floor_p(sig['2']['n']) > ALPHA, True)
     check('claim 2 floor p', floor_p(sig['2']['n']), 0.0625, tol=1e-9)
+    # S6.2.6's last sentence: "its median difference of 0.045 is reported
+    # descriptively". The median is 0.0445, and 0.045 is that figure rounded HALF UP
+    # to three places -- Python's round() gives 0.044, so the comparison is made the
+    # way the number was typeset rather than the way the language rounds.
+    from decimal import ROUND_HALF_UP as _HALF_UP, Decimal as _D
+    check('claim 2 median as the paper prints it',
+          float(_D(repr(sig['2']['median'])).quantize(_D('0.001'), rounding=_HALF_UP)),
+          0.045, tol=1e-9)
 
 # ---------------------------------------------------------------------------
 # 10. The package must work on a machine that is not this one.
@@ -693,7 +727,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import generator_contracts                 # noqa: E402
 import revision_bias_composition            # noqa: E402
 import revision_cabsc_condition             # noqa: E402
+import revision_comparison_prose            # noqa: E402
 import revision_ea2468_limit                # noqa: E402
+import revision_headline_claims             # noqa: E402
 import revision_minimal_review              # noqa: E402
 import revision_order_and_working_example   # noqa: E402
 import revision_run_cost                    # noqa: E402
@@ -702,7 +738,8 @@ import revision_target_theory_size          # noqa: E402
 for module in (revision_bias_composition, revision_ea2468_limit,
                revision_run_cost, revision_order_and_working_example,
                revision_cabsc_condition, revision_minimal_review,
-               revision_target_theory_size, generator_contracts):
+               revision_target_theory_size, revision_comparison_prose,
+               revision_headline_claims, generator_contracts):
     try:
         module.run(check, REPO)
     except Exception as exc:                # a source that moved or vanished
@@ -723,7 +760,7 @@ if failures:
 # indistinguishable from a clean one to anything reading the exit code. The same shape
 # passed an artifact whose test suite had not run at all, because pytest was absent and
 # `grep FAILED` found nothing.
-MINIMUM_CHECKS = 350
+MINIMUM_CHECKS = 400
 if checks < MINIMUM_CHECKS:
     print(f'FAIL: only {checks} checks ran; expected at least {MINIMUM_CHECKS}.')
     print('An empty or truncated run is not a pass. Something above exited early or')

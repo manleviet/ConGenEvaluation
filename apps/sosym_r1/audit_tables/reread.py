@@ -125,6 +125,19 @@ def queries_mean(fs: list[dict]) -> float | None:
     return avg([f.get("n_queries") for f in fs if f.get("n_queries") is not None])
 
 
+def kb_size_mean(fs: list[dict]) -> float | None:
+    """Mean over folds of the length of the learned KB.
+
+    A missing ``kb_constraints`` raises rather than averaging what is left: a fold
+    that recorded no knowledge base is not a fold that learned nothing, and the two
+    must not average to the same column.
+    """
+    for f in fs:
+        if f.get("kb_constraints") is None:
+            raise Absent(f"fold {f.get('fold_index')}: kb_constraints missing")
+    return avg([len(f["kb_constraints"]) for f in fs])
+
+
 def stop_set(fs: list[dict]) -> list[str]:
     return sorted({f["convergence_reason"] for f in fs if f.get("convergence_reason")})
 
@@ -146,6 +159,12 @@ def fmt_count(v) -> str:
     n = int(round(v))
     body = format(abs(n), ",").replace(",", "{,}")
     return ("-" + body) if n < 0 else body
+
+
+def fmt_one_decimal(v) -> str:
+    whole, frac = divmod(round(abs(v) * 10), 10)
+    body = format(whole, ",").replace(",", "{,}")
+    return ("-" if v < 0 else "") + f"{body}.{frac}"
 
 
 def fmt_pm(mean, sd) -> str:

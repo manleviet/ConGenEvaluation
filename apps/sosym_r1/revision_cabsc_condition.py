@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
-"""The four figures the CABSC-condition edits put in the paper (S3, S6.2.3, S6.4).
+"""The CABSC-condition figures: two still in the paper, two now only in the letter.
 
-S6.2.3 says the delivered KB and the subset B' it is reduced from "are logically
-equivalent given BG and NE" on every fold, and that CABSC "delivers the same theory in
-1.4 to 1,659 times as many constraints". S6.4 says their semantic F1 "differs by 0.221
-at the median and by up to 0.758". None of those four numbers came from a table, so no
-gate could see them: `check_paper_tables.py` re-derives cells, and B' appears in none.
+The Discussion says the delivered knowledge base "is logically equivalent to the subset
+B' it is reduced from on every fold, while CABSC reaches the same theory in 1.4 to
+1,659 times as many constraints". Section 6 opens by saying that of the passive
+approaches, "only CABSC solves the same problem, and it coincides with the subset B'
+that AcqMss computes" -- which is the sentence those two figures exist to support, and
+it is quoted here verbatim so a reading of this module shows what is being held.
+
+The other two, "differs by 0.221 at the median and by up to 0.758", are QUOTED IN THE
+RESPONSE LETTER ONLY since the 2026-09-24 review; the threats paragraph that
+carried them is gone. They stay asserted, without a section reference.
+
+None of the four came from a table, so no gate could see them:
+`check_paper_tables.py` re-derives cells, and B' appears in none.
 
 They are asserted here from `data/results_sosym_r1/cabsc_condition/cabsc_condition.json`,
 the committed 84-fold measurement, which is produced by
@@ -41,7 +49,7 @@ from pathlib import Path
 
 MEASUREMENT = Path('data') / 'results_sosym_r1' / 'cabsc_condition' / 'cabsc_condition.json'
 
-# S6.2.3 and S6.4, exactly as the manuscript prints them.
+# As the Discussion prints them; the last two are the letter's only.
 PAPER_FOLDS = 84
 PAPER_SIZE_FACTOR = ('1.4', '1,659')        # "1.4 to 1{,}659 times as many constraints"
 PAPER_F1_MEDIAN = '0.221'                   # "differs by 0.221 at the median"
@@ -67,17 +75,19 @@ def run(check, repo: Path) -> None:
     data = json.loads(path.read_text())
     rows = data['folds']
 
-    print('\n[cabsc] S6.2.3 and S6.4: B\' as the CABSC condition, beside the delivered KB')
+    print('\n[cabsc] B\' as the CABSC condition, beside the delivered KB'
+          ' (Discussion; the spread figures are in the letter only)')
     check('folds measured', len(rows), PAPER_FOLDS)
 
-    # S6.2.3: "on every fold the delivered KB and the subset B' it is reduced from
-    # (the |MSS| column) are logically equivalent given BG and NE."
+    # Discussion (3): "the delivered knowledge base is logically equivalent to the
+    # subset B' it is reduced from on every fold". B' is the quantity Table 11 prints
+    # as |B'|, and the equivalence is asserted in both directions given BG and NE.
     equivalent = sum(1 for r in rows if r['equivalent_to_kb']['given_bg_and_ne'])
     check('folds where KB and B\' are equivalent given BG and NE', equivalent, PAPER_FOLDS)
     check('   ... and under the stronger form, BG on the left only',
           sum(1 for r in rows if r['equivalent_to_kb']['bg_on_the_left_only']), PAPER_FOLDS)
 
-    # S6.2.3: "in 1.4 to 1,659 times as many constraints". Per fold, since a mean over
+    # Discussion (3): "in 1.4 to 1,659 times as many constraints". Per fold, since a mean over
     # folds would hide the 6,634-against-4 cell that sets the upper end.
     ratios = [r['n_bprime'] / r['n_kb'] for r in rows]
     check('size factor, smallest, as printed', half_up(min(ratios), 1), PAPER_SIZE_FACTOR[0])
@@ -85,7 +95,8 @@ def run(check, repo: Path) -> None:
     # The direction the sentence asserts: B' is never smaller than what it reduces to.
     check('B\' is at least as large as the delivered KB on every fold', min(ratios) >= 1.0, True)
 
-    # S6.4: "their semantic F1 differs by 0.221 at the median and by up to 0.758".
+    # The letter: "their semantic F1 differs by 0.221 at the median and by up to
+    # 0.758". Not printed in the paper since the 2026-09-24 review.
     # DIFFERS BY, so the magnitude: one fold moves the other way (+0.023) and a signed
     # median would report a different quantity than the sentence claims. Both readings
     # give 0.221 here, and the gate pins the one the words mean.

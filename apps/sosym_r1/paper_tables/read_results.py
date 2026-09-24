@@ -100,6 +100,22 @@ class ResultTree:
         vals = [v for v in vals if v is not None]
         return st.mean(vals) if vals else None
 
+    def kb_size(self, folds: list[dict]) -> float | None:
+        """Mean over folds of the number of constraints in the learned KB.
+
+        Counted from the ``kb_constraints`` LIST, not from the recorded
+        ``statistics.n_kb``. The two agree on every committed fold, which is why
+        reading the list costs nothing and is the stronger source: a summary field
+        is written once and can outlive the thing it summarises.
+
+        The negated negative examples are NOT here. They sit in ``ne_constraints``
+        and are a record of what the oracle rejected, not knowledge the method
+        acquired; counting them would make a method look more productive the more
+        often it was wrong.
+        """
+        vals = [len(f["kb_constraints"]) for f in folds if f.get("kb_constraints") is not None]
+        return st.mean(vals) if vals else None
+
     def queries(self, folds: list[dict]) -> float | None:
         vals = [f.get("n_queries") for f in folds if f.get("n_queries") is not None]
         return st.mean(vals) if vals else None
