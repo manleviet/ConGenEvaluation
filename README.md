@@ -45,15 +45,16 @@ table is written:
 - **`apps/sosym_r1/check_timing_provenance.py`** — refuses a runtime measured while
   another sweep unit was in flight.
 - **`apps/sosym_r1/check_paper_numbers.py`** — recomputes every number quoted in the
-  paper's prose from the committed data. 412 checks -- the count it prints when it
-  finishes, so a reader can compare this line with their own run in one step.
+  paper's prose from the committed data. 439 checks -- the count it prints when it
+  finishes, so a reader can compare this line with their own run in one step. The gate
+  also reads this sentence and fails if the two disagree.
 
 and one runs after the tables are written:
 
 - **`apps/sosym_r1/check_paper_tables.py`** — re-derives every cell of every paper
   fragment from the same result files, with a reader that shares no aggregation or
-  formatting code with the generator. 1,041 cells, again the count it prints. A
-  fragment it cannot parse is a failure, not a skip.
+  formatting code with the generator. 1,041 cells, again the count it prints, and again
+  held to this sentence. A fragment it cannot parse is a failure, not a skip.
 
   It also checks properties that do not depend on the generator's expressions at all:
   no printed duration is negative, phases sum within their total, declared parts sum to
@@ -139,6 +140,43 @@ file hashes.
 Cost varies enormously across cells — seconds for REAL-FM-7, hours for busybox — so read
 the cell name before launching one.
 
+## Negative-example minimization (optional)
+
+By default GenerateNE reduces each negative example to a subset-minimal conflict with
+QuickXplain against the target theory -- the one place ConGen consults an oracle. It is
+optional: `neg_mode = "raw"` under `[evaluation.congen]` negates the full example instead
+and makes no oracle call.
+
+`data/results_sosym_r1_rawne/` reruns the committed ConGen sweep that way, with the same
+examples, folds, seed, solver and bias shuffle, for **27 of the 28 combinations** (81
+folds). busybox RS(n) was **not** rerun: its three committed folds alone took 12.6 h.
+Per fold, the delivered theory (learned constraints, retained negated examples and the
+root) is logically equivalent to the committed one, and test-fold accuracy is identical;
+what changes is the size and make-up of the learned constraint set, and with it the
+constraint-level scores. `plans/reports/measurement-260930-0524-congen-raw-vs-reduced-negative-examples-report.md`
+describes the measurement; `data/results_sosym_r1_rawne/summary.md` holds every
+per-combination value.
+
+The numbers the paper and the response letter quote from it are printed, and asserted,
+by one entry point:
+
+```bash
+PYTHONPATH=. python3 apps/sosym_r1/revision_ne_minimization.py
+```
+
+The same assertions run inside `check_paper_numbers.py`. The two derived JSON files it
+reads regenerate byte-identically from the fold files -- the SAT equivalence check in
+about 8 s, the re-scoring with retained negated examples in about 15 s:
+
+```bash
+python3 apps/sosym_r1/compare_ne_raw_vs_reduced.py --raw data/results_sosym_r1_rawne/congen --json scratch/raw-vs-reduced.json
+python3 apps/sosym_r1/score_with_retained_ne.py --cv-dir data/results_sosym_r1/congen --json scratch/reduced-scored-with-ne.json
+```
+
+Rerunning the raw sweep itself takes about 3.9 h (`apps/sosym_r1/run_ne_raw_sweep.py
+--out <dir>`, never the committed tree); `data/results_sosym_r1_rawne/run-ledger.jsonl`
+records each fold's wall time.
+
 ## What is not included
 
 The released example sets cover the cells reported in the paper. Sets for
@@ -168,7 +206,8 @@ conacq/          the ConGen implementation
 apps/            entry points; apps/sosym_r1/ is what the table pipeline runs
 tools/sosym_r1/  sweep machinery and one-off measurements — not part of reproduction
 data/            feature models, examples, folds, bias, and the results
-plans/reports/   the two ea2468 feasibility probes; the size limit in §5.3 cites them
+plans/reports/   the two ea2468 feasibility probes the size limit in §5.3 cites, and the
+                 negative-example minimization measurement
 tests/           the suite
 ```
 

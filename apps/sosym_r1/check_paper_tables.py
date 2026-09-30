@@ -478,6 +478,14 @@ def main() -> int:
         print(f"FAIL: only {audit.checked} cells checked; expected at least "
               f"{MINIMUM_CELLS}. An empty audit is not a passing one.")
         return 1
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import readme_counts
+    readme = readme_counts.mismatch(Path(__file__).resolve().parents[2],
+                                    r'(\d[\d,]*) cells, again the count it prints',
+                                    audit.checked, 'cells')
+    if readme:
+        print(f"FAIL: {readme}. Update the README to the count, never the reverse.")
+        return 1
     print("OK: every cell the paper prints re-derives from the committed results.")
     return 0
 

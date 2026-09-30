@@ -44,6 +44,7 @@ import revision_comparison_prose            # noqa: E402
 import revision_ea2468_limit                # noqa: E402
 import revision_headline_claims             # noqa: E402
 import revision_minimal_review              # noqa: E402
+import revision_ne_minimization             # noqa: E402
 import revision_order_and_working_example   # noqa: E402
 import revision_run_cost                    # noqa: E402
 import revision_target_theory_size          # noqa: E402
@@ -52,7 +53,8 @@ MODULES = (revision_bias_composition, revision_ea2468_limit,
            revision_run_cost, revision_order_and_working_example,
            revision_cabsc_condition, revision_minimal_review,
            revision_target_theory_size, revision_comparison_prose,
-           revision_headline_claims, generator_contracts)
+           revision_headline_claims, revision_ne_minimization,
+               generator_contracts)
 
 
 def passes(got, want, tol: float | None) -> bool:

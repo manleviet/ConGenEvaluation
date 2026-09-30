@@ -731,6 +731,7 @@ import revision_comparison_prose            # noqa: E402
 import revision_ea2468_limit                # noqa: E402
 import revision_headline_claims             # noqa: E402
 import revision_minimal_review              # noqa: E402
+import revision_ne_minimization             # noqa: E402
 import revision_order_and_working_example   # noqa: E402
 import revision_run_cost                    # noqa: E402
 import revision_target_theory_size          # noqa: E402
@@ -739,7 +740,8 @@ for module in (revision_bias_composition, revision_ea2468_limit,
                revision_run_cost, revision_order_and_working_example,
                revision_cabsc_condition, revision_minimal_review,
                revision_target_theory_size, revision_comparison_prose,
-               revision_headline_claims, generator_contracts):
+               revision_headline_claims, revision_ne_minimization,
+               generator_contracts):
     try:
         module.run(check, REPO)
     except Exception as exc:                # a source that moved or vanished
@@ -765,6 +767,11 @@ if checks < MINIMUM_CHECKS:
     print(f'FAIL: only {checks} checks ran; expected at least {MINIMUM_CHECKS}.')
     print('An empty or truncated run is not a pass. Something above exited early or')
     print('skipped a section -- find it rather than lowering this number.')
+    sys.exit(1)
+import readme_counts                        # noqa: E402
+_readme = readme_counts.mismatch(REPO, r'(\d[\d,]*) checks --', checks, 'checks')
+if _readme:
+    print(f'FAIL: {_readme}. Update the README to the count, never the reverse.')
     sys.exit(1)
 print(f'OK: all {checks} numbers quoted in the paper reproduce from the data.')
 sys.exit(0)

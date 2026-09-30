@@ -40,7 +40,8 @@ class ConGenModel(KBModel):
         task = prepared.task  # ConGenTask with assumption IDs
     """
 
-    def prepare_task(self, task_input: ConGenTaskInput, profiler=None) -> PreparedTask:
+    def prepare_task(self, task_input: ConGenTaskInput,
+                     minimize: bool = True, profiler=None) -> PreparedTask:
         """Assign assumption IDs and build a fresh ConGenTask (pure).
 
         Consumes a ConGenTaskInput carrying the oracle's frozen provisioning
@@ -48,9 +49,14 @@ class ConGenModel(KBModel):
         describe). Can be called repeatedly (e.g. per CV fold) — no state is kept.
         The signature is unified with the other models; the input TYPE is ConGen's
         own (not a shared union — ADR-0006). ``profiler`` (optional) counts
-        GenerateNE's preprocessing QuickXplain separately (GAP B).
+        GenerateNE's preprocessing QuickXplain separately (GAP B). ``minimize``
+        selects the negative encoding: True (default) = REDUCED (each ¬e⁻ is a
+        subset-minimal conflict, found by QuickXplain against the oracle); False = RAW
+        (negate the full assignment — no oracle use). Assumption IDs are identical
+        either way.
         """
-        return ConGenTaskPreparation(profiler=profiler).prepare(self, task_input)
+        return ConGenTaskPreparation(
+            minimize=minimize, profiler=profiler).prepare(self, task_input)
 
     def resolve_result(
             self,

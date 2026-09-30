@@ -60,6 +60,10 @@ class ConGenRunResult(BaseRunResult):
         return d
 
 
+# GenerateNE's two negative encodings.
+NEG_MODES = ('reduced', 'raw')
+
+
 class ConGenRunner(BaseRunner):
     """
     Run ConGen and collect performance metrics.
@@ -79,7 +83,8 @@ class ConGenRunner(BaseRunner):
             bias_path: str,
             fm_path: str,
             solver_name: str = 'glucose4',
-            use_incremental: bool = True
+            use_incremental: bool = True,
+            neg_mode: str = 'reduced'
     ):
         """
         Initialize runner with file paths. Builds model once (without examples).
@@ -89,8 +94,15 @@ class ConGenRunner(BaseRunner):
             fm_path: Path to feature model (.uvl) file
             solver_name: SAT solver name
             use_incremental: Use incremental solver mode
+            neg_mode: GenerateNE's negative encoding.
+                'reduced' (default) minimizes each e⁻ to a subset-minimal conflict
+                with QuickXplain against the oracle; 'raw' negates the full e⁻ and
+                never consults the oracle.
         """
+        if neg_mode not in NEG_MODES:
+            raise ValueError(f"neg_mode must be one of {NEG_MODES}, got {neg_mode!r}")
         super().__init__(bias_path, fm_path, solver_name, use_incremental=use_incremental)
+        self.neg_mode = neg_mode
 
         # Build model (pure bias KB; solver mode is the runner's, examples per run)
         self.model = (ConGenModelBuilder
@@ -138,6 +150,7 @@ class ConGenRunner(BaseRunner):
                             positive_examples,
                             negative_examples,
                         ),
+                        minimize=(self.neg_mode == 'reduced'),
                         profiler=profiler,
                     )
                     task = prepared.task

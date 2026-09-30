@@ -55,9 +55,13 @@ def partial_filename(model_name: str, mode_name: str, fold_idx: int,
 
 def write_partial(partial_dir: Path, model_name: str, mode_name: str,
                   algorithm: str, n_folds: int, fold_result: CrossValidationFoldResult,
-                  query_mode: Optional[str] = None, commit: Optional[str] = None) -> Path:
+                  query_mode: Optional[str] = None, commit: Optional[str] = None,
+                  neg_mode: Optional[str] = None) -> Path:
     """Persist one finished fold. Atomic: a crash cannot leave a half-written fold
-    that a later run would mistake for a completed one."""
+    that a later run would mistake for a completed one.
+
+    ``neg_mode`` (ConGen's GenerateNE encoding) is recorded when given, so a resumed
+    run cannot merge folds computed under the other encoding — see load_partials."""
     partial_dir.mkdir(parents=True, exist_ok=True)
     path = partial_dir / partial_filename(model_name, mode_name,
                                           fold_result.fold_index, query_mode)
@@ -70,6 +74,7 @@ def write_partial(partial_dir: Path, model_name: str, mode_name: str,
         'n_folds': n_folds,
         'fold_index': fold_result.fold_index,
         'commit': commit,
+        **({'neg_mode': neg_mode} if neg_mode is not None else {}),
         'fold': fold_result.to_dict(),
     })
     logger.info("  Fold %d durable: %s", fold_result.fold_index, path)
@@ -121,9 +126,16 @@ def fold_result_from_dict(fold: Mapping, algorithm: str) -> CrossValidationFoldR
 
 def load_partials(partial_dir: Path, model_name: str, mode_name: str,
                   algorithm: str, n_folds: int,
-                  query_mode: Optional[str] = None
+                  query_mode: Optional[str] = None,
+                  neg_mode: Optional[str] = None
                   ) -> Dict[int, CrossValidationFoldResult]:
-    """Restore whichever folds are already on disk, keyed by fold index."""
+    """Restore whichever folds are already on disk, keyed by fold index.
+
+    ``neg_mode``, when given, must match the partial's. A partial without the key
+    predates the switch and was computed under the only encoding that then existed,
+    'reduced'. The partial's filename does not carry the mode, so without this check a
+    raw run pointed at a directory of reduced partials would skip those folds as done
+    and merge them — a mixed result that looks perfectly well-formed."""
     found: Dict[int, CrossValidationFoldResult] = {}
     if not partial_dir.is_dir():
         return found
@@ -147,6 +159,11 @@ def load_partials(partial_dir: Path, model_name: str, mode_name: str,
             raise ValueError(
                 f"{path}: partial is from a {payload.get('n_folds')}-fold split, "
                 f"this run is {n_folds}-fold.")
+        if neg_mode is not None and payload.get('neg_mode', 'reduced') != neg_mode:
+            raise ValueError(
+                f"{path}: partial was computed with neg_mode "
+                f"{payload.get('neg_mode', 'reduced')!r}, this run is {neg_mode!r}. "
+                f"Write the other encoding to its own output directory.")
         found[fold_idx] = fold_result_from_dict(payload['fold'], algorithm)
 
     if found:

@@ -150,6 +150,16 @@ Example:
     # confused: max_queries is reproducible, this is not.
     timeout_s = interactive_config.get('timeout_s') or None
 
+    # ConGen-specific settings. neg_mode is GenerateNE's negative encoding:
+    # 'reduced' (default, QuickXplain against the oracle) or 'raw' (negate the full
+    # e-, no oracle use).
+    congen_config = eval_config.get('congen', {})
+    neg_mode = congen_config.get('neg_mode', 'reduced')
+    if neg_mode not in ('reduced', 'raw'):
+        logger.error("[evaluation.congen] neg_mode must be 'reduced' or 'raw', got %r",
+                     neg_mode)
+        sys.exit(2)
+
     models = parse_models(config)
     if not models:
         logger.error("No models specified in configuration")
@@ -181,6 +191,8 @@ Example:
     logger.info("Solver modes: %s", ['inc' if m else 'non-inc' for m in solver_modes])
     logger.info("Solver: %s", solver_name)
     logger.info("Shuffle bias: %s", shuffle_bias)
+    if algorithm == 'congen':
+        logger.info("NE encoding: %s", neg_mode)
     if algorithm == 'interactive':
         logger.info("Max queries: %s (stopping rule)", max_queries)
         logger.info("Query mode: %s", query_mode)
@@ -232,8 +244,9 @@ Example:
                 # that closes mid-run costs at most the fold that was running.
                 partial_dir = output_dir / 'partials'
                 qm = query_mode if algorithm == 'interactive' else None
+                nm = neg_mode if algorithm == 'congen' else None
                 done_folds = load_partials(partial_dir, model_config.name, mode_name,
-                                           algorithm, actual_n_folds, qm)
+                                           algorithm, actual_n_folds, qm, nm)
                 requested = (list(range(actual_n_folds)) if fold_indices is None
                              else fold_indices)
                 todo = [] if args.merge_only else [i for i in requested
@@ -242,10 +255,11 @@ Example:
                             len(done_folds), todo or 'none',
                             ' (--merge-only)' if args.merge_only else '')
 
-                def on_fold(fold_result, _mode=mode_name, _qm=qm,
+                def on_fold(fold_result, _mode=mode_name, _qm=qm, _nm=nm,
                             _name=model_config.name, _n=actual_n_folds):
                     write_partial(partial_dir, _name, _mode, algorithm, _n,
-                                  fold_result, query_mode=_qm, commit=commit)
+                                  fold_result, query_mode=_qm, commit=commit,
+                                  neg_mode=_nm)
 
                 if algorithm == 'congen':
                     cv_result = n_fold_cross_validation(
@@ -259,7 +273,8 @@ Example:
                         use_incremental=is_incremental,
                         fold_data=fold_data,
                         shuffle_bias=shuffle_bias,
-                        fold_indices=todo, on_fold=on_fold, done_folds=done_folds
+                        fold_indices=todo, on_fold=on_fold, done_folds=done_folds,
+                        neg_mode=neg_mode
                     )
                 elif algorithm == 'interactive':
                     cv_result = n_fold_cross_validation_interactive(

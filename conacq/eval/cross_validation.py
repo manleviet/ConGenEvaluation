@@ -428,7 +428,8 @@ def n_fold_cross_validation(
         shuffle_bias: bool = False,
         fold_indices: Optional[Sequence[int]] = None,
         on_fold: Optional[Callable[[CrossValidationFoldResult], None]] = None,
-        done_folds: Optional[Mapping[int, CrossValidationFoldResult]] = None
+        done_folds: Optional[Mapping[int, CrossValidationFoldResult]] = None,
+        neg_mode: str = 'reduced'
 ) -> Optional[CrossValidationResult]:
     """
     Standard n-fold cross validation.
@@ -456,6 +457,7 @@ def n_fold_cross_validation(
         fold_indices: Folds to compute this call (``None`` = all)
         on_fold: Durability hook, called with each finished fold result
         done_folds: Fold results restored from partials, keyed by fold index
+        neg_mode: GenerateNE encoding, 'reduced' (default) or 'raw' — see ConGenRunner
 
     Returns:
         The CrossValidationResult, or ``None`` when the folds available do not
@@ -467,7 +469,8 @@ def n_fold_cross_validation(
         bias_path=bias_path,
         fm_path=fm_path,
         solver_name=solver_name,
-        use_incremental=use_incremental
+        use_incremental=use_incremental,
+        neg_mode=neg_mode
     )
     try:
         return _run_cv_loop(
