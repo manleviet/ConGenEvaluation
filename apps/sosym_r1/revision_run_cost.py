@@ -54,6 +54,9 @@ KB5_FOLD_HOURS = (4.1, 4.3)          # "A single RS(n) fold on KB5 already takes
 KB4_GROWTH = {'rs_2n': 3.6, 'rs_3n': 8.3}
 PROJECTED_DAYS = {'rs_2n': 2, 'rs_3n': 4}   # "roughly two and four days ... for three folds each"
 
+# The response letter: the cap-5,000 example-first fold on KB5 RS(n) against the cap-1,000 one.
+LETTER_CAP_RUNTIME_RATIO = 7.3
+
 
 def _folds(results: Path, model: str, sampling: str) -> list[dict]:
     return json.loads((results / f'{model}_{sampling}_cv_incremental.json').read_text())['folds']
@@ -142,3 +145,24 @@ def run(check, repo: Path) -> None:
         days = statistics.mean(f['performance']['runtime_ms'] for f in kb5) * grown * 3 / 8.64e7
         check(f'   ... projects KB5 {sampling} to roughly {PROJECTED_DAYS[sampling]} days',
               round(days), PROJECTED_DAYS[sampling])
+
+    # The response letter: raising example-first's budget from 1,000 to 5,000 queries on KB5
+    # RS(n) costs "7.3 times the runtime" and returns "the same fourteen constraints".
+    # The constraint identity is asserted in check_paper_numbers' cap-sensitivity block;
+    # the ratio is the letter's own arithmetic and is held here. One fold, same split
+    # and seed at both caps, so the ratio is of that fold and nothing else.
+    print('\n[cost] the response letter: the price of a five-fold larger query budget on KB5')
+    probe = repo / 'data' / 'results_sosym' / 'cap_probe_busybox'
+
+    def cap_fold(cap: int) -> dict:
+        name = f'busybox-1.18.0_rs_1n_example_first_cap{cap}'
+        path = probe / name / 'interactive' / f'busybox-1.18.0_rs_1n_fold0_example_first_cap{cap}.json'
+        return json.loads(path.read_text())['fold']
+    lo, hi = cap_fold(1000), cap_fold(5000)
+    check('KB5 RS(n) fold 0: queries spent at each budget', (lo['n_queries'], hi['n_queries']),
+          (1000, 5000))
+    check('   ... runtime at 5,000 over runtime at 1,000, as the letter prints it',
+          round(hi['performance']['runtime_ms'] / lo['performance']['runtime_ms'], 1),
+          LETTER_CAP_RUNTIME_RATIO, tol=1e-9)
+    check('   ... and |KB| at both, "the same fourteen constraints"',
+          (len(lo['kb_constraints']), len(hi['kb_constraints'])), (14, 14))

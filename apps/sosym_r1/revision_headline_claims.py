@@ -41,6 +41,8 @@ BIAS = Path('data') / 'bias'
 # Abstract, Conclusion, Discussion (7).
 PAPER_RECALL_SATURATED, PAPER_CELLS = 18, 28
 PAPER_MAX_PRECISION = 0.994
+# S6.2.4: "it stays at or above 0.746 on the others", and the cell that sets it.
+PAPER_RECALL_FLOOR, PAPER_RECALL_FLOOR_CELL = 0.746, ('2cov', 'arcade-game')
 PAPER_REDUCTION = (70.4, 99.9)
 PAPER_REDUCTION_EXTREMES = {'lowest': ('fqa', 'rs_3n'), 'highest': ('busybox-1.18.0', '2cov')}
 # S6.1.2, derived from the ROUNDED |KB| the table prints. See the module docstring.
@@ -62,7 +64,9 @@ def half_up(value: float, places: int) -> float:
 
 
 def _semantic(fold: dict) -> dict:
-    return (((fold.get('evaluation') or {}).get('semantic') or {}).get('metrics') or {})
+    """The fold's semantic metrics. A fold without them raises: a missing score read
+    as recall 0 or precision 0 is a default, not a measurement."""
+    return fold['evaluation']['semantic']['metrics']
 
 
 def bias_constraints(repo: Path, stem: str) -> int:
@@ -75,15 +79,16 @@ def bias_constraints(repo: Path, stem: str) -> int:
 
 def run(check, repo: Path) -> None:
     print('\n[headline] the semantic figures the abstract and the conclusion quote')
-    recall, precision, false_positives, scored = {}, {}, 0, 0
+    recall, recall_by_fold, precision, false_positives, scored = {}, {}, {}, 0, 0
     for sampling in SAMPLINGS:
         for stem, _label in KNOWLEDGE_BASES:
             fs = folds(repo, stem, sampling, 'congen')
             if not fs:
                 continue
             cell = (sampling, stem)
-            recall[cell] = statistics.mean(_semantic(f).get('recall', 0.0) for f in fs)
-            precision[cell] = statistics.mean(_semantic(f).get('precision', 0.0) for f in fs)
+            recall_by_fold[cell] = [_semantic(f)['recall'] for f in fs]
+            recall[cell] = statistics.mean(recall_by_fold[cell])
+            precision[cell] = statistics.mean(_semantic(f)['precision'] for f in fs)
             for f in fs:
                 metrics = f.get('metrics') or {}
                 if metrics:
@@ -92,6 +97,23 @@ def run(check, repo: Path) -> None:
     check('combinations scored', len(recall), PAPER_CELLS)
     check('combinations at semantic recall 1.000',
           sum(1 for v in recall.values() if abs(v - 1.0) < 1e-9), PAPER_RECALL_SATURATED)
+    # S6.2.4 / Abstract / Conclusion (7): "so on each of their folds the learned
+    # knowledge base entails the entire target theory". A mean of 1.000 is necessary for
+    # that, not sufficient, so the folds behind the 18 are read one by one. The query can
+    # find a fold below 1: ten combinations have one, which is printed as the control.
+    saturated = [c for c, v in recall.items() if abs(v - 1.0) < 1e-9]
+    check('S6.2.4: folds behind the saturated combinations',
+          sum(len(recall_by_fold[c]) for c in saturated), 3 * PAPER_RECALL_SATURATED)
+    check('   ... and every one of them at recall 1.000, not only the mean',
+          [c for c in saturated if any(r != 1.0 for r in recall_by_fold[c])], [])
+    check('   ... control: folds below 1.000 exist elsewhere, so the query can see one',
+          sum(1 for c in recall if c not in saturated
+              for r in recall_by_fold[c] if r < 1.0) > 0, True)
+    # S6.2.4: "it stays at or above 0.746 on the others" -- the floor over the 28 means.
+    floor = min(recall, key=recall.get)
+    check('S6.2.4: lowest semantic recall over the 28 combination means, as printed',
+          half_up(recall[floor], 3), PAPER_RECALL_FLOOR, tol=1e-9)
+    check('   ... and the combination it is at', floor, PAPER_RECALL_FLOOR_CELL)
     # The complement of the recall claim: precision never reaches 1, on any of them.
     check('combinations where semantic precision reaches 1',
           [c for c, v in precision.items() if v >= 1.0], [])
