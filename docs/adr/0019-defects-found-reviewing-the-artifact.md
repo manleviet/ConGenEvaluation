@@ -15,8 +15,8 @@ was worth fixing before submission and the rest were not.
 whole deliverable for the revision; a reviewer needs `tree/v1.0.0`, which is already
 immutable.
 
-The reason is that a Zenodo record cannot be deleted. Reviewer 2 may change the artifact,
-and a `v1.0.0` record left behind would exist permanently describing code that is no
+The reason is that a Zenodo record cannot be deleted. A reviewer may ask for changes to
+the artifact, and a `v1.0.0` record left behind would exist permanently describing code that is no
 longer the paper's code. Deferring costs nothing, because the tag already gives a fixed
 reference; minting early costs a permanent wrong record.
 
